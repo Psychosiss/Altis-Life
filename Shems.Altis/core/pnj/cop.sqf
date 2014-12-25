@@ -1,0 +1,13 @@
+_this enableSimulation false; 
+_this allowDamage false;
+_this addAction["Marché",life_fnc_virt_menu,"cop"];
+_this addAction["Vestiaire",life_fnc_clothingMenu,"cop"];
+_this addAction["Recrue",life_fnc_weaponShopMenu,"cop_cadet"];
+_this addAction["Brigadier",life_fnc_weaponShopMenu,"cop_officier"];
+_this addAction["Caporal",life_fnc_weaponShopMenu,"cop_caporal"];
+_this addAction["Sergent",life_fnc_weaponShopMenu,"cop_sergent"];
+_this addAction["Lieutenant",life_fnc_weaponShopMenu,"cop_lieutenant"];
+_this addAction["Capitaine",life_fnc_weaponShopMenu,"cop_capitaine"];
+_this addAction["Chef",life_fnc_weaponShopMenu,"cop_chef_adjoint"];
+_this addAction[format["%1 ($%2)",["license_cop_air"] call life_fnc_varToStr,[(["cair"] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,"cair",0,false,false,"",' !license_cop_air && playerSide == west '];
+_this addAction[format["%1 ($%2)",["license_cop_cg"] call life_fnc_varToStr,[(["cg"] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,"cg",0,false,false,"",' !license_cop_cg && playerSide == west '];

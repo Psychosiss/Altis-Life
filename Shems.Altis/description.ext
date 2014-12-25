@@ -1,0 +1,471 @@
+author = "Tonic & Shems";
+onLoadName = "Altis Life RPG";
+loadScreen = "";
+onLoadMission = "";
+joinUnassigned = 0;
+respawn = BASE;
+respawnDelay = 2;
+disabledAI = true;
+disableChannels[]={0,1,2};
+enableDebugConsole = 0;
+forceRotorLibSimulation = 1;
+
+class Header
+{
+	gameType = RPG;
+	minPlayers = 1;
+	maxPlayers = 109;
+};
+
+wreckLimit = 3;
+wreckRemovalMinTime = 60;
+wreckRemovalMaxTime = 320;
+corpseLimit = 150;
+corpseRemovalMinTime = 999;
+corpseRemovalMaxTime = 9999;
+
+#include "dialog\common.hpp"
+#include "dialog\shop_items.hpp"
+#include "dialog\player_inv.hpp"
+#include "dialog\gang.hpp"
+#include "dialog\key_chain.hpp"
+#include "dialog\impound.hpp"
+#include "dialog\bank.hpp"
+#include "dialog\veh_shop.hpp"
+#include "dialog\shops.hpp"
+#include "dialog\ui.hpp"
+#include "dialog\admin_menu.hpp"
+#include "dialog\cell_phone.hpp"
+#include "dialog\wanted_list.hpp"
+#include "dialog\ticket.hpp"
+#include "dialog\clothing.hpp"
+#include "dialog\trunk.hpp"
+#include "dialog\spawnSelection.hpp"
+#include "dialog\chop_shop.h"
+#include "dialog\pInteraction.h"
+#include "dialog\deathScreen.h"
+#include "dialog\vehicleShop.h"
+#include "dialog\settings.h"
+#include "dialog\federalReserve.h"
+#include "dialog\compensate.hpp"
+#include "dialog\smartphone.hpp"
+#include "dialog\wantedadd2.hpp"
+#include "dialog\common_EditorWrapper.hpp"
+#include "dialog\market.hpp"
+#include "dialog\veh_repaint.hpp"
+#include "dialog\jail_time.hpp"
+#include "dialog\channel.hpp"
+#include "dialog\goldSafe.h"
+#include "dialog\taxi_service.hpp"
+#include "dialog\revoke_license.h"
+#include "dialog\licenses.hpp"
+#include "dialog\prison_list.hpp"
+#include "dialog\craft.hpp"
+#include "dialog\lxOPS_dlg.hpp"
+
+class RscTitles
+{
+	#include "dialog\ui.hpp"
+	#include "dialog\progress.hpp"
+	#include "dialog\hud_nameTags.h"
+	#include "dialog\statusBar.hpp"
+	#include "dialog\slotmachine.hpp"
+};
+
+class CfgFunctions
+{
+	#include "Functions.hpp"
+};
+
+class CfgSounds
+{
+	sounds[] = {};
+	class SirenLong
+	{
+		name = "SirenLong";
+		sound[] = {"sounds\siren_long.ogg", 1.0, 1};
+		titles[] = {};
+	};
+	
+	class tazer
+	{
+		name = "Tazer";
+		sound[] = {"sounds\tazer.ogg", 0.25, 1};
+		titles[] = {};
+	};
+	
+	class Intro
+	{
+		name="Intro";
+		sound[]={"sounds\intro.ogg",0.5,1};
+		titles[] = {};
+	};
+	
+	class BeepBeep
+	{
+		name = "BeepBeep";
+		sound[] = {"sounds\beepbeep.ogg", 0.9, 1};
+		titles[] = {};
+	};
+	
+	class Beep
+	{
+		name = "Beep";
+		sound[] = {"sounds\beep.ogg", 0.9, 1};
+		titles[] = {};
+	};
+  
+	class Message
+	{
+		name = "message";
+		sound[] = {"sounds\message.ogg", 0.95, 0.95};
+		titles[] = {};
+	};
+	
+	class Cuff
+	{
+		name = "cuff";
+		sound[] = {"sounds\cuff.ogg", 0.95, 0.95};
+		titles[] = {};
+	};
+	
+	class Flashbang
+	{
+		name = "Flashbang";
+		sound[] = {"sounds\flashbang.ogg", 1.0, 1};
+		titles[] = {};
+	};
+	
+	class alarmevoiture
+	{
+		name = "alarmevoiture";
+		sound[] = {"sounds\alarmevoiture.ogg", 1, 1};
+		titles[] = {};
+	};
+	
+	class cuffout
+	{
+		name = "cuffout";
+		sound[] = {"sounds\cuffout.ogg", 1.0, 1};
+		titles[] = {};
+	};
+	
+	class Siren_MED
+	{
+		name = "Siren_MED";
+		sound[] = {"sounds\siren_long2.ogg", 1.0, 1};
+		titles[] = {};
+	};
+	
+	class dog_whine
+	{
+		name = "dog_whine";
+		sound[] = {"sounds\dog_whine.ogg", 1, 1};
+		titles[] = {};
+	};
+	
+	class dog_growl
+	{
+		name = "dog_growl";
+		sound[] = {"sounds\dog_growl.ogg", 1, 1};
+		titles[] = {};
+	};
+	
+	class dog_ruff
+	{
+		name = "dog_ruff";
+		sound[] = {"sounds\dog_ruff.ogg", 1, 1};
+		titles[] = {};
+	};
+	
+	class whistle
+	{
+		name = "whistle";
+		sound[] = {"sounds\whistle.ogg", 1, 1};
+		titles[] = {};
+	};
+	
+	class dog_close
+	{
+		name = "dog_close";
+		sound[] = {"sounds\dog_close.ogg", 1, 1};
+		titles[] = {};
+	};
+	
+	class dog_one
+	{
+		name = "dog_one";
+		sound[] = {"sounds\dog_one.ogg", 1, 1};
+		titles[] = {};
+	};
+	
+	class allahuakbar
+	{
+		name = "allahuakbar";
+		sound[] = {"sounds\allahuakbar.ogg", 1, 1};
+		titles[] = {};
+	};
+	
+	class Patdown
+	{
+		name = "Patdown";
+		sound[] = {"sounds\patdown.ogg", .90, 1};
+		titles[] = {};
+	};
+	
+	class pute
+	{
+		name = "pute";	
+		sound[] = {"sounds\pute.ogg", 1, 1};
+		titles[] = {};
+	};
+	
+	class jail
+	{
+		name = "jail";
+		sound[] = {"sounds\jail.ogg", 1.0, 1};
+		titles[] = {};
+	};
+	
+	class eat
+	{
+		name = "eat";
+		sound[] = {"sounds\eat.ogg", 1.0, 1};
+		titles[] = {};
+	};
+	
+	class drink
+	{
+		name = "drink";
+		sound[] = {"sounds\drink.ogg", 0.95, 0.95};
+		titles[] = {};
+	};
+	
+	class Mining
+	{
+		name = "mining";
+		sound[] = {"sounds\mining.ogg", 0.95, 0.95};
+		titles[] = {};
+	};
+
+	class Yelp
+	{
+		name = "Yelp";
+		sound[] = {"sounds\yelp.ogg", 1.0, 1};
+		titles[] = {};
+	};
+	
+	class spraycan
+	{
+		name = "spraycan";	
+		sound[] = {"sounds\spraycan.ogg", 1.0, 1};
+		titles[] = {};
+	};
+	
+	class oil
+	{
+		name="oil";
+		sound[] = {"sounds\oil.ogg", 1.0, 1};
+		titles[] = {};
+	};
+	
+	class news
+	{
+		name="news";
+		sound[] = {"sounds\news.ogg", 1.0, 1};
+		titles[] = {};
+	};
+
+	class atm
+	{
+		name="atm";
+		sound[] = {"sounds\atm.ogg", 1.0, 1};
+		titles[] = {};
+	};
+
+	class bank_alarm
+	{
+	    name = "bank_alarm";
+	    sound[] = {"sounds\bankalarm.ogg", 1.0, 1};
+	    titles[] = {};
+	};
+
+	class jackpotSound
+	{
+		name = "jackpotSound";
+		sound[] = {"sounds\slot_payoff.ogg", 1.0, 1};
+		titles[] = {};
+	};
+
+	class slotspinSound
+	{
+		name = "slotspinSound";
+		sound[] = {"sounds\slot_spin.ogg", 1.0, 1};
+		titles[] = {};
+	};
+	
+	class Caching
+	{
+		name = "caching";
+		sound[] = {"sounds\caching.ogg", 1, 1};
+		titles[] = {};
+	};
+	
+	class marteau
+	{
+		name = "marteau";
+		sound[] = {"sounds\marteau.ogg", 1, 1};
+		titles[] = {};
+	};
+
+	class bombarm
+	{
+		name = "bombarm";
+		sound[] = {"sounds\bombarm.ogg", 1.0, 1};
+		titles[] = {};
+	};
+	
+	class punch
+	{
+		name="punch";
+		sound[] = {"sounds\punch.ogg", 1.0, 1};
+		titles[] = {};
+	};
+	
+	class punch_break
+	{
+		name="punch_break";
+		sound[] = {"sounds\punch_break.ogg", 1.0, 1};
+		titles[] = {};
+	};
+	class punch_balls
+	{
+		name="punch_balls";
+		sound[] = {"sounds\punch_balls.ogg", 1.0, 1};
+		titles[] = {};
+	};
+
+	class bonebreak
+	{
+		name = "bonebreak";
+		sound[] = {"sounds\break.ogg", 1.0, 1};
+		titles[] = {};
+	};
+};
+
+class CfgDebriefing
+{
+	class NotWhitelisted
+	{
+		title = "Mission echoué";
+		subtitle = "Vous n'êtes pas Whitelist";
+		description = "Vous n'avez pas l'accréditation nécessaire pour vous connecter sur ce slot, veuillez vous reconnectez sur un slot valide.";
+		pictureBackground = "";
+		picture = "";
+		pictureColor[] = {0,0.3,0.6,1};
+	};
+	
+	class Blacklisted
+	{
+		title = "Mission echoué";
+		subtitle = "Vous êtes Blacklisté";
+		description = "Vous êtes suspendu des forces de police, veuillez vous reconnectez sur le slot civil.";
+		pictureBackground = "";
+		picture = "";
+		pictureColor[] = {0,0.3,0.6,1};
+	};
+	
+	class SpyGlass
+	{
+		title = "Arma 3 Corrompu";
+		subTitle = "Vous avez été détecté par SPYGLASS";
+		description = "Vous avez été détecté par SpyGlass, votre player id a été rapporté. Profitez encore un peu de vos jeux Bohemia.";
+		pictureBackground = "";
+		picture = "";
+		pictureColor[] = {0,0.3,0.6,1};
+	};
+};
+
+class CfgNotifications
+{
+	class MedicalRequestEmerg
+	{
+		title = "Urgence Médical";
+		iconPicture = "\A3\ui_f\data\map\mapcontrol\taskIcon_ca.paa";
+		description = "%1";
+		duration = 5;
+		priority = 7;
+	};
+	
+	class DeliveryAssigned
+	{
+		title = "Livraison acceptée";
+		iconPicture = "\A3\ui_f\data\map\mapcontrol\taskIcon_ca.paa";
+		description = "%1";
+		duration = 10;
+		priority = 7;
+	};
+	
+	class DeliveryFailed
+	{
+		title = "Livraison échouée";
+		iconPicture = "\A3\ui_f\data\map\mapcontrol\taskiconfailed_ca.paa";
+		description = "%1";
+		duration = 7;
+		priority = 7;
+	};
+	
+	class DeliverySucceeded
+	{
+		title = "Livraison réussie";
+		iconPicture = "\A3\ui_f\data\map\mapcontrol\taskIcondone_ca.paa";
+		description = "%1";
+		duration = 6;
+		priority = 6;
+	};
+	
+	class TextMessage
+	{
+		title = "Nouveau SMS";
+		iconPicture = "icons\messagenew.paa";
+		description = "%1";
+		duration = 10;
+		priority = 6;
+	};
+	
+	class PoliceDispatch
+	{
+		title = "Centre d'appel d'urgence";
+		iconPicture = "icons\messagepolice.paa";
+		description = "%1";
+		duration = 10;
+		priority = 6;
+	};
+	
+	class AdminDispatch
+	{
+		title = "Demande d'aide Admin";
+		iconPicture = "icons\messageadmin.paa";
+		description = "%1";
+		duration = 10;
+		priority = 6;
+	};
+	
+	class AdminMessage
+	{
+		title = "Message d'Admin";
+		iconPicture = "icons\messageadmin.paa";
+		description = "%1";
+		duration = 10;
+		priority = 5;
+	};
+	
+	class EastMessage
+    {
+        title = "Message de l'armée";
+        iconPicture = "icons\messagenew.paa";
+        description = "%1";
+        duration = 10;
+        priority = 5;
+    };
+};

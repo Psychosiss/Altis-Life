@@ -1,0 +1,18 @@
+﻿if(life_cash < 1500) exitWith {hint "Vous n avez pas 1500$ pour reparer le vehicule."};
+vehicle player setfuel 0;
+sleep 0.1;
+hint "votre vehicule sera pret dans 30 seconds";
+sleep 15;
+hint "votre vehicule sera pret dans 15 seconds";
+sleep 15;
+vehicle player setDamage 0;
+sleep 1;
+hint "Votre vehicule sera remplis de carburant dans 10 seconds";
+vehicle player setfuel 0.5;
+sleep 10;
+vehicle player setfuel 1;
+sleep 0.1;
+hint "Votre vehicule est pret sa fait 1500 $";
+sleep 3;
+life_cash = life_cash - 1500;
+hint "Merci et bonne route !";
