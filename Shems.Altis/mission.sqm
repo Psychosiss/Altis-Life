@@ -217,8 +217,8 @@ class Mission
 	randomSeed=2004553;
 	class Intel
 	{
-		briefingName="Altis Life SRV";
-		overviewText="Altis Life SRV";
+		briefingName="Altis Life RPG";
+		overviewText="Altis Life RPG";
 		resistanceEast=1;
 		timeOfChanges=2700;
 		startWeather=0.049999997;

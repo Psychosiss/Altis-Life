@@ -463,6 +463,8 @@ class Life_Client_Core
 		class speedBomb {};
 		class painKillers {};
 		class tent {};
+		class vehAmmo {};
+		class adrenalineShot {};
 	};
 	
 	class Dialog_Controls

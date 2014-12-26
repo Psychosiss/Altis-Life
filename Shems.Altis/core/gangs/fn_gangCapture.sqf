@@ -6,6 +6,7 @@ if ((player distance _flag) > 20) exitWith
 { 
 	hint "You must be closer to the flag to capture this area!"; 
 };
+
 if ((side player == civilian) and (isNull life_my_gang)) exitWith 
 { 
 	hint "You must be in a gang to capture a gang area!"; 
@@ -18,7 +19,6 @@ if (side player == civilian) then
 	{ 
 		hint "You must be in a gang to capture a gang area!"; 
 	};
-
 	_gang = life_gang_list select _index;
 	_attName = _gang select 0;
 	_attGang = _gang select 1;

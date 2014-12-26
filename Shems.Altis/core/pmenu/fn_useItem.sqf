@@ -89,6 +89,16 @@ switch (true) do
 		playSound "mining";
 	};
 	
+	case (_item ==  "adrenalineShot"):
+	{
+		[] spawn life_fnc_adrenalineShot;
+	};
+	
+	case (_item == "vammo"):
+	{
+		[] spawn life_fnc_vehAmmo;
+	};
+	
 	case (_item == "nitro"):
 	{
 		[] spawn life_fnc_nitro;

@@ -103,6 +103,8 @@ switch (_mode) do
 			case "rabbitp": {"life_inv_rabbitp"};
 			case "snakep": {"life_inv_snakep"};
 			case "skinningknife": {"life_inv_skinningknife"};
+			case "vammo": {"life_inv_vammo"};
+			case "adrenaline": {"life_inv_adrenaline"};
 		};
 	};
 	
@@ -204,6 +206,8 @@ switch (_mode) do
 			case "life_inv_snakep": {"snakep"};
 			case "life_inv_rabbitp": {"rabbitp"};
 			case "life_inv_skinningknife": {"skinningknife"};
+			case "life_inv_vammo": {"vammo"};
+			case "life_inv_adrenaline": {"adrenaline"};
 		};
 	};
 };

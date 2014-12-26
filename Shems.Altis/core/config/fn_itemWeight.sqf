@@ -94,5 +94,6 @@ switch (_item) do
 	case "rabbitp": {1};
 	case "snakep": {1};
 	case "skinningknife": {1};
+	case "vammo": {40};
 	default {1};
 };

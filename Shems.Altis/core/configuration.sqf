@@ -133,6 +133,7 @@ life_pain = 0;
 life_cash = 0;
 life_vehicles = [];
 bank_robber = [];
+player setVariable["downed",false,true];
 
 switch (playerSide) do
 {
@@ -269,7 +270,9 @@ life_inv_items =
 	"life_inv_snakep",
 	"life_inv_rabbit",
 	"life_inv_rabbitp",
-	"life_inv_skinningknife"
+	"life_inv_skinningknife",
+	"life_inv_vammo",
+	"life_inv_adrenalineShot"
 ];
 
 {missionNamespace setVariable[_x,0];} foreach life_inv_items;
@@ -407,7 +410,9 @@ sell_array =
 	["chickenp",9000],
 	["sheepp",8000],
 	["snakep",1900],
-	["rabbitp",1800]
+	["rabbitp",1800],
+	["vammo",10000],
+	["adrenalineShot",5000]
 ];
 __CONST__(sell_array,sell_array);
 
@@ -457,7 +462,9 @@ buy_array =
 	["tent1",20000],
 	["tent2",25000],
 	["dogp",22000],
-	["skinningknife",2000]
+	["skinningknife",2000],
+	["vammo",25000],
+	["adrenalineShot",20000]
 ];
 __CONST__(buy_array,buy_array);
 
