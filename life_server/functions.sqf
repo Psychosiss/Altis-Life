@@ -12,7 +12,6 @@ compileFinal "
 	private[""_find"",""_limit"",""_select"",""_array"",""_return""];
 	_find = _this select 0;
 	_array = _this select 1;
-
 	_limit = (count _array)-1;
 	for ""_i"" from 0 to _limit do
 	{
@@ -22,7 +21,6 @@ compileFinal "
 			_return = _i;
 		};
 	};
-
 	if(isNil {_return}) then {_return = -1;};
 	_return;
 ";
@@ -33,7 +31,6 @@ compileFinal "
 	_ret = _this select 0;
 	if(isNull _ret) exitWith {};
 	if(isNil ""_ret"") exitWith {};
-	
 	[[life_atmcash,life_cash,owner player,player],""life_fnc_admininfo"",_ret,false] spawn life_fnc_MP;
 ";
 publicVariable "fnc_player_query";

@@ -3,7 +3,10 @@ private["_corpse","_animals","_success"];
 _meats = 0;
 _meats = _meats + life_inv_dog + life_inv_sheep + life_inv_goat + life_inv_chicken + life_inv_snake + life_inv_rabbit;
 
-if (_meats == 0) exitWith { hint "You don't have any raw meat to be cooked!"; };
+if (_meats == 0) exitWith 
+{ 
+	hint "You don't have any raw meat to be cooked!"; 
+};
 
 [2, format["You begin cooking %1 raw meat.", _meats]] call life_fnc_broadcast;
 

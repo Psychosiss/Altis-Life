@@ -16,14 +16,12 @@ if (_death) then
 	if(player != vehicle player) exitWith {titleText["Vous ne pouvez pas jeter un objet lorsque vous êtes dans un véhicule.","PLAIN"];_exit = true;};
 	if(side player != west) then 
 	{
-		//_ind = [_data,life_illegal_items] call TON_fnc_index;
 		_ind = [_data,life_illegal_items] call fnc_index;
 		if(_ind != -1 && ([west,getPos player,100] call life_fnc_nearUnits)) exitWith {titleText["C'est un objet illégal et les flics sont à proximité, vous ne pouvez jetez pas cette preuve","PLAIN"];_exit = true;};
 	};
 };
 if(_exit) exitWith {};
 if (count _data2 < 1) exitWith{};
-
 if((time - life_action_delay) < 3 && !(_death)) exitWith {hint "Vous ne pouvez pas lacher des objets aussi rapidement. Essayez de les lacher par paquet!"};
 life_action_delay = time;
 
@@ -34,7 +32,8 @@ life_action_delay = time;
 	if (_death) then 
 	{
 		_value = missionNamespace getVariable _item;
-		if(_item!="life_cash") then {
+		if(_item!="life_cash") then 
+		{
 			[false,_var,_value] call life_fnc_handleInv;
 		};
 	} else {

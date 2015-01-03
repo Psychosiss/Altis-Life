@@ -13,7 +13,6 @@ _rand = sqrt random 1;
 _posX = (_size * (cos _dir)) * _rand;
 _posY = (_size * (sin _dir)) * _rand;
 _pos  = [_posX,_posY];
-
 _posX = _centerX + (_pos select 0);
 _posY = _centerY + (_pos select 1);
 

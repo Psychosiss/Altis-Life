@@ -10,17 +10,19 @@ if((nearestObject [[16019.5,16952.9,0],"Land_Dome_Big_F"]) == _building OR (near
 };
 
 _doors = 1;
-while {true} do {
+while {true} do 
+{
 	if(!isClass(configFile >> "CfgVehicles" >> (typeOf _building) >> "AnimationSources" >> format["Door_%1_source",_doors])) exitWith {};
 	_doors = _doors + 1;
 };
 
 _door = 0;
 
-for "_i" from 1 to _doors do {
+for "_i" from 1 to _doors do 
+{
 	_selPos = _building selectionPosition format["Door_%1_trigger",_i];
 	_worldSpace = _building modelToWorld _selPos;
-		if(player distance _worldSpace < 5) exitWith {_door = _i;};
+	if(player distance _worldSpace < 5) exitWith {_door = _i;};
 };
 if(_door == 0) exitWith {hint "You are not near a door!"};
 if((_building getVariable[format["bis_disabled_Door_%1",_door],0]) == 0) exitWith {hint "This door is already unlocked!"};
@@ -36,20 +38,24 @@ _titleText ctrlSetText format["%2 (1%1)...","%",_title];
 _progressBar progressSetPosition 0.01;
 _cP = 0.01;
 
-switch (typeOf _building) do {
+switch (typeOf _building) do 
+{
 	case "Land_Dome_Big_F": {_cpRate = 0.003;};
 	case "Land_Research_house_V1_F": {_cpRate = 0.0015;};
-	default {_cpRate = 0.08;}
+	//default {_cpRate = 0.08;}
+	default {_cpRate = 0.08;};
 };
 
 while {true} do
 {
-	if(animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then {
+	if(animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then 
+	{
 		[[player,"AinvPknlMstpSnonWnonDnon_medic_1"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
 		player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
 	};
 	sleep 0.26;
-	if(isNull _ui) then {
+	if(isNull _ui) then 
+	{
 		5 cutRsc ["life_progress","PLAIN"];
 		_ui = uiNamespace getVariable "life_progress";
 		_progressBar = _ui displayCtrl 38201;

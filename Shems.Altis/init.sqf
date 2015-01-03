@@ -8,14 +8,13 @@ StartProgress = false;
 if(!isDedicated) then { X_Client = true;};
 enableSaving[false,false];
 
-life_versionInfo = "Altis Life RPG v3.1.5";
-[] execVM "KRON_Strings.sqf";
+life_versionInfo = "Altis Life RPG fondé par Tonic et developper par Shems.";
+[] execVM "library.sqf";
 [] execVM "scripts\antiCheat.sqf";
 [] execVM "scripts\antiCheat2.sqf";
 [] execVM "scripts\statusBar.sqf";
 [] execVM "scripts\safezone.sqf";
 [] execVM "scripts\teargas.sqf";
-[] execVM "scripts\init.sqf";
 [] execVM "scripts\IgiLoadinit.sqf";
 
 [] call life_fnc_fastrope;

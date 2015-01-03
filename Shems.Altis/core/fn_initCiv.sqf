@@ -24,27 +24,7 @@ if(life_is_arrested) then
 player addRating 9999999;
 
 [] call life_fnc_zoneCreator;
-[] call life_fnc_gangCash;
-
-if(str(player) in ["admin_1","admin_2"]) then
-{
-	removeUniform player;
-	player addUniform "U_Rangemaster";
-	if ((call life_adminlevel) < 0) exitWith
-	{
-		["NotWhitelisted",FALSE,TRUE] call BIS_fnc_endMission;
-		sleep 35;
-	};
-	[] spawn    
-	{
-		while {true} do
-		{
-			waitUntil {uniform player == "U_Rangemaster"};
-			[[player,"images\administrator.jpg"], "life_fnc_setUniform", true, true] spawn life_fnc_MP;
-			waitUntil {uniform player != "U_Rangemaster"};
-		};
-	};
-};
+[] call life_fnc_handlerHelp;
 
 player setVariable["coplevel", __GETC__(life_coplevel), true];
 player setVariable["medlevel", __GETC__(life_medicLevel), true];

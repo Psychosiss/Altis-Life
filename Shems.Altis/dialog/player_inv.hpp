@@ -87,36 +87,40 @@ class playerSettings
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			text = "$STR_PM_MoneyStats";
 			sizeEx = 0.04;
-			
-			x = 0.11; y = 0.26;
-			w = 0.219; h = 0.04;
+			x = 0.11;
+			y = 0.26;
+			w = 0.219; 
+			h = 0.04;
 		};
 	
 		class itemList : life_RscListBox 
 		{
 			idc = item_list;
 			sizeEx = 0.030;
-			
-			x = 0.62; y = 0.30;
-			w = 0.275; h = 0.3;
+			x = 0.62; 
+			y = 0.30;
+			w = 0.275; 
+			h = 0.3;
 		};
 		
 		class moneyEdit : Life_RscEdit 
 		{
 			idc = 2018;
-			
 			text = "1";
 			sizeEx = 0.030;
-			x = 0.12; y = 0.42;
-			w = 0.18; h = 0.03;
+			x = 0.12; 
+			y = 0.42;
+			w = 0.18; 
+			h = 0.03;
 		};
 		
 		class NearPlayers : Life_RscCombo 
 		{
 			idc = 2022;
-		
-			x = 0.12; y = 0.46;
-			w = 0.18; h = 0.03;
+			x = 0.12; 
+			y = 0.46;
+			w = 0.18; 
+			h = 0.03;
 		};
 		
 		class moneyDrop : Life_RscButtonMenu
@@ -126,8 +130,10 @@ class playerSettings
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			onButtonClick = "[] call life_fnc_giveMoney";
 			sizeEx = 0.025;
-			x = 0.135; y = 0.50;
-			w = 0.13; h = 0.036;
+			x = 0.135; 
+			y = 0.50;
+			w = 0.13;
+			h = 0.036;
 		};
 		
 		class itemEdit : Life_RscEdit 
@@ -135,15 +141,18 @@ class playerSettings
 			idc = item_edit;
 			text = "1";
 			sizeEx = 0.030;
-			x = 0.62; y = 0.61;
-			w = 0.275; h = 0.03;
+			x = 0.62; 
+			y = 0.61;
+			w = 0.275; 
+			h = 0.03;
 		};
 		class iNearPlayers : Life_RscCombo
 		{
 			idc = 2023;
-			
-			x = 0.62; y = 0.65;
-			w = 0.275; h = 0.03;
+			x = 0.62; 
+			y = 0.65;
+			w = 0.275; 
+			h = 0.03;
 		};
 		
 		class DropButton : life_RscButtonMenu 
@@ -156,7 +165,6 @@ class playerSettings
 			y = 0.70;
 			w = (5.25 / 40);
 			h = (1 / 25);
-			
 		};
 		
 		class UseButton : life_RscButtonMenu 
@@ -164,7 +172,6 @@ class playerSettings
 			text = "$STR_Global_Use";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			onButtonClick = "[] call life_fnc_useItem;";
-			
 			x = 0.62;
 			y = 0.70;
 			w = (5.25 / 40);
@@ -176,7 +183,6 @@ class playerSettings
 			text = "$STR_Global_Remove";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			onButtonClick = "[player,false] spawn life_fnc_dropItemsFloor;";
-
 			x = 0.475;
 			y = 0.70;
 			w = (5.25 / 40);
@@ -233,7 +239,8 @@ class playerSettings
 					text = "";
 					x = 0;
 					y = 0;
-					w = 0.27; h = 0.65;
+					w = 0.27; 
+					h = 0.65;
 				};
 			};
 		};

@@ -17,19 +17,18 @@ SHK_pos_fnc_rotatePosition = compile preprocessfilelinenumbers "\life_server\shk
 
 SHK_pos = 
 {
-  private ["_pos"];
-  _pos = [];
-
-  if (typename _this == "STRING") then 
-  {
-    _pos = [_this] call SHK_pos_getPosMarker;
-  } else {
-    if (typename (_this select 0) == "STRING") then 
+	private ["_pos"];
+	_pos = [];
+	if (typename _this == "STRING") then 
 	{
-      _pos = _this call SHK_pos_getPosMarker;
-    } else {
-      _pos = _this call SHK_pos_getPos;
-    };
-  };
-  _pos
+		_pos = [_this] call SHK_pos_getPosMarker;
+	} else {
+		if (typename (_this select 0) == "STRING") then 
+		{
+			_pos = _this call SHK_pos_getPosMarker;
+		} else {
+			_pos = _this call SHK_pos_getPos;
+		};
+	};
+	_pos
 };

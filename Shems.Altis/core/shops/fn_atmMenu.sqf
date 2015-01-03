@@ -4,7 +4,7 @@ private["_display","_text","_units","_type"];
 
 if(!life_use_atm) exitWith
 {
-	hint "Because you robbed the bank you can't use the ATM for 5 minutes.";
+	hint "Vous devez attendre 5 minutes après avoir pillé la reserve fédérale.";
 };
 
 if(!dialog) then
@@ -19,7 +19,13 @@ _text = _display displayCtrl 2701;
 _units = _display displayCtrl 2703;
 
 lbClear _units;
-_text ctrlSetStructuredText parseText format["<img size='1.7' image='icons\bank.paa'/> $%1<br/><img size='1.6' image='icons\money.paa'/> $%2",[life_atmcash] call life_fnc_numberText,[life_cash] call life_fnc_numberText];
+_text ctrlSetStructuredText parseText format
+["
+	<img size='1.7' image='icons\bank.paa'/> %1 €<br/>
+	<img size='1.6' image='icons\money.paa'/> %2 €"
+	,[life_atmcash] call life_fnc_numberText
+	,[life_cash] call life_fnc_numberText
+];
 
 {
 	if(alive _x) then

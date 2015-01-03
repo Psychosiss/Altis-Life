@@ -154,104 +154,112 @@ Lx_fnc_copyObject =
 				_object enableSimulation false;</t>", _txtType, _posATL call KK_fnc_positionToString, _objType, _spawnType, _dir];
 				};
 			};
-			case 1 : {
-				if (lxIsSimEnable) then {
-				_copiedTxt =  format ["
-_pos = [%1];
-_object = createVehicle [""%2"", _pos, [], 0, ""%3""];
-_object setDir %4;
-_object setPosASL _pos;
-", _posASL call KK_fnc_positionToString, _objType, _spawnType, _dir];
-			_uiTxt = parseText format ["<t size='1.2' align='center' color='#FFFFFF'>%1<br/><br/></t>
-<t size='1' align='left' color='#FFFFFF'>_pos = [%2];<br/>
-_object = createVehicle [""%3"", _pos, [], 0, ""%4""];<br/>
-_object setDir %5;<br/>
-_object setPosASL _pos;</t>", _txtType, _posASL call KK_fnc_positionToString, _objType, _spawnType, _dir];
+			case 1 : 
+			{
+				if (lxIsSimEnable) then 
+				{
+					_copiedTxt =  format ["
+					_pos = [%1];
+					_object = createVehicle [""%2"", _pos, [], 0, ""%3""];
+					_object setDir %4;
+					_object setPosASL _pos;
+					", _posASL call KK_fnc_positionToString, _objType, _spawnType, _dir];
+					_uiTxt = parseText format ["<t size='1.2' align='center' color='#FFFFFF'>%1<br/><br/></t>
+					<t size='1' align='left' color='#FFFFFF'>_pos = [%2];<br/>
+					_object = createVehicle [""%3"", _pos, [], 0, ""%4""];<br/>
+					_object setDir %5;<br/>
+					_object setPosASL _pos;</t>", _txtType, _posASL call KK_fnc_positionToString, _objType, _spawnType, _dir];
 				} else {
-				_copiedTxt =  format ["
-_pos = [%1];
-_object = createVehicle [""%2"", _pos, [], 0, ""%3""];
-_object setDir %4;
-_object setPosASL _pos;
-_object enableSimulation false;
-", _posASL call KK_fnc_positionToString, _objType, _spawnType, _dir];
-			_uiTxt = parseText format ["<t size='1.2' align='center' color='#FFFFFF'>%1<br/><br/></t>
-<t size='1' align='left' color='#FFFFFF'>_pos = [%2];<br/>
-_object = createVehicle [""%3"", _pos, [], 0, ""%4""];<br/>
-_object setDir %5;<br/>
-_object setPosASL _pos;<br/>
-_object enableSimulation false;</t>",_txtType, _posASL call KK_fnc_positionToString, _objType, _spawnType, _dir];
+					_copiedTxt =  format ["
+					_pos = [%1];
+					_object = createVehicle [""%2"", _pos, [], 0, ""%3""];
+					_object setDir %4;
+					_object setPosASL _pos;
+					_object enableSimulation false;
+					", _posASL call KK_fnc_positionToString, _objType, _spawnType, _dir];
+					_uiTxt = parseText format ["<t size='1.2' align='center' color='#FFFFFF'>%1<br/><br/></t>
+					<t size='1' align='left' color='#FFFFFF'>_pos = [%2];<br/>
+					_object = createVehicle [""%3"", _pos, [], 0, ""%4""];<br/>
+					_object setDir %5;<br/>
+					_object setPosASL _pos;<br/>
+					_object enableSimulation false;</t>",_txtType, _posASL call KK_fnc_positionToString, _objType, _spawnType, _dir];
 				};
 			};
-			case 2 : {
-				if (lxIsSimEnable) then {
-				_copiedTxt = format ["
-_pos = [%1];
-_object = createVehicle [""%2"", _pos, [], 0, ""%3""];
-_object setDir %4;
-_object setPosATL _pos;
-[_object, %5, %6] call BIS_fnc_setPitchBank;
-", _posATL call KK_fnc_positionToString, _objType, _spawnType, _dir, _pitch, _bank];
-			_uiTxt = parseText format ["<t size='1.2' align='center' color='#FFFFFF'>%1<br/><br/></t>
-<t size='1' align='left' color='#FFFFFF'>_pos = [%2];<br/>
-_object = createVehicle [""%3"", _pos, [], 0, ""%4""];<br/>
-_object setDir %5;<br/>
-_object setPosATL _pos;<br/>
-[_object, %6, %7] call BIS_fnc_setPitchBank;</t>", _txtType,_posATL call KK_fnc_positionToString, _objType, _spawnType, _dir, _pitch, _bank];
+			case 2 : 
+			{
+				if (lxIsSimEnable) then 
+				{
+				_copiedTxt = format 
+				["
+					_pos = [%1];
+					_object = createVehicle [""%2"", _pos, [], 0, ""%3""];
+					_object setDir %4;
+					_object setPosATL _pos;
+					[_object, %5, %6] call BIS_fnc_setPitchBank;
+					", _posATL call KK_fnc_positionToString, _objType, _spawnType, _dir, _pitch, _bank];
+					_uiTxt = parseText format ["<t size='1.2' align='center' color='#FFFFFF'>%1<br/><br/></t>
+					<t size='1' align='left' color='#FFFFFF'>_pos = [%2];<br/>
+					_object = createVehicle [""%3"", _pos, [], 0, ""%4""];<br/>
+					_object setDir %5;<br/>
+					_object setPosATL _pos;<br/>
+					[_object, %6, %7] call BIS_fnc_setPitchBank;</t>", _txtType,_posATL call KK_fnc_positionToString, _objType, _spawnType, _dir, _pitch, _bank];
 				} else {
-				_copiedTxt = format ["
-_pos = [%1];
-_object = createVehicle [""%2"", _pos, [], 0, ""%3""];
-_object setDir %4;
-_object setPosATL _pos;
-[_object, %5, %6] call BIS_fnc_setPitchBank;
-_object enableSimulation false;
-", _posATL call KK_fnc_positionToString, _objType, _spawnType, _dir, _pitch, _bank];
-			_uiTxt = parseText format ["<t size='1.2' align='center' color='#FFFFFF'>%1<br/><br/></t>
-<t size='1' align='left' color='#FFFFFF'>_pos = [%2];<br/>
-_object = createVehicle [""%3"", _pos, [], 0, ""%4""];<br/>
-_object setDir %5;<br/>
-_object setPosATL _pos;<br/>
-[_object, %6, %7] call BIS_fnc_setPitchBank;<br/>
-_object enableSimulation false;</t>", _txtType,_posATL call KK_fnc_positionToString, _objType, _spawnType, _dir, _pitch, _bank];
+					_copiedTxt = format ["
+					_pos = [%1];
+					_object = createVehicle [""%2"", _pos, [], 0, ""%3""];
+					_object setDir %4;
+					_object setPosATL _pos;
+					[_object, %5, %6] call BIS_fnc_setPitchBank;
+					_object enableSimulation false;
+					", _posATL call KK_fnc_positionToString, _objType, _spawnType, _dir, _pitch, _bank];
+					_uiTxt = parseText format ["<t size='1.2' align='center' color='#FFFFFF'>%1<br/><br/></t>
+					<t size='1' align='left' color='#FFFFFF'>_pos = [%2];<br/>
+					_object = createVehicle [""%3"", _pos, [], 0, ""%4""];<br/>
+					_object setDir %5;<br/>
+					_object setPosATL _pos;<br/>
+					[_object, %6, %7] call BIS_fnc_setPitchBank;<br/>
+					_object enableSimulation false;</t>", _txtType,_posATL call KK_fnc_positionToString, _objType, _spawnType, _dir, _pitch, _bank];
 				};
 			};
-			case 3 : {
-				if (lxIsSimEnable) then {
-				_copiedTxt = format ["
-_pos = [%1];
-_object = createVehicle [""%2"", _pos, [], 0, ""%3""];
-_object setDir %4;
-_object setPosASL _pos;
-[_object, %5, %6] call BIS_fnc_setPitchBank;
-", _posASL call KK_fnc_positionToString, _objType, _spawnType, _dir, _pitch, _bank];
-			_uiTxt = parseText format ["<t size='1.2' align='center' color='#FFFFFF'>%1<br/><br/></t>
-<t size='1' align='left' color='#FFFFFF'>_pos = [%2];<br/>
-_object = createVehicle [""%3"", _pos, [], 0, ""%4""];<br/>
-_object setDir %5;<br/>
-_object setPosASL _pos;<br/>
-[_object, %6, %7] call BIS_fnc_setPitchBank;</t>", _txtType, _posASL call KK_fnc_positionToString, _objType, _spawnType, _dir, _pitch, _bank];
+			case 3 : 
+			{
+				if (lxIsSimEnable) then 
+				{
+					_copiedTxt = format ["
+					_pos = [%1];
+					_object = createVehicle [""%2"", _pos, [], 0, ""%3""];
+					_object setDir %4;
+					_object setPosASL _pos;
+					[_object, %5, %6] call BIS_fnc_setPitchBank;
+					", _posASL call KK_fnc_positionToString, _objType, _spawnType, _dir, _pitch, _bank];
+					_uiTxt = parseText format ["<t size='1.2' align='center' color='#FFFFFF'>%1<br/><br/></t>
+					<t size='1' align='left' color='#FFFFFF'>_pos = [%2];<br/>
+					_object = createVehicle [""%3"", _pos, [], 0, ""%4""];<br/>
+					_object setDir %5;<br/>
+					_object setPosASL _pos;<br/>
+					[_object, %6, %7] call BIS_fnc_setPitchBank;</t>", _txtType, _posASL call KK_fnc_positionToString, _objType, _spawnType, _dir, _pitch, _bank];
 				} else {
-				_copiedTxt = format ["
-_pos = [%1];
-_object = createVehicle [""%2"", _pos, [], 0, ""%3""];
-_object setDir %4;
-_object setPosASL _pos;
-[_object, %5, %6] call BIS_fnc_setPitchBank;
-_object enableSimulation false;
-", _posASL call KK_fnc_positionToString, _objType, _spawnType, _dir, _pitch, _bank];
-			_uiTxt = parseText format ["<t size='1.2' align='center' color='#FFFFFF'>%1<br/><br/></t>
-<t size='1' align='left' color='#FFFFFF'>_pos = [%2];<br/>
-_object = createVehicle [""%3"", _pos, [], 0, ""%4""];<br/>
-_object setDir %5;<br/>
-_object setPosASL _pos;<br/>
-[_object, %6, %7] call BIS_fnc_setPitchBank;<br/>
-_object enableSimulation false;</t>", _txtType, _posASL call KK_fnc_positionToString, _objType, _spawnType, _dir, _pitch, _bank];
+					_copiedTxt = format ["
+					_pos = [%1];
+					_object = createVehicle [""%2"", _pos, [], 0, ""%3""];
+					_object setDir %4;
+					_object setPosASL _pos;
+					[_object, %5, %6] call BIS_fnc_setPitchBank;
+					_object enableSimulation false;
+					", _posASL call KK_fnc_positionToString, _objType, _spawnType, _dir, _pitch, _bank];
+					_uiTxt = parseText format ["<t size='1.2' align='center' color='#FFFFFF'>%1<br/><br/></t>
+					<t size='1' align='left' color='#FFFFFF'>_pos = [%2];<br/>
+					_object = createVehicle [""%3"", _pos, [], 0, ""%4""];<br/>
+					_object setDir %5;<br/>
+					_object setPosASL _pos;<br/>
+					[_object, %6, %7] call BIS_fnc_setPitchBank;<br/>
+					_object enableSimulation false;</t>", _txtType, _posASL call KK_fnc_positionToString, _objType, _spawnType, _dir, _pitch, _bank];
 				};
 			};
 		};
 
-		if (_type == 0) then {
+		if (_type == 0) then 
+		{
 			copyToClipboard _copiedTxt;
 		} else {
  			diag_log _copiedTxt;
@@ -260,7 +268,7 @@ _object enableSimulation false;</t>", _txtType, _posASL call KK_fnc_positionToSt
 		(_dlg displayCtrl 24358) ctrlSetStructuredText _uiTxt;
 	} else {
 		(_dlg displayCtrl 24351) ctrlSetStructuredText parseText "
-<t color='#FFFFFF' align = 'center' shadow = '1' shadowColor='#312f0d' size = '1.8' font='PuristaSemibold'>No lock</t>";
+		<t color='#FFFFFF' align = 'center' shadow = '1' shadowColor='#312f0d' size = '1.8' font='PuristaSemibold'>No lock</t>";
 		(_dlg displayCtrl 24358) ctrlSetStructuredText parseText "<t size='1.2' align='center' color='#FFFFFF'>Can't copy object</t>";
 
 	};
@@ -446,13 +454,13 @@ Lx_fnc_lockObject =
 	} else {
 		lxObj = objNull;
 		(_dlg displayCtrl 24351) ctrlSetStructuredText parseText "
-<t color='#FFFFFF' align = 'center' shadow = '1' shadowColor='#312f0d' size = '1.8' font='PuristaSemibold'>No lock</t>";
+		<t color='#FFFFFF' align = 'center' shadow = '1' shadowColor='#312f0d' size = '1.8' font='PuristaSemibold'>No lock</t>";
 	};
 
 	if (!isNull lxObj) then 
 	{
 		(_dlg displayCtrl 24351) ctrlSetStructuredText parseText format ["
-<t color='#FFFFFF' align = 'center' shadow = '1' shadowColor='#312f0d' size = '1.8' font='PuristaSemibold'>Object locked : %1</t>", typeOf lxObj];
+		<t color='#FFFFFF' align = 'center' shadow = '1' shadowColor='#312f0d' size = '1.8' font='PuristaSemibold'>Object locked : %1</t>", typeOf lxObj];
 		(_dlg displayCtrl 24358) ctrlSetStructuredText parseText "";
 		_idx = lxCurrObjList find (typeOf lxObj);
 		if (_idx != -1) then 
@@ -586,7 +594,7 @@ Lx_fnc_translateObject =
 	} else {
 		_dlg = findDisplay 24350;
 		(_dlg displayCtrl 24351) ctrlSetStructuredText parseText "
-<t color='#FFFFFF' align = 'center' shadow = '1' shadowColor='#312f0d' size = '1.8' font='PuristaSemibold'>No lock</t>";
+		<t color='#FFFFFF' align = 'center' shadow = '1' shadowColor='#312f0d' size = '1.8' font='PuristaSemibold'>No lock</t>";
 		(_dlg displayCtrl 24358) ctrlSetStructuredText parseText "<t size='1.2' align='center' color='#FFFFFF'>Can't translate object</t>";
 
 	};
@@ -657,7 +665,6 @@ Lx_fnc_rotateObject =
 				_bank = _bank + _inc;
 			};
 		};
-
 		deleteVehicle lxObj;
 		_building = createVehicle [_type, _pos, [], 0, "CAN_COLLIDE"];
 		_building setDir _dir;
@@ -675,23 +682,30 @@ Lx_fnc_rotateObject =
 	} else {
 		_dlg = findDisplay 24350;
 		(_dlg displayCtrl 24351) ctrlSetStructuredText parseText "
-			<t color='#FFFFFF' align = 'center' shadow = '1' shadowColor='#312f0d' size = '1.8' font='PuristaSemibold'>No lock</t>";
+		<t color='#FFFFFF' align = 'center' shadow = '1' shadowColor='#312f0d' size = '1.8' font='PuristaSemibold'>No lock</t>";
 		(_dlg displayCtrl 24358) ctrlSetStructuredText parseText "<t size='1.2' align='center' color='#FFFFFF'>Can't rotate object</t>";
 	};
 };
 
-lxFilterObject = {
+lxFilterObject = 
+{
 	_idx = 0;
 	_objects = [];
 	_index = lbCurSel 24354;
-	switch _index do {
-		case 0 : {
-			for "_i" from 0 to (count (configFile >> "CfgVehicles") - 1) do {
+	switch _index do 
+	{
+		case 0 : 
+		{
+			for "_i" from 0 to (count (configFile >> "CfgVehicles") - 1) do 
+			{
 				_objCfg = (configFile >> "CfgVehicles") select _i;
-				if (isClass(_objCfg)) then {
-					if (getNumber (_objCfg >> "scope") > 0) then {
+				if (isClass(_objCfg)) then 
+				{
+					if (getNumber (_objCfg >> "scope") > 0) then 
+					{
 						_className = configName (_objCfg);
-						if (_className isKindOf "Building") then {
+						if (_className isKindOf "Building") then 
+						{
 							_objects set [_idx, _className];
 							_idx = _idx + 1;
 						};
@@ -699,14 +713,19 @@ lxFilterObject = {
 				};
 			};
 		};
-		case 1 : {
+		case 1 : 
+		{
 
-			for "_i" from 0 to (count (configFile >> "CfgVehicles") - 1) do {
+			for "_i" from 0 to (count (configFile >> "CfgVehicles") - 1) do 
+			{
 				_objCfg = (configFile >> "CfgVehicles") select _i;
-				if (isClass(_objCfg)) then {
-					if (getNumber (_objCfg >> "scope") > 0) then {
+				if (isClass(_objCfg)) then 
+				{
+					if (getNumber (_objCfg >> "scope") > 0) then 
+					{
 						_className = configName (_objCfg);
-						if (_className isKindOf "Car_F") then {
+						if (_className isKindOf "Car_F") then 
+						{
 							_objects set [_idx, _className];
 							_idx = _idx + 1;
 						};
@@ -714,13 +733,18 @@ lxFilterObject = {
 				};
 			};
 		};
-		case 2 : {
-			for "_i" from 0 to (count (configFile >> "CfgVehicles") - 1) do {
+		case 2 : 
+		{
+			for "_i" from 0 to (count (configFile >> "CfgVehicles") - 1) do 
+			{
 				_objCfg = (configFile >> "CfgVehicles") select _i;
-				if (isClass(_objCfg)) then {
-					if (getNumber (_objCfg >> "scope") > 0) then {
+				if (isClass(_objCfg)) then 
+				{
+					if (getNumber (_objCfg >> "scope") > 0) then 
+					{
 						_className = configName (_objCfg);
-						if (_className isKindOf "Air") then {
+						if (_className isKindOf "Air") then 
+						{
 							_objects set [_idx, _className];
 							_idx = _idx + 1;
 						};
@@ -728,13 +752,18 @@ lxFilterObject = {
 				};
 			};
 		};
-		case 3 : {
-			for "_i" from 0 to (count (configFile >> "CfgVehicles") - 1) do {
+		case 3 : 
+		{
+			for "_i" from 0 to (count (configFile >> "CfgVehicles") - 1) do 
+			{
 				_objCfg = (configFile >> "CfgVehicles") select _i;
-				if (isClass(_objCfg)) then {
-					if (getNumber (_objCfg >> "scope") > 0) then {
+				if (isClass(_objCfg)) then 
+				{
+					if (getNumber (_objCfg >> "scope") > 0) then 
+					{
 						_className = configName (_objCfg);
-						if (_className isKindOf "Ship_F") then {
+						if (_className isKindOf "Ship_F") then 
+						{
 							_objects set [_idx, _className];
 							_idx = _idx + 1;
 						};
@@ -742,11 +771,15 @@ lxFilterObject = {
 				};
 			};
 		};
-		case 4 : {
-			for "_i" from 0 to (count (configFile >> "CfgVehicles") - 1) do {
+		case 4 : 
+		{
+			for "_i" from 0 to (count (configFile >> "CfgVehicles") - 1) do 
+			{
 				_objCfg = (configFile >> "CfgVehicles") select _i;
-				if (isClass(_objCfg)) then {
-					if (getNumber (_objCfg >> "scope") > 0) then {
+				if (isClass(_objCfg)) then 
+				{
+					if (getNumber (_objCfg >> "scope") > 0) then 
+					{
 						_objects set [_idx, configName (_objCfg)];
 						_idx = _idx + 1;
 					};
@@ -766,19 +799,23 @@ lxFilterObject = {
 	(_dlg displayCtrl 24358) ctrlSetStructuredText parseText "<t size='1.2' align='center' color='#FFFFFF'>Object list filtered</t>";
 };
 
-lx_getSubGround = {
+lx_getSubGround = 
+{
 	_camPos = _this select 0;
 	_camDir = _this select 1;
 	_camPitch = _this select 2;
 	_subGroundPos = ASLtoATL _camPos;
-	if (_camPitch < 0) then {
+	if (_camPitch < 0) then 
+	{
 		_r = 1;
 		_subGroundPosT = _subGroundPos;
-		while {_r > 0.01} do {
+		while {_r > 0.01} do 
+		{
 			_subGroundPosT set [0, (_subGroundPos select 0) + _r * sin (_camDir) * cos(_camPitch)];
 			_subGroundPosT set [1, (_subGroundPos select 1) + _r * cos (_camDir) * cos(_camPitch)];
 			_subGroundPosT set [2, (_subGroundPos select 2) + _r * sin(_camPitch)];
-			if (_subGroundPosT select 2 < 0) then {
+			if (_subGroundPosT select 2 < 0) then 
+			{
 				_r = _r / 2;
 			} else {
 				_subGroundPos = _subGroundPosT;
@@ -789,19 +826,23 @@ lx_getSubGround = {
 	_pos
 };
 
-lx_getSurface = {
+lx_getSurface = 
+{
 	_camPos = _this select 0;
 	_camDir = _this select 1;
 	_camPitch = _this select 2;
 	_surfPos = _camPos;
-	if (_camPitch < 0) then {
+	if (_camPitch < 0) then 
+	{
 		_r = 1;
 		_surfPosT = _surfPos;
-		while {_r > 0.01} do {
+		while {_r > 0.01} do 
+		{
 			_surfPosT set [0, (_surfPos select 0) + _r * sin (_camDir) * cos(_camPitch)];
 			_surfPosT set [1, (_surfPos select 1) + _r * cos (_camDir) * cos(_camPitch)];
 			_surfPosT set [2, (_surfPos select 2) + _r * sin(_camPitch)];
-			if (_surfPosT select 2 < 0) then {
+			if (_surfPosT select 2 < 0) then 
+			{
 				_r = _r / 2;
 			} else {
 				_surfPos = _surfPosT;
@@ -811,31 +852,36 @@ lx_getSurface = {
 	_surfPos
 };
 
-lx_setObjSim = {
-
+lx_setObjSim = 
+{
     _idx = lbCurSel 24362;
-    if (_idx == 0) then {
+    if (_idx == 0) then 
+	{
 			lxIsSimEnable = true;
-	  	if (!isNull lxObj) then {
+	  	if (!isNull lxObj) then 
+		{
 	  		lxObj enableSimulation true;
 	  		lxObj setVariable ["lxIsSimEnable", true];
 			(_dlg displayCtrl 24351) ctrlSetStructuredText parseText "
-				<t color='#FFFFFF' align = 'center' shadow = '1' shadowColor='#312f0d' size = '1.8' font='PuristaSemibold'>Object simulation enabled</t>";
+			<t color='#FFFFFF' align = 'center' shadow = '1' shadowColor='#312f0d' size = '1.8' font='PuristaSemibold'>Object simulation enabled</t>";
 	  	};
     };
 
-    if (_idx == 1) then {
+    if (_idx == 1) then 
+	{
     	lxIsSimEnable = false;
-	  	if (!isNull lxObj) then {
+	  	if (!isNull lxObj) then 
+		{
 	  		lxObj enableSimulation false;
 	  		lxObj setVariable ["lxIsSimEnable", false];
 			(_dlg displayCtrl 24351) ctrlSetStructuredText parseText "
-				<t color='#FFFFFF' align = 'center' shadow = '1' shadowColor='#312f0d' size = '1.8' font='PuristaSemibold'>Object simulation disabled</t>";
+			<t color='#FFFFFF' align = 'center' shadow = '1' shadowColor='#312f0d' size = '1.8' font='PuristaSemibold'>Object simulation disabled</t>";
 	  	};
   	};
 };
 
-Lx_fnc_floatToString = {
+Lx_fnc_floatToString = 
+{
 	private "_arr";
 	_arr = toArray str (_this % 1);
 	_arr set [0, 'x'];
@@ -843,8 +889,10 @@ Lx_fnc_floatToString = {
 	toString (toArray str (_this - _this % 1) + _arr)
 };
 
-KK_fnc_positionToString = {
-	{ _this = if (_forEachIndex == 0 and _forEachIndex != 2) then [
+KK_fnc_positionToString = 
+{
+	{ _this = if (_forEachIndex == 0 and _forEachIndex != 2) then 
+	[
 		{_x call Lx_fnc_floatToString},
 		{if (_forEachIndex ==1) then [{_this + "," + (_x call Lx_fnc_floatToString)},{_this + "," + (str _x)}]}];
 	} forEach +_this;
@@ -858,7 +906,6 @@ createDialog "LxObjectPositioningSystem";
 _dlg = findDisplay 24350;
 _ctrl = _dlg displayCtrl 24351;
 _ctrl ctrlSetStructuredText parseText "<t color='#FFFFFF' align = 'center' shadow = '1' shadowColor='#312f0d' size = '1.8' font='PuristaSemibold'>Lx Object Positioning System v1.31</t>";
-
 _ctrl = _dlg displayCtrl 24352;
 {
 	_index = _ctrl lbAdd _x;
@@ -901,15 +948,17 @@ _ctrl = _dlg displayCtrl 24362;
 } forEach ["Enable object sim.","Disable object sim."];
 lbSetCurSel [24362, 0];
 
-
-
 _idx = 0;
-for "_i" from 0 to (count (configFile >> "CfgVehicles") - 1) do {
+for "_i" from 0 to (count (configFile >> "CfgVehicles") - 1) do 
+{
 	_objCfg = (configFile >> "CfgVehicles") select _i;
-	if (isClass(_objCfg)) then {
-		if (getNumber (_objCfg >> "scope") > 0) then {
+	if (isClass(_objCfg)) then 
+	{
+		if (getNumber (_objCfg >> "scope") > 0) then 
+		{
 			_className = configName (_objCfg);
-			if (_className isKindOf "Car_F" or _className isKindOf "Air") then {
+			if (_className isKindOf "Car_F" or _className isKindOf "Air") then 
+			{
 				lxVehList set [_idx, _className];
 				_idx = _idx + 1;
 			};

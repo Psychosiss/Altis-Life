@@ -6,9 +6,8 @@ _return = true;
 
 {
 	if(_x in _valid) then	
-	{}
-	else
 	{
+	} else {
 		_return = false;
 	};
 } foreach _array;

@@ -7,7 +7,8 @@ switch (_side) do
 {
 	case west:
 	{
-		_ret = [
+		_ret = 
+		[
 			["cop_spawn_1","Kavala","icons\police.paa"],
 			["cop_spawn_2","Pyrgos","icons\police.paa"],
 			["cop_spawn_3","Neochori","icons\police.paa"],
@@ -17,7 +18,8 @@ switch (_side) do
 	
 	case civilian:
 	{
-		_ret = [
+		_ret = 
+		[
 			["civ_spawn_1","Kavala","icons\spawn.paa"],
 			["civ_spawn_2","Pyrgos","icons\spawn.paa"],
 			["civ_spawn_3","Neochori","icons\spawn.paa"],
@@ -26,7 +28,8 @@ switch (_side) do
 
 		if(license_civ_rebel) then 
 		{
-		_ret = [
+		_ret = 
+		[
 				["civ_spawn_10","Kavala","icons\spawn.paa"],
 				["civ_spawn_2","Pyrgos","icons\spawn.paa"],
 				["civ_spawn_3","Neochori","icons\spawn.paa"],
@@ -50,7 +53,8 @@ switch (_side) do
 
 	case independent:
 	{
-		_ret = [
+		_ret = 
+		[
 			["medic_spawn_1","Kavala","icons\health2.paa"],
 			["medic_spawn_3","Pyrgos","icons\health2.paa"]
 		];
@@ -58,7 +62,8 @@ switch (_side) do
 	
 	case east: 
 	{
-        _ret = [
+        _ret = 
+		[
             ["east_spawn","Air","icons\spawn.paa"]
         ];
     };    

@@ -18,13 +18,11 @@ while{true} do
 
 		if(fuel _vehicleToFuel < 0.2 && fuel _vehicleToFuel > 0.18) then
 		{
-			hint "Your gas tank is empty. Hurry to the next gas station!";
-		}
-		else
-		{
+			hint "Votre reservoir est bientot vide, dépéchez-vous de le recharger!";
+		} else {
 			if(fuel _vehicleToFuel < 0.03) then
 			{
-				hint "I hope you can run - because you just ran out of gas!";
+				hint "Vous devez marcher car vous n'avez plus d'essence!";
 			};
 		};
 	};

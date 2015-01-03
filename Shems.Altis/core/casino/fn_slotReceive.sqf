@@ -39,7 +39,6 @@ _grapes = 4;
 _plum = 5;
 _cherry = 6;
 _heart = 7;
-
 _display = findDisplay 88800;
 
 player say3D "slot_spin";

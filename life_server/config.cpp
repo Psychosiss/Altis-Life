@@ -162,7 +162,6 @@ class CfgFunctions
 			class queryPlayerGang {};
 			class removeGang {};
 			class updateGang {};
-			class addGangLocs {};
 		};
 	};
 		

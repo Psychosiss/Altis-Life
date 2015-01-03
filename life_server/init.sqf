@@ -96,7 +96,6 @@ client_session_list = [];
 } foreach allUnits;
 
 [] spawn TON_fnc_initHouses;
-[] spawn TON_fnc_addGangLocs;
 
 [] execVM "\life_server\Functions\Custom\fn_spawnGold.sqf";
 call compile preProcessFileLineNumbers "\life_server\SHK_pos\shk_pos_init.sqf";
@@ -104,6 +103,7 @@ gold_safe setVariable["gold",round(random 50),true];
 [] spawn TON_fnc_goldUpdate;
 
 private["_dome","_rsb"];
+
 _dome = nearestObject [[16019.5,16952.9,0],"Land_Dome_Big_F"];
 _rsb = nearestObject [[16019.5,16952.9,0],"Land_Research_house_V1_F"];
 
@@ -116,4 +116,3 @@ publicVariable "life_server_isReady";
 
 [] call ANTICHEAT_fnc_configureAnticheat;
 [] call SHEMS_fnc_antiHack;
-[] call SHEMS_fnc_clientAntiHack;

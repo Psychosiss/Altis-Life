@@ -3,24 +3,26 @@ _exitScope = false;
 _varName = _this select 0;
 _varValue = _this select 1;
 
-_mode = 	[_varValue,0,[0]] call bis_fnc_param;
-_params = 	[_varValue,1,[]] call bis_fnc_param;
+_mode = [_varValue,0,[0]] call bis_fnc_param;
+_params = [_varValue,1,[]] call bis_fnc_param;
 _functionName =	[_varValue,2,"",[""]] call bis_fnc_param;
-_target =	[_varValue,3,true,[ObjNull,true,0,[],sideUnknown,GrpNull,""]] call bis_fnc_param;
+_target = [_varValue,3,true,[ObjNull,true,0,[],sideUnknown,GrpNull,""]] call bis_fnc_param;
 _isPersistent =	[_varValue,4,false,[false]] call bis_fnc_param;
-_isCall =	[_varValue,5,false,[false]] call bis_fnc_param;
+_isCall = [_varValue,5,false,[false]] call bis_fnc_param;
 _callerName = [_varValue,6,"",[""]] call bis_fnc_param;
 _callerUID = [_varValue,7,"",[""]] call bis_fnc_param;
 
 if(_callerName == "" OR _callerUID == "") exitWith {};
-
-if(_callerUID != "__SERVER__" && _callerName != "__SERVER__" && toLower(_functionName) in ["spy_fnc_cookiejar","spy_fnc_notifyadmins"]) then {
-
-	if(toLower(_functionName) == "spy_fnc_cookiejar") exitWith {
+if(_callerUID != "__SERVER__" && _callerName != "__SERVER__" && toLower(_functionName) in ["spy_fnc_cookiejar","spy_fnc_notifyadmins"]) then 
+{
+	if(toLower(_functionName) == "spy_fnc_cookiejar") exitWith 
+	{
 		private["_reportUID"];
 		_reportUID = _params select 1;
-		if(_reportUID != _callerUID) exitWith {
-			if(isServer && _mode == 0) then {
+		if(_reportUID != _callerUID) exitWith 
+		{
+			if(isServer && _mode == 0) then 
+			{
 				[_callerName,_callerUID,"false_reports_to_spyglass"] call SPY_fnc_cookieJar;
 				[[_callerName,"False reporting to SpyGlass (cheater)"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
 			};
@@ -30,8 +32,10 @@ if(_callerUID != "__SERVER__" && _callerName != "__SERVER__" && toLower(_functio
 
 	private["_reportName"];
 	_reportName = _params select 0;
-	if(_callerName != _reportName) exitWith {
-		if(isServer && _mode == 0) then {
+	if(_callerName != _reportName) exitWith 
+	{
+		if(isServer && _mode == 0) then 
+		{
 			[_callerName,_callerUID,"false_reports_to_spyglass"] call SPY_fnc_cookieJar;
 			[[_callerName,"False reporting to SpyGlass (cheater)"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
 		};
@@ -42,58 +46,67 @@ if(_callerUID != "__SERVER__" && _callerName != "__SERVER__" && toLower(_functio
 if(toLower(_functionName) == "bis_fnc_endmission") exitWith {false};
 
 if(_exitScope) exitWith {false};
-if (ismultiplayer && _mode == 0) then {
-	if (isserver) then {
-		if (typename _target == typename []) then {
-
+if (isMultiplayer && _mode == 0) then 
+{
+	if (isServer) then 
+	{
+		if (typename _target == typename []) then 
+		{
 			{
 				[_varName,[_mode,_params,_functionName,_x,_isPersistent,_isCall,_callerName,_callerUID]] call life_fnc_MPexec;
 			} foreach _target;
 		} else {
-
 			private ["_ownerID","_serverID"];
 			_serverID = owner (missionnamespace getvariable ["bis_functions_mainscope",objnull]);
-
-			switch (typename _target) do {
-				case (typename objnull): {
+			switch (typename _target) do 
+			{
+				case (typename objnull): 
+				{
 					_ownerID = owner _target;
 				};
-				case (typename true): {
+				case (typename true): 
+				{
 					_ownerID = [_serverID,-1] select _target;
 				};
-				case (typename 0): {
+				case (typename 0): 
+				{
 					_ownerID = _target;
 				};
 				case (typename grpnull);
-				case (typename sideUnknown): {
+				case (typename sideUnknown): 
+				{
 					_ownerID = -1;
 				};
-				case (typeName ""): {
+				case (typeName ""): 
+				{
 					_ownerID = -1;
 				};
 			};
 			life_fnc_MP_packet = [1,_params,_functionName,_target,_isPersistent,_isCall,"__SERVER__","__SERVER__"];
-
-			if (_ownerID < 0) then {
-
+			if (_ownerID < 0) then 
+			{
 				publicvariable "life_fnc_MP_packet";
 			} else {
-				if (_ownerID != _serverID) then {
-
+				if (_ownerID != _serverID) then 
+				{
 					_ownerID publicvariableclient "life_fnc_MP_packet";
 				};
 			};
 
-			if (_ownerID < 0 || _ownerID == _serverID) then {
+			if (_ownerID < 0 || _ownerID == _serverID) then 
+			{
 				["life_fnc_MP_packet",life_fnc_MP_packet] spawn life_fnc_MPexec;
 			};
 
-			if (_isPersistent) then {
-				if (typename _target != typename 0) then {
+			if (_isPersistent) then 
+			{
+				if (typename _target != typename 0) then 
+				{
 					private ["_logic","_queue"];
 					_logic = missionnamespace getvariable ["bis_functions_mainscope",objnull];
 					_queue = _logic getvariable ["BIS_fnc_MP_queue",[]];
-					_queue set [
+					_queue set 
+					[
 						count _queue,
 						+life_fnc_MP_packet
 					];
@@ -104,21 +117,23 @@ if (ismultiplayer && _mode == 0) then {
 			};
 		};
 	};
-
 } else {
-
 	private ["_canExecute"];
-	_canExecute = switch (typename _target) do {
+	_canExecute = switch (typename _target) do 
+	{
 		case (typename grpnull): {player in units _target};
 		case (typename sideUnknown): {playerside == _target;};
 		case (typeName ""): {if(!isNull player) then {getPlayerUID player == _target;} else {false}};
 		default {true};
 	};
 
-	if (_canExecute) then {
+	if (_canExecute) then 
+	{
 		_function = missionnamespace getvariable _functionName;
-		if (!isnil "_function") then {
-			if (_isCall) then {
+		if (!isnil "_function") then 
+		{
+			if (_isCall) then 
+			{
 				_params call _function;
 			} else {
 				_params spawn _function;

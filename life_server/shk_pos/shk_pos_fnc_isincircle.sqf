@@ -1,7 +1,6 @@
 private ["_pos","_area","_posX","_posY"];
 _pos = _this select 0;
 _area = _this select 1;
-
 _posX = _pos select 0;
 _posY = _pos select 1;
 
@@ -21,8 +20,9 @@ _difY = _posY - _centerY;
 private ["_return"];
 _return = false;
 
-if (sqrt((_difX * _difX) + (_difY * _difY)) < _size) then {
-  _return = true;
+if (sqrt((_difX * _difX) + (_difY * _difY)) < _size) then 
+{
+	_return = true;
 };
 
 _return

@@ -92,12 +92,26 @@
 		<Key ID="STR_ATM_Transfer">
 			<Original>Transférer</Original>
 		</Key>
+		
+		
+		
+		
+		
+		
+		
+		
 		<Key ID="STR_ATM_GreaterThan">
-			<Original>Vous ne pouvez pas déposer plus de 1.000.000 $ à la fois.</Original>
+			<Original>Vous ne pouvez pas déposer plus de 1.000.000 € à la fois.</Original>
 		</Key>
 		<Key ID="STR_ATM_notnumeric">
 			<Original>La quantité saisie n'est pas une valeur numérique.</Original>
 		</Key>
+		
+		
+		
+		
+		
+		
 	</Package>
 	<Package name="Smartphone">
 		<Key ID="STR_PM_Smartphone">
@@ -223,10 +237,18 @@
 		<Key ID="STR_Garage_CashError">
 			<Original>Vous n'avez pas $%1 sur votre compte bancaire pour payé les frais.</Original>
 		</Key>
+
+
+
+
+
 		<Key ID="STR_Garage_SpawningVeh">
 			<Original>Livraison du vehicule, merci de patienter un moment...</Original>
 		</Key>
-		
+
+
+
+
 		<Key ID="STR_Garage_SQLError_Destroyed">
 			<Original>Désolé mais %1 a été classé comme un véhicule détruit et a été envoyé à la fourrière.</Original>
 		</Key>
@@ -506,9 +528,6 @@
 		</Key>
 		<Key ID="STR_NOTF_HasImpounded">
 			<Original>%1 a mis en fourrière %2's %3</Original>
-		</Key>
-		<Key ID="STR_NOTF_AbortESC">
-			<Original>Attendez %1</Original>
 		</Key>
 		<Key ID="STR_NOTF_DeviceIsMining">
 			<Original>Ce véhicule est déjà exploitation minière</Original>

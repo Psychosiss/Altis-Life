@@ -45,7 +45,13 @@ _near_units = [];
 	};
 } foreach _near_units;
 
-_mstatus ctrlSetStructuredText parseText format ["<img size='1.3' image='icons\bank.paa'/> <t size='0.8px'>$%1</t><br/><img size='1.2' image='icons\money.paa'/> <t size='0.8'>$%2</t>",[life_atmcash] call life_fnc_numberText,[life_cash] call life_fnc_numberText];
+_mstatus ctrlSetStructuredText parseText format 
+[
+	"<img size='1.3' image='icons\bank.paa'/> <t size='0.8px'>%1 €</t><br/>
+	<img size='1.2' image='icons\money.paa'/> <t size='0.8'>%2 €</t>"
+	,[life_atmcash] call life_fnc_numberText
+	,[life_cash] call life_fnc_numberText
+];
 
 ctrlSetText[2016,format["Menu | ID: %1", getPlayerUID player]];
 ctrlSetText[2009,format["%1 / %2", life_carryWeight, life_maxWeight]];

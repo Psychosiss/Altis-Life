@@ -1,10 +1,8 @@
 private["_obj","_unit","_item","_value"];
 _unit = _this select 0;
-
 {
 	_item = _x;
 	_value = missionNamespace getVariable _item;
-	
 	switch(_item) do
 	{
 		case "life_inv_water":
@@ -15,7 +13,6 @@ _unit = _this select 0;
 				_pos = _unit modelToWorld[0,3,0];
 				_pos = [_pos select 0, _pos select 1, 0];
 				_obj = "Land_BottlePlastic_V1_F" createVehicle _pos;
-				//_obj setVariable["water",_value,true];
 				[[_obj],"life_fnc_simDisable",nil,true] spawn life_fnc_MP;
 				_obj setPos _pos;
 				_obj setVariable["item",[_var,_value],true];

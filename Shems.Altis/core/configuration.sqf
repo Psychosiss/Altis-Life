@@ -47,8 +47,6 @@ life_used_drug = [0,0,0,0];
 life_addiction = [0,0,0,0];
 life_last_tracked = [0,0,0];
 life_animals_array = [];
-life_battleye_guid = "";
-life_battleye_ip = "";
 
 __CONST__(life_revive_cops,TRUE);
 __CONST__(life_revive_fee,1250);

@@ -7,7 +7,8 @@ if(life_interrupted) exitWith {life_interrupted = false;};
 _isWater = surfaceIsWater (getPosASL player);
 if(isNull _curTarget) exitWith 
 {
-	if(_isWater) then {
+	if(_isWater) then 
+	{
 		private["_fish"];
 		_fish = (nearestObjects[getPos player,["Fish_Base_F"],3]) select 0;
 		if(!isNil "_fish") then 
@@ -25,15 +26,15 @@ if(dialog) exitWith {};
 if(vehicle player != player) exitWith {};
 life_action_inUse = true;
 
-[] spawn {
+[] spawn 
+{
 	sleep 60;
 	life_action_inUse = false;
 };
 
 if(_curTarget isKindOf "Man" && {!alive _curTarget} && {playerSide in [west,independent]}) exitWith 
 {
-
-	if(((playerSide == blufor && {(call life_revive_cops)}) || playerSide == independent) && {"Medikit" in (items player)}) then 
+	if(((playerSide == west && {(call life_revive_cops)}) || playerSide == independent) && {"Medikit" in (items player)}) then 
 	{
 		[_curTarget] call life_fnc_revivePlayer;
 	};
@@ -45,7 +46,7 @@ if(isPlayer _curTarget && _curTarget isKindOf "Man") then
 	{
 		[_curTarget] call life_fnc_copInteractionMenu;
 	};
-	
+
 	if((_curTarget getVariable["restrained",false]) && !dialog && playerSide == civilian) then 
 	{
         [_curTarget] call life_fnc_civInteractionMenu;
@@ -57,8 +58,10 @@ if(isPlayer _curTarget && _curTarget isKindOf "Man") then
 	_animalTypes = ["Salema_F","Ornate_random_F","Mackerel_F","Tuna_F","Mullet_F","CatShark_F","Turtle_F"];
 	_money = "Land_Money_F";
 
-	if(_isVehicle) then {
-		if(!dialog) then {
+	if(_isVehicle) then 
+	{
+		if(!dialog) then 
+		{
 			if(player distance _curTarget < ((boundingBox _curTarget select 1) select 0) + 2) then 
 			{
 				[_curTarget] call life_fnc_vInteractionMenu;

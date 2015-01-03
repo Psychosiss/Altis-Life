@@ -10,8 +10,8 @@ _result = [];
 {
 	if (typeName _x == typeName []) then
 	{
-		_needle 	= _x select 0;
-		_flags		= _x select 2;
+		_needle = _x select 0;
+		_flags = _x select 2;
 
 		if (_needle == "") then
 		{

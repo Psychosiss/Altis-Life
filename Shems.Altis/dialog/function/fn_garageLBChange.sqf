@@ -16,16 +16,17 @@ _sellPrice = [_className,__GETC__(life_garage_sell)] call fnc_index;
 _retrievePrice = if(_retrievePrice == -1) then {1000} else {(__GETC__(life_garage_prices) select _retrievePrice) select 1;};
 _sellPrice = if(_sellPrice == -1) then {1000} else {(__GETC__(life_garage_sell) select _sellPrice) select 1;};
 
-(getControl(2800,2803)) ctrlSetStructuredText parseText format["
-	Prix de sortie: <t color='#8cff9b'>$%1</t><br/>
-	Prix de vente: <t color='#8cff9b'>$%2</t><br/>
+(getControl(2800,2803)) ctrlSetStructuredText parseText format
+["
+	Prix de sortie: <t color='#8cff9b'>%1 €</t><br/>
+	Prix de vente: <t color='#8cff9b'>%2 €</t><br/>
 	Couleur: %8<br/>
 	Vitesse max: %3 km/h<br/>
 	Chevaux: %4<br/>
 	Places: %5<br/>
 	Place inventaire: %6<br/>
 	Place essence: %7
-	",
+",
 [_retrievePrice] call life_fnc_numberText,
 [_sellPrice] call life_fnc_numberText,
 _vehicleInfo select 8,

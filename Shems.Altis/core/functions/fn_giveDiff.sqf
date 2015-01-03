@@ -14,9 +14,7 @@ if(_bool) then
 	{
 		hint format["You tried to give %1 %2 %3 but they couldn't hold that so it was returned.",_from getVariable["realname",name _from],_val,_type];
 	};
-}
-	else
-{
+} else {
 	if(([true,_item,(parseNumber _val)] call life_fnc_handleInv)) then
 	{
 		hint format["%1 returned %2 %3 because they couldn't hold that amoumt.",_from getVariable["realname",name _from],_val,_type];

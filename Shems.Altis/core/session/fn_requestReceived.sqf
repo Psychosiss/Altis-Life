@@ -20,7 +20,7 @@ if((getPlayerUID player) != _this select 0) exitWith {[] call SOCK_fnc_dataQuery
 life_cash = parseNumber (_this select 2);
 life_atmcash = parseNumber (_this select 3);
 __CONST__(life_adminlevel,parseNumber(_this select 4));
-__CONST__(life_donator,0);
+__CONST__(life_donator,parseNumber(_this select 5));
 
 if(count (_this select 6) > 0) then 
 {
@@ -49,12 +49,13 @@ switch(playerSide) do
 		__CONST__(life_medicLevel,0);
 		__CONST__(life_eastlevel,0);
 		[] spawn life_fnc_civLoadGear;
-		life_houses = _this select 12;
+		life_houses = _this select 9;
 		{
 			_house = nearestBuilding (call compile format["%1", _x select 0]);
-			life_vehicles pushBack _house;
+			life_vehicles set[count life_vehicles,_house];
 		} foreach life_houses;
-		life_gangData = _this select 13;
+		
+		life_gangData = _This select 10;
 		if(count life_gangData != 0) then 
 		{
 			[] spawn life_fnc_initGang;

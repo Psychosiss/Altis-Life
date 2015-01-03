@@ -17,7 +17,8 @@ for "_i" from 0 to (count aniChatEvents_chatChannelNames)-1 do
 	aniChatEvents_chatChannelNames set [_i, [_chName, localize format ["str_channel_%1", _chName]]];
 };
 
-(compile preprocessFileLineNumbers (aniChatEvents_rootDir+"\handleQueue.sqf")) spawn {
+(compile preprocessFileLineNumbers (aniChatEvents_rootDir+"\handleQueue.sqf")) spawn 
+{
 	private ["_this", "_idd", "_ctrl"];
 	disableSerialization;
 	_idd = displayNull;

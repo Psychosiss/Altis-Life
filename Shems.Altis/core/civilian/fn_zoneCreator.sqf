@@ -1,4 +1,4 @@
-private["_appleZones","_peachZones","_heroinZones","_cocaineZones","_weedZones","_methZones","_tabacZones","_yeastZones","_ryeZones","_hopsZones"];
+private["_appleZones","_peachZones","_heroinZones","_cocaineZones","_weedZones","_methZones","_tabacZones","_uraniumZones"];
 _appleZones = ["apple_1","apple_4","apple_9"];
 _peachZones = ["peaches_2","peaches_3","peaches_9"];
 _heroinZones = ["heroin_1"];

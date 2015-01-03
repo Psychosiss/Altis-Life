@@ -10,7 +10,8 @@ _patches = [];
 for "_i" from 0 to count (_cfg)-1 do 
 {
 	_sel = _cfg select _i;
-	if (isClass _sel) then {
+	if (isClass _sel) then 
+	{
 		_name = configName _sel;
 		_patches set [count _patches,_name];
 	};
@@ -18,7 +19,7 @@ for "_i" from 0 to count (_cfg)-1 do
 
 if ("DevCon" in _patches) then 
 {
-	[[format ["%1 is using DevCon.", name player], player], "life_fnc_displayHint", nil, false] spawn BIS_fnc_MP;
+	[[format ["%1 utilise l'addon DevCon.", name player], player], "life_fnc_displayHint", nil, false] spawn BIS_fnc_MP;
 	disableUserInput true;
 };
 
@@ -27,7 +28,7 @@ if ("DevCon" in _patches) then
 	while {true} do 
 	{
 		waitUntil {sleep 5; !isNull (findDisplay 3030)};
-		[[format["%1 is using a menu based cheat, please report him.",name player],player],"life_fnc_displayHint",nil,false] spawn BIS_fnc_MP;
+		[[format["%1 utilise un menu cheat, reportez-le.",name player],player],"life_fnc_displayHint",nil,false] spawn BIS_fnc_MP;
 		TAW_PVAR_cheater = [format["***ANTI-HACK***: %1:%2:%3",name player,getPlayerUID player,"MenuBasedHack_DISPLAY_3030"],player];
 		publicVariableServer "TAW_PVAR_cheater";
 		[[format["***ANTI-HACK***: %1:%2:%3",name player,getPlayerUID player,"MenuBasedHack_DISPLAY_3030"],player],"fnc_log_ac",false,false] spawn BIS_fnc_MP;
@@ -40,7 +41,7 @@ if ("DevCon" in _patches) then
 	while {true} do 
 	{
 		waitUntil {sleep 5; !isNull ((findDisplay 64) displayCtrl 101)};
-		[[format["%1 is using a menu based cheat, please report him.",name player],player],"life_fnc_displayHint",nil,false] spawn BIS_fnc_MP;
+		[[format["%1 utilise un menu cheat, reportez-le.",name player],player],"life_fnc_displayHint",nil,false] spawn BIS_fnc_MP;
 		[[format["***ANTI-HACK***: %1:%2:%3",name player,getPlayerUID player,"MenuBasedHack_DISPLAY_64_C_101"],player],"fnc_log_ac",false,false] spawn BIS_fnc_MP;
 		TAW_PVAR_cheater = [format["***ANTI-HACK***: %1:%2:%3",name player,getPlayerUID player,"MenuBasedHack_DISPLAY_64_C_101"],player];
 		publicVariableServer "TAW_PVAR_cheater";
@@ -62,7 +63,7 @@ if ("DevCon" in _patches) then
 	while {true} do 
 	{
 		waitUntil {sleep 5; !isNull (uiNamespace getVariable "RscDisplayRemoteMissions")};
-		[[format["%1 is using a menu based cheat, please report him.",name player],player],"life_fnc_displayHint",nil,false] spawn BIS_fnc_MP;
+		[[format["%1 utilise un menu cheat, reportez-le.",name player],player],"life_fnc_displayHint",nil,false] spawn BIS_fnc_MP;
 		[[format["***ANTI-HACK***: %1:%2:%3",name player,getPlayerUID player,"MenuBasedHack_RscDisplayRemoteMissions"],player],"fnc_log_ac",false,false] spawn BIS_fnc_MP;
 		TAW_PVAR_cheater = [format["***ANTI-HACK***: %1:%2:%3",name player,getPlayerUID player,"MenuBasedHack_RscDisplayRemoteMissions"],player];
 		publicVariableServer "TAW_PVAR_cheater";
@@ -75,8 +76,12 @@ if (life_adminlevel < 1) then
 	[] spawn 
 	{
 		private ["_blacklist","_vehicle"];
-		_blacklist = ["O_APC_Tracked_02_AA_F","O_APC_Tracked_02_cannon_F","O_APC_Wheeled_02_rcws_F","O_MBT_02_arty_F","O_MBT_02_cannon_F","O_Plane_CAS_02_F","I_Plane_Fighter_03_CAS_F","I_Plane_Fighter_03_AA_F","6Rnd_155mm_Mo_AT_mine","6Rnd_155mm_Mo_mine",
-						"B_APC_Tracked_01_AA_F","B_APC_Tracked_01_rcws_F","B_MBT_01_arty_F","B_MBT_01_cannon_F","B_MBT_01_mlrs_F","B_Plane_CAS_01_F","ATMine_Range_Mag","APERSMine_Range_Mag","SLAMDirectionalMine_Wire_Mag"];
+		_blacklist = 
+		[
+			"O_APC_Tracked_02_AA_F","O_APC_Tracked_02_cannon_F","O_APC_Wheeled_02_rcws_F","O_MBT_02_arty_F","O_MBT_02_cannon_F","O_Plane_CAS_02_F",
+			"I_Plane_Fighter_03_AA_F","6Rnd_155mm_Mo_AT_mine","6Rnd_155mm_Mo_mine","B_APC_Tracked_01_AA_F","B_APC_Tracked_01_rcws_F","I_Plane_Fighter_03_CAS_F",
+			"B_MBT_01_arty_F","B_MBT_01_cannon_F","B_MBT_01_mlrs_F","B_Plane_CAS_01_F","ATMine_Range_Mag","APERSMine_Range_Mag","SLAMDirectionalMine_Wire_Mag"
+		];
 		while {true} do 
 		{
 			_vehicle = typeOf (vehicle player);
@@ -109,7 +114,7 @@ if (life_adminlevel < 1) then
 					endMission "Loser";
 				} else {
 					_kick = true;
-					hint "You will be kicked in 5 minutes for being AFK.";
+					hint "Vous avez été kické car vous êtiez absent 5 minutes.";
 				};
 			} else {
 				_kick = false;
@@ -120,11 +125,13 @@ if (life_adminlevel < 1) then
 };
 
 diag_log "::Life Client:: Loading Wolf Pack Hacker Spanker...";
-"AHAH_WP" addPublicVariableEventHandler { [] spawn (_this select 1) };
+"AHAH_WP" addPublicVariableEventHandler 
+{ 
+	[] spawn (_this select 1)
+};
 clientStarted_WP = player;
 publicVariableServer "clientStarted_WP";
-waitUntil { (!isNil {AHAH_WP}) };
+waitUntil {(!isNil {AHAH_WP})};
 diag_log "::Life Client:: Wolf Pack Hacker Spanker Loaded.";
-
-waitUntil { !isNil {life_fnc_injectionDetection} };
+waitUntil {!isNil {life_fnc_injectionDetection}};
 [] call life_fnc_injectionDetection;

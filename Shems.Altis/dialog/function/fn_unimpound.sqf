@@ -16,7 +16,8 @@ _price = [_vehicle,__GETC__(life_garage_prices)] call fnc_index;
 if(_price == -1) then {_price = 1000;} else {_price = (__GETC__(life_garage_prices) select _price) select 1;};
 if(life_atmcash < _price) exitWith {hint format[(localize "STR_Garage_CashError"),[_price] call life_fnc_numberText];};
 
-if(typeName life_garage_sp == "ARRAY") then {
+if(typeName life_garage_sp == "ARRAY") then 
+{
 	[[_vid,_pid,life_garage_sp select 0,_unit,_price,life_garage_sp select 1],"TON_fnc_spawnVehicle",false,false] spawn life_fnc_MP;
 } else {
 	if(life_garage_sp in ["medic_spawn_1","medic_spawn_2","medic_spawn_3"]) then {
@@ -26,6 +27,6 @@ if(typeName life_garage_sp == "ARRAY") then {
 	};
 };
 
-hint localize "STR_Garage_SpawningVeh";
+hint "Livraison du vehicule, merci de patienter un moment...";
 
 life_atmcash = life_atmcash - _price;

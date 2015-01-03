@@ -7,7 +7,8 @@ if(local _unit && !_run) exitWith {};
 if(animationState _unit == "AovrPercMrunSrasWrflDf") exitWith {};
 _velocity = velocity _unit;
 
-if(local _unit) then {
+if(local _unit) then 
+{
 	_v1 = 3.82;
 	_v2 = .4;
 	_dir = direction player;
@@ -17,7 +18,8 @@ if(local _unit) then {
 
 _anim = animationState _unit;
 _unit switchMove "AovrPercMrunSrasWrflDf";
-if(local _unit) then {
+if(local _unit) then 
+{
 	waitUntil{animationState _unit != "AovrPercMrunSrasWrflDf"};
 	_unit switchMove _anim;
 };

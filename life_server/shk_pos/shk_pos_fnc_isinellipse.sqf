@@ -17,15 +17,16 @@ _center  = getMarkerPos _area;
 _centerX = _center select 0;
 _centerY = _center select 1;
 
-if (_dir % 90 != 0) then {
-  private ["_orgX","_orgY","_shiftedX","_shiftedY"];
-  _orgX = _pos select 0;
-  _orgY = _pos select 1;
-  _shiftedX = _orgX - _centerX;
-  _shiftedY = _orgY - _centerY;
-  _pos = [[_shiftedX,_shiftedY],_dir] call SHK_pos_fnc_rotatePosition;
-  _pos set [0,(_pos select 0) + _centerX];
-  _pos set [1,(_pos select 1) + _centerY];
+if (_dir % 90 != 0) then 
+{
+	private ["_orgX","_orgY","_shiftedX","_shiftedY"];
+	_orgX = _pos select 0;
+	_orgY = _pos select 1;
+	_shiftedX = _orgX - _centerX;
+	_shiftedY = _orgY - _centerY;
+	_pos = [[_shiftedX,_shiftedY],_dir] call SHK_pos_fnc_rotatePosition;
+	_pos set [0,(_pos select 0) + _centerX];
+	_pos set [1,(_pos select 1) + _centerY];
 };
 
 private ["_posX","_posY"];
@@ -39,8 +40,9 @@ _dstY = abs(_posY - _centerY);
 private ["_sum"];
 _sum = ((_dstX * _dstX)/(_sizeX * _sizeX)) + ((_dstY * _dstY)/(_sizeY * _sizeY));
 
-if (_sum <= 1) then {
-  _return = true;
+if (_sum <= 1) then 
+{
+	_return = true;
 };
 
 _return

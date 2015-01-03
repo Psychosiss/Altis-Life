@@ -19,9 +19,7 @@ _cfg = if(isNil {_this select 1}) then
 		case (isClass (configFile >> "CfgVehicles" >> _entity)) : {"CfgVehicles";};
 		case (isClass (configFile >> "CfgGlasses" >> _entity)) : {"CfgGlasses";};
 	};
-}
-	else
-{
+} else {
 	_this select 1
 };
 
@@ -57,16 +55,18 @@ switch (_cfg) do
 			_acc_m = getArray(_config >> "WeaponSlotsInfo" >> "MuzzleSlot" >> "compatibleItems");
 			
 			{	private "_thiscfgitem";
-				for "_i" from 0 to (count(_x) - 1) do {
+				for "_i" from 0 to (count(_x) - 1) do 
+				{
 					_thiscfgitem = _x select _i;
-					if (isClass _thiscfgitem) then {
-						if !((configName _thiscfgitem) in _slotclasses) then {
+					if (isClass _thiscfgitem) then 
+					{
+						if !((configName _thiscfgitem) in _slotclasses) then 
+						{
 							_slotclasses set [count _slotclasses, configName _thiscfgitem];
 						};
 					};
 				};
 			} forEach ([_config>>"WeaponSlotsInfo"] call bis_fnc_returnParents);
-
 		};
 		
 		if(isClass (_config >> "ItemInfo")) then
@@ -79,7 +79,6 @@ switch (_cfg) do
 		if(!isNil {_muzzles}) then
 		{
 			private["_tmp"];
-		//	_base = inheritsFrom (configFile >> "CfgWeapons" >> _entity);
 			{
 				if(_x != "this") then
 				{

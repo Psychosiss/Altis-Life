@@ -1,6 +1,3 @@
-/*
-	I am so tired of writing this.
-*/
 private["_vault"];
 _vault = _this select 0;
 if(!(_vault getVariable["safe_open",false])) exitWith {hint "The vault is already locked?"};
@@ -24,7 +21,8 @@ while {true} do
 		player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
 	};
 	sleep 0.26;
-	if(isNull _ui) then {
+	if(isNull _ui) then 
+	{
 		5 cutRsc ["life_progress","PLAIN"];
 		_ui = uiNamespace getVariable "life_progress";
 		_progressBar = _ui displayCtrl 38201;

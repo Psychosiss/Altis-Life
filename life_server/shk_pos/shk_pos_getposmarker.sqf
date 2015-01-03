@@ -20,79 +20,86 @@ for [{_i = 0}, {_i < 1000 && !_exit}, {_i = _i + 1}] do
 	} else {
 	  _pos = _area call SHK_pos_fnc_getPosFromEllipse;
 	};
+	private ["_dst","_veh","_p"];
+	_dst = 200;
+	_veh = "";
+	switch (typename _empty) do 
+	{
+		case (typename objNull): 
+		{ 
+			_veh = typeof _empty 
+		};
 
-  private ["_dst","_veh","_p"];
-  
-  _dst = 200;
-  _veh = "";
-  switch (typename _empty) do 
-  {
-    case (typename objNull): { _veh = typeof _empty };
-    case ("STRING"): { _veh = _empty };
-    case (typename []): {
-      if (count _empty > 0) then 
-	  {
-        _dst = _empty select 0;
-        _veh = _empty select 1;
-        if (typename _veh == typename objNull) then { _veh = typeof _veh };
-      };
-    };
-  };
+		case ("STRING"): 
+		{ 
+			_veh = _empty 
+		};
 
-  _p = _pos findEmptyPosition [0,_dst,_veh];
+		case (typename []): 
+		{
+			if (count _empty > 0) then 
+			{
+				_dst = _empty select 0;
+				_veh = _empty select 1;
+				if (typename _veh == typename objNull) then 
+				{ 
+					_veh = typeof _veh 
+				};
+			};
+		};
+	};
+	_p = _pos findEmptyPosition [0,_dst,_veh];
 
-  if (count _p > 0) then 
-  {
-    _pos = _p;
-  };
+	if (count _p > 0) then 
+	{
+		_pos = _p;
+	};
 
 	if (typeName _water == "SCALAR") then 
 	{
-	  switch _water do 
-	  {
-		case 0: 
+		switch _water do 
 		{
-		  if !(surfaceIsWater _pos) then 
-		  {
-			_exit = true;
-		  };
-		};
+			case 0: 
+			{
+				if !(surfaceIsWater _pos) then 
+				{
+					_exit = true;
+				};
+			};
 		
-		case 1: 
-		{
-		  _exit = true;
-		};
-	  
-		case 2: 
-		{
+			case 1: 
+			{
+				_exit = true;
+			};
 
-		  if (surfaceIsWater _pos) then 
-		  {
-			_exit = true;
-		  };
+			case 2: 
+			{
+				if (surfaceIsWater _pos) then 
+				{
+					_exit = true;
+				};
+			};
 		};
-	  };
 	} else {
-	  if !_water then 
-	  {
-
-		if !(surfaceIsWater _pos) then 
+		if !_water then 
 		{
-		  _exit = true;
+			if !(surfaceIsWater _pos) then 
+			{
+				_exit = true;
+			};
+		} else {
+			_exit = true;
 		};
-	  } else {
-		_exit = true;
-	  };
 	};
 
 	if (count _blist > 0 && _exit) then 
 	{
-	  {
-		if ([_pos,_x] call SHK_pos_fnc_isBlacklisted) exitwith 
 		{
-		  _exit = false;
-		};
-	  } foreach _blist;
+			if ([_pos,_x] call SHK_pos_fnc_isBlacklisted) exitwith 
+			{
+				_exit = false;
+			};
+		} foreach _blist;
 	};
 };
 

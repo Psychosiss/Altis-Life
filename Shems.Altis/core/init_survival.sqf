@@ -6,7 +6,7 @@
 		if(life_hunger < 2) then 
 		{
 			player setDamage 1; 
-			hint "You have starved to death.";
+			hint "Vous êtes mort de faim.";
 	} else {
 		life_hunger = life_hunger - 10;
 		[] call life_fnc_hudUpdate;
@@ -266,12 +266,4 @@
 			};
 		};
 	};
-};	
-
-_illegalmarkers = ["heroin_1","cocaine_1","weed_1","weed_2","meth_1","tabac_1","turtle_2","turtle_1_name_1","turtle_1_name","turtle_1"];
-
-if (playerSide == west) then {{ deleteMarkerLocal _x; } forEach _illegalmarkers;};
-
-_illegalmarkers = ["prison"];
-
-if (playerSide == civilian) then {{ deleteMarkerLocal _x; } forEach _illegalmarkers;};
+};

@@ -25,15 +25,11 @@ if(_bool) then
 			if(_ispack) then
 			{
 				player addItemToBackpack _item;
-			}
-				else
-			{
+			} else {
 				if(_override) then
 				{
 					player addItem _item;
-				}
-					else
-				{
+				} else {
 					if(goggles player != "") then
 					{
 						removeGoggles player;
@@ -81,9 +77,7 @@ if(_bool) then
 					{
 						_isgun = true;
 					};
-				}
-					else
-				{
+				} else {
 					_isgun = true;
 				};
 			};
@@ -94,14 +88,10 @@ if(_bool) then
 				if(_item == "MineDetector") then
 				{
 					player addItem _item;
-				}
-					else
-				{
+				} else {
 					player addWeapon _item;
 				};
-			}
-				else
-			{
+			} else {
 				switch(_details select 5) do
 				{
 					case 0: 
@@ -109,21 +99,15 @@ if(_bool) then
 						if(_ispack) then
 						{
 							player addItemToBackpack _item;
-						}
-							else
-						{
+						} else {
 							if(_override) then
 							{
 								player addItem _item;
-							}
-								else
-							{
+							} else {
 								if(_item in (assignedItems  player)) then 
 								{
 									player addItem _item;
-								} 
-									else 
-								{
+								} else {
 									player addItem _item; 
 									player assignItem _item;
 								};
@@ -135,21 +119,15 @@ if(_bool) then
 						if(_ispack) then
 						{
 							player addItemToBackpack _item;
-						}
-							else
-						{
+						} else {
 							if(_override) then
 							{
 								player addItem _item;
-							}
-								else
-							{
+							} else {
 								if(headGear player == _item) then
 								{
 									player addItem _item;
-								}
-									else
-								{
+								} else {
 									if(headGear player != "") then
 									{
 										removeHeadGear player;
@@ -164,15 +142,11 @@ if(_bool) then
 						if(_ispack) then
 						{
 							player addItemToBackpack _item;
-						}
-							else
-						{
+						} else {
 							if(_override) then
 							{
 								player addItem _item;
-							}
-								else
-							{
+							} else {
 								if(player isKindOf "Civilian") then 
 								{
 									if(uniform player == _item) then 
@@ -204,7 +178,8 @@ if(_bool) then
 									} else {
 										player addUniform _item;
 									};
-									if(!isNil "_items") then {
+									if(!isNil "_items") then 
+									{
 										{player addItemToUniform _x} foreach _items;
 									};
 								};
@@ -216,21 +191,15 @@ if(_bool) then
 						if(_ispack) then 
 						{
 							player addItemToBackpack _item;
-						}
-							else
-						{
+						} else {
 							if(_override) then
 							{
 								player addItem _item;
-							}
-								else
-							{
+							} else {
 								if(vest player == _item) then
 								{
 									player addItem _item;
-								}
-									else
-								{
+								} else {
 									if(vest player != "") then
 									{
 										_items = vestItems player;
@@ -253,9 +222,7 @@ if(_bool) then
 						if(_ispack) then
 						{
 							player addItemToBackpack _item;
-						}
-							else
-						{
+						} else {
 							private["_type"];
 							_type = [_item,201] call life_fnc_accType;
 							if(_ongun) then
@@ -266,41 +233,42 @@ if(_bool) then
 									case 2: { player addSecondaryWeaponItem _item; };
 									case 3: { player addHandgunItem _item; };
 								};
-							}
-								else
-							{
+							} else {
 								if(_override) then
 								{
 									player addItem _item;
-								}
-									else
-								{
+								} else {
 									private["_wepItems","_action","_slotTaken"];
-										_wepItems = switch(_type) do {case 1:{primaryWeaponItems player}; case 2:{secondaryWeaponItems player}; case 3:{handgunItems player}; default {["","",""]};};
-										_slotTaken = false;
-
-										if(_wepItems select 2 != "") then {_slotTaken = true;};
-
-										if(_slotTaken) then {
-											_action = ["Do you want to add this item to your weapon or inventory? If you add it to your weapon your current existing attachment will be lost!","Attachment slot taken!","Weapon","Inventory"] call BIS_fnc_guiMessage;
-											if(_action) then {
-												switch(_type) do {
-													case 1: {player addPrimaryWeaponItem _item;};
-													case 2: {player addSecondaryWeaponItem _item;};
-													case 3: {player addHandgunItem _item;};
-													default {player addItem _item;};
-												};
-											} else {
-												player addItem _item;
-											};
-										} else {
-											switch(_type) do {
+									_wepItems = switch(_type) do {case 1:{primaryWeaponItems player}; case 2:{secondaryWeaponItems player}; case 3:{handgunItems player}; default {["","",""]};};
+									_slotTaken = false;
+									if(_wepItems select 2 != "") then 
+									{
+										_slotTaken = true;
+									};
+									if(_slotTaken) then 
+									{
+										_action = ["Do you want to add this item to your weapon or inventory? If you add it to your weapon your current existing attachment will be lost!","Attachment slot taken!","Weapon","Inventory"] call BIS_fnc_guiMessage;
+										if(_action) then 
+										{
+											switch(_type) do 
+											{
 												case 1: {player addPrimaryWeaponItem _item;};
 												case 2: {player addSecondaryWeaponItem _item;};
 												case 3: {player addHandgunItem _item;};
 												default {player addItem _item;};
 											};
+										} else {
+											player addItem _item;
 										};
+									} else {
+										switch(_type) do 
+										{
+											case 1: {player addPrimaryWeaponItem _item;};
+											case 2: {player addSecondaryWeaponItem _item;};
+											case 3: {player addHandgunItem _item;};
+											default {player addItem _item;};
+										};
+									};
 								};
 							};
 						};
@@ -311,9 +279,7 @@ if(_bool) then
 						if(_ispack) then
 						{
 							player addItemToBackpack _item;
-						}
-							else
-						{
+						} else {
 							private["_type"];
 							_type = [_item,301] call life_fnc_accType;
 							
@@ -325,41 +291,39 @@ if(_bool) then
 									case 2: { player addSecondaryWeaponItem _item; };
 									case 3: { player addHandgunItem _item; };
 								};
-							}
-								else
-							{
+							} else {
 								if(_override) then
 								{
 									player addItem _item;
-								}
-									else
-								{
+								} else {
 									private["_wepItems","_action","_slotTaken"];
-										_wepItems = switch(_type) do {case 1:{primaryWeaponItems player}; case 2:{secondaryWeaponItems player}; case 3:{handgunItems player}; default {["","",""]};};
-										_slotTaken = false;
-
-										if(_wepItems select 1 != "") then {_slotTaken = true;};
-
-										if(_slotTaken) then {
-											_action = ["Do you want to add this item to your weapon or inventory? If you add it to your weapon your current existing attachment will be lost!","Attachment slot taken!","Weapon","Inventory"] call BIS_fnc_guiMessage;
-											if(_action) then {
-												switch(_type) do {
-													case 1: {player addPrimaryWeaponItem _item;};
-													case 2: {player addSecondaryWeaponItem _item;};
-													case 3: {player addHandgunItem _item;};
-													default {player addItem _item;};
-												};
-											} else {
-												player addItem _item;
-											};
-										} else {
-											switch(_type) do {
+									_wepItems = switch(_type) do {case 1:{primaryWeaponItems player}; case 2:{secondaryWeaponItems player}; case 3:{handgunItems player}; default {["","",""]};};
+									_slotTaken = false;
+									if(_wepItems select 1 != "") then {_slotTaken = true;};
+									if(_slotTaken) then 
+									{
+										_action = ["Do you want to add this item to your weapon or inventory? If you add it to your weapon your current existing attachment will be lost!","Attachment slot taken!","Weapon","Inventory"] call BIS_fnc_guiMessage;
+										if(_action) then 
+										{
+											switch(_type) do 
+											{
 												case 1: {player addPrimaryWeaponItem _item;};
 												case 2: {player addSecondaryWeaponItem _item;};
 												case 3: {player addHandgunItem _item;};
 												default {player addItem _item;};
 											};
+										} else {
+											player addItem _item;
 										};
+									} else {
+										switch(_type) do 
+										{
+											case 1: {player addPrimaryWeaponItem _item;};
+											case 2: {player addSecondaryWeaponItem _item;};
+											case 3: {player addHandgunItem _item;};
+											default {player addItem _item;};
+										};
+									};
 								};
 							};
 						};
@@ -370,9 +334,7 @@ if(_bool) then
 						if(_ispack) then
 						{
 							player addItemToBackpack _item;
-						}
-							else
-						{
+						} else {
 							private["_type"];
 							_type = [_item,101] call life_fnc_accType;
 							
@@ -384,41 +346,39 @@ if(_bool) then
 									case 2: { player addSecondaryWeaponItem _item; };
 									case 3: { player addHandgunItem _item; };
 								};
-							}
-								else
-							{
+							} else {
 								if(_override) then
 								{
 									player addItem _item;
-								}
-									else
-								{
+								} else {
 									private["_wepItems","_action","_slotTaken"];
-										_wepItems = switch(_type) do {case 1:{primaryWeaponItems player}; case 2:{secondaryWeaponItems player}; case 3:{handgunItems player}; default {["","",""]};};
-										_slotTaken = false;
-
-										if(_wepItems select 0 != "") then {_slotTaken = true;};
-
-										if(_slotTaken) then {
-											_action = ["Do you want to add this item to your weapon or inventory? If you add it to your weapon your current existing attachment will be lost!","Attachment slot taken!","Weapon","Inventory"] call BIS_fnc_guiMessage;
-											if(_action) then {
-												switch(_type) do {
-													case 1: {player addPrimaryWeaponItem _item;};
-													case 2: {player addSecondaryWeaponItem _item;};
-													case 3: {player addHandgunItem _item;};
-													default {player addItem _item;};
-												};
-											} else {
-												player addItem _item;
-											};
-										} else {
-											switch(_type) do {
+									_wepItems = switch(_type) do {case 1:{primaryWeaponItems player}; case 2:{secondaryWeaponItems player}; case 3:{handgunItems player}; default {["","",""]};};
+									_slotTaken = false;
+									if(_wepItems select 0 != "") then {_slotTaken = true;};
+									if(_slotTaken) then 
+									{
+										_action = ["Do you want to add this item to your weapon or inventory? If you add it to your weapon your current existing attachment will be lost!","Attachment slot taken!","Weapon","Inventory"] call BIS_fnc_guiMessage;
+										if(_action) then 
+										{
+											switch(_type) do 
+											{
 												case 1: {player addPrimaryWeaponItem _item;};
 												case 2: {player addSecondaryWeaponItem _item;};
 												case 3: {player addHandgunItem _item;};
 												default {player addItem _item;};
 											};
+										} else {
+											player addItem _item;
 										};
+									} else {
+										switch(_type) do 
+										{
+											case 1: {player addPrimaryWeaponItem _item;};
+											case 2: {player addSecondaryWeaponItem _item;};
+											case 3: {player addHandgunItem _item;};
+											default {player addItem _item;};
+										};
+									};
 								};
 							};
 						};
@@ -429,15 +389,11 @@ if(_bool) then
 						if(_ispack) then
 						{
 							player addItemToBackpack _item;
-						}
-							else
-						{
+						} else {
 							if(_override) then
 							{
 								player addItem _item;
-							}
-								else
-							{
+							} else {
 								player addItem _item;
 								player assignItem _item;
 							};
@@ -449,15 +405,11 @@ if(_bool) then
 						if(_ispack) then
 						{
 							player addItemToBackpack _item;
-						}
-							else
-						{
+						} else {
 							if(_override) then
 							{
 								player addItem _item;
-							}
-								else
-							{
+							} else {
 								player addItem _item;
 								player assignItem _item;
 							};
@@ -469,9 +421,7 @@ if(_bool) then
 						if(_ispack) then 
 						{
 							player addItemToBackpack _item;
-						} 
-							else 
-						{
+						} else {
 							player addItem _item;
 						};
 					};
@@ -479,9 +429,7 @@ if(_bool) then
 			};
 		};
 	};
-}
-	else
-{
+} else {
 	switch((_details select 6)) do
 	{
 		case "CfgVehicles":
@@ -499,9 +447,7 @@ if(_bool) then
 			if(_item == goggles player) then
 			{
 				removeGoggles player;
-			}
-				else
-			{
+			} else {
 				player removeItem _item;
 			};
 		};
@@ -516,9 +462,7 @@ if(_bool) then
 					{
 						_isgun = true;
 					};
-				}
-					else
-				{
+				} else {
 					_isgun = true;
 				};
 			};
@@ -537,17 +481,16 @@ if(_bool) then
 				if(_item == "MineDetector") then
 				{
 					player removeItem _item;
-				}
-					else
-				{
+				} else {
 					private["_tmpfunction"];
 					_tmpfunction = {
 						private["_tWeapons","_tWeaponCount"];
-						switch(true) do {
-							case (_this in (uniformItems player)): {
+						switch(true) do 
+						{
+							case (_this in (uniformItems player)): 
+							{
 								_tWeapons = (getWeaponCargo (uniformContainer player)) select 0;
 								_tWeaponCount = (getWeaponCargo (uniformContainer  player)) select 1;
-
 								clearWeaponCargo (uniformContainer player);
 								{
 									_numVestWeps = _tWeaponCount select _forEachIndex;
@@ -559,10 +502,10 @@ if(_bool) then
 								}forEach _tWeapons;
 							};
 							
-							case (_this in (vestItems player)): {
+							case (_this in (vestItems player)): 
+							{
 								_tWeapons = (getWeaponCargo (vestContainer player)) select 0;
 								_tWeaponCount = (getWeaponCargo (vestContainer  player)) select 1;
-
 								clearWeaponCargo (vestContainer player);
 								{
 									_numVestWeps = _tWeaponCount select _forEachIndex;
@@ -574,10 +517,10 @@ if(_bool) then
 								}forEach _tWeapons;
 							};
 							
-							case (_this in (backpackItems player)): {
+							case (_this in (backpackItems player)): 
+							{
 								_tWeapons = (getWeaponCargo (backpackContainer player)) select 0;
 								_tWeaponCount = (getWeaponCargo (backpackContainer  player)) select 1;
-
 								clearWeaponCargo (backpackContainer player);
 								{
 									_numVestWeps = _tWeaponCount select _forEachIndex;
@@ -590,25 +533,21 @@ if(_bool) then
 							};
 						};
 					};
-								
+
 					if(_ispack) then
 					{
 						_item call _tmpfunction;
-					}
-						else
-					{
+					} else {
 						switch(true) do
 						{
 							case (_item in (uniformItems player)): {_item call _tmpfunction;};
-							case (_item in (vestItems player)) : {_item call _tmpfunction;};
-							case (_item in (backpackItems player)) : {_item call _tmpfunction;};
+							case (_item in (vestItems player)): {_item call _tmpfunction;};
+							case (_item in (backpackItems player)): {_item call _tmpfunction;};
 							default {player removeWeapon _item;};
 						};
 					};
 				};
-			}
-				else
-			{
+			} else {
 				switch((_details select 5)) do
 				{
 					case 0: {player unassignItem _item; player removeItem _item;};
@@ -621,8 +560,8 @@ if(_bool) then
 					{
 						switch (true) do
 						{
-							case (_item in (primaryWeaponItems player)) : {player removePrimaryWeaponItem _item;};
-							case (_item in (handgunItems player)) : {player removeHandgunItem _item;};
+							case (_item in (primaryWeaponItems player)): {player removePrimaryWeaponItem _item;};
+							case (_item in (handgunItems player)): {player removeHandgunItem _item;};
 							default {player removeItem _item;};
 						};
 					};
