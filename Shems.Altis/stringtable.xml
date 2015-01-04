@@ -92,26 +92,12 @@
 		<Key ID="STR_ATM_Transfer">
 			<Original>Transférer</Original>
 		</Key>
-		
-		
-		
-		
-		
-		
-		
-		
 		<Key ID="STR_ATM_GreaterThan">
 			<Original>Vous ne pouvez pas déposer plus de 1.000.000 € à la fois.</Original>
 		</Key>
 		<Key ID="STR_ATM_notnumeric">
 			<Original>La quantité saisie n'est pas une valeur numérique.</Original>
 		</Key>
-		
-		
-		
-		
-		
-		
 	</Package>
 	<Package name="Smartphone">
 		<Key ID="STR_PM_Smartphone">
@@ -561,35 +547,8 @@
 		</Key>
 	</Package>
 	<Package name="Player_Interaction">
-		<Key ID="STR_pInAct_Title">
-			<Original>Menu d'intéraction</Original>
-		</Key>
-		<Key ID="STR_pInAct_PutInCar">
-			<Original>Véhicule</Original>
-		</Key>
-		<Key ID="STR_pInAct_Unrestrain">
-			<Original>Démenotter</Original>
-		</Key>
-		<Key ID="STR_pInAct_checkLicenses">
-			<Original>Licences</Original>
-		</Key>
-		<Key ID="STR_pInAct_SearchPlayer">
-			<Original>Fouiller</Original>
-		</Key>
-		<Key ID="STR_pInAct_StopEscort">
-			<Original>Stop Escorte</Original>
-		</Key>
-		<Key ID="STR_pInAct_Escort">
-			<Original>Escorter</Original>
-		</Key>
-		<Key ID="STR_pInAct_TicketBtn">
-			<Original>Amende</Original>
-		</Key>
 		<Key ID="STR_pInAct_Arrest">
 			<Original>Haute Prison</Original>
-		</Key>
-		<Key ID="STR_pInAct_ArrestTroll">
-			<Original>Troll Prison</Original>
 		</Key>
 		<Key ID="STR_pInAct_ArrestAsylum">
 			<Original>Asile</Original>
@@ -624,9 +583,6 @@
 		<Key ID="STR_pInAct_LockHouse">
 			<Original>Fermer</Original>
 		</Key>
-		<Key ID="STR_pInAct_RemoveWeapons">
-			<Original>Retirer Armes</Original>
-		</Key>
 		<Key ID="STR_pInAct_SellGarage">
 			<Original>Vendre le garage</Original>
 		</Key>
@@ -649,38 +605,6 @@
 		</Key>
 		<Key ID="STR_House_BuyMSG">
    			<Original>Etes-vous sûr de vouloir acheter cette maison ?</Original>
-		</Key>
-	</Package>
-	<Package name="Vehicle_Interaction">
-		<Key ID="STR_vInAct_Title">
-			<Original>Intéraction avec le véhicule</Original>
-		</Key>
-		<Key ID="STR_vInAct_Unflip">
-			<Original>Unflip</Original>
-		</Key>
-		<Key ID="STR_vInAct_GetInVehicle">
-			<Original>Conducteur</Original>
-		</Key>
-		<Key ID="STR_vInAct_PushBoat">
-			<Original>Pousser</Original>
-		</Key>
-		<Key ID="STR_vInAct_Repair">
-			<Original>Réparer</Original>
-		</Key>
-		<Key ID="STR_vInAct_Registration">
-			<Original>Propriétaire</Original>
-		</Key>
-		<Key ID="STR_vInAct_SearchVehicle">
-			<Original>Fouiller</Original>
-		</Key>
-		<Key ID="STR_vInAct_PullOut">
-			<Original>Sortir le civil</Original>
-		</Key>
-		<Key ID="STR_vInAct_Impound">
-			<Original>Fourrière</Original>
-		</Key>
-		<Key ID="STR_vInAct_Plantcharge">
-			<Original>Placer charge</Original>
 		</Key>
 	</Package>
 	<Package name="Life_Items">

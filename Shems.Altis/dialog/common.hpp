@@ -139,7 +139,7 @@ class Life_RscTree {
 	expandedTexture = "A3\ui_f\data\gui\Rsccommon\Rsctree\expandedTexture_ca.paa";
 	hiddenTexture = "A3\ui_f\data\gui\Rsccommon\Rsctree\hiddenTexture_ca.paa";
 	rowHeight = 0.0439091;
-	color[] = {1, 1, 1, 1};
+	color[] = {1,1,1,1};
 	colorSelect[] = {0.7, 0.7, 0.7, 1};
 	colorBackground[] = {0, 0, 0, 0};
 	colorSelectBackground[] = {0, 0, 0, 0.5};
@@ -150,10 +150,11 @@ class Life_RscTree {
 class Life_RscTitle : Life_RscText {
 	style = 0;
 	sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
-	colorText[] = {0.95, 0.95, 0.95, 1};
+	colorText[] = {0.95,0.95,0.95,1};
 };
 
-class life_RscPicture {
+class life_RscPicture 
+{
 	shadow = 0;
 	type = 0;
 	style = 48;
@@ -181,7 +182,8 @@ class Life_RscPictureKeepAspect : Life_RscPicture
 	style = 0x30 + 0x800;
 };
 
-class Life_RscStructuredText {
+class Life_RscStructuredText 
+{
 	type = 13;
 	style = 0;
 	x = 0;
@@ -193,15 +195,17 @@ class Life_RscStructuredText {
 	colorText[] = {1, 1, 1, 1.0};
 	shadow = 1;
 	
-	class Attributes {
+	class Attributes 
+	{
 		font = "PuristaMedium";
-		color = "#ffffff";
+		color = "#FFFFFF";
 		align = "left";
 		shadow = 1;
 	};
 };
 
-class Life_RscActiveText {
+class Life_RscActiveText 
+{
 idc = -1;
     type = 11;
     style = 0;
@@ -211,7 +215,7 @@ idc = -1;
     w = 0.3;
     sizeEx = 0.040;
     font = "PuristaLight";
-    color[] = {1, 1, 1, 1};
+    color[] = {1,1,1,1};
     colorActive[] = {1, 0.2, 0.2, 1};
     soundEnter[] = {"\A3\ui_f\data\sound\onover", 0.09, 1};
     soundPush[] = {"\A3\ui_f\data\sound\new1", 0.0, 0};
@@ -253,7 +257,8 @@ class Life_RscButton
 	soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1};
 };
 
-class Life_RscButtonTextOnly : Life_RscButton {
+class Life_RscButtonTextOnly : Life_RscButton 
+{
 	SizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8)";
 	colorBackground[] = {1, 1, 1, 0};
 	colorBackgroundActive[] = {1, 1, 1, 0};
@@ -263,7 +268,8 @@ class Life_RscButtonTextOnly : Life_RscButton {
 	borderSize = 0.0;
 };
 
-class Life_RscShortcutButton {
+class Life_RscShortcutButton 
+{
 	idc = -1;
 	style = 0;
 	default = 0;
@@ -331,7 +337,8 @@ class Life_RscShortcutButton {
 	};
 };
 
-class Life_RscButtonMenu : Life_RscShortcutButton {
+class Life_RscButtonMenu : Life_RscShortcutButton 
+{
 	idc = -1;
 	type = 16;
 	style = "0x02 + 0xC0";
@@ -391,29 +398,31 @@ class Life_RscButtonMenu : Life_RscShortcutButton {
 	textureNoShortcut = "";
 };
 
-class Life_RscShortcutButtonMain : Life_RscShortcutButton {
+class Life_RscShortcutButtonMain : Life_RscShortcutButton 
+{
 	idc = -1;
 	style = 0;
 	default = 0;
 	w = 0.313726;
 	h = 0.104575;
-	color[] = {1, 1, 1, 1.0};
-	colorDisabled[] = {1, 1, 1, 0.25};
-	
-	class HitZone {
+	color[] = {1,1,1,1};
+	colorDisabled[] = {1,1,1,0.25};
+	class HitZone 
+	{
 		left = 0.0;
 		top = 0.0;
 		right = 0.0;
 		bottom = 0.0;
 	};
-	
-	class ShortcutPos {
+
+	class ShortcutPos 
+	{
 		left = 0.0145;
 		top = "(			(		(		((safezoneW / safezoneH) min 1.2) / 1.2) / 20) - 		(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1.2)) / 2";
 		w = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1.2) * (3/4)";
 		h = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1.2)";
 	};
-	
+
 	class TextPos {
 		left = "(		((safezoneW / safezoneH) min 1.2) / 32) * 1.5";
 		top = "(			(		(		((safezoneW / safezoneH) min 1.2) / 1.2) / 20)*2 - 		(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1.2)) / 2";
@@ -436,22 +445,25 @@ class Life_RscShortcutButtonMain : Life_RscShortcutButton {
 	soundClick[] = {"\A3\ui_f\data\sound\onclick", 0.07, 1};
 	soundEscape[] = {"\A3\ui_f\data\sound\onescape", 0.09, 1};
 	action = "";
-	
-	class Attributes {
+
+	class Attributes 
+	{
 		font = "PuristaMedium";
 		color = "#E5E5E5";
 		align = "left";
 		shadow = "false";
 	};
-	
-	class AttributesImage {
+
+	class AttributesImage 
+	{
 		font = "PuristaMedium";
 		color = "#E5E5E5";
 		align = "false";
 	};
 };
 
-class Life_RscCheckbox {
+class Life_RscCheckbox 
+{
 	idc = -1;
 	type = 7;
 	style = 0;
@@ -464,7 +476,7 @@ class Life_RscCheckbox {
 	colorBackground[] = {0, 0, 1, 1};
 	colorTextSelect[] = {0, 0.8, 0, 1};
 	colorSelectedBg[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 1};
-	colorSelect[] = {0, 0, 0, 1};
+	colorSelect[] = {0,0,0,1};
 	colorTextDisable[] = {0.4, 0.4, 0.4, 1};
 	colorDisable[] = {0.4, 0.4, 0.4, 1};
 	font = "PuristaMedium";
@@ -485,7 +497,7 @@ class Life_RscProgress
 	h = 0.0261438;
 	texture = "";
 	shadow = 2;
-	colorFrame[] = {0, 0, 0, 1};
+	colorFrame[] = {0,0,0,1};
 	colorBackground[] = {0,0,0,0.7};
 	colorBar[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
 };
@@ -498,10 +510,10 @@ class Life_RscListBox
 	w = 0.275;
 	h = 0.04;
 	font = "PuristaMedium";
-	colorSelect[] = {1, 1, 1, 1};
-	colorText[] = {1, 1, 1, 1};
+	colorSelect[] = {1,1,1,1};
+	colorText[] = {1,1,1,1};
 	colorBackground[] = {0.28,0.28,0.28,0.28};
-	colorSelect2[] = {1, 1, 1, 1};
+	colorSelect2[] = {1,1,1,1};
 	colorSelectBackground[] = {0.95, 0.95, 0.95, 0.5};
 	colorSelectBackground2[] = {1, 1, 1, 0.5};
 	colorScrollbar[] = {0.2, 0.2, 0.2, 1};
@@ -530,26 +542,28 @@ class Life_RscListBox
 	};
 };
 
-class Life_RscEdit {
+class Life_RscEdit 
+{
 	type = 2;
 	style = 0x00 + 0x40;
 	font = "PuristaMedium";
 	shadow = 2;
 	sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
-	colorBackground[] = {0, 0, 0, 1};
+	colorBackground[] = {0,0,0,1};
 	soundSelect[] = {"",0.1,1};
 	soundExpand[] = {"",0.1,1};
-	colorText[] = {0.95, 0.95, 0.95, 1};
-	colorDisabled[] = {1, 1, 1, 0.25};
+	colorText[] = {0.95,0.95,0.95,1};
+	colorDisabled[] = {1,1,1,0.25};
 	autocomplete = false;
 	colorSelection[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 1};
 	canModify = 1;
 };
 
-class Life_RscSlider {
+class Life_RscSlider 
+{
 	h = 0.025;
-	color[] = {1, 1, 1, 0.8};
-	colorActive[] = {1, 1, 1, 1};
+	color[] = {1,1,1,0.8};
+	colorActive[] = {1,1,1,1};
 };
 
 class life_RscXSliderH 
@@ -561,34 +575,30 @@ class life_RscXSliderH
 	y = 0;
 	h = 0.029412;
 	w = 0.400000;
-	color[] = {
-			1, 1, 1, 0.7
-	};
-	colorActive[] = {
-			1, 1, 1, 1
-	};
-	colorDisabled[] = {
-			1, 1, 1, 0.500000
-	};
+	color[] = {1,1,1,0.7};
+	colorActive[] = {1,1,1,1};
+	colorDisabled[] = {1,1,1,0.5};
 	arrowEmpty = "\A3\ui_f\data\gui\cfg\slider\arrowEmpty_ca.paa";
 	arrowFull = "\A3\ui_f\data\gui\cfg\slider\arrowFull_ca.paa";
 	border = "\A3\ui_f\data\gui\cfg\slider\border_ca.paa";
 	thumb = "\A3\ui_f\data\gui\cfg\slider\thumb_ca.paa";
 };
 
-class Life_RscFrame {
+class Life_RscFrame 
+{
 	type = 0;
 	idc = -1;
 	style = 64;
 	shadow = 2;
-	colorBackground[] = {0, 0, 0, 0};
-	colorText[] = {1, 1, 1, 1};
+	colorBackground[] = {0,0,0,0};
+	colorText[] = {1,1,1,1};
 	font = "PuristaMedium";
 	sizeEx = 0.02;
 	text = "";
 };
 
-class Life_RscBackground : Life_RscText {
+class Life_RscBackground : Life_RscText 
+{
 	type = 0;
 	IDC = -1;
 	style = 512;
@@ -598,13 +608,14 @@ class Life_RscBackground : Life_RscText {
 	w = 1.0;
 	h = 1.0;
 	text = "";
-	ColorBackground[] = {0.48, 0.5, 0.35, 1};
-	ColorText[] = {0.1, 0.1, 0.1, 1};
+	ColorBackground[] = {0.48,0.5,0.35,1};
+	ColorText[] = {0.1,0.1,0.1,1};
 	font = "PuristaMedium";
 	SizeEx = 1;
 };
 
-class Life_RscHTML {
+class Life_RscHTML 
+{
 	colorText[] = {1, 1, 1, 1.0};
 	colorBold[] = {1, 1, 1, 1.0};
 	colorLink[] = {1, 1, 1, 0.75};
@@ -614,49 +625,56 @@ class Life_RscHTML {
 	nextPage = "\A3\ui_f\data\gui\Rsccommon\Rschtml\arrow_right_ca.paa";
 	shadow = 2;
 	
-	class H1 {
+	class H1 
+	{
 		font = "PuristaMedium";
 		fontBold = "PuristaSemibold";
 		sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1.2)";
 		align = "left";
 	};
 	
-	class H2 {
+	class H2 
+	{
 		font = "PuristaMedium";
 		fontBold = "PuristaSemibold";
 		sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 		align = "right";
 	};
 	
-	class H3 {
+	class H3 
+	{
 		font = "PuristaMedium";
 		fontBold = "PuristaSemibold";
 		sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 		align = "left";
 	};
 	
-	class H4 {
+	class H4 
+	{
 		font = "PuristaMedium";
 		fontBold = "PuristaSemibold";
 		sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 		align = "left";
 	};
 	
-	class H5 {
+	class H5 
+	{
 		font = "PuristaMedium";
 		fontBold = "PuristaSemibold";
 		sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 		align = "left";
 	};
 	
-	class H6 {
+	class H6 
+	{
 		font = "PuristaMedium";
 		fontBold = "PuristaSemibold";
 		sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 		align = "left";
 	};
 	
-	class P {
+	class P 
+	{
 		font = "PuristaMedium";
 		fontBold = "PuristaSemibold";
 		sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
@@ -664,7 +682,8 @@ class Life_RscHTML {
 	};
 };
 
-class Life_RscHitZones {
+class Life_RscHitZones 
+{
 	x = 0;
 	y = 0;
 	w = 0.1;
@@ -968,7 +987,7 @@ class Life_RscMapControl
 		coefMax = 1;
 		icon = "\A3\ui_f\data\map\mapcontrol\waypointCompleted_ca.paa";
 	};
-	moveOnEdges = 0;//1;
+	moveOnEdges = 0;
 	x = "SafeZoneXAbs";
 	y = "SafeZoneY + 1.5 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 	w = "SafeZoneWAbs";
@@ -1003,7 +1022,6 @@ class Life_RscMapControl
 	fontLevel = "TahomaB";
 	sizeExLevel = 0.02;
 	text = "#(argb,8,8,3)color(1,1,1,1)";
-	//text = "\a3\ui_f\data\map_background2_co.paa";
 	class power
 	{
 		icon = "\A3\ui_f\data\map\mapcontrol\power_CA.paa";
@@ -1051,7 +1069,8 @@ class Life_RscMapControl
 	};
 };
 
-class Life_RscCombo {
+class Life_RscCombo 
+{
 	style = 16;
 	type = 4;
 	x = 0;
@@ -1059,38 +1078,36 @@ class Life_RscCombo {
 	w = 0.12;
 	h = 0.035;
 	shadow = 0;
-	colorSelect[] = {0, 0, 0, 1};
+	colorSelect[] = {0,0,0,1};
 	soundExpand[] = {"",0.1,1};
-	colorText[] = {0.95, 0.95, 0.95, 1};
+	colorText[] = {0.95,0.95,0.95,1};
 	soundCollapse[] = {"",0.1,1};
 	maxHistoryDelay = 1;
 	colorBackground[] = {0.4,0.4,0.4,0.4};
-	colorSelectBackground[] = {1, 1, 1, 0.7};
-	colow_Rscrollbar[] = {1, 0, 0, 1};
-	soundSelect[] = {
-			"", 0.000000, 1
-	};
+	colorSelectBackground[] = {1,1,1,0.7};
+	colow_Rscrollbar[] = {1,0,0,1};
+	soundSelect[] = {"",0,1};
 	arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
 	arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
 	wholeHeight = 0.45;
-	color[] = {1, 1, 1, 1};
-	colorActive[] = {1, 0, 0, 1};
-	colorDisabled[] = {1, 1, 1, 0.25};
+	color[] = {1,1,1,1};
+	colorActive[] = {1,0,0,1};
+	colorDisabled[] = {1,1,1,0.25};
 	font = "PuristaMedium";
 	sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
-	
+
 	class ComboScrollBar : Life_RscScrollBar {};
 };
 
-class Life_RscToolbox {
-	colorText[] = {0.95, 0.95, 0.95, 1};
-	color[] = {0.95, 0.95, 0.95, 1};
-	colorTextSelect[] = {0.95, 0.95, 0.95, 1};
-	colorSelect[] = {0.95, 0.95, 0.95, 1};
+class Life_RscToolbox 
+{
+	colorText[] = {0.95,0.95,0.95,1};
+	color[] = {0.95,0.95,0.95,1};
+	colorTextSelect[] = {0.95,0.95,0.95,1};
+	colorSelect[] = {0.95,0.95,0.95,1};
 	colorTextDisable[] = {0.4, 0.4, 0.4, 1};
 	colorDisable[] = {0.4, 0.4, 0.4, 1};
 	colorSelectedBg[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 	font = "PuristaMedium";
 	sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8)";
 };
-

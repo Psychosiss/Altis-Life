@@ -17,8 +17,8 @@ waitUntil{isNull (findDisplay 38500)};
 
 player addRating 9999999;
 
-[] call life_fnc_zoneCreator;
-[] call life_fnc_gangCash;
+[] call life_fnc_handlerHelp;
+[] spawn life_fnc_onPlayerAbsent;
 
 player setVariable["coplevel", __GETC__(life_coplevel), true];
 player setVariable["medlevel", __GETC__(life_medicLevel), true];

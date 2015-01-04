@@ -19,6 +19,7 @@ if((__GETC__(life_coplevel)) < 1) exitWith
 };
 
 [] call life_fnc_spawnMenu;
+[] spawn life_fnc_onPlayerAbsent;
 
 if(playerSide == west) then 
 {

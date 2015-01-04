@@ -70,42 +70,42 @@ _Btn9 = _display displayCtrl Btn9;
 _Btn10 = _display displayCtrl Btn10;
 life_pInact_curTarget = _curTarget;
 
-_Btn1 ctrlSetText localize "STR_pInAct_Unrestrain";
+_Btn1 ctrlSetText "Démenotter";
 _Btn1 buttonSetAction "[life_pInact_curTarget] call life_fnc_unrestrain; closeDialog 0;";
 
-_Btn2 ctrlSetText localize "STR_pInAct_checkLicenses";
+_Btn2 ctrlSetText "Licences";
 _Btn2 buttonSetAction "[[player],""life_fnc_licenseCheck"",life_pInact_curTarget,FALSE] spawn life_fnc_MP";
 
-_Btn3 ctrlSetText localize "STR_pInAct_SearchPlayer";
+_Btn3 ctrlSetText "Fouiller";
 _Btn3 buttonSetAction "[life_pInact_curTarget] spawn life_fnc_searchAction; closeDialog 0;";
 
 if((_curTarget getVariable["Escorting",false])) then 
 {
-	_Btn4 ctrlSetText localize "STR_pInAct_StopEscort";
+	_Btn4 ctrlSetText "Stop Escorte";
 	_Btn4 buttonSetAction "[life_pInact_curTarget] call life_fnc_stopEscorting; [life_pInact_curTarget] call life_fnc_copInteractionMenu;";
 } else {
-	_Btn4 ctrlSetText localize "STR_pInAct_Escort";
+	_Btn4 ctrlSetText "Escorter";
 	_Btn4 buttonSetAction "[life_pInact_curTarget] call life_fnc_escortAction; closeDialog 0;";
 };
 
-_Btn5 ctrlSetText localize "STR_pInAct_TicketBtn";
+_Btn5 ctrlSetText "Amende";
 _Btn5 buttonSetAction "[life_pInact_curTarget] call life_fnc_ticketAction;";
 
-_Btn6 ctrlSetText localize "STR_pInAct_Arrest";
+_Btn6 ctrlSetText "Haute Prison";
 _Btn6 buttonSetAction "closeDialog 0; [life_pInact_curTarget] call life_fnc_arrestAction;";
 
 _Btn6 buttonSetAction "closeDialog 0; [] call life_fnc_showArrestDialog;";
 
-_Btn7 ctrlSetText localize "STR_pInAct_PutInCar";
+_Btn7 ctrlSetText "Véhicule";
 _Btn7 buttonSetAction "[life_pInact_curTarget] call life_fnc_putInCar;";
 
-_Btn8 ctrlSetText localize "STR_pInAct_RemoveWeapons";
+_Btn8 ctrlSetText "Retirer Armes";
 _Btn8 buttonSetAction "[life_pInact_curTarget] spawn life_fnc_removeWeaponAction; closeDialog 0;";
 
-_Btn9 ctrlSetText localize "STR_pInAct_ArrestTroll";
+_Btn9 ctrlSetText "Troll Prison";
 _Btn9 buttonSetAction "[life_pInact_curTarget] call life_fnc_arrestActionTroll;";
 
-_Btn10 ctrlSetText localize "STR_pInAct_RevokeLicense";
+_Btn10 ctrlSetText "Supprimer Licenses";
 _Btn10 buttonSetAction "[life_pInact_curTarget] call life_fnc_revokeLicense;";
 
 if(!((player distance (getMarkerPos "cop_spawn_1") < 250) OR (player distance (getMarkerPos "cop_spawn_2") < 50) OR (player distance (getMarkerPos "cop_spawn_3") < 50) OR (player distance (getMarkerPos "cop_spawn_4") < 50) OR (player distance (getMarkerPos "cop_spawn_5") < 50) OR (player distance (getMarkerPos "cop_spawn_6") < 50) OR (player distance (getMarkerPos "fdp_01") < 50))) then

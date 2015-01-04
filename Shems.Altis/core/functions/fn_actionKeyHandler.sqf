@@ -15,6 +15,13 @@ if(isNull _curTarget) exitWith
 		{
 			[_fish] call life_fnc_catchFish;
 		};
+	} else {
+		if(playerSide in [civilian,east] && !life_action_gathering) then 
+		{
+			_handle = [] spawn life_fnc_gather;
+			waitUntil {scriptDone _handle};
+			life_action_gathering = false;
+		};
 	};
 };
 

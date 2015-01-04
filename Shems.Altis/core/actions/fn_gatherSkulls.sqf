@@ -5,7 +5,6 @@ if(life_action_in_use) exitWith {};
 if(_sum > 0) then
 {
 	life_action_in_use = true;
-
 	["Récolte d'ossements", 5] call life_fnc_showProgress;
 	player playMove "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";
 	titleFadeOut 5;

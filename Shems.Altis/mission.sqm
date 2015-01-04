@@ -12877,7 +12877,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_HumanSkeleton_F";
 			skill=0.60000002;
-			init="this allowDamage false; this enableSimulation false; this addAction[""Récolter des ossements"",life_fnc_gatherSkulls]";
+			init="this allowDamage false; this enableSimulation false; this addAction[""Récolter des ossements"",life_fnc_gatherSkulls];";
 		};
 		class Item767
 		{
@@ -12888,7 +12888,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_HumanSkeleton_F";
 			skill=0.60000002;
-			init="this allowDamage false; this enableSimulation false; this addAction[""Récolter des ossements"",life_fnc_gatherSkulls]";
+			init="this allowDamage false; this enableSimulation false; this addAction[""Récolter des ossements"",life_fnc_gatherSkulls];";
 		};
 		class Item768
 		{
@@ -12899,7 +12899,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_HumanSkeleton_F";
 			skill=0.60000002;
-			init="this allowDamage false; this enableSimulation false; this addAction[""Récolter des ossements"",life_fnc_gatherSkulls]";
+			init="this allowDamage false; this enableSimulation false; this addAction[""Récolter des ossements"",life_fnc_gatherSkulls];";
 		};
 		class Item769
 		{
@@ -12910,7 +12910,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_HumanSkeleton_F";
 			skill=0.60000002;
-			init="this allowDamage false; this enableSimulation false; this addAction[""Récolter des ossements"",life_fnc_gatherSkulls]";
+			init="this allowDamage false; this enableSimulation false; this addAction[""Récolter des ossements"",life_fnc_gatherSkulls];";
 		};
 		class Item770
 		{
@@ -12921,7 +12921,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_HumanSkeleton_F";
 			skill=0.60000002;
-			init="this allowDamage false; this enableSimulation false; this addAction[""Récolter des ossements"",life_fnc_gatherSkulls]";
+			init="this allowDamage false; this enableSimulation false; this addAction[""Récolter des ossements"",life_fnc_gatherSkulls];";
 		};
 		class Item771
 		{
@@ -12932,7 +12932,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_HumanSkeleton_F";
 			skill=0.60000002;
-			init="this allowDamage false; this enableSimulation false; this addAction[""Récolter des ossements"",life_fnc_gatherSkulls]";
+			init="this allowDamage false; this enableSimulation false; this addAction[""Récolter des ossements"",life_fnc_gatherSkulls];";
 		};
 		class Item772
 		{
@@ -12943,7 +12943,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_HumanSkeleton_F";
 			skill=0.60000002;
-			init="this allowDamage false; this enableSimulation false; this addAction[""Récolter des ossements"",life_fnc_gatherSkulls]";
+			init="this allowDamage false; this enableSimulation false; this addAction[""Récolter des ossements"",life_fnc_gatherSkulls];";
 		};
 		class Item773
 		{
@@ -12954,7 +12954,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_HumanSkull_F";
 			skill=0.60000002;
-			init="this allowDamage false; this enableSimulation false; this addAction[""Récolter des ossements"",life_fnc_gatherSkulls]";
+			init="this allowDamage false; this enableSimulation false; this addAction[""Récolter des ossements"",life_fnc_gatherSkulls];";
 		};
 		class Item774
 		{
@@ -12965,7 +12965,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_HumanSkull_F";
 			skill=0.60000002;
-			init="this allowDamage false; this enableSimulation false; this addAction[""Récolter des ossements"",life_fnc_gatherSkulls]";
+			init="this allowDamage false; this enableSimulation false; this addAction[""Récolter des ossements"",life_fnc_gatherSkulls];";
 		};
 		class Item775
 		{
@@ -12976,7 +12976,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_HumanSkull_F";
 			skill=0.60000002;
-			init="this allowDamage false; this enableSimulation false; this addAction[""Récolter des ossements"",life_fnc_gatherSkulls]";
+			init="this allowDamage false; this enableSimulation false; this addAction[""Récolter des ossements"",life_fnc_gatherSkulls];";
 		};
 		class Item776
 		{
@@ -13067,7 +13067,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_HumanSkeleton_F";
 			skill=0.60000002;
-			init="this allowDamage false; this enableSimulation false; this addAction[""Récolter des ossements"",life_fnc_gatherSkulls]";
+			init="this allowDamage false; this enableSimulation false; this addAction[""Récolter des ossements"",life_fnc_gatherSkulls];";
 		};
 		class Item785
 		{
@@ -13078,7 +13078,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_HumanSkeleton_F";
 			skill=0.60000002;
-			init="this allowDamage false; this enableSimulation false; this addAction[""Récolter des ossements"",life_fnc_gatherSkulls]";
+			init="this allowDamage false; this enableSimulation false; this addAction[""Récolter des ossements"",life_fnc_gatherSkulls];";
 		};
 		class Item786
 		{
@@ -13089,7 +13089,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_HumanSkeleton_F";
 			skill=0.60000002;
-			init="this allowDamage false; this enableSimulation false; this addAction[""Récolter des ossements"",life_fnc_gatherSkulls]";
+			init="this allowDamage false; this enableSimulation false; this addAction[""Récolter des ossements"",life_fnc_gatherSkulls];";
 		};
 		class Item787
 		{
@@ -13100,7 +13100,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_HumanSkeleton_F";
 			skill=0.60000002;
-			init="this allowDamage false; this enableSimulation false; this addAction[""Récolter des ossements"",life_fnc_gatherSkulls]";
+			init="this allowDamage false; this enableSimulation false; this addAction[""Récolter des ossements"",life_fnc_gatherSkulls];";
 		};
 		class Item788
 		{
@@ -13111,7 +13111,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_HumanSkeleton_F";
 			skill=0.60000002;
-			init="this allowDamage false; this enableSimulation false; this addAction[""Récolter des ossements"",life_fnc_gatherSkulls]";
+			init="this allowDamage false; this enableSimulation false; this addAction[""Récolter des ossements"",life_fnc_gatherSkulls];";
 		};
 		class Item789
 		{
@@ -13122,7 +13122,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_HumanSkull_F";
 			skill=0.60000002;
-			init="this allowDamage false; this enableSimulation false; this addAction[""Récolter des ossements"",life_fnc_gatherSkulls]";
+			init="this allowDamage false; this enableSimulation false; this addAction[""Récolter des ossements"",life_fnc_gatherSkulls];";
 		};
 		class Item790
 		{
@@ -13133,7 +13133,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_HumanSkull_F";
 			skill=0.60000002;
-			init="this allowDamage false; this enableSimulation false; this addAction[""Récolter des ossements"",life_fnc_gatherSkulls]";
+			init="this allowDamage false; this enableSimulation false; this addAction[""Récolter des ossements"",life_fnc_gatherSkulls];";
 		};
 		class Item791
 		{
@@ -13144,7 +13144,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_HumanSkull_F";
 			skill=0.60000002;
-			init="this allowDamage false; this enableSimulation false; this addAction[""Récolter des ossements"",life_fnc_gatherSkulls]";
+			init="this allowDamage false; this enableSimulation false; this addAction[""Récolter des ossements"",life_fnc_gatherSkulls];";
 		};
 		class Item792
 		{
@@ -13155,7 +13155,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_HumanSkull_F";
 			skill=0.60000002;
-			init="this allowDamage false; this enableSimulation false; this addAction[""Récolter des ossements"",life_fnc_gatherSkulls]";
+			init="this allowDamage false; this enableSimulation false; this addAction[""Récolter des ossements"",life_fnc_gatherSkulls];";
 		};
 		class Item793
 		{

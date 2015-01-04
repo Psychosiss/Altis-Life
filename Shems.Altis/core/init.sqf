@@ -11,6 +11,8 @@ diag_log "--------------------------- Debut de l'initialisation du Client Altis 
 diag_log "------------------------------------------------------------------------------------------------------";
 waitUntil {!isNull player && player == player};
 
+[] call compile PreprocessFileLineNumbers "core\clientValidator.sqf";
+
 diag_log "::Life Client:: Initialisation des Variables";
 [] call compile PreprocessFileLineNumbers "core\configuration.sqf";
 diag_log "::Life Client:: Variables initialisé";

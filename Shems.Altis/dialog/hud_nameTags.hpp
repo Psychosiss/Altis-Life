@@ -1,6 +1,7 @@
 #define BaseIconID 78000
 
-class Life_HUD_nameTags {
+class Life_HUD_nameTags 
+{
 	idd = -1;
 	duration = 1e+011;
 	name = "Life_HUD_nameTags";

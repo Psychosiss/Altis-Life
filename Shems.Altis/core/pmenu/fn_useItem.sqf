@@ -85,12 +85,6 @@ switch (true) do
 		[] spawn life_fnc_jerryRefuel;
 	};
 	
-	case (_item == "pickaxe"):
-	{
-		[] spawn life_fnc_pickAxeUse;
-		playSound "mining";
-	};
-	
 	case (_item ==  "adrenalineShot"):
 	{
 		[] spawn life_fnc_adrenalineShot;
@@ -119,7 +113,9 @@ switch (true) do
 
 	case (_item == "pickaxe"):
 	{
-		[] spawn life_fnc_pickaxeUse;
+		//[] spawn life_fnc_pickaxeUse;
+		[] spawn life_fnc_gather;
+		playSound "mining";
 	};
 	
 	case (_item == "pressluft"):

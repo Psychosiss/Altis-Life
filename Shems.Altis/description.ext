@@ -179,13 +179,7 @@ class CfgFunctions
 			class catchTurtle {};
 			class dpFinish {};
 			class dropFishingNet {};
-			class gatherApples {};
-			class gatherCannabis {};
 			class gatherSkulls {};
-			class gatherHeroin {};
-			class gatherOil {};
-			class gatherMeth {};
-			class gatherUranium {};
 			class getDPMission {};
 			class postBail {};
 			class processAction {};
@@ -208,8 +202,6 @@ class CfgFunctions
 			class pickupItem {};
 			class pickupMoney {};
 			class ticketAction {};
-			class gatherPeaches {};
-			class gatherCocaine {};
 			class pumpRepair {};
 			class packupSpikes {};
 			class storeVehicle {};
@@ -233,6 +225,7 @@ class CfgFunctions
 			class torturePlayer {};
 			class craftAction {};
 			class skyDiving {};
+			class gather {};
 		};
 		
 		class Config
@@ -372,6 +365,7 @@ class CfgFunctions
 			class setFuel {};
 			class setTexture {};
 			class say3D {};
+			class onPlayerAbsent {};
 		};
 		
 		class Repaint
@@ -398,7 +392,6 @@ class CfgFunctions
 			class robReceive {};
 			class robPerson {};
 			class removeLicenses {};
-			class zoneCreator {};
 			class demoChargeTimer {};
 			class hooker {};
 			class hasOrgan {};

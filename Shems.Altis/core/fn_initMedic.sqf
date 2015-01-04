@@ -13,6 +13,7 @@ if((__GETC__(life_medicLevel)) < 1) exitWith
 
 [] call life_fnc_medicLoadout;
 [] call life_fnc_spawnMenu;
+[] spawn life_fnc_onPlayerAbsent;
 
 waitUntil{!isNull (findDisplay 38500)};
 waitUntil{isNull (findDisplay 38500)};

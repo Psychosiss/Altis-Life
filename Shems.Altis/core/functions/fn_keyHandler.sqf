@@ -19,7 +19,6 @@ if(life_action_inUse) exitWith
 
 switch (_code) do
 {
-
 	case _mapKey:
 	{
 		switch (playerSide) do 
@@ -44,10 +43,10 @@ switch (_code) do
 			};
 		};
 	};
-	
+
     case 1:
 	{
-		if( _ctrlKey )  then 
+		if(_ctrlKey)  then 
 		{
 			SOCK_fnc_updateRequest;
 			diag_log format ["%1 utilise CTRL + ESC pour se déconnecter (Prenez une capture et signalez le sur www.td-life.com)",_player getVariable["realname",name _player]];
