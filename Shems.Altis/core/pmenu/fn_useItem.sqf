@@ -1,6 +1,8 @@
+if (player getVariable ["restrained", false]) exitWith {};
+
 private["_item"];
 disableSerialization;
-if((lbCurSel 2005) == -1) exitWith {hint "";};
+if((lbCurSel 2005) == -1) exitWith {};
 _item = lbData[2005,(lbCurSel 2005)];
 
 switch (true) do
@@ -176,6 +178,11 @@ switch (true) do
 	case (_item == "painkillers"):
 	{
 		titleText["Cet objet est utilisable depuis le menu d'interaction (touche windows gauche).","PLAIN"];
+	};
+	
+	case (_item == "antimatter"):
+	{
+		[] spawn life_fnc_antiMatter;
 	};
 
 	default

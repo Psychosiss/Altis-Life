@@ -105,6 +105,7 @@ switch (_mode) do
 			case "skinningknife": {"life_inv_skinningknife"};
 			case "vammo": {"life_inv_vammo"};
 			case "adrenaline": {"life_inv_adrenaline"};
+			case "antimatter": {"life_inv_antimatter"};
 		};
 	};
 	
@@ -208,6 +209,7 @@ switch (_mode) do
 			case "life_inv_skinningknife": {"skinningknife"};
 			case "life_inv_vammo": {"vammo"};
 			case "life_inv_adrenaline": {"adrenaline"};
+			case "life_inv_antimatter": {"antimatter"};
 		};
 	};
 };

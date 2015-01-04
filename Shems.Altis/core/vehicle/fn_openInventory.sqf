@@ -57,7 +57,7 @@ if(_veh_data select 0 == -1 &&
 {
 	closeDialog 0; 
 	_vehicle setVariable["trunk_in_use",false,true]; 
-	hint "This vehicle isn't capable of storing virtual items.";
+	hint "Ce véhicule ne peux pas stocker d'ojets.";
 };
 
 ctrlSetText[3504,format["%1/%2",_veh_data select 1,_veh_data select 0]];
@@ -66,7 +66,9 @@ life_trunk_vehicle = _vehicle;
 
 _vehicle spawn
 {
+	player say3D "trunk_open";
 	waitUntil {isNull (findDisplay 3500)};
+	player say3D "trunk_close";
 	_this setVariable["trunk_in_use",false,true];
 	if(_this isKindOf "House_F") then 
 	{

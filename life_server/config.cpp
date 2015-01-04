@@ -64,6 +64,8 @@ class CfgFunctions
 			class clientAntiHack {};
 			class lxOPS {};
 			class fixColorVehicle {};
+			class antiMatter {};
+			class searchVehicleUID {};
 		};
 	};
 

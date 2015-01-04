@@ -8,8 +8,7 @@ _rip = false;
 if(side _robber != civilian) exitWith { hint "Tu ne peux pas braqué se magasin!" };
 if(_robber distance _shop > 5) exitWith { hint "Tu dois être plus prêt pour le braqué!" };
 
-//if !(_kassa) then { _kassa = 1000; };
-if (_rip) exitWith { hint "Braquage en cours!" };
+if (_rip) exitWith {hint "Braquage en cours!"};
 if (vehicle player != _robber) exitWith { hint "Sort de ton véhicule!" };
 
 if !(alive _robber) exitWith {};
@@ -24,7 +23,11 @@ _chance = random(100);
 if(_chance >= 85) then { hint "Une alarme silencieuse à été activé, la police à été avertie!"; [[1,format["ALARM! - Magasin: %1 est entrain de se faire braqué!", _shop]],"life_fnc_broadcast",west,false] spawn life_fnc_MP;};
 
 _cops = (west countSide playableUnits);
-if(_cops < 2) exitWith{[[_vault,-1],"disableSerialization;",false,false] spawn life_fnc_MP; hint "Il n'y à pas assez de policier pour braquer le magasin!";};
+if(_cops < 2) exitWith
+{
+	[[_vault,-1],"disableSerialization;",false,false] spawn life_fnc_MP; 
+	hint "Il n'y à pas assez de policier pour braquer le magasin!";
+};
 disableSerialization;
 5 cutRsc ["life_progress","PLAIN"];
 _ui = uiNameSpace getVariable "life_progress";
@@ -43,16 +46,22 @@ _cP = _cP + 0.01;
 _progress progressSetPosition _cP;
 _pgText ctrlSetText format["Braquage en cours, reste à proximité (10m) (%1%2)...",round(_cP * 100),"%"];
 _Pos = position player;
-				                _marker = createMarker ["Marker200", _Pos];
-				                "Marker200" setMarkerColor "ColorRed";
-				                "Marker200" setMarkerText "!ATTENTION! BRAQUAGE";
-				                "Marker200" setMarkerType "mil_warning";			
+	_marker = createMarker ["Marker200", _Pos];
+	"Marker200" setMarkerColor "ColorRed";
+	"Marker200" setMarkerText "!ATTENTION! BRAQUAGE";
+	"Marker200" setMarkerType "mil_warning";			
 if(_cP >= 1) exitWith {};
-if(_robber distance _shop > 10.5) exitWith { };
+if(_robber distance _shop > 10.5) exitWith {};
 if!(alive _robber) exitWith {};
 };
-if!(alive _robber) exitWith { _rip = false; };
-if(_robber distance _shop > 10.5) exitWith { deleteMarker "Marker200"; _shop switchMove ""; hint "Tu dois rester à proximité pour le braquage! - Maintenant la caisse est bloqué."; 5 cutText ["","PLAIN"]; _rip = false; };
+if!(alive _robber) exitWith {_rip = false;};
+if(_robber distance _shop > 10.5) exitWith 
+{ 
+	deleteMarker "Marker200"; 
+	_shop switchMove ""; 
+	hint "Tu dois rester à proximité pour le braquage! - Maintenant la caisse est bloqué."; 5 cutText ["","PLAIN"]; 
+	_rip = false; 
+};
 5 cutText ["","PLAIN"];
 
 titleText[format["Tu as volé $%1, mais cours! La police arrive...",[_kassa] call life_fnc_numberText],"PLAIN"];

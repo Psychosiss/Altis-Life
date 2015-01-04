@@ -1,8 +1,8 @@
 if(dialog) exitWith {};
 life_safeObj = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 if(isNull life_safeObj) exitWith {};
-if((life_safeObj getVariable["safe",-1]) < 1) exitWith {hint "The safe is empty!";};
-if((life_safeObj getVariable["inUse",false])) exitWith {hint "Someone is already accessing the safe.."};
+if((life_safeObj getVariable["safe",-1]) < 1) exitWith {hint "Ce coffre est vide!";};
+if((life_safeObj getVariable["inUse",false])) exitWith {hint "Quelqu'un utilise déjà le coffre..."};
 if(!createDialog "Federal_Safe") exitWith {"Probleme de dialog, reportez-le."};
 disableSerialization;
 ctrlSetText[3501,"Safe Inventory"];

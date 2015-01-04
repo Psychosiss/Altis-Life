@@ -300,7 +300,6 @@ class CfgFunctions
 			class craft {};
 			class craft_update {};
 			class craft_updateFilter {};
-			class itemIcon {};
 		};
 		
 		class Functions
@@ -539,6 +538,7 @@ class CfgFunctions
 			class tent {};
 			class vehAmmo {};
 			class adrenalineShot {};
+			class antiMatter {};
 		};
 		
 		class Dialog_Controls
@@ -917,6 +917,20 @@ class CfgSounds
 	{
 		name = "airplane";
 		sound[] = {"sounds\airplane.ogg",1,1};
+		titles[] = {};
+	};
+
+	class trunk_open
+	{
+		name = "TrunkOpen";
+		sound[] = {"\sounds\trunk_open.ogg", 1.0, 1};
+		titles[] = {};
+	};
+
+	class trunk_close
+	{
+		name = "TrunkClose";
+		sound[] = {"\sounds\trunk_close.ogg", 1.0, 1};
 		titles[] = {};
 	};
 };

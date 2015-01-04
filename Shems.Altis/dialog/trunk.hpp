@@ -19,7 +19,7 @@ class TrunkMenu
 		
 		class RscBackground : Life_RscText
 		{
-			colorBackground[] = {0, 0, 0, 0.7};
+			colorBackground[] = {0,0,0,0.7};
 			idc = -1;
 			x = 0.1;
 			y = 0.2 + (11 / 250);
@@ -29,7 +29,7 @@ class TrunkMenu
 		
 		class RscTitleText : Life_RscTitle
 		{
-			colorBackground[] = {0, 0, 0, 0};
+			colorBackground[] = {0,0,0,0};
 			idc = 3501;
 			text = "";
 			x = 0.1;
@@ -52,8 +52,10 @@ class TrunkMenu
 			text = "$STR_Trunk_TInventory";
 			sizeEx = 0.04;
 			
-			x = 0.11; y = 0.25;
-			w = 0.3; h = 0.04;
+			x = 0.11; 
+			y = 0.25;
+			w = 0.3; 
+			h = 0.04;
 		};
 		
 		class RscPlayerText : Life_RscText
@@ -63,8 +65,10 @@ class TrunkMenu
 			text = "$STR_Trunk_PInventory";
 			sizeEx = 0.04;
 			
-			x = 0.49; y = 0.25;
-			w = 0.3; h = 0.04;
+			x = 0.49; 
+			y = 0.25;
+			w = 0.3; 
+			h = 0.04;
 		};	
 	};
 	
@@ -75,8 +79,10 @@ class TrunkMenu
 			idc = 3502;
 			text = "";
 			sizeEx = 0.030;
-			x = 0.11; y = 0.29;
-			w = 0.3; h = 0.42;
+			x = 0.11; 
+			y = 0.29;
+			w = 0.3; 
+			h = 0.42;
 		};
 		
 		class PlayerGear : Life_RscListBox
@@ -84,8 +90,10 @@ class TrunkMenu
 			idc = 3503;
 			text = "";
 			sizeEx = 0.030;
-			x = 0.49; y = 0.29;
-			w = 0.3; h = 0.42;
+			x = 0.49; 
+			y = 0.29;
+			w = 0.3; 
+			h = 0.42;
 		};
 		
 		class TrunkEdit : Life_RscEdit
@@ -93,8 +101,10 @@ class TrunkMenu
 			idc = 3505;
 			text = "1";
 			sizeEx = 0.030;
-			x = 0.11; y = 0.72;
-			w = 0.3; h = 0.03;
+			x = 0.11; 
+			y = 0.72;
+			w = 0.3; 
+			h = 0.03;
 		};
 		
 		class PlayerEdit : Life_RscEdit
@@ -102,8 +112,10 @@ class TrunkMenu
 			idc = 3506;
 			text = "1";
 			sizeEx = 0.030;
-			x = 0.49; y = 0.72;
-			w = 0.3; h = 0.03;
+			x = 0.49; 
+			y = 0.72;
+			w = 0.3; 
+			h = 0.03;
 		};
 		
 		class TakeItem : Life_RscButtonMenu
@@ -112,7 +124,8 @@ class TrunkMenu
 			text = "$STR_Trunk_Take";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			onButtonClick = "[] call life_fnc_vehTakeItem;";
-			x = 0.19; y = 0.78;
+			x = 0.19; 
+			y = 0.78;
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
@@ -123,7 +136,8 @@ class TrunkMenu
 			text = "$STR_Trunk_Store";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			onButtonClick = "[] call life_fnc_vehStoreItem;";
-			x = 0.57; y = 0.78;
+			x = 0.57; 
+			y = 0.78;
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
@@ -131,7 +145,7 @@ class TrunkMenu
 		class ButtonClose : Life_RscButtonMenu 
 		{
 			idc = -1;
-			text = "$STR_Global_Close";
+			text = "Fermer";
 			onButtonClick = "closeDialog 0;";
 			x = 0.1;
 			y = 0.9 - (1 / 25);

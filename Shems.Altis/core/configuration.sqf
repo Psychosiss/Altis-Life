@@ -25,6 +25,7 @@ life_smoking = false;
 life_drug_withdrawl = false;
 life_earplugs = false;
 life_animals_spawned = false;
+life_antimatter = false;
 life_drug_level = 0;
 life_cocaine_effect = 0;
 life_heroin_effect = 0;
@@ -270,7 +271,8 @@ life_inv_items =
 	"life_inv_rabbitp",
 	"life_inv_skinningknife",
 	"life_inv_vammo",
-	"life_inv_adrenalineShot"
+	"life_inv_adrenalineShot",
+	"life_inv_antimatter"
 ];
 
 {missionNamespace setVariable[_x,0];} foreach life_inv_items;
@@ -410,7 +412,8 @@ sell_array =
 	["snakep",1900],
 	["rabbitp",1800],
 	["vammo",10000],
-	["adrenalineShot",5000]
+	["adrenalineShot",5000],
+	["antimatter",1500000]
 ];
 __CONST__(sell_array,sell_array);
 

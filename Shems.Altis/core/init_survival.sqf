@@ -117,10 +117,7 @@
 
 [] spawn
 {
-	waitUntil 
-	{ 
-		life_session_completed 
-	};
+	waitUntil {life_session_completed};
 	for "_i" from 0 to (count life_addiction)-1 do
 	{
 		_new = life_addiction select _i;
@@ -255,8 +252,7 @@
 			{
 				hint "! Tu est dans une zone radioactive ! Mais ta combinaison te protège.";
 				sleep 5;
-			}else
-			{
+			} else {
 				hint "! TU ES DANS UNE ZONE RADIOACTIVE ! Tu risque de mourir si tu n'es pas protégé.";
 				_damage = damage player;
 				_damage = _damage + 0.1;

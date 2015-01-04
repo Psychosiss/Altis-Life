@@ -95,5 +95,6 @@ switch (_item) do
 	case "snakep": {1};
 	case "skinningknife": {1};
 	case "vammo": {40};
+	case "antimatter": {64};
 	default {1};
 };

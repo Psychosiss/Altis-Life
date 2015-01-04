@@ -20,8 +20,11 @@ if(isNil {uiNamespace getVariable "life_sql_id"}) then
 };
 
 _version = "extDB" callExtension "9:VERSION";
-if(_version == "") exitWith {life_server_extDB_notLoaded = true; 
-publicVariable "life_server_extDB_notLoaded";};
+if(_version == "") exitWith 
+{
+	life_server_extDB_notLoaded = true; 
+	publicVariable "life_server_extDB_notLoaded";
+};
 
 "extDB" callExtension "9:DATABASE:Database2";
 "extDB" callExtension format["9:ADD:DB_RAW:%1",(call life_sql_id)];
@@ -116,3 +119,4 @@ publicVariable "life_server_isReady";
 
 [] call ANTICHEAT_fnc_configureAnticheat;
 [] call SHEMS_fnc_antiHack;
+//[] call SHEMS_fnc_searchVehicleUID;
