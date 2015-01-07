@@ -14,14 +14,14 @@ switch(_mode) do
 		_value = [_value] call DB_fnc_numberSafe;
 		_query = format["UPDATE players SET cash='%1' WHERE playerid='%2'",_value,_uid];
 	};
-
+	
 	case 1: 
 	{
 		_value = [_this,2,0,[0]] call BIS_fnc_param;
 		_value = [_value] call DB_fnc_numberSafe;
 		_query = format["UPDATE players SET bankacc='%1' WHERE playerid='%2'",_value,_uid];
 	};
-
+	
 	case 2: 
 	{
 		_value = [_this,2,[],[[]]] call BIS_fnc_param;
@@ -34,7 +34,7 @@ switch(_mode) do
 			case east: {_query = format["UPDATE players SET east_licenses='%1' WHERE playerid='%2'",_value,_uid];};
 		};
 	};
-
+	
 	case 3: 
 	{
 		_value = [_this,2,[],[[]]] call BIS_fnc_param;
@@ -43,23 +43,22 @@ switch(_mode) do
 		{
 			case west: {_query = format["UPDATE players SET cop_gear='%1' WHERE playerid='%2'",_value,_uid];};
 			case civilian: {_query = format["UPDATE players SET civ_gear='%1' WHERE playerid='%2'",_value,_uid];};
-			case independent: {_query = format["UPDATE players SET med_gear='%1' WHERE playerid='%2'",_value,_uid];};
-			case east: {_query = format["UPDATE players SET east_gear='%1' WHERE playerid='%2'",_value,_uid];};
 		};
 	};
 	
-	case 4: {};
-
+	case 4: 
+	{
+		_value = [_this,2,false,[true]] call BIS_fnc_param;
+		_value = [_value] call DB_fnc_bool;
+		_query = format["UPDATE players SET alive='%1' WHERE playerid='%2'",_value,_uid];
+	};
+	
 	case 5: 
 	{
 		_value = [_this,2,false,[true]] call BIS_fnc_param;
 		_value = [_value] call DB_fnc_bool;
 		_query = format["UPDATE players SET arrested='%1' WHERE playerid='%2'",_value,_uid];
 	};
-
-	case 6: {};
-	case 7: {};
-	case 8: {};
 };
 
 if(_query == "") exitWith {};

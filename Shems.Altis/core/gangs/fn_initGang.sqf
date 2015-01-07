@@ -1,4 +1,6 @@
 private["_exitLoop","_group","_wait"];
+
+if(playerSide != civilian) exitWith {};
 if(count life_gangData == 0) exitWith {};
 
 _wait = round(random(8));

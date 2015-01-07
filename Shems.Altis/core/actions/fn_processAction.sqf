@@ -115,7 +115,7 @@ _upp = _itemInfo select 3;
 if(_vendor in [mari_processor,coke_processor,heroin_processor]) then 
 {
 	_hasLicense = true;
-	} else {
+} else {
 	_hasLicense = missionNamespace getVariable (([_type,0] call life_fnc_licenseType) select 0);
 };
 

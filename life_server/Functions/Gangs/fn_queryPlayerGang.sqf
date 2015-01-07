@@ -4,7 +4,8 @@ _query = format["SELECT id, owner, name, maxmembers, bank, members FROM gangs WH
 waitUntil{!DB_Async_Active};
 _queryResult = [_query,2] call DB_fnc_asyncCall;
 
-if(count _queryResult != 0) then {
+if(count _queryResult != 0) then 
+{
 	_tmp = [_queryResult select 5] call DB_fnc_mresToArray;
 	if(typeName _tmp == "STRING") then {_tmp = call compile format["%1",_tmp];};
 	_queryResult set[5, _tmp];

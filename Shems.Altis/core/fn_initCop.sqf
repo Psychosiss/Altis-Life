@@ -21,6 +21,9 @@ if((__GETC__(life_coplevel)) < 1) exitWith
 [] call life_fnc_spawnMenu;
 [] spawn life_fnc_onPlayerAbsent;
 
+player setVariable["rank",(__GETC__(life_coplevel)),true];
+
+/*
 if(playerSide == west) then 
 {
     private["_getRank"];
@@ -40,6 +43,7 @@ if(playerSide == west) then
 	};
     player setVariable["coplevel",_getRank,TRUE];
 };
+*/
 
 waitUntil{!isNull (findDisplay 38500)};
 waitUntil{isNull (findDisplay 38500)};
@@ -53,7 +57,3 @@ waitUntil{isNull (findDisplay 38500)};
 		waitUntil {uniform player != "U_Rangemaster"};
 	};
 };
-
-player setVariable["coplevel", __GETC__(life_coplevel), true];
-player setVariable["medlevel", __GETC__(life_medicLevel), true];
-player setVariable["adminlevel", __GETC__(life_adminlevel), true];

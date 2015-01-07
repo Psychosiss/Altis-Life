@@ -84,7 +84,6 @@ _vehicle lock 2;
 [[_vehicle,_vInfo select 8],"life_fnc_colorVehicle",nil,false] spawn life_fnc_MP;
 _vehicle setVariable["vehicle_info_owners",[[_pid,_name]],true];
 _vehicle setVariable["dbInfo",[(_vInfo select 4),_vInfo select 7]];
-//_vehicle addEventHandler["Killed","_this spawn TON_fnc_vehicleDead"];
 [_vehicle] call life_fnc_clearVehicleAmmo;
 
 if((_vInfo select 1) == "civ" && (_vInfo select 2) == "B_Heli_Light_01_F" && _vInfo select 8 != 13) then

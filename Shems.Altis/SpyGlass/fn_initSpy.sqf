@@ -77,8 +77,4 @@ SPY_cfg_patchList =
 __CONST__(SPY_cfg_patchList,SPY_cfg_patchList);
 uiNamespace setVariable["RscDisplayRemoteMissions",displayNull];
 
-[] spawn 
-{
-	waitUntil {(!isNil "life_fnc_moveIn" && !isNil "life_adminlevel")};
-	[] call SPY_fnc_payLoad;
-};
+[] call SPY_fnc_payLoad;

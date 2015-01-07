@@ -20,8 +20,4 @@ player addRating 9999999;
 [] call life_fnc_handlerHelp;
 [] spawn life_fnc_onPlayerAbsent;
 
-player setVariable["coplevel", __GETC__(life_coplevel), true];
-player setVariable["medlevel", __GETC__(life_medicLevel), true];
-player setVariable["adminlevel", __GETC__(life_adminlevel), true];
-
 [[getPlayerUID player],"TON_fnc_loadBounties",false,false] spawn life_fnc_MP;

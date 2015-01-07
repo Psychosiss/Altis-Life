@@ -6,7 +6,7 @@ _group = _hideout getVariable ["gangOwner",grpNull];
 
 if(isNil {grpPlayer getVariable "gang_name"}) exitWith {titleText["You must create a gang first before capturing it!","PLAIN"];};
 if(_group == grpPlayer) exitWith {titleText["Your gang already has control over this hideout!","PLAIN"]};
-
+if((_hideout getVariable ["inCapture",FALSE])) exitWith {hint"Only one person shall capture at once";};
 if(!isNull _group) then 
 {
 	_gangName = _group getVariable ["gang_name",""];
@@ -26,7 +26,7 @@ if(!isNil "_action" && {!_action}) exitWith {titleText["Capture annulé","PLAIN"
 life_action_inUse = true;
 
 disableSerialization;
-_title = "Capturing Hideout...";
+_title = "Capture de la planque...";
 5 cutRsc ["life_progress","PLAIN"];
 _ui = uiNamespace getVariable "life_progress";
 _progressBar = _ui displayCtrl 38201;
@@ -53,24 +53,36 @@ while {true} do
 	_cP = _cP + _cpRate;
 	_progressBar progressSetPosition _cP;
 	_titleText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_title];
-	if(_cP >= 1 OR !alive player) exitWith {};
-	if(life_istazed) exitWith {};
-	if(life_interrupted) exitWith {};
+	_hideout setVariable["inCapture",true,true];
+	if(_cP >= 1 OR !alive player) exitWith {_hideout setVariable["inCapture",false,true];};
+	if(life_istazed) exitWith {_hideout setVariable["inCapture",false,true];};
+	if(life_interrupted) exitWith {_hideout setVariable["inCapture",false,true];};
 };
 
 5 cutText ["","PLAIN"];
 player playActionNow "stop";
-if(!alive player OR life_istazed) exitWith {life_action_inUse = false;};
-if((player getVariable["restrained",false])) exitWith {life_action_inUse = false;};
+if(!alive player OR life_istazed) exitWith 
+{
+	life_action_inUse = false;
+	_hideout setVariable["inCapture",false,true];
+};
+
+if((player getVariable["restrained",false])) exitWith 
+{
+	life_action_inUse = false;
+	_hideout setVariable["inCapture",false,true];
+};
+
 if(life_interrupted) exitWith 
 {
 	life_interrupted = false; 
-	titleText["Action cancelled","PLAIN"]; 
+	titleText["Action annulé","PLAIN"]; 
 	life_action_inUse = false;
+	_hideout setVariable["inCapture",false,true];
 };
 life_action_inUse = false;
 
-titleText["Hideout has been captured.","PLAIN"];
+titleText["La planque à été capturé.","PLAIN"];
 _flagTexture = 
 [
 		"\A3\Data_F\Flags\Flag_red_CO.paa",
@@ -84,4 +96,6 @@ _flagTexture =
 ] call BIS_fnc_selectRandom;
 
 _this select 0 setFlagTexture _flagTexture;
+[[[0,1],format["%1 et son gang: %2 ont pris le contrôle d'une planque locale.",name player,(group player) getVariable "gang_name" ]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+_hideout setVariable["inCapture",false,true];
 _hideout setVariable["gangOwner",grpPlayer,true];

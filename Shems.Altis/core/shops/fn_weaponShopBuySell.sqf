@@ -25,22 +25,24 @@ if((uiNamespace getVariable["Weapon_Shop_Filter",0]) == 1) then
 	[_item,false] call life_fnc_handleItem;
 	hint parseText format["You sold a %1 for <t color='#8cff9b'>$%2</t>",_itemInfo select 1,[_price] call life_fnc_numberText];
 	[nil,(uiNamespace getVariable["Weapon_Shop_Filter",0])] call life_fnc_weaponShopFilter; //Update the menu.
-}
-	else
-{
+} else {
 	private["_hideout"];
 	_hideout = (nearestObjects[getPosATL player,["Land_u_Barracks_V2_F","Land_i_Barracks_V2_F"],25]) select 0;
 	if(!isNil "_hideout" && {!isNil {grpPlayer getVariable "gang_bank"}} && {(grpPlayer getVariable "gang_bank") >= _price}) then {
-		_action = [
-			format["The gang has enough funds to pay for this, would you like to pay with the gangs funds or your own?<br/><br/>Gang Funds: <t color='#8cff9b'>$%1</t><br/>Your Cash: <t color='#8cff9b'>$%2</t>",
+		_action = 
+		[
+			format
+			[
+				"The gang has enough funds to pay for this, would you like to pay with the gangs funds or your own?<br/><br/>Gang Funds: <t color='#8cff9b'>$%1</t><br/>Your Cash: <t color='#8cff9b'>$%2</t>",
 				[(grpPlayer getVariable "gang_bank")] call life_fnc_numberText,
 				[life_cash] call life_fnc_numberText
 			],
-			"Pay with cash or gang funds",
-			"Gang Funds",
-			"My Cash"
+			"Payer avec votre argent ou celui du gang",
+			"Argent du gang",
+			"Mon argent"
 		] call BIS_fnc_guiMessage;
-		if(_action) then {
+		if(_action) then 
+		{
 			hint parseText format["You bought a %1 for <t color='#8cff9b'>$%2</t> with the gangs funds.",_itemInfo select 1,[_price] call life_fnc_numberText];
 			_funds = grpPlayer getVariable "gang_bank";
 			_funds = _funds - _price;

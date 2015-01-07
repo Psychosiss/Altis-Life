@@ -8,6 +8,7 @@ if((_this select 3) == "reb" && !license_civ_rebel) exitWith {hint "Vous n'etes 
 if((_this select 3) == "cop" && playerSide != west) exitWith {hint "Vous n'etes pas un flic!"; closeDialog 0;};
 if((_this select 3) == "east" && playerSide != east) exitWith {hint "Vous n'etes pas un militaire!"; closeDialog 0;};
 if((_this select 3) == "med" && playerSide != independent) exitWith {hint "Vous n'etes pas un medecin!"; closeDialog 0;};
+if((_this select 3) == "dive" && !license_civ_dive) exitWith {hint "Vous n'avez pas la license de plongée!"; closeDialog 0;};
 
 life_clothing_store = _this select 3;
 

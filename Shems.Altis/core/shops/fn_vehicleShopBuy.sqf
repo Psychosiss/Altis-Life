@@ -35,6 +35,7 @@ if((life_veh_shop select 0) == "med_air_hs") then
 	systemChat "Tickle";
 	_vehicle = createVehicle [_className,[0,0,999],[], 0, "NONE"];
 	waitUntil {!isNil "_vehicle"};
+	_vehicle allowDamage false;
 	_hs = nearestObjects[getMarkerPos _spawnPoint,["Land_Hospital_side2_F"],50] select 0;
 	_vehicle setPosATL (_hs modelToWorld [-0.4,-4,14]);
 	_vehicle lock 2;
@@ -55,8 +56,9 @@ if((life_veh_shop select 0) == "med_air_hs") then
 	[_vehicle] call life_fnc_clearVehicleAmmo;
 	_vehicle setVariable["trunk_in_use",false,true];
 	_vehicle setVariable["vehicle_info_owners",[[getPlayerUID player,profileName]],true];
-	_vehicle disableTIEquipment true;
 };
+
+_vehicle allowDamage true;
 
 switch(playerSide) do 
 {

@@ -27,7 +27,3 @@ waitUntil{isNull (findDisplay 38500)};
 		waitUntil {uniform player != "U_Rangemaster"};
 	};
 };
-
-player setVariable["coplevel", __GETC__(life_coplevel), true];
-player setVariable["medlevel", __GETC__(life_medicLevel), true];
-player setVariable["adminlevel", __GETC__(life_adminlevel), true];

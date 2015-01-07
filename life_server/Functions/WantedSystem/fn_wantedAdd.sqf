@@ -58,6 +58,7 @@ switch(_type) do
 	case "261": {_type = ["Viol",5000]};
 	case "261A": {_type = ["Tentative De Viol",3000]};
 	case "459": {_type = ["Cambriolage",6500]};
+	case "459A": {_type = ["Pillage de la reserve fédérale",65000]};
 	case "480": {_type = ["Délit De Fuite",1300]};
 	case "481": {_type = ["possession De Substance Illicite",1000]};
 	case "482": {_type = ["Intention De Distribuer",5000]};
