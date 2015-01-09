@@ -2,15 +2,30 @@ private ["_validFunctions","_params","_functionName","_target","_isPersistent","
 _exitScope = false;
 _varName = _this select 0;
 _varValue = _this select 1;
+_mode = [_varValue,0,[0]] call BIS_fnc_param;
+_params = [_varValue,1,[]] call BIS_fnc_param;
+_functionName =	[_varValue,2,"",[""]] call BIS_fnc_param;
+_target = [_varValue,3,true,[ObjNull,true,0,[],sideUnknown,GrpNull,""]] call BIS_fnc_param;
+_isPersistent =	[_varValue,4,false,[false]] call BIS_fnc_param;
+_isCall = [_varValue,5,false,[false]] call BIS_fnc_param;
+_callerName = [_varValue,6,"",[""]] call BIS_fnc_param;
+_callerUID = [_varValue,7,"",[""]] call BIS_fnc_param;
 
-_mode = [_varValue,0,[0]] call bis_fnc_param;
-_params = [_varValue,1,[]] call bis_fnc_param;
-_functionName =	[_varValue,2,"",[""]] call bis_fnc_param;
-_target = [_varValue,3,true,[ObjNull,true,0,[],sideUnknown,GrpNull,""]] call bis_fnc_param;
-_isPersistent =	[_varValue,4,false,[false]] call bis_fnc_param;
-_isCall = [_varValue,5,false,[false]] call bis_fnc_param;
-_callerName = [_varValue,6,"",[""]] call bis_fnc_param;
-_callerUID = [_varValue,7,"",[""]] call bis_fnc_param;
+if(!(["life_fnc_",_functionName] call BIS_fnc_inString) && 
+{!(["SPY_fnc_",_functionName] call BIS_fnc_inString)} && 
+{!(["DB_fnc_",_functionName] call BIS_fnc_inString)} && 
+{!(["SHEMS_fnc_",_functionName] call BIS_fnc_inString)} && 
+{!(["TON_fnc_",_functionName] call BIS_fnc_inString)} &&
+{!(toLower(_functionName) in ["BIS_fnc_execVM","BIS_fnc_effectkilledairdestruction","BIS_fnc_effectkilledairdestructionstage2"])} && 
+{!(["SOCK_fnc_",_functionName] call BIS_fnc_inString)}) exitWith {false};
+if(toLower(_functionName) == "DB_fnc_asyncCall") exitWith {false};
+
+if(_functionName == "BIS_fnc_execVM") then 
+{
+	_param2 = _params select 1;
+	if(isNil "_param2") exitWith {_exitScope = true;};
+	if(_param2 != "initPlayerServer.sqf") exitWith {_exitScope = true;};
+};
 
 if(_callerName == "" OR _callerUID == "") exitWith {};
 if(_callerUID != "__SERVER__" && _callerName != "__SERVER__" && toLower(_functionName) in ["spy_fnc_cookiejar","spy_fnc_notifyadmins"]) then 
@@ -42,9 +57,8 @@ if(_callerUID != "__SERVER__" && _callerName != "__SERVER__" && toLower(_functio
 		_exitScope = true;
 	};
 };
-	
-if(toLower(_functionName) == "bis_fnc_endmission") exitWith {false};
 
+if(toLower(_functionName) == "BIS_fnc_endmission") exitWith {false};
 if(_exitScope) exitWith {false};
 if (isMultiplayer && _mode == 0) then 
 {
@@ -57,7 +71,7 @@ if (isMultiplayer && _mode == 0) then
 			} foreach _target;
 		} else {
 			private ["_ownerID","_serverID"];
-			_serverID = owner (missionnamespace getvariable ["bis_functions_mainscope",objnull]);
+			_serverID = owner (missionnamespace getvariable ["BIS_functions_mainscope",objnull]);
 			switch (typename _target) do 
 			{
 				case (typename objnull): 
@@ -103,7 +117,7 @@ if (isMultiplayer && _mode == 0) then
 				if (typename _target != typename 0) then 
 				{
 					private ["_logic","_queue"];
-					_logic = missionnamespace getvariable ["bis_functions_mainscope",objnull];
+					_logic = missionnamespace getvariable ["BIS_functions_mainscope",objnull];
 					_queue = _logic getvariable ["BIS_fnc_MP_queue",[]];
 					_queue set 
 					[
@@ -112,7 +126,7 @@ if (isMultiplayer && _mode == 0) then
 					];
 					_logic setvariable ["BIS_fnc_MP_queue",_queue,true];
 				} else {
-					["Persistent execution is not allowed when target is %1. Use %2 or %3 instead.",typename 0,typename objnull,typename false] call bis_fnc_error;
+					["Persistent execution is not allowed when target is %1. Use %2 or %3 instead.",typename 0,typename objnull,typename false] call BIS_fnc_error;
 				};
 			};
 		};
@@ -126,7 +140,6 @@ if (isMultiplayer && _mode == 0) then
 		case (typeName ""): {if(!isNull player) then {getPlayerUID player == _target;} else {false}};
 		default {true};
 	};
-
 	if (_canExecute) then 
 	{
 		_function = missionnamespace getvariable _functionName;
@@ -140,7 +153,7 @@ if (isMultiplayer && _mode == 0) then
 			};
 			true
 		} else {
-			["Function '%1' does not exist",_functionName] call bis_fnc_error;
+			["Function '%1' does not exist",_functionName] call BIS_fnc_error;
 			false
 		};
 	};

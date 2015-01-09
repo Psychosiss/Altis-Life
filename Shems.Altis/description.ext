@@ -459,6 +459,7 @@ class CfgFunctions
 			class copSiren2 {};
 			class tazerFix {};
 			class copLoadout {};
+			class ticketPaid {};
 		};
 		
 		class Gangs

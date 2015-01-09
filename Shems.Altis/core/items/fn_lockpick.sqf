@@ -72,7 +72,7 @@ if(!_isVehicle) then
 	{
 		titleText["Vous avez crocheté le véhicule avec succès.","PLAIN"];
 		[[_curTarget],"life_fnc_CarAlarmSound",nil,true] spawn life_fnc_MP;
-		life_vehicles set[count life_vehicles,_curTarget];
+		life_vehicles pushBack _curTarget;
 		[[getPlayerUID player,profileName,"487"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
 	} else {
 		[[getPlayerUID player,profileName,"215"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;

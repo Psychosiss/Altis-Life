@@ -13,7 +13,7 @@ if(_bool) then
 		_type = _animals call BIS_fnc_selectRandom;
 		_animal = _type createUnit [(position player),(createGroup civilian)];
 		hint format["%1\n%2",_type,_animal];
-		life_animals_array set[count life_animals_array,_animal];
+		life_animals_array pushBack _animal;
 	};
 	life_animals_spawned = true;
 	systemChat str(life_animals_array);

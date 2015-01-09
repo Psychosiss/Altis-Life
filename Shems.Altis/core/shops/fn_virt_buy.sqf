@@ -29,7 +29,7 @@ if(([true,_type,_amount] call life_fnc_handleInv)) then
 		[
 			format
 			[
-				"The gang has enough funds to pay for this, would you like to pay with the gangs funds or your own?<br/><br/>Argent du gang: <t color='#8cff9b'>$%1</t><br/>Votre argent: <t color='#8cff9b'>$%2</t>",
+				"The gang has enough funds to pay for this, would you like to pay with the gangs funds or your own?<br/><br/>Argent du gang: <t color='#8CFF9B'>$%1</t><br/>Votre argent: <t color='#8CFF9B'>$%2</t>",
 				[(grpPlayer getVariable "gang_bank")] call life_fnc_numberText,
 				[life_cash] call life_fnc_numberText
 			],
@@ -39,7 +39,7 @@ if(([true,_type,_amount] call life_fnc_handleInv)) then
 		] call BIS_fnc_guiMessage;
 		if(_action) then 
 		{
-			hint format["Vous avez acheté %1 %2 pour $%3 avec l'argent du gang.",_amount,_name,[(_price * _amount)] call life_fnc_numberText];
+			hint format["Vous avez acheté %1 %2 pour %3 € avec l'argent du gang.",_amount,_name,[(_price * _amount)] call life_fnc_numberText];
 			_funds = grpPlayer getVariable "gang_bank";
 			_funds = _funds - (_price * _amount);
 			grpPlayer setVariable["gang_bank",_funds,true];

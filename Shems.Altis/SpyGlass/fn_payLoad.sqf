@@ -81,9 +81,9 @@ if(_onUnload != "[""onUnload"",_this,""RscDisplayInventory"",'IGUI'] call compil
 [] spawn SPY_fnc_cmdMenuCheck;
 [] spawn SPY_fnc_variableCheck;
 
-/*
 [] spawn 
 {
+	waitUntil {(!isNil "life_fnc_moveIn")};
 	while {true} do 
 	{
 		if((unitRecoilCoefficient player) < 1) then 
@@ -96,4 +96,3 @@ if(_onUnload != "[""onUnload"",_this,""RscDisplayInventory"",'IGUI'] call compil
 		sleep 1.5;
 	};
 };
-*/

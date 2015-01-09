@@ -11,9 +11,9 @@ switch (_filter) do
 	//Uniforms
 	case 0:
 	{
-		_ret set[count _ret,["U_Rangemaster",nil,25]];
-		_ret set[count _ret,["U_B_CombatUniform_mcam_worn",nil,350]];
-		_ret set[count _ret,["U_B_SpecopsUniform_sgg",nil,350]];
+		_ret pushBack ["U_Rangemaster",nil,25];
+		_ret pushBack ["U_B_CombatUniform_mcam_worn",nil,350];
+		_ret pushBack ["U_B_SpecopsUniform_sgg",nil,350];
 	};
 	
 	//Hats
@@ -21,15 +21,15 @@ switch (_filter) do
 	{
 		if(__GETC__(life_coplevel) > 1) then
 		{
-			_ret set[count _ret,["H_HelmetB_plain_mcamo",nil,75]];
-			_ret set[count _ret,["H_Booniehat_mcamo",nil,120]];
-			_ret set[count _ret,["H_CrewHelmetHeli_B","masque à gaz",500]];
-			_ret set[count _ret,["H_Beret_blk_POLICE",nil,50]];
-			_ret set[count _ret,["H_MilCap_mcamo",nil,100]];
-			_ret set[count _ret,["NVGoggles_mas_mask",nil,1500]];
-			_ret set[count _ret,["NVGoggles_mas_mask_b",nil,1500]];
-			_ret set[count _ret,["NVGoggles_mas_mask_t",nil,1500]];
-			_ret set[count _ret,["NVGoggles_mas",nil,1500]];
+			_ret pushBack ["H_HelmetB_plain_mcamo",nil,75];
+			_ret pushBack ["H_Booniehat_mcamo",nil,120];
+			_ret pushBack ["H_CrewHelmetHeli_B","masque à gaz",500];
+			_ret pushBack ["H_Beret_blk_POLICE",nil,50];
+			_ret pushBack ["H_MilCap_mcamo",nil,100];
+			_ret pushBack ["NVGoggles_mas_mask",nil,1500];
+			_ret pushBack ["NVGoggles_mas_mask_b",nil,1500];
+			_ret pushBack ["NVGoggles_mas_mask_t",nil,1500];
+			_ret pushBack ["NVGoggles_mas",nil,1500];
 		};
 	};
 	
@@ -54,13 +54,13 @@ switch (_filter) do
 	//Vest
 	case 3:
 	{
-		_ret set[count _ret,["V_Rangemaster_belt",nil,800]];
+		_ret pushBack ["V_Rangemaster_belt",nil,800];
 		if(__GETC__(life_coplevel) > 1) then
 		{
-			_ret set[count _ret,["V_PlateCarrier1_rgr",nil,1500]];
-			_ret set[count _ret,["V_PlateCarrier2_rgr",nil,1500]];
-			_ret set[count _ret,["V_PlateCarrier3_rgr",nil,1450]];
-			_ret set[count _ret,["V_TacVest_blk_POLICE",nil,1300]];
+			_ret pushBack ["V_PlateCarrier1_rgr",nil,1500];
+			_ret pushBack ["V_PlateCarrier2_rgr",nil,1500];
+			_ret pushBack ["V_PlateCarrier3_rgr",nil,1450];
+			_ret pushBack ["V_TacVest_blk_POLICE",nil,1300];
 		};
 	};
 	

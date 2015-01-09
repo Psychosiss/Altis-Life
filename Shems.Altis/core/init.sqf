@@ -102,7 +102,19 @@ LIFE_ID_RevealObjects = ["LIFE_RevealObjects","onEachFrame","life_fnc_revealObje
 [] call life_fnc_settingsInit;
 player setVariable["steam64ID",getPlayerUID player];
 player setVariable["realname",profileName,true];
-life_fnc_moveIn = compileFinal "player moveInCargo (_this select 0);";
+
+life_fnc_moveIn = 
+compileFinal "
+	player moveInCargo (_this select 0);
+";
+
+life_fnc_garageRefund = 
+compileFinal "
+	_price = _this select 0;
+	_unit = _this select 1;
+	if(_unit != player) exitWith {};
+	life_atmcash = life_atmcash + _price;
+";
 
 [] execVM "core\init_survival.sqf";
 [] spawn life_fnc_fatigueReset;

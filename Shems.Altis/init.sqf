@@ -42,3 +42,8 @@ if(isDedicated && isNil("life_market_prices")) then
 };
 
 StartProgress = true;
+
+"BIS_fnc_MP_packet" addPublicVariableEventHandler 
+{
+	_this call life_fnc_MPexec
+};

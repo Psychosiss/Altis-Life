@@ -142,6 +142,8 @@ class CfgFunctions
 			class saveBounties {};
 			class loadBounties {};
 			class vehicleIsDead {};
+			class keyManagement {};
+			class setObjVar {};
 		};
 		
 		class Housing

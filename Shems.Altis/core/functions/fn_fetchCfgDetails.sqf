@@ -62,18 +62,18 @@ switch (_cfg) do
 					{
 						if !((configName _thiscfgitem) in _slotclasses) then 
 						{
-							_slotclasses set [count _slotclasses, configName _thiscfgitem];
+							_slotclasses pushBack configName _thiscfgitem;
 						};
 					};
 				};
 			} forEach ([_config>>"WeaponSlotsInfo"] call bis_fnc_returnParents);
 		};
-		
+
 		if(isClass (_config >> "ItemInfo")) then
 		{
 			_itemInfo = getNumber(_config >> "ItemInfo" >> "Type");
 		};
-		
+
 		_muzzles = getArray(_config >> "muzzles");
 		_magazines = getArray(_config >> "magazines");
 		if(!isNil {_muzzles}) then
@@ -84,7 +84,7 @@ switch (_cfg) do
 				{
 					_tmp = getArray(_base >> _x >> "magazines");
 					{
-						_magazines set[count _magazines, _x];
+						_magazines pushBack _x;
 					} foreach (_tmp);
 				};
 			} foreach _muzzles;

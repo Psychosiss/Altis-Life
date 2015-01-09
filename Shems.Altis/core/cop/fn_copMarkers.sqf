@@ -3,17 +3,20 @@ _markers = [];
 _cops = [];
 
 sleep 0.5;
-if(visibleMap) then {
-	{if(side _x == west) then {_cops set[count _cops,_x];}} foreach playableUnits;
-	
-	//Create markers
+if(visibleMap) then 
+{
+	{
+		if(side _x == west) then 
+		{_
+			cops pushBack _x;
+		}
+	} foreach playableUnits;
 	{
 		_marker = createMarkerLocal [format["%1_marker",_x],visiblePosition _x];
 		_marker setMarkerColorLocal "ColorBlue";
 		_marker setMarkerTypeLocal "Mil_dot";
 		_marker setMarkerTextLocal format["%1", _x getVariable["realname",name _x]];
-	
-		_markers set[count _markers,[_marker,_x]];
+		_markers pushBack [_marker,_x];
 	} foreach _cops;
 		
 	while {visibleMap} do

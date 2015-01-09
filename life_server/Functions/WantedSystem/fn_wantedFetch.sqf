@@ -4,7 +4,12 @@ if(isNull _ret) exitWith {};
 
 _ret = owner _ret;
 _jailedUnits = [];
-{if(_x distance (getMarkerPos "jail_marker") < 120) then {_jailedUnits set[count _jailedUnits,getPlayerUID _x]}} count playableUnits;
+{
+	if(_x distance (getMarkerPos "jail_marker") < 120) then 
+	{
+		_jailedUnits pushBack getPlayerUID _x
+	}
+} count playableUnits;
 
 _list = [];
 {
@@ -13,7 +18,7 @@ _list = [];
 	{
 		if(!(_uid in _jailedUnits)) then 
 		{
-			_list set[count _list,_x];
+			_list pushBack _x;
 		};
 	};
 } foreach life_wanted_list;

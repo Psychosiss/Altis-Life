@@ -31,30 +31,27 @@ switch (_index) do
 		private["_listedItems"];
 		_config = [];
 		_listedItems = [];
-		if(primaryWeapon player != "") then {_config set[count _config,primaryWeapon player]};
-		if(secondaryWeapon player != "") then {_config set[count _config,secondaryWeapon player]};
-		if(handgunWeapon player != "") then {_config set[count _config,handgunWeapon player]};
+		if(primaryWeapon player != "") then {_config pushBack primaryWeapon player;};
+		if(secondaryWeapon player != "") then {_config pushBack secondaryWeapon player;};
+		if(handgunWeapon player != "") then {_config pushBack handgunWeapon player;};
 
 		_config = _config + primaryWeaponItems player;
 		_config = _config + (assignedItems player);
 		_config = _config + (uniformItems player);
 		_config = _config + (vestItems player);
 		_config = _config + (backPackItems player);
-		
+
 		((findDisplay 38400) displayCtrl 38405) ctrlSetText "Sell";
 		{
 			if(!(_x in _listedItems) && _x != "") then
 			{
 				_itemInfo = [_x] call life_fnc_fetchCfgDetails;
-				_listedItems set[count _listedItems,_x];
-				
+				_listedItems pushBack _x;
 				_itemCount = {_x == (_itemInfo select 0)} count _config;
 				if(_itemCount > 1) then
 				{
 					_itemList lbAdd format["[%2] %1",_itemInfo select 1,_itemCount];
-				}
-					else
-				{
+				} else {
 					_itemList lbAdd format["%1",_itemInfo select 1];
 				};
 				_itemList lbSetData[(lbSize _itemList)-1,_itemInfo select 0];

@@ -1,4 +1,3 @@
-closeDialog 0;
 private["_gather","_itemWeight","_diff","_itemName","_val","_resourceZones","_zone","_text","_noesckey","_noEscKey"];
 _resourceZones = 
 [
@@ -36,7 +35,6 @@ while {gather_var} do
 
 	if(_zone == "") exitWith 
 	{
-		hint "Vous n'êtes pas à proximité d'un champ de ressources";
 		gather_var = false;
 		life_action_inUse = false;
 	};
@@ -63,8 +61,7 @@ while {gather_var} do
 
 	if(vehicle player != player) exitWith 
 	{ 
-		gather_var = false; 
-		hint "Vous ne pouvez pas collecter de l'intérieur d'une voiture!";
+		gather_var = false;
 	};
 
 	_diff = [_gather,_val,life_carryWeight,life_maxWeight] call life_fnc_calWeightDiff;

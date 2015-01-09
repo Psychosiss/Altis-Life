@@ -1,7 +1,11 @@
 private["_unit","_shooter","_curWep","_curMags","_attach"];
 _unit = [_this,0,Objnull,[Objnull]] call BIS_fnc_param;
 _shooter = [_this,1,Objnull,[Objnull]] call BIS_fnc_param;
-if(isNull _unit OR isNull _shooter) exitWith {player allowDamage true; life_istazed = false;};
+if(isNull _unit OR isNull _shooter) exitWith 
+{
+	player allowDamage true; 
+	life_istazed = false;
+};
 
 if(_shooter isKindOf "Man" && alive player) then
 {
@@ -34,7 +38,8 @@ if(_shooter isKindOf "Man" && alive player) then
 		disableUserInput true;
 		sleep 15;
 		[[player,"amovppnemstpsraswrfldnon"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
-		if(!(player getVariable["Escorting",false])) then {
+		if(!(player getVariable["Escorting",false])) then 
+		{
 			detach player;
 		};
 		life_istazed = false;

@@ -9,7 +9,8 @@ if(count _itemArray == 0) exitWith
 {
     switch(playerSide) do 
 	{
-        case west: {
+        case west: 
+		{
             [] call life_fnc_copLoadout;
         };
         
@@ -56,12 +57,57 @@ if(_backpack != "") then {_handle = [_backpack,true,false,false,false] spawn lif
 {(vestContainer player) addItemCargoGlobal [_x,1];} foreach (_vMags);
 {player addItemToBackpack _x;} foreach (_bItems);
 {(backpackContainer player) addItemCargoGlobal [_x,1];} foreach (_bMags);
-life_maxWeight = 100;
+
+switch (playerSide) do
+{
+	case west: 
+	{
+		life_maxWeight = 50;
+	};
+
+	case independent: 
+	{
+		life_maxWeight = 50;
+	};
+
+	case civilian : 
+	{
+		life_maxWeight = 24;
+	};
+
+	case east : 
+	{
+		life_maxWeight = 24;
+	};
+};
+
 {
     _item = [_x,1] call life_fnc_varHandle;
     [true,_item,1] call life_fnc_handleInv;
 } foreach (_yItems);
-life_maxWeight = 24;
+
+switch (playerSide) do
+{
+	case west: 
+	{
+		life_maxWeight = 50;
+	};
+
+	case independent: 
+	{
+		life_maxWeight = 50;
+	};
+
+	case civilian : 
+	{
+		life_maxWeight = 24;
+	};
+
+	case east : 
+	{
+		life_maxWeight = 24;
+	};
+};
 
 if(_prim != "") then {_handle = [_prim,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
 if(_seco != "") then {_handle = [_seco,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};

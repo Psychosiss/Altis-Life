@@ -1,6 +1,7 @@
 private["_exitLoop","_group","_wait"];
 
 if(playerSide != civilian) exitWith {};
+[player] join (createGroup civilian);
 if(count life_gangData == 0) exitWith {};
 
 _wait = round(random(8));
@@ -17,9 +18,11 @@ _exitLoop = false;
 	};
 } foreach allGroups;
 
-if(!isNil "_group") then {
+if(!isNil "_group") then 
+{
 	[player] join _group;
-	if((life_gangData select 1) == (getPlayerUID player)) then {
+	if((life_gangData select 1) == (getPlayerUID player)) then 
+	{
 		_group selectLeader player;
 		[[player,_group],"clientGangLeader",(units _group),false] spawn life_fnc_MP;
 	};

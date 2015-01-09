@@ -51,7 +51,7 @@ if(_enable && !life_animals_spawned) then
 							_a setVectorUp _v; _p set [2, 0.1]; _a setPos _p; 
 						}; 
 					}];
-					life_animals_array set[count life_animals_array,_animal];
+					life_animals_array pushBack _animal;
 				};
 				life_animals_spawned_time = time;
 			};

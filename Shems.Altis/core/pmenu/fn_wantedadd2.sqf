@@ -6,21 +6,20 @@ _list = _display displayCtrl 9902;
 
 lbClear _list;
 
-
 {
-    _side = switch(side _x) do {case west: {"Cop"}; case civilian : {"Civ"}; default {"Unknown"};};
+    _side = switch(side _x) do 
+	{
+		case west: {"Cop"};
+		case civilian: {"Civ"};
+		case independent: {"Med"};
+		default {"Bug"};
+	};
     _list lbAdd format["%1 - %2", name _x,_side];
     _list lbSetdata [(lbSize _list)-1,str(_x)];
 } foreach playableUnits;
 
-
 _list2 = _display displayCtrl 9991;
 lbClear _list2;
-
-
-//_index = lbAdd [_list2, "Name"];
-//lbSetData [_list2, _index, "icons/bild.paa"];
-//lbSetValue [_list2, _index, "icons/bild.paa"];
 
 _text = "Conduite sans permis $1500";
 _data = "1";

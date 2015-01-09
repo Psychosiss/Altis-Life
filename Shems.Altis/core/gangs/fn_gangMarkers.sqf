@@ -8,7 +8,7 @@ if(visibleMap) then
 	{
 		if((side _x == civilian) && (player != _x)) then 
 		{
-			_units set[count _units,_x];
+			_units pushBack _x;
 		}
 	} forEach (units(group player));
 
@@ -17,7 +17,7 @@ if(visibleMap) then
 		_marker setMarkerColorLocal "ColorRed";
 		_marker setMarkerTypeLocal "Mil_dot";
 		_marker setMarkerTextLocal format["%1", name _x];
-		_markers set[count _markers,[_marker,_x]];
+		_markers pushBack [_marker,_x];
 	} foreach _units;
 
 	while {visibleMap} do
@@ -38,7 +38,9 @@ if(visibleMap) then
 		sleep 0.02;
 	};
 
-	{deleteMarkerLocal (_x select 0);} foreach _markers;
+	{
+		deleteMarkerLocal (_x select 0);
+	} foreach _markers;
 	_markers = [];
 	_units = [];
 };

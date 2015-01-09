@@ -4,11 +4,10 @@ DB_Async_ExtraLock = false;
 life_server_isReady = false;
 publicVariable "life_server_isReady";
 
-__CONST__(LIFE_SCHEMA_NAME,"'altis_life'");
-
 [] execVM "\life_server\functions.sqf";
 [] execVM "\life_server\eventhandlers.sqf";
 
+_extDBversion = "extDB" callExtension "9:VERSION";
 if(isNil {uiNamespace getVariable "life_sql_id"}) then 
 {
 	life_sql_id = round(random(9999));
@@ -19,21 +18,37 @@ if(isNil {uiNamespace getVariable "life_sql_id"}) then
 	__CONST__(life_sql_id,life_sql_id);
 };
 
-_version = "extDB" callExtension "9:VERSION";
-if(_version == "") exitWith 
+if(_extDBversion == "") exitWith 
 {
+	diag_log "extDB: Erreur de base de donnée, regardez les logs d'extDB pour plus d'informations.";
+	life_server_extDB_notLoaded = true;
+	publicVariable "life_server_extDB_notLoaded";
+};
+
+_extDBconnected = "extDB" callExtension "9:DATABASE:Database2";
+_extDBconnected2 = "extDB" callExtension format["9:ADD:DB_RAW_V2:%1",(call life_sql_id)];
+
+if(_extDBconnected != "[1]") exitWith 
+{
+	diag_log "extDB: Erreur de base de donnée, regardez les logs d'extDB pour plus d'informations."; 
 	life_server_extDB_notLoaded = true; 
 	publicVariable "life_server_extDB_notLoaded";
 };
 
-"extDB" callExtension "9:DATABASE:Database2";
-"extDB" callExtension format["9:ADD:DB_RAW:%1",(call life_sql_id)];
+if(_extDBconnected2 != "[1]") exitWith 
+{
+	diag_log "extDB: Erreur de base de donnée, regardez les logs d'extDB pour plus d'informations."; 
+	life_server_extDB_notLoaded = true; 
+	publicVariable "life_server_extDB_notLoaded";
+};
+
 "extDB" callExtension "9:ADD:MISC:realtime";
 "extDB" callExtension "9:LOCK";
 
 ["CALL resetLifeVehicles",1] spawn DB_fnc_asyncCall;
 ["CALL deleteDeadVehicles",1] spawn DB_fnc_asyncCall;
 ["CALL deleteOldHouses",1] spawn DB_fnc_asyncCall;
+["CALL deleteOldGangs",1] spawn DB_fnc_asyncCall;
 
 life_adminlevel = 0;
 life_medicLevel = 0;
@@ -50,7 +65,7 @@ __CONST__(JxMxE_PublishVehicle,"No");
 
 serv_sv_use = [];
 
-_onDisconnect = ["SERV_onClientDisconnect","onPlayerDisconnected",{[_uid,_id,_name] call TON_fnc_clientDisconnect}] call BIS_fnc_addStackedEventHandler;
+_onDisconnect = addMissionEventHandler ["HandleDisconnect",{[_uid,_id,_name,_unit] call TON_fnc_clientDisconnect}];
 
 [] spawn TON_fnc_cleanup;
 life_gang_list = [];
@@ -119,4 +134,4 @@ publicVariable "life_server_isReady";
 
 [] call ANTICHEAT_fnc_configureAnticheat;
 [] call SHEMS_fnc_antiHack;
-//[] call SHEMS_fnc_searchVehicleUID;
+[] call SHEMS_fnc_searchVehicleUID;

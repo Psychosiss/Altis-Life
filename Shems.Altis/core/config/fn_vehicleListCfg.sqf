@@ -89,13 +89,13 @@ switch (_shop) do
 
 	case "dep_car":
 	{
-		_return set[count _return,["B_G_Offroad_01_F",5000]];
+		_return pushBack ["B_G_Offroad_01_F",5000];
 	};
 
 	case "dep_air":
 	{
-		_return set[count _return,["O_Heli_Transport_04_repair_F",100000]];
-		_return set[count _return,["O_Heli_Transport_04_fuel_F",100000]];
+		_return pushBack ["O_Heli_Transport_04_repair_F",100000];
+		_return pushBack ["O_Heli_Transport_04_fuel_F",100000];
 	};
 
 	case "kart_shop":
@@ -133,15 +133,15 @@ switch (_shop) do
 
 	case "cop_car":
 	{
-		_return set[count _return,["C_Offroad_01_F",5000]];
-		_return set[count _return,["C_SUV_01_F",20000]];
+		_return pushBack ["C_Offroad_01_F",5000];
+		_return pushBack ["C_SUV_01_F",20000];
 		if(__GETC__(life_coplevel) > 3) then
 		{
-			_return set[count _return,["B_MRAP_01_F",100000]];
+			_return pushBack ["B_MRAP_01_F",100000];
 		};
 		if(__GETC__(life_coplevel) > 5) then
 		{
-			_return set[count _return,["B_MRAP_01_hmg_F",100000]];
+			_return pushBack ["B_MRAP_01_hmg_F",100000];
 		};
 	};
 	
@@ -149,14 +149,14 @@ switch (_shop) do
 	{
 		if(__GETC__(life_coplevel) > 2) then
 		{
-			_return set[count _return,["O_Heli_Light_02_unarmed_F",750000]];
-			_return set[count _return,["B_Heli_Light_01_F",75000]];
+			_return pushBack ["O_Heli_Light_02_unarmed_F",750000];
+			_return pushBack ["B_Heli_Light_01_F",75000];
 		};
 		if(__GETC__(life_coplevel) > 4) then
 		{
-			_return set[count _return,["O_Heli_Light_02_unarmed_F",1000000]];
-			_return set[count _return,["B_Heli_Light_01_F",246000]];
-			_return set[count _return,["I_Heli_light_03_unarmed_F",1200000]];
+			_return pushBack ["O_Heli_Light_02_unarmed_F",1000000];
+			_return pushBack ["B_Heli_Light_01_F",246000];
+			_return pushBack ["I_Heli_light_03_unarmed_F",1200000];
 		};
 	};
 
@@ -175,40 +175,40 @@ switch (_shop) do
 	{
 		if(license_civ_don1) then
 		{
-			_return set[count _return,["C_Van_01_Fuel_F",4000]];
-			_return set[count _return,["I_Truck_02_box_F",50000]];
+			_return pushBack ["C_Van_01_Fuel_F",4000];
+			_return pushBack ["I_Truck_02_box_F",50000];
 		};
 		if(license_civ_don2) then
 		{
-			_return set[count _return,["C_Van_01_Fuel_F",4000]];
-			_return set[count _return,["I_Truck_02_box_F",50000]];
-			_return set[count _return,["C_Hatchback_01_sport_F",40000]];
+			_return pushBack ["C_Van_01_Fuel_F",4000];
+			_return pushBack ["I_Truck_02_box_F",50000];
+			_return pushBack ["C_Hatchback_01_sport_F",40000];
 		};
 		if(license_civ_don3) then
 		{
-			_return set[count _return,["C_Van_01_Fuel_F",4000]];
-			_return set[count _return,["I_Truck_02_box_F",50000]];
-			_return set[count _return,["C_Hatchback_01_sport_F",40000]];
-			_return set[count _return,["B_Truck_01_box_F",400000]];
+			_return pushBack ["C_Van_01_Fuel_F",4000];
+			_return pushBack ["I_Truck_02_box_F",50000];
+			_return pushBack ["C_Hatchback_01_sport_F",40000];
+			_return pushBack ["B_Truck_01_box_F",400000];
 		};
 		if(license_civ_don4) then
 		{
-			_return set[count _return,["C_Van_01_Fuel_F",4000]];
-			_return set[count _return,["I_Truck_02_box_F",50000]];
-			_return set[count _return,["C_Hatchback_01_sport_F",40000]];
-			_return set[count _return,["B_Truck_01_box_F",400000]];
-			_return set[count _return,["I_Heli_Transport_02_F",600000]];
-			_return set[count _return,["I_Heli_light_03_unarmed_F",500000]];
+			_return pushBack ["C_Van_01_Fuel_F",4000];
+			_return pushBack ["I_Truck_02_box_F",50000];
+			_return pushBack ["C_Hatchback_01_sport_F",40000];
+			_return pushBack ["B_Truck_01_box_F",400000];
+			_return pushBack ["I_Heli_Transport_02_F",600000];
+			_return pushBack ["I_Heli_light_03_unarmed_F",500000];
 		};
 		if(license_civ_don5) then
 		{
-			_return set[count _return,["C_Van_01_Fuel_F",4000]];
-			_return set[count _return,["I_Truck_02_box_F",50000]];
-			_return set[count _return,["C_Hatchback_01_sport_F",40000]];
-			_return set[count _return,["B_Truck_01_box_F",400000]];
-			_return set[count _return,["I_Heli_Transport_02_F",600000]];
-			_return set[count _return,["I_Heli_light_03_unarmed_F",500000]];
-			_return set[count _return,["O_Heli_Transport_04_covered_F",800000]];
+			_return pushBack ["C_Van_01_Fuel_F",4000];
+			_return pushBack ["I_Truck_02_box_F",50000];
+			_return pushBack ["C_Hatchback_01_sport_F",40000];
+			_return pushBack ["B_Truck_01_box_F",400000];
+			_return pushBack ["I_Heli_Transport_02_F",600000];
+			_return pushBack ["I_Heli_light_03_unarmed_F",500000];
+			_return pushBack ["O_Heli_Transport_04_covered_F",800000];
 		};
 	};
 };

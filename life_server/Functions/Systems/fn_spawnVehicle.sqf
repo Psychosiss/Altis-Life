@@ -5,13 +5,14 @@ _sp = [_this,2,[],[[],""]] call BIS_fnc_param;
 _unit = [_this,3,ObjNull,[ObjNull]] call BIS_fnc_param;
 _price = [_this,4,0,[0]] call BIS_fnc_param;
 _dir = [_this,5,0,[0]] call BIS_fnc_param;
+_unit_return = _unit;
 _name = name _unit;
 _side = side _unit;
 _unit = owner _unit;
 
 if(_vid == -1 OR _pid == "") exitWith {};
 if(_vid in serv_sv_use) exitWith {};
-serv_sv_use set[count serv_sv_use,_vid];
+serv_sv_use pushBack _vid;
 
 _query = format["SELECT id, side, classname, type, pid, alive, active, plate, color FROM vehicles WHERE id='%1' AND pid='%2'",_vid,_pid];
 
@@ -51,7 +52,7 @@ if(typeName _sp != "STRING") then
 if(count _nearVehicles > 0) exitWith
 {
 	serv_sv_use = serv_sv_use - [_vid];
-	[[_price,{life_atmcash = life_atmcash + _this;}],"BIS_fnc_spawn",_unit,false] spawn life_fnc_MP;
+	[[_price,_unit_return],"life_fnc_garageRefund",_unit,false] spawn life_fnc_MP;
 	[[1,(localize "STR_Garage_SpawnPointError")],"life_fnc_broadcast",_unit,false] spawn life_fnc_MP;
 };
 
@@ -66,7 +67,7 @@ if(typeName _sp == "STRING") then
 	waitUntil {!isNil "_vehicle" && {!isNull _vehicle}};
 	_vehicle allowDamage false;
 	_hs = nearestObjects[getMarkerPos _sp,["Land_Hospital_side2_F"],50] select 0;
-	_vehicle setPosATL (_hs modelToWorld [-0.4,-4,14]);
+	_vehicle setPosATL (_hs modelToWorld [-0.4,-4,12.65]);
 	sleep 0.6;
 } else {
 	_vehicle = createVehicle [(_vInfo select 2),_sp,[],0,"NONE"];
@@ -79,8 +80,8 @@ if(typeName _sp == "STRING") then
 _vehicle allowDamage true;
 
 [[_vehicle],"life_fnc_addVehicle2Chain",_unit,false] spawn life_fnc_MP;
+[_pid,_side,_vehicle,1] call TON_fnc_keyManagement;
 _vehicle lock 2;
-
 [[_vehicle,_vInfo select 8],"life_fnc_colorVehicle",nil,false] spawn life_fnc_MP;
 _vehicle setVariable["vehicle_info_owners",[[_pid,_name]],true];
 _vehicle setVariable["dbInfo",[(_vInfo select 4),_vInfo select 7]];
@@ -106,5 +107,5 @@ if((_vInfo select 1) == "east"  && (_vInfo select 2) in ["C_Offroad_01_F","C_SUV
     [[_vehicle,"east_offroad",true],"life_fnc_vehicleAnimate",_unit,false] spawn life_fnc_MP;
 };
 
-[[1,"Your vehicle is ready!"],"life_fnc_broadcast",_unit,false] spawn life_fnc_MP;
+[[1,"Votre véhicule est prêt."],"life_fnc_broadcast",_unit,false] spawn life_fnc_MP;
 serv_sv_use = serv_sv_use - [_vid];
