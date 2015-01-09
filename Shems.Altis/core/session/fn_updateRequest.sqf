@@ -17,22 +17,17 @@ _flag = switch(playerSide) do
 } foreach life_licenses;
 
 _packet set[count _packet,_array];
+[] call life_fnc_saveGear;
+_packet set[count _packet, life_gear];
 switch (playerSide) do 
 {
-	case west: 
-	{
-		_packet set[count _packet,cop_gear];
-	};
-
+	case west: {};
 	case civilian:
 	{
-		[] call life_fnc_civFetchGear;
-		_packet set[count _packet,civ_gear];
 		_packet set[count _packet,life_is_arrested];
 	};
-	
-	case independent: {};
 
+	case independent: {};
 	case east:
     {
 		[] call life_fnc_eastsaveGear;

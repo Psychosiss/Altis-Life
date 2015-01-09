@@ -5,7 +5,7 @@ _animals = ["Cock_random_F","Goat_random_F","Hen_random_F","Sheep_random_F","Als
 
 if (isNull _corpse || !((typeOf _corpse) in _animals) || alive _corpse) exitWith 
 { 
-	hint "That's not a valid corpse for skinning!"; 
+	hint "Ce n'est pas un cadavre valable pour le dépecage!"; 
 };
 
 [[player,"AinvPknlMstpSnonWnonDnon_medic_2"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
@@ -32,9 +32,9 @@ if (_item != "") then
 
 if (_success) then 
 { 
-	[[0,2], format["You've butchered the %1 and collected %2.", getText(configFile >> "CfgVehicles" >> (typeOf _corpse) >> "displayName"),[[_item,0] call life_fnc_varHandle] call life_fnc_varToStr]] call life_fnc_broadcast; 
+	[[0,2], format["Vous avez massacré %1 et collécté %2.", getText(configFile >> "CfgVehicles" >> (typeOf _corpse) >> "displayName"),[[_item,0] call life_fnc_varHandle] call life_fnc_varToStr]] call life_fnc_broadcast; 
 } else { 
-	[[0,2], "You were unable to collect anything of value. Are your bags full?"] call life_fnc_broadcast; 
+	[[0,2], "Vous êtes incapable de porter quelque chose, votre sac est sûrement plein."] call life_fnc_broadcast; 
 };
 
 deleteVehicle _corpse;

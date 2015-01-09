@@ -7,24 +7,17 @@ private["_containers"];
 _containers = nearestObjects[getPosATL _corpse,["WeaponHolderSimulated"],5];
 {deleteVehicle _x;} foreach _containers;
 
-_unit setVariable["restrained",FALSE,TRUE];
-_unit setVariable["Escorting",FALSE,TRUE];
-_unit setVariable["transporting",FALSE,TRUE];
-_unit setVariable["missingOrgan",FALSE,TRUE];
-_unit setVariable["hasOrgan",FALSE,TRUE];
-
-if(playerSide == west) then 
-{
-	[] spawn life_fnc_loadGear;
-};
+_unit setVariable["restrained",false,true];
+_unit setVariable["Escorting",false,true];
+_unit setVariable["transporting",false,true];
+_unit setVariable["steam64id",(getPlayerUID player),true];
+_unit setVariable["missingOrgan",false,true];
+_unit setVariable["hasOrgan",false,true];
 
 if(playerSide == east) then 
 {
     [] spawn life_fnc_eastloadGear;
 };
-
-if(playerSide == civilian) then {};
-if(playerSide == independent) then {};
 
 _unit addRating 9999999999999999;
 player playMoveNow "amovppnemstpsraswrfldnon";

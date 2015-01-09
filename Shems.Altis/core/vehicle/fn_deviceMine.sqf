@@ -1,12 +1,17 @@
 private["_vehicle","_resourceZones","_zone","_weight","_item","_vInv","_itemIndex","_useBug"];
 _vehicle = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 if(isNull _vehicle) exitWith {};
-if(!isNil {_vehicle getVariable "mining"}) exitWith {hint localize "STR_NOTF_DeviceIsMining";};
+if(!isNil {_vehicle getVariable "mining"}) exitWith {hint "Ce véhicule est déjà en exploitation minière.";};
 closeDialog 0;
 life_action_inUse = true;
 _useBug = false;
 _weight = [_vehicle] call life_fnc_vehicleWeight;
-if((_weight select 1) >= (_weight select 0)) exitWith {hint localize "STR_NOTF_DeviceFull"; life_action_inUse = false;};
+if((_weight select 1) >= (_weight select 0)) exitWith 
+{
+	hint "Le véhicule est plein."; 
+	life_action_inUse = false;
+};
+
 _resourceZones = 
 [
 	"apple_1","apple_4","apple_9",
@@ -35,7 +40,7 @@ _zone = "";
 
 if(_zone == "") exitWith 
 {
-	hint localize "STR_NOTF_notNearResource";
+	hint "Vous n'êtes pas à proximité d'un champ de ressources.";
 	life_action_inUse = false;
 };
 
@@ -62,7 +67,7 @@ _item = switch(true) do
 
 if(_item == "") exitWith 
 {
-	hint "Mauvaise ressource?"; 
+	hint "Mauvaise ressource ?"; 
 	life_action_inUse = false;
 };
 _vehicle setVariable ["mining",true,true];

@@ -39,6 +39,11 @@ BEGIN
   DELETE FROM `gangs` WHERE `active` = 0;
 END$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `deleteOldHouses`()
+BEGIN
+  DELETE FROM `houses` WHERE `owned` = 0;
+END$$
+
 DELIMITER ;
 
 -- --------------------------------------------------------

@@ -7,6 +7,7 @@ if((lbCurSel 2632) == -1) exitWith {hint "Vous devez séléctionner quelqu'un à
 _unit = call compile format["%1",getSelData(2632)];
 if(isNull _unit) exitWith {};
 if(_unit == player) exitWith {hint "You cannot kick yourself!"};
+if(!isNil {(group _unit) getVariable "gang_name"}) exitWith {hint "Ce joueur est déjà dans un gang."};
 if(count(grpPlayer getVariable ["gang_members",8]) == (grpPlayer getVariable ["gang_maxMembers",8])) exitWith {hint "Your gang has reached its maximum allowed slots, please upgrade your gangs slot limit."};
 
 _action = 
@@ -20,9 +21,9 @@ _action =
 if(_action) then 
 {
 	[[profileName,grpPlayer],"life_fnc_gangInvite",_unit,false] spawn life_fnc_MP;
-	_members = _group getVariable "gang_members";
+	_members = grpPlayer getVariable "gang_members";
 	_members set[count _members,getPlayerUID _unit];
-	_group setVariable["gang_members",_members,true];
+	grpPlayer setVariable["gang_members",_members,true];
 	hint format["Vous avez invité %1 dans votre gang.",_unit getVariable["realname",name _unit]];
 } else {
 	hint "Invitation annulé";

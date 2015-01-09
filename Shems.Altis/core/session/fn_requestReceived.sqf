@@ -29,26 +29,25 @@ if(count (_this select 6) > 0) then
 	} foreach (_this select 6);
 };
 
+life_gear = _this select 8;
+[] call life_fnc_loadGear;
+
 switch(playerSide) do 
 {
 	case west: 
 	{
-		__CONST__(life_coplevel,parseNumber(_this select 7));
+		__CONST__(life_coplevel, parseNumber(_this select 7));
 		__CONST__(life_medicLevel,0);
 		__CONST__(life_eastlevel,0);
-		cop_gear = _this select 8;
-		[] spawn life_fnc_loadGear;
 		life_blacklisted = _this select 9;
 	};
 	
 	case civilian: 
 	{
 		life_is_arrested = _this select 7;
-		civ_gear = _this select 8;
 		__CONST__(life_coplevel,0);
 		__CONST__(life_medicLevel,0);
 		__CONST__(life_eastlevel,0);
-		[] spawn life_fnc_civLoadGear;
 		life_houses = _this select 9;
 		{
 			_house = nearestBuilding (call compile format["%1", _x select 0]);
@@ -65,14 +64,14 @@ switch(playerSide) do
 	
 	case independent: 
 	{
-		__CONST__(life_medicLevel,parseNumber(_this select 7));
+		__CONST__(life_medicLevel, parseNumber(_this select 7));
 		__CONST__(life_copLevel,0);
 		__CONST__(life_eastlevel,0);
 	};
 	
 	case east: 
 	{
-        __CONST__(life_eastlevel,parseNumber(_this select 7));
+        __CONST__(life_eastlevel, parseNumber(_this select 7));
 		__CONST__(life_coplevel,0);
 		__CONST__(life_medicLevel,0);
         east_gear = _this select 8;

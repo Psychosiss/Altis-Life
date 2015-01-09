@@ -1,25 +1,29 @@
 private["_itemArray","_uniform","_vest","_backpack","_goggles","_headgear","_items","_prim","_seco","_uItems","_bItems","_vItems","_pItems","_hItems","_yItems","_uMags","_bMags","_vMags","_handle"];
-
-_itemArray = civ_gear;
-
+_itemArray = life_gear;
 waitUntil {!(isNull (findDisplay 46))};
+
+_handle = [] spawn life_fnc_stripDownPlayer;
+waitUntil {scriptDone _handle};
+
 if(count _itemArray == 0) exitWith
 {
-    if(headGear player != "") then {removeHeadgear player;};
-    if(goggles player != "") then {removeGoggles player;};
-};
+    switch(playerSide) do 
+	{
+        case west: {
+            [] call life_fnc_copLoadout;
+        };
+        
+        case civilian: 
+		{
+            [] call life_fnc_civLoadout;
+        };
 
-RemoveAllWeapons player;
-{player removeMagazine _x;} foreach (magazines player);
-removeUniform player;
-removeVest player;
-removeBackpack player;
-removeGoggles player;
-removeHeadGear player;
-{
-    player unassignItem _x;
-    player removeItem _x;
-} foreach (assignedItems player);
+        case independent: 
+		{
+            [] call life_fnc_medicLoadout;
+        };
+    };
+};
 
 _uniform = [_itemArray,0,"",[""]] call BIS_fnc_param;
 _vest = [_itemArray,1,"",[""]] call BIS_fnc_param;
@@ -39,14 +43,29 @@ _pItems = [_itemArray,14,[],[[]]] call BIS_fnc_param;
 _hItems = [_itemArray,15,[],[[]]] call BIS_fnc_param;
 _yItems = [_itemArray,16,[],[[]]] call BIS_fnc_param;
 
-if(_prim != "") then {_handle = [_prim,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
-if(_seco != "") then {_handle = [_seco,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
 if(_goggles != "") then {_handle = [_goggles,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
 if(_headgear != "") then {_handle = [_headgear,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
 if(_uniform != "") then {_handle = [_uniform,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
 if(_vest != "") then {_handle = [_vest,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
 if(_backpack != "") then {_handle = [_backpack,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
 {_handle = [_x,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};} foreach _items;
+
+{player addItemToUniform _x;} foreach (_uItems);
+{(uniformContainer player) addItemCargoGlobal [_x,1];} foreach (_uMags);
+{player addItemToVest _x;} foreach (_vItems);
+{(vestContainer player) addItemCargoGlobal [_x,1];} foreach (_vMags);
+{player addItemToBackpack _x;} foreach (_bItems);
+{(backpackContainer player) addItemCargoGlobal [_x,1];} foreach (_bMags);
+life_maxWeight = 100;
+{
+    _item = [_x,1] call life_fnc_varHandle;
+    [true,_item,1] call life_fnc_handleInv;
+} foreach (_yItems);
+life_maxWeight = 24;
+
+if(_prim != "") then {_handle = [_prim,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
+if(_seco != "") then {_handle = [_seco,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
+
 {
     if (_x != "") then 
 	{
@@ -59,14 +78,13 @@ if(_backpack != "") then {_handle = [_backpack,true,false,false,false] spawn lif
         player addHandgunItem _x;
     };
 } foreach (_hItems);
-{player addItemToUniform _x;} foreach (_uItems);
-{(uniformContainer player) addItemCargoGlobal [_x,1];} foreach (_uMags);
-{player addItemToVest _x;} foreach (_vItems);
-{(vestContainer player) addItemCargoGlobal [_x,1];} foreach (_vMags);
-{player addItemToBackpack _x;} foreach (_bItems);
-{(backpackContainer player) addItemCargoGlobal [_x,1];} foreach (_bMags);
 
+if(playerSide == independent && {uniform player == "U_Rangemaster"}) then 
 {
-    _item = [_x,1] call life_fnc_varHandle;
-    [true,_item,1] call life_fnc_handleInv;
-} foreach (_yItems);
+	[[player,0,"images\med\uniform.jpg"],"life_fnc_setTexture",true,false] spawn life_fnc_MP;
+};
+
+if(playerSide == west && {uniform player == "U_Rangemaster"}) then 
+{
+	[[player,0,"images\cop\uniform.paa"],"life_fnc_setTexture",true,false] spawn life_fnc_MP;
+};

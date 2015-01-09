@@ -17,6 +17,21 @@ if(life_action_inUse) exitWith
 	_handled;
 };
 
+if(count (actionKeys "User10") != 0 && {(inputAction "User10" > 0)}) exitWith 
+{
+	if(!life_action_inUse) then 
+	{
+		[] spawn 
+		{
+			private["_handle"];
+			_handle = [] spawn life_fnc_actionKeyHandler;
+			waitUntil {scriptDone _handle};
+			life_action_inUse = false;
+		};
+	};
+	true;
+};
+
 switch (_code) do
 {
 	case _mapKey:

@@ -16,7 +16,6 @@ switch (_type) do
 	case "heroin": {25000};
 	case "marijuana": {19500};
 	case "medmarijuana": {1500};
-	case "gang": {0};
 	case "rebel": {700000};
 	case "truck": {20000};
 	case "diamond": {35000};

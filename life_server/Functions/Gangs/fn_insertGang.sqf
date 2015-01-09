@@ -50,12 +50,8 @@ _group setVariable["gang_maxMembers",8,true];
 _group setVariable["gang_members",[_uid],true];
 
 [[_group],"life_fnc_gangCreated",_ownerID,false] spawn life_fnc_MP;
-
 sleep 0.35;
-
-_query = format["SELECT id FROM gangs WHERE owner='%1'",_uid];
-
+_query = format["SELECT id FROM gangs WHERE owner='%1' AND active='1'",_uid];
 waitUntil{!DB_Async_Active};
-
 _queryResult = [_query,2] call DB_fnc_asyncCall;
 _group setVariable["gang_id",(_queryResult select 0),true];

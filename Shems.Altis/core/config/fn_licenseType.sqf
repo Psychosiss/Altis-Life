@@ -21,7 +21,6 @@ switch (_mode) do
 			case "heroin": {_var = "license_civ_heroin"};
 			case "marijuana": {_var = "license_civ_marijuana"};
 			case "medmarijuana": {_var = "license_civ_medmarijuana"};
-			case "gang": {_var = "license_civ_gang"};
 			case "rebel": {_var = "license_civ_rebel"};
 			case "truck":{_var = "license_civ_truck"};
 			case "diamond": {_var = "license_civ_diamond"};
@@ -70,7 +69,6 @@ switch (_mode) do
 			case "license_civ_heroin": {_var = "heroin"};
 			case "license_civ_marijuana": {_var = "marijuana"};
 			case "license_civ_medmarijuana": {_var = "medmarijuana"};
-			case "license_civ_gang": {_var = "gang"};
 			case "license_civ_rebel": {_var = "rebel"};
 			case "license_civ_truck":{_var = "truck"};
 			case "license_civ_diamond": {_var = "diamond"};

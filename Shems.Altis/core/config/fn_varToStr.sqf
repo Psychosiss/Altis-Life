@@ -112,7 +112,6 @@ switch (_var) do
 	case "license_med_air": {"Permis aérien"};
 	case "license_civ_home": {"Permis maison"};
 	case "license_civ_skull": {"Permis archéologie"};
-	case "license_civ_gang": {"License de gang"};
 	case "license_civ_gun": {"License arme légal"};
 	case "license_cop_swat": {"License SWAT"};
 	case "license_civ_rebel": {"License rebelle"};

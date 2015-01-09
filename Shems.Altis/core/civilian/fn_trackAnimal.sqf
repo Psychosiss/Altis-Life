@@ -2,12 +2,12 @@ private ["_chance","_animal","_animals","_msg","_error","_dir","_bearing","_comp
 
 if (player distance (getMarkerPos "hunting") > 600) exitWith 
 { 
-	[[0,2], "This environment is not the habitat of a hunted animal."] call life_fnc_broadcast; 
+	[[0,2], "Cet environnement n'est pas un habitat pour un animal."] call life_fnc_broadcast; 
 };
 
 if (player distance life_last_tracked < 65) exitWith 
 { 
-	[2, "You've already searched this area and found no tracks. Try elsewhere."] call life_fnc_broadcast; 
+	[2, "Vous avez déjà cherché ce domaine et vous n'aviez trouvé aucune piste. Essayez ailleurs."] call life_fnc_broadcast; 
 };
 
 _chance = 3;
@@ -41,6 +41,6 @@ if (random 2 < 1) then
 	_error = _error * -1; 
 };
 _distance = floor ((player distance _animal) + _error);
-_message = format["You've picked up the tracks of a %1 approximately %2 metres to the %3.", getText(configFile >> "CfgVehicles" >> (typeOf _animal) >> "displayName"), _distance, _bearing];
+_message = format["Vous avez repéré les pistes d'un %1, à environ %2 mètres, au %3.", getText(configFile >> "CfgVehicles" >> (typeOf _animal) >> "displayName"), _distance, _bearing];
 
 [[0,2], _message] call life_fnc_broadcast;

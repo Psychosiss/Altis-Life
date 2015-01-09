@@ -11,7 +11,6 @@ if((__GETC__(life_medicLevel)) < 1) exitWith
 	sleep 35;
 };
 
-[] call life_fnc_medicLoadout;
 [] call life_fnc_spawnMenu;
 [] spawn life_fnc_onPlayerAbsent;
 

@@ -1,4 +1,6 @@
-life_use_atm = TRUE;
+private["_handle"];
+
+life_use_atm = true;
 life_hunger = 100;
 life_thirst = 100;
 life_carryWeight = 0;
@@ -7,40 +9,41 @@ life_respawned = false;
 life_holstered = false;
 player playMove "amovpercmstpsnonwnondnon";
 
-life_corpse setVariable["Revive",nil,TRUE];
+life_corpse setVariable["Revive",nil,true];
 life_corpse setVariable["name",nil,TRUE];
-life_corpse setVariable["Reviving",nil,TRUE];
-player setVariable["Revive",nil,TRUE];
-player setVariable["name",nil,TRUE];
-player setVariable["Reviving",nil,TRUE];
+life_corpse setVariable["Reviving",nil,true];
+player setVariable["Revive",nil,true];
+player setVariable["name",nil,true];
+player setVariable["Reviving",nil,true];
 
 switch(playerSide) do
 {
 	case west: 
 	{
-		[] spawn life_fnc_loadGear;
+		_handle = [] spawn life_fnc_copLoadout;
 	};
 
 	case civilian: 
 	{
-		[] call life_fnc_civFetchGear;
+		_handle = [] spawn life_fnc_civLoadout;
 	};
 
 	case independent: 
 	{
-		[] call life_fnc_medicLoadout;
+		_handle = [] spawn life_fnc_medicLoadout;
 	};
 
 	case east: 
 	{
 		[] spawn life_fnc_eastDefault;
     };
+	waitUntil {scriptDone _handle};
 };
 
 if(!isNull life_corpse) then 
 {
 	private["_containers"];
-	life_corpse setVariable["Revive",TRUE,TRUE];
+	life_corpse setVariable["Revive",true,true];
 	_containers = nearestObjects[life_corpse,["WeaponHolderSimulated"],5];
 	{deleteVehicle _x;} foreach _containers;
 	hideBody life_corpse;
@@ -53,7 +56,7 @@ if(life_is_arrested) exitWith
 {
 	hint localize "STR_Jail_Suicide";
 	life_is_arrested = false;
-	[player,TRUE] spawn life_fnc_jail;
+	[player,true] spawn life_fnc_jail;
 	[] call SOCK_fnc_updateRequest;
 };
 

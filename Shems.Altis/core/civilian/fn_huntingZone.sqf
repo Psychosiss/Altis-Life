@@ -65,7 +65,7 @@ if(_enable && !life_animals_spawned) then
 			deleteVehicle _x;
 		};
 	} foreach life_animals_array;
-	
+
 	life_animals_array = [];
 	life_animals_spawned = false;
 };

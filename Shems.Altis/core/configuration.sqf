@@ -9,7 +9,6 @@ life_siren_active = false;
 life_siren2_active = false;
 life_is_processing = false;
 life_session_completed = false;
-life_has_insurance = false;
 life_bail_paid = false;
 life_action_inUse = false;
 life_impound_inuse = false;
@@ -49,12 +48,14 @@ life_addiction = [0,0,0,0];
 life_last_tracked = [0,0,0];
 life_animals_array = [];
 
-__CONST__(life_revive_cops,TRUE);
+__CONST__(life_revive_cops,true);
 __CONST__(life_revive_fee,1250);
 __CONST__(life_houseLimit,5);
 __CONST__(life_gangPrice,0);
 __CONST__(life_gangUpgradeBase,10000);
 __CONST__(life_gangUpgradeMultipler,2.5);
+__CONST__(life_save_civ,true);
+__CONST__(life_save_yinv,true);
 
 life_clothing_purchase = [-1,-1,-1,-1,-1];
 
@@ -286,7 +287,6 @@ life_licenses =
 	["license_civ_air","civ"],
 	["license_civ_heroin","civ"],
 	["license_civ_marijuana","civ"],
-	["license_civ_gang","civ"],
 	["license_civ_boat","civ"],
 	["license_civ_oil","civ"],
 	["license_civ_dive","civ"],

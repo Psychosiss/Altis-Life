@@ -33,7 +33,7 @@ if(_version == "") exitWith
 
 ["CALL resetLifeVehicles",1] spawn DB_fnc_asyncCall;
 ["CALL deleteDeadVehicles",1] spawn DB_fnc_asyncCall;
-["DELETE FROM houses WHERE owned='0'",1] spawn DB_fnc_asyncCall;
+["CALL deleteOldHouses",1] spawn DB_fnc_asyncCall;
 
 life_adminlevel = 0;
 life_medicLevel = 0;

@@ -5,10 +5,10 @@ _meats = _meats + life_inv_dog + life_inv_sheep + life_inv_goat + life_inv_chick
 
 if (_meats == 0) exitWith 
 { 
-	hint "You don't have any raw meat to be cooked!"; 
+	hint "Vous n"avez aucune viande à cuire."; 
 };
 
-[2, format["You begin cooking %1 raw meat.", _meats]] call life_fnc_broadcast;
+[2, format["Vous commencez la cuisson de %1.", _meats]] call life_fnc_broadcast;
 
 for "_i" from 1 to _meats do
 {
@@ -29,4 +29,4 @@ _meatTypes = ["chicken", "dog", "sheep", "goat", "snake", "rabbit"];
 	};
 } forEach _meatTypes;
 
-[2, format["You've successfully cooked %1 raw meat.", _meats]] call life_fnc_broadcast;
+[2, format["Vous avez cuisinez %1.", _meats]] call life_fnc_broadcast;

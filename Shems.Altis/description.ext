@@ -236,7 +236,6 @@ class CfgFunctions
 			class vehicleColorStr {};
 			class vehicleListCfg {};
 			class eastDefault {};
-			class copDefault {};
 			class licenseType {};
 			class eatFood {};
 			class varHandle {};
@@ -304,7 +303,6 @@ class CfgFunctions
 			class hudSetup {};
 			class fatigueReset {};
 			class hudUpdate {};
-			class fetchGear{};
 			class tazeSound {};
 			class animSync {};
 			class simDisable {};
@@ -348,6 +346,8 @@ class CfgFunctions
 			class playSound {};
 			class prisonBreak {};
 			class progressBaren {};
+			class saveGear {};
+			class loadGear {};
 			class stripDownPlayer {};
 			class handlerHelp {};
 		};
@@ -393,10 +393,9 @@ class CfgFunctions
 			class robPerson {};
 			class removeLicenses {};
 			class demoChargeTimer {};
+			class civLoadout {};
 			class hooker {};
 			class hasOrgan {};
-			class civFetchGear {};
-			class civLoadGear {};
 			class removeWeapons {};
 			class waterChargeTimer {};
 			class policeRecruit {};
@@ -436,8 +435,6 @@ class CfgFunctions
 			file = "core\cop";
 			class copMarkers {};
 			class copLights {};
-			class loadGear {};
-			class saveGear {};
 			class vehInvSearch {};
 			class copSearch {};
 			class bountyReceive {};
@@ -461,6 +458,7 @@ class CfgFunctions
 			class fedCamDisplay {};
 			class copSiren2 {};
 			class tazerFix {};
+			class copLoadout {};
 		};
 		
 		class Gangs

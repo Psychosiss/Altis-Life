@@ -27,9 +27,7 @@ if(!alive (_search select 0) || (_search select 0) distance air_sp > 10) exitWit
 if(!local (_search select 0)) then
 {
 	[{(_search select 0) setFuel 1;},"BIS_fnc_spawn",(_search select 0),false] spawn life_fnc_MP;
-}
-	else
-{
+} else {
 	(_search select 0) setFuel 1;
 };
 (_search select 0) setDamage 0;

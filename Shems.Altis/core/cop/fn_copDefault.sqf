@@ -1,25 +1,19 @@
-RemoveAllWeapons player;
-{player removeMagazine _x;} foreach (magazines player);
-removeUniform player;
-removeVest player;
-removeBackpack player;
-removeGoggles player;
-removeHeadGear player;
-{
-	player unassignItem _x;
-	player removeItem _x;
-} foreach (assignedItems player);
+private["_handle"];
+_handle = [] spawn life_fnc_stripDownPlayer;
+waitUntil {scriptDone _handle};
 
 player addUniform "U_Rangemaster";
 player addHeadgear "H_Beret_blk_POLICE";
 player addVest "V_Rangemaster_belt";
-player addMagazine "16Rnd_9x21_Mag";
-player addMagazine "16Rnd_9x21_Mag";
-player addMagazine "16Rnd_9x21_Mag";
-player addMagazine "16Rnd_9x21_Mag";
-player addMagazine "16Rnd_9x21_Mag";
-player addMagazine "16Rnd_9x21_Mag";
+
 player addWeapon "hgun_P07_snds_F";
+player addMagazine "16Rnd_9x21_Mag";
+player addMagazine "16Rnd_9x21_Mag";
+player addMagazine "16Rnd_9x21_Mag";
+player addMagazine "16Rnd_9x21_Mag";
+player addMagazine "16Rnd_9x21_Mag";
+player addMagazine "16Rnd_9x21_Mag";
+
 player addItem "ItemMap";
 player assignItem "ItemMap";
 player addItem "ItemCompass";
