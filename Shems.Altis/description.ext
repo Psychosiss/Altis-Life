@@ -118,7 +118,6 @@ class CfgFunctions
 			class initCop {};
 			class initMedic {};
 			class initZeus {};
-			class initEast {};
 			class introCam {};
 			class addKey {};
 		};
@@ -235,7 +234,6 @@ class CfgFunctions
 			class vehicleColorCfg {};
 			class vehicleColorStr {};
 			class vehicleListCfg {};
-			class eastDefault {};
 			class licenseType {};
 			class eatFood {};
 			class varHandle {};
@@ -404,14 +402,6 @@ class CfgFunctions
 			class cookMeat {};
 			class skinAnimal {};
 			class trackAnimal {};
-		};
-		
-		class East
-		{
-			file = "core\east";
-			class eastloadGear {};
-			class eastsaveGear {};
-			class eastMarkers {};
 		};
 		
 		class Vehicle
@@ -1033,13 +1023,4 @@ class CfgNotifications
 		duration = 10;
 		priority = 5;
 	};
-	
-	class EastMessage
-    {
-        title = "Message d'un gang";
-        iconPicture = "icons\messagenew.paa";
-        description = "%1";
-        duration = 10;
-        priority = 5;
-    };
 };

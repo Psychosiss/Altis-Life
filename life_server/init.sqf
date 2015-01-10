@@ -7,43 +7,29 @@ publicVariable "life_server_isReady";
 [] execVM "\life_server\functions.sqf";
 [] execVM "\life_server\eventhandlers.sqf";
 
-_extDBversion = "extDB" callExtension "9:VERSION";
+_extDB = false;
+
 if(isNil {uiNamespace getVariable "life_sql_id"}) then 
 {
 	life_sql_id = round(random(9999));
 	__CONST__(life_sql_id,life_sql_id);
 	uiNamespace setVariable ["life_sql_id",life_sql_id];
+	_result = "extDB" callExtension "9:VERSION";
+	diag_log format ["extDB: Version: %1", _result];
+	if(_result == "") exitWith {};
+	if ((parseNumber _result) < 14) exitWith {diag_log "Erreur: Vous devez avoir la version 14 ou + d'extDB.";};
+	_result = "extDB" callExtension "9:DATABASE:Database2";
+	if(_result != "[1]") exitWith {diag_log "extDB: Erreur de connection à la base de données.";};
+	_result = "extDB" callExtension format["9:ADD:DB_RAW_V2:%1",(call life_sql_id)];
+	if(_result != "[1]") exitWith {diag_log "extDB: Erreur de connection à la base de données.";};
+	"extDB" callExtension "9:LOCK";
+	_extDB = true;
+	diag_log "extDB: Connecté à la base de données.";
 } else {
 	life_sql_id = uiNamespace getVariable "life_sql_id";
 	__CONST__(life_sql_id,life_sql_id);
+	diag_log "extDB: Toujours connecté à la base de données.";
 };
-
-if(_extDBversion == "") exitWith 
-{
-	diag_log "extDB: Erreur de base de donnée, regardez les logs d'extDB pour plus d'informations.";
-	life_server_extDB_notLoaded = true;
-	publicVariable "life_server_extDB_notLoaded";
-};
-
-_extDBconnected = "extDB" callExtension "9:DATABASE:Database2";
-_extDBconnected2 = "extDB" callExtension format["9:ADD:DB_RAW_V2:%1",(call life_sql_id)];
-
-if(_extDBconnected != "[1]") exitWith 
-{
-	diag_log "extDB: Erreur de base de donnée, regardez les logs d'extDB pour plus d'informations."; 
-	life_server_extDB_notLoaded = true; 
-	publicVariable "life_server_extDB_notLoaded";
-};
-
-if(_extDBconnected2 != "[1]") exitWith 
-{
-	diag_log "extDB: Erreur de base de donnée, regardez les logs d'extDB pour plus d'informations."; 
-	life_server_extDB_notLoaded = true; 
-	publicVariable "life_server_extDB_notLoaded";
-};
-
-"extDB" callExtension "9:ADD:MISC:realtime";
-"extDB" callExtension "9:LOCK";
 
 ["CALL resetLifeVehicles",1] spawn DB_fnc_asyncCall;
 ["CALL deleteDeadVehicles",1] spawn DB_fnc_asyncCall;
@@ -53,19 +39,17 @@ if(_extDBconnected2 != "[1]") exitWith
 life_adminlevel = 0;
 life_medicLevel = 0;
 life_coplevel = 0;
-life_eastlevel = 0;
-life_donatorlvl = 0;
+life_donator = 0;
 
 __CONST__(JxMxE_PublishVehicle,"No");
 
 //life_radio_west = radioChannelCreate [[0, 0.95, 1, 0.8], "Side Channel", "%UNIT_NAME", []];
 //life_radio_civ = radioChannelCreate [[0, 0.95, 1, 0.8], "Side Channel", "%UNIT_NAME", []];
 //life_radio_indep = radioChannelCreate [[0, 0.95, 1, 0.8], "Side Channel", "%UNIT_NAME", []];
-//life_radio_east = radioChannelCreate [[0, 0.95, 1, 0.8], "Side Channel", "%UNIT_NAME", []];
 
 serv_sv_use = [];
 
-_onDisconnect = addMissionEventHandler ["HandleDisconnect",{[_uid,_id,_name,_unit] call TON_fnc_clientDisconnect}];
+addMissionEventHandler ["HandleDisconnect",{_this call TON_fnc_clientDisconnect; false;}];
 
 [] spawn TON_fnc_cleanup;
 life_gang_list = [];

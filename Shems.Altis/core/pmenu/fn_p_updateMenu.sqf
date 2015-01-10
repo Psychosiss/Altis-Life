@@ -11,10 +11,9 @@ if(__GETC__(life_adminlevel) < 1) then
 
 _side = switch(playerSide) do 
 {
-	case west:{"cop"}; 
-	case civilian:{"civ"}; 
-	case independent:{"med"}; 
-	case east:{"east"};
+	case west:{"cop"};
+	case civilian:{"civ"};
+	case independent:{"med"};
 };
 
 _dialog = findDisplay 2001;
@@ -29,12 +28,11 @@ lbClear _near;
 lbClear _near_i;
 
 _near_units = [];
-{
-	if(player distance _x < 10) then 
-	{
-		_near_units set [count _near_units,_x];
-	};
+
+{ 
+	if(player distance _x < 10) then {_near_units pushBack _x};
 } foreach playableUnits;
+
 {
 	if(!isNull _x && alive _x && player distance _x < 10 && _x != player) then
 	{

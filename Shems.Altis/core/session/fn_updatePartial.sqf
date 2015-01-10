@@ -9,7 +9,6 @@ _flag = switch(playerSide) do
 	case west: {"cop"}; 
 	case civilian: {"civ"}; 
 	case independent: {"med"}; 
-	case east: {"east"};
 };
 
 switch(_mode) do 

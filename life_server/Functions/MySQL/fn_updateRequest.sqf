@@ -58,18 +58,6 @@ switch (_side) do
 		WHERE playerid='%5'
 		",_name,_cash,_bank,_licenses,_uid];
 	};
-	
-	case east: 
-	{
-		_query = format["UPDATE players SET 
-		name='%1',
-		cash='%2',
-		bankacc='%3',
-		east_gear='%4',
-		east_licenses='%5' 
-		WHERE playerid='%6'
-		",_name,_cash,_bank,_gear,_licenses,_uid];
-	};
 };
 
 waitUntil {sleep (random 0.3); !DB_Async_Active};

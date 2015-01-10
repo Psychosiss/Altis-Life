@@ -56,21 +56,19 @@ switch (playerSide) do
 		_handle = [] spawn life_fnc_initCop;
 		waitUntil {scriptDone _handle};
 	};
+
 	case civilian:
 	{
 		_handle = [] spawn life_fnc_initCiv;
 		waitUntil {scriptDone _handle};
 	};
+
 	case independent:
 	{
 		_handle = [] spawn life_fnc_initMedic;
 		waitUntil {scriptDone _handle};
 	};
-	case east:
-    {
-        _handle = [] spawn life_fnc_initEast;
-        waitUntil {scriptDone _handle};
-    };
+
 	case sideLogic:
     {
         _handle = [] spawn life_fnc_initZeus;
@@ -131,3 +129,4 @@ player disableConversation true;
 0 fadeRadio 0;
 
 __CONST__(life_paycheck,life_paycheck);
+player enableFatigue (__GETC__(life_enableFatigue));

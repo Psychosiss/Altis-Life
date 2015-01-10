@@ -9,7 +9,7 @@ _jailedUnits = [];
 	{
 		_jailedUnits pushBack getPlayerUID _x
 	}
-} count playableUnits;
+} forEach playableUnits;
 
 _list = [];
 {

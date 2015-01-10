@@ -92,21 +92,10 @@ switch(_type) do
 
 	case 7:
 	{
-		if((call life_adminlevel) < 1) exitWith {hint "You are not an admin!";};
+		if((call life_adminlevel) < 1) exitWith {hint "Vous ne faites pas parti de l'administration.";};
 		if(_msg == "") exitWith {hint "You must enter a message to send!";};
 		[[ObjNull,_msg,player,5],"GHB_fnc_handleMessages",false] spawn life_fnc_MP;
 		hint format["Admin Message Sent To All: %1",_msg];
 		closeDialog 887890;
 	};
-	
-	case 8:
-    {
-        if(({side _x == east} count playableUnits) == 0) exitWith {hint format["Actuellement aucun Militaire est en service. S'il vous plaît essayer de nouveau plus tard."];};
-        ctrlShow[888900,false];
-        if(_msg == "") exitWith {hint "Vous devez saisir un message.";ctrlShow[888900,true];};
-        [[ObjNull,_msg,player,6],"GHB_fnc_handleMessages",false] spawn life_fnc_MP;
-        hint format["Vous avez envoyé un message au QG militaire.",_msg];
-        ctrlShow[888900,true];
-        closeDialog 887890;
-    };
 };

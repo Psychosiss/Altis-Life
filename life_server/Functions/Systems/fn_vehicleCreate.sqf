@@ -19,8 +19,7 @@ _side = switch(_side) do
 	case west:{"Police"};
 	case civilian: {"Civil"};
 	case independent: {"Medecin"};
-	case east: {"East"};
-	default {"Erreur"};
+	default {"Bug"};
 };
 
 _plate = round(random(1000000));

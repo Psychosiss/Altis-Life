@@ -17,10 +17,10 @@ if(count _this == 0) exitWith {[] call SOCK_fnc_insertPlayerInfo;};
 if((_this select 0) == "Error") exitWith {[] call SOCK_fnc_insertPlayerInfo;};
 if((getPlayerUID player) != _this select 0) exitWith {[] call SOCK_fnc_dataQuery;};
 
-if(!isServer && (!isNil "life_adminlevel" OR !isNil "life_coplevel" OR !isNil "life_donator")) exitWith 
+if(!isServer && (!isNil "life_adminlevel" OR !isNil "life_coplevel" OR !isNil "life_donator" OR !isNil "life_medicLevel")) exitWith 
 {
 	[[profileName,getPlayerUID player,"VariablesAlreadySet"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
-	[[profileName,format["Variables set before client initialization...\nlife_adminlevel: %1\nlife_coplevel: %2\nlife_donator: %3",life_adminlevel,life_coplevel,life_donator]],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
+	[[profileName,format["Variables set before client initialization...\nlife_adminlevel: %1\nlife_coplevel: %2\nlife_donator: %3\nlife_medicLevel: %4"",life_adminlevel,life_coplevel,life_donator,life_medicLevel]],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
 	sleep 0.9;
 	["SpyGlass",false,false] execVM "\a3\functions_f\Misc\fn_endMission.sqf";
 };
@@ -46,7 +46,6 @@ switch(playerSide) do
 	{
 		__CONST__(life_coplevel, parseNumber(_this select 7));
 		__CONST__(life_medicLevel,0);
-		__CONST__(life_eastlevel,0);
 		life_blacklisted = _this select 9;
 	};
 	
@@ -55,7 +54,6 @@ switch(playerSide) do
 		life_is_arrested = _this select 7;
 		__CONST__(life_coplevel,0);
 		__CONST__(life_medicLevel,0);
-		__CONST__(life_eastlevel,0);
 		life_houses = _this select 9;
 		{
 			_house = nearestBuilding (call compile format["%1", _x select 0]);
@@ -74,17 +72,7 @@ switch(playerSide) do
 	{
 		__CONST__(life_medicLevel, parseNumber(_this select 7));
 		__CONST__(life_coplevel,0);
-		__CONST__(life_eastlevel,0);
 	};
-	
-	case east: 
-	{
-        __CONST__(life_eastlevel, parseNumber(_this select 7));
-		__CONST__(life_coplevel,0);
-		__CONST__(life_medicLevel,0);
-        east_gear = _this select 8;
-        [] spawn life_fnc_eastloadGear;
-    };
 };
 
 switch (life_licenses) do

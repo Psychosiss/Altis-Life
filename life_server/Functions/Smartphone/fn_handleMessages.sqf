@@ -11,7 +11,6 @@ switch(_type) do
 		if(isNULL _target)  exitWith {};
 		_to = call compile format["%1", _target];
 		[[_msg,name _player,0],"clientMessage",_to,false] spawn life_fnc_MP;
-		
 		private["_query","_pid","_toID"];
 		_pid = getPlayerUID _player;
 		_toID = getPlayerUID _target;
@@ -51,9 +50,4 @@ switch(_type) do
 	{
 		[[_msg,name _player,4],"clientMessage",true,false] spawn life_fnc_MP;
 	};
-	
-	case 6:
-    {    
-        [[_msg,name _player,6],"clientMessage",east,false] spawn life_fnc_MP;
-    };
 };

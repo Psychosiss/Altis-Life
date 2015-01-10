@@ -19,6 +19,7 @@ if(!(["life_fnc_",_functionName] call BIS_fnc_inString) &&
 {!(toLower(_functionName) in ["BIS_fnc_execVM","BIS_fnc_effectkilledairdestruction","BIS_fnc_effectkilledairdestructionstage2"])} && 
 {!(["SOCK_fnc_",_functionName] call BIS_fnc_inString)}) exitWith {false};
 if(toLower(_functionName) == "DB_fnc_asyncCall") exitWith {false};
+if(toLower(_functionName) == "DB_fnc_mresToArray") exitWith {false};
 
 if(_functionName == "BIS_fnc_execVM") then 
 {

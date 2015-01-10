@@ -21,7 +21,7 @@ while{true} do
 	if(_pipe == "") exitWith {};
 	if(_pipe != "[3]") then 
 	{
-		_queryResult = format["%1%2",_queryResult,_pipe];
+		_queryResult = _queryResult + _pipe;
 	} else {
 		sleep 0.35;
 	};
@@ -30,7 +30,7 @@ while{true} do
 DB_Async_ExtraLock = false;
 DB_Async_Active = false;
 
-_queryResult = call compile format["%1",_queryResult];
+_queryResult = call compile _queryResult;
 _queryResult = (_queryResult select 1);
 
 if(count (_queryResult select 1) == 0) exitWith {[]};

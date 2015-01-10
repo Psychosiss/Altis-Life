@@ -10,11 +10,16 @@ sleep _wait;
 _exitLoop = false;
 {
 	_groupName = _x getVariable "gang_name";
-	if(!isNil "_groupName") then {
+	if(!isNil "_groupName") then 
+	{
 		_groupOwner = _x getVariable["gang_owner",""];
 		_groupID = _x getVariable "gang_id";
 		if(_groupOwner == "" OR isNil "_groupID") exitWith {};
-		if((life_gangData select 0) == _groupID && {(life_gangData select 1) == _groupOwner}) exitWith {_group = _x; _exitLoop = true;};
+		if((life_gangData select 0) == _groupID && {(life_gangData select 1) == _groupOwner}) exitWith 
+		{
+			_group = _x; 
+			_exitLoop = true;
+		};
 	};
 } foreach allGroups;
 

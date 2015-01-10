@@ -5,4 +5,4 @@ _pReason = [_this,2,"",[""]] call BIS_fnc_param;
 
 if(_pName == "" OR _pUID == "" OR _pReason == "") exitWith {};
 
-diag_log format["SPYGLASS %1 | %2 | %3",_pName,_pUID,_pReason];
+diag_log format["SPYGLASS-FLAG:%1:%2:%3",_pName,_pUID,_pReason];

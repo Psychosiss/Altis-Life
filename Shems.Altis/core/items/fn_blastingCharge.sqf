@@ -20,4 +20,4 @@ _bomb = "Bo_GBU12_LGB_MI10" createVehicle [getPosATL fed_bank select 0, getPosAT
 fed_bank setVariable["chargeplaced",false,true];
 fed_bank setVariable["safe_open",true,true];
 
-hint "The vault is now opened";
+hint "Le coffre est ouvert.";

@@ -18,11 +18,11 @@ _side = switch(_side) do
 	case west:{"cop"};
 	case civilian: {"civ"};
 	case independent: {"med"};
-	case east: {"east"};
-	default {"Error"};
+	default {"bug"};
 };
 
-if(_side == "Error") exitWith {
+if(_side == "Error") exitWith 
+{
 	[[[]],"life_fnc_impoundMenu",(owner _unit),false] spawn life_fnc_MP;
 };
 
@@ -34,11 +34,12 @@ _queryResult = [_query,2,true] call DB_fnc_asyncCall;
 
 diag_log "------------- Client Query Request -------------";
 diag_log format["QUERY: %1",_query];
-diag_log format["Time to complete: %1 (in seconds)",(diag_tickTime - _tickTime)];
-diag_log format["Result: %1",_queryResult];
+diag_log format["Temps à completer: %1 seconde(s)",(diag_tickTime - _tickTime)];
+diag_log format["Resultat: %1",_queryResult];
 diag_log "------------------------------------------------";
 
-if(typeName _queryResult == "STRING") exitWith {
+if(typeName _queryResult == "STRING") exitWith 
+{
 	[[[]],"life_fnc_impoundMenu",(owner _unit),false] spawn life_fnc_MP;
 };
 

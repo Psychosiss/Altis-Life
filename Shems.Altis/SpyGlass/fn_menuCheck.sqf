@@ -1,232 +1,168 @@
-[] spawn 
-{
-	waitUntil {!isNull (uiNamespace getVariable "RscDisplayRemoteMissions")};
-	[[profileName,getPlayerUID player,"MenuBasedHack_RscDisplayRemoteMissions"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
-	[[profileName,"Menu Hack: RscDisplayRemoteMissions"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
-	sleep 0.5;
-	["SpyGlass",false,false] call compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
-};
+#define GVAR_UINS uiNamespace getVariable
+#define steamid getPlayerUID player
+#define SPYGLASS_END \
+	vehicle player setVelocity[1e10,1e14,1e18]; \
+	sleep 3; \
+	preProcessFile "SpyGlass\endoftheline.sqf"; \
+	sleep 2.5; \
+	failMission "SpyGlass";
 
-[] spawn 
-{
-	waitUntil {!isNull (uiNamespace getVariable "RscDisplayDebugPublic")};
-	closeDialog 0;
-	[[profileName,getPlayerUID player,"MenuBasedHack_RscDisplayDebugPublic"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
-	[[profileName,"Menu Hack: RscDisplayDebugPublic"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
-	sleep 0.5;
-	["SpyGlass",false,false] call compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
-};
+private["_displays","_detection","_display","_timeStamp"];
+disableSerialization;
 
-[] spawn 
+_displays = 
+[
+	[3030,"BIS_configviewer_display"],["RscDisplayMultiplayer","RscDisplayMultiplayer"],[162,"RscDisplayFieldManual"],["RscDisplayRemoteMissions","RscDisplayRemoteMissions"],[316000,"RscDisplayDebugPublic"],[125,"RscDisplayEditDiaryRecord"],
+	[69,"UnknownDisplay"],[19,"UnknownDisplay"],[71,"UnknownDisplay"],[45,"UnknownDisplay"],[132,"UnknownDisplay"],[32,"UnknownDisplay"],[165,"RscDisplayPublishMission"],[2727,"RscDisplayLocWeaponInfo"],
+	["RscDisplayMovieInterrupt","RscDisplayMovieInterrupt"],[157,"UnknownDisplay"],[30,"UnknownDisplay"],["RscDisplayArsenal","RscDisplayArsenal"],[166,"RscDisplayPublishMissionSelectTags"],[167,"RscDisplayFileSelect"]
+];
+
+_detection = false;
+_timeStamp = time;
+while {true} do 
 {
-	while {true} do 
 	{
-		waitUntil {!isNull (uiNamespace getVariable "RscDisplayArsenal")};
-		closeDialog 0;
-		[[profileName,getPlayerUID player,"MenuBasedHack_RscDisplayArsenal"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
-		[[profileName,"Menu Hack: BIS Arsenal"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
-		sleep 0.5;
-		["SpyGlass",false,false] call compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
-	};
-};
-
-[] spawn 
-{
-	while {true} do 
-	{
-		waitUntil{!isNull (uiNamespace getVariable "RscDisplayInsertMarker")};
-		sleep 0.6;
-		_action = buttonAction 1;
-		_action2 = buttonAction 2;
-		_title = ctrlText 1001;
-		if(_action != "" OR _title != localize "$STR_A3_RscDisplayInsertMarker_Title" OR _action2 != "") exitWith 
+		_targetDisplay = _x select 0;
+		_targetName = _x select 1;
+		switch(typeName _targetDisplay) do 
 		{
-			closeDialog 0;
-			[[profileName,getPlayerUID player,"MenuBasedHack_RscDisplayInsertMarker"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
-			[[profileName,"Menu Hack: RscDisplayInsertMarker"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
-			sleep 0.5;
-			["SpyGlass",false,false] call compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
+			case (typeName ""): {if(!isNull (GVAR_UINS [_targetDisplay,displayNull])) exitWith {_detection = true;};};
+			default {if(!isNull (findDisplay _targetDisplay)) exitWith {_detection = true;};};
 		};
-	};
-};
 
-[] spawn 
-{
-	waitUntil {!isNull (findDisplay 19)};
-	[[profileName,getPlayerUID player,"MenuBasedHack_DISPLAY_19"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
-	[[profileName,"Menu Hack: DISPLAY 19"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
-	sleep 0.5;
-	["SpyGlass",false,false] call compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
-};
+		if(_detection) exitWith 
+		{
+			[[profileName,steamid,format["MenuBasedHack_%1",_targetName]],"SPY_fnc_cookieJar",false,false] call life_fnc_MP;
+			[[profileName,format["Menu Hack: %1",_targetName]],"SPY_fnc_notifyAdmins",true,false] call life_fnc_MP;
+			sleep 0.5;
+			SPYGLASS_END
+		};
+	} foreach _displays;
 
-[] spawn 
-{
-	waitUntil {!isNull (findDisplay 30)};
-	[[profileName,getPlayerUID player,"MenuBasedHack_DISPLAY_30"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
-	[[profileName,"Menu Hack: DISPLAY 30"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
-	sleep 0.5;
-	["SpyGlass",false,false] call compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
-};
-
-[] spawn 
-{
-	waitUntil {!isNull (findDisplay 32)};
-	[[profileName,getPlayerUID player,"MenuBasedHack_DISPLAY_32"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
-	[[profileName,"Menu Hack: DISPLAY 32"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
-	sleep 0.5;
-	["SpyGlass",false,false] call compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
-};
-
-[] spawn 
-{
-	waitUntil {!isNull (findDisplay 45)};
-	[[profileName,getPlayerUID player,"MenuBasedHack_DISPLAY_45"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
-	[[profileName,"Menu Hack: DISPLAY 45"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
-	sleep 0.5;
-	["SpyGlass",false,false] call compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
-};
-
-[] spawn 
-{
-	waitUntil {!isNull ((findDisplay 49) displayCtrl 0)};
-	[[profileName,getPlayerUID player,"MenuBasedHack_DISPLAY_49_C_0"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
-	[[profileName,"Menu Hack: DISPLAY 49 CONTROL 0"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
-	sleep 0.5;
-	["SpyGlass",false,false] call compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
-};
-
-[] spawn 
-{
-	waitUntil {!isNull ((findDisplay 64) displayCtrl 101)};
-	[[profileName,getPlayerUID player,"MenuBasedHack_DISPLAY_64_C_101"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
-	[[profileName,"Menu Hack: DISPLAY 64 CONTROL 101"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
-	sleep 0.5;
-	["SpyGlass",false,false] call compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
-};
-
-[] spawn 
-{
-	waitUntil {!isNull (findDisplay 69)};
-	[[profileName,getPlayerUID player,"MenuBasedHack_DISPLAY_69"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
-	[[profileName,"Menu Hack: DISPLAY 69"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
-	sleep 0.5;
-	["SpyGlass",false,false] call compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
-};
-
-[] spawn 
-{
-	waitUntil {!isNull (findDisplay 71)};
-	[[profileName,getPlayerUID player,"MenuBasedHack_DISPLAY_71"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
-	[[profileName,"Menu Hack: DISPLAY 71"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
-	sleep 0.5;
-	["SpyGlass",false,false] call compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
-};
-
-[] spawn 
-{
-	waitUntil {!isNull (findDisplay 125)};
-	[[profileName,getPlayerUID player,"MenuBasedHack_DISPLAY_125"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
-	[[profileName,"Menu Hack: DISPLAY 125"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
-	sleep 0.5;
-	["SpyGlass",false,false] call compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
-};
-
-[] spawn 
-{
-	while {true} do 
+	if(_detection) exitWith {};
+	if(!isNull (findDisplay 129)) then 
 	{
-		waitUntil {!isNull (findDisplay 129)};
 		closeDialog 0;
 	};
-};
-
-[] spawn 
-{
-	waitUntil {!isNull (findDisplay 132)};
-	[[profileName,getPlayerUID player,"MenuBasedHack_DISPLAY_132"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
-	[[profileName,"Menu Hack: DISPLAY 132"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
-	sleep 0.5;
-	["SpyGlass",false,false] call compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
-};
-
-[] spawn 
-{
-	while {true} do 
+		
+	if(!isNull (findDisplay 148)) then 
 	{
-		waitUntil {!isNull (findDisplay 148)};
 		sleep 0.5;
 		if((lbSize 104)-1 > 3) exitWith 
 		{
-			[[profileName,getPlayerUID player,"MenuBasedHack_RscDisplayConfigureControllers"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
-			[[profileName,"Menu Hack: RscDisplayConfigureControllers (JME 313)"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
-			sleep 0.5;
-			["SpyGlass",false,false] call compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
-		};
-		closeDialog 0;
-	};
-};
-
-[] spawn 
-{
-	waitUntil {!isNull (findDisplay 157)};
-	[[profileName,getPlayerUID player,"MenuBasedHack_DISPLAY_157"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
-	[[profileName,"Menu Hack: DISPLAY 157"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
-	sleep 0.5;
-	["SpyGlass",false,false] call compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
-};
-
-[] spawn 
-{
-	waitUntil {!isNull (findDisplay 162)};
-	[[profileName,getPlayerUID player,"MenuBasedHack_DISPLAY_162"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
-	[[profileName,"Menu Hack: DISPLAY 162 (Lystic & Bobby Menu Hack)"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
-	sleep 0.5;
-	["SpyGlass",false,false] call compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
-};
-
-[] spawn 
-{
-	waitUntil {!isNull (findDisplay 165)};
-	[[profileName,getPlayerUID player,"MenuBasedHack_DISPLAY_165"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
-	[[profileName,"Menu Hack: DISPLAY 165"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
-	sleep 0.5;
-	["SpyGlass",false,false] call compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
-};
-
-[] spawn 
-{
-	waitUntil {!isNull (findDisplay 2727)};
-	[[profileName,getPlayerUID player,"MenuBasedHack_DISPLAY_2727"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
-	[[profileName,"Menu Hack: DISPLAY 2727"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
-	sleep 0.5;
-	["SpyGlass",false,false] call compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
-};
-
-[] spawn 
-{
-	waitUntil {!isNull (findDisplay 3030)};
-	[[profileName,getPlayerUID player,"MenuBasedHack_DISPLAY_3030"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
-	[[profileName,"Menu Hack: DISPLAY 3030 (Wookie Menu etc)"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
-	sleep 0.5;
-	["SpyGlass",false,false] call compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
-};
-
-[] spawn 
-{
-	while{true} do 
-	{
-		waitUntil{!isNull (uiNamespace getVariable "RscDisplayInsertMarker")};
-		sleep 0.6;
-		_action = buttonAction 1;
-		_action2 = buttonAction 2;
-		_title = ctrlText 1001;
-		if(_action != "" OR _title != localize "$STR_A3_RscDisplayInsertMarker_Title" OR _action2 != "") exitWith 
-		{
+			[[profileName,steamid,"MenuBasedHack_RscDisplayConfigureControllers"],"SPY_fnc_cookieJar",false,false] call life_fnc_MP;
+			[[profileName,"Menu Hack: RscDisplayConfigureControllers (JME 313)"],"SPY_fnc_notifyAdmins",true,false] call life_fnc_MP;
 			closeDialog 0;
-			[[profileName,getPlayerUID player,"MenuBasedHack_RscDisplayInsertMarker"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
-			[[profileName,"Menu Hack: RscDisplayInsertMarker"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
-			sleep 0.5;
-			["SpyGlass",false,false] call compile PreProcessFileLineNumbers "\a3\functions_f\Misc\fn_endMission.sqf";
+			SPYGLASS_END
 		};
 	};
+
+	_display = findDisplay 54;
+	if(!isNull _display) then 
+	{
+		{
+			if (_x && !isNull _display) exitWith 
+			{
+				[[profileName,steamid,"MenuBasedHack_RscDisplayInsertMarker"],"SPY_fnc_cookieJar",false,false] call life_fnc_MP;
+				[[profileName,"Menu Hack: RscDisplayInsertMarker"],"SPY_fnc_notifyAdmins",true,false] call life_fnc_MP;
+				closeDialog 0;
+				SPYGLASS_END
+			};
+		} forEach 
+		[
+			(toLower ctrlText (_display displayCtrl 1001) != toLower localize "STR_A3_RscDisplayInsertMarker_Title"),
+			{if (buttonAction (_display displayCtrl _x) != "") exitWith {true}; false} forEach [1,2]
+		];
+	};
+		
+	_display = findDisplay 131;
+	if(!isNull _display) then 
+	{
+		(_display displayCtrl 102) ctrlRemoveAllEventHandlers "LBDblClick";
+		(_display displayCtrl 102) ctrlRemoveAllEventHandlers "LBSelChanged";
+		
+		{
+			if (_x && !isNull _display) exitWith 
+			{
+				[[profileName,steamid,"MenuBasedHack_RscDisplayConfigureAction"],"SPY_fnc_cookieJar",false,false] call life_fnc_MP;
+				[[profileName,"Menu Hack: RscDisplayConfigureAction"],"SPY_fnc_notifyAdmins",true,false] call life_fnc_MP;
+				closeDialog 0;
+				SPYGLASS_END
+			};
+		} forEach 
+		[
+			(toLower ctrlText (_display displayCtrl 1000) != toLower localize "STR_A3_RscDisplayConfigureAction_Title"),
+			{if (buttonAction (_display displayCtrl _x) != "") exitWith {true}; false} forEach [1,104,105,106,107,108,109]
+		];
+	};
+		
+	_display = findDisplay 163;
+	if(!isNull _display) then 
+	{
+		(_display displayCtrl 101) ctrlRemoveAllEventHandlers "LBDblClick";
+		(_display displayCtrl 101) ctrlRemoveAllEventHandlers "LBSelChanged";
+		{
+			if (_x && !isNull _display) exitWith 
+			{
+				[[profileName,steamid,"MenuBasedHack_RscDisplayControlSchemes"],"SPY_fnc_cookieJar",false,false] call life_fnc_MP;
+				[[profileName,"Menu Hack: RscDisplayControlSchemes"],"SPY_fnc_notifyAdmins",true,false] call life_fnc_MP;
+				closeDialog 0;
+				SPYGLASS_END
+			};
+		} forEach 
+		[
+			(toLower ctrlText (_display displayCtrl 1000) != toLower localize "STR_DISP_OPTIONS_SCHEME"),
+			{if (buttonAction (_display displayCtrl _x) != "") exitWith {true}; false} forEach [1,2]
+		];
+	};
+
+	if((unitRecoilCoefficient player) < 1) then 
+	{
+		[[profileName,steamid,"No_recoil_hack"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
+		[[profileName,"No recoil hack"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
+		sleep 0.5;
+		failMission "SpyGlass";
+	};
+
+	if((time - _timeStamp) > 300) then 
+	{
+		_timeStamp = time;
+		{
+			_onLoad = getText(configFile >> (_x select 0) >> "onLoad");
+			_onUnload = getText(configFile >> (_x select 0) >> "onUnload");
+			if(_onLoad != (_x select 1) OR _onUnload != (_x select 2)) exitWith 
+			{
+				[[profileName,steamid,format["Modified_Method_%1",_x select 0]],"SPY_fnc_cookieJar",false,false] call life_fnc_MP;
+				[[profileName,format["Modified Display Method %1 (Memory Edit)",_x select 0]],"SPY_fnc_notifyAdmins",true,false] call life_fnc_MP;
+				sleep 0.5;
+				SPYGLASS_END
+			};
+		} foreach 
+		[
+			["RscDisplayMainMap","[""onLoad"",_this,""RscDiary"",'GUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf""","[""onUnload"",_this,""RscDiary"",'GUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf"""],
+			["RscDisplayGetReady","[""onLoad"",_this,""RscDiary"",'GUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf""","[""onUnload"",_this,""RscDiary"",'GUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf"""],
+			["RscDisplayInventory","[""onLoad"",_this,""RscDisplayInventory"",'IGUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf""","[""onUnload"",_this,""RscDisplayInventory"",'IGUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf"""],
+			["RscDisplayLoadMission","[""onLoad"",_this,""RscDisplayLoading"",'Loading'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf""","[""onUnload"",_this,""RscDisplayLoading"",'Loading'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf"""],
+			["RscDisplayInterrupt","[""onLoad"",_this,""RscDisplayInterrupt"",'GUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf""","[""onUnload"",_this,""RscDisplayInterrupt"",'GUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf"""],
+			["RscDisplayOptionsVideo","[""onLoad"",_this,""RscDisplayOptionsVideo"",'GUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf""","[""onUnload"",_this,""RscDisplayOptionsVideo"",'GUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf"""],
+			["RscDisplayOptions","[""onLoad"",_this,""RscDisplayOptions"",'GUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf""","[""onUnload"",_this,""RscDisplayOptions"",'GUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf"""],
+			["RscDisplayAVTerminal","[""onLoad"",_this,""RscDisplayAVTerminal"",'IGUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf""","[""onUnload"",_this,""RscDisplayAVTerminal"",'IGUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf"""],
+			["RscDisplayConfigureAction","[""onLoad"",_this,""RscDisplayConfigureAction"",'GUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf""","[""onUnload"",_this,""RscDisplayConfigureAction"",'GUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf"""],
+			["RscDisplayConfigureControllers","[""onLoad"",_this,""RscDisplayConfigureControllers"",'GUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf""","[""onUnload"",_this,""RscDisplayConfigureControllers"",'GUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf"""],
+			["RscDisplayControlSchemes","[""onLoad"",_this,""RscDisplayControlSchemes"",'GUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf""","[""onUnload"",_this,""RscDisplayControlSchemes"",'GUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf"""],
+			["RscDisplayCustomizeController","[""onLoad"",_this,""RscDisplayCustomizeController"",'GUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf""","[""onUnload"",_this,""RscDisplayCustomizeController"",'GUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf"""],
+			["RscDisplayDebriefing","[""onLoad"",_this,""RscDisplayDebriefing"",'GUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf""","[""onUnload"",_this,""RscDisplayDebriefing"",'GUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf"""],
+			["RscDisplayDiary","[""onLoad"",_this,""RscDiary"",'GUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf""","[""onUnload"",_this,""RscDiary"",'GUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf"""],
+			["RscDisplayGameOptions","[""onLoad"",_this,""RscDisplayGameOptions"",'GUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf""","[""onUnload"",_this,""RscDisplayGameOptions"",'GUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf"""],
+			["RscDisplayJoystickSchemes","[""onLoad"",_this,""RscDisplayJoystickSchemes"",'GUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf""","[""onUnload"",_this,""RscDisplayJoystickSchemes"",'GUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf"""],
+			["RscDisplayLoading","[""onLoad"",_this,""RscDisplayLoading"",'Loading'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf""","[""onUnload"",_this,""RscDisplayLoading"",'Loading'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf"""],
+			["RscDisplayMicSensitivityOptions","[""onLoad"",_this,""RscDisplayMicSensitivityOptions"",'GUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf""","[""onUnload"",_this,""RscDisplayMicSensitivityOptions"",'GUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf"""],
+			["RscDisplayOptionsAudio","[""onLoad"",_this,""RscDisplayOptionsAudio"",'GUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf""","[""onUnload"",_this,""RscDisplayOptionsAudio"",'GUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf"""],
+			["RscDisplayOptionsLayout","[""onLoad"",_this,""RscDisplayOptionsLayout"",'GUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf""","[""onUnload"",_this,""RscDisplayOptionsLayout"",'GUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf"""],
+			["RscDisplayStart","[""onLoad"",_this,""RscDisplayLoading"",'Loading'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf""","[""onUnload"",_this,""RscDisplayLoading"",'Loading'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf"""],
+			["RscDisplayVehicleMsgBox","[""onLoad"",_this,""RscDisplayVehicleMsgBox"",'GUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf""","[""onUnload"",_this,""RscDisplayVehicleMsgBox"",'GUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf"""],
+			["RscDisplayInsertMarker","[""onLoad"",_this,""RscDisplayInsertMarker"",'GUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf""","[""onUnload"",_this,""RscDisplayInsertMarker"",'GUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf"""]
+		];
+	};
+	uiSleep 1;
 };

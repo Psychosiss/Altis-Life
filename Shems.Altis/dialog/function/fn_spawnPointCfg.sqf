@@ -59,14 +59,6 @@ switch (_side) do
 			["medic_spawn_3","Pyrgos","icons\health2.paa"]
 		];
 	};
-	
-	case east: 
-	{
-        _ret = 
-		[
-            ["east_spawn","Air","icons\spawn.paa"]
-        ];
-    };    
 };
 
 _ret;

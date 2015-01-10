@@ -3,10 +3,9 @@ _packet = [getPlayerUID player,(profileName),playerSide,life_cash,life_atmcash];
 _array = [];
 _flag = switch(playerSide) do 
 {
-	case west: {"cop"}; 
-	case civilian: {"civ"}; 
-	case independent: {"med"}; 
-	case east: {"east"};
+	case west: {"cop"};
+	case civilian: {"civ"};
+	case independent: {"med"};
 };
 
 {
@@ -28,11 +27,6 @@ switch (playerSide) do
 	};
 
 	case independent: {};
-	case east:
-    {
-		[] call life_fnc_eastsaveGear;
-		_packet pushBack east_gear;
-    };
 };
 
 [_packet,"DB_fnc_updateRequest",false,false] spawn life_fnc_MP;

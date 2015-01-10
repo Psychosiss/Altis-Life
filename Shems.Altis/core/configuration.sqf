@@ -56,6 +56,7 @@ __CONST__(life_gangUpgradeBase,10000);
 __CONST__(life_gangUpgradeMultipler,2.5);
 __CONST__(life_save_civ,true);
 __CONST__(life_save_yinv,true);
+__CONST__(life_enableFatigue,false);
 
 life_clothing_purchase = [-1,-1,-1,-1,-1];
 
@@ -78,13 +79,6 @@ switch (playerSide) do
 	};
 
 	case civilian : 
-	{
-		life_maxWeight = 24;
-		life_maxWeightT = 24;
-		life_carryWeight = 0;
-	};
-
-	case east : 
 	{
 		life_maxWeight = 24;
 		life_maxWeightT = 24;
@@ -153,12 +147,6 @@ switch (playerSide) do
 	{
 		life_atmcash = 10000;
 		life_paycheck = 3000;
-	};
-
-	case east: 
-	{
-		life_atmcash = 10000;
-		life_paycheck = 1250;
 	};
 };
 

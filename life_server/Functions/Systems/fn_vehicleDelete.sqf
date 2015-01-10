@@ -4,13 +4,9 @@ _pid = [_this,1,"",[""]] call BIS_fnc_param;
 _sp = [_this,2,2500,[0]] call BIS_fnc_param;
 _unit = [_this,3,ObjNull,[ObjNull]] call BIS_fnc_param;
 _type = [_this,4,"",[""]] call BIS_fnc_param;
-
 if(_vid == -1 OR _pid == "" OR _sp == 0 OR isNull _unit OR _type == "") exitWith {};
 _unit = owner _unit;
-
 _query = format["UPDATE vehicles SET alive='0' WHERE pid='%1' AND id='%2'",_pid,_vid];
-
 waitUntil {!DB_Async_Active};
 _thread = [_query,1] call DB_fnc_asyncCall;
-
-[[[_sp,_type],{life_atmcash = life_atmcash + (_this select 0); hint format[(localize "STR_Garage_SoldCar"),[(_this select 0)] call life_fnc_numberText];}],"BIS_fnc_call",_unit,false] spawn life_fnc_MP;
+[[[_sp,_type],{life_atmcash = life_atmcash + (_this select 0); hint format[("Vous avez vendu ce véhicule pour %1 €"),[(_this select 0)] call life_fnc_numberText];}],"BIS_fnc_call",_unit,false] spawn life_fnc_MP;

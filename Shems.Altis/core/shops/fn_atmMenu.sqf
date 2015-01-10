@@ -35,7 +35,6 @@ _text ctrlSetStructuredText parseText format
 			case west: {_type = "Cop"};
 			case civilian: {_type = "Civ"};
 			case independent: {_type = "EMS"};
-			case east: {_type = "East"};
 		};
 		_units lbAdd format["%1 (%2)",_x getVariable["realname",name _x],_type];
 		_units lbSetData [(lbSize _units)-1,str(_x)];

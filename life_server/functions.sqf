@@ -200,26 +200,12 @@ compileFinal "
 	hint format[""Message Admin à tous: %1"",_msg];
 ";
 
-fnc_cell_eastrequest =
-compileFinal "
-private[""_msg"",""_to""];
-    ctrlShow[3023,false];
-    _msg = ctrlText 3003;
-    _to = ""East Units"";
-    if(_msg == """") exitWith {hint ""Vous devez écrire un message à envoyer!"";ctrlShow[3023,true];};
-    [[_msg,name player,6],""clientMessage"",east,false] spawn life_fnc_MP;
-    [] call life_fnc_cellphone;
-    hint format[""Vous avez envoyé un message a une famille"",_to,_msg];
-    ctrlShow[3023,true];
-";
-
 publicVariable "fnc_cell_textmsg";
 publicVariable "fnc_cell_textcop";
 publicVariable "fnc_cell_textadmin";
 publicVariable "fnc_cell_adminmsg";
 publicVariable "fnc_cell_adminmsgall";
 publicVariable "fnc_cell_emsrequest";
-publicVariable "fnc_cell_eastrequest";
 
 clientMessage =
 compileFinal "
@@ -294,14 +280,6 @@ compileFinal "
 			hint parseText format [""<t color='#FFCC00'><t size='2'><t align='center'>Requête medicale<br/><br/><t color='#33CC33'><t align='left'><t size='1'>à: <t color='#ffffff'>Vous<br/><t color='#33CC33'>De: <t color='#ffffff'>%1<br/><br/><t color='#33CC33'>Message:<br/><t color='#ffffff'>%2"",_from,_msg];
 			[""TextMessage"",[format[""Requête médicale de %1"",_from]]] call bis_fnc_showNotification;
 		};
-		
-		case 6: 
-		{
-            private[""_message""];
-            _message = format[""Requête à une famille: %1"",_msg];
-            hint parseText format [""<t color='#FFCC00'><t size='2'><t align='center'>ADAC Request<br/><br/><t color='#33CC33'><t align='left'><t size='1'>à: <t color='#ffffff'>Vous<br/><t color='#33CC33'>De: <t color='#ffffff'>%1<br/><br/><t color='#33CC33'>Message:<br/><t color='#ffffff'>%2"",_from,_msg];
-            [""TextMessage"",[format[""Requête de %1"",_from]]] call bis_fnc_showNotification;
-        }; 
 	};
 ";
 publicVariable "clientMessage";

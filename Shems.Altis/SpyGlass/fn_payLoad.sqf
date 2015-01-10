@@ -16,9 +16,6 @@ __CONST__(JJJJ_MMMM___EEEEEEE_LLYYSSTTIICCC_SHIT_RE_OLD,"No");
 __CONST__(JJJJ_MMMM___EEEEEEE_SPAWN_VEH,"No");
 __CONST__(JJJJ_MMMM___EEEEEEE_SPAWN_WEAPON,"No");
 
-if(!(__GETC__(SPY_cfg_enableSys))) exitWith {};
-if(__GETC__(life_adminlevel) != 0) exitWith {};
-
 waitUntil {!isNil "SPY_fnc_menuCheck" && !isNil "SPY_fnc_variablecheck" && !isNil "SPY_fnc_cmdMenuCheck"};
 
 if(__GETC__(SPY_cfg_runPatchCheck)) then 
@@ -27,12 +24,11 @@ if(__GETC__(SPY_cfg_runPatchCheck)) then
 	for "_i" from 0 to count (_binConfigPatches)-1 do 
 	{
 		_patchEntry = _binConfigPatches select _i;
-		if(isClass _patchEntry) then 
-		{
+		if(isClass _patchEntry) then {
 			if(!((configName _patchEntry) in (call SPY_cfg_patchList))) exitWith 
 			{
 				[[profileName,getPlayerUID player,(configName _patchEntry)],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
-				[[profileName,format["Patch d'addon inconnu: %1",(configName _patchEntry)]],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
+				[[profileName,format["Unknown Addon Patch: %1",(configName _patchEntry)]],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
 				sleep 0.5;
 				["SpyGlass",false,false] call BIS_fnc_endMission;
 			};
@@ -42,10 +38,9 @@ if(__GETC__(SPY_cfg_runPatchCheck)) then
 
 private["_children","_allowedChildren"];
 _children = [configFile >> "RscDisplayMPInterrupt" >> "controls",0] call BIS_fnc_returnChildren;
-_allowedChildren = 
-[
-	"Title","MissionTitle","DifficultyTitle","PlayersName","ButtonCancel","ButtonSAVE","ButtonSkip","ButtonRespawn","ButtonOptions",
-	"ButtonVideo","ButtonAudio","ButtonControls","ButtonGame","ButtonTutorialHints","ButtonAbort","DebugConsole","Feedback","MessageBox"
+_allowedChildren = [
+"Title","MissionTitle","DifficultyTitle","PlayersName","ButtonCancel","ButtonSAVE","ButtonSkip","ButtonRespawn","ButtonOptions",
+"ButtonVideo","ButtonAudio","ButtonControls","ButtonGame","ButtonTutorialHints","ButtonAbort","DebugConsole","Feedback","MessageBox"
 ];
 
 {
@@ -62,15 +57,14 @@ private["_onLoad","_onUnload"];
 _onLoad = getText(configFile >> "RscDisplayInventory" >> "onLoad");
 _onUnload = getText(configFile >> "RscDisplayInventory" >> "onUnload");
 
-if(_onLoad != "[""onLoad"",_this,""RscDisplayInventory"",'IGUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf""") exitWith 
-{
+if(_onLoad != "[""onLoad"",_this,""RscDisplayInventory"",'IGUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf""") exitWith {
 	[[profileName,getPlayerUID player,"Modified_RscDisplayInventory_onLoad"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
 	[[profileName,"Modified RscDisplayInventory_onLoad (CheatEngine injection)"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
 	sleep 0.5;
 	["SpyGlass",false,false] call BIS_fnc_endMission;
 };
-if(_onUnload != "[""onUnload"",_this,""RscDisplayInventory"",'IGUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf""") exitWith 
-{
+
+if(_onUnload != "[""onUnload"",_this,""RscDisplayInventory"",'IGUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf""") exitWith {
 	[[profileName,getPlayerUID player,"Modified_RscDisplayInventory_onUnload"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
 	[[profileName,"Modified RscDisplayInventory_onUnload (CheatEngine injection)"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
 	sleep 0.5;

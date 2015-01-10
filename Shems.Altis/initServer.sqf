@@ -1,3 +1,7 @@
+"BIS_fnc_MP_packet" addPublicVariableEventHandler 
+{
+	_this call life_fnc_MPexec
+};
 if(!(_this select 0)) exitWith {};
 [] call compile PreprocessFileLineNumbers "\life_server\init.sqf";
 master_group attachTo[bank_obj,[0,0,0]];
@@ -16,4 +20,4 @@ onMapSingleClick "if(_alt) then {vehicle player setPos _pos};";
 	detach _var;
 } foreach ["hospital_2","hospital_3"];
 
-[8,true,true,12] execFSM "core\fsm\timeModule.fsm";
+[8,true,12] execFSM "core\fsm\timeModule.fsm";

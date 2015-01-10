@@ -23,7 +23,6 @@ lbClear _list;
 		case west: {"Police"}; 
 		case civilian : {"Civil"}; 
 		case independent : {"Medecin"}; 
-		case east:{"Gang"}; 
 		default {"Bug"};
 	};
 
