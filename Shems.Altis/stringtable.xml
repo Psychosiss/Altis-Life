@@ -742,4 +742,24 @@
 			<Original>Vous avez déjà un uniforme ! Posez le votre avant d'en crafter un nouveau.</Original>
 		</Key>
 	</Package>  
+	<Package name="talent">
+		<Key ID="STR_talent_Title">
+			<Original>Menu des Compétences</Original>
+		</Key>
+		<Key ID="STR_PM_talentStats">
+			<Original>Competences</Original>
+		</Key>
+		<Key ID="STR_PM_talentInfo">
+			<Original>Description</Original>
+		</Key>
+		<Key ID="STR_talent_Button">
+			<Original>Apprendre</Original>
+		</Key>
+			<Key ID="STR_talent_learn">
+			<Original>Tu as appris : %1</Original>
+		</Key>
+		<Key ID="STR_PM_Skill">
+			<Original>Talent</Original>
+		</Key>
+	</Package>
 </Project>

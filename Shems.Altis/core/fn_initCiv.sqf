@@ -24,6 +24,8 @@ if(life_is_arrested) then
 player addRating 9999999;
 
 [] call life_fnc_handlerHelp;
-[] spawn life_fnc_onPlayerAbsent;
+
+if(talent_civ_extra1) then {life_paycheck = life_paycheck + 1000;};
+if(talent_civ_extra5) then {life_paycheck = life_paycheck + 1000;};
 
 [[getPlayerUID player],"TON_fnc_loadBounties",false,false] spawn life_fnc_MP;

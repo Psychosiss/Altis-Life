@@ -7,11 +7,11 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `altis_life`
+-- Database: `shems_life`
 -- Default Schema
 --
-CREATE DATABASE IF NOT EXISTS `altis_life` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `altis_life`;
+CREATE DATABASE IF NOT EXISTS `shems_life` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `shems_life`;
 
 DELIMITER $$
 --
@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `players` (
   `aliases` text NOT NULL,
   `med_gear` text NOT NULL,
   `adminlevel` enum('0','1','2','3','4','5') NOT NULL DEFAULT '0',
-  `donatorlvl` enum('0','1','2','3','4','5') NOT NULL DEFAULT '0',
+  `donator` enum('0','1','2','3','4','5') NOT NULL DEFAULT '0',
   `coplevel` enum('0','1','2','3','4','5','6','7') NOT NULL DEFAULT '0',
   `mediclevel` enum('0','1','2','3','4','5') NOT NULL DEFAULT '0',
   `civ_gear` text NOT NULL,

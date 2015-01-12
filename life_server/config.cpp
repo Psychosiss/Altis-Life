@@ -66,6 +66,7 @@ class CfgFunctions
 			class fixColorVehicle {};
 			class antiMatter {};
 			class searchVehicleUID {};
+			class talent {};
 		};
 	};
 

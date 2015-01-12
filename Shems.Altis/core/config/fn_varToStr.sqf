@@ -132,9 +132,4 @@ switch (_var) do
 	case "license_cop_cg": {"Garde de côte"};
 	case "license_civ_uranium": {"Formation Uranium"};
 	case "license_civ_admin": {"Administrateur"};
-	case "license_civ_don1": {"Donateur niveau 1"};
-	case "license_civ_don2": {"Donateur niveau 2"};
-	case "license_civ_don3": {"Donateur niveau 3"};
-	case "license_civ_don4": {"Donateur niveau 4"};
-	case "license_civ_don5": {"Donateur niveau 5"};
 };

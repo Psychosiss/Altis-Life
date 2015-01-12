@@ -17,6 +17,17 @@ if(life_action_inUse) exitWith
 	_handled;
 };
 
+if((_code in (actionKeys "GetOver") || _code in (actionKeys "salute")) && {(player getVariable ["restrained",false])}) exitWith 
+{
+	true;
+};
+
+if (life_brokenLeg && (_code in (actionKeys "MoveUp") || _code in (actionKeys "MoveDown") || _code in (actionKeys "Stand") || _code in (actionKeys "Crouch"))) then
+{
+	systemChat "Your leg is boken!";
+	_handled = true;
+};
+
 if(count (actionKeys "User10") != 0 && {(inputAction "User10" > 0)}) exitWith 
 {
 	if(!life_action_inUse) then 
@@ -454,12 +465,6 @@ switch (_code) do
 			SOCK_fnc_updateRequest;
 		};
 	};
-};
-
-if (life_brokenLeg && (_code in (actionKeys "MoveUp") || _code in (actionKeys "MoveDown") || _code in (actionKeys "Stand") || _code in (actionKeys "Crouch"))) then
-{
-	systemChat "Your leg is boken!";
-	_handled = true;
 };
 
 _handled;

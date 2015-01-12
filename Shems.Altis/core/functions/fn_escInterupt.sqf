@@ -14,7 +14,7 @@ _escSync =
 		
 		waitUntil 
 		{
-			_abortButton ctrlSetText format["Attendez %1s",[(_timeStamp - time),"SS.MS"] call BIS_fnc_secondsToString];
+			_abortButton ctrlSetText format["%1",[(_timeStamp - time),"SS.MS"] call BIS_fnc_secondsToString];
 			_abortButton ctrlCommit 0;
 			round(_timeStamp - time) <= 0 || isNull (findDisplay 49)
 		};

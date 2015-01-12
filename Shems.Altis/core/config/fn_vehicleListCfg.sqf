@@ -10,53 +10,68 @@ switch (_shop) do
 	{
 		_return = 
 		[
-			["B_Quadbike_01_F",2500],
-			["C_Hatchback_01_F",9500],
-			["C_Offroad_01_F",12500],
-			["C_SUV_01_F",35000]
+			_return pushBack ["B_Quadbike_01_F",2500];
+			_return pushBack ["C_Hatchback_01_F",9500];
+			_return pushBack ["C_Offroad_01_F",12500];
+			_return pushBack ["C_SUV_01_F",35000];
+			if(talent_civ_truck1) then
+			{
+				_return pushBack ["C_Van_01_transport_F",40000];
+				_return pushBack ["C_Van_01_box_F",60000];
+				_return pushBack ["C_Van_01_fuel_F",80000];
+			};
 		];
 	};
 
 	case "civ_air":
 	{
-		_return =
-		[
-			["B_Heli_Light_01_F",255000],
-			["O_Heli_Light_02_unarmed_F",850000],
-			["O_Heli_Transport_04_F",500000],
-			["O_Heli_Transport_04_box_F",2000000]
-		];
+		if(talent_civ_helico1) then
+		{
+			_return pushBack ["C_Heli_Light_01_civil_F",500000];
+			_return pushBack ["B_Heli_Light_01_F",255000];
+		};
+		if(talent_civ_helico2) then
+		{
+			_return pushBack ["O_Heli_Light_02_unarmed_F",850000];
+			_return pushBack ["O_Heli_Transport_04_F",500000];
+		};
+		if(talent_civ_helico3) then
+		{
+			_return pushBack ["B_Heli_Transport_03_unarmed_F",6500000];
+			_return pushBack ["O_Heli_Transport_04_box_F",2000000];
+		};
 	};
 
 	case "civ_box":
 	{
 		_return =
 		[
-			["Land_CargoBox_V1_F",40000],
-			["Box_IND_AmmoVeh_F",60000],
-			["Box_NATO_AmmoVeh_F",80000],
-			["Land_Cargo20_red_F",120000],
-			["Land_Cargo20_white_F",180000],
-			["Land_Cargo20_grey_F",240000]
+			["Land_CargoBox_V1_F",140000],
+			["Box_IND_AmmoVeh_F",160000],
+			["Box_NATO_AmmoVeh_F",180000],
+			["Land_Cargo20_red_F",220000],
+			["Land_Cargo20_white_F",280000],
+			["Land_Cargo20_grey_F",340000]
 		];
 	};
 
 	case "civ_truck":
 	{
-		_return =
-		[
-			["C_Van_01_transport_F",40000],
-			["C_Van_01_box_F",60000],
-			["C_Van_01_fuel_F",80000],
-			["I_Truck_02_transport_F",75000],
-			["I_Truck_02_covered_F",100000],
-			["B_Truck_01_transport_F",275000],
-			["O_Truck_03_transport_F",200000],
-			["O_Truck_03_covered_F",250000],
-			["O_Truck_03_device_F",450000],
-			["B_Truck_01_fuel_F",500000],
-			["B_Truck_01_box_F",750000]
-		];
+		if(talent_civ_truck2) then
+		{
+			_return pushBack ["I_Truck_02_transport_F",75000];
+			_return pushBack ["I_Truck_02_covered_F",100000];
+			_return pushBack ["O_Truck_03_transport_F",200000];
+			_return pushBack ["O_Truck_03_covered_F",250000];
+			_return pushBack ["O_Truck_03_device_F",450000];
+		};
+		if(talent_civ_truck3) then
+		{
+			_return pushBack ["B_Truck_01_transport_F",275000];
+			_return pushBack ["B_Truck_01_fuel_F",500000];
+			_return pushBack ["B_Truck_01_covered_F",750000];
+			_return pushBack ["B_Truck_01_box_F",1250000];
+		};
 	};
 
 	case "civ_ship":
@@ -173,25 +188,20 @@ switch (_shop) do
 
 	case "donator_shop":
 	{
-		if(license_civ_don1) then
-		{
-			_return pushBack ["C_Van_01_Fuel_F",4000];
-			_return pushBack ["I_Truck_02_box_F",50000];
-		};
-		if(license_civ_don2) then
+		if(__GETC__(life_donator) > 0) then
 		{
 			_return pushBack ["C_Van_01_Fuel_F",4000];
 			_return pushBack ["I_Truck_02_box_F",50000];
 			_return pushBack ["C_Hatchback_01_sport_F",40000];
 		};
-		if(license_civ_don3) then
+		if(__GETC__(life_donator) > 2) then
 		{
 			_return pushBack ["C_Van_01_Fuel_F",4000];
 			_return pushBack ["I_Truck_02_box_F",50000];
 			_return pushBack ["C_Hatchback_01_sport_F",40000];
 			_return pushBack ["B_Truck_01_box_F",400000];
 		};
-		if(license_civ_don4) then
+		if(__GETC__(life_donator) > 3) then
 		{
 			_return pushBack ["C_Van_01_Fuel_F",4000];
 			_return pushBack ["I_Truck_02_box_F",50000];
@@ -200,7 +210,7 @@ switch (_shop) do
 			_return pushBack ["I_Heli_Transport_02_F",600000];
 			_return pushBack ["I_Heli_light_03_unarmed_F",500000];
 		};
-		if(license_civ_don5) then
+		if(__GETC__(life_donator) > 4) then
 		{
 			_return pushBack ["C_Van_01_Fuel_F",4000];
 			_return pushBack ["I_Truck_02_box_F",50000];

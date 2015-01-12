@@ -74,11 +74,6 @@ switch (playerSide) do
 	{
 		life_maxWeight = 24;
 	};
-
-	case east : 
-	{
-		life_maxWeight = 24;
-	};
 };
 
 {
@@ -99,11 +94,6 @@ switch (playerSide) do
 	};
 
 	case civilian : 
-	{
-		life_maxWeight = 24;
-	};
-
-	case east : 
 	{
 		life_maxWeight = 24;
 	};

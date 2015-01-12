@@ -104,7 +104,7 @@ switch (true) do
 	{
 		[cursorTarget] spawn life_fnc_gpsTracker;
 	};
-	
+
 	case (_item in ["apple","salema","ornate","mackerel","tuna","mullet","catshark","turtle","turtlesoup","donuts","tbacon","peach","burgers","pizza","frites","chickenp","dogp","sheepp","goatp","rabbitp","snakep"]):
 	{
 		[_item] call life_fnc_eatFood;
@@ -117,12 +117,12 @@ switch (true) do
 		[] spawn life_fnc_gather;
 		playSound "mining";
 	};
-	
+
 	case (_item == "pressluft"):
     {
         [] spawn life_fnc_pressluftUse;
     };
-	
+
 	case (_item == "kidney"):
 	{
 		if(([false,_item,1] call life_fnc_handleInv)) then

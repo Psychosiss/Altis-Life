@@ -35,7 +35,6 @@ switch (_className) do
 	case "Box_NATO_AmmoVeh_F": {200};
 	case "O_Heli_Light_02_unarmed_F": {250};
 	case "I_Truck_02_covered_F": {250};
-	case "O_Heli_Transport_04_box_F": {400};
 	case "O_Truck_03_transport_F": {285};
 	case "O_Truck_03_covered_F": {300};
 	case "B_Truck_01_transport_F": {325};
@@ -44,8 +43,12 @@ switch (_className) do
 	case "Land_Cargo20_red_F": {400};
 	case "Box_IND_Grenades_F": {400};
 	case "B_Truck_01_fuel_F": {400};
+	case "O_Heli_Transport_04_box_F": {400};
+	case "Land_TentA_F": {400};
 	case "O_Heli_Transport_04_covered_F": {500};
 	case "Land_Cargo20_white_F": {600};
+	case "Land_TentDome_F": {600};
+	case "B_Truck_01_covered_F": {650};
 	case "B_Truck_01_box_F": {700};
 	case "Land_Cargo20_grey_F": {800};
 	case "B_supplyCrate_F": {800};

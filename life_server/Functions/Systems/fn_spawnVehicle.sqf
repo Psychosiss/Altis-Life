@@ -1,4 +1,5 @@
-private["_vid","_sp","_pid","_query","_sql","_vehicle","_nearVehicles","_name","_side","_tickTime","_dir"];
+//private["_vid","_sp","_pid","_query","_sql","_vehicle","_nearVehicles","_name","_side","_tickTime","_dir"];
+private["_vid","_sp","_pid","_query","_sql","_vehicle","_nearVehicles","_name","_side","_tickTime","_dir","_queryResult"];
 _vid = [_this,0,-1,[0]] call BIS_fnc_param;
 _pid = [_this,1,"",[""]] call BIS_fnc_param;
 _sp = [_this,2,[],[[],""]] call BIS_fnc_param;
@@ -14,7 +15,8 @@ if(_vid == -1 OR _pid == "") exitWith {};
 if(_vid in serv_sv_use) exitWith {};
 serv_sv_use pushBack _vid;
 
-_query = format["SELECT id, side, classname, type, pid, alive, active, plate, color FROM vehicles WHERE id='%1' AND pid='%2'",_vid,_pid];
+//_query = format["SELECT id, side, classname, type, pid, alive, active, plate, color FROM vehicles WHERE id='%1' AND pid='%2'",_vid,_pid];
+_query = format["SELECT id, side, classname, type, pid, alive, active, plate, color, inventory, gear FROM vehicles WHERE id='%1' AND pid='%2'",_vid,_pid];
 
 waitUntil{sleep (random 0.3); !DB_Async_Active};
 _tickTime = diag_tickTime;
@@ -22,8 +24,8 @@ _queryResult = [_query,2] call DB_fnc_asyncCall;
 
 diag_log "------------- Client Query Request -------------";
 diag_log format["QUERY: %1",_query];
-diag_log format["Time to complete: %1 (in seconds)",(diag_tickTime - _tickTime)];
-diag_log format["Result: %1",_queryResult];
+diag_log format["Temps à completer: %1 seconde(s)",(diag_tickTime - _tickTime)];
+diag_log format["Résultat: %1",_queryResult];
 diag_log "------------------------------------------------";
 
 if(typeName _queryResult == "STRING") exitWith {};
@@ -86,7 +88,37 @@ _vehicle lock 2;
 [[_vehicle,_vInfo select 8],"life_fnc_colorVehicle",nil,false] spawn life_fnc_MP;
 _vehicle setVariable["vehicle_info_owners",[[_pid,_name]],true];
 _vehicle setVariable["dbInfo",[(_vInfo select 4),_vInfo select 7]];
+
+_trunk = [_vInfo select 9] call DB_fnc_mresToArray;
+if(typeName _trunk == "STRING") then {_trunk = call compile format["%1", _trunk];};
+_gear = [_vInfo select 10] call DB_fnc_mresToArray;
+if(typeName _gear == "STRING") then {_gear = call compile format["%1", _gear];};
+_vehicle setVariable["Trunk",_trunk,true];
+
 [_vehicle] call life_fnc_clearVehicleAmmo;
+
+if (isNil "_gear") exitWith {};
+_items = _gear select 0;
+_mags = _gear select 1;
+_weapons = _gear select 2;
+_backpacks = _gear select 3;
+
+for "_i" from 0 to ((count (_items select 0)) - 1) do
+{
+	_vehicle addItemCargoGlobal [((_items select 0) select _i), ((_items select 1) select _i)];
+};
+for "_i" from 0 to ((count (_mags select 0)) - 1) do
+{
+	_vehicle addMagazineCargoGlobal [((_mags select 0) select _i), ((_mags select 1) select _i)];
+};
+for "_i" from 0 to ((count (_weapons select 0)) - 1) do
+{
+	_vehicle addWeaponCargoGlobal [((_weapons select 0) select _i), ((_weapons select 1) select _i)];
+};
+for "_i" from 0 to ((count (_backpacks select 0)) - 1) do
+{
+	_vehicle addBackpackCargoGlobal [((_backpacks select 0) select _i), ((_backpacks select 1) select _i)];
+};
 
 if((_vInfo select 1) == "civ" && (_vInfo select 2) == "B_Heli_Light_01_F" && _vInfo select 8 != 13) then
 {

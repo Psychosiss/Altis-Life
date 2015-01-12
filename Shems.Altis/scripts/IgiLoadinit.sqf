@@ -1,4 +1,4 @@
-waituntil {!isnil "bis_fnc_init"};
+waitUntil {!isnil "bis_fnc_init"};
 waitUntil { time > 0 };
 
 IL_EV_Count = 0;

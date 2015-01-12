@@ -44,11 +44,6 @@ switch (_mode) do
 			case "skull": {_var = "license_civ_skull"};
 			case "admin": {_var = "license_civ_admin"};
 			case "silver": {_var = "license_civ_silver"};
-			case "civdon1": {_var = "license_civ_don1"};
-			case "civdon2": {_var = "license_civ_don2"};
-			case "civdon3": {_var = "license_civ_don3"};
-			case "civdon4": {_var = "license_civ_don4"};
-			case "civdon5": {_var = "license_civ_don5"};
 			default {_var = ""};
 		};
 	};
@@ -86,11 +81,6 @@ switch (_mode) do
 			case "license_civ_bois": {_var = "bois"};
 			case "license_civ_admin": {_var = "admin"};
 			case "license_civ_silver": {_var = "silver"};
-			case "license_civ_don1": {_var = "civdon1"};
-			case "license_civ_don2": {_var = "civdon2"};
-			case "license_civ_don3": {_var = "civdon3"};
-			case "license_civ_don4": {_var = "civdon4"};
-			case "license_civ_don5": {_var = "civdon5"};
 			default {_var = ""};
 		};
 	};

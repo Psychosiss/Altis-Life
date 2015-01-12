@@ -20,7 +20,7 @@ class playerSettings
 		
 		class MainBackground:life_RscText 
 		{
-			colorBackground[] = {0, 0, 0, 0.7};
+			colorBackground[] = {0,0,0,0.7};
 			idc = -1;
 			x = 0.1;
 			y = 0.2 + (11 / 250);
@@ -30,7 +30,7 @@ class playerSettings
 		
 		class Title : life_RscTitle 
 		{
-			colorBackground[] = {0, 0, 0, 0};
+			colorBackground[] = {0,0,0,0};
 			idc = -1;
 			text = "$STR_PM_Title";
 			x = 0.1;
@@ -339,6 +339,17 @@ class playerSettings
 			text = "$STR_PM_Craft";
 			onButtonClick = "createDialog ""Life_craft"";";
 			x = 0.1;
+			y = 0.85;
+			w = (6.25 / 40);
+			h = (1 / 25);
+		};
+
+		class ButtonTalent : Life_RscButtonMenu 
+		{
+			idc = -1;
+			text = "Talent";
+			onButtonClick = "[] call life_fnc_showTalent;";
+			x = 0.1 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.85;
 			w = (6.25 / 40);
 			h = (1 / 25);

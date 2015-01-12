@@ -19,31 +19,11 @@ if((__GETC__(life_coplevel)) < 1) exitWith
 };
 
 [] call life_fnc_spawnMenu;
-[] spawn life_fnc_onPlayerAbsent;
 
 player setVariable["rank",(__GETC__(life_coplevel)),true];
 
-/*
-if(playerSide == west) then 
-{
-    private["_getRank"];
-    _getRank = switch (__GETC__(life_coplevel)) do 
-	{
-		case 1: {1};
-		case 2: {2};
-		case 3: {3};
-		case 4: {4};
-		case 5: {5};
-		case 6: {6};
-		case 7: {7};
-		case 8: {8};
-		case 9: {9};
-		case 10: {10};
-		default {0};
-	};
-    player setVariable["coplevel",_getRank,TRUE];
-};
-*/
+if(talent_west_bonus1) then {life_paycheck = life_paycheck + 2000;};
+if(talent_west_bonus3) then {life_paycheck = life_paycheck + 1000;};
 
 waitUntil{!isNull (findDisplay 38500)};
 waitUntil{isNull (findDisplay 38500)};

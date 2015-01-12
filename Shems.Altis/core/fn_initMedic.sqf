@@ -12,7 +12,8 @@ if((__GETC__(life_medicLevel)) < 1) exitWith
 };
 
 [] call life_fnc_spawnMenu;
-[] spawn life_fnc_onPlayerAbsent;
+
+if(talent_indep_bonus1) then {life_paycheck = life_paycheck + 1500;};
 
 waitUntil{!isNull (findDisplay 38500)};
 waitUntil{isNull (findDisplay 38500)};
