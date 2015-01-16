@@ -145,6 +145,7 @@ class CfgFunctions
 			class vehicleIsDead {};
 			class keyManagement {};
 			class setObjVar {};
+			class insureCar {};
 		};
 		
 		class Housing

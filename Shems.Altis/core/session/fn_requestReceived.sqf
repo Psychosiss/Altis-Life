@@ -66,6 +66,14 @@ switch(playerSide) do
 			[] spawn life_fnc_initGang;
 		};
 		[] spawn life_fnc_initHouses;
+		/*
+		if(count (_this select 9) > 0) then 
+		{
+			{
+				missionNamespace setVariable [(_x select 0),(_x select 1)];
+			} foreach (_this select 9);
+		};
+		*/
 	};
 	
 	case independent: 

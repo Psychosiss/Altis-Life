@@ -44,15 +44,29 @@ switch (_shop) do
 
 	case "civ_box":
 	{
-		_return =
-		[
-			["Land_CargoBox_V1_F",140000],
-			["Box_IND_AmmoVeh_F",160000],
-			["Box_NATO_AmmoVeh_F",180000],
-			["Land_Cargo20_red_F",220000],
-			["Land_Cargo20_white_F",280000],
-			["Land_Cargo20_grey_F",340000]
-		];
+		if(talent_civ_truck4) then
+		{
+			_return pushBack ["Land_CargoBox_V1_F",140000];
+			_return pushBack ["Box_NATO_AmmoVeh_F",200000];
+			_return pushBack ["Box_East_AmmoVeh_F",200000];
+			_return pushBack ["Box_IND_AmmoVeh_F",200000];
+			_return pushBack ["Land_Cargo20_blue_F",850000];
+			_return pushBack ["Land_Cargo20_brick_red_F",850000];
+			_return pushBack ["Land_Cargo20_cyan_F",850000];
+			_return pushBack ["Land_Cargo20_grey_F",850000];
+			_return pushBack ["Land_Cargo20_light_blue_F",850000];
+			_return pushBack ["Land_Cargo20_light_green_F",850000];
+			_return pushBack ["Land_Cargo20_military_green_F",850000];
+			_return pushBack ["Land_Cargo20_orange_F",850000];
+			_return pushBack ["Land_Cargo20_red_F",850000];
+			_return pushBack ["Land_Cargo20_sand_F",850000];
+			_return pushBack ["Land_Cargo20_white_F",850000];
+			_return pushBack ["Land_Cargo20_yellow_F",850000];
+		};
+		if(talent_civ_truck5) then
+		{
+			_return pushBack ["Land_Portable_generator_F",100000];
+		};
 	};
 
 	case "civ_truck":

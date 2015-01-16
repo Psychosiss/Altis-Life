@@ -1,4 +1,4 @@
-private["_uid","_side","_cash","_bank","_licenses","_gear","_name","_query","_thread"];
+private["_uid","_side","_cash","_bank","_licenses","_gear","_talent","_name","_query","_thread"];
 _uid = [_this,0,"",[""]] call BIS_fnc_param;
 _name = [_this,1,"",[""]] call BIS_fnc_param;
 _side = [_this,2,sideUnknown,[civilian]] call BIS_fnc_param;
@@ -6,6 +6,7 @@ _cash = [_this,3,0,[0]] call BIS_fnc_param;
 _bank = [_this,4,5000,[0]] call BIS_fnc_param;
 _licenses = [_this,5,[],[[]]] call BIS_fnc_param;
 _gear = [_this,6,[],[[]]] call BIS_fnc_param;
+_talent = [_this, 7,[],[[]]] call BIS_fnc_param;
 
 if((_uid == "") OR (_name == "")) exitWith {};
 
@@ -21,6 +22,7 @@ for "_i" from 0 to count(_licenses)-1 do
 };
 
 _licenses = [_licenses] call DB_fnc_mresArray;
+_talent = [_talent] call DB_fnc_mresArray;
 
 switch (_side) do 
 {
@@ -31,9 +33,10 @@ switch (_side) do
 		cash='%2',
 		bankacc='%3',
 		cop_gear='%4',
-		cop_licenses='%5'
+		cop_licenses='%5',
+		cop_talent='%7'
 		WHERE playerid='%6'
-		",_name,_cash,_bank,_gear,_licenses,_uid];
+		",_name,_cash,_bank,_gear,_licenses,_uid,_talent];
 	};
 	
 	case civilian: 
@@ -43,9 +46,10 @@ switch (_side) do
 		cash='%2', 
 		bankacc='%3', 
 		civ_licenses='%4', 
-		civ_gear='%6'
+		civ_gear='%6',
+		civ_talent='%7'
 		WHERE playerid='%5'
-		",_name,_cash,_bank,_licenses,_uid,_gear,[_this select 7] call DB_fnc_bool];
+		",_name,_cash,_bank,_licenses,_uid,_gear,[_this select 7] call DB_fnc_bool,_talent];
 	};
 	
 	case independent: 
@@ -54,9 +58,10 @@ switch (_side) do
 		name='%1',
 		cash='%2',
 		bankacc='%3',
-		med_licenses='%4'
+		med_licenses='%4',
+		med_talent='%6'
 		WHERE playerid='%5'
-		",_name,_cash,_bank,_licenses,_uid];
+		",_name,_cash,_bank,_licenses,_uid,_talent];
 	};
 };
 

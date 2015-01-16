@@ -1,34 +1,24 @@
-private["_appleZones","_peachZones","_heroinZones","_cocaineZones","_weedZones","_methZones","_tabacZones","_uraniumZones","_copperZones","_ironZones","_saltZones","_sandZones","_diamondZones","_oilZones","_rockZones","_silverZones"];
-_appleZones = ["apple_1","apple_4","apple_9"];
-_peachZones = ["peaches_2","peaches_3","peaches_9"];
-_heroinZones = ["heroin_1"];
-_cocaineZones = ["cocaine_1"];
-_weedZones = ["weed_1"];
-_methZones = ["meth_1"];
-_tabacZones = ["tabac_1"];
-_uraniumZones = ["warm_marker"];
-_copperZones = ["lead_1"];
-_ironZones = ["iron_1"];
-_saltZones = ["salt_1"];
-_sandZones = ["sand_1"];
-_diamondZones = ["diamond_1"];
-_oilZones = ["oil_1","oil_2"];
-_rockZones = ["rock_1"];
-_silverZones = ["silver_1"];
+private["_ressourcesZones"];
+_ressourcesZones = 
+[
+	"apple_1","apple_4","apple_9",
+	"peaches_2","peaches_3","peaches_9",
+	"heroin_1",
+	"cocaine_1",
+	"weed_1",
+	"meth_1",
+	"tabac_1",
+	"warm_marker",
+	"lead_1",
+	"iron_1",
+	"salt_1",
+	"sand_1",
+	"diamond_1",
+	"oil_1","oil_2",
+	"rock_1",
+	"silver_1"
+];
 
-{player addAction"Appuyez sur windows gauche pour récolter";} foreach _appleZones;
-{player addAction"Appuyez sur windows gauche pour récolter";} foreach _peachZones;
-{player addAction"Appuyez sur windows gauche pour récolter";} foreach _heroinZones;
-{player addAction"Appuyez sur windows gauche pour récolter";} foreach _weedZones;
-{player addAction"Appuyez sur windows gauche pour récolter";} foreach _cocaineZones;
-{player addAction"Appuyez sur windows gauche pour récolter";} foreach _methZones;
-{player addAction"Appuyez sur windows gauche pour récolter";} foreach _tabacZones;
-{player addAction"Appuyez sur windows gauche pour récolter";} foreach _uraniumZones;
-{player addAction"Appuyez sur windows gauche pour récolter";} foreach _copperZones;
-{player addAction"Appuyez sur windows gauche pour récolter";} foreach _ironZones;
-{player addAction"Appuyez sur windows gauche pour récolter";} foreach _saltZones;
-{player addAction"Appuyez sur windows gauche pour récolter";} foreach _sandZones;
-{player addAction"Appuyez sur windows gauche pour récolter";} foreach _diamondZones;
-{player addAction"Appuyez sur windows gauche pour récolter";} foreach _oilZones;
-{player addAction"Appuyez sur windows gauche pour récolter";} foreach _rockZones;
-{player addAction"Appuyez sur windows gauche pour récolter";} foreach _silverZones;
+{
+	player addAction "Appuyez sur windows gauche pour récolter";
+} foreach _ressourcesZones;

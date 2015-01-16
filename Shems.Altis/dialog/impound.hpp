@@ -61,7 +61,7 @@ class Life_impound_menu
 		class CloseBtn : Life_RscButtonMenu
 		{
 			idc = -1;
-			text = "$STR_Global_Close";
+			text = "Fermer";
 			onButtonClick = "closeDialog 0;";
 			x = -0.06 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.9 - (1 / 25);
@@ -90,6 +90,17 @@ class Life_impound_menu
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
+
+		class InsureCar : life_RscButtonMenu
+		{
+			idc = 97480;
+			text = "Assurer";
+			onButtonClick = "[] call life_fnc_InsureCar;";
+			x = 0.43 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
+			y = 0.9 - (1 / 25);
+			w = (6.25 / 40);
+			h = (1 / 25);
+		};
 	};
 	
 	class controls
@@ -101,9 +112,10 @@ class Life_impound_menu
 			sizeEx = 0.04;
 			colorBackground[] = {0.1,0.1,0.1,0.9};
 			onLBSelChanged = "_this call life_fnc_garageLBChange;";
-
-			x = 0.11; y = 0.302;
-			w = 0.303; h = 0.49;
+			x = 0.11; 
+			y = 0.302;
+			w = 0.303; 
+			h = 0.49;
 		};
 		
 		class vehicleInfomationList : Life_RscStructuredText
@@ -111,9 +123,10 @@ class Life_impound_menu
 			idc = 2803;
 			text = "";
 			sizeEx = 0.035;
-			
-			x = 0.41; y = 0.3;
-			w = 0.5; h = 0.5;
+			x = 0.41; 
+			y = 0.3;
+			w = 0.5; 
+			h = 0.5;
 		};
 		
 		class MainBackgroundHider : Life_RscText

@@ -176,7 +176,27 @@ switch (_code) do
 						[cursorTarget] call life_fnc_openInventory;
 					};
 				} else {
-					if((typeOf cursorTarget == "Land_CargoBox_V1_F" OR typeOf cursorTarget == "Box_IND_AmmoVeh_F" OR typeOf cursorTarget == "Box_NATO_AmmoVeh_F" OR typeOf cursorTarget == "Land_Cargo20_red_F" OR typeOf cursorTarget == "Land_Cargo20_white_F" OR typeOf cursorTarget == "Land_Cargo20_grey_F") && player distance cursorTarget < 7 && alive cursorTarget) then
+					if((typeOf cursorTarget in 
+					[
+						"Land_Portable_generator_F",
+						"Box_NATO_AmmoVeh_F",
+						"Box_East_AmmoVeh_F",
+						"Box_IND_AmmoVeh_F",
+						"Land_Cargo20_blue_F",
+						"Land_Cargo20_brick_red_F",
+						"Land_Cargo20_cyan_F",
+						"Land_Cargo20_grey_F",
+						"Land_Cargo20_light_blue_F",
+						"Land_Cargo20_light_green_F",
+						"Land_Cargo20_military_green_F",
+						"Land_Cargo20_orange_F",
+						"Land_Cargo20_red_F",
+						"Land_Cargo20_sand_F",
+						"Land_Cargo20_white_F",
+						"Land_Cargo20_yellow_F",
+						"Land_TentA_F",
+						"Land_TentDome_F"
+					]) && player distance cursorTarget < 7 && alive cursorTarget) then
 					{
 						[cursorTarget] call life_fnc_openInventory;
 					};

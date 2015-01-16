@@ -58,24 +58,6 @@ if(_backpack != "") then {_handle = [_backpack,true,false,false,false] spawn lif
 {player addItemToBackpack _x;} foreach (_bItems);
 {(backpackContainer player) addItemCargoGlobal [_x,1];} foreach (_bMags);
 
-switch (playerSide) do
-{
-	case west: 
-	{
-		life_maxWeight = 50;
-	};
-
-	case independent: 
-	{
-		life_maxWeight = 50;
-	};
-
-	case civilian : 
-	{
-		life_maxWeight = 24;
-	};
-};
-
 {
     _item = [_x,1] call life_fnc_varHandle;
     [true,_item,1] call life_fnc_handleInv;

@@ -113,7 +113,6 @@ switch (true) do
 
 	case (_item == "pickaxe"):
 	{
-		//[] spawn life_fnc_pickaxeUse;
 		[] spawn life_fnc_gather;
 		playSound "mining";
 	};

@@ -4,6 +4,7 @@ if(isNull _ret) exitWith {};
 
 _ret = owner _ret;
 _jailedUnits = [];
+
 {
 	if(_x distance (getMarkerPos "jail_marker") < 120) then 
 	{

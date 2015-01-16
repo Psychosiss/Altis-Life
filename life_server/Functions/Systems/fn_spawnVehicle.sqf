@@ -1,4 +1,3 @@
-//private["_vid","_sp","_pid","_query","_sql","_vehicle","_nearVehicles","_name","_side","_tickTime","_dir"];
 private["_vid","_sp","_pid","_query","_sql","_vehicle","_nearVehicles","_name","_side","_tickTime","_dir","_queryResult"];
 _vid = [_this,0,-1,[0]] call BIS_fnc_param;
 _pid = [_this,1,"",[""]] call BIS_fnc_param;
@@ -15,8 +14,7 @@ if(_vid == -1 OR _pid == "") exitWith {};
 if(_vid in serv_sv_use) exitWith {};
 serv_sv_use pushBack _vid;
 
-//_query = format["SELECT id, side, classname, type, pid, alive, active, plate, color FROM vehicles WHERE id='%1' AND pid='%2'",_vid,_pid];
-_query = format["SELECT id, side, classname, type, pid, alive, active, plate, color, inventory, gear FROM vehicles WHERE id='%1' AND pid='%2'",_vid,_pid];
+_query = format["SELECT id, side, classname, type, pid, alive, active, plate, color, inventory, gear, insure FROM vehicles WHERE id='%1' AND pid='%2'",_vid,_pid];
 
 waitUntil{sleep (random 0.3); !DB_Async_Active};
 _tickTime = diag_tickTime;
@@ -87,7 +85,7 @@ _vehicle allowDamage true;
 _vehicle lock 2;
 [[_vehicle,_vInfo select 8],"life_fnc_colorVehicle",nil,false] spawn life_fnc_MP;
 _vehicle setVariable["vehicle_info_owners",[[_pid,_name]],true];
-_vehicle setVariable["dbInfo",[(_vInfo select 4),_vInfo select 7]];
+_vehicle setVariable["dbInfo",[(_vInfo select 4),(_vInfo select 7),(_vInfo select 9)]];
 
 _trunk = [_vInfo select 9] call DB_fnc_mresToArray;
 if(typeName _trunk == "STRING") then {_trunk = call compile format["%1", _trunk];};
@@ -135,5 +133,11 @@ if((_vInfo select 1) == "med" && (_vInfo select 2) == "C_Offroad_01_F") then
 	[[_vehicle,"med_offroad",true],"life_fnc_vehicleAnimate",_unit,false] spawn life_fnc_MP;
 };
 
-[[1,"Votre véhicule est prêt."],"life_fnc_broadcast",_unit,false] spawn life_fnc_MP;
+if((_vInfo select 9) == 1) then
+{
+  [[1,"Votre véhicule est prêt et l'assurance est active."],"life_fnc_broadcast",_unit,false] spawn life_fnc_MP;
+} else {
+  [[1,"Votre véhicule est prêt."],"life_fnc_broadcast",_unit,false] spawn life_fnc_MP;
+};
+
 serv_sv_use = serv_sv_use - [_vid];

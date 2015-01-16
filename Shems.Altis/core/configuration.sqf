@@ -153,12 +153,21 @@ switch (playerSide) do
 life_vShop_rentalOnly = 
 [
 	"B_MRAP_01_hmg_F",
-	"Land_CargoBox_V1_F",
-	"Box_IND_AmmoVeh_F",
 	"Box_NATO_AmmoVeh_F",
+	"Box_East_AmmoVeh_F",
+	"Box_IND_AmmoVeh_F",
+	"Land_Cargo20_blue_F",
+	"Land_Cargo20_brick_red_F",
+	"Land_Cargo20_cyan_F",
+	"Land_Cargo20_grey_F",
+	"Land_Cargo20_light_blue_F",
+	"Land_Cargo20_light_green_F",
+	"Land_Cargo20_military_green_F",
+	"Land_Cargo20_orange_F",
 	"Land_Cargo20_red_F",
+	"Land_Cargo20_sand_F",
 	"Land_Cargo20_white_F",
-	"Land_Cargo20_grey_F"
+	"Land_Cargo20_yellow_F"
 ];
 __CONST__(life_vShop_rentalOnly,life_vShop_rentalOnly);
 
@@ -745,3 +754,45 @@ life_garage_sell =
 	["B_MRAP_01_F",7500]
 ];
 __CONST__(life_garage_sell,life_garage_sell);
+
+life_insure_prices =
+[
+	["C_Kart_01_Blu_F",2500],
+    ["C_Kart_01_Fuel_F",2500],
+    ["C_Kart_01_Vrana_F",2500],
+    ["C_Kart_01_Red_F",2500],
+	["B_Quadbike_01_F",2500],
+	["C_Hatchback_01_F",4500],
+	["C_Hatchback_01_sport_F",4500],
+	["C_Offroad_01_F",3000],
+	["C_SUV_01_F",4000],
+	["C_Van_01_transport_F",10000],
+	["C_Van_01_box_F",10000],
+	["C_Van_01_fuel_F",10000],
+	["I_Truck_02_transport_F",10000],
+	["I_Truck_02_covered_F",10000],
+	["I_Truck_02_box_F",10000],
+	["B_Truck_01_transport_F",10000],
+	["B_Truck_01_box_F", 10000],
+	["O_Truck_03_device_F", 10000],
+	["B_G_Offroad_01_F",10000],
+	["B_G_Offroad_01_armed_F",10000],
+	["O_MRAP_02_F",10000],
+	["B_MRAP_01_F",10000],
+	["B_MRAP_01_hmg_F",10000],
+	["I_MRAP_03_F",10000],
+	["B_Heli_Light_01_F",10000],
+	["B_Heli_Attack_01_F",10000],
+	["O_Heli_Light_02_unarmed_F",10000],
+	["I_Heli_Transport_02_F",10000],
+	["I_Heli_light_03_unarmed_F",10000],
+	["B_Heli_Transport_01_F",10000],
+	["C_Rubberboat",10000],
+	["I_G_Boat_Transport_01_F",10000],
+	["C_Boat_Civil_01_F",10000],
+	["B_Boat_Transport_01_F",10000],
+	["C_Boat_Civil_01_police_F",10000],
+	["B_Boat_Armed_01_minigun_F",10000],
+	["B_SDV_01_F",10000]
+];
+__CONST__(life_insure_prices,life_insure_prices);

@@ -14,10 +14,19 @@ _flag = switch(playerSide) do
 		_array pushBack [_x select 0,(missionNamespace getVariable (_x select 0))];
 	};
 } foreach life_licenses;
+/*
+{
+	if(_x select 1 == _flag) then
+	{
+		_array pushBack [_x select 0,(missionNamespace getVariable (_x select 0))];
+	};
+} foreach life_talent;
+*/
 
 _packet pushBack _array;
 [] call life_fnc_saveGear;
 _packet pushBack life_gear;
+//_packet pushBack life_exp;
 switch (playerSide) do 
 {
 	case west: {};
