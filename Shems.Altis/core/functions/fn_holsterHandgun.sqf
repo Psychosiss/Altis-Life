@@ -1,48 +1,67 @@
-if (vehicle player != player) exitWith {};
-if (player getVariable "restrained") exitWith {};
-if (isNil("life_holstered")) then 
-{ 
-	life_holstered = false; 
-};
+private ["_nbrAmmo","_curAmmo","_curBack","_curWep","_curVest","_type"];
 
-KWF_holsterHandgun_holsterAction =
-{
-	if (currentWeapon player != handgunWeapon player) exitWith 	{ hint format["%1",Localize "STR_holsterHandgun_np1"] };
-	life_holstered_weapon = handgunWeapon player;
-	life_holstered_magazine = handgunMagazine player;
-	life_holstered_ammo = player ammo life_holstered_weapon;	
-	life_holstered_items = handgunItems player;
-	player playMove "AmovPercMstpSrasWpstDnon_AmovPercMstpSnonWnonDnon";
-	sleep 1;
-	player removeWeapon life_holstered_weapon;
-	life_holstered = true;
-	player setVariable["holsteredHandgun", life_holstered_weapon, true];
-};
+_type = _this select 0;
 
-KWF_holsterHandgun_unholsterAction =
-{
-	if (isNil {life_holstered_weapon}) exitWith {}; 
-	titleText [ format["%1",Localize "STR_holsterHandgun_ziehe"] , "PLAIN"];
-	sleep 2;
-	player addWeapon life_holstered_weapon;
-	{ 
-		player addMagazine _x;
-	} forEach life_holstered_magazine;
-	private["_details"];
-	{ 
-		_details = [_x] call life_fnc_fetchCfgDetails;
-		if((_x != "") && (count _details != 0)) then { player addHandgunItem _x; };
-	} forEach life_holstered_items;
-	player setAmmo [life_holstered_weapon, life_holstered_ammo];
-	player selectWeapon life_holstered_weapon;
-	life_holstered_weapon = nil;
-	life_holstered = false;
-	player setVariable["holsteredHandgun", false, true];
-};
+_curWep = currentWeapon player;
+_curBack = backpackItems player;
+_curVest = vestItems player;
+_curAmmo = magazinesAmmoFull player;
 
-if (!life_holstered) then 
+switch (_type) do 
 {
-	[] spawn KWF_holsterHandgun_holsterAction;
-} else {
-	[] spawn KWF_holsterHandgun_unholsterAction;
+	case 0:
+	{
+		if (!isNil "life_curWep_h" && {(life_curWep_h != "")}) then
+		{
+			if(life_curWep_h in [primaryWeapon player,secondaryWeapon player,handgunWeapon player]) then 
+			{
+				player selectWeapon life_curWep_h;
+			};
+		} else {
+			{
+				if ( (getNumber(configFile >> "cfgWeapons" >> _x >> "type")) in [1,2,4] ) exitWith
+				{
+					_curWep = _x;
+					player removeItemFromBackpack _curWep;
+					player addWeapon _curWep;
+				};
+			} forEach _curBack;
+			if (_curWep != "") exitWith {};
+			{
+				if ( (getNumber(configFile >> "cfgWeapons" >> _x >> "type")) in [1,2,4] ) exitWith
+				{
+					player removeItemFromVest _x;
+					player addWeapon _x;
+				};
+			} forEach _curVest;
+		};
+	};
+
+	case 1:
+	{
+		if((player canAddItemToBackpack _curWep) || (player canAddItemToVest _curWep)) then
+		{
+			{
+				if(_x select 4 == _curWep) exitWith
+				{
+					_curAmmo = _x select 0;
+					_nbrAmmo = _x select 1;
+				};
+			} forEach _curAmmo;
+			player removeWeapon _curWep;
+			if(player canAddItemToBackpack _curWep)then
+			{
+				player addItemToBackpack _curWep;
+				hint "Ton armes a été rangé dans ton sac";
+			} else {
+				player addItemToVest _curWep;
+				hint "Ton armes a été rangé dans ta veste";
+			};
+			player addMagazine [_curAmmo, _nbrAmmo];
+		} else {
+			life_curWep_h = currentWeapon player;
+			player action ["SwitchWeapon", player, player, 100];
+			player switchcamera cameraView;
+		};
+	};
 };

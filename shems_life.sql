@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50622
 File Encoding         : 65001
 
-Date: 2015-01-16 14:49:15
+Date: 2015-01-22 16:15:10
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -88,7 +88,7 @@ CREATE TABLE `players` (
   `aliases` text NOT NULL,
   `med_gear` text NOT NULL,
   `adminlevel` enum('0','1','2','3','4','5') NOT NULL DEFAULT '0',
-  `donator` enum('0','1','2','3','4','5') NOT NULL DEFAULT '0',
+  `donatorlvl` enum('0','1','2','3','4','5') NOT NULL DEFAULT '0',
   `coplevel` enum('0','1','2','3','4','5','6','7') NOT NULL DEFAULT '0',
   `mediclevel` enum('0','1','2','3','4','5') NOT NULL DEFAULT '0',
   `civ_gear` text NOT NULL,
@@ -99,6 +99,10 @@ CREATE TABLE `players` (
   `jail_time` int(11) NOT NULL DEFAULT '0',
   `arrested` tinyint(1) NOT NULL DEFAULT '0',
   `bounties` text,
+  `civ_position` text,
+  `cop_position` text,
+  `med_position` text,
+  `alive` tinyint(4) DEFAULT '0',
   PRIMARY KEY (`uid`),
   UNIQUE KEY `playerid` (`playerid`),
   KEY `name` (`name`),

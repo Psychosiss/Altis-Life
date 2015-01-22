@@ -21,6 +21,7 @@ switch (_filter) do
 			["U_B_GhillieSuit",nil,50000]
 		];
 	};
+
 	case 1:
 	{
 		[
@@ -35,6 +36,7 @@ switch (_filter) do
 			["H_HelmetLeaderO_oucamo",nil,10000]
 		];
 	};
+
 	case 2:
 	{
 		[
@@ -50,6 +52,7 @@ switch (_filter) do
 			["G_Combat",nil,55]
 		];
 	};
+
 	case 3:
 	{
 		[
@@ -71,6 +74,7 @@ switch (_filter) do
 			["V_HarnessOGL_gry","gilet explosif",2500000]
 		];
 	};
+
 	case 4:
 	{
 		[

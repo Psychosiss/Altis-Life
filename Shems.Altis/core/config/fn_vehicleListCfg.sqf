@@ -8,19 +8,16 @@ switch (_shop) do
 {
 	case "civ_car":
 	{
-		_return = 
-		[
-			_return pushBack ["B_Quadbike_01_F",2500];
-			_return pushBack ["C_Hatchback_01_F",9500];
-			_return pushBack ["C_Offroad_01_F",12500];
-			_return pushBack ["C_SUV_01_F",35000];
-			if(talent_civ_truck1) then
-			{
-				_return pushBack ["C_Van_01_transport_F",40000];
-				_return pushBack ["C_Van_01_box_F",60000];
-				_return pushBack ["C_Van_01_fuel_F",80000];
-			};
-		];
+		_return pushBack ["B_Quadbike_01_F",2500];
+		_return pushBack ["C_Hatchback_01_F",9500];
+		_return pushBack ["C_Offroad_01_F",12500];
+		_return pushBack ["C_SUV_01_F",35000];
+		if(talent_civ_truck1) then
+		{
+			_return pushBack ["C_Van_01_transport_F",40000];
+			_return pushBack ["C_Van_01_box_F",60000];
+			_return pushBack ["C_Van_01_fuel_F",80000];
+		};
 	};
 
 	case "civ_air":

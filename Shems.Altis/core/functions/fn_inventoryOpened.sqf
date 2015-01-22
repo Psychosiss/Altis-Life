@@ -30,6 +30,16 @@ if(_container isKindOf "LandVehicle" OR _container isKindOf "Ship" OR _container
 	};
 };
 
+if(_isPack == 1 && playerSide == west && (!(talent_west_self4))) then 
+{
+	hint "Vous ne pouvez pas ouvrir ce sac";
+	[] spawn 
+	{
+		waitUntil {!isNull (findDisplay 602)};
+		closeDialog 0;
+	};
+};
+
 if(_container isKindOf "Man" && !alive _container) exitWith 
 {
 	hint localize "Vous ne pouvez pas regarder dans les corps.";

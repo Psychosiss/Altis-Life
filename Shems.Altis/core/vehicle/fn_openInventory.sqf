@@ -1,21 +1,40 @@
 private["_vehicle","_veh_data"];
 if(dialog) exitWith {};
 _vehicle = [_this,0,Objnull,[Objnull]] call BIS_fnc_param;
+
 if(isNull _vehicle OR !
 (
 	_vehicle isKindOf "Car" OR 
 	_vehicle isKindOf "Air" OR 
 	_vehicle isKindOf "Ship" OR 
-	_vehicle isKindOf "House_F" OR typeOf 
-	_vehicle == "Land_CargoBox_V1_F" OR typeOf 
-	_vehicle == "Box_IND_AmmoVeh_F" OR typeOf 
-	_vehicle == "Box_NATO_AmmoVeh_F" OR typeOf 
-	_vehicle == "Land_Cargo20_red_F" OR typeOf 
-	_vehicle == "Land_Cargo20_white_F" OR typeOf 
-	_vehicle == "Land_Cargo20_grey_F" OR typeOf 
-	_vehicle == "Land_TentA_F" OR typeOf 
-	_vehicle == "Land_TentDome_F"
+	_vehicle isKindOf "House_F" OR 
+	(typeOf _vehicle in 
+		[
+			"Land_Pod__Heli_Transport_04_covered_F",
+			"Land_Portable_generator_F",
+			"Box_NATO_AmmoVeh_F",
+			"Box_East_AmmoVeh_F",
+			"Box_IND_AmmoVeh_F",
+			"Land_Cargo20_blue_F",
+			"Land_Cargo20_brick_red_F",
+			"Land_Cargo20_cyan_F",
+			"Land_Cargo20_grey_F",
+			"Land_Cargo20_light_blue_F",
+			"Land_Cargo20_light_green_F",
+			"Land_Cargo20_military_green_F",
+			"Land_Cargo20_orange_F",
+			"Land_Cargo20_red_F",
+			"Land_Cargo20_sand_F",
+			"Land_Cargo20_white_F",
+			"Land_Cargo20_yellow_F",
+			"Land_Device_assembled_F",
+			"Land_TentDome_F",
+			"Land_TentA_F"
+		]
+	)
 )) exitWith {};
+
+if((typeOf _vehicle == "Land_Device_assembled_F") && ((_vehicle getVariable "trunk_is_lock") && !talent_civ_utils7)) exitWith {hint "L'usine est vérrouillé pour 2 min par un marchand";};
 
 if((_vehicle getVariable ["trunk_in_use",false])) exitWith {hint "Une seul personne peut ouvrir l'inventaire de ce vehicule."};
 _vehicle setVariable["trunk_in_use",true,true];
@@ -41,19 +60,14 @@ if(_vehicle isKindOf "House_F") then
 	_veh_data = [_vehicle] call life_fnc_vehicleWeight;
 };
 
-if(_vehicle isKindOf "House_F" && 
-{
-	count (_vehicle getVariable ["containers",[]]) == 0
-}) exitWith 
+if(_vehicle isKindOf "House_F" && {count (_vehicle getVariable ["containers",[]]) == 0}) exitWith 
 {
 	hint "You need to install storage containers to have storing capabilities!"; 
 	closeDialog 0; 
 	_vehicle setVariable["trunk_in_use",false,true];
 };
-if(_veh_data select 0 == -1 && 
-{
-	!(_vehicle isKindOf "House_F")
-}) exitWith 
+
+if(_veh_data select 0 == -1 && {!(_vehicle isKindOf "House_F")}) exitWith 
 {
 	closeDialog 0; 
 	_vehicle setVariable["trunk_in_use",false,true]; 

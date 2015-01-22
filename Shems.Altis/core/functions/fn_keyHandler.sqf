@@ -388,16 +388,17 @@ switch (_code) do
 		};
 	};
 
-	case 35: 
+	case 35:
 	{
-		if (_shift && !_alt && !_ctrlKey) then 
+		if(_shift && !_ctrlKey && (currentWeapon player == "")) then 
 		{
-			if ((time - life_holster_time) > 4) then 
-			{
-				life_holster_time = time;
-				[] spawn life_fnc_holsterHandgun;
-			};
+			[0] call life_fnc_holsterHandgun;
 		};
+
+		if(!_shift && _ctrlKey && (currentWeapon player != "")) then 
+		{
+			[1] call life_fnc_holsterHandgun;
+		};	
 	};
 
 	case 38: 

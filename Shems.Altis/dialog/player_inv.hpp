@@ -10,7 +10,7 @@ class playerSettings
 	{
 		class life_RscTitleBackground:life_RscText 
 		{
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
+			colorBackground[] = {0.4,0,0,0.7};
 			idc = -1;
 			x = 0.1;
 			y = 0.2;
@@ -46,7 +46,8 @@ class playerSettings
 			text = "";
 			x = 0.105;
 			y = 0.30;
-			w = 0.3; h = 0.6;
+			w = 0.3; 
+			h = 0.6;
 		};
 		
 		class PlayersName : Title 
@@ -62,29 +63,31 @@ class playerSettings
 		class itemHeader : Life_RscText
 		{
 			idc = -1;
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
+			colorBackground[] = {0.5,0,0,0.5};
 			text = "$STR_PM_cItems";
 			sizeEx = 0.04;
-			
-			x = 0.62; y = 0.26;
-			w = 0.275; h = 0.04;
+			x = 0.62; 
+			y = 0.26;
+			w = 0.275; 
+			h = 0.04;
 		};
 		
 		class licenseHeader : Life_RscText
 		{
 			idc = -1;
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
+			colorBackground[] = {0.5,0,0,0.5};
 			text = "$STR_PM_Licenses";
 			sizeEx = 0.04;
-			
-			x = 0.336; y = 0.26;
-			w = 0.275; h = 0.04;
+			x = 0.336; 
+			y = 0.26;
+			w = 0.275; 
+			h = 0.04;
 		};
 		
 		class moneySHeader : Life_RscText
 		{
 			idc = -1;
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
+			colorBackground[] = {0.5,0,0,0.5};
 			text = "$STR_PM_MoneyStats";
 			sizeEx = 0.04;
 			x = 0.11;
@@ -127,7 +130,7 @@ class playerSettings
 		{
 			idc = 2001;
 			text = "$STR_Global_Give";
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
+			colorBackground[] = {0.5,0,0,0.5};
 			onButtonClick = "[] call life_fnc_giveMoney";
 			sizeEx = 0.025;
 			x = 0.135; 
@@ -159,7 +162,7 @@ class playerSettings
 		{
 			idc = 2002;
 			text = "$STR_Global_Give";
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
+			colorBackground[] = {0.5,0,0,0.5};
 			onButtonClick = "[] call life_fnc_giveItem;";
 			x = 0.765;
 			y = 0.70;
@@ -170,7 +173,7 @@ class playerSettings
 		class UseButton : life_RscButtonMenu 
 		{
 			text = "$STR_Global_Use";
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
+			colorBackground[] = {0.5,0,0,0.5};
 			onButtonClick = "[] call life_fnc_useItem;";
 			x = 0.62;
 			y = 0.70;
@@ -181,7 +184,7 @@ class playerSettings
 		class RemoveButton : life_RscButtonMenu 
 		{
 			text = "$STR_Global_Remove";
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
+			colorBackground[] = {0.5,0,0,0.5};
 			onButtonClick = "[player,false] spawn life_fnc_dropItemsFloor;";
 			x = 0.475;
 			y = 0.70;
@@ -192,7 +195,7 @@ class playerSettings
 		class ButtonClose : life_RscButtonMenu 
 		{
 			idc = -1;
-			text = "$STR_Global_Close";
+			text = "Fermer";
 			onButtonClick = "closeDialog 0;";
 			x = 0.1;
 			y = 0.8 - (1 / 25);
@@ -271,7 +274,8 @@ class playerSettings
 		{
 			idc = 2014;
 			text = "$STR_PM_CellPhone";
-			onButtonClick = "[] call life_fnc_cellphone2;";
+			//onButtonClick = "[] call life_fnc_cellphone2;";
+			onButtonClick = "if (player getVariable[""restrained"",false]) then {hint ""Vous êtes mennoté!"";} else {[] call life_fnc_cellphone2;};";
 			x = 0.42 + (6.25 / 19.8) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.8 - (1 / 25);
 			w = (6.25 / 40);

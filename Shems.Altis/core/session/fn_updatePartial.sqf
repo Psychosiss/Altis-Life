@@ -40,7 +40,10 @@ switch(_mode) do
 		_packet set[2,life_gear];
 	};
 	
-	case 4: {};
+	case 4: 
+	{
+		_packet set[2,life_exp];
+	};
 	
 	case 5: 
 	{
@@ -55,7 +58,6 @@ switch(_mode) do
 
 	case 7: 
 	{
-		/*
 		{
 			if(_x select 1 == _flag) then
 			{
@@ -63,7 +65,6 @@ switch(_mode) do
 			};
 		} foreach life_talent;
 		_packet set[2,_array];
-		*/
 	};
 };
 

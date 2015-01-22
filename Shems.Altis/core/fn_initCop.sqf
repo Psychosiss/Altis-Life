@@ -18,15 +18,23 @@ if((__GETC__(life_coplevel)) < 1) exitWith
 	sleep 35;
 };
 
-[] call life_fnc_spawnMenu;
+if (!life_is_alive) then
+{
+	[] call life_fnc_spawnMenu;
+	waitUntil{!isNull (findDisplay 38500)};
+	waitUntil{isNull (findDisplay 38500)};
+	life_is_alive = true;
+} else {
+	player setPos _playerPosition;
+	life_is_alive = true;
+};
 
-player setVariable["rank",(__GETC__(life_coplevel)),true];
+player setVariable["coplevel", __GETC__(life_coplevel), true];
+player setVariable["mediclevel", __GETC__(life_medicLevel), true];
+player setVariable["adminlevel", __GETC__(life_adminlevel), true];
 
 if(talent_west_bonus1) then {life_paycheck = life_paycheck + 2000;};
 if(talent_west_bonus3) then {life_paycheck = life_paycheck + 1000;};
-
-waitUntil{!isNull (findDisplay 38500)};
-waitUntil{isNull (findDisplay 38500)};
 
 [] spawn
 {

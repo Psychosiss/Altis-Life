@@ -31,6 +31,13 @@ if(isNil {uiNamespace getVariable "life_sql_id"}) then
 	diag_log "extDB: Toujours connecté à la base de données.";
 };
 
+if (!_extDB) exitWith 
+{
+	life_server_extDB_notLoaded = true;
+	publicVariable "life_server_extDB_notLoaded";
+	diag_log "extDB: Erreur, regardez les logs d'extDB pour plus d'informations.";
+};
+
 ["CALL resetLifeVehicles",1] spawn DB_fnc_asyncCall;
 ["CALL deleteDeadVehicles",1] spawn DB_fnc_asyncCall;
 ["CALL deleteOldHouses",1] spawn DB_fnc_asyncCall;
@@ -48,6 +55,8 @@ __CONST__(JxMxE_PublishVehicle,"No");
 //life_radio_indep = radioChannelCreate [[0, 0.95, 1, 0.8], "Side Channel", "%UNIT_NAME", []];
 
 serv_sv_use = [];
+
+fed_bank setVariable["safe",(count playableUnits),true];
 
 addMissionEventHandler ["HandleDisconnect",{_this call TON_fnc_clientDisconnect; false;}];
 

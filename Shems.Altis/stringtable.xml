@@ -245,14 +245,6 @@
 			<Original>Le véhicule a été entreposé dans le garage.</Original>
 		</Key>
 	</Package>
-	<Package name="Player_Actions">
-		<Key ID="STR_holsterHandgun_np1">
-			<Original>You can only holster your handgun. You need to equip it to holster ..</Original>
-		</Key>
-		<Key ID="STR_holsterHandgun_ziehe">
-			<Original>Equiper arme de poing</Original>
-		</Key>
-	</Package>
 	<Package name="Key_Chain">
 		<Key ID="STR_Keys_Title">
 			<Original>Porte-clés</Original>
@@ -709,7 +701,7 @@
 			<Original>Menu de Crafting</Original>
 		</Key>
 		<Key ID="STR_PM_CraftStats">
-			<Original>Objet à crafter</Original>
+			<Original>Objet à fabriquer</Original>
 		</Key>
 		<Key ID="STR_PM_CraftMaterials">
 			<Original>Materiaux requis</Original>
@@ -736,10 +728,10 @@
 			<Original>Items</Original>
 		</Key>
 		<Key ID="STR_CRAFT_AR_Backpack">
-			<Original>Vous avez déjà un sac à dos ! Posez le votre avant d'en crafter un nouveau.</Original>
+			<Original>Vous avez déjà un sac à dos ! Posez le votre avant d'en faire un nouveau.</Original>
 		</Key>
 		<Key ID="STR_CRAFT_AR_Uniform">
-			<Original>Vous avez déjà un uniforme ! Posez le votre avant d'en crafter un nouveau.</Original>
+			<Original>Vous avez déjà un uniforme ! Posez le votre avant d'en faire un nouveau.</Original>
 		</Key>
 	</Package>  
 	<Package name="talent">

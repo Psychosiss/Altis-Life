@@ -7,9 +7,9 @@ if(isNull _ownerID) exitWith {};
 _ownerID = owner _ownerID;
 _query = switch(_side) do 
 {
-	case west: {_returnCount = 11; format["SELECT playerid, name, cash, bankacc, adminlevel, donator, cop_licenses, coplevel, cop_gear, blacklist, cop_talent FROM players WHERE playerid='%1'",_uid];};
-	case civilian: {_returnCount = 10; format["SELECT playerid, name, cash, bankacc, adminlevel, donator, civ_licenses, arrested, civ_gear, civ_talent FROM players WHERE playerid='%1'",_uid];};
-	case independent: {_returnCount = 9; format["SELECT playerid, name, cash, bankacc, adminlevel, donator, med_licenses, mediclevel, med_talent FROM players WHERE playerid='%1'",_uid];};
+	case west: {_returnCount = 13; format["SELECT playerid, name, cash, bankacc, adminlevel, donatorlvl, cop_licenses, coplevel, cop_gear, blacklist, cop_talent, cop_position, alive FROM players WHERE playerid='%1'",_uid];};
+	case civilian: {_returnCount = 12; format["SELECT playerid, name, cash, bankacc, adminlevel, donatorlvl, civ_licenses, arrested, civ_gear, civ_talent, civ_position, alive FROM players WHERE playerid='%1'",_uid];};
+	case independent: {_returnCount = 12; format["SELECT playerid, name, cash, bankacc, adminlevel, donatorlvl, med_licenses, mediclevel, med_gear, med_talent, med_position, alive FROM players WHERE playerid='%1'",_uid];};
 };
 
 waitUntil{sleep (random 0.3); !DB_Async_Active};
@@ -39,7 +39,11 @@ _queryResult set[2,[_tmp] call DB_fnc_numberSafe];
 _tmp = _queryResult select 3;
 _queryResult set[3,[_tmp] call DB_fnc_numberSafe];
 _new = [(_queryResult select 6)] call DB_fnc_mresToArray;
-if(typeName _new == "STRING") then {_new = call compile format["%1", _new];};
+if(typeName _new == "STRING") then 
+{
+	_new = call compile format["%1", _new];
+};
+
 _queryResult set[6,_new];
 
 _old = _queryResult select 6;
@@ -69,6 +73,13 @@ switch (_side) do
 			_data = _old select _i;
 			_old set[_i,[_data select 0, ([_data select 1,1] call DB_fnc_numberSafe),([_data select 2,1] call DB_fnc_numberSafe)]];
 		};
+
+		_new = [(_queryResult select 11)] call DB_fnc_mresToArray;
+		if(typeName _new == "STRING") then 
+		{
+			_new = call compile format["%1", _new];
+		};
+		_queryResult set[11,_new];
 	};
 
 	case civilian: 
@@ -92,19 +103,33 @@ switch (_side) do
 			_data = _old select _i;
 			_old set[_i,[_data select 0, ([_data select 1,1] call DB_fnc_numberSafe),([_data select 2,1] call DB_fnc_numberSafe)]];
 		};
+
+		_new = [(_queryResult select 10)] call DB_fnc_mresToArray;
+		if(typeName _new == "STRING") then 
+		{
+			_new = call compile format["%1", _new];
+		};
+		_queryResult set[10,_new];
 	};
 
 	case independent: 
 	{
-		_new = [(_queryResult select 8)] call DB_fnc_mresToArray;
+		_new = [(_queryResult select 9)] call DB_fnc_mresToArray;
 		if(typeName _new == "STRING") then {_new = call compile format["%1", _new];};
-		_queryResult set[8,_new];
-		_old = _queryResult select 8;
+		_queryResult set[9,_new];
+		_old = _queryResult select 9;
 		for "_i" from 0 to (count _old)-1 do
 		{
 			_data = _old select _i;
 			_old set[_i,[_data select 0, ([_data select 1,1] call DB_fnc_numberSafe),([_data select 2,1] call DB_fnc_numberSafe)]];
 		};
+
+		_new = [(_queryResult select 10)] call DB_fnc_mresToArray;
+		if(typeName _new == "STRING") then 
+		{
+			_new = call compile format["%1", _new];
+		};
+		_queryResult set[10,_new];
 	}:
 };
 

@@ -6,7 +6,10 @@ _cash = [_this,3,0,[0]] call BIS_fnc_param;
 _bank = [_this,4,5000,[0]] call BIS_fnc_param;
 _licenses = [_this,5,[],[[]]] call BIS_fnc_param;
 _gear = [_this,6,[],[[]]] call BIS_fnc_param;
-_talent = [_this, 7,[],[[]]] call BIS_fnc_param;
+_talent = [_this, 8,[],[[]]] call BIS_fnc_param;
+_civ_position = [_this,9,""] call BIS_fnc_param;
+_cop_position = [_this,10,""] call BIS_fnc_param;
+_med_position = [_this,11,""] call BIS_fnc_param;
 
 if((_uid == "") OR (_name == "")) exitWith {};
 
@@ -34,7 +37,8 @@ switch (_side) do
 		bankacc='%3',
 		cop_gear='%4',
 		cop_licenses='%5',
-		cop_talent='%7'
+		cop_talent='%7',
+		cop_position='%10'
 		WHERE playerid='%6'
 		",_name,_cash,_bank,_gear,_licenses,_uid,_talent];
 	};
@@ -42,12 +46,14 @@ switch (_side) do
 	case civilian: 
 	{
 		_query = format["UPDATE players SET 
-		name='%1', 
-		cash='%2', 
-		bankacc='%3', 
-		civ_licenses='%4', 
+		name='%1',
+		cash='%2',
+		bankacc='%3',
+		civ_licenses='%4',
 		civ_gear='%6',
-		civ_talent='%7'
+		arrested='%7',
+		civ_talent='%8',
+		civ_position='%9'
 		WHERE playerid='%5'
 		",_name,_cash,_bank,_licenses,_uid,_gear,[_this select 7] call DB_fnc_bool,_talent];
 	};
@@ -59,7 +65,9 @@ switch (_side) do
 		cash='%2',
 		bankacc='%3',
 		med_licenses='%4',
-		med_talent='%6'
+		med_gear='%6',
+		med_talent='%7',
+		med_position='%11'
 		WHERE playerid='%5'
 		",_name,_cash,_bank,_licenses,_uid,_talent];
 	};

@@ -10,15 +10,16 @@ if(isNull _cop) exitWith {};
 	{
 		_time = time;
 		waitUntil {(time - _time) > (5 * 60)};
-		
+
 		if(!(player getVariable["restrained",FALSE])) exitWith {};
-		if(!([west,getPos player,30] call life_fnc_nearUnits) && (player getVariable["restrained",FALSE]) && vehicle player == player) exitWith {
+		if(!([west,getPos player,30] call life_fnc_nearUnits) && (player getVariable["restrained",FALSE]) && vehicle player == player) exitWith 
+		{
 			player setVariable["restrained",FALSE,TRUE];
 			player setVariable["Escorting",FALSE,TRUE];
 			player setVariable["transporting",false,true];
 			detach player;
-			titleText["You have been released automatically for excessive restrainment time","PLAIN"];
-					player say3D "cuff";
+			titleText["Vous avez automatiquement été démenotté","PLAIN"];
+			player say3D "cuff";
 		};
 	};
 };
@@ -51,7 +52,10 @@ while {player getVariable "restrained"} do
 	
 	if(vehicle player != player) then
 	{
-		if(driver (vehicle player) == player) then {player action["eject",vehicle player];};
+		if(driver (vehicle player) == player) then 
+		{
+			player action["eject",vehicle player];
+		};
 	};
 };
 		

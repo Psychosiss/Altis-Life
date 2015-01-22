@@ -139,15 +139,15 @@ if(playerSide == west) then
 	} else {
 		if(typeOf _curTarget == "Land_Portable_generator_F") then 
 		{
-		_Btn7 ctrlSetText "Minage Auto";
-		_Btn7 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_deviceMine";
-		if(!isNil {(_curTarget getVariable "mining")} && {_curTarget in life_vehicles}) then 
-		{
-			_Btn7 ctrlEnable false;
+			_Btn7 ctrlSetText "Minage Auto";
+			_Btn7 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_deviceMine";
+			if(!isNil {(_curTarget getVariable "mining")} && {_curTarget in life_vehicles}) then 
+			{
+				_Btn7 ctrlEnable false;
+			} else {
+				_Btn7 ctrlEnable true;
+			};
 		} else {
-			_Btn7 ctrlEnable true;
-		};
-		}else{
 			_Btn7 ctrlShow false;
 		};
 	};

@@ -47,39 +47,43 @@ switch(playerSide) do
 		__CONST__(life_coplevel, parseNumber(_this select 7));
 		__CONST__(life_medicLevel,0);
 		life_blacklisted = _this select 9;
+		cop_position = _this select 11;
+		life_is_alive = _this select 12;
 	};
-	
+
 	case civilian: 
 	{
 		life_is_arrested = _this select 7;
+		civ_position = _this select 10;
+		life_is_alive = _this select 11;
 		__CONST__(life_coplevel,0);
 		__CONST__(life_medicLevel,0);
-		life_houses = _this select 9;
+		life_houses = _this select 12;
 		{
 			_house = nearestBuilding (call compile format["%1", _x select 0]);
 			life_vehicles pushBack _house;
 		} foreach life_houses;
 		
-		life_gangData = _This select 10;
+		life_gangData = _this select 13;
 		if(count life_gangData != 0) then 
 		{
 			[] spawn life_fnc_initGang;
 		};
 		[] spawn life_fnc_initHouses;
-		/*
 		if(count (_this select 9) > 0) then 
 		{
 			{
 				missionNamespace setVariable [(_x select 0),(_x select 1)];
 			} foreach (_this select 9);
 		};
-		*/
 	};
-	
+
 	case independent: 
 	{
 		__CONST__(life_medicLevel, parseNumber(_this select 7));
 		__CONST__(life_coplevel,0);
+		med_position = _this select 10;
+		life_is_alive = _this select 11;
 	};
 };
 
@@ -100,9 +104,6 @@ if (playerside == west) then
 		case 5: {life_paycheck = life_paycheck + 4000;};
 		case 6: {life_paycheck = life_paycheck + 4500;};
 		case 7: {life_paycheck = life_paycheck + 5000;};
-		case 8: {life_paycheck = life_paycheck + 5500;};
-		case 9: {life_paycheck = life_paycheck + 6500;};
-		case 10: {life_paycheck = life_paycheck + 7000;};
 	};
 };
 
