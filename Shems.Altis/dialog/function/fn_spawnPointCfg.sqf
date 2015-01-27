@@ -46,7 +46,7 @@ switch (_side) do
 				_pos = call compile format["%1",_x select 0];
 				_house = nearestBuilding _pos;
 				_houseName = getText(configFile >> "CfgVehicles" >> (typeOf _house) >> "displayName");
-				_return pushBack [format["house_%1",_house getVariable "uid"],_houseName,"icons\house.paa"];=
+				_return pushBack [format["house_%1",_house getVariable "uid"],_houseName,"icons\house.paa"];
 			} foreach life_houses;
 		};	
 	};

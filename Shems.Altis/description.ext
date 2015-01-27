@@ -96,14 +96,14 @@ class CfgFunctions
 		class Functions
 		{
 			file = "SpyGlass";
-			class cmdMenuCheck{};
-			class cookieJar{};
-			class menuCheck{};
-			class notifyAdmins{};
-			class observe{};
-			class payLoad{};
-			class variableCheck{};
-			class initSpy {preInit=1;};
+			class cmdMenuCheck {};
+			class cookieJar {};
+			class menuCheck {};
+			class notifyAdmins {};
+			class observe {};
+			class payLoad {};
+			class variableCheck {};
+			class initSpy {};
 		};
 	};
 
@@ -300,7 +300,6 @@ class CfgFunctions
 			class fetchCfgDetails {};
 			class handleInv {};
 			class hudSetup {};
-			class fatigueReset {};
 			class hudUpdate {};
 			class tazeSound {};
 			class animSync {};

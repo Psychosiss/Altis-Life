@@ -1,7 +1,7 @@
 private["_allVeh","_pUID"];
- 
+
 sleep 5;
- 
+
 _allVeh = allMissionObjects "Car" + allMissionObjects "Air" + allMissionObjects "Ship";
 _name = name player;
 {

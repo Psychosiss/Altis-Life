@@ -115,7 +115,18 @@ compileFinal "
 ";
 
 [] execVM "core\init_survival.sqf";
-[] spawn life_fnc_fatigueReset;
+
+[] spawn 
+{
+    while {true} do 
+	{
+        if (life_fatigue < getFatigue player) then 
+		{
+            player setFatigue life_fatigue;
+        };
+        sleep 1.5;
+    }
+};
 
 while {true} do 
 {

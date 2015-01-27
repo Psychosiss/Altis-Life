@@ -60,29 +60,27 @@ switch (_filter) do
 
 	case 2:
 	{
-		[
-			_ret pushBack ["G_Sport_BlackWhite",nil,20];
-			_ret pushBack ["G_Sport_Blackyellow",nil,20];
-			_ret pushBack ["G_Shades_Blue",nil,20];
-			_ret pushBack ["G_Shades_Black",nil,25];
-			_ret pushBack ["G_Shades_Red",nil,25];
-			_ret pushBack ["G_Shades_Green",nil,25];
-			_ret pushBack ["G_Squares_Tinted",nil,50];
-			_ret pushBack ["G_Sport_Red",nil,20];
-			_ret pushBack ["G_Sport_Checkered",nil,20];
-			_ret pushBack ["G_Sport_Greenblack",nil,20];
-			_ret pushBack ["G_Sport_Blackred",nil,20];
-			_ret pushBack ["G_Lady_Mirror",nil,150];
-			_ret pushBack ["G_Lady_Dark",nil,150];
-			_ret pushBack ["G_Lady_Blue",nil,150];
-			_ret pushBack ["G_Lowprofile",nil,30];
-			_ret pushBack ["G_Squares",nil,10];
-			_ret pushBack ["G_Spectacles",nil,100];
-			_ret pushBack ["G_Aviator",nil,100];
-			_ret pushBack ["G_Spectacles_Tinted",nil,100];
-			_ret pushBack ["G_Goggles_VR",nil,500];
-			_ret pushBack ["G_Combat",nil,55];
-		];
+		_ret pushBack ["G_Sport_BlackWhite",nil,20];
+		_ret pushBack ["G_Sport_Blackyellow",nil,20];
+		_ret pushBack ["G_Shades_Blue",nil,20];
+		_ret pushBack ["G_Shades_Black",nil,25];
+		_ret pushBack ["G_Shades_Red",nil,25];
+		_ret pushBack ["G_Shades_Green",nil,25];
+		_ret pushBack ["G_Squares_Tinted",nil,50];
+		_ret pushBack ["G_Sport_Red",nil,20];
+		_ret pushBack ["G_Sport_Checkered",nil,20];
+		_ret pushBack ["G_Sport_Greenblack",nil,20];
+		_ret pushBack ["G_Sport_Blackred",nil,20];
+		_ret pushBack ["G_Lady_Mirror",nil,150];
+		_ret pushBack ["G_Lady_Dark",nil,150];
+		_ret pushBack ["G_Lady_Blue",nil,150];
+		_ret pushBack ["G_Lowprofile",nil,30];
+		_ret pushBack ["G_Squares",nil,10];
+		_ret pushBack ["G_Spectacles",nil,100];
+		_ret pushBack ["G_Aviator",nil,100];
+		_ret pushBack ["G_Spectacles_Tinted",nil,100];
+		_ret pushBack ["G_Goggles_VR",nil,500];
+		_ret pushBack ["G_Combat",nil,55];
 	};
 
 	case 3:

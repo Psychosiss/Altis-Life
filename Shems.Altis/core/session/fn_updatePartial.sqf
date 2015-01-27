@@ -42,7 +42,7 @@ switch(_mode) do
 	
 	case 4: 
 	{
-		_packet set[2,life_exp];
+		//_packet set[2,life_exp];
 	};
 	
 	case 5: 

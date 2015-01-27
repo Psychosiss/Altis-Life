@@ -7,7 +7,7 @@ if(visibleMap) then
 {
 	{
 		if(side _x == west) then 
-		{_
+		{
 			cops pushBack _x;
 		}
 	} foreach playableUnits;

@@ -49,6 +49,12 @@ switch(playerSide) do
 		life_blacklisted = _this select 9;
 		cop_position = _this select 11;
 		life_is_alive = _this select 12;
+		if(count (_this select 10) > 0) then 
+		{
+			{
+				missionNamespace setVariable [(_x select 0),(_x select 1)];
+			} foreach (_this select 10);
+		};
 	};
 
 	case civilian: 
@@ -84,6 +90,12 @@ switch(playerSide) do
 		__CONST__(life_coplevel,0);
 		med_position = _this select 10;
 		life_is_alive = _this select 11;
+		if(count (_this select 9) > 0) then 
+		{
+			{
+				missionNamespace setVariable [(_x select 0),(_x select 1)];
+			} foreach (_this select 9);
+		};
 	};
 };
 

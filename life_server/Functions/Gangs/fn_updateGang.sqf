@@ -18,24 +18,24 @@ switch (_mode) do
 		if(_owner == "") exitWith {};
 		_query = format["UPDATE gangs SET bank='%1', maxmembers='%2', owner='%3' WHERE id='%4'",_bank,_maxMembers,_owner,_groupID];
 	};
-	
+
 	case 1: 
 	{
 		_query = format["UPDATE gangs SET bank='%1' WHERE id='%2'",([(_group getVariable ["gang_bank",0])] call DB_fnc_numberSafe),_groupID];
 	};
-	
+
 	case 2: 
 	{
 		_query = format["UPDATE gangs SET maxmembers='%1' WHERE id='%2'",(_group getVariable ["gang_maxMembers",8]),_groupID];
 	};
-	
+
 	case 3: 
 	{
 		_owner = _group getVariable["gang_owner",""];
 		if(_owner == "") exitWith {};
 		_query = format["UPDATE gangs SET owner='%1' WHERE id='%2'",_owner,_groupID];
 	};
-	
+
 	case 4: 
 	{
 		_members = _group getVariable "gang_members";

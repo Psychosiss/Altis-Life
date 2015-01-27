@@ -24,19 +24,19 @@ switch (_shop) do
 	{
 		if(talent_civ_helico1) then
 		{
-			_return pushBack ["C_Heli_Light_01_civil_F",500000];
 			_return pushBack ["B_Heli_Light_01_F",255000];
 		};
 		if(talent_civ_helico2) then
 		{
 			_return pushBack ["O_Heli_Light_02_unarmed_F",850000];
-			_return pushBack ["O_Heli_Transport_04_F",500000];
 		};
 		if(talent_civ_helico3) then
 		{
 			_return pushBack ["B_Heli_Transport_03_unarmed_F",6500000];
-			_return pushBack ["O_Heli_Transport_04_box_F",2000000];
 		};
+			//_return pushBack ["C_Heli_Light_01_civil_F",500000];
+			//_return pushBack ["O_Heli_Transport_04_F",500000];
+			//_return pushBack ["O_Heli_Transport_04_box_F",2000000];
 	};
 
 	case "civ_box":

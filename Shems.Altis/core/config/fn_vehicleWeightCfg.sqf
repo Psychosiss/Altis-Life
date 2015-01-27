@@ -1,7 +1,7 @@
 private["_className"];
 _className = [_this,0,"",[""]] call BIS_fnc_param;
 
-if(playerSide == civilian && skill_civ_truck6) then
+if(playerSide == civilian && talent_civ_truck6) then
 {
 	switch (_className) do
 	{

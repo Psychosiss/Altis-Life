@@ -1,11 +1,10 @@
 #include <macro.h>
 
-private["_ui","_units","_goggles","_uniform","_headgear"];
+private["_exp","_ui","_units","_goggles","_headgear"];
 #define iconID 78000
 #define scale 0.8
 
 _goggles = ["G_Balaclava_blk"];
-_uniform = ["Nom de la Ghillie"];
 _headgear = ["H_Shemag_olive","H_Shemag_khk"];
 
 if(visibleMap OR {!alive player} OR {dialog}) exitWith 
@@ -30,8 +29,10 @@ _units = _units - [player];
 
 	_idc = _ui displayCtrl (iconID + _forEachIndex);
 
-	if(!(lineIntersects [eyePos player, eyePos _x, player, _x]) && {!isNil {_x getVariable "realname"}}) then {
-		_pos = switch(typeOf _x) do {
+	if(!(lineIntersects [eyePos player, eyePos _x, player, _x]) && {!isNil {_x getVariable "realname"}}) then 
+	{
+		_pos = switch(typeOf _x) do 
+		{
 			case "Land_Pallet_MilBoxes_F": {[visiblePosition _x select 0, visiblePosition _x select 1, (getPosATL _x select 2) + 1.5]};
 			case "Land_Sink_F": {[visiblePosition _x select 0, visiblePosition _x select 1, (getPosATL _x select 2) + 2]};
 			default {[visiblePosition _x select 0, visiblePosition _x select 1, ((_x modelToWorld (_x selectionPosition "head")) select 2)+.5]};
@@ -49,7 +50,6 @@ _units = _units - [player];
 			{
 				case ((goggles _x) in _goggles): {format["???"];};
 				case ((headgear _x) in _headgear): {format["???"];};
-				case ((uniform _x) in _uniform): {format["???"];};
 				case (_x in (units grpPlayer) && playerSide == civilian): 
 				{
 					_text = format["<t color='#00FF00'>%1</t>", _name];

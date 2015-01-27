@@ -1,10 +1,8 @@
 private["_ret","_list","_jailedUnits"];
 _ret = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 if(isNull _ret) exitWith {};
-
 _ret = owner _ret;
 _jailedUnits = [];
-
 {
 	if(_x distance (getMarkerPos "jail_marker") < 120) then 
 	{

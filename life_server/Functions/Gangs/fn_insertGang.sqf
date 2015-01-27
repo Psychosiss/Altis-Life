@@ -24,7 +24,7 @@ _queryResult = [_query,2] call DB_fnc_asyncCall;
 
 if(count _queryResult != 0) exitWith 
 {
-	[[1,"You are currently already active in a gang, please leave the gang first."],"life_fnc_broadcast",_ownerID,false] spawn life_fnc_MP;
+	[[1,"Vous êtes déjà dans un gang."],"life_fnc_broadcast",_ownerID,false] spawn life_fnc_MP;
 	[["life_action_gangInUse",nil,missionNamespace],"life_fnc_netSetVar",_ownerID,false] spawn life_fnc_MP;
 };
 
