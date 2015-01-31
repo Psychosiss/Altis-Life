@@ -19,7 +19,7 @@ ctrlSetText[967,format["Menu des Compétences     Point Disponible %1", _left]];
 _inv = _dialog displayCtrl 969;
 lbClear _inv;
 
-_config = [] call SHEMS_fnc_talent;
+_config = [] call life_fnc_talentCfg;
 {
 	_itemInfo = _x select 0;
 	_itemHave = _x select 1;

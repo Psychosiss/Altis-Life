@@ -1,4 +1,5 @@
 private["_return","_uItems","_bItems","_vItems","_pItems","_hItems","_yItems","_uMags","_vMags","_bMags","_pMag","_hMag","_uni","_ves","_bag","_handled"];
+
 _return = [];
 _return pushBack uniform player;
 _return pushBack vest player;
@@ -6,6 +7,7 @@ _return pushBack backpack player;
 _return pushBack goggles player;
 _return pushBack headgear player;
 _return pushBack assignedITems player;
+
 if(playerSide == west || playerSide == civilian && {(call life_save_civ)}) then 
 {
 	_return pushBack primaryWeapon player;

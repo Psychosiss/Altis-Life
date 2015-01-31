@@ -24,7 +24,7 @@ if((_code in (actionKeys "GetOver") || _code in (actionKeys "salute")) && {(play
 
 if (life_brokenLeg && (_code in (actionKeys "MoveUp") || _code in (actionKeys "MoveDown") || _code in (actionKeys "Stand") || _code in (actionKeys "Crouch"))) then
 {
-	systemChat "Your leg is boken!";
+	systemChat "Votre jambe est fracturé.";
 	_handled = true;
 };
 

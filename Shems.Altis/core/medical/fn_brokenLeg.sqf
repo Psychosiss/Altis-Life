@@ -5,7 +5,7 @@ if (_broken) then
 	if (life_brokenLeg) exitWith {};
 	player setVariable["broken", _broken, true];
 	PlaySound "bonebreak";
-	systemChat "Vous sentez et entendez vos jambes!";
+	systemChat "Vous sentez vos jambes!";
 	player playActionNow "PlayerProne";
 } else {
 	player setVariable["broken", nil, true];

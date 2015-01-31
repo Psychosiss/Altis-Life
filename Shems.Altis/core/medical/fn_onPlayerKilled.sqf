@@ -29,10 +29,26 @@ _unit spawn
 	disableSerialization;
 	_RespawnBtn = ((findDisplay 7300) displayCtrl 7302);
 	_Timer = ((findDisplay 7300) displayCtrl 7301);
-	_maxTime = time + (life_respawn_timer * 60);
+	//_maxTime = time + (life_respawn_timer * 60);
+	_maxTime = time + (life_respawn_timer * 120);
 	_RespawnBtn ctrlEnable false;
-	waitUntil {_Timer ctrlSetText format["Réapparition: %1",[(_maxTime - time),"MM:SS.MS"] call BIS_fnc_secondsToString]; 
-	round(_maxTime - time) <= 0 OR isNull _this};
+	waitUntil 
+	{
+		_Timer ctrlSetText format["Réapparition: %1",[(_maxTime - time),"MM:SS.MS"] call BIS_fnc_secondsToString]; 
+		round(_maxTime - time) <= 0 || isNull _this || life_request_timer
+	};
+
+	if (life_request_timer) then 
+	{
+		//_maxTime = time + (life_respawn_timer * 150);
+		_maxTime = time + (life_respawn_timer * 60);
+		waitUntil 
+		{
+			_Timer ctrlSetText format["Réapparition: %1",[(_maxTime - time),"MM:SS.MS"] call BIS_fnc_secondsToString]; 
+			round(_maxTime - time) <= 0 || isNull _this
+		};
+	};
+	life_request_timer = false;
 	_RespawnBtn ctrlEnable true;
 	_Timer ctrlSetText "Vous pouvez réapparaitre";
 };
@@ -72,7 +88,7 @@ if(side _killer == west && playerSide != west) then
 
 	if(!life_use_atm && {life_cash > 0}) then 
 	{
-		[format["%1 $ ont été remis à la banque férérale car le voleur a été neutralisé.",[life_cash] call life_fnc_numberText],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+		[format["%1 € ont été remis à la banque férérale car le voleur a été neutralisé.",[life_cash] call life_fnc_numberText],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 		life_cash = 0;
 	};
 };

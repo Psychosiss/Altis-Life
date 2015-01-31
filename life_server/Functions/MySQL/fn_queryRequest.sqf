@@ -124,12 +124,14 @@ switch (_side) do
 			_old set[_i,[_data select 0, ([_data select 1,1] call DB_fnc_numberSafe),([_data select 2,1] call DB_fnc_numberSafe)]];
 		};
 
+		/*
 		_new = [(_queryResult select 10)] call DB_fnc_mresToArray;
 		if(typeName _new == "STRING") then 
 		{
 			_new = call compile format["%1", _new];
 		};
 		_queryResult set[10,_new];
+		*/
 	}:
 };
 

@@ -11,6 +11,7 @@ _globalprice = _arr_price select 2;
 _modifier = (_amount * (_arr_resource select 4));
 _price = _price - _modifier;
 _globalprice = _globalprice - _modifier;
+_min = _arr_resource select 2;
 
 if(_price < 0) then {_price = 0;};
 

@@ -7,7 +7,7 @@ _mats = _dialog displayCtrl 972;
 _struct = "";
 if((lbCurSel 969) == -1) exitWith {hint "Vous devez séléctionné un objet.";};
 _item = lbData[969,(lbCurSel 969)];
-_config = [] call SHEMS_fnc_talent;
+_config = [] call life_fnc_talentCfg;
 {
 	if(_item == _x select 1)then
 	{

@@ -13,13 +13,13 @@
 		if(life_hunger < 2) then 
 		{
 			player setDamage 1; 
-			hint "You have starved to death.";
+			hint "Vous êtes mort de faim.";
 		};
 		switch(life_hunger) do 
 		{
-			case 30: {hint "You haven't eaten anything in awhile, You should find something to eat soon!";};
-			case 20: {hint "You are starting to starve, you need to find something to eat otherwise you will die.";};
-			case 10: {hint "You are now starving to death, you will die very soon if you don't eat something";player setFatigue 1;};
+			case 30: {hint "Vous ne avez rien mangé depuis un moment... Vous devriez trouver quelque chose à manger.";};
+			case 20: {hint "Vous commencez à mourir de faim, vous avez besoin de trouver quelque chose à manger, sinon vous mourrez.";};
+			case 10: {hint "Vous êtes maintenant mort de faim, vous allez bientôt mourir si vous ne mangez quelque chose.";player setFatigue 1;};
 			};
 		};
 	};
@@ -29,20 +29,20 @@
 		if(life_thirst < 2) then 
 		{
 			player setDamage 1; 
-			hint "You have died from dehydration.";
+			hint "Vous êtes morts de déshydratation.";
 		} else {
 			life_thirst = life_thirst - 10;
 			[] call life_fnc_hudUpdate;
 			if(life_thirst < 2) then 
 			{
 				player setDamage 1; 
-				hint "You have died from dehydration.";
+				hint "Vous êtes morts de déshydratation.";
 			};
 			switch(life_thirst) do 
 			{
-				case 30: {hint"You haven't drank anything in awhile, You should find something to drink soon.";};
-				case 20: {hint "You haven't drank anything in along time, you should find something to drink soon or you'll start to die from dehydration"; player setFatigue 1;};
-				case 10: {hint "You are now suffering from severe dehydration find something to drink quickly!"; player setFatigue 1;};
+				case 30: {hint"Vous n'avez rien bu depuis un moment... Vous devriez trouver quelque chose à boire.";};
+				case 20: {hint "Vous n'avez rien bu, vous avez besoin de trouver quelque chose à boire ou vous allez bientôt commencer à mourir de déshydratation."; player setFatigue 1;};
+				case 10: {hint "Vous souffrez maintenent en déshydratation sévère... trouver quelque chose à boire rapidement."; player setFatigue 1;};
 			};
 		};
 	};
@@ -135,27 +135,27 @@
 				{
 					case (_new > 0.4): 
 					{ 
-						systemChat "You are craving a high."; life_drug_withdrawl = false; 
+						systemChat "Vous êtes fortement en manque."; life_drug_withdrawl = false; 
 					};
 					case (_new > 0.6): 
 					{ 
-						systemChat "Getting high occupies all of your thoughts."; life_drug_withdrawl = false; 
+						systemChat "Obtenez de la drogue avant que votre addiction occupe toutes vos pensées."; life_drug_withdrawl = false; 
 					};
 					case (_new > 0.9):
 					{
-						systemChat "You feel shakey and anxious! You need a fix!";
+						systemChat "You feel shakey and anxious! You need a fix! Vous vous sentez chancelants et anxieux! Vous avez besoin d'une dose!";
 						if (!life_drug_withdrawl) then 
 						{ 
 							[] spawn 
 							{ 
 								while {life_drug_withdrawl} do 
 								{ 
-									resetCamShake; 
-									addCamShake [1, 4, 10]; 
-									sleep 3.5; 
+									resetCamShake;
+									addCamShake [1, 4, 10];
+									sleep 3.5;
 								}; 
 								resetCamShake;
-							} 
+							}
 						};
 						life_drug_withdrawl = true;
 					};

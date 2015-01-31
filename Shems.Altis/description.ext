@@ -14,7 +14,7 @@ class Header
 {
 	gameType = RPG;
 	minPlayers = 1;
-	maxPlayers = 109;
+	maxPlayers = 99;
 };
 
 wreckLimit = 3;
@@ -621,13 +621,14 @@ class CfgFunctions
 
 		class Talent 
 		{
-			file = "core/talent";
+			file = "core\talent";
 			class callShowTalent {};
 			class talent {};
 			class talentRefresh {};
 			class addExp {};
 			class showTalent {};
 			class viewTalent {};
+			class talentCfg {};
 		};
 	};
 };

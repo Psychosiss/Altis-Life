@@ -15,7 +15,7 @@ _left = [1] call life_fnc_returnInfo;
 ctrlSetText[967,format["Competences     Niveau:%1     Point Disponible %2",_level ,_left]];
 ctrlShow[973,false];
 
-_config = [] call SHEMS_fnc_talent;
+_config = [] call life_fnc_talentCfg;
 {
 	_itemInfo = _x select 0;
 	_itemHave = _x select 1;

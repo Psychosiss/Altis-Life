@@ -9,6 +9,8 @@ if(_medicsOnline) then
 	[[life_corpse,profileName],"life_fnc_copMedicRequest",west,FALSE] spawn life_fnc_MP;
 };
 
+life_request_timer = true;
+
 [] spawn 
 {
 	((findDisplay 7300) displayCtrl 7303) ctrlEnable false;

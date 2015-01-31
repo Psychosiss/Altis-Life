@@ -7,7 +7,7 @@ _dialog = findDisplay 966;
 if(_left == 0) exitWith {hint "Vous n'avez pas assez de points";};
 if((lbCurSel 969) == -1) exitWith {hint "Vous devez séléctionné un objet";};
 _item = lbData[969,(lbCurSel 969)];
-_config = [] call SHEMS_fnc_talent;
+_config = [] call life_fnc_talentCfg;
 {
 	_need = _x select 2;
 	diag_log format ["MARK 1 NEED: %1 ITEM: %2", _need, _item];
