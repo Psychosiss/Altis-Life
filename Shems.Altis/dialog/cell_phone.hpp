@@ -5,7 +5,7 @@ class Life_cell_phone
 	movingEnable = false;
 	enableSimulation = true;
 	onLoad = "[] spawn life_fnc_cellphone";
-	
+
 	class controlsBackground 
 	{
 		class Life_RscTitleBackground:Life_RscText 
@@ -20,7 +20,7 @@ class Life_cell_phone
 		
 		class MainBackground:Life_RscText 
 		{
-			colorBackground[] = {0, 0, 0, 0.7};
+			colorBackground[] = {0,0,0,0.7};
 			idc = -1;
 			x = 0.1;
 			y = 0.2 + (11 / 250);
@@ -80,9 +80,10 @@ class Life_cell_phone
 		class PlayerList : Life_RscCombo 
 		{
 			idc = 3004;
-			
-			x = 0.11; y = 0.4;
-			w = 0.2; h = (1 / 25);
+			x = 0.11; 
+			y = 0.4;
+			w = 0.2; 
+			h = (1 / 25);
 		};
 
 		class TextCopButton : life_RscButtonMenu 
@@ -90,7 +91,7 @@ class Life_cell_phone
 			idc = 3016;
 			text = "$STR_CELL_TextPolice";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			onButtonClick = "[] call fnc_cell_textcop";
+			onButtonClick = "[] call fnc_cell_textcop;";
 			
 			x = 0.32;
 			y = 0.35;
@@ -103,7 +104,7 @@ class Life_cell_phone
 			idc = 3017;
 			text = "$STR_CELL_TextAdmins";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			onButtonClick = "[] call fnc_cell_textadmin";
+			onButtonClick = "[] call fnc_cell_textadmin;";
 			
 			x = 0.53;
 			y = 0.35;
@@ -116,7 +117,7 @@ class Life_cell_phone
 			idc = 3020;
 			text = "$STR_CELL_AdminMsg";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			onButtonClick = "[] call fnc_cell_adminmsg";
+			onButtonClick = "[] call fnc_cell_adminmsg;";
 			
 			x = 0.32;
 			y = 0.4;
@@ -129,7 +130,7 @@ class Life_cell_phone
 			idc = 3021;
 			text = "$STR_CELL_AdminMSGAll";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			onButtonClick = "[] call fnc_cell_adminmsgall";
+			onButtonClick = "[] call fnc_cell_adminmsgall;";
 			
 			x = 0.53;
 			y = 0.4;
@@ -142,7 +143,7 @@ class Life_cell_phone
 			idc = 3022;
 			text = "$STR_CELL_EMSRequest";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			onButtonClick = "[] call fnc_cell_emsrequest";
+			onButtonClick = "[] call fnc_cell_emsrequest;";
 			
 			x = 0.11;
 			y = 0.45;

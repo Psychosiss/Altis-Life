@@ -1,5 +1,3 @@
-#define COLOR_HALF_BLACK {0,0,0,0.5}
-
 class playerHUD
 {
 	idd=-1;
@@ -21,7 +19,7 @@ class playerHUD
 			y = safeZoneY+safeZoneH-0.510;
 			w = 0.05; 
 			h = 0.06;
-			colorBackground[] = COLOR_HALF_BLACK;
+			colorBackground[] = {0,0,0,0.5};
 		};
 
 		class waterHIcon : life_RscPicture 
@@ -32,7 +30,7 @@ class playerHUD
 			y = safeZoneY+safeZoneH-0.445;
 			w = 0.05; 
 			h = 0.06;
-			colorBackground[] = COLOR_HALF_BLACK;
+			colorBackground[] = {0,0,0,0.5};
 		};
 			
 		class healthHIcon : life_RscPicture
@@ -43,7 +41,7 @@ class playerHUD
 			y = safeZoneY+safeZoneH-0.380;
 			w = 0.05; 
 			h = 0.06;
-			colorBackground[] = COLOR_HALF_BLACK;
+			colorBackground[] = {0,0,0,0.5};
 		};
 	};
 
@@ -61,7 +59,7 @@ class playerHUD
 			sizeEx=0.03;
 			size=1;
 			font="PuristaSemibold";
-			colorBackground[] = COLOR_HALF_BLACK;
+			colorBackground[] = {0,0,0,0.5};
 			colorText[] = {1,1,1,1};
 			shadow=true;
 			text="";
@@ -79,7 +77,7 @@ class playerHUD
 			sizeEx=0.03;
 			size=1;
 			font="PuristaSemibold";
-			colorBackground[] = COLOR_HALF_BLACK;
+			colorBackground[] = {0,0,0,0.5};
 			colorText[] = {1,1,1,1};
 			shadow=true;
 			text="";
@@ -97,7 +95,7 @@ class playerHUD
 			sizeEx=0.03;
 			size=1;
 			font="PuristaSemibold";
-			colorBackground[] = COLOR_HALF_BLACK;
+			colorBackground[] = {0,0,0,0.5};
 			colorText[] = {1,1,1,1};
 			shadow=true;
 			text="";

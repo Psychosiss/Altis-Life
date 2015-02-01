@@ -107,7 +107,7 @@ life_carryWeight = 0;
 life_cash = 0;
 
 [] call life_fnc_hudUpdate;
-[[player,life_sidechat,playerSide],"TON_fnc_managesc",false,false] spawn life_fnc_MP;
+//[[player,life_sidechat,playerSide],"TON_fnc_managesc",false,false] spawn life_fnc_MP;
 
 [0] call SOCK_fnc_updatePartial;
 [3] call SOCK_fnc_updatePartial;

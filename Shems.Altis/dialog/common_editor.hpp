@@ -1,8 +1,3 @@
-///////////////////////////////////////////////////////////////////////////
-/// Styles
-///////////////////////////////////////////////////////////////////////////
-
-// Control types
 #define CT_STATIC           0
 #define CT_BUTTON           1
 #define CT_EDIT             2
@@ -36,8 +31,6 @@
 #define CT_MAP_MAIN         101
 #define CT_LISTNBOX         102
 #define CT_CHECKBOX         77
-
-// Static styles
 #define ST_POS            0x0F
 #define ST_HPOS           0x03
 #define ST_VPOS           0x0C
@@ -47,7 +40,6 @@
 #define ST_DOWN           0x04
 #define ST_UP             0x08
 #define ST_VCENTER        0x0C
-
 #define ST_TYPE           0xF0
 #define ST_SINGLE         0x00
 #define ST_MULTI          0x10
@@ -61,53 +53,30 @@
 #define ST_TILE_PICTURE   0x90
 #define ST_WITH_RECT      0xA0
 #define ST_LINE           0xB0
-
 #define ST_SHADOW         0x100
 #define ST_NO_RECT        0x200
 #define ST_KEEP_ASPECT_RATIO  0x800
-
 #define ST_TITLE          ST_TITLE_BAR + ST_CENTER
-
-// Slider styles
 #define SL_DIR            0x400
 #define SL_VERT           0
 #define SL_HORZ           0x400
-
 #define SL_TEXTURES       0x10
-
-// progress bar 
 #define ST_VERTICAL       0x01
 #define ST_HORIZONTAL     0
-
-// Listbox styles
 #define LB_TEXTURES       0x10
 #define LB_MULTI          0x20
-
-// Tree styles
 #define TR_SHOWROOT       1
 #define TR_AUTOCOLLAPSE   2
-
-// MessageBox styles
 #define MB_BUTTON_OK      1
 #define MB_BUTTON_CANCEL  2
 #define MB_BUTTON_USER    4
 
-
-///////////////////////////////////////////////////////////////////////////
-/// Base Classes
-///////////////////////////////////////////////////////////////////////////
 class RscText
 {
 	access = 0;
 	type = 0;
 	idc = -1;
-	colorBackground[] = 
-	{
-		0,
-		0,
-		0,
-		0
-	};
+	colorBackground[] = {0,0,0,0};
 	colorText[] = 
 	{
 		1,

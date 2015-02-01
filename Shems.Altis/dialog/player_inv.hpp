@@ -32,7 +32,7 @@ class playerSettings
 		{
 			colorBackground[] = {0,0,0,0};
 			idc = -1;
-			text = "$STR_PM_Title";
+			text = "Menu";
 			x = 0.1;
 			y = 0.2;
 			w = 0.8;
@@ -64,7 +64,7 @@ class playerSettings
 		{
 			idc = -1;
 			colorBackground[] = {0.5,0,0,0.5};
-			text = "$STR_PM_cItems";
+			text = "Inventaire";
 			sizeEx = 0.04;
 			x = 0.62; 
 			y = 0.26;
@@ -76,7 +76,7 @@ class playerSettings
 		{
 			idc = -1;
 			colorBackground[] = {0.5,0,0,0.5};
-			text = "$STR_PM_Licenses";
+			text = "Licenses";
 			sizeEx = 0.04;
 			x = 0.336; 
 			y = 0.26;
@@ -88,7 +88,7 @@ class playerSettings
 		{
 			idc = -1;
 			colorBackground[] = {0.5,0,0,0.5};
-			text = "$STR_PM_MoneyStats";
+			text = "Argent";
 			sizeEx = 0.04;
 			x = 0.11;
 			y = 0.26;
@@ -129,9 +129,9 @@ class playerSettings
 		class moneyDrop : Life_RscButtonMenu
 		{
 			idc = 2001;
-			text = "$STR_Global_Give";
+			text = "Donner";
 			colorBackground[] = {0.5,0,0,0.5};
-			onButtonClick = "[] call life_fnc_giveMoney";
+			onButtonClick = "[] call life_fnc_giveMoney;";
 			sizeEx = 0.025;
 			x = 0.135; 
 			y = 0.50;
@@ -161,7 +161,7 @@ class playerSettings
 		class DropButton : life_RscButtonMenu 
 		{
 			idc = 2002;
-			text = "$STR_Global_Give";
+			text = "Donner";
 			colorBackground[] = {0.5,0,0,0.5};
 			onButtonClick = "[] call life_fnc_giveItem;";
 			x = 0.765;
@@ -172,7 +172,7 @@ class playerSettings
 		
 		class UseButton : life_RscButtonMenu 
 		{
-			text = "$STR_Global_Use";
+			text = "Utiliser";
 			colorBackground[] = {0.5,0,0,0.5};
 			onButtonClick = "[] call life_fnc_useItem;";
 			x = 0.62;
@@ -183,7 +183,7 @@ class playerSettings
 		
 		class RemoveButton : life_RscButtonMenu 
 		{
-			text = "$STR_Global_Remove";
+			text = "Jeter";
 			colorBackground[] = {0.5,0,0,0.5};
 			onButtonClick = "[player,false] spawn life_fnc_dropItemsFloor;";
 			x = 0.475;
@@ -196,7 +196,7 @@ class playerSettings
 		{
 			idc = -1;
 			text = "Fermer";
-			onButtonClick = "closeDialog 0;";
+			onButtonClick = "closeDialog 0; [] call SOCK_fnc_updateRequest;";
 			x = 0.1;
 			y = 0.8 - (1 / 25);
 			w = (6.25 / 40);
@@ -206,7 +206,7 @@ class playerSettings
 		class ButtonSettings : life_RscButtonMenu 
 		{
 			idc = -1;
-			text = "$STR_Global_Settings";
+			text = "Config";
 			onButtonClick = "[] call life_fnc_settingsMenu;";
 			x = 0.1 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.8 - (1 / 25);
@@ -217,7 +217,7 @@ class playerSettings
 		class ButtonMyGang : Life_RscButtonMenu 
 		{
 			idc = 2011;
-			text = "$STR_PM_MyGang";
+			text = "Gang";
 			onButtonClick = "if(isNil ""life_action_gangInUse"") then {if(isNil {(group player) getVariable ""gang_owner""}) then {createDialog ""Life_Create_Gang_Diag"";} else {[] spawn life_fnc_gangMenu;};};";
 			x = 0.1 + (6.25 / 19.8) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.8 - (1 / 25);
@@ -251,8 +251,8 @@ class playerSettings
 		class ButtonGangList : Life_RscButtonMenu 
 		{
 			idc = 2012;
-			text = "$STR_PM_WantedList";
-			onButtonClick = "[] call life_fnc_wantedMenu";
+			text = "Interpol";
+			onButtonClick = "[] call life_fnc_wantedMenu;";
 			x = 0.1 + (6.25 / 19.8) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.8 - (1 / 25);
 			w = (6.25 / 40);
@@ -262,7 +262,7 @@ class playerSettings
 		class ButtonKeys : Life_RscButtonMenu 
 		{
 			idc = 2013;
-			text = "$STR_PM_KeyChain";
+			text = "Porte-clés";
 			onButtonClick = "createDialog ""Life_key_management"";";
 			x = 0.26 + (6.25 / 19.8) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.8 - (1 / 25);
@@ -273,7 +273,7 @@ class playerSettings
 		class ButtonCell : Life_RscButtonMenu 
 		{
 			idc = 2014;
-			text = "$STR_PM_CellPhone";
+			text = "Téléphone";
 			//onButtonClick = "[] call life_fnc_cellphone2;";
 			onButtonClick = "if (player getVariable[""restrained"",false]) then {hint ""Vous êtes mennoté!"";} else {[] call life_fnc_cellphone2;};";
 			x = 0.42 + (6.25 / 19.8) + (1 / 250 / (safezoneW / safezoneH));
@@ -285,7 +285,7 @@ class playerSettings
 		class ButtonSyncData : life_RscButtonMenu 
 		{
 			idc = -1;
-			text = "$STR_PM_SyncData";
+			text = "Sauver";
 			onButtonClick = "[] call SOCK_fnc_syncData;";
 			x = 0.1;
 			y = 0.805;
@@ -318,7 +318,7 @@ class playerSettings
 		class ButtonAdminMenu : Life_RscButtonMenu 
 		{
 			idc = 2021;
-			text = "$STR_PM_AdminMenu";
+			text = "Admin";
 			onButtonClick = "createDialog ""life_admin_menu"";";
 			x = 0.26 + (6.25 / 19.8) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.805;
@@ -340,7 +340,7 @@ class playerSettings
 		class ButtonCraft : Life_RscButtonMenu 
 		{
 			idc = 2025;
-			text = "$STR_PM_Craft";
+			text = "Craft";
 			onButtonClick = "createDialog ""Life_craft"";";
 			x = 0.1;
 			y = 0.85;

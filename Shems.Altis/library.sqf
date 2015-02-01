@@ -46,7 +46,10 @@ KRON_StrRight =
 	_len=_this select 1;
 	_arr=[_in] call KRON_StrToArray;
 	_out="";
-	if (_len>(count _arr)) then {_len=count _arr};
+	if (_len>(count _arr)) then 
+	{
+		_len=count _arr
+	};
 	for "_i" from ((count _arr)-_len) to ((count _arr)-1) do 
 	{
 		_out=_out + (_arr select _i);
@@ -61,10 +64,17 @@ KRON_StrMid =
 	_pos=abs(_this select 1);
 	_arr=[_in] call KRON_StrToArray;
 	_len=count(_arr);
-	if ((count _this)>2) then {_len=(_this select 2)};
+	if ((count _this)>2) then 
+	{
+		_len=(_this select 2)
+	};
 	_out="";
-	if ((_pos+_len)>=(count _arr)) then {_len=(count _arr)-_pos};
-	if (_len>0) then {
+	if ((_pos+_len)>=(count _arr)) then 
+	{
+		_len=(count _arr)-_pos
+	};
+	if (_len>0) then 
+	{
 		for "_i" from _pos to (_pos+_len-1) do 
 		{
 			_out=_out + (_arr select _i);
@@ -318,7 +328,8 @@ KRON_getArgRev =
 	_out="";
 	if ((count _this)>2) then {_out=_this select 2};
 	_arr=[_in] call KRON_ArrayToUpper;
-	if ((count _arr)>0) then {
+	if ((count _arr)>0) then 
+	{
 		for "_i" from 0 to (count _in)-1 do 
 		{
 			_as = _arr select _i;
@@ -353,7 +364,10 @@ SHEMS_playerByName =
 	_name = [_this,0,"",[""]] call BIS_fnc_param;
 	_unit = objNull;
 	{
-		if(name _x == _name) then {_unit = _x;};
+		if(name _x == _name) then 
+		{
+			_unit = _x;
+		};
 	} forEach playableUnits;
 	_unit
 };
@@ -363,7 +377,10 @@ SHEMS_playerByUID =
 	_pid = [_this,0,"",[""]] call BIS_fnc_param;
 	_unit = objNull;
 	{
-		if(getPlayerUID _x == _pid) then {_unit = _x;};
+		if(getPlayerUID _x == _pid) then 
+		{
+			_unit = _x;
+		};
 	} forEach playableUnits;
 	_unit
 };

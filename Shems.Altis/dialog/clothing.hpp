@@ -90,7 +90,7 @@ class Life_Clothing
 		{
 			idc = -1;
 			text = "Fermer";
-			onButtonClick = "closeDialog 0;";
+			onButtonClick = "closeDialog 0;  [] call SOCK_fnc_updateRequest;";
 			x = 0.161 + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.54 - (1 / 25);
 			w = (6.25 / 40);

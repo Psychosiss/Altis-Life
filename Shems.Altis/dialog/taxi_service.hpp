@@ -4,7 +4,7 @@ class Life_taxi_menu
 	name= "life_taxi_menu";
 	movingEnable = false;
 	enableSimulation = true;
-	
+
 	class controlsBackground 
 	{
 		class Life_RscTitleBackground:Life_RscText 
@@ -40,15 +40,17 @@ class Life_taxi_menu
 			w = 1.0;
 			h = (1 / 25);
 		};
-		
+
 		class LocationList : Life_RscListBox 
 		{
 			idc = 48402;
 			text = "";
 			sizeEx = 0.035;
 			colorBackground[] = {0,0,0,0};
-			x = 0.12; y = 0.26;
-			w = 0.96; h = 0.4;
+			x = 0.12; 
+			y = 0.26;
+			w = 0.96; 
+			h = 0.4;
 		};
 
 		class CloseButtonKey : Life_RscButtonMenu 
@@ -61,7 +63,7 @@ class Life_taxi_menu
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
-		
+	
 		class BuyFare : life_RscButtonMenu 
 		{
 			idc = -1;
@@ -72,7 +74,7 @@ class Life_taxi_menu
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
-		
+
 		class BuyFareSpeedy : life_RscButtonMenu 
 		{
 			idc = -1;

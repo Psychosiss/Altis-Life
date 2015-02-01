@@ -5,7 +5,7 @@ class Life_Vehicle_Shop_v2
 	movingEnabled = 0;
 	enableSimulation = 1;
 	onLoad = "ctrlShow [2330,false];";
-	
+
 	class controlsBackground
 	{
 		class Life_RscTitleBackground : Life_RscText
@@ -17,7 +17,7 @@ class Life_Vehicle_Shop_v2
 			w = 0.8;
 			h = (1 / 25);
 		};
-		
+
 		class MainBackground : Life_RscText
 		{
 			colorBackground[] = {0,0,0,0.7};
@@ -27,7 +27,7 @@ class Life_Vehicle_Shop_v2
 			w = 0.8;
 			h = 0.7 - (22 / 250);
 		};
-		
+
 		class Title : Life_RscTitle
 		{
 			idc = 2301;
@@ -37,7 +37,7 @@ class Life_Vehicle_Shop_v2
 			w = 0.8;
 			h = (1 / 25);
 		};
-		
+
 		class VehicleTitleBox : Life_RscText
 		{
 			idc = -1;
@@ -47,7 +47,7 @@ class Life_Vehicle_Shop_v2
 			w = 0.3;
 			h = (1 / 25);
 		};
-		
+
 		class VehicleInfoHeader : Life_RscText
 		{
 			idc = 2330;
@@ -57,12 +57,12 @@ class Life_Vehicle_Shop_v2
 			w = 0.46;
 			h = (1 / 25);
 		};
-		
+
 		class CloseBtn : Life_RscButtonMenu
 		{
 			idc = -1;
-			text = "$STR_Global_Close";
-			onButtonClick = "closeDialog 0;";
+			text = "Fermer";
+			onButtonClick = "closeDialog 0;  [] call SOCK_fnc_updateRequest;";
 			x = -0.06 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.9 - (1 / 25);
 			w = (6.25 / 40);

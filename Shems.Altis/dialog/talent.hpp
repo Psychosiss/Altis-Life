@@ -57,10 +57,11 @@ class life_talent
 		{
 			idc = 969;
 			sizeEx = 0.030;
-			onLBSelChanged = "[] spawn life_fnc_talentRefresh";
+			onLBSelChanged = "[] spawn life_fnc_talentRefresh;";
 			x = 0.105;
 			y = 0.31;
-			w = 0.275; h = 0.44;
+			w = 0.275; 
+			h = 0.44;
 		};
 
 		class materialListHeader : Life_RscText
@@ -69,8 +70,10 @@ class life_talent
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			text = "Description";
 			sizeEx = 0.04;
-			x = 0.395; y = 0.26;
-			w = 0.275; h = 0.04;
+			x = 0.395; 
+			y = 0.26;
+			w = 0.275; 
+			h = 0.04;
 		};
 
 		class materialList : Life_RscControlsGroup
@@ -89,7 +92,8 @@ class life_talent
 					text = "";
 					x = 0;
 					y = 0;
-					w = 0.27; h = 0.44;
+					w = 0.27; 
+					h = 0.44;
 				};
 			};
 		};

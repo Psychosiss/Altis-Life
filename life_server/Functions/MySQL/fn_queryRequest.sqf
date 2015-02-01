@@ -38,12 +38,12 @@ _tmp = _queryResult select 2;
 _queryResult set[2,[_tmp] call DB_fnc_numberSafe];
 _tmp = _queryResult select 3;
 _queryResult set[3,[_tmp] call DB_fnc_numberSafe];
+
 _new = [(_queryResult select 6)] call DB_fnc_mresToArray;
 if(typeName _new == "STRING") then 
 {
 	_new = call compile format["%1", _new];
 };
-
 _queryResult set[6,_new];
 
 _old = _queryResult select 6;
@@ -124,18 +124,16 @@ switch (_side) do
 			_old set[_i,[_data select 0, ([_data select 1,1] call DB_fnc_numberSafe),([_data select 2,1] call DB_fnc_numberSafe)]];
 		};
 
-		/*
 		_new = [(_queryResult select 10)] call DB_fnc_mresToArray;
 		if(typeName _new == "STRING") then 
 		{
 			_new = call compile format["%1", _new];
 		};
 		_queryResult set[10,_new];
-		*/
 	}:
 };
 
 _keyArr = missionNamespace getVariable [format["%1_KEYS_%2",_uid,_side],[]];
-_queryResult set[12,_keyArr];
+_queryResult set[15,_keyArr]; //12
 
 [_queryResult,"SOCK_fnc_requestReceived",_ownerID,false] spawn life_fnc_MP;

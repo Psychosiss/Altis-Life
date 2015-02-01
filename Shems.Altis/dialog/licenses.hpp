@@ -84,7 +84,7 @@ class LicenseShop
 		class ButtonClose : life_RscButtonMenu 
 		{
 			idc = -1;
-			text = "$STR_Global_Close";
+			text = "Fermer";
 			onButtonClick = "closeDialog 0;";
 			x = 0.1;
 			y = 0.8 - (1 / 25);

@@ -67,7 +67,7 @@ class Chop_Shop
 		{
 			idc = -1;
 			text = "$STR_Global_Close";
-			onButtonClick = "closeDialog 0";
+			onButtonClick = "closeDialog 0;  [] call SOCK_fnc_updateRequest;";
 			x = 0.1;
 			y = 0.8 - (1 / 25);
 			w = (6.25 / 40);

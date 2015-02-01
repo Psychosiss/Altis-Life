@@ -20,7 +20,7 @@ class Life_Admin_Compensate
 		
 		class MainBackground:Life_RscText 
 		{
-			colorBackground[] = {0, 0, 0, 0.7};
+			colorBackground[] = {0,0,0,0.7};
 			idc = -1;
 			x = 0.1;
 			y = 0.2 + (11 / 250);
@@ -38,14 +38,15 @@ class Life_Admin_Compensate
 			text = "";
 			x = 0.1;
 			y = 0.25;
-			w = 0.5; h = 0.11;
+			w = 0.5; 
+			h = 0.11;
 		};
 		
 		class Title : Life_RscTitle 
 		{
-			colorBackground[] = {0, 0, 0, 0};
+			colorBackground[] = {0,0,0,0};
 			idc = -1;
-			text = "$STR_Admin_Compensate";
+			text = "Compensation";
 			x = 0.1;
 			y = 0.2;
 			w = 0.5;
@@ -55,7 +56,7 @@ class Life_Admin_Compensate
 		class AdminCloseComp : Life_RscButtonMenu 
 		{
 			idc = -1;
-			text = "$STR_Global_Close";
+			text = "Fermer";
 			onButtonClick = "closeDialog 0;";
 			x = -0.06 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.5 - (1 / 25);
@@ -66,7 +67,7 @@ class Life_Admin_Compensate
 		class AdminCompensVer : Life_RscButtonMenu 
 		{
 			idc = -1;
-			text = "$STR_Admin_Compensate";
+			text = "Compenser";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			onButtonClick = "[] spawn life_fnc_adminCompensate;";
 			x = 0.27;

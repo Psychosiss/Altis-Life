@@ -35,7 +35,7 @@ class life_admin_menu
 		{
 			colorBackground[] = {0,0,0,0};
 			idc = 2901;
-			text = "$STR_Admin_Title";
+			text = "Menu Admin";
 			x = 0.1;
 			y = 0.2;
 			w = 0.6;
@@ -47,7 +47,7 @@ class life_admin_menu
 			idc = 2902;
 			text = "";
 			sizeEx = 0.035;
-			onLBSelChanged = "[_this] spawn life_fnc_adminQuery";
+			onLBSelChanged = "[_this] spawn life_fnc_adminQuery;";
 			x = 0.12; 
 			y = 0.26;
 			w = 0.30; 

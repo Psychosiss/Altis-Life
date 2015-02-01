@@ -4,7 +4,7 @@ class Gold_Safe
 	name = "Gold_Safe";
 	movingEnable = false;
 	enableSimulation = true;
-	
+
 	class controlsBackground
 	{
 		class RscTitleBackground : Life_RscText
@@ -49,11 +49,12 @@ class Gold_Safe
 		{
 			idc = -1;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			text = "$STR_Trunk_TInventory";
+			text = "Coffre";
 			sizeEx = 0.04;
-			
-			x = 0.11; y = 0.25;
-			w = 0.3; h = 0.04;
+			x = 0.11; 
+			y = 0.25;
+			w = 0.3; 
+			h = 0.04;
 		};
 	};
 	
@@ -64,9 +65,10 @@ class Gold_Safe
 			idc = 3502;
 			text = "";
 			sizeEx = 0.030;
-
-			x = 0.11; y = 0.29;
-			w = 0.3; h = 0.42;
+			x = 0.11; 
+			y = 0.29;
+			w = 0.3; 
+			h = 0.42;
 		};
 		
 		class GoldEdit : Life_RscEdit
@@ -74,14 +76,16 @@ class Gold_Safe
 			idc = 3505;
 			text = "1";
 			sizeEx = 0.030;
-			x = 0.11; y = 0.72;
-			w = 0.3; h = 0.03;
+			x = 0.11; 
+			y = 0.72;
+			w = 0.3; 
+			h = 0.03;
 		};
 		
 		class TakeGold : Life_RscButtonMenu
 		{
 			idc = -1;
-			text = "$STR_Trunk_Take";
+			text = "Prendre";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			onButtonClick = "[] call life_fnc_goldTake;";
 			x = 0.19; y = 0.78;
@@ -92,7 +96,7 @@ class Gold_Safe
 		class ButtonClose : Life_RscButtonMenu 
 		{
 			idc = -1;
-			text = "$STR_Global_Close";
+			text = "Fermer";
 			onButtonClick = "closeDialog 0;";
 			x = 0.1;
 			y = 0.9 - (1 / 25);

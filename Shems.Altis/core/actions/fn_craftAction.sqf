@@ -14,8 +14,8 @@ _config = [_itemFilter] call life_fnc_craftCfg;
 	{
 		_matsNeed = _x select 1;
 		_invSize = count _matsNeed;
-		for [{_i=0},{_i<_invSize-1},{_i=_i+2}] do {
-
+		for [{_i=0},{_i<_invSize-1},{_i=_i+2}] do 
+		{
 			_str = [_matsNeed select _i] call life_fnc_varToStr;
 			_matsNum = _matsNeed select _i+1;
 
@@ -26,30 +26,12 @@ _config = [_itemFilter] call life_fnc_craftCfg;
 } foreach (_config select 1);
 
 if(!_allMaterial) exitWith {hint localize "STR_PM_NoMaterial";};
-
 if((count _matsNeed) == 0) exitWith {};
-
-if(_itemFilter == "backpack" && backpack player != "") exitWith{
-		hint localize "STR_CRAFT_AR_Backpack";
-};
-
-if(_itemFilter == "uniform" && uniform player != "") exitWith{
-		hint localize "STR_CRAFT_AR_Uniform";
-};
-
-if(_itemFilter == "item") then 
-{
-	_weight = ([_item] call life_fnc_itemWeight);
-};
-if(_itemFilter == "item" && (life_carryWeight + _weight) > life_maxWeight) exitWith 
-{
-	hint localize "STR_NOTF_NoRoom";
-};
-
-if(_itemFilter == "weapon" && !(player canAdd _newItem) || currentWeapon player != "") exitWith 
-{
-	hint localize "STR_NOTF_NoRoom";
-};
+if(_itemFilter == "backpack" && backpack player != "") exitWith {hint "Vous avez déjà un sac à dos ! Posez le votre avant d'en faire un nouveau.";};
+if(_itemFilter == "uniform" && uniform player != "") exitWith {hint "Vous avez déjà un uniforme ! Posez le votre avant d'en faire un nouveau.";};
+if(_itemFilter == "item") then {_weight = ([_item] call life_fnc_itemWeight);};
+if(_itemFilter == "item" && (life_carryWeight + _weight) > life_maxWeight) exitWith {hint "Vous n'avez pas assez de place.";};
+if(_itemFilter == "weapon" && !(player canAdd _newItem) || currentWeapon player != "") exitWith {hint localize "Vous n'avez pas assez de place.";};
 
 _oldItem = _matsNeed;
 _newItem = _item;
@@ -62,7 +44,7 @@ if(_itemFilter == "item") then
 	_itemName = _itemInfo select 1;
 };
 
-_upp = format["Crafting %1",_itemName];
+_upp = format["Fabrication %1",_itemName];
 closeDialog 0;
 
 5 cutRsc ["life_progress","PLAIN"];
@@ -100,7 +82,7 @@ if(_itemFilter == "backpack") then
 	{
 		player addBackpack _newItem;
 	} else {
-		hint localize "STR_CRAFT_AR_Backpack";
+		hint "Vous avez déjà un sac à dos ! Posez le votre avant d'en faire un nouveau.";
 		life_is_processing = false;
 	};
 };
@@ -117,7 +99,7 @@ if(_itemFilter == "uniform") then
 	{
 		player addUniform _newItem;
 	} else {
-		hint localize "STR_CRAFT_AR_Uniform";
+		hint "Vous avez déjà un uniforme ! Posez le votre avant d'en faire un nouveau.";
 		life_is_processing = false;
 	};
 };
@@ -145,5 +127,5 @@ if(_itemFilter == "weapon") then
 };
 
 5 cutText ["","PLAIN"];
-titleText[format[localize "STR_CRAFT_Process",_itemName],"PLAIN"];
+titleText[format["Vous avez fabriqué : %1",_itemName],"PLAIN"];
 life_is_processing = false;

@@ -119,11 +119,11 @@ if (playerside == west) then
 	};
 };
 
-if(count (_this select 14) > 0) then //12
+if(count (_this select 15) > 0) then //12
 {
 	{
 		life_vehicles pushBack _x;
-	} foreach (_this select 14); //12
+	} foreach (_this select 15); //12
 };
 
 life_session_completed = true;

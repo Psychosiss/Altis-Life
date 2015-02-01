@@ -72,7 +72,7 @@ class Life_impound_menu
 		class RentCar : Life_RscButtonMenu
 		{
 			idc = -1;
-			text = "$STR_Global_Retrieve";
+			text = "Récupérer";
 			onButtonClick = "[] call life_fnc_unimpound;";
 			x = 0.1 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.9 - (1 / 25);
@@ -83,7 +83,7 @@ class Life_impound_menu
 		class BuyCar : life_RscButtonMenu 
 		{
 			idc = -1;
-			text = "$STR_Global_Sell";
+			text = "Vendre";
 			onButtonClick = "[] call life_fnc_sellGarage;";
 			x = 0.26 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.9 - (1 / 25);

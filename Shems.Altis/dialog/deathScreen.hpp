@@ -4,11 +4,7 @@ class DeathScreen
 	name = "Life_Death_Screen";
 	movingEnabled = false;
 	enableSimulation = true;
-	
-	class controlsBackground
-	{
-	};
-	
+	class controlsBackground {};
 	class Controls
 	{
 		class MedicsOnline : Life_RscText
@@ -21,7 +17,7 @@ class DeathScreen
 			w = 0.8;
 			h = (1 / 25);
 		};
-		
+
 		class MedicsNearby : Life_RscText
 		{
 			idc = 7305;
@@ -32,7 +28,7 @@ class DeathScreen
 			w = 0.8;
 			h = (1 / 25);
 		};
-		
+
 		class RespawnBtn : Life_RscButtonMenu
 		{
 			idc = 7302;
@@ -48,7 +44,7 @@ class DeathScreen
 				align = "center";
 			};
 		};
-		
+
 		class MedicBtn : Life_RscButtonMenu
 		{
 			idc = 7303;
@@ -64,7 +60,7 @@ class DeathScreen
 				align = "center";
 			};
 		};
-		
+
 		class respawnTime : Life_RscText
 		{
 			idc = 7301;

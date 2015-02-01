@@ -67,7 +67,7 @@ class Life_atm_management
 			idc = -1;
 			text = "$STR_ATM_Withdraw";
 			colorBackground[] = {0.5,0,0,0.5};
-			onButtonClick = "[] call life_fnc_bankWithdraw";
+			onButtonClick = "[] call life_fnc_bankWithdraw;";
 			x = 0.432;
 			y = 0.46;
 			w = (6 / 40);
@@ -79,7 +79,7 @@ class Life_atm_management
 			idc = -1;
 			text = "$STR_ATM_Deposit";
 			colorBackground[] = {0.5,0,0,0.5};
-			onButtonClick = "[] call life_fnc_bankDeposit";
+			onButtonClick = "[] call life_fnc_bankDeposit;";
 			x = 0.432;
 			y = 0.512;
 			w = (6 / 40);
@@ -111,7 +111,7 @@ class Life_atm_management
 			idc = -1;
 			text = "$STR_ATM_Transfer";
 			colorBackground[] = {0.5,0,0,0.5};
-			onButtonClick = "[] call life_fnc_bankTransfer";
+			onButtonClick = "[] call life_fnc_bankTransfer;";
 			x = 0.432;
 			y = 0.63;
 			w = (5.30 / 40);
@@ -122,7 +122,7 @@ class Life_atm_management
 		{
 			idc = 2705;
 			text = "Deposer au gang";
-			onButtonClick = "[] call life_fnc_gangDeposit";
+			onButtonClick = "[] call life_fnc_gangDeposit;";
 			y = .7; x = 0.365;
 			w = 0.275;
 		};
@@ -131,7 +131,7 @@ class Life_atm_management
 		{
 			idc = -1;
 			text = "Fermer";
-			onButtonClick = "closeDialog 0;";
+			onButtonClick = "closeDialog 0; [] call SOCK_fnc_updateRequest;";
 			x = 0.35;
 			y = 0.8 - (1 / 25);
 			w = (6.25 / 40);

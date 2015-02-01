@@ -45,7 +45,7 @@ class jail_time
 		{
 			idc = 2601;
 			sizeEx = 0.015;
-			text = "Minutes:";
+			text = "Minutes :";
 			x = 0.3;
 			y = 0.2 + (11 / 250);
 			w = 0.45; 
@@ -67,7 +67,7 @@ class jail_time
 		class CloseButtonKey : Life_RscButtonMenu 
 		{
 			idc = 2400;
-			text = "$STR_Global_Close";
+			text = "Fermer";
 			onButtonClick = "closeDialog 0;";
 			x = 0.45;
 			y = 0.40;
@@ -80,8 +80,10 @@ class jail_time
 			idc = 1400;
 			text = "15";
 			sizeEx = 0.030;
-			x = 0.40; y = 0.30;
-			w = 0.25; h = 0.03;
+			x = 0.40; 
+			y = 0.30;
+			w = 0.25; 
+			h = 0.03;
 		};
 	};
 };

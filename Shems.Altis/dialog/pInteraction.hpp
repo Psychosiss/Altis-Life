@@ -34,7 +34,7 @@ class pInteraction_Menu
 		{
 			colorBackground[] = {0,0,0,0};
 			idc = 37401;
-			text = "$STR_pInAct_Title";
+			text = "Interaction";
 			x = BGX;
 			y = BGY;
 			w = BGW;
@@ -47,7 +47,7 @@ class pInteraction_Menu
 		class ButtonClose : life_RscButtonMenu 
 		{
 			idc = -1;
-			text = "$STR_Global_Close";
+			text = "Fermer";
 			onButtonClick = "closeDialog 0;";
 			x = BGX;
 			y = 0.8 - (1 / 25);
@@ -209,7 +209,7 @@ class vInteraction_Menu
 		{
 			colorBackground[] = {0,0,0,0};
 			idc = 37401;
-			text = "$STR_vInAct_Title";
+			text = "Interaction";
 			x = BGX;
 			y = BGY;
 			w = BGW;
@@ -222,7 +222,7 @@ class vInteraction_Menu
 		class ButtonClose : life_RscButtonMenu 
 		{
 			idc = -1;
-			text = "$STR_Global_Close";
+			text = "Fermer";
 			onButtonClick = "closeDialog 0;";
 			x = BGX;
 			y = 0.65 - (1 / 25);

@@ -17,7 +17,7 @@
 			<Original>Utiliser</Original>
 		</Key>
 		<Key ID="STR_Global_Remove">
-			<Original>Supprimer</Original>
+			<Original>Jeter</Original>
 		</Key>
 		<Key ID="STR_Global_Settings">
 			<Original>Config</Original>
@@ -159,7 +159,7 @@
 			<Original>Rejoindre</Original>
 		</Key>
 		<Key ID="STR_Gang_UpgradeSlots">
-			<Original>Augmenter</Original>
+			<Original>+ Slots</Original>
 		</Key>
 		<Key ID="STR_Invite_Player">
 			<Original>Inviter</Original>
@@ -247,7 +247,7 @@
 	</Package>
 	<Package name="Key_Chain">
 		<Key ID="STR_Keys_Title">
-			<Original>Porte-clés</Original>
+			<Original>Trousseau</Original>
 		</Key>
 		<Key ID="STR_Keys_DropKey">
 			<Original>Lacher Clé</Original>
@@ -267,13 +267,13 @@
 			<Original>Licenses</Original>
 		</Key>
 		<Key ID="STR_PM_MoneyStats">
-			<Original>Votre Argent</Original>
+			<Original>Argent</Original>
 		</Key>
 		<Key ID="STR_PM_MyGang">
-			<Original>Mon Gang</Original>
+			<Original>Gang</Original>
 		</Key>
 		<Key ID="STR_PM_WantedList">
-			<Original>Wanted List</Original>
+			<Original>Interpol</Original>
 		</Key>
 		<Key ID="STR_PM_CellPhone">
 			<Original>Téléphone</Original>
@@ -698,7 +698,7 @@
 	</Package>
 	<Package name="Craft">
 		<Key ID="STR_CRAFT_Title">
-			<Original>Menu de Crafting</Original>
+			<Original>Menu de Fabrication</Original>
 		</Key>
 		<Key ID="STR_PM_CraftStats">
 			<Original>Objet à fabriquer</Original>
@@ -707,7 +707,7 @@
 			<Original>Materiaux requis</Original>
 		</Key>
 		<Key ID="STR_CRAFT_Button">
-			<Original>Craft !</Original>
+			<Original>Fabriquer</Original>
 		</Key>
 		<Key ID="STR_PM_NoMaterial">
 			<Original>Vous n'avez pas tous les matériaux requis !</Original>

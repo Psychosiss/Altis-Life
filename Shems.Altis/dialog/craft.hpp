@@ -20,7 +20,7 @@ class Life_craft
 
 		class MainBackground:Life_RscText 
 		{
-			colorBackground[] = {0, 0, 0, 0.7};
+			colorBackground[] = {0,0,0,0.7};
 			idc = -1;
 			x = 0.1;
 			y = 0.2 + (11 / 250);
@@ -33,9 +33,9 @@ class Life_craft
 	{
 		class Title : Life_RscTitle 
 		{
-			colorBackground[] = {0, 0, 0, 0};
+			colorBackground[] = {0,0,0,0};
 			idc = 667;
-			text = "$STR_CRAFT_Title";
+			text = "Menu de fabrication";
 			x = 0.1;
 			y = 0.2;
 			w = 0.6;
@@ -46,10 +46,12 @@ class Life_craft
 		{
 			idc = 668;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			text = "$STR_PM_CraftStats";
+			text = "Objet à fabriquer";
 			sizeEx = 0.04;
-			x = 0.105; y = 0.26;
-			w = 0.275; h = 0.04;
+			x = 0.105; 
+			y = 0.26;
+			w = 0.275; 
+			h = 0.04;
 		};
 
 		class craftList : life_RscListBox
@@ -66,10 +68,12 @@ class Life_craft
 		{
 			idc = 670;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			text = "$STR_PM_CraftMaterials";
+			text = "Materiaux requis";
 			sizeEx = 0.04;
-			x = 0.395; y = 0.26;
-			w = 0.275; h = 0.04;
+			x = 0.395; 
+			y = 0.26;
+			w = 0.275; 
+			h = 0.04;
 		};
 
 		class materialList : Life_RscControlsGroup
@@ -108,7 +112,7 @@ class Life_craft
 		class ButtonCraft : Life_RscButtonMenu 
 		{
 			idc = 674;
-			text = "$STR_CRAFT_Button";
+			text = "Fabriquer";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			onButtonClick = "if(!life_is_processing) then {[] spawn life_fnc_craftAction};";
 			x = 0.69;
@@ -121,7 +125,7 @@ class Life_craft
 		class CloseButtonKey : Life_RscButtonMenu 
 		{
 			idc = -1;
-			text = "$STR_Global_Close";
+			text = "Fermer";
 			onButtonClick = "closeDialog 0;";
 			x = 0.1;
 			y = 0.8 - (1 / 25);
