@@ -30,9 +30,8 @@ class SettingsMenu
 		class PlayerTagsHeader : Life_RscText
 		{
 			idc = -1;
-			text = "$STR_SM_PlayerTags";
+			text = "Tag du joueur";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
-			
 			x = 0.30;
 			y = 0.43;
 			w = 0.35;
@@ -42,7 +41,7 @@ class SettingsMenu
 		class SideChatHeader : PlayerTagsHeader
 		{
 			idc = -1;
-			text = "$STR_SM_SC";
+			text = "Paramètres du chat";
 			shadow = 0;
 			
 			y = 0.48;
@@ -51,8 +50,7 @@ class SettingsMenu
 		class RevealNearestHeader : PlayerTagsHeader
 		{
 			idc = -1;
-			text = "Reveal Nearest Objects";
-			
+			text = "Révéler objets proches";
 			y = 0.53;
 		};
 		
@@ -60,7 +58,7 @@ class SettingsMenu
 		{
 			idc = -1;
 			colorBackground[] = {0,0,0,0};
-			text = "$STR_SM_Title";
+			text = "Options";
 			x = 0.3;
 			y = 0.2;
 			w = 0.5;
@@ -73,39 +71,21 @@ class SettingsMenu
 		class VDonFoot : life_RscText
 		{
 			idc = -1;
-			text = "$STR_SM_onFoot";
-			
-			x = 0.32; y = 0.258;
-			w = 0.275; h = 0.04;
+			text = "A pied";
+			x = 0.32; 
+			y = 0.258;
+			w = 0.275; 
+			h = 0.04;
 		};
-		
-		class VDinCar : life_RscText
-		{
-			idc = -1;
-			text = "$STR_SM_inCar";
-			
-			x = 0.32; y = 0.305;
-			w = 0.275; h = 0.04;
-		};
-		
-		class VDinAir : life_RscText
-		{
-			idc = -1;
-			text = "$STR_SM_inAir";
-			
-			x = 0.32; y = 0.355;
-			w = 0.275; h = 0.04;
-		};
-		
+
 		class VD_onfoot_slider : life_RscXSliderH 
 		{
 			idc = 2901;
 			text = "";
 			onSliderPosChanged = "[0,_this select 1] call life_fnc_s_onSliderChange;";
-			tooltip = "$STR_SM_ToolTip1";
+			tooltip = "Distance de vue à pied";
 			x = 0.42;
 			y = 0.30 - (1 / 25);
-			
 			w = "9 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";
 			h = "1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 		};
@@ -114,20 +94,30 @@ class SettingsMenu
 		{
 			idc = 2902;
 			text = "";
-			
-			x = 0.70; y = 0.258;
-			w = 0.275; h = 0.04;
+			x = 0.70; 
+			y = 0.258;
+			w = 0.275; 
+			h = 0.04;
 		};
-		
+
+		class VDinCar : life_RscText
+		{
+			idc = -1;
+			text = "Voiture";
+			x = 0.32; 
+			y = 0.305;
+			w = 0.275; 
+			h = 0.04;
+		};
+
 		class VD_car_slider : life_RscXSliderH 
 		{
 			idc = 2911;
 			text = "";
 			onSliderPosChanged = "[1,_this select 1] call life_fnc_s_onSliderChange;";
-			tooltip = "$STR_SM_ToolTip2";
+			tooltip = "Distance de vue en voiture";
 			x = 0.42;
 			y = 0.35 - (1 / 25);
-			
 			w = "9 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";
 			h = "1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 		};
@@ -136,9 +126,20 @@ class SettingsMenu
 		{
 			idc = 2912;
 			text = "";
-			
-			x = 0.70; y = 0.31;
-			w = 0.275; h = 0.04;
+			x = 0.70; 
+			y = 0.31;
+			w = 0.275; 
+			h = 0.04;
+		};
+
+		class VDinAir : life_RscText
+		{
+			idc = -1;
+			text = "En l'air";
+			x = 0.32; 
+			y = 0.355;
+			w = 0.275; 
+			h = 0.04;
 		};
 		
 		class VD_air_slider : life_RscXSliderH 
@@ -146,10 +147,9 @@ class SettingsMenu
 			idc = 2921;
 			text = "";
 			onSliderPosChanged = "[2,_this select 1] call life_fnc_s_onSliderChange;";
-			tooltip = "$STR_SM_ToolTip3";
+			tooltip = "Distance de vue dans les airs";
 			x = 0.42;
 			y = 0.40 - (1 / 25);
-			
 			w = "9 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";
 			h = "1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 		};
@@ -158,15 +158,16 @@ class SettingsMenu
 		{
 			idc = 2922;
 			text = "";
-			
-			x = 0.70; y = 0.36;
-			w = 0.275; h = 0.04;
+			x = 0.70; 
+			y = 0.36;
+			w = 0.275; 
+			h = 0.04;
 		};
 		
 		class PlayerTagsONOFF : Life_RscActiveText
 		{
 			text = "ON";
-			tooltip = "Controls whether or not players will have name tags above their head.";
+			tooltip = "Contrôle si les joueurs auront des tags dessus de leur tête.";
 			idc = 2970;
 			sizeEx = 0.04;
 			x = 0.65;
@@ -174,6 +175,7 @@ class SettingsMenu
 			w = 0.275;
 		};
 		
+		/*
 		class SideChatONOFF : PlayerTagsONOFF
 		{
 			idc = 2971;
@@ -181,18 +183,19 @@ class SettingsMenu
 			action = "[] call life_fnc_sidechat;";
 			y = 0.48;
 		};
+		*/
 		
 		class RevealONOFF : PlayerTagsONOFF
 		{
-			tooltip = "Automatically reveals nearest objects within 15m, turn this setting off if you are experiencing performance issues.";
+			tooltip = "Révèle automatiquement les objets les plus proches dans les 15m, désactiver ce paramètre si vous rencontrez des problèmes de performance.";
 			idc = 2972;
 			y = 0.53;
 		};
 		
-		class ButtonClose : life_RscButtonMenu {
+		class ButtonClose : life_RscButtonMenu 
+		{
 			idc = -1;
-			//shortcuts[] = {0x00050000 + 2};
-			text = "$STR_Global_Close";
+			text = "Fermer";
 			onButtonClick = "closeDialog 0;";
 			x = 0.48;
 			y = 0.63 - (1 / 25);

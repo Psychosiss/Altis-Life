@@ -100,7 +100,7 @@ class Life_Clothing
 		class BuyButtonKey : Life_RscButtonMenu 
 		{
 			idc = -1;
-			text = "$STR_Global_Buy";
+			text = "Acheter";
 			onButtonClick = "[] call life_fnc_buyClothes;";
 			x = (1 / 250 / (safezoneW / safezoneH));
 			y = 0.54 - (1 / 25);

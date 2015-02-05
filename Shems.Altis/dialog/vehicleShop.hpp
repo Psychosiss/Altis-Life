@@ -72,7 +72,7 @@ class Life_Vehicle_Shop_v2
 		class RentCar : Life_RscButtonMenu
 		{
 			idc = -1;
-			text = "$STR_Global_RentVeh";
+			text = "Louer";
 			onButtonClick = "[false] spawn life_fnc_vehicleShopBuy;";
 			x = 0.1 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.9 - (1 / 25);
@@ -83,7 +83,7 @@ class Life_Vehicle_Shop_v2
 		class BuyCar : life_RscButtonMenu 
 		{
 			idc = 2309;
-			text = "$STR_Global_Buy";
+			text = "Acheter";
 			onButtonClick = "[true] spawn life_fnc_vehicleShopBuy;";
 			x = 0.26 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.9 - (1 / 25);
@@ -100,18 +100,21 @@ class Life_Vehicle_Shop_v2
 			text = "";
 			sizeEx = 0.04;
 			colorBackground[] = {0.1,0.1,0.1,0.9};
-			onLBSelChanged = "_this call life_fnc_vehicleShopLBChange";
-			
-			//Position & height
-			x = 0.11; y = 0.302;
-			w = 0.303; h = 0.49;
+			//onLBSelChanged = "_this call life_fnc_vehicleShopLBChange;";
+			onLBSelChanged = "[_this] call life_fnc_vehicleShopLBChange;";
+			x = 0.11; 
+			y = 0.302;
+			w = 0.303; 
+			h = 0.49;
 		};
 		
 		class ColorList : Life_RscCombo
 		{
 			idc = 2304;
-			x = 0.11; y = 0.8;
-			w = 0.303; h = 0.03;
+			x = 0.11; 
+			y = 0.8;
+			w = 0.303; 
+			h = 0.03;
 		};
 		
 		class vehicleInfomationList : Life_RscStructuredText
@@ -119,9 +122,10 @@ class Life_Vehicle_Shop_v2
 			idc = 2303;
 			text = "";
 			sizeEx = 0.035;
-			
-			x = 0.41; y = 0.3;
-			w = 0.5; h = 0.5;
+			x = 0.41; 
+			y = 0.3;
+			w = 0.5; 
+			h = 0.5;
 		};
 	};
 };

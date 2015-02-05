@@ -101,7 +101,7 @@ class life_talent
 		class Buttontalent : Life_RscButtonMenu 
 		{
 			idc = 973;
-			text = "$STR_talent_Button";
+			text = "Apprendre";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			onButtonClick = "if(!life_is_processing) then {[] spawn life_fnc_viewTalent};";
 			x = 0.69;

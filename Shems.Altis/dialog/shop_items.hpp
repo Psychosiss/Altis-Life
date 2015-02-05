@@ -19,7 +19,7 @@ class shops_menu
 		
 		class MainBackground:Life_RscText 
 		{
-			colorBackground[] = {0, 0, 0, 0.7};
+			colorBackground[] = {0,0,0,0.7};
 			idc = -1;
 			x = 0.1;
 			y = 0.2 + (11 / 250);
@@ -31,7 +31,7 @@ class shops_menu
 		{
 			idc = -1;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			text = "$STR_VS_SI";
+			text = "Magasin";
 			sizeEx = 0.04;
 			x = 0.12; 
 			y = 0.27;
@@ -43,7 +43,7 @@ class shops_menu
 		{
 			idc = -1;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			text = "$STR_VS_PI";
+			text = "Inventaire";
 			sizeEx = 0.04;
 			x = 0.60; 
 			y = 0.27;
@@ -108,7 +108,7 @@ class shops_menu
 		class ButtonAddG : Life_RscButtonMenu
 		{
 			idc = -1;
-			text = "$STR_VS_BuyItem";
+			text = "Acheter";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			onButtonClick = "[] spawn life_fnc_virt_buy;";
 			x = 0.16;
@@ -120,19 +120,19 @@ class shops_menu
 		class sellEdit : Life_RscEdit 
 		{
 			idc = 2405;
-			
 			text = "0";
 			sizeEx = 0.030;
-			x = 0.60; y = 0.66;
-			w = 0.27; h = 0.03;
+			x = 0.60; 
+			y = 0.66;
+			w = 0.27; 
+			h = 0.03;
 		};
 		class ButtonRemoveG : Life_RscButtonMenu
 		{
 			idc = -1;
-			text = "$STR_VS_SellItem";
+			text = "Vendre";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			onButtonClick = "[] call life_fnc_virt_sell";
-			
 			x = 0.67;
 			y = 0.70;
 			w = (6.25 / 40);
@@ -142,7 +142,7 @@ class shops_menu
 		class ButtonClose : Life_RscButtonMenu 
 		{
 			idc = -1;
-			text = "$STR_Global_Close";
+			text = "Fermer";
 			onButtonClick = "closeDialog 0;";
 			x = 0.1;
 			y = 0.8 - (1 / 25);

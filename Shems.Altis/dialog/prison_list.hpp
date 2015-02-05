@@ -84,7 +84,7 @@ class life_prison_list
 		class CloseButtonKey : Life_RscButtonMenu 
 		{
 			idc = -1;
-			text = "$STR_Global_Close";
+			text = "Fermer";
 			onButtonClick = "closeDialog 0;";
 			x = -0.06 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.8 - (1 / 25);
@@ -95,7 +95,7 @@ class life_prison_list
 		class PardonButtonKey : Life_RscButtonMenu 
 		{
 			idc = 8105;
-			text = "Break Out!";
+			text = "S'échapper";
 			onButtonClick = "[] call life_fnc_prisonbreak; closeDialog 0;";
 			x = 0.1 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.8 - (1 / 25);

@@ -44,7 +44,7 @@ class Life_atm_management
 		{
 			colorBackground[] = {0,0,0,0};
 			idc = -1;
-			text = "$STR_ATM_Title";
+			text = "Distributeur";
 			x = 0.35;
 			y = 0.2;
 			w = 0.6;
@@ -65,7 +65,7 @@ class Life_atm_management
 		class WithdrawButton : life_RscButtonMenu 
 		{
 			idc = -1;
-			text = "$STR_ATM_Withdraw";
+			text = "Retirer";
 			colorBackground[] = {0.5,0,0,0.5};
 			onButtonClick = "[] call life_fnc_bankWithdraw;";
 			x = 0.432;
@@ -77,7 +77,7 @@ class Life_atm_management
 		class DepositButton : life_RscButtonMenu 
 		{
 			idc = -1;
-			text = "$STR_ATM_Deposit";
+			text = "Déposer";
 			colorBackground[] = {0.5,0,0,0.5};
 			onButtonClick = "[] call life_fnc_bankDeposit;";
 			x = 0.432;
@@ -109,7 +109,7 @@ class Life_atm_management
 		class TransferButton : life_RscButtonMenu 
 		{
 			idc = -1;
-			text = "$STR_ATM_Transfer";
+			text = "Transférer";
 			colorBackground[] = {0.5,0,0,0.5};
 			onButtonClick = "[] call life_fnc_bankTransfer;";
 			x = 0.432;
