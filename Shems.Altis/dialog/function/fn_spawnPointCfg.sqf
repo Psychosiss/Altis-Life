@@ -28,8 +28,8 @@ switch (_side) do
 
 		if(license_civ_rebel) then 
 		{
-		_ret = 
-		[
+			_ret = 
+			[
 				["civ_spawn_10","Kavala","icons\spawn.paa"],
 				["civ_spawn_2","Pyrgos","icons\spawn.paa"],
 				["civ_spawn_3","Neochori","icons\spawn.paa"],

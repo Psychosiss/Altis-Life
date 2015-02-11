@@ -17,14 +17,16 @@ class life_progress
 			colorBackground[] = {0,0,0,0.7};
 			x = 0.38140 * safezoneW + safezoneX;
 			y = 0.06 * safezoneH + safezoneY;
-			w = 0.65; h = 0.05;
+			w = 0.65; 
+			h = 0.05;
 		};
 		class ProgressBar : Life_RscProgress
 		{
 			idc = 38201;
 			x = 0.38140 * safezoneW + safezoneX;
 			y = 0.06 * safezoneH + safezoneY;
-			w = 0.65; h = 0.05;
+			w = 0.65; 
+			h = 0.05;
 		};
 		
 		class ProgressText : Life_RscText
@@ -33,7 +35,8 @@ class life_progress
 			text = "Servicing Chopper (50%)...";
 			x = 0.386 * safezoneW + safezoneX;
 			y = 0.0635 * safezoneH + safezoneY;
-			w = 0.65; h = (1 / 25);
+			w = 0.65; 
+			h = (1 / 25);
 		};
 	};
 };
