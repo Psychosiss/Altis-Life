@@ -87,12 +87,16 @@ switch(_rand) do
 		_unit setFatigue 1;
 		_unit say3D "punch_balls";
 	};
+
 	default
 	{
 		hintSilent "Vous lui avez brisé les dents.";
 		_damage = damage _unit;
 		_damage = _damage + 0.1;
-		if(_damage >= 1) then { _damage = 0.98; };
+		if(_damage >= 1) then 
+		{
+			_damage = 0.98;
+		};
 		_unit setDamage _damage;
 		_fatigue = getFatigue _unit;
 		_fatigue = _fatigue + 0.1;
@@ -106,4 +110,4 @@ switch(_rand) do
 
 life_action_inUse = false;
 
-[[getPlayerUID player,name player,"",["Folter",800]],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
+[[getPlayerUID player,profileName,"800"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;

@@ -2,10 +2,14 @@ private ["_pos"];
 
 player setVariable ["playerSurrender", true, true];
 
-while { player getVariable ["playerSurrender", false] }  do {
+while 
+{ 
+	player getVariable ["playerSurrender", false] 
+} do {
 	player playMove "AmovPercMstpSnonWnonDnon_AmovPercMstpSsurWnonDnon";
 
-	if (!alive player) then {
+	if (!alive player) then 
+	{
 		player setVariable ["playerSurrender", false, true];
 	};
 };

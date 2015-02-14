@@ -2,7 +2,7 @@ _speed = speed player;
 _pay = 0;
 _veh = vehicle player;
 if((_veh getVariable "siren")) exitWith {};
-if(getPosATL _veh select 2 > 20) exitWith {hint "Vous avez de la chance, les radars ne flashent pas les hélicos!";};
+if(getPosATL _veh select 2 > 20) exitWith {};
 if(!license_civ_driver) exitWith 
 {
 	serv_killed = [player,"9023"];

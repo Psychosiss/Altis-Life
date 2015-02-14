@@ -119,7 +119,6 @@ class CfgFunctions
 			class initCop {};
 			class initMedic {};
 			class initZeus {};
-			class introCam {};
 			class addKey {};
 		};
 		

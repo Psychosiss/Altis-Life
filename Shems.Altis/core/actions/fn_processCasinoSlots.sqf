@@ -46,33 +46,36 @@ if(life_cash >= _cost) then
 			_idxA = [] call life_fnc_slotMachineRandomizer;
 			_rollA ctrlSetText (_slots select _idxA);
 		};
+
 		if(_cp <= 0.7)then
 		{
 			_idxB = [] call life_fnc_slotMachineRandomizer;
 			_rollB ctrlSetText (_slots select _idxB);
 		};
+
 		if(_cp <= 0.9)then
 		{
 			_idxC = [] call life_fnc_slotMachineRandomizer;
 			_rollC ctrlSetText (_slots select _idxC);
 		};
-		if(_cP >= 1.1) exitWith 
-		{
-		};
+
+		if(_cP >= 1.1) exitWith {};
 		if(player distance _source > 3.5) exitWith {};
 	};
-	if(player distance _source > 3.5) exitWith {hint "Vous devez être a moin de 3,5 metres pour jouer."; 5 cutText ["","PLAIN"]; life_is_processing = false;};
-	
+	if(player distance _source > 3.5) exitWith 
+	{
+		hint "Vous devez être a moin de 3,5 metres pour jouer."; 
+		5 cutText ["","PLAIN"]; 
+		life_is_processing = false;
+	};
 	life_cash = life_cash - _cost;
-
-	_winAmount = [_idxA,_idxB,_idxC,_type] call life_fnc_slotMachineRewards; 
-
+	_winAmount = [_idxA,_idxB,_idxC,_type] call life_fnc_slotMachineRewards;
 	if(_winAmount > 0) then
 	{
 		life_cash = life_cash + _winAmount;
 		if(_winAmount >= 100000) then
 		{
-			hint format["Vous avez gagné le jackpot de %1 $",_winAmount]; 
+			hint format["Vous avez gagné le jackpot de %1 €",_winAmount]; 
 			_source say3D "jackpotSound";
 			[[_source],"life_fnc_SlotJackpotSound",nil,true] spawn life_fnc_MP;
 			[["jackpotSound"],"life_fnc_casinoSounds",nil,true] spawn life_fnc_MP;
@@ -86,18 +89,18 @@ if(life_cash >= _cost) then
 		} else {
 			if(_winAmount == _cost) then
 			{
-				hint format["Vous avez regagné votre mise. (%1 $)",_winAmount];
+				hint format["Vous avez regagné votre mise. (%1 €)",_winAmount];
 			} else {
-				hint format["Vous avez gagné %1 $",_winAmount];
+				hint format["Vous avez gagné %1 €",_winAmount];
 			};
 		};
 	} else {
-		hint format["Vous avez perdu votre mise de (%1 $)",_cost];
+		hint format["Vous avez perdu votre mise de (%1 €)",_cost];
 	};
 	
 	life_is_processing = false;
 } else {
-	if(life_cash < _cost) exitWith {hint (format["Vous devez avoir %1 $ pour pouvoir jouez sur cette machine.",_cost]);
+	if(life_cash < _cost) exitWith {hint (format["Vous devez avoir %1 € pour pouvoir jouez sur cette machine.",_cost]);
 	life_is_processing = false;};
 };
 

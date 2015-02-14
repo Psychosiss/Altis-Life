@@ -1,9 +1,9 @@
 disableSerialization;
 private["_search","_ui","_progress","_cP","_pgText"];
-if(life_action_inUse) exitWith {hint "You are already doing an action. Please wait for it to end."};
+if(life_action_inUse) exitWith {hint "Attendez que l'action se termine."};
 _search = nearestObjects[getPos air_sp, ["Air"],5];
-if(count _search == 0) exitWith {hint "There isn't a chopper on the helipad!"};
-if(life_cash < 1000) exitWith {hint "You need $1,000 to service your chopper"};
+if(count _search == 0) exitWith {hint "Aucun hélicoptère sur l'héliport."};
+if(life_cash < 1000) exitWith {hint "Vous devez avoir 1000 € pour l'entretion de votre hélicoptère."};
 life_cash = life_cash - 1000;
 life_action_inUse = true;
 5 cutRsc ["life_progress","PLAIN"];

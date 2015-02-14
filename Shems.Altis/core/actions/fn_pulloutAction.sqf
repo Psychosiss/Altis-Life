@@ -1,6 +1,6 @@
 private["_crew"];
-_crew = crew cursorTarget;
 
+_crew = crew cursorTarget;
 {
 	if(side _x != west) then
 	{

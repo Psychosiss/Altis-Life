@@ -20,4 +20,4 @@ if(alive player) then {player setDamage 1;};
 
 life_isSuicide = false;
 
-[[0,format["%1 blew their load.",name player]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+//[[0,format["%1 blew their load.",name player]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;

@@ -2,9 +2,7 @@ private["_nearVehicles","_vehicle"];
 if(vehicle player != player) then
 {
 	_vehicle = vehicle player;
-}
-	else
-{
+} else {
 	_nearVehicles = nearestObjects[getPos (_this select 0),["Car","Air","Ship"],30];
 	if(count _nearVehicles > 0) then
 	{
