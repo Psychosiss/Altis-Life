@@ -2,7 +2,7 @@ private["_dialog","_item","_itemInfo","_oldItem","_newItem","_upp","_itemName","
 
 disableSerialization;
 _dialog = findDisplay 666;
-if((lbCurSel 669) == -1) exitWith {hint localize "STR_ISTR_SelectItemFirst";};
+if((lbCurSel 669) == -1) exitWith {hint localize "Vous devez séléctionné un objet.";};
 _item = lbData[669,(lbCurSel 669)];
 _allMaterial = true;
 _itemFilter = lbData[673,(lbCurSel 673)];
@@ -25,7 +25,7 @@ _config = [_itemFilter] call life_fnc_craftCfg;
 	};
 } foreach (_config select 1);
 
-if(!_allMaterial) exitWith {hint localize "STR_PM_NoMaterial";};
+if(!_allMaterial) exitWith {hint "Vous n'avez pas tous les matériaux requis !";};
 if((count _matsNeed) == 0) exitWith {};
 if(_itemFilter == "backpack" && backpack player != "") exitWith {hint "Vous avez déjà un sac à dos ! Posez le votre avant d'en faire un nouveau.";};
 if(_itemFilter == "uniform" && uniform player != "") exitWith {hint "Vous avez déjà un uniforme ! Posez le votre avant d'en faire un nouveau.";};

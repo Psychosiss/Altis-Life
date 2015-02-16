@@ -7,10 +7,10 @@ if((_vehicle isKindOf "Car") || (_vehicle isKindOf "Air") || (_vehicle isKindOf 
 	_vehicleData = _vehicle getVariable["vehicle_info_owners",[]];
 	if(count _vehicleData == 0) exitWith {deleteVehicle _vehicle};
 	_vehicleName = getText(configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "displayName");
-	[[0,"STR_NOTF_BeingImpounded",true,[(_vehicleData select 0) select 1,_vehicleName]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+	[[0,"%1 votre %2 est mis en fourrière par la police.",true,[(_vehicleData select 0) select 1,_vehicleName]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 	life_action_inUse = true;
 	
-	_upp = localize "STR_NOTF_Impounding";
+	_upp = "Mise en fourrière...";
 	disableSerialization;
 	5 cutRsc ["life_progress","PLAIN"];
 	_ui = uiNameSpace getVariable "life_progress";
@@ -31,7 +31,11 @@ if((_vehicle isKindOf "Car") || (_vehicle isKindOf "Air") || (_vehicle isKindOf 
 	};
 	5 cutText ["","PLAIN"];
 	
-	if(player distance _vehicle > 10) exitWith {hint localize "STR_NOTF_ImpoundingCancelled"; life_action_inUse = false;};
+	if(player distance _vehicle > 10) exitWith 
+	{
+		hint "La mise en fourrière a été annulée."; 
+		life_action_inUse = false;
+	};
 	if(!alive player) exitWith {life_action_inUse = false;};
 	if((count crew _vehicle) == 0) then
 	{
@@ -47,11 +51,11 @@ if((_vehicle isKindOf "Car") || (_vehicle isKindOf "Air") || (_vehicle isKindOf 
 		life_impound_inuse = true;
 		[[_vehicle,true,player],"TON_fnc_vehicleStore",false,false] spawn life_fnc_MP;
 		waitUntil {!life_impound_inuse};
-		hint format[localize "STR_NOTF_Impounded",_type,_price];
-		[[0,"STR_NOTF_HasImpounded",true,[profileName,(_vehicleData select 0) select 1,_vehicleName]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+		hint format["Vous avez mis en fourrière un %1\n\nVous avez reçu %2 € pour le nettoyage de la rue!",_type,_price];
+		[[0,"%1 a mis en fourrière %3 de %2",true,[profileName,(_vehicleData select 0) select 1,_vehicleName]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 		life_atmcash = life_atmcash + _price;
 	} else {
-		hint localize "STR_NOTF_ImpoundingCancelled";
+		hint "La mise en fourrière a été annulée.";
 	};
 };
 life_action_inUse = false;

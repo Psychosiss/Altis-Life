@@ -12,13 +12,12 @@ if(playerSide == west && _illegal != -1) exitWith
 	titleText[format["%1 has been placed in evidence, you have received $%2 as a reward.",_itemName,[(life_illegal_items select _illegal) select 1] call life_fnc_numberText],"PLAIN"];
 	life_atmcash = life_atmcash + ((life_illegal_items select _illegal) select 1);
 	deleteVehicle _obj;
-	//waitUntil {isNull _obj};
 	life_action_delay = time;
 };
 life_action_delay = time;
 _diff = [_itemInfo select 0,_itemInfo select 1,life_carryWeight,life_maxWeight] call life_fnc_calWeightDiff;
 if(_diff <= 0) exitWith {hint "Can't pick up that item, you are full."};
-_obj setVariable["PickedUp",TRUE,TRUE];
+_obj setVariable["PickedUp",true,true];
 if(_diff != _itemInfo select 1) then
 {
 	if(([true,_itemInfo select 0,_diff] call life_fnc_handleInv)) then
@@ -29,13 +28,10 @@ if(_diff != _itemInfo select 1) then
 		_obj setVariable["PickedUp",false,true];
 		titleText[format["Vous avez trouvé %1 %2",_diff,_itemName],"PLAIN"];
 	};
-}
-	else
-{
+} else {
 	if(([true,_itemInfo select 0,_itemInfo select 1] call life_fnc_handleInv)) then
 	{
 		deleteVehicle _obj;
-		//waitUntil{isNull _obj};
 		player playmove "AinvPknlMstpSlayWrflDnon";
 		sleep 0.5;
 		titleText[format["Vous avez trouvé %1 %2",_diff,_itemName],"PLAIN"];

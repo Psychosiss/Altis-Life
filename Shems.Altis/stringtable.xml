@@ -430,16 +430,16 @@
 			<Original>Vous avez attrapé un %1</Original>
 		</Key>
 		<Key ID="STR_NOTF_CaughtTurtle">
-			<Original>Vous avez ramasser de la viande de tortue</Original>
+			<Original>Vous avez ramassé de la viande de tortue</Original>
 		</Key>
 		<Key ID="STR_NOTF_Earned_1">
-			<Original>Vous avez gagné %1€</Original>
+			<Original>Vous avez gagné %1 €</Original>
 		</Key>
 		<Key ID="STR_NOTF_NetDrop">
-			<Original>Déployement du filet de pêche..</Original>
+			<Original>Déployement du filet de pêche...</Original>
 		</Key>
 		<Key ID="STR_NOTF_NetDropFail">
-			<Original>Vous n'avez pas attraper de poisson..</Original>
+			<Original>Vous n'avez pas attraper de poisson...</Original>
 		</Key>
 		<Key ID="STR_NOTF_NetUp">
 			<Original>Filet de pêche remonté.</Original>
@@ -493,7 +493,7 @@
 			<Original>Vous avez mis en fourrière un %1\n\nVous avez reçu %2 € pour le nettoyage de la rue!</Original>
 		</Key>
 		<Key ID="STR_NOTF_HasImpounded">
-			<Original>%1 a mis en fourrière %2's %3</Original>
+			<Original>%1 a mis en fourrière %3 de %2</Original>
 		</Key>
 		<Key ID="STR_NOTF_DeviceIsMining">
 			<Original>Ce véhicule est déjà exploitation minière</Original>

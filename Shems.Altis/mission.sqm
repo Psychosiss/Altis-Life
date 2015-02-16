@@ -2287,7 +2287,7 @@ class Mission
 					side="CIV";
 					vehicle="C_man_1";
 					skill=0.60000002;
-					init="this enableSimulation false; this allowDamage false; this addAction[""traiter le pétrole"",life_fnc_processAction,""oil"",0,false,false,"""",' life_inv_oilu > 0 && !life_is_processing']; this addAction[""License de pétrole ($10,000)"",life_fnc_buyLicense,""oil"",0,false,false,"""",' !license_civ_oil && playerSide == civilian '];";
+					init="this enableSimulation false; this allowDamage false; this addAction[""traiter le pétrole"",life_fnc_processAction,""oil"",0,false,false,"""",' life_inv_oilu > 0 && !life_is_processing']; this addAction[""License de pétrole 10,000 €"",life_fnc_buyLicense,""oil"",0,false,false,"""",' !license_civ_oil && playerSide == civilian '];";
 				};
 				class Item8
 				{
@@ -2335,7 +2335,7 @@ class Mission
 					side="CIV";
 					vehicle="C_man_1";
 					skill=0.60000002;
-					init="this enableSimulation false; this allowDamage false; this addAction[""Traiter le fer"",life_fnc_processAction,""iron"",0,false,false,"""",' life_inv_ironore > 0 && !life_is_processing']; this addAction[format[""%1 ($%2)"",[""license_civ_iron""] call life_fnc_varToStr,[([""iron""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""iron"",0,false,false,"""",' !license_civ_iron && playerSide == civilian '];";
+					init="this enableSimulation false; this allowDamage false; this addAction[""Traiter le fer"",life_fnc_processAction,""iron"",0,false,false,"""",' life_inv_ironore > 0 && !life_is_processing']; this addAction[format[""%1 (%2 €)"",[""license_civ_iron""] call life_fnc_varToStr,[([""iron""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""iron"",0,false,false,"""",' !license_civ_iron && playerSide == civilian '];";
 				};
 				class Item12
 				{
@@ -2394,7 +2394,7 @@ class Mission
 					side="CIV";
 					vehicle="C_man_polo_3_F";
 					skill=0.60000002;
-					init="this enableSimulation false; this allowDamage false; this addAction[""Traiter le cannabis"",life_fnc_processAction,""marijuana"",0,false,false,"""",' life_inv_cannabis > 0 && !life_is_processing']; this addAction[format[""%1 ($%2)"",[""license_civ_marijuana""] call life_fnc_varToStr,[([""marijuana""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""marijuana"",0,false,false,"""",' !license_civ_marijuana && playerSide == civilian '];";
+					init="this enableSimulation false; this allowDamage false; this addAction[""Traiter le cannabis"",life_fnc_processAction,""marijuana"",0,false,false,"""",' life_inv_cannabis > 0 && !life_is_processing']; this addAction[format[""%1 (%2 €)"",[""license_civ_marijuana""] call life_fnc_varToStr,[([""marijuana""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""marijuana"",0,false,false,"""",' !license_civ_marijuana && playerSide == civilian '];";
 				};
 				class Item17
 				{
@@ -2689,7 +2689,7 @@ class Mission
 					side="CIV";
 					vehicle="C_man_1";
 					skill=0.60000002;
-					init="this enableSimulation false; this allowDamage false; this addAction[""Tailler le diamant"",life_fnc_processAction,""diamond"",0,false,false,"""",' life_inv_diamond > 0 && !life_is_processing']; this addAction[format[""%1 ($%2)"",[""license_civ_diamond""] call life_fnc_varToStr,[([""diamond""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""diamond"",0,false,false,"""",' !license_civ_diamond && playerSide == civilian '];";
+					init="this enableSimulation false; this allowDamage false; this addAction[""Tailler le diamant"",life_fnc_processAction,""diamond"",0,false,false,"""",' life_inv_diamond > 0 && !life_is_processing']; this addAction[format[""%1 (%2 €)"",[""license_civ_diamond""] call life_fnc_varToStr,[([""diamond""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""diamond"",0,false,false,"""",' !license_civ_diamond && playerSide == civilian '];";
 				};
 				class Item42
 				{
@@ -2723,7 +2723,7 @@ class Mission
 					side="CIV";
 					vehicle="C_man_1";
 					skill=0.60000002;
-					init="this enableSimulation false; this allowDamage false; this addAction[""Traiter le cuivre"",life_fnc_processAction,""copper"",0,false,false,"""",' life_inv_copperore > 0 && !life_is_processing']; this addAction[format[""%1 ($%2)"",[""license_civ_copper""] call life_fnc_varToStr,[([""copper""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""copper"",0,false,false,"""",' !license_civ_copper && playerSide == civilian '];";
+					init="this enableSimulation false; this allowDamage false; this addAction[""Traiter le cuivre"",life_fnc_processAction,""copper"",0,false,false,"""",' life_inv_copperore > 0 && !life_is_processing']; this addAction[format[""%1 (%2 €)"",[""license_civ_copper""] call life_fnc_varToStr,[([""copper""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""copper"",0,false,false,"""",' !license_civ_copper && playerSide == civilian '];";
 				};
 				class Item45
 				{
@@ -2757,7 +2757,7 @@ class Mission
 					side="CIV";
 					vehicle="C_man_1";
 					skill=0.60000002;
-					init="this enableSimulation false; this allowDamage false; this addAction[""traiter le sable"",life_fnc_processAction,""sand"",0,false,false,"""",' life_inv_sand > 0 && !life_is_processing']; this addAction[format[""%1 ($%2)"",[""license_civ_sand""] call life_fnc_varToStr,[([""sand""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""sand"",0,false,false,"""",' !license_civ_sand && playerSide == civilian '];";
+					init="this enableSimulation false; this allowDamage false; this addAction[""traiter le sable"",life_fnc_processAction,""sand"",0,false,false,"""",' life_inv_sand > 0 && !life_is_processing']; this addAction[format[""%1 (%2 €)"",[""license_civ_sand""] call life_fnc_varToStr,[([""sand""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""sand"",0,false,false,"""",' !license_civ_sand && playerSide == civilian '];";
 				};
 				class Item48
 				{
@@ -2768,7 +2768,7 @@ class Mission
 					side="CIV";
 					vehicle="C_man_1";
 					skill=0.60000002;
-					init="this enableSimulation false; this allowDamage false; this addAction[""Traiter le sel"",life_fnc_processAction,""salt"",0,false,false,"""",' life_inv_salt > 0 && !life_is_processing']; this addAction[format[""%1 ($%2)"",[""license_civ_salt""] call life_fnc_varToStr,[([""salt""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""salt"",0,false,false,"""",' !license_civ_salt && playerSide == civilian '];";
+					init="this enableSimulation false; this allowDamage false; this addAction[""Traiter le sel"",life_fnc_processAction,""salt"",0,false,false,"""",' life_inv_salt > 0 && !life_is_processing']; this addAction[format[""%1 (%2 €)"",[""license_civ_salt""] call life_fnc_varToStr,[([""salt""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""salt"",0,false,false,"""",' !license_civ_salt && playerSide == civilian '];";
 				};
 				class Item49
 				{
@@ -2824,7 +2824,7 @@ class Mission
 					side="CIV";
 					vehicle="C_man_1";
 					skill=0.60000002;
-					init="this enableSimulation false; this allowDamage false; this addAction[""Traiter la cocaine"",life_fnc_processAction,""cocaine"",0,false,false,"""",' life_inv_coke > 0 && !life_is_processing']; this addAction[format[""%1 ($%2)"",[""license_civ_coke""] call life_fnc_varToStr,[([""cocaine""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""cocaine"",0,false,false,"""",' !license_civ_coke && playerSide == civilian '];";
+					init="this enableSimulation false; this allowDamage false; this addAction[""Traiter la cocaine"",life_fnc_processAction,""cocaine"",0,false,false,"""",' life_inv_coke > 0 && !life_is_processing']; this addAction[format[""%1 (%2 €)"",[""license_civ_coke""] call life_fnc_varToStr,[([""cocaine""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""cocaine"",0,false,false,"""",' !license_civ_coke && playerSide == civilian '];";
 				};
 				class Item54
 				{
@@ -2857,7 +2857,7 @@ class Mission
 					side="CIV";
 					vehicle="C_man_1";
 					skill=0.60000002;
-					init="this enableSimulation false; this allowDamage false; this addAction[""Tailler la pierre"",life_fnc_processAction,""cement"",0,false,false,"""",' life_inv_rock > 0 && !life_is_processing']; this addAction[format[""%1 ($%2)"",[""license_civ_cement""] call life_fnc_varToStr,[([""cement""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""cement"",0,false,false,"""",' !license_civ_cement && playerSide == civilian '];";
+					init="this enableSimulation false; this allowDamage false; this addAction[""Tailler la pierre"",life_fnc_processAction,""cement"",0,false,false,"""",' life_inv_rock > 0 && !life_is_processing']; this addAction[format[""%1 (%2 €)"",[""license_civ_cement""] call life_fnc_varToStr,[([""cement""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""cement"",0,false,false,"""",' !license_civ_cement && playerSide == civilian '];";
 				};
 				class Item57
 				{
@@ -2878,7 +2878,7 @@ class Mission
 					side="WEST";
 					vehicle="B_RangeMaster_F";
 					skill=0.60000002;
-					init="this enableSimulation false;  this allowDamage false;  this addAction[""Marché de Médecin"",life_fnc_virt_menu,""medic""];  this addAction[format[""%1 ($%2)"",[""license_med_air""] call life_fnc_varToStr,[([""mair""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""mair"",0,false,false,"""",' !license_med_air && playerSide == independent '];  this addAction[""Marché"",life_fnc_weaponShopMenu,""med_basic""];  this addAction[""Acheter une voiture"",life_fnc_vehicleShopMenu,[""med_shop"",independent,""med_a"",""med"",""Kavala Hosptial""]];  this addAction[""Acheter un hélicoptère"",life_fnc_vehicleShopMenu,[""med_air_hs"",independent,""medic_spawn_1"",""med"",""Kavala Hosptial""]];  this addAction[""Garage"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche du véhicule....""];   life_garage_sp = ""med_a""; life_garage_type = ""Car"";  },"""",0,false,false,"""",'playerSide == independent '];  this addAction[""Garage aéronautique"",  {   [[getPlayerUID player,playerSide,""Air"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche du véhicule....""];   life_garage_sp = ""med_a""; life_garage_type = ""Air"";  },"""",0,false,false,"""",'playerSide == independent '];  this addAction[""Ranger le véhicule"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store']; this addAction[""Acheter des vêtements"",life_fnc_clothingMenu,""med""]; this setObjectTexture [0,""images\med\uniform.jpg""]; this addAction[""Med Clothing Shop"",life_fnc_clothingMenu,""med""];";
+					init="this enableSimulation false;  this allowDamage false;  this addAction[""Marché de Médecin"",life_fnc_virt_menu,""medic""];  this addAction[format[""%1 (%2 €)"",[""license_med_air""] call life_fnc_varToStr,[([""mair""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""mair"",0,false,false,"""",' !license_med_air && playerSide == independent '];  this addAction[""Marché"",life_fnc_weaponShopMenu,""med_basic""];  this addAction[""Acheter une voiture"",life_fnc_vehicleShopMenu,[""med_shop"",independent,""med_a"",""med"",""Kavala Hosptial""]];  this addAction[""Acheter un hélicoptère"",life_fnc_vehicleShopMenu,[""med_air_hs"",independent,""medic_spawn_1"",""med"",""Kavala Hosptial""]];  this addAction[""Garage"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche du véhicule....""];   life_garage_sp = ""med_a""; life_garage_type = ""Car"";  },"""",0,false,false,"""",'playerSide == independent '];  this addAction[""Garage aéronautique"",  {   [[getPlayerUID player,playerSide,""Air"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche du véhicule....""];   life_garage_sp = ""med_a""; life_garage_type = ""Air"";  },"""",0,false,false,"""",'playerSide == independent '];  this addAction[""Ranger le véhicule"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store']; this addAction[""Acheter des vêtements"",life_fnc_clothingMenu,""med""]; this setObjectTexture [0,""images\med\uniform.jpg""]; this addAction[""Med Clothing Shop"",life_fnc_clothingMenu,""med""];";
 				};
 				class Item59
 				{
@@ -3207,7 +3207,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="uranium_shop";
-					init="this allowDamage false; this enableSimulation false; this addAction[""Produit Uranium"",life_fnc_virt_menu,""uranium""];this addAction[""Equipement Uranium"",life_fnc_weaponShopMenu,""uranium""];this addAction[format[""%1 ($%2)"",[""license_civ_uranium""] call life_fnc_varToStr,[([""uranium""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""uranium"",0,false,false,"""",' !license_civ_uranium && playerSide == civilian '];this setVariable[""realname"",""Magasin Uranium""];removeAllWeapons this";
+					init="this allowDamage false; this enableSimulation false; this addAction[""Produit Uranium"",life_fnc_virt_menu,""uranium""];this addAction[""Equipement Uranium"",life_fnc_weaponShopMenu,""uranium""];this addAction[format[""%1 (%2 €)"",[""license_civ_uranium""] call life_fnc_varToStr,[([""uranium""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""uranium"",0,false,false,"""",' !license_civ_uranium && playerSide == civilian '];this setVariable[""realname"",""Magasin Uranium""];removeAllWeapons this";
 				};
 			};
 		};
@@ -3306,7 +3306,7 @@ class Mission
 					vehicle="O_officer_F";
 					leader=1;
 					skill=0.60000002;
-					init="this enableSimulation false; this allowDamage false; this addAction[""Traiter le Tabac"",life_fnc_processAction,""tabac"",0,false,false,"""",' life_inv_tabac > 0 && !life_is_processing']; this addAction[format[""%1 ($%2)"",[""license_civ_tabac""] call life_fnc_varToStr,[([""tabac""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""tabac"",0,false,false,"""",' !license_civ_tabac && playerSide == civilian ']; RemoveAllWeapons this";
+					init="this enableSimulation false; this allowDamage false; this addAction[""Traiter le Tabac"",life_fnc_processAction,""tabac"",0,false,false,"""",' life_inv_tabac > 0 && !life_is_processing']; this addAction[format[""%1 (%2 €)"",[""license_civ_tabac""] call life_fnc_varToStr,[([""tabac""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""tabac"",0,false,false,"""",' !license_civ_tabac && playerSide == civilian ']; RemoveAllWeapons this";
 				};
 			};
 		};
@@ -3326,7 +3326,7 @@ class Mission
 					vehicle="O_officer_F";
 					leader=1;
 					skill=0.60000002;
-					init="this enableSimulation false; this allowDamage false; this addAction[""Traiter l'héroine"",life_fnc_processAction,""heroin"",0,false,false,"""",' life_inv_heroinu > 0 && !life_is_processing']; this addAction[format[""%1 ($%2)"",[""license_civ_heroin""] call life_fnc_varToStr,[([""heroin""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""heroin"",0,false,false,"""",' !license_civ_heroin && playerSide == civilian ']; RemoveAllWeapons this";
+					init="this enableSimulation false; this allowDamage false; this addAction[""Traiter l'héroine"",life_fnc_processAction,""heroin"",0,false,false,"""",' life_inv_heroinu > 0 && !life_is_processing']; this addAction[format[""%1 (%2 €)"",[""license_civ_heroin""] call life_fnc_varToStr,[([""heroin""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""heroin"",0,false,false,"""",' !license_civ_heroin && playerSide == civilian ']; RemoveAllWeapons this";
 				};
 			};
 		};
@@ -4089,7 +4089,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="arf";
-					init="this enableSimulation false; this allowDamage false; this addAction[""Fondre l'argent"",life_fnc_processAction,""silver"",0,false,false,"""",' life_inv_silver > 0 && !life_is_processing']; this addAction[format[""%1 ($%2)"",[""license_civ_silver""] call life_fnc_varToStr,[([""silver""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""silver"",0,false,false,"""",' !license_civ_silver && playerSide == civilian '];";
+					init="this enableSimulation false; this allowDamage false; this addAction[""Fondre l'argent"",life_fnc_processAction,""silver"",0,false,false,"""",' life_inv_silver > 0 && !life_is_processing']; this addAction[format[""%1 (%2 €)"",[""license_civ_silver""] call life_fnc_varToStr,[([""silver""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""silver"",0,false,false,"""",' !license_civ_silver && playerSide == civilian '];";
 				};
 			};
 		};
@@ -4230,7 +4230,7 @@ class Mission
 					vehicle="B_RangeMaster_F";
 					leader=1;
 					skill=0.60000002;
-					init="this enableSimulation false;  this allowDamage false;  this addAction[""Marché de Médecin"",life_fnc_virt_menu,""medic""];  this addAction[format[""%1 ($%2)"",[""license_med_air""] call life_fnc_varToStr,[([""mair""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""mair"",0,false,false,"""",' !license_med_air && playerSide == independent '];  this addAction[""Marché"",life_fnc_weaponShopMenu,""med_basic""];  this addAction[""Acheter une voiture"",life_fnc_vehicleShopMenu,[""med_shop"",independent,""med_car_2"",""med"",""Kavala Hosptial""]];  this addAction[""Acheter un hélicoptère"",life_fnc_vehicleShopMenu,[""med_air_hs"",independent,""med_car_2"",""med"",""Kavala Hosptial""]];  this addAction[""Garage"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche du véhicule....""];   life_garage_sp = ""med_car_2""; life_garage_type = ""Car"";  },"""",0,false,false,"""",'playerSide == independent '];  this addAction[""Garage aéronautique"",  {   [[getPlayerUID player,playerSide,""Air"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche du véhicule....""];   life_garage_sp = ""med_a""; life_garage_type = ""Air"";  },"""",0,false,false,"""",'playerSide == independent '];  this addAction[""Ranger le véhicule"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store']; this addAction[""Acheter des vêtements"",life_fnc_clothingMenu,""med""]; this setObjectTexture [0,""images\med\uniform.jpg""]; this addAction[""Med Clothing Shop"",life_fnc_clothingMenu,""med""];";
+					init="this enableSimulation false;  this allowDamage false;  this addAction[""Marché de Médecin"",life_fnc_virt_menu,""medic""];  this addAction[format[""%1 (%2 €)"",[""license_med_air""] call life_fnc_varToStr,[([""mair""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""mair"",0,false,false,"""",' !license_med_air && playerSide == independent '];  this addAction[""Marché"",life_fnc_weaponShopMenu,""med_basic""];  this addAction[""Acheter une voiture"",life_fnc_vehicleShopMenu,[""med_shop"",independent,""med_car_2"",""med"",""Kavala Hosptial""]];  this addAction[""Acheter un hélicoptère"",life_fnc_vehicleShopMenu,[""med_air_hs"",independent,""med_car_2"",""med"",""Kavala Hosptial""]];  this addAction[""Garage"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche du véhicule....""];   life_garage_sp = ""med_car_2""; life_garage_type = ""Car"";  },"""",0,false,false,"""",'playerSide == independent '];  this addAction[""Garage aéronautique"",  {   [[getPlayerUID player,playerSide,""Air"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche du véhicule....""];   life_garage_sp = ""med_a""; life_garage_type = ""Air"";  },"""",0,false,false,"""",'playerSide == independent '];  this addAction[""Ranger le véhicule"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store']; this addAction[""Acheter des vêtements"",life_fnc_clothingMenu,""med""]; this setObjectTexture [0,""images\med\uniform.jpg""]; this addAction[""Med Clothing Shop"",life_fnc_clothingMenu,""med""];";
 				};
 			};
 		};
@@ -54428,7 +54428,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_InfoStand_V2_F";
 			skill=0.60000002;
-			init="this enableSimulation false; this allowDamage false; this addAction [""Faire une partie de blackjack ($2500)"", life_fnc_blackjack];";
+			init="this enableSimulation false; this allowDamage false; this addAction [""Faire une partie de blackjack (2500 €)"", life_fnc_blackjack];";
 		};
 		class Item4803
 		{
@@ -54439,7 +54439,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_InfoStand_V2_F";
 			skill=0.60000002;
-			init="this enableSimulation false; this allowDamage false; this addAction [""Faire une partie de blackjack ($2500)"", life_fnc_blackjack];";
+			init="this enableSimulation false; this allowDamage false; this addAction [""Faire une partie de blackjack (2500 €)"", life_fnc_blackjack];";
 		};
 		class Item4804
 		{
@@ -55637,7 +55637,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_InfoStand_V1_F";
 			skill=0.60000002;
-			init="this allowDamage false; this enableSimulation false; this addAction[""Remise en forme [$5000]"",life_fnc_douevenlift];";
+			init="this allowDamage false; this enableSimulation false; this addAction[""Entrainement de sport 5000 €"",life_fnc_sport];";
 		};
 		class Item4920
 		{
@@ -56302,7 +56302,7 @@ class Mission
 			lock="LOCKED";
 			skill=0.60000002;
 			text="methtruck";
-			init="this enableSimulation false; this allowDamage false; this addAction[""Traiter la meth"",life_fnc_processAction,""meth"",0,false,false,"""",' life_inv_methu > 0 && !life_is_processing']; this addAction[format[""%1 ($%2)"",[""license_civ_meth""] call life_fnc_varToStr,[([""meth""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""meth"",0,false,false,"""",' !license_civ_meth && playerSide == civilian ']; removeAllWeapons this;";
+			init="this enableSimulation false; this allowDamage false; this addAction[""Traiter la meth"",life_fnc_processAction,""meth"",0,false,false,"""",' life_inv_methu > 0 && !life_is_processing']; this addAction[format[""%1 (%2 €)"",[""license_civ_meth""] call life_fnc_varToStr,[([""meth""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""meth"",0,false,false,"""",' !license_civ_meth && playerSide == civilian ']; removeAllWeapons this;";
 		};
 		class Item4983
 		{

@@ -212,7 +212,7 @@ class CfgFunctions
 			class blackjack {};
 			class activateNitro {};
 			class fastrope {};
-			class douevenlift {};
+			class sport {};
 			class robShops {};
 			class bombDetect {};
 			class radarFlash {};

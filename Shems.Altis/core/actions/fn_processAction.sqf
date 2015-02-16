@@ -96,12 +96,13 @@ _itemInfo = switch (_type) do
 	
 	case "silver": 
 	{
-		["silver","silver_r",1120,(localize "STR_Process_Silver")];
+		["silver","silver_r",1120,"Fonte de l'argent"];
 	};
 
     default 
 	{
-		[]
+		//[]
+		[];
 	};
 };
 
@@ -152,7 +153,7 @@ if(_hasLicense) then
 			_ui cutRsc["StatusBar","PLAIN"];
 		};
 	};
-	
+
 	if(player distance _vendor > 10) exitWith {hint "Vous devez rester a 10m du traitement."; 5 cutText ["","PLAIN"]; life_is_processing = false;};
 	if(!([false,_oldItem,_oldVal] call life_fnc_handleInv)) exitWith {5 cutText ["","PLAIN"]; life_is_processing = false;};
 	if(!([true,_newItem,_oldVal] call life_fnc_handleInv)) exitWith {5 cutText ["","PLAIN"]; [true,_oldItem,_oldVal] call life_fnc_handleInv; life_is_processing = false;};
@@ -162,8 +163,13 @@ if(_hasLicense) then
 	_ui = "StatusBar" call BIS_fnc_rscLayer;
 	_ui cutRsc["StatusBar","PLAIN"];
 } else {
-	if(life_cash < _cost) exitWith {hint format["Vous avez besoin de %1 € pour traiter sans licence!",[_cost] call life_fnc_numberText]; 5 cutText ["","PLAIN"]; life_is_processing = false;};
-	
+	if(life_cash < _cost) exitWith 
+	{
+		hint format["Vous avez besoin de %1 € pour traiter sans licence!",[_cost] call life_fnc_numberText]; 
+		5 cutText ["","PLAIN"]; 
+		life_is_processing = false;
+	};
+
 	while{true} do
 	{
 		sleep  0.9;
@@ -173,13 +179,13 @@ if(_hasLicense) then
 		if(_cP >= 1) exitWith {};
 		if(player distance _vendor > 10) exitWith {};
 	};
-	
+
 	if(player distance _vendor > 10) exitWith {hint "Vous devez rester a 10m du traitement."; 5 cutText ["","PLAIN"]; life_is_processing = false;};
 	if(life_cash < _cost) exitWith {hint format["Vous avez besoin de %1$ pour traiter sans licence!",[_cost] call life_fnc_numberText]; 5 cutText ["","PLAIN"]; life_is_processing = false;};
 	if(!([false,_oldItem,_oldVal] call life_fnc_handleInv)) exitWith {5 cutText ["","PLAIN"]; life_is_processing = false;};
 	if(!([true,_newItem,_oldVal] call life_fnc_handleInv)) exitWith {5 cutText ["","PLAIN"]; [true,_oldItem,_oldVal] call life_fnc_handleInv; life_is_processing = false;};
 	5 cutText ["","PLAIN"];
-	titleText[format["Vous avez traiter %1 en %2 pour %3$",_oldVal,_itemName,[_cost] call life_fnc_numberText],"PLAIN"];
+	titleText[format["Vous avez traiter %1 en %2 pour %3 €",_oldVal,_itemName,[_cost] call life_fnc_numberText],"PLAIN"];
 	life_cash = life_cash - _cost;
 	life_is_processing = false;
 	_ui = "StatusBar" call BIS_fnc_rscLayer;

@@ -6,5 +6,5 @@ if(alive _obj) exitWith {};
 if(([true,"turtle",1] call life_fnc_handleInv)) then
 {
 	deleteVehicle _obj;
-	titleText[localize "STR_NOTF_CaughtTurtle","PLAIN"];
+	titleText["Vous avez ramassé de la viande de tortue","PLAIN"];
 };

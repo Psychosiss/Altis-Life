@@ -8,4 +8,4 @@ _unit setVariable["transporting",FALSE,TRUE];
 detach _unit;
 player say3D "cuffout";
 
-[[0,format["%1 was unrestrained by %2",_unit getVariable["realname",name _unit], profileName]],"life_fnc_broadcast",west,FALSE] call life_fnc_MP;
+[[0,format["%1 à été démenotté par %2",_unit getVariable["realname",name _unit], profileName]],"life_fnc_broadcast",west,FALSE] call life_fnc_MP;
