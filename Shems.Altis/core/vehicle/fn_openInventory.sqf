@@ -38,7 +38,7 @@ if((typeOf _vehicle == "Land_Device_assembled_F") && ((_vehicle getVariable "tru
 
 if((_vehicle getVariable ["trunk_in_use",false])) exitWith {hint "Une seul personne peut ouvrir l'inventaire de ce vehicule."};
 _vehicle setVariable["trunk_in_use",true,true];
-if(!createDialog "TrunkMenu") exitWith {"Failed Creating Dialog";};
+if(!createDialog "TrunkMenu") exitWith {"Erreur Dialog";};
 disableSerialization;
 
 if(_vehicle isKindOf "House_F") then 
@@ -71,7 +71,7 @@ if(_veh_data select 0 == -1 && {!(_vehicle isKindOf "House_F")}) exitWith
 {
 	closeDialog 0; 
 	_vehicle setVariable["trunk_in_use",false,true]; 
-	hint "Ce véhicule ne peux pas stocker d'ojets.";
+	hint "Ce véhicule ne peux pas stocker d'objets.";
 };
 
 ctrlSetText[3504,format["%1/%2",_veh_data select 1,_veh_data select 0]];

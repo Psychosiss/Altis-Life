@@ -1,11 +1,11 @@
 private["_display","_text","_info","_prim","_sec","_vest","_uni","_bp","_attach","_tmp"];
 disableSerialization;
 _display = findDisplay 2900;
-if(!isNil {moderator_query_ip}) exitWith {hint "You are already querying a player."};
+if(!isNil {admin_query_ip}) exitWith {hint "Vous avez déjà vérifier ce joueur."};
 _text = _display displayCtrl 2903;
 _info = lbData[2902,lbCurSel (2902)];
 _info = call compile format["%1", _info];
-if(isNil "_info") exitWith {_text ctrlSetText "Player no longer exists?";};
-if(isNull _info) exitWith {_text ctrlSetText "Player no longer exists?";};
+if(isNil "_info") exitWith {_text ctrlSetText "Le joueur existe ?";};
+if(isNull _info) exitWith {_text ctrlSetText "Le joueur existe ?";};
 [[player],"fnc_player_query",_info,false] spawn life_fnc_MP;
-_text ctrlSetText "Querying player......";
+_text ctrlSetText "Interrogation du joueur...";

@@ -5,8 +5,14 @@ if !("ItemMap" in items player) then {player addweapon "ItemMap";};
 	Wookie_Bitches = [];
 
 	if (isnil "Wookie_Map_Markers") then {Wookie_Map_Markers = 0;}; 
-	if (Wookie_Map_Markers == 0) then {Wookie_Map_Markers = 1; hint "Player Markers ACTIVÉ";} else {Wookie_Map_Markers = 0; hint "Player Markers DÉSACTIVÉ";};
-
+	if (Wookie_Map_Markers == 0) then 
+	{
+		Wookie_Map_Markers = 1; 
+		hint "Player Markers activé.";
+	} else {
+		Wookie_Map_Markers = 0; 
+		hint "Player Markers désactivé.";
+	};
 	while {Wookie_Map_Markers == 1} do
 	{
 		{
@@ -26,7 +32,6 @@ if !("ItemMap" in items player) then {player addweapon "ItemMap";};
 							_mkr setMarkerTypeLocal "mil_dot"; 
 							if ((side _x == side player) and (side _x != resistance)) then {_mkr setMarkerColorLocal "ColorBlue";}else{_mkr setMarkerColorLocal "ColorRed";};
 							_mkr setMarkerSizeLocal [1,1];
-
 							Wookie_Noobs set [count Wookie_Noobs, _x];
 							[_x, _mkr,_vhc] spawn 
 							{
@@ -55,11 +60,15 @@ if !("ItemMap" in items player) then {player addweapon "ItemMap";};
 				{
 					private ["_pos", "_mkr"]; 
 					_pos = visiblePosition _x;
-				
 					_mkr = createMarkerLocal [format ["PLR%1%2", _pos select 0, _pos select 1], [(_pos select 0) + 20, _pos select 1, 0]]; 
 					_mkr setMarkerTypeLocal "mil_dot";  
 					_mkr setMarkerSizeLocal [1,1];
-					if ((side _x == side player) and (side _x != resistance)) then {_mkr setMarkerColorLocal "ColorWhite";}else{_mkr setMarkerColorLocal "ColorRedAlpha";};
+					if ((side _x == side player) and (side _x != resistance)) then 
+					{
+						_mkr setMarkerColorLocal "ColorWhite";
+					} else {
+						_mkr setMarkerColorLocal "ColorRedAlpha";
+					};
 					_mkr setMarkerTextLocal format ["%1 --- %2", name _x,round(_x distance player)];
 					if (_x == player) then 
 					{	
@@ -71,7 +80,7 @@ if !("ItemMap" in items player) then {player addweapon "ItemMap";};
 						private ["_u", "_m"]; 
 						_u = _this select 0; 
 						_m = _this select 1; 
-						while {(Wookie_Map_Markers == 1) and (alive _u) and (vehicle _u == _u) and (getPlayerUID _u != "") } do 
+						while {(Wookie_Map_Markers == 1) and (alive _u) and (vehicle _u == _u) and (getPlayerUID _u != "")} do 
 						{
 							_m setMarkerPosLocal ([visiblePosition _u select 0, visiblePosition _u select 1, 0]); 
 							sleep 0.01; 
@@ -87,7 +96,6 @@ if !("ItemMap" in items player) then {player addweapon "ItemMap";};
 				};
 			};
 		} forEach playableUnits;
-	sleep 0.3;
+		sleep 0.3;
 	};
-	{_mkr = str _x; deleteMarkerLocal _mkr;
-} forEach playableUnits;
+{_mkr = str _x; deleteMarkerLocal _mkr;} forEach playableUnits;

@@ -1,7 +1,3 @@
-/*
-	File: fn_knockedOut.sqf
-	Author: Bryan "Tonic" Boardwine
-*/
 private["_target","_who","_obj"];
 _target = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 _who = [_this,1,"",[""]] call BIS_fnc_param;
@@ -9,7 +5,7 @@ if(isNull _target) exitWith {};
 if(_target != player) exitWith {};
 if(_who == "") exitWith {};
 
-titleText[format["%1 has knocked you out.",_who],"PLAIN"];
+titleText[format["%1 vous a assommé.",_who],"PLAIN"];
 player playMoveNow "Incapacitated";
 _obj = "Land_ClutterCutter_small_F" createVehicle (getPosATL player);
 _obj setPosATL (getPosATL player);
@@ -18,4 +14,4 @@ sleep 15;
 player playMoveNow "amovppnemstpsraswrfldnon";
 detach player;
 deleteVehicle _obj;
-player setVariable["robbed",FALSE,TRUE];
+player setVariable["robbed",false,true];

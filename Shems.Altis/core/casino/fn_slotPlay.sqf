@@ -8,7 +8,7 @@ with missionNamespace do
 	_bet = player getVariable ["slotmachine_bet", 0];
 	if (life_cash < _bet) exitWith 
 	{
-		hint "Vous n'avez pas assez d'argents.";
+		hint "Vous n'avez pas assez d'argent.";
 	};
 	
 	playSound "caching";

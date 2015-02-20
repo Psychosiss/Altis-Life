@@ -74,8 +74,8 @@ switch (_code) do
 		if(_ctrlKey)  then 
 		{
 			SOCK_fnc_updateRequest;
-			diag_log format ["%1 utilise CTRL + ESC pour se déconnecter (Prenez une capture et signalez le sur www.td-life.com)",_player getVariable["realname",name _player]];
-			[[1,format["TD-Life: %1 utilise CTRL + ESC pour se déconnecter (Prenez une capture et signalez le sur www.td-life.com)",_player getVariable["realname",name _player]]],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
+			diag_log format ["%1 utilise CTRL + ESC pour se déconnecter",_player getVariable["realname",name _player]];
+			[[1,format["%1 utilise CTRL + ESC pour se déconnecter",_player getVariable["realname",name _player]]],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
 			SOCK_fnc_updateRequest;
 		};
 	};
@@ -448,8 +448,8 @@ switch (_code) do
 		if(_alt && !_shift) then 
 		{
 			SOCK_fnc_updateRequest;
-			diag_log format ["%1 utilise ALT+F4 pour se déconnecter (Prenez une capture et signalez le sur www.td-life.com)",_player getVariable["realname",name _player]];
-			[[1,format["TD-Life: %1 utilise ALT+F4 pour se déconnecter (Prenez une capture et signalez le sur www.td-life.com))",_player getVariable["realname",name _player]]],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
+			diag_log format ["%1 utilise ALT+F4 pour se déconnecter",_player getVariable["realname",name _player]];
+			[[1,format["%1 utilise ALT+F4 pour se déconnecter",_player getVariable["realname",name _player]]],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
 			SOCK_fnc_updateRequest;
 		};
 	};
@@ -485,8 +485,8 @@ switch (_code) do
 		if(_ctrlKey && _alt)  then 
 		{
 			SOCK_fnc_updateRequest;
-			diag_log format ["%1 utilise CTRL + ALT + DEL pour se déconnecter (Prenez une capture et signalez le sur www.td-life.com)",_player getVariable["realname",name _player]];
-			[[1,format["TD-Life: %1 utilise CTRL + ALT + DEL  pour se déconnecter (Prenez une capture et signalez le sur www.td-life.com)",_player getVariable["realname",name _player]]],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
+			diag_log format ["%1 utilise CTRL + ALT + DEL pour se déconnecter",_player getVariable["realname",name _player]];
+			[[1,format["%1 utilise CTRL + ALT + DEL  pour se déconnecter",_player getVariable["realname",name _player]]],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
 			SOCK_fnc_updateRequest;
 		};
 	};

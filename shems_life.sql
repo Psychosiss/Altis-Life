@@ -21,7 +21,7 @@ DELIMITER $$
 --
 CREATE DEFINER=`arma3`@`localhost` PROCEDURE `resetLifeVehicles`()
 BEGIN
-	UPDATE vehicles SET `active`= 0;
+	UPDATE `vehicles` SET `active`= 0;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `deleteDeadVehicles`()

@@ -24,11 +24,6 @@ fn_whoDunnit = compile preprocessFileLineNumbers "scripts\fn_whoDunnit.sqf";
 
 {_x setMarkerAlphaLocal 0} forEach ["mrkRed","mrkRed_1","mrkRed_1_1","mrkRed_1_3","mrkGreen"];
 
-if (isServer) then 
-{
-	[] execVM "\life_server\Functions\Custom\fn_setDate.sqf"
-};
-
 if(isDedicated && isNil("life_market_prices")) then
 {
 	[] call life_fnc_marketConfiguration;

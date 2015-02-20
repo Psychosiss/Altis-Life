@@ -29,4 +29,4 @@ _meatTypes = ["chicken", "dog", "sheep", "goat", "snake", "rabbit"];
 	};
 } forEach _meatTypes;
 
-[2, format["Vous avez cuisinez %1.", _meats]] call life_fnc_broadcast;
+[2, format["Vous avez cuisiné %1.", _meats]] call life_fnc_broadcast;

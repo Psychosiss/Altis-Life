@@ -64,13 +64,13 @@
 			<Original>Vous ne pouvez pas le faire sur vous-même.</Original>
 		</Key>
 		<Key ID="STR_ANOTF_ErrorLevel">
-			<Original>Votre Niveau admin n'est pas suffisamment élevée.</Original>
+			<Original>Votre niveau admin n'est pas suffisamment élevée.</Original>
 		</Key>
 		<Key ID="STR_ANOTF_MDisabled">
-			<Original>Player Markers désactivé.</Original>
+			<Original>Markers désactivé.</Original>
 		</Key>
 		<Key ID="STR_ANOTF_MEnabled">
-			<Original>Player Markers activé.</Original>
+			<Original>Markers activé.</Original>
 		</Key>
 		<Key ID="STR_NOTF_ActionCancel">
 			<Original>Action Annulée</Original>
@@ -520,7 +520,7 @@
 			<Original>Vous avez été freeze par un admin</Original>
 		</Key>
 		<Key ID="STR_NOTF_Unfrozen">
-			<Original>Vous n'êtes plus freeze</Original>
+			<Original>Vous n'êtes plus gelé</Original>
 		</Key>
 		<Key ID="STR_NOTF_NoLootingPerson">
 			<Original>You are not allowed to loot dead bodies</Original>

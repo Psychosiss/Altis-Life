@@ -60,37 +60,37 @@ sleep 1;
 		{
 			_ctrl ctrlSetText "images\slots\SlotMachine\bar.paa"
 		};
-		
+
 		case _seven: 
 		{
 			_ctrl ctrlSetText "images\slots\SlotMachine\seven.paa"
 		};
-		
+
 		case _bell: 
 		{
 			_ctrl ctrlSetText "images\slots\SlotMachine\bell.paa"
 		};
-		
+
 		case _diamond: 
 		{
 			_ctrl ctrlSetText "images\slots\SlotMachine\diamond.paa"
 		};
-		
+
 		case _grapes: 
 		{
 			_ctrl ctrlSetText "images\slots\SlotMachine\grapes.paa"
 		};
-		
+
 		case _plum: 
 		{
 			_ctrl ctrlSetText "images\slots\SlotMachine\plum.paa"
 		};
-		
+
 		case _cherry: 
 		{
 			_ctrl ctrlSetText "images\slots\SlotMachine\cherry.paa"
 		};
-		
+
 		case _heart: 
 		{
 			_ctrl ctrlSetText "images\slots\SlotMachine\heart.paa"

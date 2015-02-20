@@ -1,13 +1,13 @@
 #include <macro.h>
 
-if(__GETC__(life_adminlevel) < 3) exitWith {closeDialog 0; hint localize "STR_ANOTF_ErrorLevel";};
+if(__GETC__(life_adminlevel) < 3) exitWith {closeDialog 0; hint "Votre niveau admin n'est pas suffisamment élevée.";};
 life_markers = !life_markers;
 if(life_markers) then 
 {
 	PlayerMarkers = [];
 	FinishedLoop = false;
-	hint localize "STR_ANOTF_MEnabled";
-	while{life_markers} do 
+	hint "Markers activé.";
+	while {life_markers} do 
 	{
 		{
 			if !(_x in allUnits) then 
@@ -34,7 +34,7 @@ if(life_markers) then
 FinishedLoop = true;
 } else {
 	if(isNil "FinishedLoop") exitWith {};
-	hint localize "STR_ANOTF_MDisabled";
+	hint "Markers désactivé.";
 	waitUntil{FinishedLoop};
 	{
 		deleteMarkerLocal str _x;

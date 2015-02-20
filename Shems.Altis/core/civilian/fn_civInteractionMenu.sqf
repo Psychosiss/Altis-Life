@@ -11,6 +11,7 @@ if(!dialog) then
 {
     createDialog "pInteraction_Menu";
 };
+
 disableSerialization;
 _curTarget = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 if(isNull _curTarget) exitWith {closeDialog 0;};

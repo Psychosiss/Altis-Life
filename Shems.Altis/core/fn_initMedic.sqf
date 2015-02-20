@@ -22,7 +22,7 @@ if (!life_is_alive) then
 	life_is_alive = true;
 };
 
-[] call life_fnc_spawnMenu;
+//[] call life_fnc_spawnMenu;
 
 player setVariable["coplevel", __GETC__(life_coplevel), true];
 player setVariable["mediclevel", __GETC__(life_medicLevel), true];

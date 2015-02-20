@@ -1,25 +1,25 @@
 #include <macro.h>
 
 private["_value","_action"];
-if(__GETC__(life_adminlevel) < 1) exitWith {closeDialog 0; hint localize "STR_ANOTF_ErrorLevel";};
+if(__GETC__(life_adminlevel) < 1) exitWith {closeDialog 0; hint "Votre niveau admin n'est pas suffisamment élevée.";};
 _value = parseNumber(ctrlText 9922);
 if(_value < 0) exitWith {};
-if(_value > 10000000) exitWith {hint localize "STR_ANOTF_Fail"};
+if(_value > 10000000) exitWith {hint "Vous ne pouvez pas aller au-dessus 1.000.000 €."};
 
 _action = 
 [
 	format [localize "STR_ANOTF_CompWarn",[_value] call life_fnc_numberText],
-	localize "STR_Admin_Compensate",
-	localize "STR_Global_Yes",
-	localize "STR_Global_No"
+	"Compensation",
+	"Oui",
+	"Non"
 ] call BIS_fnc_guiMessage;
 
 if(_action) then 
 {
 	life_cash = life_cash + _value;
-	hint format [localize "STR_ANOTF_Success",[_value] call life_fnc_numberText];
+	hint format ["Vous avez ajouté %1 € à votre compte.",[_value] call life_fnc_numberText];
 	closeDialog 0;
 } else {
-	hint localize "STR_NOTF_ActionCancel";
+	hint "Action annulé";
 	closeDialog 0;
 };
