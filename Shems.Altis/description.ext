@@ -395,7 +395,6 @@ class CfgFunctions
 			class hasOrgan {};
 			class removeWeapons {};
 			class waterChargeTimer {};
-			class policeRecruit {};
 			class civInteractionMenu {};
 			class huntingZone {};
 			class cookMeat {};
@@ -521,7 +520,7 @@ class CfgFunctions
 			class adrenalineShot {};
 			class antiMatter {};
 		};
-		
+
 		class Dialog_Controls
 		{
 			file = "dialog\function";

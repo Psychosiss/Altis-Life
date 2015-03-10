@@ -9,5 +9,5 @@ if(life_cash > 0) then
 	[[1,format["%1 a pillé %2 pour %3 €",_robber getVariable["realname",name _robber],profileName,[life_cash] call life_fnc_numberText]],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
 	life_cash = 0;
 } else {
-	[[2,format["%1 n'as pas assez de money.",profileName]],"life_fnc_broadcast",_robber,false] spawn life_fnc_MP;
+	[[2,format["%1 n'as pas d'argent.",profileName]],"life_fnc_broadcast",_robber,false] spawn life_fnc_MP;
 };

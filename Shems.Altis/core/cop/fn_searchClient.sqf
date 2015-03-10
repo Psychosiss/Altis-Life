@@ -3,7 +3,6 @@ _cop = [_this,0,Objnull,[objNull]] call BIS_fnc_param;
 if(isNull _cop) exitWith {};
 _inv = [];
 _robber = false;
-
 {
 	_var = [_x select 0,0] call life_fnc_varHandle;
 	_val = missionNamespace getVariable _var;

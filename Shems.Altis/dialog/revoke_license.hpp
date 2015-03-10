@@ -55,7 +55,7 @@ class revokeLicense_Menu
 		{
 			idc = 41002;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			text = "Permis de conduire";
+			text = "Permis vehicule";
 			sizeEx = 0.025;
 			x = 0.35 + 0.03;
 			y = 0.2 + 0.07;
@@ -67,7 +67,7 @@ class revokeLicense_Menu
 		{
 			idc = 41003;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			text = "Permis poid lourd";
+			text = "Voiture";
 			sizeEx = 0.025;
 			x = 0.35 + 0.03;
 			y = 0.2 + 0.12;
@@ -79,7 +79,7 @@ class revokeLicense_Menu
 		{
 			idc = 41004;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			text = "License aériene";
+			text = "Camion";
 			sizeEx = 0.025;
 			x = 0.35 + 0.03;
 			y = 0.2 + 0.17;
@@ -91,7 +91,7 @@ class revokeLicense_Menu
 		{
 			idc = 41005;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			text = "License nautique";
+			text = "Helicoptere";
 			sizeEx = 0.025;
 			x = 0.35 + 0.03;
 			y = 0.2 + 0.22;
@@ -103,7 +103,7 @@ class revokeLicense_Menu
 		{
 			idc = 41006;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			text = "License de plongée";
+			text = "Bateau";
 			sizeEx = 0.025;
 			x = 0.35 + 0.03;
 			y = 0.2 + 0.27;
@@ -115,7 +115,7 @@ class revokeLicense_Menu
 		{
 			idc = 41007;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			text = "License de taxi";
+			text = "Plongée";
 			sizeEx = 0.025;
 			x = 0.35 + 0.03;
 			y = 0.2 + 0.32;
@@ -127,7 +127,7 @@ class revokeLicense_Menu
 		{
 			idc = 41008;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			text = "Toutes licenses";
+			text = "Port armes";
 			sizeEx = 0.025;
 			x = 0.35 + 0.03;
 			y = 0.2 + 0.37;
@@ -139,7 +139,7 @@ class revokeLicense_Menu
 		{
 			idc = 41009;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			text = "License de tir";
+			text = "Rebelle";
 			sizeEx = 0.025;
 			x = 0.35 + 0.03;
 			y = 0.2 + 0.42;

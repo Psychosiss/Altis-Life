@@ -23,7 +23,7 @@ _chance = random(100);
 if(_chance >= 85) then 
 {
 	hint "Une alarme silencieuse à été activé, la police à été avertie!";
-	[[1,format["ALARM! - Magasin: %1 est entrain de se faire braquer!", _shop]],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
+	[[1,format["ALARME! - Magasin: %1 est entrain de se faire braquer!", _shop]],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
 };
 
 _cops = (west countSide playableUnits);

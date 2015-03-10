@@ -1,3 +1,5 @@
+private["_player","_weap","_ammo"];
+
 _player = _this select 0;
 _weap = currentWeapon _player;
 _ammo = _player ammo _weap;

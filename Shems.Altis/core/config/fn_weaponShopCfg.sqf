@@ -25,7 +25,7 @@ switch(_shop) do
 			};
 		};
 	};
-	
+
 	case "cop_cadet":
 	{
 		switch(true) do
@@ -63,13 +63,13 @@ switch(_shop) do
 			};
 		};
 	};
-	
+
 	case "cop_officier":
 	{
 		switch(true) do
 		{
 			case (playerSide != west): {"Vous n'êtes pas Policier"};
-			case (__GETC__(life_coplevel) < 2): {"Vous n'avez pas le rang d'Officier!"};
+			case (__GETC__(life_coplevel) < 2): {"Vous n'avez pas le rang d'officier!"};
 			default
 			{
 				["Magasin Officier",
@@ -117,7 +117,7 @@ switch(_shop) do
 		switch(true) do
 		{
 			case (playerSide != west): {"Vous n'êtes pas Policier"};
-			case (__GETC__(life_coplevel) < 3): {"Vous n'avez pas le rang de Caporal!"};
+			case (__GETC__(life_coplevel) < 3): {"Vous n'avez pas le rang de caporal!"};
 			default
 			{
 				["Magasin Caporal",
@@ -166,13 +166,13 @@ switch(_shop) do
 			};
 		};
 	};
-	
+
 	case "cop_sergent":
 	{
 		switch(true) do
 		{
 			case (playerSide != west): {"Vous n'êtes pas Policier"};
-			case (__GETC__(life_coplevel) < 4): {"Vous n'avez pas le rang de Sergent!"};
+			case (__GETC__(life_coplevel) < 4): {"Vous n'avez pas le rang de sergent!"};
 			default
 			{
 				["Magasin Sergent",
@@ -221,13 +221,13 @@ switch(_shop) do
 			};
 		};
 	};
-	
+
 	case "cop_lieutenant":
 	{
 		switch(true) do
 		{
 			case (playerSide != west): {"Vous n'êtes pas Policier"};
-			case (__GETC__(life_coplevel) < 5): {"Vous n'avez pas le rang de Lieutenant!"};
+			case (__GETC__(life_coplevel) < 5): {"Vous n'avez pas le rang de lieutenant!"};
 			default
 			{
 				["Magasin Lieutenant",
@@ -278,13 +278,13 @@ switch(_shop) do
 			};
 		};
 	};
-	
+
 	case "cop_capitaine":
 	{
 		switch(true) do
 		{
 			case (playerSide != west): {"Vous n'êtes pas Policier"};
-			case (__GETC__(life_coplevel) < 6): {"Vous n'avez pas le rang de Capitaine!"};
+			case (__GETC__(life_coplevel) < 6): {"Vous n'avez pas le rang de capitaine!"};
 			default
 			{
 				["Magasin Capitaine",
@@ -328,13 +328,13 @@ switch(_shop) do
 			};
 		};
 	};
-	
+
 	case "cop_chef_adjoint":
 	{
 		switch(true) do
 		{
 			case (playerSide != west): {"Vous n'êtes pas Policier"};
-			case (__GETC__(life_coplevel) < 7): {"Vous n'avez pas le rang de Chef Adjoint!"};
+			case (__GETC__(life_coplevel) < 7): {"Vous n'avez pas le rang de Chef adjoint!"};
 			default
 			{
 				["Magasin Chef Ajoint",
@@ -357,29 +357,7 @@ switch(_shop) do
 			};
 		};
 	};
-	
-	case "east":
-	{
-		switch(true) do
-		{
-			case (playerSide != east): {"Vous n'etes pas dans le militarisme!"};
-			default
-			{
-				["Magasin militaire",
-					[
-						["LMG_Zafir_F",nil,5000],
-						["150Rnd_762x51_Box_Tracer",nil,500],
-						["srifle_LRR_F",nil,80000],
-						["7Rnd_408_Mag",nil,2000],
-						["optic_Arco",nil,4000],
-						["optic_SOS",nil,5000],
-						["optic_NVS",nil,6000]
-					]
-				];
-			};
-		};
-	};
-	
+
 	case "rebel":
 	{
 		switch(true) do
@@ -413,7 +391,7 @@ switch(_shop) do
 			};
 		};
 	};
-	
+
 	case "gun":
 	{
 		switch(true) do
@@ -439,7 +417,7 @@ switch(_shop) do
 			};
 		};
 	};
-	
+
 	case "gang":
 	{
 		switch(true) do
@@ -467,7 +445,7 @@ switch(_shop) do
 			};
 		};
 	};
-	
+
 	case "genstore":
 	{
 		["Altis General Store",
@@ -485,7 +463,7 @@ switch(_shop) do
 			]
 		];
 	};
-	
+
 	case "uranium":
 	{
 		switch(true) do
@@ -503,72 +481,7 @@ switch(_shop) do
 			};
 		};
 	};
-	
-	case "donator":
-	{
-		switch(true) do
-		{
-			case (playerSide != civilian): {"Tu n'es pas civil!"};
-			case (!license_civ_don1): {"Vous n'êtes pas donateur niveau 1"};
-			{
-				["STS Donator Shop Tier 1",
-					[
-						["hgun_Rook40_F",nil,750],
-						["hgun_PDW2000_F",nil,6500],
-						["optic_ACO_grn_smg",nil,750],
-						["ToolKit",nil,50],
-						["itemgps",nil,50],
-						["ItemRadio","Téléphone",1000],
-						["16Rnd_9x21_Mag",nil,25],
-						["30Rnd_9x21_Mag",nil,75]
-					]
-				];
-			};
 
-			case (!license_civ_don2): {"Vous n'êtes pas donateur niveau 2"};
-			{
-				["STS Donator Shop Tier 2",
-					[
-						["hgun_Rook40_F",nil,750],
-						["hgun_PDW2000_F",nil,6500],
-						["arifle_MK20C_plain_F",nil,25000],
-						["optic_ACO_grn_smg",nil,750],
-						["NVGoggles",nil,350],
-						["ToolKit",nil,50],
-						["itemgps",nil,50],
-						["ItemRadio","Téléphone",1000],
-						["16Rnd_9x21_Mag",nil,25],
-						["30Rnd_9x21_Mag",nil,75],
-						["30Rnd_556x45_Stanag",nil,125]
-					]
-				];
-			};
-
-			case (!license_civ_don3): {"Vous n'êtes pas donateur niveau 3"};
-			{
-				["STS Donator Shop Tier 3",
-					[
-						["hgun_Rook40_F",nil,500],
-						["hgun_PDW2000_F",nil,6500],
-						["hgun_pistol_heavy_01_F",nil,5850],
-						["arifle_Mk20C_plain_F",nil,25000],
-						["optic_ACO_grn_smg",nil,750],
-						["optic_MRCO",nil,10000],
-						["NVGoggles",nil,350],
-						["ToolKit",nil,50],
-						["itemgps",nil,50],
-						["ItemRadio","Téléphone",1000],
-						["FirstAidKit",nil,25],
-						["16Rnd_9x21_Mag",nil,25],
-						["30Rnd_9x21_Mag",nil,75],
-						["11Rnd_45ACP_Mag",nil,85],
-						["30Rnd_556x45_Stanag",nil,125]
-					]
-				];
-			};
-		};
-	};
-	
 	case "cellphone":
 	{
 		["Store phone",

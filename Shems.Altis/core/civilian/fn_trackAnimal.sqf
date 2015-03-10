@@ -32,9 +32,8 @@ _animal = objNull;
 _vd = getPosASL _animal vectorDiff getPosASL player;
 _dir = (_vd select 0) atan2 (_vd select 1);
 if (_dir < 0) then {_dir = 360 + _dir}; 
-_comp = ["north", "north east", "east", "south east", "south", "south west", "west", "north west", "north"];
+_comp = ["north","north east","east","south east","south","south west","west","north west","north"];
 _bearing = _comp select (round (_dir / 45));
-
 _error = floor (random 10);
 if (random 2 < 1) then 
 { 

@@ -3,7 +3,7 @@
 private["_filter","_ret"];
 _filter = [_this,0,0,[0]] call BIS_fnc_param;
 
-ctrlSetText[3103,"Notarzt Ausruestung"];
+ctrlSetText[3103,"Magasin médical"];
 
 _ret = [];
 switch (_filter) do
@@ -18,12 +18,7 @@ switch (_filter) do
 	};
 	
 	//Hats
-	case 1:
-	{
-		_ret = 
-		[
-		];
-	};
+	case 1: {[];};
 	
 	//Glasses
 	case 2:
@@ -44,12 +39,7 @@ switch (_filter) do
 	};
 	
 	//Vest
-	case 3:
-	{
-		_ret  = 
-		[
-		];
-	};
+	case 3: {[];};
 	
 	//Backpacks
 	case 4:

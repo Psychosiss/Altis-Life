@@ -12,11 +12,7 @@ switch (_filter) do
 		];
 	};
 
-	case 1:
-	{
-		[
-		];
-	};
+	case 1: {[];};
 
 	case 2:
 	{
@@ -31,5 +27,5 @@ switch (_filter) do
 			["V_RebreatherB",nil,5000]
 		];
 
-	//case 4:{[];};
+	case 4: {[];};
 };

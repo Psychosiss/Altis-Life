@@ -3,7 +3,6 @@ _cop = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 if(isNull _cop) exitWith {};
 
 _licenses = "";
-//Licenses
 {
 	if(missionNamespace getVariable (_x select 0) && _x select 1 == "civ") then
 	{
@@ -11,6 +10,6 @@ _licenses = "";
 	};
 } foreach life_licenses;
 
-if(_licenses == "") then {_licenses = "No Licenses<br/>";};
+if(_licenses == "") then {_licenses = "Aucune license<br/>";};
 
-[[profileName,_licenses],"life_fnc_licensesRead",_cop,FALSE] spawn life_fnc_MP;
+[[profileName,_licenses],"life_fnc_licensesRead",_cop,false] spawn life_fnc_MP;

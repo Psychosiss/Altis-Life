@@ -37,10 +37,10 @@ if(_curTarget isKindOf "House_F") exitWith
 		_Btn9 = _display displayCtrl Btn9;
 		_Btn10 = _display displayCtrl Btn10;
 		life_pInact_curTarget = _curTarget;
-		
+
 		_Btn1 ctrlSetText "Reparer la porte";
 		_Btn1 buttonSetAction "[life_pInact_curTarget] spawn life_fnc_repairDoor;";
-		
+
 		_Btn2 ctrlSetText "Ouvrir / Fermer";
 		_Btn2 buttonSetAction "[life_pInact_curTarget] call life_fnc_doorAnimate;";
 		_Btn3 ctrlShow false;
@@ -93,7 +93,6 @@ _Btn5 buttonSetAction "[life_pInact_curTarget] call life_fnc_ticketAction;";
 
 _Btn6 ctrlSetText "Haute Prison";
 _Btn6 buttonSetAction "closeDialog 0; [life_pInact_curTarget] call life_fnc_arrestAction;";
-
 _Btn6 buttonSetAction "closeDialog 0; [] call life_fnc_showArrestDialog;";
 
 _Btn7 ctrlSetText "Véhicule";

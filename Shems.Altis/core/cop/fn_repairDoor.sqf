@@ -4,7 +4,6 @@ if(isNull _building) exitWith {};
 if(!(_building isKindOf "House_F")) exitWith {hint "You are not looking at a house door."};
 _doors = 1;
 _doors = getNumber(configFile >> "CfgVehicles" >> (typeOf _building) >> "NumberOfDoors");
-
 _door = 0;
 for "_i" from 1 to _doors do 
 {
@@ -12,7 +11,7 @@ for "_i" from 1 to _doors do
 	_worldSpace = _building modelToWorld _selPos;
 		if(player distance _worldSpace < 5) exitWith {_door = _i;};
 };
-if(_door == 0) exitWith {hint "You are not near a door!"};
+if(_door == 0) exitWith {hint "Vous n'ête pas a proximité d'une porte!"};
 if((_building getVariable[format["bis_disabled_Door_%1",_door],0]) == 1) exitWith {hint "This door is already locked!"};
 life_action_inUse = true;
 
@@ -27,7 +26,8 @@ _titleText ctrlSetText format["%2 (1%1)...","%",_title];
 _progressBar progressSetPosition 0.01;
 _cP = 0.01;
 
-switch (typeOf _building) do {
+switch (typeOf _building) do 
+{
 	case "Land_Dome_Big_F": {_cpRate = 0.008;};
 	case "Land_Research_house_V1_F": {_cpRate = 0.005;};
 	default {_cpRate = 0.08;}

@@ -1,3 +1,5 @@
+private["_speed","_info","_vehicle","_owner","_cars"];
+
 if(!(vehicle player != player)) exitWith {};
 _speed = 0;
 _info = "";

@@ -3,7 +3,7 @@ if(vehicle player != player) then
 {
 	_vehicle = vehicle player;
 } else {
-	_nearVehicles = nearestObjects[getPos (_this select 0),["Car","Air","Ship"],30];
+	_nearVehicles = nearestObjects[getPos (_this select 0),["Car","Air","Ship","Land_Portable_generator_F","Box_NATO_AmmoVeh_F","Box_East_AmmoVeh_F","Box_IND_AmmoVeh_F","Land_Cargo20_blue_F","Land_Cargo20_brick_red_F","Land_Cargo20_cyan_F","Land_Cargo20_grey_F","Land_Cargo20_light_blue_F","Land_Cargo20_light_green_F","Land_Cargo20_military_green_F","Land_Cargo20_orange_F","Land_Cargo20_red_F","Land_Cargo20_sand_F","Land_Cargo20_white_F","Land_Cargo20_yellow_F"],30];
 	if(count _nearVehicles > 0) then
 	{
 		{

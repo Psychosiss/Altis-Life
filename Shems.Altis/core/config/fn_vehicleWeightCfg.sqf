@@ -66,7 +66,6 @@ if(playerSide == civilian && talent_civ_truck6) then
 		case "Box_IND_Grenades_F": {1312};
 		case "B_supplyCrate_F": {3750};
 		case "Land_CargoBox_V1_F": {9375};
-		//"Land_Device_assembled_F"
 		default {-1};
 	};
 } else {

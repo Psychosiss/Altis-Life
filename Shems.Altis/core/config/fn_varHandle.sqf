@@ -1,7 +1,7 @@
 private["_var","_mode"];
 _var = [_this,0,"",[""]] call BIS_fnc_param;
 _mode = [_this,1,-1,[0]] call BIS_fnc_param;
-if(_var == "" OR _mode == -1) exitWith {""};
+if(_var == "" OR _mode == -1) exitWith {};
 
 switch (_mode) do
 {
@@ -108,7 +108,7 @@ switch (_mode) do
 			case "antimatter": {"life_inv_antimatter"};
 		};
 	};
-	
+
 	case 1:
 	{
 		switch (_var) do

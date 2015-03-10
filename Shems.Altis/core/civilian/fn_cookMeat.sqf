@@ -19,7 +19,7 @@ for "_i" from 1 to _meats do
 
 if (!alive player) exitWith {};
 
-_meatTypes = ["chicken", "dog", "sheep", "goat", "snake", "rabbit"];
+_meatTypes = ["chicken","dog","sheep","goat","snake","rabbit"];
 {
 	_num = missionNamespace getVariable ([_x,0] call life_fnc_varHandle);
 	if (_num > 0) then

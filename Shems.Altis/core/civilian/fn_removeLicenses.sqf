@@ -46,54 +46,41 @@ switch (_state) do
 	case 10:
 	{
 		license_civ_driver = false;
-		hint localize "STR_Civ_RevokeLicense_Driver";
+		hint "Votre permis de conduire à été saisi par la police.";
 	};
 
 	case 11:
 	{
 		license_civ_truck = false;
-		hint localize "STR_Civ_RevokeLicense_Truck";
+		hint "Votre permis poid lourd à été saisi par la police.";
 	};
 
 	case 12:
 	{
 		license_civ_air = false;
-		hint localize "STR_Civ_RevokeLicense_Pilot";
+		hint "Votre permis aéronotique à été saisi par la police.";
 	};
 
 	case 13:
 	{
 		license_civ_boat = false;
-		hint localize "STR_Civ_RevokeLicense_Boating";
+		hint "Votre permis bateau à été saisi par la police.";
 	};
 
 	case 14:
 	{
 		license_civ_dive = false;
-		hint localize "STR_Civ_RevokeLicense_Diving";
+		hint "Votre license de plongée à été saisi par la police.";
 	};
 
 	case 15:
 	{
-		license_civ_taxi = false;
-		hint localize "STR_Civ_RevokeLicense_Taxi";
+		license_civ_gun = false;
+		hint "Votre permis de port d'armes à été saisi par la police.";
 	};
 
 	case 16:
 	{
-		license_civ_driver = false;
-		license_civ_truck = false;
-		license_civ_air = false;
-		license_civ_boat = false;
-		license_civ_air = false;
-		license_civ_dive = false;
-		license_civ_taxi = false;
-		hint localize "STR_Civ_RevokeLicense_AllMotor";
-	};
-
-	case 17:
-	{
-		license_civ_gun = false;
-		hint localize "STR_Civ_RevokeLicense_Firearm";
-	};
+		life_civ_rebel = false;
+		hint "Votre license rebelle à été saisi par la police.";
 };
