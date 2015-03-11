@@ -19,7 +19,8 @@ CONST(JJJJ_MMMM___EEEEEEE_LLYYSSTTIICCC_SHIT_RE_OLD,"false");
 CONST(JJJJ_MMMM___EEEEEEE_SPAWN_VEH,"false");
 CONST(JJJJ_MMMM___EEEEEEE_SPAWN_WEAPON,"false");
 	
-_patchList = [
+_patchList = 
+[
 	"life_server","CAData","A3_BaseConfig_F","A3_Dubbing_Radio_F","A3_Functions_F","A3_Functions_F_EPA","A3_Functions_F_EPC","A3_Data_F","A3_Data_F_ParticleEffects","A3_Editor_F","A3_Functions_F_Curator",
 	"A3_Language_F","A3_Language_F_Beta","A3_Language_F_Curator","A3_Language_F_EPA","A3_Language_F_EPB","A3_Language_F_EPC","A3_Language_F_Gamma","A3_LanguageMissions_F","A3_LanguageMissions_F_Beta",
 	"A3_LanguageMissions_F_Gamma","A3_Misc_F","A3_Misc_F_Helpers","A3_Modules_F","A3_Modules_F_DynO","A3_Modules_F_Effects","A3_Modules_F_Events","A3_Modules_F_GroupModifiers","A3_Modules_F_HC",
@@ -92,10 +93,12 @@ uiNamespace setVariable["RscDisplayRemoteMissions",displayNull];
 uiNamespace setVariable["RscDisplayMultiplayer",displayNull];
 
 _binConfigPatches = configFile >> "CfgPatches";
-for "_i" from 0 to count (_binConfigPatches)-1 do {
+for "_i" from 0 to count (_binConfigPatches)-1 do 
+{
 	_patchEntry = _binConfigPatches select _i;
 	if(isClass _patchEntry) then {
-		if(!((configName _patchEntry) in _patchList)) exitWith {
+		if(!((configName _patchEntry) in _patchList)) exitWith 
+		{
 			[[profileName,steamid,(configName _patchEntry)],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
 			[[profileName,format["Unknown Addon Patch: %1",(configName _patchEntry)]],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
 			sleep 0.5;
@@ -108,12 +111,14 @@ private["_children","_allowedChildren"];
 _children = [configFile >> "RscDisplayMPInterrupt" >> "controls",0] call BIS_fnc_returnChildren;
 _allowedChildren = 
 [
-	"Title","MissionTitle","DifficultyTitle","PlayersName","ButtonCancel","ButtonSAVE","ButtonSkip","ButtonRespawn","ButtonOptions",
-	"ButtonVideo","ButtonAudio","ButtonControls","ButtonGame","ButtonTutorialHints","ButtonAbort","DebugConsole","Feedback","MessageBox"
+	"Title","MissionTitle","PlayersName","ButtonCancel","ButtonSAVE","ButtonSkip","ButtonRespawn","ButtonOptions",
+	"ButtonVideo","ButtonAudio","ButtonControls","ButtonGame","ButtonTutorialHints","ButtonAbort","DebugConsole",
+	"Version","TraffLight","Feedback","MessageBox"
 ];
 
 {
-	if(!((configName _x) in _allowedChildren)) exitWith {
+	if(!((configName _x) in _allowedChildren)) exitWith 
+	{
 		[[profileName,steamid,"Modified_MPInterrupt"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
 		[[profileName,"Devcon like executor detected"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
 		sleep 0.5;
@@ -124,11 +129,12 @@ _allowedChildren =
 {
 	_onLoad = getText(configFile >> (_x select 0) >> "onLoad");
 	_onUnload = getText(configFile >> (_x select 0) >> "onUnload");
-	if(_onLoad != (_x select 1) OR _onUnload != (_x select 2)) exitWith {
+	if(_onLoad != (_x select 1) OR _onUnload != (_x select 2)) exitWith 
+	{
 		[[profileName,steamid,format["Modified_Method_%1",_x select 0]],"SPY_fnc_cookieJar",false,false] call life_fnc_MP;
 		[[profileName,format["Modified Display Method %1 (Memory Edit)",_x select 0]],"SPY_fnc_notifyAdmins",true,false] call life_fnc_MP;
 		sleep 0.5;
-		vehicle player setVelocity[1e10,1e14,1e18]; //It's a surprise.
+		vehicle player setVelocity[1e10,1e14,1e18];=
 		sleep 3;
 		preProcessFile "SpyGlass\endoftheline.sqf";
 		sleep 2.5;

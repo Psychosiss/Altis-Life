@@ -347,16 +347,5 @@ class playerSettings
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
-
-		class ButtonTalent : Life_RscButtonMenu 
-		{
-			idc = -1;
-			text = "Talent";
-			onButtonClick = "[] call life_fnc_showTalent;";
-			x = 0.1 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
-			y = 0.85;
-			w = (6.25 / 40);
-			h = (1 / 25);
-		};
 	};
 };

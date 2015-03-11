@@ -40,10 +40,7 @@ switch(_mode) do
 		_packet set[2,life_gear];
 	};
 	
-	case 4: 
-	{
-		//_packet set[2,life_exp];
-	};
+	case 4: {};
 	
 	case 5: 
 	{
@@ -56,16 +53,7 @@ switch(_mode) do
 		_packet set[4,life_atmcash];
 	};
 
-	case 7: 
-	{
-		{
-			if(_x select 1 == _flag) then
-			{
-				_array pushBack [_x select 0,(missionNamespace getVariable (_x select 0))];
-			};
-		} foreach life_talent;
-		_packet set[2,_array];
-	};
+	case 7: {};
 };
 
 [_packet,"DB_fnc_updatePartial",false,false] call life_fnc_MP;

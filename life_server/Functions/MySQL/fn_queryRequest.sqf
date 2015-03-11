@@ -7,9 +7,9 @@ if(isNull _ownerID) exitWith {};
 _ownerID = owner _ownerID;
 _query = switch(_side) do 
 {
-	case west: {_returnCount = 13; format["SELECT playerid, name, cash, bankacc, adminlevel, donatorlvl, cop_licenses, coplevel, cop_gear, blacklist, cop_talent, cop_position, alive FROM players WHERE playerid='%1'",_uid];};
-	case civilian: {_returnCount = 12; format["SELECT playerid, name, cash, bankacc, adminlevel, donatorlvl, civ_licenses, arrested, civ_gear, civ_talent, civ_position, alive FROM players WHERE playerid='%1'",_uid];};
-	case independent: {_returnCount = 12; format["SELECT playerid, name, cash, bankacc, adminlevel, donatorlvl, med_licenses, mediclevel, med_gear, med_talent, med_position, alive FROM players WHERE playerid='%1'",_uid];};
+	case west: {_returnCount = 12; format["SELECT playerid, name, cash, bankacc, adminlevel, donatorlvl, cop_licenses, coplevel, cop_gear, blacklist, cop_position, alive FROM players WHERE playerid='%1'",_uid];};
+	case civilian: {_returnCount = 11; format["SELECT playerid, name, cash, bankacc, adminlevel, donatorlvl, civ_licenses, arrested, civ_gear, civ_position, alive FROM players WHERE playerid='%1'",_uid];};
+	case independent: {_returnCount = 11; format["SELECT playerid, name, cash, bankacc, adminlevel, donatorlvl, med_licenses, mediclevel, med_gear, med_position, alive FROM players WHERE playerid='%1'",_uid];};
 };
 
 waitUntil{sleep (random 0.3); !DB_Async_Active};
@@ -64,10 +64,12 @@ switch (_side) do
 	{
 		_queryResult set[9,([_queryResult select 9,1] call DB_fnc_bool)];
 
+		*/
 		_new = [(_queryResult select 10)] call DB_fnc_mresToArray;
 		if(typeName _new == "STRING") then {_new = call compile format["%1", _new];};
 		_queryResult set[10,_new];
 		_old = _queryResult select 10;
+		*/
 		for "_i" from 0 to (count _old)-1 do
 		{
 			_data = _old select _i;
@@ -93,11 +95,12 @@ switch (_side) do
 
 		waitUntil{scriptDone _gangData};
 		_queryResult pushBack (missionNamespace getVariable[format["gang_%1",_uid],[]]);
-
+		/*
 		_new = [(_queryResult select 9)] call DB_fnc_mresToArray;
 		if(typeName _new == "STRING") then {_new = call compile format["%1", _new];};
 		_queryResult set[9,_new];
 		_old = _queryResult select 9;
+		/*
 		for "_i" from 0 to (count _old)-1 do
 		{
 			_data = _old select _i;
@@ -114,10 +117,12 @@ switch (_side) do
 
 	case independent: 
 	{
+		/*
 		_new = [(_queryResult select 9)] call DB_fnc_mresToArray;
 		if(typeName _new == "STRING") then {_new = call compile format["%1", _new];};
 		_queryResult set[9,_new];
 		_old = _queryResult select 9;
+		*/
 		for "_i" from 0 to (count _old)-1 do
 		{
 			_data = _old select _i;

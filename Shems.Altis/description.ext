@@ -61,7 +61,6 @@ corpseRemovalMaxTime = 9999;
 #include "dialog\licenses.hpp"
 #include "dialog\prison_list.hpp"
 #include "dialog\craft.hpp"
-#include "dialog\talent.hpp"
 #include "dialog\lxOPS_dlg.hpp"
 
 class RscTitles
@@ -615,18 +614,6 @@ class CfgFunctions
 			class taxiPurchaseFare {};
 			class taxiPurchaseSpeedyFare {};
 			class requestTaxi {};
-		};
-
-		class Talent 
-		{
-			file = "core\talent";
-			class callShowTalent {};
-			class talent {};
-			class talentRefresh {};
-			class addExp {};
-			class showTalent {};
-			class viewTalent {};
-			class talentCfg {};
 		};
 	};
 };
