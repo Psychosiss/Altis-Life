@@ -116,7 +116,6 @@ life_delivery_in_progress = false;
 life_action_in_use = false;
 life_istazed = false;
 life_brokenLeg = false;
-life_health = 100;
 life_thirst = 100;
 life_hunger = 100;
 life_trunk_reserved_ressources = 1;

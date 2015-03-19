@@ -135,7 +135,7 @@ switch (_side) do
 			_new = call compile format["%1", _new];
 		};
 		_queryResult set[10,_new];
-	}:
+	};
 };
 
 _keyArr = missionNamespace getVariable [format["%1_KEYS_%2",_uid,_side],[]];

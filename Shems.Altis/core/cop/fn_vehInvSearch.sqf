@@ -5,7 +5,7 @@ _vehicle = cursorTarget;
 if(isNull _vehicle) exitWith {};
 if(!((_vehicle isKindOf "Air") OR (_vehicle isKindOf "Ship") OR (_vehicle isKindOf "LandVehicle"))) exitWith {};
 _vehicleInfo = _vehicle getVariable ["Trunk",[]];
-if(count _vehicleInfo == 0) exitWith {hint "This vehicle is empty"};
+if(count _vehicleInfo == 0) exitWith {hint "Ce vehicule est vide."};
 
 _value = 0;
 {
@@ -24,9 +24,9 @@ _value = 0;
 
 if(_value > 0) then
 {
-	[[0,format["Un véhicule a été fouillé et a une valeur de %1$ de drogue.",[_value] call life_fnc_numberText]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+	[[0,format["Un véhicule a été fouillé et a une valeur de %1 € de drogue.",[_value] call life_fnc_numberText]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 	life_atmcash = life_atmcash + _value;
 	_vehicle setVariable["Trunk",[],true];
 } else {
-	hint "Nothing illegal in this vehicle.";
+	hint "Aucune drogue dans ce vehicule.";
 };

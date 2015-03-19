@@ -33,9 +33,6 @@ player setVariable["coplevel", __GETC__(life_coplevel), true];
 player setVariable["mediclevel", __GETC__(life_medicLevel), true];
 player setVariable["adminlevel", __GETC__(life_adminlevel), true];
 
-if(talent_west_bonus1) then {life_paycheck = life_paycheck + 2000;};
-if(talent_west_bonus3) then {life_paycheck = life_paycheck + 1000;};
-
 [] spawn
 {
 	while {true} do

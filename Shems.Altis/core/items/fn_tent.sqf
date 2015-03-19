@@ -24,4 +24,4 @@ _tent setVariable ["Trunk", [[],0], true];
 _tent setVariable ["owner", player, true];
 [[_tent],"life_fnc_simDisable",false,false] spawn BIS_fnc_MP;
 
-titleText["Vous dressez une tente à proximité.","PLAIN"];
+titleText["Vous avez dressé une tente à proximité.","PLAIN"];

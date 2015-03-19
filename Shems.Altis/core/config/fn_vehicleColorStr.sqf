@@ -115,7 +115,7 @@ switch (_vehicle) do
 		};
 	};
 	
-	case "B_Quadbike_01_F" :
+	case "C_Quadbike_01_F":
 	{
 		switch (_index) do
 		{

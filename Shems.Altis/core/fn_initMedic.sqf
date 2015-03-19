@@ -7,7 +7,7 @@ waitUntil {!(isNull (findDisplay 46))};
 
 if((__GETC__(life_medicLevel)) < 1) exitWith 
 {
-	["NotWhitelisted",FALSE,TRUE] call BIS_fnc_endMission;
+	["NotWhitelisted",false,true] call BIS_fnc_endMission;
 	sleep 35;
 };
 
@@ -27,8 +27,6 @@ if (!life_is_alive) then
 player setVariable["coplevel", __GETC__(life_coplevel), true];
 player setVariable["mediclevel", __GETC__(life_medicLevel), true];
 player setVariable["adminlevel", __GETC__(life_adminlevel), true];
-
-if(talent_indep_bonus1) then {life_paycheck = life_paycheck + 1500;};
 
 [] spawn
 {

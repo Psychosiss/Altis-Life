@@ -85,32 +85,20 @@ switch (_filter) do
 
 	case 3:
 	{
-		if(talent_civ_vest1)then
-		{
-			_ret pushBack ["V_Press_F","Journaliste",400];
-			_ret pushBack ["V_Rangemaster_belt",nil,1200];
-			_ret pushBack ["V_HarnessOSpec_brn",nil,1500];
-			_ret pushBack ["V_HarnessOSpec_gry",nil,1500];
-		};
-		if(talent_civ_vest2)then
-		{
-			_ret pushBack ["V_TacVestIR_blk",nil,2000];
-			_ret pushBack ["V_TacVest_khk",nil,20500];
-		};
+		_ret pushBack ["V_Press_F","Journaliste",400];
+		_ret pushBack ["V_Rangemaster_belt",nil,1200];
 	};
 
 	case 4:
 	{
-		[
-			["B_AssaultPack_cbr",nil,2500],
-			["B_Kitbag_mcamo",nil,4500],
-			["B_TacticalPack_oli",nil,3500],
-			["B_FieldPack_ocamo",nil,3000],
-			["B_FieldPack_ocamo",nil,3000],
-			["B_Bergen_sgg",nil,4500],
-			["B_Kitbag_cbr",nil,4500],
-			["B_Carryall_oli",nil,5000],
-			["B_Carryall_khk",nil,5000]
-		];
+		_ret pushBack ["B_AssaultPack_cbr",nil,2500];
+		_ret pushBack ["B_Kitbag_mcamo",nil,4500];
+		_ret pushBack ["B_TacticalPack_oli",nil,3500];
+		_ret pushBack ["B_FieldPack_ocamo",nil,3000];
+		_ret pushBack ["B_FieldPack_ocamo",nil,3000];
+		_ret pushBack ["B_Bergen_sgg",nil,4500];
+		_ret pushBack ["B_Kitbag_cbr",nil,4500];
+		_ret pushBack ["B_Carryall_oli",nil,5000];
+		_ret pushBack ["B_Carryall_khk",nil,5000];
 	};
 };

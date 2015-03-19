@@ -14,7 +14,7 @@ switch (_filter) do
 			["U_O_CombatUniform_oucamo",nil,10000],
 			["U_O_PilotCoveralls",nil,12000],
 			["U_B_PilotCoveralls",nil,12000],
-			["U_IG_leader","Guerilla Leader",15000],
+			["U_IG_leader",nil,15000],
 			["U_I_OfficerUniform",nil,18000],
 			["U_O_OfficerUniform_ocamo",nil,18000],
 			["U_O_GhillieSuit",nil,50000],
@@ -25,8 +25,8 @@ switch (_filter) do
 	case 1:
 	{
 		[
-			["H_Shemag_olive","cagoule",5000],
-			["H_Shemag_khk","cagoule",5000],
+			["H_Shemag_olive",nil,5000],
+			["H_Shemag_khk",nil,5000],
 			["H_Booniehat_dgtl",nil,2500],
 			["H_MilCap_ocamo",nil,3000],
 			["H_MilCap_mcamo",nil,3000],
