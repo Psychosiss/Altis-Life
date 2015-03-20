@@ -42,6 +42,7 @@ life_clothing_uniform = -1;
 life_animals_spawned_time = -500;
 life_trunk_vehicle = Objnull;
 life_spikestrip = ObjNull;
+life_cursorTarget = objNull;
 life_query_time = time;
 life_action_delay = time;
 life_redgull_effect = time;
