@@ -46,6 +46,7 @@ life_cursorTarget = objNull;
 life_query_time = time;
 life_action_delay = time;
 life_redgull_effect = time;
+life_clothing_purchase = [-1,-1,-1,-1,-1];
 life_used_drug = [0,0,0,0];
 life_addiction = [0,0,0,0];
 life_last_tracked = [0,0,0];
@@ -60,10 +61,10 @@ __CONST__(life_gangUpgradeMultipler,2.5);
 __CONST__(life_save_civ,true);
 __CONST__(life_save_yinv,true);
 __CONST__(life_enableFatigue,false);
-
-life_clothing_purchase = [-1,-1,-1,-1,-1];
-
-//																								Weight Variables
+__CONST__(life_paycheck_period,5);
+__CONST__(life_impound_car,350);
+__CONST__(life_impound_boat,250);
+__CONST__(life_impound_air,850);
 
 switch (playerSide) do
 {
@@ -72,6 +73,8 @@ switch (playerSide) do
 		life_maxWeight = 50;
 		life_maxWeightT = 50;
 		life_carryWeight = 0;
+		life_atmcash = 10000;
+		life_paycheck = 3000;
 	};
 
 	case independent: 
@@ -79,6 +82,8 @@ switch (playerSide) do
 		life_maxWeight = 50;
 		life_maxWeightT = 50;
 		life_carryWeight = 0;
+		life_atmcash = 10000;
+		life_paycheck = 3000;
 	};
 
 	case civilian : 
@@ -86,10 +91,10 @@ switch (playerSide) do
 		life_maxWeight = 24;
 		life_maxWeightT = 24;
 		life_carryWeight = 0;
+		life_atmcash = 10000;
+		life_paycheck = 1250;
 	};
 };
-
-//																								Food Variables
 
 life_eat_Salema = 40;
 life_eat_Ornate = 20;
@@ -120,10 +125,6 @@ life_brokenLeg = false;
 life_thirst = 100;
 life_hunger = 100;
 life_trunk_reserved_ressources = 1;
-__CONST__(life_paycheck_period,5);
-__CONST__(life_impound_car,350);
-__CONST__(life_impound_boat,250);
-__CONST__(life_impound_air,850);
 life_my_gang = ObjNull;
 life_smartphoneTarget = ObjNull;
 life_pain = 0;
@@ -131,27 +132,6 @@ life_cash = 0;
 life_vehicles = [];
 bank_robber = [];
 player setVariable["downed",false,true];
-
-switch (playerSide) do
-{
-	case west: 
-	{
-		life_atmcash = 10000;
-		life_paycheck = 3000;
-	};
-
-	case civilian: 
-	{
-		life_atmcash = 10000;
-		life_paycheck = 1250;
-	};
-
-	case independent: 
-	{
-		life_atmcash = 10000;
-		life_paycheck = 3000;
-	};
-};
 
 life_vShop_rentalOnly = 
 [

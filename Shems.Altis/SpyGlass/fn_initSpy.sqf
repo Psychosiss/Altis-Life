@@ -134,7 +134,7 @@ _allowedChildren =
 		[[profileName,steamid,format["Modified_Method_%1",_x select 0]],"SPY_fnc_cookieJar",false,false] call life_fnc_MP;
 		[[profileName,format["Modified Display Method %1 (Memory Edit)",_x select 0]],"SPY_fnc_notifyAdmins",true,false] call life_fnc_MP;
 		sleep 0.5;
-		vehicle player setVelocity[1e10,1e14,1e18];=
+		vehicle player setVelocity[1e10,1e14,1e18];
 		sleep 3;
 		preProcessFile "SpyGlass\endoftheline.sqf";
 		sleep 2.5;

@@ -64,11 +64,8 @@ switch (_shop) do
 
 	case "civ_ship":
 	{
-		_return =
-		[
-			_return pushBack ["C_Rubberboat",5000];
-			_return pushBack ["C_Boat_Civil_01_F",22000];
-		];
+		_return pushBack ["C_Rubberboat",5000];
+		_return pushBack ["C_Boat_Civil_01_F",22000];
 	};
 
 	case "reb_car":
