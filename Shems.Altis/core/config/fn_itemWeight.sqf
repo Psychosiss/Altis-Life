@@ -96,5 +96,6 @@ switch (_item) do
 	case "skinningknife": {1};
 	case "vammo": {40};
 	case "antimatter": {64};
+	case "debitcard": {0};
 	default {1};
 };

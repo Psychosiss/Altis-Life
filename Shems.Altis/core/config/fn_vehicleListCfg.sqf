@@ -13,7 +13,6 @@ switch (_shop) do
 		_return pushBack ["C_Offroad_01_F",12500];
 		_return pushBack ["C_SUV_01_F",35000];
 		_return pushBack ["C_Van_01_transport_F",40000];
-		};
 	};
 
 	case "civ_air":
@@ -28,38 +27,38 @@ switch (_shop) do
 
 	case "civ_box":
 	{
-			_return pushBack ["Land_CargoBox_V1_F",140000];
-			_return pushBack ["Box_NATO_AmmoVeh_F",200000];
-			_return pushBack ["Box_East_AmmoVeh_F",200000];
-			_return pushBack ["Box_IND_AmmoVeh_F",200000];
-			_return pushBack ["Land_Cargo20_blue_F",850000];
-			_return pushBack ["Land_Cargo20_brick_red_F",850000];
-			_return pushBack ["Land_Cargo20_cyan_F",850000];
-			_return pushBack ["Land_Cargo20_grey_F",850000];
-			_return pushBack ["Land_Cargo20_light_blue_F",850000];
-			_return pushBack ["Land_Cargo20_light_green_F",850000];
-			_return pushBack ["Land_Cargo20_military_green_F",850000];
-			_return pushBack ["Land_Cargo20_orange_F",850000];
-			_return pushBack ["Land_Cargo20_red_F",850000];
-			_return pushBack ["Land_Cargo20_sand_F",850000];
-			_return pushBack ["Land_Cargo20_white_F",850000];
-			_return pushBack ["Land_Cargo20_yellow_F",850000];
-			_return pushBack ["Land_Portable_generator_F",100000];
+		_return pushBack ["Land_CargoBox_V1_F",140000];
+		_return pushBack ["Box_NATO_AmmoVeh_F",200000];
+		_return pushBack ["Box_East_AmmoVeh_F",200000];
+		_return pushBack ["Box_IND_AmmoVeh_F",200000];
+		_return pushBack ["Land_Cargo20_blue_F",850000];
+		_return pushBack ["Land_Cargo20_brick_red_F",850000];
+		_return pushBack ["Land_Cargo20_cyan_F",850000];
+		_return pushBack ["Land_Cargo20_grey_F",850000];
+		_return pushBack ["Land_Cargo20_light_blue_F",850000];
+		_return pushBack ["Land_Cargo20_light_green_F",850000];
+		_return pushBack ["Land_Cargo20_military_green_F",850000];
+		_return pushBack ["Land_Cargo20_orange_F",850000];
+		_return pushBack ["Land_Cargo20_red_F",850000];
+		_return pushBack ["Land_Cargo20_sand_F",850000];
+		_return pushBack ["Land_Cargo20_white_F",850000];
+		_return pushBack ["Land_Cargo20_yellow_F",850000];
+		_return pushBack ["Land_Portable_generator_F",100000];
 	};
 
 	case "civ_truck":
 	{
-			_return pushBack ["I_Truck_02_transport_F",75000];
-			_return pushBack ["I_Truck_02_covered_F",100000];
-			_return pushBack ["O_Truck_03_transport_F",200000];
-			_return pushBack ["O_Truck_03_covered_F",250000];
-			_return pushBack ["O_Truck_03_device_F",450000];
-			_return pushBack ["B_Truck_01_transport_F",275000];
-			_return pushBack ["B_Truck_01_fuel_F",500000];
-			_return pushBack ["B_Truck_01_covered_F",750000];
-			_return pushBack ["B_Truck_01_box_F",1250000];
-			_return pushBack ["C_Van_01_box_F",60000];
-			_return pushBack ["C_Van_01_fuel_F",80000];
+		_return pushBack ["I_Truck_02_transport_F",75000];
+		_return pushBack ["I_Truck_02_covered_F",100000];
+		_return pushBack ["O_Truck_03_transport_F",200000];
+		_return pushBack ["O_Truck_03_covered_F",250000];
+		_return pushBack ["O_Truck_03_device_F",450000];
+		_return pushBack ["B_Truck_01_transport_F",275000];
+		_return pushBack ["B_Truck_01_fuel_F",500000];
+		_return pushBack ["B_Truck_01_covered_F",750000];
+		_return pushBack ["B_Truck_01_box_F",1250000];
+		_return pushBack ["C_Van_01_box_F",60000];
+		_return pushBack ["C_Van_01_fuel_F",80000];
 	};
 
 	case "civ_ship":

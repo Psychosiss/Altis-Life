@@ -12,18 +12,6 @@ while{true} do
 			_fuelConsumption = 0.002;
 		};
 		_vehicleToFuel setFuel ((fuel _vehicleToFuel)-_fuelConsumption);
-
-		/*
-		if(fuel _vehicleToFuel < 0.2 && fuel _vehicleToFuel > 0.18) then
-		{
-			hint "Votre reservoir est bientot vide.";
-		} else {
-			if(fuel _vehicleToFuel < 0.03) then
-			{
-				hint "Vous devez marcher car vous n'avez plus d'essence!";
-			};
-		};
-		*/
 	};
 	sleep 2;
 };

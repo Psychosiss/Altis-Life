@@ -106,6 +106,7 @@ switch (_mode) do
 			case "vammo": {"life_inv_vammo"};
 			case "adrenaline": {"life_inv_adrenaline"};
 			case "antimatter": {"life_inv_antimatter"};
+			case "debitcard": {"life_inv_debitcard"};
 		};
 	};
 
@@ -210,6 +211,7 @@ switch (_mode) do
 			case "life_inv_vammo": {"vammo"};
 			case "life_inv_adrenaline": {"adrenaline"};
 			case "life_inv_antimatter": {"antimatter"};
+			case "life_inv_debitcard": {"debitcard"};
 		};
 	};
 };

@@ -102,6 +102,7 @@ switch (_var) do
 	case "life_inv_vammo": {"Munitions de véhicules"};
 	case "life_inv_adrenaline": {"Adrenaline"};
 	case "life_inv_antimatter": {"Antimatière"};
+	case "life_inv_debitcard": {"Carte de débit"};
 
 	case "license_civ_driver": {"Permis de conduire"};
 	case "license_civ_air": {"Permis aérien"};
