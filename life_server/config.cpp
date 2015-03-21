@@ -103,15 +103,6 @@ class CfgFunctions
 			class safeTake {};
 			class updateMoney {};
 		};
-		
-		class DBBAN
-		{
-			file = "\life_server\Functions\DBBan";
-			class dbBanSet {};
-			class dbBanGet {};
-			class dbBanQuery {};
-			class dbBanBan {};
-		};
 	};
 
 	class TON_System
@@ -188,20 +179,6 @@ class CfgFunctions
 			file = "\life_server\Functions\Smartphone";
 			class handleMessages {};
 			class msgRequest {};
-		};
-	};
-	
-	class ANTICHEAT_System
-	{
-		tag = "ANTICHEAT";
-		class Launder
-		{
-			file = "\life_server\Functions\Anticheat";
-			class configureAnticheat {};
-			class commitMOT {};
-			class commitMOTValid {};
-			class setPlayTime {};
-			class getPlayTime {};
 		};
 	};
 };

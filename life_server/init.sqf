@@ -126,6 +126,5 @@ _dome allowDamage false;
 life_server_isReady = true;
 publicVariable "life_server_isReady";
 
-[] call ANTICHEAT_fnc_configureAnticheat;
 [] call SHEMS_fnc_antiHack;
 [] call SHEMS_fnc_searchVehicleUID;

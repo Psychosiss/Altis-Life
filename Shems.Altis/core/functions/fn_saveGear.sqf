@@ -245,7 +245,8 @@ if(count (handGunItems player) > 0) then
 	["life_inv_skinningknife", life_inv_skinningknife],
 	["life_inv_vammo", life_inv_vammo],
 	["life_inv_adrenalineShot", life_inv_adrenalineShot],
-	["life_inv_antimatter", life_inv_antimatter]
+	["life_inv_antimatter", life_inv_antimatter],
+	["life_inv_debitcard", life_inv_debitcard]
 ];
 
 _return pushBack _uItems;
