@@ -22,7 +22,7 @@ _price = (_price * _amount);
 _name = [_var] call life_fnc_vartostr;
 if(([false,_type,_amount] call life_fnc_handleInv)) then
 {
-	hint format["You sold %1 %2 for $%3",_amount,_name,[_price] call life_fnc_numberText];
+	hint format["Vous avez vendu %1 %2 pour %3 €",_amount,_name,[_price] call life_fnc_numberText];
 	life_cash = life_cash + _price;
 	if(_marketprice != -1) then 
 	{ 
@@ -32,7 +32,7 @@ if(([false,_type,_amount] call life_fnc_handleInv)) then
 			[_this select 0,_this select 1] call life_fnc_marketSell;
 		};
 		[] call life_fnc_virt_update; 
-	
+		life_dynMarket_boughtItems pushBack [_name,_amount];
 	};
 };
 if(life_shop_type == "heroin") then

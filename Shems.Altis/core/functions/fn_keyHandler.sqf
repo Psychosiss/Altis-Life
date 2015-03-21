@@ -17,10 +17,8 @@ if(life_action_inUse) exitWith
 	_handled;
 };
 
-if((_code in (actionKeys "GetOver") || _code in (actionKeys "salute")) && {(player getVariable ["restrained",false])}) exitWith 
-{
-	true;
-};
+if((_code in (actionKeys "GetOver") || _code in (actionKeys "salute")) && {(player getVariable ["restrained",false])}) exitWith {true;};
+if((_code in (actionKeys "SelectAll") || _code in (actionKeys "ForceCommandingMode"))) then {_handled = true;};
 
 if (life_brokenLeg && (_code in (actionKeys "MoveUp") || _code in (actionKeys "MoveDown") || _code in (actionKeys "Stand") || _code in (actionKeys "Crouch"))) then
 {
@@ -417,14 +415,6 @@ switch (_code) do
 					_handled = true;
 				};
 			};
-		};
-	};
-	
-	case 41:
-	{
-		if(!dialog) then
-		{
-			[] call life_fnc_p_openMenu;
 		};
 	};
 

@@ -108,6 +108,7 @@ client_session_list = [];
 
 [] spawn TON_fnc_initHouses;
 
+[] execVM "\life_server\Functions\DynMarket\fn_config.sqf";
 [] execVM "\life_server\Functions\Custom\fn_spawnGold.sqf";
 call compile preProcessFileLineNumbers "\life_server\SHK_pos\shk_pos_init.sqf";
 gold_safe setVariable["gold",round(random 50),true];

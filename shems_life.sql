@@ -155,6 +155,23 @@ CREATE TABLE `messages` (
   PRIMARY KEY (`uid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `dynmarket`
+--
+
+DROP TABLE IF EXISTS `dynmarket`;
+CREATE TABLE `dynmarket` (
+  `id` int(11) NOT NULL DEFAULT '1',
+  `prices` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `dynmarket` VALUES ('1', '[]');
+
+-- --------------------------------------------------------
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
