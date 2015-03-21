@@ -1,8 +1,8 @@
 #include <macro.h>
 
 private["_index","_price","_val"];
-_index = ["oilp",__GETC__(sell_array)] call fnc_index;
-_price = (__GETC__(sell_array) select _index) select 1;
+_index = ["oilp",sell_array] call fnc_index;
+_price = (sell_array select _index) select 1;
 _val = life_inv_oilp;
 _price = _price * _val;
 

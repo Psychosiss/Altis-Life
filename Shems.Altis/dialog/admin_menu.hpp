@@ -199,8 +199,8 @@ class life_admin_menu
 		class 3dEditor : Life_RscButtonMenu 
 		{
 			idc = -1;
-			text = "Editeur 3D";
-			onButtonClick = "[] spawn SHEMS_fnc_lxOPS;";
+			text = "Economie";
+			onButtonClick = "createDialog ""life_dynmarket_changeprice"";";
 			x = -0.06 + (31.3 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.88 - (1 / 25);
 			w = (6.25 / 40);

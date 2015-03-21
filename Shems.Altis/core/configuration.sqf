@@ -392,7 +392,7 @@ sell_array =
 	["antimatter",1500000],
 	["debitcard",2500]
 ];
-__CONST__(sell_array,sell_array);
+//__CONST__(sell_array,sell_array);
 
 buy_array = 
 [

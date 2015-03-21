@@ -23,18 +23,4 @@ life_versionInfo = "Altis Life RPG fondé par Tonic et developpé par Shems.";
 
 fn_whoDunnit = compile preprocessFileLineNumbers "scripts\fn_whoDunnit.sqf";
 
-{_x setMarkerAlphaLocal 0} forEach ["mrkRed","mrkRed_1","mrkRed_1_1","mrkRed_1_3","mrkGreen"];
-
-if(isDedicated && isNil("life_market_prices")) then
-{
-	[] call life_fnc_marketConfiguration;
-	diag_log "Prix du marché remis à zero!";
-	"life_market_prices" addPublicVariableEventHandler
-	{ 
-		diag_log format["Prix du marché mis a jour! %1", _this select 1]; 
-	};
-	[] execFSM "core\fsm\server.fsm";
-	diag_log "FSM executé";
-};
-
 StartProgress = true;

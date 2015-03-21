@@ -9,6 +9,8 @@ __CONST__(BIS_fnc_endMission,BIS_fnc_endMission);
 [] execVM "core\init.sqf";
 [] execVM "core\functions\fn_emptyFuel.sqf";
 
+{_x setMarkerAlphaLocal 0} forEach ["mrkRed","mrkRed_1","mrkRed_1_1","mrkRed_1_3","mrkGreen"];
+
 if((_this select 1)) then 
 {
 	[] execVM "core\jip.sqf";

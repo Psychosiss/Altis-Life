@@ -297,7 +297,7 @@ class playerSettings
 		{
 			idc = -1;
 			text = "Economie";
-			onButtonClick = "[] spawn life_fnc_openMarketView;";
+			onButtonClick = "createDialog ""life_dynmarket_prices"";";
 			x = 0.1 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.805;
 			w = (6.25 / 40);
