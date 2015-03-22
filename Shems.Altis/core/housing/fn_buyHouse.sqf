@@ -6,10 +6,10 @@ _uid = getPlayerUID player;
 
 if(isNull _house) exitWith {};
 if(!(_house isKindOf "House_F")) exitWith {};
-if((_house getVariable["house_owned",false])) exitWith {hint "This house is already owned even though you shouldn't be seeing this hint..."};
-if(!isNil {(_house getVariable "house_sold")}) exitWith {hint localize "STR_House_Sell_Process"};
-if(!license_civ_home) exitWith {hint localize "STR_House_License"};
-if(count life_houses >= (__GETC__(life_houseLimit))) exitWith {hint format[localize "STR_House_Max_House",__GETC__(life_houseLimit)]};
+if((_house getVariable["house_owned",false])) exitWith {hint "Cette maison est déjà habité"};
+if(!isNil {(_house getVariable "house_sold")}) exitWith {hint "Cette maison a été récemment vendu et est en cours de traitement dans la base de données."};
+if(!license_civ_home) exitWith {hint "Vous n'avez pas de droit de propriété"};
+if(count life_houses >= (__GETC__(life_houseLimit))) exitWith {hint format["Vous avez suffisament de maison",__GETC__(life_houseLimit)]};
 closeDialog 0;
 
 _houseCfg = [(typeOf _house)] call life_fnc_houseConfig;
@@ -17,14 +17,14 @@ if(count _houseCfg == 0) exitWith {};
 
 _action = 
 [
-	format[localize "STR_House_BuyMSG",
+	format["Voulez-vous vraiement acheter cette maison ?",
 	[(_houseCfg select 0)] call life_fnc_numberText,
-	(_houseCfg select 1)],localize "STR_House_Purchase",localize "STR_Global_Buy",localize "STR_Global_Cancel"
+	(_houseCfg select 1)], "Acheter la Maison", "Acheter", "Annuler"
 ] call BIS_fnc_guiMessage;
 
 if(_action) then 
 {
-	if(life_atmcash < (_houseCfg select 0)) exitWith {hint format [localize "STR_House_NotEnough"]};
+	if(life_atmcash < (_houseCfg select 0)) exitWith {hint format ["Vous n'avez pas assez d'argent!"]};
 	[[_uid,_house],"TON_fnc_addHouse",false,false] spawn life_fnc_MP;
 	_house setVariable["house_owner",[_uid,profileName],true];
 	_house setVariable["locked",true,true];

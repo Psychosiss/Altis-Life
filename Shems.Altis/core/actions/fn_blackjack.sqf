@@ -2,7 +2,7 @@ _store = blackjack;
 _denied1 = false;
 _price = 2500;
 
-if(life_cash < _price) exitWith {hint "Vous n'avez pas assez d'argent. Avec moi, un tour coûte $ 2500";};
+if(life_cash < _price) exitWith {hint "Vous n'avez pas assez d'argent. Avec moi, un tour coûte 2500 €";};
 life_cash = life_cash - _price;
 removeAllActions blackjack;
 hint "Vous êtes dans le train!";
@@ -61,7 +61,7 @@ switch(true) do
 
 	case ((round(_timer - time)) < 1):
 	{
-		hint format["Vous avez gagné $%1.", _robberycash];
+		hint format["Vous avez gagné %1 €.", _robberycash];
 		life_cash = life_cash + _robberycash;
 		_denied1 = false;
 		life_action_inUse = false;

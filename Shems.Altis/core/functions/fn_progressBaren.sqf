@@ -2,7 +2,7 @@ private["_cpRate","_title","_progressBar","_titleText","_cp","_ui","_object"];
 _object = _this Select 0;
 _cpRate = 0.0045;
 disableSerialization;
-_title = "Breaking out prisoner";
+_title = "Sortir un prisonnier";
 
 life_action_inUse = true;
 
@@ -43,7 +43,13 @@ while {true} do
 player playActionNow "stop";
 if(!alive player OR life_istazed) exitWith {life_action_inUse = false;};
 if((player getVariable["restrained",false])) exitWith {life_action_inUse = false;};
-if(life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR_NOTF_ActionCancel","PLAIN"]; life_action_inUse = false;};
+if(life_interrupted) exitWith 
+{
+	life_interrupted = false; 
+	titleText["Action Annulée","PLAIN"]; 
+	life_action_inUse = false;
+};
+
 life_action_inUse = false;
 
 _object setPos (getMarkerPos "jail_breakout");

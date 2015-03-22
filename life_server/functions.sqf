@@ -41,7 +41,7 @@ compileFinal "
 	if(!([str(_val)] call fnc_isnumber)) exitWith {};
 	if(_from == """") exitWith {};
 	life_atmcash = life_atmcash + _val;
-	hint format[""%1 has wire transferred $%2 to you."",_from,[_val] call life_fnc_numberText];
+	hint format[""%1 vous à transféré %2 €."",_from,[_val] call life_fnc_numberText];
 	
 ";
 publicVariable "clientWireTransfer";

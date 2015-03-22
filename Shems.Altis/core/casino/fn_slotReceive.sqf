@@ -13,10 +13,10 @@ life_slot_update =
 	_bettext = _dialog displayCtrl 88805;
 	_last = _dialog displayCtrl 88806;
 	_cash = _dialog displayCtrl 88807;
-	_jackpot ctrlSetText format ["Jackpot Actuel: %1 $", [_pot] call life_fnc_formatMoney];
-	_bettext ctrlSetText format ["Votre mise: %1 $", [_bet] call life_fnc_formatMoney];
-	_last ctrlSetText format ["Dernière victoire: %1 $", [_won] call life_fnc_formatMoney];
-	_cash ctrlSetText format ["Votre argent: %1 $", [life_cash] call life_fnc_formatMoney];
+	_jackpot ctrlSetText format ["Jackpot Actuel: %1 €", [_pot] call life_fnc_formatMoney];
+	_bettext ctrlSetText format ["Votre mise: %1 €", [_bet] call life_fnc_formatMoney];
+	_last ctrlSetText format ["Dernière victoire: %1 €", [_won] call life_fnc_formatMoney];
+	_cash ctrlSetText format ["Votre argent: %1 €", [life_cash] call life_fnc_formatMoney];
 };
 
 _bet = _this select 0;

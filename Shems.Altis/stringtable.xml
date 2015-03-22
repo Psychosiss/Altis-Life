@@ -43,7 +43,7 @@
 			<Original>Menu Admin</Original>
 		</Key>
 		<Key ID="STR_ANOTF_CompWarn">
-			<Original>Vous êtes sur le point de vous donner %1 € pour compenser à un autre joueur &lt;br/&gt;&lt;br/&gt; S'il vous plaît donner à cette à la personne vous compensez manuellement</Original>
+			<Original>Vous êtes sur le point de vous donner %1 €</Original>
 		</Key>
 		<Key ID="STR_ANOTF_Success">
 			<Original>Vous avez ajouté %1 € à votre compte.</Original>
@@ -224,10 +224,10 @@
 			<Original>Livraison du vehicule, merci de patienter un moment...</Original>
 		</Key>
 		<Key ID="STR_Garage_SQLError_Destroyed">
-			<Original>Désolé mais %1 a été classé comme un véhicule détruit et a été envoyé à la fourrière.</Original>
+			<Original>%1 a été classé comme un véhicule détruit et a été envoyé à la fourrière.</Original>
 		</Key>
 		<Key ID="STR_Garage_SQLError_Active">
-			<Original>Désolé mais %1 est déjà active, quelque part dans le monde!</Original>
+			<Original>%1 est déjà active, quelque part dans le monde!</Original>
 		</Key>
 		<Key ID="STR_Garage_SpawnPointError">
 			<Original>Il existe déjà un véhicule sur le point de spawn.</Original>
@@ -236,7 +236,7 @@
 			<Original>Vous avez vendu ce véhicule pour %1 €</Original>
 		</Key>
 		<Key ID="STR_Garage_Store_NotPersistent">
-			<Original>Ce véhicule est une location et ne peut pas être stockée dans votre garage.</Original>
+			<Original>Ce véhicule est une location et ne peut pas être placé dans votre garage.</Original>
 		</Key>
 		<Key ID="STR_Garage_Store_NoOwnership">
 			<Original>Ce véhicule ne vous appartient pas. Vous ne pouvez pas le stocker dans votre garage.</Original>
@@ -584,7 +584,7 @@
    			<Original>Vous ne pouvez posséder que %1 maisons à la fois.</Original>
 		</Key>
 		<Key ID="STR_House_BuyMSG">
-   			<Original>Etes-vous sûr de vouloir acheter cette maison ?</Original>
+   			<Original>Voulez-vous vraiement acheter cette maison ?</Original>
 		</Key>
 		<Key ID="STR_House_SellHouseMSG">
 			<Original>Etes-vous sûr de vouloir vendre votre maison? Elle se vendra pour: &lt;t color='#8cff9b'&gt;%1 €&lt;/t&gt;</Original>
@@ -645,10 +645,10 @@
    			<Original>La bombe a été planté !</Original>
 		</Key>
 		<Key ID="STR_ISTR_Demo_AlreadyPlaced">
-   			<Original>la bombe est déja placé !</Original>
+   			<Original>La bombe est déja placé !</Original>
 		</Key>
 		<Key ID="STR_ISTR_Blast_Disarmed">
-   			<Original>la bombe a été désarmé !</Original>
+   			<Original>La bombe a été désarmé !</Original>
 		</Key>
 	</Package>
 	<Package name="Process_Actions">

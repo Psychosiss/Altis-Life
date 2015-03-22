@@ -42,7 +42,7 @@ switch(_type) do
     case "33": {_type = ["Attaque par le rebelle",35000]};
     case "34": {_type = ["Attaque / siège des capitales",25000]};
     case "35": {_type = ["atterrissage dans une zone d'exclusion aérienne",1500]};
-    case "36": {_type = ["Voler en-dessous de 150m au dessus de la mer/ville $2000",2000]};
+    case "36": {_type = ["Voler en-dessous de 150m à kavala",2000]};
     case "37": {_type = ["Sortie de la prison",25000]};
     case "38": {_type = ["Voler sans permis de vol",1200]};
     case "39": {_type = ["Klaxons gênants durablement",1000]};

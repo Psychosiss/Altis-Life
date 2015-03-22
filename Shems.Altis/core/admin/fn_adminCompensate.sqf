@@ -8,7 +8,7 @@ if(_value > 10000000) exitWith {hint "Vous ne pouvez pas aller au-dessus 1.000.0
 
 _action = 
 [
-	format [localize "STR_ANOTF_CompWarn",[_value] call life_fnc_numberText],
+	format ["Vous êtes sur le point de vous donner %1 €",[_value] call life_fnc_numberText],
 	"Compensation",
 	"Oui",
 	"Non"

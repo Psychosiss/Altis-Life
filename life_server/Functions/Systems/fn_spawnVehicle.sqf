@@ -35,13 +35,13 @@ if(count _vInfo == 0) exitWith {serv_sv_use = serv_sv_use - [_vid];};
 if((_vInfo select 5) == 0) exitWith
 {
 	serv_sv_use = serv_sv_use - [_vid];
-	[[1,format[(localize "STR_Garage_SQLError_Destroyed"),_vInfo select 2]],"life_fnc_broadcast",_unit,false] spawn life_fnc_MP;
+	[[1,format["1 a été classé comme un véhicule détruit et a été envoyé à la fourrière.",_vInfo select 2]],"life_fnc_broadcast",_unit,false] spawn life_fnc_MP;
 };
 
 if((_vInfo select 6) == 1) exitWith
 {
 	serv_sv_use = serv_sv_use - [_vid];
-	[[1,format[(localize "STR_Garage_SQLError_Active"),_vInfo select 2]],"life_fnc_broadcast",_unit,false] spawn life_fnc_MP;
+	[[1,format["votre %1 à déjà été sortit du garage",_vInfo select 2]],"life_fnc_broadcast",_unit,false] spawn life_fnc_MP;
 };
 
 if(typeName _sp != "STRING") then 
@@ -54,7 +54,7 @@ if(count _nearVehicles > 0) exitWith
 {
 	serv_sv_use = serv_sv_use - [_vid];
 	[[_price,_unit_return],"life_fnc_garageRefund",_unit,false] spawn life_fnc_MP;
-	[[1,(localize "STR_Garage_SpawnPointError")],"life_fnc_broadcast",_unit,false] spawn life_fnc_MP;
+	[[1,"Il existe déjà un véhicule sur le point de spawn."],"life_fnc_broadcast",_unit,false] spawn life_fnc_MP;
 };
 
 _query = format["UPDATE vehicles SET active='1' WHERE pid='%1' AND id='%2'",_pid,_vid];

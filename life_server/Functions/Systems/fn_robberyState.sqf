@@ -10,7 +10,7 @@ switch(_state) do
 	case -1: {_vault setVariable["fed_rob_ip",false,true]; _vault setVariable["fed_locked",false,true];};
 	case 0:
 	{
-		[[2,(localize "STR_NOTF_FRRobbery_fail")],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
+		[[2,"Le vol de la réserve fédérale a échoué pour des raisons inconnues"],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
 		_vault setVariable["fed_locked",true,true];
 		sleep (10 * 60);
 		_vault setVariable["fed_locked",false,true];
@@ -19,7 +19,7 @@ switch(_state) do
 	
 	case 1:
 	{
-		[[1,format[(localize "STR_NOTF_FRRobbery_Success"),[_funds] call life_fnc_numberText]],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
+		[[1,format["%1 € a été volé à la réserve fédérale.",[_funds] call life_fnc_numberText]],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
 		_vault setVariable["fed_locked",true,true];
 		sleep (30 * 60);
 		_vault setVariable["fed_locked",false,true];
@@ -28,9 +28,7 @@ switch(_state) do
 		if(_funds > life_federal_funds) then
 		{
 			life_federal_funds = 0;
-		}
-			else
-		{
+		} else {
 			life_federal_funds = life_federal_funds - _funds;
 		};
 		
