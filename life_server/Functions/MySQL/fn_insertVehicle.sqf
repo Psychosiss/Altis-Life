@@ -1,14 +1,15 @@
-private["_uid","_side","_type","_className","_color","_plate","_query","_sql"];
+private["_uid","_side","_type","_className","_color","_plate","_insureSystem","_query","_sql"];
 _uid = [_this,0,"",[""]] call BIS_fnc_param;
 _side = [_this,1,"",[""]] call BIS_fnc_param;
 _type = [_this,2,"",[""]] call BIS_fnc_param;
 _className = [_this,3,"",[""]] call BIS_fnc_param;
 _color = [_this,4,-1,[0]] call BIS_fnc_param;
 _plate = [_this,5,-1,[0]] call BIS_fnc_param;
+_insureSystem = [_this,6,-1,[0]] call BIS_fnc_param;
 
-if(_uid == "" OR _side == "" OR _type == "" OR _className == "" OR _color == -1 OR _plate == -1) exitWith {};
+if(_uid == "" OR _side == "" OR _type == "" OR _className == "" OR _color == -1 OR _plate == -1  OR _insureSystem == -1) exitWith {};
 
-_query = format["INSERT INTO vehicles (side, classname, type, pid, alive, active, inventory, color, plate, gear) VALUES ('%1', '%2', '%3', '%4', '1','1','""[[],0]""', '%5', '%6','""[]""')",_side,_className,_type,_uid,_color,_plate];
+_query = format["INSERT INTO vehicles (side, classname, type, pid, alive, active, inventory, color, plate, insure, gear) VALUES ('%1', '%2', '%3', '%4', '1','1','""[[],0]""', '%5', '%6', '%7','""[]""')",_side,_className,_type,_uid,_color,_plate,_insureSystem];
 
 waitUntil {sleep (random 0.3); !DB_Async_Active};
 [_query,1] call DB_fnc_asyncCall;
