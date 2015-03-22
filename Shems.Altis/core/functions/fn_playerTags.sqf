@@ -77,7 +77,7 @@ _units = _units - [player];
 					_text = format["<t color='#0000FF'><img image='%2' size='1'></img> %1</t>", _name, _icon];
 				};
 
-				case(_x getVariable["mediclevel", 0] > 0): 
+				case(_x getVariable["med_level", 0] > 0): 
 				{
 					_icon = "a3\UI_F\data\GUI\Cfg\Ranks\major_gs.paa";
 					_text = format["<t color='#FF0000'><img image='%2' size='1'></img> %1</t>", _name, _icon];

@@ -44,7 +44,7 @@ if (!_extDB) exitWith
 ["CALL deleteOldGangs",1] spawn DB_fnc_asyncCall;
 
 life_adminlevel = 0;
-life_medicLevel = 0;
+life_med_level = 0;
 life_coplevel = 0;
 life_donator = 0;
 

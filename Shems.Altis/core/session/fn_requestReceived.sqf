@@ -17,10 +17,10 @@ if(count _this == 0) exitWith {[] call SOCK_fnc_insertPlayerInfo;};
 if((_this select 0) == "Error") exitWith {[] call SOCK_fnc_insertPlayerInfo;};
 if((getPlayerUID player) != _this select 0) exitWith {[] call SOCK_fnc_dataQuery;};
 
-if(!isServer && (!isNil "life_adminlevel" OR !isNil "life_coplevel" OR !isNil "life_donator" OR !isNil "life_medicLevel")) exitWith 
+if(!isServer && (!isNil "life_adminlevel" OR !isNil "life_coplevel" OR !isNil "life_donator" OR !isNil "life_med_level")) exitWith 
 {
 	[[profileName,getPlayerUID player,"VariablesAlreadySet"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
-	[[profileName,format["Variables set before client initialization...\nlife_adminlevel: %1\nlife_coplevel: %2\nlife_donator: %3\nlife_medicLevel: %4"",life_adminlevel,life_coplevel,life_donator,life_medicLevel]],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
+	[[profileName,format["Variables set before client initialization...\nlife_adminlevel: %1\nlife_coplevel: %2\nlife_donator: %3\nlife_med_level: %4"",life_adminlevel,life_coplevel,life_donator,life_med_level]],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
 	sleep 0.9;
 	["SpyGlass",false,false] execVM "\a3\functions_f\Misc\fn_endMission.sqf";
 };
@@ -45,7 +45,7 @@ switch(playerSide) do
 	case west: 
 	{
 		__CONST__(life_coplevel, parseNumber(_this select 7));
-		__CONST__(life_medicLevel,0);
+		__CONST__(life_med_level,0);
 		life_blacklisted = _this select 9;
 		cop_position = _this select 10;
 		life_is_alive = _this select 11;
@@ -57,7 +57,7 @@ switch(playerSide) do
 		civ_position = _this select 9;
 		life_is_alive = _this select 10;
 		__CONST__(life_coplevel,0);
-		__CONST__(life_medicLevel,0);
+		__CONST__(life_med_level,0);
 		life_houses = _this select 12;
 		{
 			_house = nearestBuilding (call compile format["%1", _x select 0]);
@@ -74,7 +74,7 @@ switch(playerSide) do
 
 	case independent: 
 	{
-		__CONST__(life_medicLevel, parseNumber(_this select 7));
+		__CONST__(life_med_level, parseNumber(_this select 7));
 		__CONST__(life_coplevel,0);
 		med_position = _this select 9;
 		life_is_alive = _this select 10;

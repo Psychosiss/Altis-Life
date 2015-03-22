@@ -45,7 +45,7 @@ if (!life_is_alive) then
 }; 
 
 player setVariable["coplevel", __GETC__(life_coplevel), true];
-player setVariable["mediclevel", __GETC__(life_medicLevel), true];
+player setVariable["med_level", __GETC__(life_med_level), true];
 player setVariable["adminlevel", __GETC__(life_adminlevel), true];
 
 player addRating 9999999;

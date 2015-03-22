@@ -4250,7 +4250,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="dog_med_1";
-					init="this enableSimulation false; this allowDamage false; this addAction[""Adopter un chien"",""scripts\chiens.sqf"",{(_this select 1) , !isNil ""life_mediclevel"" && (call life_mediclevel) > 0 && playerSide == independent}]; this setObjectTexture [0,""images\med\uniform.jpg""];";
+					init="this enableSimulation false; this allowDamage false; this addAction[""Adopter un chien"",""scripts\chiens.sqf"",{(_this select 1) , !isNil ""life_med_level"" && (call life_med_level) > 0 && playerSide == independent}]; this setObjectTexture [0,""images\med\uniform.jpg""];";
 				};
 			};
 		};
