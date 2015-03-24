@@ -119,7 +119,7 @@ life_dynMarket_Items_ToTrack =
 
 life_dynMarket_Items_CurrentPriceArr = [];
 life_dynMarket_sellarraycopy = life_dynMarket_Items_ToTrack;
-life_dynMarket_Serveruptime = (life_dynMarket_Serveruptime * 3600) - 60;
+life_dynMarket_Serveruptime = (life_dynMarket_Serveruptime * 3600) - 300;
 {
 	_currentArray = _x;
 	life_dynMarket_Items_CurrentPriceArr pushBack [_currentArray select 0,_currentArray select 1,0];
@@ -132,12 +132,15 @@ if (life_dynMarket_UseExternalDatabase) then {[1] call TON_fnc_HandleDB;};
 
 life_dynMarket_UpdateCount = 0;
 
-[] spawn 
+if (life_dynMarket_UseExternalDatabase) then 
 {
-	sleep life_dynMarket_Serveruptime;
-	diag_log "dynMarket : les prix actuels viennent d'être sauvegarder dans la base de donnée";
-	diag_log "dynMarket : En attente des résultats";
-	[0] call TON_fnc_HandleDB;
+	[] spawn 
+	{
+		sleep life_dynMarket_Serveruptime;
+		diag_log "dynMarket : les prix actuels viennent d'être sauvegarder dans la base de donnée";
+		diag_log "dynMarket : En attente des résultats";
+		[0] call TON_fnc_HandleDB;
+	};
 };
 
 sleep 5;

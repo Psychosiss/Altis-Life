@@ -60,9 +60,9 @@ _units = _units - [player];
 					_text = format["<t color='#000000'>%1</t>", _name];
 				};
 
-				case(_x getVariable["coplevel", 0] > 0) : 
+				case(_x getVariable["cop_level", 0] > 0) : 
 				{
-					switch (_x getVariable["coplevel", 0]) do 
+					switch (_x getVariable["cop_level", 0]) do 
 					{
 						case (1) : {_icon = "a3\UI_F\data\GUI\Cfg\Ranks\private_gs.paa";};
 						case (2) : {_icon = "a3\UI_F\data\GUI\Cfg\Ranks\corporal_gs.paa";};

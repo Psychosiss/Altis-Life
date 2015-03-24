@@ -19,7 +19,7 @@ switch (_filter) do
 	//Hats
 	case 1:
 	{
-		if(__GETC__(life_coplevel) > 1) then
+		if(__GETC__(life_cop_level) > 1) then
 		{
 			_ret pushBack ["H_HelmetB_plain_mcamo",nil,75];
 			_ret pushBack ["H_Booniehat_mcamo",nil,120];
@@ -55,7 +55,7 @@ switch (_filter) do
 	case 3:
 	{
 		_ret pushBack ["V_Rangemaster_belt",nil,800];
-		if(__GETC__(life_coplevel) > 1) then
+		if(__GETC__(life_cop_level) > 1) then
 		{
 			_ret pushBack ["V_PlateCarrier1_rgr",nil,1500];
 			_ret pushBack ["V_PlateCarrier2_rgr",nil,1500];

@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `players` (
   `cop_bankacc` int(100) NOT NULL DEFAULT '0',
   `cop_licenses` text,
   `cop_gear` text NOT NULL,
-  `coplevel` enum('0','1','2','3','4','5','6','7') NOT NULL DEFAULT '0',
+  `cop_level` enum('0','1','2','3','4','5','6','7') NOT NULL DEFAULT '0',
   `cop_position` text NOT NULL DEFAULT '"[]"',
   `blacklist` tinyint(1) NOT NULL DEFAULT '0',
   `med_cash` int(100) NOT NULL DEFAULT '0',
@@ -167,7 +167,7 @@ CREATE TABLE `messages` (
 
 DROP TABLE IF EXISTS `dynmarket`;
 CREATE TABLE `dynmarket` (
-  `id` int(11) NOT NULL DEFAULT '1',
+  `id` INT NOT NULL DEFAULT 1,
   `prices` text NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

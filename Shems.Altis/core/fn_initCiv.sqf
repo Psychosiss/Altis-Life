@@ -44,7 +44,7 @@ if (!life_is_alive) then
 	life_is_alive = true;
 }; 
 
-player setVariable["coplevel", __GETC__(life_coplevel), true];
+player setVariable["cop_level", __GETC__(life_cop_level), true];
 player setVariable["med_level", __GETC__(life_med_level), true];
 player setVariable["adminlevel", __GETC__(life_adminlevel), true];
 

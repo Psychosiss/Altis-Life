@@ -12,7 +12,7 @@ if(life_blacklisted) exitWith
 	sleep 30;
 };
 
-if(__GETC__(life_coplevel) == 0) then 
+if(__GETC__(life_cop_level) == 0) then 
 {
 	["NotWhitelisted",false,true] call BIS_fnc_endMission;
 	sleep 35;
@@ -29,7 +29,7 @@ if (!life_is_alive) then
 	life_is_alive = true;
 };
 
-player setVariable["coplevel", __GETC__(life_coplevel), true];
+player setVariable["cop_level", __GETC__(life_cop_level), true];
 player setVariable["med_level", __GETC__(life_med_level), true];
 player setVariable["adminlevel", __GETC__(life_adminlevel), true];
 

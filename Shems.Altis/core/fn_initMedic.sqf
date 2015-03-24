@@ -24,7 +24,7 @@ if (!life_is_alive) then
 
 //[] call life_fnc_spawnMenu;
 
-player setVariable["coplevel", __GETC__(life_coplevel), true];
+player setVariable["cop_level", __GETC__(life_cop_level), true];
 player setVariable["med_level", __GETC__(life_med_level), true];
 player setVariable["adminlevel", __GETC__(life_adminlevel), true];
 

@@ -45,7 +45,7 @@ if (!_extDB) exitWith
 
 life_adminlevel = 0;
 life_med_level = 0;
-life_coplevel = 0;
+life_cop_level = 0;
 life_donator = 0;
 
 __CONST__(JxMxE_PublishVehicle,"No");

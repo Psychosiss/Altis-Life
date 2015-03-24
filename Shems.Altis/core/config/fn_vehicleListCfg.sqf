@@ -139,11 +139,11 @@ switch (_shop) do
 	{
 		_return pushBack ["C_Offroad_01_F",5000];
 		_return pushBack ["C_SUV_01_F",20000];
-		if(__GETC__(life_coplevel) > 3) then
+		if(__GETC__(life_cop_level) > 3) then
 		{
 			_return pushBack ["B_MRAP_01_F",100000];
 		};
-		if(__GETC__(life_coplevel) > 5) then
+		if(__GETC__(life_cop_level) > 5) then
 		{
 			_return pushBack ["B_MRAP_01_hmg_F",100000];
 		};
@@ -151,12 +151,12 @@ switch (_shop) do
 	
 	case "cop_air":
 	{
-		if(__GETC__(life_coplevel) > 2) then
+		if(__GETC__(life_cop_level) > 2) then
 		{
 			_return pushBack ["O_Heli_Light_02_unarmed_F",750000];
 			_return pushBack ["C_Heli_Light_01_civil_F",75000];
 		};
-		if(__GETC__(life_coplevel) > 4) then
+		if(__GETC__(life_cop_level) > 4) then
 		{
 			_return pushBack ["O_Heli_Light_02_unarmed_F",1000000];
 			_return pushBack ["C_Heli_Light_01_civil_F",246000];

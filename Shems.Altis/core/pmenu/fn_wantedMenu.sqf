@@ -12,7 +12,7 @@ _units = [];
 
 ctrlSetText[2404,"Connexion établie..."];
 
-if(__GETC__(life_coplevel) < 3 && __GETC__(life_adminlevel) == 0) then
+if(__GETC__(life_cop_level) < 3 && __GETC__(life_adminlevel) == 0) then
 {
 	ctrlShow[2405,false];
 };

@@ -69,7 +69,7 @@ switch(_shop) do
 		switch(true) do
 		{
 			case (playerSide != west): {"Vous n'êtes pas Policier"};
-			case (__GETC__(life_coplevel) < 2): {"Vous n'avez pas le rang d'officier!"};
+			case (__GETC__(life_cop_level) < 2): {"Vous n'avez pas le rang d'officier!"};
 			default
 			{
 				["Magasin Officier",
@@ -117,7 +117,7 @@ switch(_shop) do
 		switch(true) do
 		{
 			case (playerSide != west): {"Vous n'êtes pas Policier"};
-			case (__GETC__(life_coplevel) < 3): {"Vous n'avez pas le rang de caporal!"};
+			case (__GETC__(life_cop_level) < 3): {"Vous n'avez pas le rang de caporal!"};
 			default
 			{
 				["Magasin Caporal",
@@ -172,7 +172,7 @@ switch(_shop) do
 		switch(true) do
 		{
 			case (playerSide != west): {"Vous n'êtes pas Policier"};
-			case (__GETC__(life_coplevel) < 4): {"Vous n'avez pas le rang de sergent!"};
+			case (__GETC__(life_cop_level) < 4): {"Vous n'avez pas le rang de sergent!"};
 			default
 			{
 				["Magasin Sergent",
@@ -227,7 +227,7 @@ switch(_shop) do
 		switch(true) do
 		{
 			case (playerSide != west): {"Vous n'êtes pas Policier"};
-			case (__GETC__(life_coplevel) < 5): {"Vous n'avez pas le rang de lieutenant!"};
+			case (__GETC__(life_cop_level) < 5): {"Vous n'avez pas le rang de lieutenant!"};
 			default
 			{
 				["Magasin Lieutenant",
@@ -284,7 +284,7 @@ switch(_shop) do
 		switch(true) do
 		{
 			case (playerSide != west): {"Vous n'êtes pas Policier"};
-			case (__GETC__(life_coplevel) < 6): {"Vous n'avez pas le rang de capitaine!"};
+			case (__GETC__(life_cop_level) < 6): {"Vous n'avez pas le rang de capitaine!"};
 			default
 			{
 				["Magasin Capitaine",
@@ -334,7 +334,7 @@ switch(_shop) do
 		switch(true) do
 		{
 			case (playerSide != west): {"Vous n'êtes pas Policier"};
-			case (__GETC__(life_coplevel) < 7): {"Vous n'avez pas le rang de Chef adjoint!"};
+			case (__GETC__(life_cop_level) < 7): {"Vous n'avez pas le rang de Chef adjoint!"};
 			default
 			{
 				["Magasin Chef Ajoint",
