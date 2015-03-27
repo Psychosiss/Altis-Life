@@ -1,9 +1,9 @@
 private["_value"];
 _value = parseNumber(ctrlText 2702);
 
-if(_value > 1000000) exitWith {hint localize "STR_ATM_GreaterThan";};
+if(_value > 1000000) exitWith {hint "Vous ne pouvez pas déposer plus de 1.000.000 € à la fois.";};
 if(_value < 0) exitWith {};
-if(!([str(_value)] call life_fnc_isnumeric)) exitWith {hint localize "STR_AIM_notnumeric"};
+if(!([str(_value)] call life_fnc_isnumeric)) exitWith {hint "Vous devez entrer un nombre"};
 if(_value > life_cash) exitWith {hint "Vous n'avez pas cette somme sur vous."};
 
 life_cash = life_cash - _value;

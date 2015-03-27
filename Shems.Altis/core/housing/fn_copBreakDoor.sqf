@@ -1,19 +1,19 @@
 private["_house","_door","_title","_titleText","_progressBar","_cpRate","_cP","_uid"];
 _house = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 if(isNull _house OR !(_house isKindOf "House_F")) exitWith {};
-if(isNil {(_house getVariable "house_owner")}) exitWith {hint localize "STR_House_Raid_NoOwner"};
+if(isNil {(_house getVariable "house_owner")}) exitWith {hint "Cette maison est inhabité."};
 
 _uid = (_house getVariable "house_owner") select 0;
-if(!([_uid] call life_fnc_isUIDActive)) exitWith {hint localize "STR_House_Raid_OwnerOff"};
+if(!([_uid] call life_fnc_isUIDActive)) exitWith {hint "Le propriétaire n'est pas actif"};
 
 _door = [_house] call life_fnc_nearestDoor;
-if(_door == 0) exitWith {hint localize "STR_Cop_NotaDoor"};
-if((_house getVariable[format["bis_disabled_Door_%1",_door],0]) == 0) exitWith {hint localize "STR_House_Raid_DoorUnlocked"};
+if(_door == 0) exitWith {hint "Il n'y a pas de porte à proximité"};
+if((_house getVariable[format["bis_disabled_Door_%1",_door],0]) == 0) exitWith {hint "La porte est déjà dévérouillé"};
 
 life_action_inUse = true;
 
 disableSerialization;
-_title = localize "STR_House_Raid_Progress";
+_title = "Cassage de sérrure";
 5 cutRsc ["life_progress","PLAIN"];
 _ui = uiNamespace getVariable "life_progress";
 _progressBar = _ui displayCtrl 38201;
@@ -23,16 +23,18 @@ _progressBar progressSetPosition 0.01;
 _cP = 0.01;
 _cpRate = 0.0092;
 
-[[2,format[localize "STR_House_Raid_NOTF",(_house getVariable "house_owner") select 1]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+[[2,format["%1 votre maison est perquisitionnée par la police.",(_house getVariable "house_owner") select 1]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 
 while {true} do
 {
-	if(animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then {
+	if(animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then 
+	{
 		[[player,"AinvPknlMstpSnonWnonDnon_medic_1"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
 		player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
 	};
 	sleep 0.26;
-	if(isNull _ui) then {
+	if(isNull _ui) then 
+	{
 		5 cutRsc ["life_progress","PLAIN"];
 		_ui = uiNamespace getVariable "life_progress";
 	};
@@ -46,7 +48,7 @@ while {true} do
 5 cutText ["","PLAIN"];
 player playActionNow "stop";
 if(!alive player) exitWith {life_action_inUse = false;};
-if(life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR_NOTF_ActionCancel","PLAIN"]; life_action_inUse = false;};
+if(life_interrupted) exitWith {life_interrupted = false; titleText["Action Annulée","PLAIN"]; life_action_inUse = false;};
 life_action_inUse = false;
 _house animate [format["door_%1_rot",_door],1];
 _house setVariable[format["bis_disabled_Door_%1",_door],0,true];

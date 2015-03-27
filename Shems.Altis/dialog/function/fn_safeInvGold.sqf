@@ -5,7 +5,7 @@ disableSerialization;
 _tInv = (findDisplay 3500) displayCtrl 3502;
 lbClear _tInv;
 _safeInfo = _safe getVariable["gold",-1];
-if(_safeInfo < 1) exitWith {closeDialog 0; hint localize "STR_Civ_VaultEmpty";};
+if(_safeInfo < 1) exitWith {closeDialog 0; hint "Le coffre est vide.";};
 _str = ["life_inv_goldbarp"] call life_fnc_varToStr;
 _shrt = ["life_inv_goldbarp",1] call life_fnc_varHandle;
 _tInv lbAdd format["[%1] - %2",_safeInfo,_str];

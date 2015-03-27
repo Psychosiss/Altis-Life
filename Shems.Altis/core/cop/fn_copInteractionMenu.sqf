@@ -38,7 +38,7 @@ if(_curTarget isKindOf "House_F") exitWith
 		_Btn10 = _display displayCtrl Btn10;
 		life_pInact_curTarget = _curTarget;
 
-		_Btn1 ctrlSetText "Reparer la porte";
+		_Btn1 ctrlSetText "Reparer";
 		_Btn1 buttonSetAction "[life_pInact_curTarget] spawn life_fnc_repairDoor;";
 
 		_Btn2 ctrlSetText "Ouvrir / Fermer";

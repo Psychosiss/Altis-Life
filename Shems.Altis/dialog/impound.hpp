@@ -102,7 +102,7 @@ class Life_impound_menu
 			h = (1 / 25);
 		};
 	};
-	
+
 	class controls
 	{
 		class VehicleList : Life_RscListBox

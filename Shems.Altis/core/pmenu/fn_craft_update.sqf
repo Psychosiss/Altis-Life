@@ -4,7 +4,7 @@ _dialog = findDisplay 666;
 _inv = _dialog displayCtrl 669;
 _mats = _dialog displayCtrl 672;
 _struct = "";
-if((lbCurSel 669) == -1) exitWith {hint localize "STR_ISTR_SelectItemFirst";};
+if((lbCurSel 669) == -1) exitWith {hint "Vous devez d'abord séléctionner un objet!";};
 _item = lbData[669,(lbCurSel 669)];
 _itemFilter = lbData[673,(lbCurSel 673)];
 

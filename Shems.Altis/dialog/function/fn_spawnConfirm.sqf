@@ -21,7 +21,7 @@ if(count life_spawn_point == 0) then
 	} else {
 		player setPos (getMarkerPos (_sp select 0));
 	};
-	titleText[format["%2 %1",_sp select 1,localize "STR_Spawn_Spawned"],"BLACK IN"];
+	titleText[format["%2 %1",_sp select 1,"Tu t'es reveillé à"],"BLACK IN"];
 } else {
 	if(playerSide == civilian) then
 	{
@@ -54,7 +54,7 @@ if(count life_spawn_point == 0) then
 	} else {
 		player setPos (getMarkerPos (life_spawn_point select 0));
 	};
-	titleText[format["%2 %1",life_spawn_point select 1,localize "STR_Spawn_Spawned"],"BLACK IN"];
+	titleText[format["%2 %1",life_spawn_point select 1,"Tu t'es reveillé à"],"BLACK IN"];
 };
 
 if(life_firstSpawn) then 

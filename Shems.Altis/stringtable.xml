@@ -218,7 +218,7 @@
 			<Original>Aucun vehicule dans le garage.</Original>
 		</Key>
 		<Key ID="STR_Garage_CashError">
-			<Original>Vous n'avez pas %1 € sur votre compte bancaire pour payé les frais.</Original>
+			<Original>Vous n'avez pas %1 € dans votre compte bancaire pour payé les frais.</Original>
 		</Key>
 		<Key ID="STR_Garage_SpawningVeh">
 			<Original>Livraison du vehicule, merci de patienter un moment...</Original>
@@ -537,7 +537,7 @@
    			<Original>Vendre maison</Original>
 		</Key>
 		<Key ID="STR_pInAct_BuyHouse">
-   			<Original>Acheter maison</Original>
+   			<Original>Acheter</Original>
 		</Key>
 		<Key ID="STR_pInAct_LockStorage">
    			<Original>Fermer stockage</Original>

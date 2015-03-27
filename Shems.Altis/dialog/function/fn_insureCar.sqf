@@ -2,7 +2,7 @@
 
 private["_vehicle","_vid","_pid","_unit","_price"];
 disableSerialization;
-if(lbCurSel 2802 == -1) exitWith {hint localize "STR_Global_NoSelection"};
+if(lbCurSel 2802 == -1) exitWith {hint "Vous n'avez rien sélectionné."};
 _vehicle = lbData[2802,(lbCurSel 2802)];
 _vehicle = (call compile format["%1",_vehicle]) select 0;
 _vid = lbValue[2802,(lbCurSel 2802)];
@@ -21,7 +21,7 @@ if(_price == -1) then
 };
 if(life_atmcash < _price) exitWith 
 {
-	hint format[(localize "STR_Garage_CashError"),[_price] call life_fnc_numberText];
+	hint format["Vous n'avez pas %1 € dans votre compte bancaire pour payé les frais.",[_price] call life_fnc_numberText];
 };
 
 [[_vid,_pid,_unit,_price],"TON_fnc_insureCar",false,false] spawn life_fnc_MP;
