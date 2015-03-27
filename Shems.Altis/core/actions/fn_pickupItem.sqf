@@ -1,5 +1,6 @@
 private["_obj","_itemInfo","_itemName","_illegal","_diff"];
-if((time - life_action_delay) < 2) exitWith {hint "Vous ne pouvez pas utiliser cette touche aussi rapidement..."};
+
+if((time - life_action_delay) < 1) exitWith {hint "Vous ne pouvez pas utiliser cette touche aussi rapidement..."};
 _obj = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 if(isNull _obj OR isPlayer _obj) exitWith {};
 if((_obj getVariable["PickedUp",false])) exitWith {deleteVehicle _obj;};
@@ -7,6 +8,7 @@ if(player distance _obj > 3) exitWith {};
 _itemInfo = _obj getVariable "item";
 _itemName = [([_itemInfo select 0,0] call life_fnc_varHandle)] call life_fnc_varToStr;
 _illegal = [_itemInfo select 0,life_illegal_items] call fnc_index;
+
 if(playerSide == west && _illegal != -1) exitWith
 {
 	titleText[format["%1 a été placé en évidence, vous avez reçu %2 € comme récompense.",_itemName,[(life_illegal_items select _illegal) select 1] call life_fnc_numberText],"PLAIN"];
@@ -14,9 +16,10 @@ if(playerSide == west && _illegal != -1) exitWith
 	deleteVehicle _obj;
 	life_action_delay = time;
 };
+
 life_action_delay = time;
 _diff = [_itemInfo select 0,_itemInfo select 1,life_carryWeight,life_maxWeight] call life_fnc_calWeightDiff;
-if(_diff <= 0) exitWith {hint "Can't pick up that item, you are full."};
+if(_diff <= 0) exitWith {hint "Vous ne pouvez rien ramasser, vous ête plein."};
 _obj setVariable["PickedUp",true,true];
 if(_diff != _itemInfo select 1) then
 {

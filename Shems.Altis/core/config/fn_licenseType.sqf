@@ -44,7 +44,6 @@ switch (_mode) do
 			case "admin": {_var = "license_civ_admin"};
 			case "silver": {_var = "license_civ_silver"};
 			case "archeologue": {_var = "license_civ_archeologue"};
-			case "bois": {_var = "license_civ_bois"};
 			default {_var = ""};
 		};
 	};
@@ -88,7 +87,6 @@ switch (_mode) do
 			case "license_civ_admin": {_var = "admin"};
 			case "license_civ_silver": {_var = "silver"};
 			case "license_civ_archeologue": {_var = "archeologue"};
-			case "license_civ_bois": {_var = "bois"};
 			default {_var = ""};
 		};
 	};

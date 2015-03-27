@@ -57,8 +57,6 @@ switch (_var) do
 	case "life_inv_methp": {"Meth Pure"};
 	case "life_inv_tabac": {"Feuille de Tabac"};
 	case "life_inv_cigare": {"Cigare"};
-	case "life_inv_bois": {"Rondin de Bois"};
-	case "life_inv_planche": {"Planche de Bois"};
 	case "life_inv_puranium": {"Produit Uranium"};
 	case "life_inv_ipuranium": {"Uranium illégal"};
 	case "life_inv_uranium1": {"Déchets d'Uranium"};
@@ -129,7 +127,6 @@ switch (_var) do
 	case "license_civ_meth": {"Traitement de Meth"};
 	case "license_civ_tabac": {"Traitement de Tabac"};
 	case "license_civ_cement": {"Fabrication de ciment"};
-	case "license_civ_bois": {"Bûcheron"};
 	case "license_cop_cg": {"Garde de côte"};
 	case "license_civ_uranium": {"Formation Uranium"};
 	case "license_civ_admin": {"Administrateur"};

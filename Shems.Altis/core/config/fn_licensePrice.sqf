@@ -21,7 +21,6 @@ switch (_type) do
 	case "mair": {15000};
 	case "marijuana": {19500};
 	case "truck": {20000};
-	case "bois": {20000};
 	case "pilot": {25000};
 	case "heroin": {25000};
 	case "skull": {30000};

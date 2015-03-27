@@ -15,14 +15,54 @@ life_dynMarket_Items_Groups =
 [
 	["Legal",
 		[
-			["apple",-1,10,50],
-			["peach",-1,30,100]
+			["apple",-1,40,60],
+			["salema",-1,36,54],
+			["ornate",-1,32,48],
+			["mackerel",-1,140,210],
+			["tuna",-1,560,840],
+			["mullet",-1,200,300],
+			["catshark",-1,240,360],
+			["oilp",-1,2560,3840],
+			["diamond",-1,600,900],
+			["diamondc",-1,3200,4800],
+			["iron_r",-1,2620,3930],
+			["copper_r",-1,2000,3000],
+			["salt_r",-1,1320,1980],
+			["glass",-1,1160,1740],
+			["cement",-1,1560,2340],
+			["uranium",-1,28000,42000],
+			["skull",-1,600,900],
+			["skullp",-1,1200,1800],
+			["silver_r",-1,1680,2520],
+			["goat",-1,1600,2400],
+			["chicken",-1,2000,3000],
+			["sheep",-1,1600,2400],
+			["snake",-1,680,1020],
+			["rabbit",-1,640,960],
+			["goatp",-1,6400,9600],
+			["chickenp",-1,7200,10800],
+			["sheepp",-1,6400,9600],
+			["snakep",-1,1520,2280],
+			["rabbitp",-1,1440,2160]
 		],
 		0.5
 	],
 	["Illegal", 
 		[
-			/*["peach",1,30,100]*/
+			["heroinu",1,1110,2590],
+			["heroinp",1,2190,5110],
+			["turtle",1,1800,4200],
+			["marijuana",1,3210,7490],
+			["cocaine",1,1800,4200],
+			["cocainep",1,5250,12250],
+			["goldbar",1,57000,133000],
+			["methu",1,240,560],
+			["methp",1,2400,5600],
+			["tabac",1,3000,7000],
+			["cigare",1,4560,10640],
+			["kidney",1,30000,70000],
+			["dog",1,1800,4200],
+			["dogp",1,8400,19600]
 		],
 		0.5
 	]
@@ -30,91 +70,78 @@ life_dynMarket_Items_Groups =
 
 life_dynMarket_Items_ToTrack = 
 [
-	["apple",25],
-	["peach",50],
+	["apple",50],
+	["heroinu",1850],
+	["heroinp",3650],
 	["salema",45],
 	["ornate",40],
 	["mackerel",175],
 	["tuna",700],
 	["mullet",250],
 	["catshark",300],
-	["rabbit",65],
-	["turtle",30077],
-	["water",5],
-	["coffee",5],
-	["turtlesoup",1000],
-	["donuts",60],
-	["tbacon",25],
-	["lockpick",75],
-	["handcuffkey",75],
-	["pickaxe",750],
-	["redgull",200],
-	["fuelF",100],
-	["spikeStrip",1200],
-	["tracker",2500],
-	["goldbar",125000],
-	["cocainep",5348],
-	["heroinp",4527],
-	["marijuana",4365],
-	["iron_r",3017],
-	["copper_r",3746],
-	["salt_r",4759],
-	["glass",3368],
-	["oilp",2571],
-	["cement",3342],
-	["diamondc",3566],
-	["eisenp",3153],
-	["getreidep",3210],
-	["holzp",3248],
-	["hopfenp",3540],
-	["schwefelp",3222],
-	["silberp",3966],
-	["tabakp",4577],
-	["traubenp",4006],
-	["zinnp",3274],
-	["zuckerp",4565],
-	["schmuck",14825],
-	["bronze",13375],
-	["getreideip",4244],
-	["zuckerip",4922],
-	["tabakip",3977],
-	["kkugel",13987],
-	["spulver",11408],
-	["pbrau",24701],
-	["pkugel",62727],
-	["uranip",9448],
-	["uranp",18108],
-	["muschelp",1],
-	["korallep",1],
-	["aquarium",1],
-	["goldfisch",1],
-	["goldfischglas",1],
-	["pschmuck",1],
-	["algenp",1],
-	["reisp",1],
-	["reisip",1],
-	["seidep",1],
-	["baumwollep",1],
-	["psegel",1],
-	["sushi",1],
-	["halbl",1],
-	["nanop",1],
-	["pmuenze",1],
-	["rlachs",1],
-	["rmakrele",1],
-	["tfsteak",1],
-	["resche",1],
-	["display",1],
-	["szellen",1],
-	["htrans",1],
-	["prothese",1],
-	["kunststoff",1],
-	["titanp",1],
-	["notebook",1],
-	["kaffeep",1],
-	["statue",1],
-	["scanner",10000],
-	["uwsl",5000]
+	["oilp",3200],
+	["turtle",3000],
+	["water",5],  //
+	["burgers",175],  //
+	["frites",150],  //
+	["pizza",200],  //
+	["coffee",5],  //
+	["turtlesoup",1000],  //
+	["donuts",60],  //
+	["marijuana",5350],
+	["tbacon",25],  //
+	["lockpick",75],  //
+	["pickaxe",750],  //
+	["redgull",200],  //
+	["peach",55],  //
+	["cocaine",3000],
+	["cocainep",8750],
+	["diamond",750],
+	["diamondc",4000],
+	["iron_r",3275],
+	["copper_r",2500],
+	["salt_r",1650],
+	["glass",1450],
+	["fuelF",500],  //
+	["spikeStrip",1200],  //
+	["cement",1950],
+	["goldbar",95000],
+	["methu",400],
+	["methp",4000],
+	["tabac",5000],
+	["cigare",7600],
+	["uranium",35000],
+	["skull",750],
+	["skullp",1500],
+	["nitro",5000],  //
+	["kidney",50000],
+	["gpstracker",500],  //
+	["goldbarp",75000],  ////////
+	["scalpel",100],  //
+	["silver_r",2100],
+	["pressluft",5000],  //
+	["speedbomb",500000],  //
+	["campfire",3000],  //
+	["painkillers",50],  //
+	["tent1",9000],  //
+	["tent2",10000],  //
+	["skinningknife",1000],  //
+	["dog",3000],
+	["goat",2000],
+	["chicken",2500],
+	["sheep",2000],
+	["snake",850],
+	["rabbit",800],
+	["dogp",14000],
+	["goatp",8000],
+	["chickenp",9000],
+	["sheepp",8000],
+	["snakep",1900],
+	["rabbitp",1800],
+	["vammo",10000],  //
+	["adrenalineShot",5000],  //
+	["antimatter",1500000],  ////////
+	["debitcard",2500]  //
 ];
 
 life_dynMarket_Items_CurrentPriceArr = [];
@@ -129,9 +156,7 @@ publicVariable "life_dynMarket_UserNotification";
 publicVariable "life_dynMarket_UserNotification_Text";
 
 if (life_dynMarket_UseExternalDatabase) then {[1] call TON_fnc_HandleDB;};
-
 life_dynMarket_UpdateCount = 0;
-
 if (life_dynMarket_UseExternalDatabase) then 
 {
 	[] spawn 
