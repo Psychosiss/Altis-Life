@@ -6,7 +6,7 @@ _uid = getPlayerUID player;
 
 if(isNull _house) exitWith {};
 if(!(_house isKindOf "House_F")) exitWith {};
-if(isNil {_house getVariable "house_owner"}) exitWith {hint "There is no owner for this house."};
+if(isNil {_house getVariable "house_owner"}) exitWith {hint "Cette maison est inhabité."};
 closeDialog 0;
 
 _houseCfg = [(typeOf _house)] call life_fnc_houseConfig;
@@ -14,9 +14,13 @@ if(count _houseCfg == 0) exitWith {};
 
 _action = 
 [
-	format[localize "STR_House_SellHouseMSG",
+	format["Etes-vous sûr de vouloir vendre votre maison? Elle se vendra pour : %1 € ?",
+	//Etes-vous sûr de vouloir vendre votre maison? Elle se vendra pour: &lt;t color='#8cff9b'&gt;$%1&lt;/t&gt;
 	(round((_houseCfg select 0)/2)) call life_fnc_numberText,
-	(_houseCfg select 1)],localize "STR_pInAct_SellHouse",localize "STR_Global_Sell",localize "STR_Global_Cancel"
+	(_houseCfg select 1)],
+	"Vendre la maison",
+	"Vendre",
+	"Annuler"
 ] call BIS_fnc_guiMessage;
 
 if(_action) then 

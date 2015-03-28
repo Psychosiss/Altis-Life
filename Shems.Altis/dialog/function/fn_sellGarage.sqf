@@ -2,7 +2,7 @@
 
 private["_vehicle","_vid","_pid","_unit","_price"];
 disableSerialization;
-if(lbCurSel 2802 == -1) exitWith {hint localize "STR_Global_NoSelection"};
+if(lbCurSel 2802 == -1) exitWith {hint "Vous n'avez rien sélectionné."};
 _vehicle = lbData[2802,(lbCurSel 2802)];
 _vehicle = (call compile format["%1",_vehicle]) select 0;
 _vid = lbValue[2802,(lbCurSel 2802)];

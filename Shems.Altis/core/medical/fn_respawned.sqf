@@ -49,7 +49,6 @@ camDestroy life_deathCamera;
 
 if(life_is_arrested) exitWith 
 {
-	hint localize "STR_Jail_Suicide";
 	life_is_arrested = false;
 	[player,true] spawn life_fnc_jail;
 	[] call SOCK_fnc_updateRequest;

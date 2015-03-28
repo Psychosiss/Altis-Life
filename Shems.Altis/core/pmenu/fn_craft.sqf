@@ -5,7 +5,8 @@ if(!dialog) then
 };
 disableSerialization;
 
-if(life_is_processing) exitWith{
+if(life_is_processing) exitWith 
+{
 	closeDialog 2001;
 	closeDialog 0;
 };
@@ -15,13 +16,12 @@ _inv = _dialog displayCtrl 669;
 lbClear _inv;
 
 _filter = _dialog displayCtrl 673;
-_filter lbAdd localize "STR_CRAFT_FILTER_Weapon";
+_filter lbAdd "Armes";
 _filter lbSetData[(lbSize _filter)-1,"weapon"];
-_filter lbAdd localize "STR_CRAFT_FILTER_Uniform";
+_filter lbAdd "Uniformes";
 _filter lbSetData[(lbSize _filter)-1,"uniform"];
-_filter lbAdd localize "STR_CRAFT_FILTER_Backpack";
+_filter lbAdd "Sacs";
 _filter lbSetData[(lbSize _filter)-1,"backpack"];
-_filter lbAdd localize "STR_CRAFT_FILTER_Item";
+_filter lbAdd "Objets";
 _filter lbSetData[(lbSize _filter)-1,"item"];
-
 _filter lbSetCurSel 0;
