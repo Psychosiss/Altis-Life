@@ -9,7 +9,7 @@ if(!isDedicated) then { X_Client = true;};
 enableSaving[false,false];
 
 life_versionInfo = "Altis Life RPG fondé par Tonic et developpé par Shems.";
-//[] execVM "library.sqf";
+
 [] execVM "KRON_Strings.sqf";
 [] execVM "scripts\antiCheat.sqf";
 [] execVM "scripts\antiCheat2.sqf";
