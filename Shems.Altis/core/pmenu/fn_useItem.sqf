@@ -133,13 +133,6 @@ switch (true) do
 		};
 	};
 
-	case (_item == "underwatercharge"): 
-	{
-		player reveal gold_safe;
-		(group player) reveal gold_safe;
-		[cursorTarget] spawn life_fnc_underwaterCharge;
-	};
-
 	case (_item == "speedbomb"):
 	{
 		[] spawn life_fnc_speedBomb;

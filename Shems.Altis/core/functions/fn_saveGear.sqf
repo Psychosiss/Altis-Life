@@ -219,8 +219,6 @@ if(count (handGunItems player) > 0) then
 	["life_inv_demolitioncharge", life_inv_demolitioncharge],
 	["life_inv_civdefusekit", life_inv_civdefusekit],
 	["life_inv_bombdetect", life_inv_bombdetect],
-	["life_inv_goldbarp", life_inv_goldbarp],
-	["life_inv_underwatercharge", life_inv_underwatercharge],
 	["life_inv_scalpel", life_inv_scalpel],
 	["life_inv_silver", life_inv_silver],
 	["life_inv_silverr", life_inv_silverr],

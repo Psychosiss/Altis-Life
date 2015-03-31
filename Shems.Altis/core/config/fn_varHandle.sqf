@@ -79,8 +79,6 @@ switch (_mode) do
 			case "demolitioncharge": {"life_inv_demolitioncharge"};
 			case "civdefusekit": {"life_inv_civdefusekit"};
 			case "bombdetect": {"life_inv_bombdetect"};
-			case "goldbarp": {"life_inv_goldbarp"};
-			case "underwatercharge": {"life_inv_underwatercharge"};
 			case "scalpel": {"life_inv_scalpel"};
 			case "silver": {"life_inv_silver"};
 			case "silver_r": {"life_inv_silverr"};
@@ -184,8 +182,6 @@ switch (_mode) do
 			case "life_inv_demolitioncharge": {"demolitioncharge"};
 			case "life_inv_bombdetect": {"bombdetect"};
 			case "life_inv_civdefusekit": {"civdefusekit"};
-			case "life_inv_goldbarp": {"goldbarp"};
-			case "life_inv_underwatercharge": {"underwatercharge"};
 			case "life_inv_scalpel": {"scalpel"};
 			case "life_inv_silver": {"silver"};
 			case "life_inv_silverr": {"silver_r"};

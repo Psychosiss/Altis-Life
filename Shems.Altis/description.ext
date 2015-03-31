@@ -53,7 +53,6 @@ corpseRemovalMaxTime = 9999;
 #include "dialog\veh_repaint.hpp"
 #include "dialog\jail_time.hpp"
 #include "dialog\channel.hpp"
-#include "dialog\goldSafe.hpp"
 #include "dialog\taxi_service.hpp"
 #include "dialog\revoke_license.hpp"
 #include "dialog\licenses.hpp"
@@ -392,7 +391,6 @@ class CfgFunctions
 			class hooker {};
 			class hasOrgan {};
 			class removeWeapons {};
-			class waterChargeTimer {};
 			class civInteractionMenu {};
 			class huntingZone {};
 			class cookMeat {};
@@ -508,7 +506,6 @@ class CfgFunctions
 			class demolitionCharge {};
 			class bombDefuseKit {};
 			class bankalarmsound {};
-			class underwaterCharge {};
 			class SlotJackpotSound {};
 			class pressluftUse {};
 			class speedBomb {};
@@ -542,11 +539,8 @@ class CfgFunctions
 			class safeFix {};
 			class vehicleGarage {};
 			class gangDeposit {};
-			class calldialog {};
+			class callDialog {};
 			class sendChannel {};
-			class safeInvGold {};
-			class safeGold {};
-			class goldTake {};
 			class insureCar {};
 		};
 		

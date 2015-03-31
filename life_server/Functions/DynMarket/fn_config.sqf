@@ -116,7 +116,6 @@ life_dynMarket_Items_ToTrack =
 	["nitro",5000],  //
 	["kidney",50000],
 	["gpstracker",500],  //
-	["goldbarp",75000],  ////////
 	["scalpel",100],  //
 	["silver_r",2100],
 	["pressluft",5000],  //

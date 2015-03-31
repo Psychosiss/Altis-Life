@@ -128,7 +128,6 @@ class CfgFunctions
 			class clientDisconnect {};
 			class cleanupRequest {};
 			class vehicleRepaint {};
-			class goldUpdate {};
 			class saveBounties {};
 			class loadBounties {};
 			class vehicleIsDead {};

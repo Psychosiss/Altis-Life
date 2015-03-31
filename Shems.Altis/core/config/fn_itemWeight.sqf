@@ -70,8 +70,6 @@ switch (_item) do
 	case "bombdetect": {10};
 	case "civdefusekit": {14};
 	case "demolitioncharge": {22};
-	case "underwatercharge": {18};
-	case "goldbarp": {12};
 	case "scalpel": {2};
 	case "silver": {6};
 	case "silver_r": {3};

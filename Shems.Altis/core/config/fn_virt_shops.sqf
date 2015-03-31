@@ -3,7 +3,7 @@ _shop = _this select 0;
 
 switch (_shop) do
 {
-	case "market": {["Altis Market",["campfire","tent1","tent2","skinningknife","water","rabbit","burgers","frites","pizza","apple","redgull","debitcard","chicken","chickenp","snake","snakep","rabbitp","goat","goatp","sheep","sheepp","tbacon","lockpick","pickaxe","fuelF","peach","storagesmall","storagebig","gpstracker","underwatercharge","pressluft"]]};
+	case "market": {["Altis Market",["campfire","tent1","tent2","skinningknife","water","rabbit","burgers","frites","pizza","apple","redgull","debitcard","chicken","chickenp","snake","snakep","rabbitp","goat","goatp","sheep","sheepp","tbacon","lockpick","pickaxe","fuelF","peach","storagesmall","storagebig","gpstracker","pressluft"]]};
 	case "rebel": {["Rebel Market",["water","apple","redgull","tbacon","lockpick","pickaxe","fuelF","peach","boltcutter","blastingcharge","debitcard","vammo","painkillers","ipuranium","frites","pizza","scalpel","pressluft","painkillers"]]};
 	case "gang": {["Gang Market", ["water","apple","redgull","tbacon","lockpick","debitcard","pickaxe","fuelF","peach","blastingcharge","boltcutter"]]};
 	case "wongs": {["Wong's Food Cart",["turtlesoup","turtle","dog","dogp"]]};
@@ -24,5 +24,4 @@ switch (_shop) do
 	case "tuning": {["tuning",["nitro"]]};
 	case "explosif": {["explosif",["civdefusekit","demolitioncharge","bombdetect","speedbomb"]]};
 	case "station": {["station essence",["campfire","water","burgers","frites","pizza","redgull","tbacon","fuelF"]]};
-	case "Prospector": {["Gold Ingot Dealer",["goldbarp"]]};
 };

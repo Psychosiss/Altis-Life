@@ -74,8 +74,6 @@ switch (_var) do
 	case "life_inv_bombdetect": {"Detecteur de bombe"};
 	case "life_inv_civdefusekit": {"Desamorceur"};
 	case "life_inv_demolitioncharge": {"Charge de démolition"};
-	case "life_inv_underwatercharge": {"Charge sous-marine"};
-	case "life_inv_goldbarp": {"Débris D'or"};
 	case "life_inv_scalpel": {"Scalpel chirurgicale"};
 	case "life_inv_silver": {"Minerai d'argent"};
 	case "life_inv_silverr": {"Lingot d'argent"};
