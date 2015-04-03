@@ -50,8 +50,8 @@ if(typeName _type == typeName []) then
 			case 2: {titleText[format["%1",_message],"PLAIN"];};
 			case 3: {diag_log format["%1", _message]};
 			case 4: {[_message,(player getVariable["realname",name player])] call life_fnc_AAN;};
-			case 5: {hint parseText format["%1", _message]};
 			case 6: {systemChat _message; hint _message; titleText [_message, "PLAIN"]; playSound "message";};
+			case 7: {hint parseText format["%1", _message]};
 		};
 	};
 } else {
@@ -62,7 +62,7 @@ if(typeName _type == typeName []) then
 		case 2: {titleText[format["%1",_message],"PLAIN"];};
 		case 3: {diag_log format["%1", _message]};
 		case 4: {[_message,(player getVariable["realname",name player])] call life_fnc_AAN;};
-		case 5: {hint parseText format["%1", _message]};
 		case 6: {systemChat _message; hint _message; titleText [_message, "PLAIN"]; playSound "message";};
+		case 7: {hint parseText format["%1", _message]};
 	};
 };

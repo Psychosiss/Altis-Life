@@ -109,6 +109,7 @@ client_session_list = [];
 [] spawn TON_fnc_initHouses;
 
 [] execVM "\life_server\Functions\DynMarket\fn_config.sqf";
+[] execVM "\life_server\Functions\SipWreck\fn_generateWreck.sqf";
 call compile preProcessFileLineNumbers "\life_server\SHK_pos\shk_pos_init.sqf";
 
 private["_dome","_rsb"];
@@ -124,4 +125,3 @@ life_server_isReady = true;
 publicVariable "life_server_isReady";
 
 [] call SHEMS_fnc_antiHack;
-[] call SHEMS_fnc_searchVehicleUID;

@@ -33,7 +33,7 @@ if(count (actionKeys "User10") != 0 && {(inputAction "User10" > 0)}) exitWith
 		[] spawn 
 		{
 			private["_handle"];
-			_handle = [] spawn life_fnc_actionKeyHandler;
+			_handle = [] spawn life_fnc_keyDownHandler;
 			waitUntil {scriptDone _handle};
 			life_action_inUse = false;
 		};
@@ -60,7 +60,7 @@ switch (_code) do
 			[] spawn 
 			{
 				private["_handle"];
-				_handle = [] spawn life_fnc_actionKeyHandler;
+				_handle = [] spawn life_fnc_keyDownHandler;
 				waitUntil {scriptDone _handle};
 				life_action_inUse = false;
 			};
@@ -167,11 +167,23 @@ switch (_code) do
 					[vehicle player] call life_fnc_openInventory;
 				};
 			} else {
-				if((cursorTarget isKindOf "Car" OR cursorTarget isKindOf "Air" OR cursorTarget isKindOf "Ship") && player distance cursorTarget < 7 && vehicle player == player && alive cursorTarget) then
+				if((
+					cursorTarget isKindOf "Land_Wreck_Traw_F" OR 
+					cursorTarget isKindOf "Land_Wreck_Traw2_F" OR 
+					cursorTarget isKindOf "Car" OR 
+					cursorTarget isKindOf "Air" OR 
+					cursorTarget isKindOf "Ship" OR 
+					cursorTarget isKindOf "House_F"
+				) && player distance cursorTarget < 7 && vehicle player == player && alive cursorTarget) then
 				{
-					if(cursorTarget in life_vehicles) then
+					if(cursorTarget in life_vehicles OR {!(cursorTarget getVariable ["locked",true])}) then
+					//if(cursorTarget in life_vehicles) then
 					{
 						[cursorTarget] call life_fnc_openInventory;
+					};
+					if (cursorTarget isKindOf "Land_Wreck_Traw_F" OR cursorTarget isKindOf "Land_Wreck_Traw2_F") then 
+					{
+						[cursorTarget] spawn life_fnc_openInventory;
 					};
 				} else {
 					if((typeOf cursorTarget in 

@@ -42,6 +42,7 @@ if(!isNull life_corpse) then
 	_containers = nearestObjects[life_corpse,["WeaponHolderSimulated"],5];
 	{deleteVehicle _x;} foreach _containers;
 	hideBody life_corpse;
+	//deleteVehicle life_corpse;
 };
 
 life_deathCamera cameraEffect ["TERMINATE","BACK"];

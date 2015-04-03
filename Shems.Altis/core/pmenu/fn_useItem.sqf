@@ -165,12 +165,29 @@ switch (true) do
 
 	case (_item == "painkillers"):
 	{
-		titleText["Cet objet est utilisable depuis le menu d'interaction (touche windows gauche).","PLAIN"];
+		titleText["Cet objet est utilisable depuis le menu déroulant.","PLAIN"];
 	};
-	
-	case (_item == "antimatter"):
+
+	case (_item == "underwatercharge"): 
 	{
-		[] spawn life_fnc_antiMatter;
+		_obj = nearestObject [player, "Land_Wreck_Traw_F"];
+		if (_obj == objNull) then {_obj = nearestObject [player, "Land_Wreck_Traw2_F"];};
+		if (("Land_Wreck_Traw_F" == typeOf _obj) OR ("Land_Wreck_Traw2_F" == typeOf _obj) && (player distance _obj < 30)) then
+		{
+			if (!([false,_item,1] call life_fnc_handleInv)) exitWith {hint "Erreur : objet non trouvé";};
+			_ship = _obj getVariable "opened";
+			_ship_obj = _obj;
+			if (_ship) then {hint "Le navire est ouvert!"};
+			if (!_ship) then 
+			{
+				hint "Une charge à été planté. Eloignez-vous !";
+				playSound3D ["A3\Sounds_F\sfx\alarm_independent.wss", _ship_obj];
+				sleep 10;
+				"M_NLAW_AT_F" createVehicle [getPos _ship_obj select 0, getPos _ship_obj select 1, 0];
+				shipWeapons = true;
+				publicVariableServer "shipWeapons";
+			};
+		};
 	};
 
 	default

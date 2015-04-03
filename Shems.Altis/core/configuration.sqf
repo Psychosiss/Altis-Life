@@ -249,8 +249,8 @@ life_inv_items =
 	"life_inv_skinningknife",
 	"life_inv_vammo",
 	"life_inv_adrenalineShot",
-	"life_inv_antimatter",
-	"life_inv_debitcard"
+	"life_inv_debitcard",
+	"life_inv_underwatercharge"
 ];
 
 {missionNamespace setVariable[_x,0];} foreach life_inv_items;
@@ -382,8 +382,8 @@ sell_array =
 	["rabbitp",1800],
 	["vammo",10000],
 	["adrenalineShot",5000],
-	["antimatter",1500000],
-	["debitcard",2500]
+	["debitcard",2500],
+	["underwatercharge",5000]
 ];
 //__CONST__(sell_array,sell_array);
 
@@ -435,7 +435,8 @@ buy_array =
 	["skinningknife",2000],
 	["vammo",25000],
 	["adrenalineShot",20000],
-	["debitcard",5000]
+	["debitcard",5000],
+	["underwatercharge",10000]
 ];
 __CONST__(buy_array,buy_array);
 
@@ -499,7 +500,6 @@ life_taxi_stands =
 	["cop_spawn_2","Pyrgos",west],
 	["cop_spawn_3","Neochori",west],
 	["cop_spawn_4","Barrage",west],
-	["east_spawn","Air",east],
 	["medic_spawn_1","Kavala",independent],
 	["medic_spawn_2","Pyrgos",independent]
 ];

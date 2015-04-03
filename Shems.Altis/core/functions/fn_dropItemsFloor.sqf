@@ -131,6 +131,23 @@ life_action_delay = time;
 				["cash","set",(_total - _value)] call life_fnc_updateCash;
 			};
 		};
+
+		case "life_inv_painkillers":
+		{
+			if((_value > 0) && (side player == civilian)) then
+			{
+				_var = [_item,1] call life_fnc_varHandle;
+				_pos = _unit modelToWorld[0,3,0];
+				_pos = [_pos select 0, _pos select 1, 0];
+				_obj = "Land_PainKillers_F" createVehicle _pos;
+				[[_obj],"life_fnc_simDisable",false,false] spawn BIS_fnc_MP;
+				_obj setPos _pos;
+				_obj setVariable["item",[_var,_value],true];
+				_obj enableSimulation false;
+				missionNamespace setVariable[_x,(_total - _value)];
+				life_carryWeight = life_carryWeight - _weight;
+			};
+		};
 		
 		default
 		{

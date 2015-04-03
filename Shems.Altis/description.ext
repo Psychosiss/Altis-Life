@@ -58,7 +58,6 @@ corpseRemovalMaxTime = 9999;
 #include "dialog\licenses.hpp"
 #include "dialog\prison_list.hpp"
 #include "dialog\craft.hpp"
-#include "dialog\lxOPS_dlg.hpp"
 #include "dialog\dynmarket_changeprice.hpp"
 #include "dialog\dynmarket_prices.hpp"
 
@@ -301,7 +300,7 @@ class CfgFunctions
 			class tazeSound {};
 			class animSync {};
 			class simDisable {};
-			class keyHandler {};
+			class keyUpHandler {};
 			class dropItems {};
 			class dropItemsFloor {};
 			class handleDamage {};
@@ -315,7 +314,7 @@ class CfgFunctions
 			class clearVehicleAmmo {};
 			class pullOutVeh {};
 			class nearUnits {};
-			class actionKeyHandler {};
+			class keyDownHandler {};
 			class playerCount {};
 			class fetchDeadGear {};
 			class loadDeadGear {};
@@ -513,7 +512,6 @@ class CfgFunctions
 			class tent {};
 			class vehAmmo {};
 			class adrenalineShot {};
-			class antiMatter {};
 		};
 
 		class Dialog_Controls

@@ -36,7 +36,7 @@ waitUntil
 	{ 
 		_medicsNear ctrlSetText format["Medecin proche: None",_nearby]; 
 } else { 
-	_medicsNear ctrlSetText format["Medecin proche: %1m",[(round _nearby)] call life_fnc_numberText]; };
+	_medicsNear ctrlSetText format["Medecin proche: %1m",[(round _nearby)] call life_fnc_numberText];};
 	sleep 1;
 	(isNull (findDisplay 7300))
 };

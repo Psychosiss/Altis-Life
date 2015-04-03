@@ -62,9 +62,6 @@ class CfgFunctions
 			file = "\life_server\Functions\Shems";
 			class antiHack {};
 			class clientAntiHack {};
-			class fixColorVehicle {};
-			class antiMatter {};
-			class searchVehicleUID {};
 		};
 	};
 

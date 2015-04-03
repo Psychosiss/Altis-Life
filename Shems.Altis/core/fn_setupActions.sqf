@@ -37,7 +37,7 @@ switch (playerSide) do
 player addAction["Mettre les bouchons",{0.5 fadeSound 0.1; life_earplugs = true; },"",-9999999,false,false,"","!life_earplugs"];
 player addAction["Enlever les bouchons",{0.5 fadeSound 1; life_earplugs = false; },"",-9999999,false,false,"","life_earplugs"];
 life_actions = life_actions + [player addAction["Utiliser les antalgiques",life_fnc_painKillers,player,-1,false,false,"",'(life_pain > 0) && (life_inv_painkillers > 0)']];
-life_actions = life_actions + [player addAction["Donner  les antalgiques",life_fnc_painKillers,cursorTarget,-1,false,false,"",'!isNull cursorTarget && (isPlayer cursorTarget) && (alive cursorTarget) && ((cursorTarget getVariable ["pain",0]) > 0) && (life_inv_painkillers > 0)']];
+life_actions = life_actions + [player addAction["Donner les antalgiques",life_fnc_painKillers,cursorTarget,-1,false,false,"",'!isNull cursorTarget && (isPlayer cursorTarget) && (alive cursorTarget) && ((cursorTarget getVariable ["pain",0]) > 0) && (life_inv_painkillers > 0)']];
 life_actions = life_actions + [player addAction["Activer la nitro",life_fnc_activateNitro,false,2,false,false,"",'(vehicle player != player) && (driver vehicle player == player) && (((vehicle player) getVariable["nitro", 0]) > 0)']];
 life_actions = life_actions + [player addAction["Baton lumineux en main",life_fnc_chemlightUse,"red",-1,false,false,"",' isNil "life_chemlight" && "Chemlight_red" in (magazines player) && vehicle player == player ']];
 life_actions = life_actions + [player addAction["Baton lumineux en main",life_fnc_chemlightUse,"yellow",-1,false,false,"",' isNil "life_chemlight" && "Chemlight_yellow" in (magazines player) && vehicle player == player ']];

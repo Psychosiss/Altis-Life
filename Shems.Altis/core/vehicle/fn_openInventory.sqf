@@ -4,10 +4,13 @@ _vehicle = [_this,0,Objnull,[Objnull]] call BIS_fnc_param;
 
 if(isNull _vehicle OR !
 (
+	("Land_Wreck_Traw_F" == typeOf _vehicle) OR
+	("Land_Wreck_Traw2_F" == typeOf _vehicle) OR
 	_vehicle isKindOf "Car" OR 
 	_vehicle isKindOf "Air" OR 
 	_vehicle isKindOf "Ship" OR 
 	_vehicle isKindOf "House_F" OR 
+	_vehicle isKindOF "Box" OR
 	(typeOf _vehicle in 
 		[
 			"Land_Pod__Heli_Transport_04_covered_F",

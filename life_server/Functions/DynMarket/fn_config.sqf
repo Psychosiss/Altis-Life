@@ -81,19 +81,19 @@ life_dynMarket_Items_ToTrack =
 	["catshark",300],
 	["oilp",3200],
 	["turtle",3000],
-	["water",5],  //
-	["burgers",175],  //
-	["frites",150],  //
-	["pizza",200],  //
-	["coffee",5],  //
-	["turtlesoup",1000],  //
-	["donuts",60],  //
+	["water",5],
+	["burgers",175],
+	["frites",150],
+	["pizza",200],
+	["coffee",5],
+	["turtlesoup",1000],
+	["donuts",60],
 	["marijuana",5350],
-	["tbacon",25],  //
-	["lockpick",75],  //
-	["pickaxe",750],  //
-	["redgull",200],  //
-	["peach",55],  //
+	["tbacon",25],
+	["lockpick",75],
+	["pickaxe",750],
+	["redgull",200],
+	["peach",55],
 	["cocaine",3000],
 	["cocainep",8750],
 	["diamond",750],
@@ -102,8 +102,8 @@ life_dynMarket_Items_ToTrack =
 	["copper_r",2500],
 	["salt_r",1650],
 	["glass",1450],
-	["fuelF",500],  //
-	["spikeStrip",1200],  //
+	["fuelF",500],
+	["spikeStrip",1200],
 	["cement",1950],
 	["goldbar",95000],
 	["methu",400],
@@ -113,18 +113,18 @@ life_dynMarket_Items_ToTrack =
 	["uranium",35000],
 	["skull",750],
 	["skullp",1500],
-	["nitro",5000],  //
+	["nitro",5000],
 	["kidney",50000],
-	["gpstracker",500],  //
-	["scalpel",100],  //
+	["gpstracker",500],
+	["scalpel",100],
 	["silver_r",2100],
-	["pressluft",5000],  //
-	["speedbomb",500000],  //
-	["campfire",3000],  //
-	["painkillers",50],  //
-	["tent1",9000],  //
-	["tent2",10000],  //
-	["skinningknife",1000],  //
+	["pressluft",5000],
+	["speedbomb",500000],
+	["campfire",3000],
+	["painkillers",50],
+	["tent1",9000],
+	["tent2",10000],
+	["skinningknife",1000],
 	["dog",3000],
 	["goat",2000],
 	["chicken",2500],
@@ -137,10 +137,10 @@ life_dynMarket_Items_ToTrack =
 	["sheepp",8000],
 	["snakep",1900],
 	["rabbitp",1800],
-	["vammo",10000],  //
-	["adrenalineShot",5000],  //
-	["antimatter",1500000],  ////////
-	["debitcard",2500]  //
+	["vammo",10000],
+	["adrenalineShot",5000],
+	["debitcard",2500],
+	["underwatercharge",5000]
 ];
 
 life_dynMarket_Items_CurrentPriceArr = [];
