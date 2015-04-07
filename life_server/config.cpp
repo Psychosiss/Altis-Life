@@ -164,6 +164,13 @@ class CfgFunctions
 			class HandleDB {};
 			class playerLogged {};
 			class sleeper {};
+			class randomEvent {};
+		};
+
+		class Airdrop
+		{
+			file = "\life_server\Functions\AirDrop";
+			class generateAirDrop {};
 		};
 	};
 		

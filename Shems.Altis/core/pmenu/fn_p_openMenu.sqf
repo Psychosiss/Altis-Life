@@ -21,11 +21,6 @@ switch(playerSide) do
 	{
 		ctrlShow[9800,false];
 	};
-	
-	case east:
-	{
-		ctrlShow[2011,false];
-	};
 };
 
 if(__GETC__(life_adminlevel) < 1) then

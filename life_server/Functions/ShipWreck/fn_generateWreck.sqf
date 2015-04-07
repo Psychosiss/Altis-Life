@@ -1,11 +1,11 @@
 life_ship_obj_arr = ["Land_Wreck_Traw_F","Land_Wreck_Traw2_F"];
 life_ship_chance = 100;
 life_ship_positions = [[4462.89,6515.78,-2.19486],[5391.75,25136.2,-1.98308],[25323.2,27886.6,-2.15125]];
-_life_ship_time_interval = [1,5];
+_ship_time_interval = [1,5];
 life_ship_loot_array = [["apple",20],["peach",20]];
 life_ship_loot_amount = 1;
-life_ship_time_min = _life_ship_time_interval select 0;
-life_ship_time_max = _life_ship_time_interval select 1;
+life_ship_time_min = _ship_time_interval select 0;
+life_ship_time_max = _ship_time_interval select 1;
 life_ship_time_min = life_ship_time_min * 3600;
 life_ship_time_max = life_ship_time_max * 3600;
 

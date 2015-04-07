@@ -8,11 +8,10 @@ if(!isNull (findDisplay 2300)) then
 	_c_arr = [_veh] call life_fnc_vehicleColorCfg;
 	_id = switch(playerSide) do 
 	{
-		case civilian: {"civ"}; 
-		case west:{"cop"}; 
-		case independent : {"med"}; 
-		case east:{"east"}; 
-		default {"civ"};
+		case civilian: {"civ"};
+		case west:{"cop"};
+		case independent : {"med"};
+		default {"erreur"};
 	};
 	_colorcost = 100;
 	for "_i" from 0 to (count _c_arr)-1 do

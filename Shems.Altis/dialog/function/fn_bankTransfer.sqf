@@ -6,7 +6,7 @@ if((lbCurSel 2703) == -1) exitWith {hint "Vous devez choisir une personne."};
 if(isNil "_unit") exitWith {hint "Le joueur sélectionné ne semble pas exister."};
 if(_val > 1000000) exitWith {hint "Vous ne pouvez pas transférer plus de 1.000.000 $";};
 if(_val < 0) exitwith {};
-if(!([str(_val)] call life_fnc_isnumeric)) exitWith {hint "Ce n'est pas un format de nombre réel."};
+if(!([str(_val)] call life_fnc_isNumeric)) exitWith {hint "Ce n'est pas un format de nombre réel."};
 if(_val > life_atmcash) exitWith {hint "Vous n'avez pas autant dans votre compte bancaire!"};
 _tax = [_val] call life_fnc_taxRate;
 if((_val + _tax) > life_atmcash) exitWith {hint format["Vous n'avez pas assez d'argent dans votre compte en banque, pour transférer %1 € vous aurez besoin %2 € comme taxe fiscale.",_val,_tax]};

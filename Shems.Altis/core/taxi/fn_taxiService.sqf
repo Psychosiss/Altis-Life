@@ -15,66 +15,20 @@ lbClear _locations;
 
 switch (life_taxi_location) do
 {
-	case "donor_town":
-	{
-		ctrlSetText[48401,"Ville naturelle"];
-	};
-	case "civ_spawn_4":
-	{
-		ctrlSetText[48401,"Badtown"];
-	};
-	case "civ_spawn_3":
-	{
-		ctrlSetText[48401,"Neochori"];
-	};
-	case "civ_spawn_2":
-	{
-		ctrlSetText[48401,"Pyrgos"];
-	};
-	case "civ_spawn_10":
-	{
-		ctrlSetText[48401,"Kavala"];
-	};
-	case "reb_spawn_2":
-	{
-		ctrlSetText[48401,"Camp ouest"];
-	};
-	case "reb_spawn_1":
-	{
-		ctrlSetText[48401,"Camp est"];
-	};
-	case "reb_spawn_1":
-	{
-		ctrlSetText[48401,"Camp est"];
-	};
-	case "cop_spawn_1":
-	{
-		ctrlSetText[48401,"Kavala"];
-	};
-	case "cop_spawn_2":
-	{
-		ctrlSetText[48401,"Pyrgos"];
-	};
-	case "cop_spawn_3":
-	{
-		ctrlSetText[48401,"Neochori"];
-	};
-	case "cop_spawn_4":
-	{
-		ctrlSetText[48401,"Barrage"];
-	};
-	case "east_spawn":
-	{
-		ctrlSetText[48401,"Air"];
-	};
-	case "medic_spawn_1":
-	{
-		ctrlSetText[48401,"Kavala"];
-	};
-	case "medic_spawn_3":
-	{
-		ctrlSetText[48401,"Pyrgos"];
-	};
+	case "donor_town": {ctrlSetText[48401,"Ville naturelle"];};
+	case "civ_spawn_4": {ctrlSetText[48401,"Badtown"];};
+	case "civ_spawn_3": {ctrlSetText[48401,"Neochori"];};
+	case "civ_spawn_2": {ctrlSetText[48401,"Pyrgos"];};
+	case "civ_spawn_10": {ctrlSetText[48401,"Kavala"];};
+	case "reb_spawn_2": {ctrlSetText[48401,"Camp ouest"];};
+	case "reb_spawn_1": {ctrlSetText[48401,"Camp est"];};
+	case "reb_spawn_1": {ctrlSetText[48401,"Camp est"];};
+	case "cop_spawn_1": {ctrlSetText[48401,"Kavala"];};
+	case "cop_spawn_2": {ctrlSetText[48401,"Pyrgos"];};
+	case "cop_spawn_3": {ctrlSetText[48401,"Neochori"];};
+	case "cop_spawn_4": {ctrlSetText[48401,"Barrage"];};
+	case "medic_spawn_1": {ctrlSetText[48401,"Kavala"];};
+	case "medic_spawn_3": {ctrlSetText[48401,"Pyrgos"];};
 };
 
 if(_kill != "") exitWith 

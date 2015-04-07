@@ -89,7 +89,7 @@ client_session_list = [];
 		sleep (30 * 60);
 		{
 			_x setVariable["sellers",[],true];
-		} foreach ["Dealer_1","Dealer_2","Dealer_3"];
+		} foreach ["Dealer_1","Dealer_2"];
 	};
 };
 
@@ -109,7 +109,9 @@ client_session_list = [];
 [] spawn TON_fnc_initHouses;
 
 [] execVM "\life_server\Functions\DynMarket\fn_config.sqf";
-[] execVM "\life_server\Functions\SipWreck\fn_generateWreck.sqf";
+[] execVM "\life_server\Functions\ShipWreck\fn_generateWreck.sqf";
+[] execVM "\life_server\Functions\AirDrop\config.sqf";
+[] execVM "\life_server\Functions\AirDrop\fn_generateAuto.sqf";
 call compile preProcessFileLineNumbers "\life_server\SHK_pos\shk_pos_init.sqf";
 
 private["_dome","_rsb"];

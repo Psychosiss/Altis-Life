@@ -10,7 +10,7 @@ _tempArrayHolder = life_dynMarket_Items_CurrentPriceArr;
 	_itemFactorOfGroup = 0;
 	_exit = false;
 
-	if (_itemAmountSold>0) then
+	if (_itemAmountSold > 0) then
 	{
 		{
 			if (!_exit) then 
@@ -62,15 +62,15 @@ _tempArrayHolder = life_dynMarket_Items_CurrentPriceArr;
 						} forEach life_dynMarket_Items_CurrentPriceArr;
 
 						_NEWPRICE = _curItemOldPrice - (_itemAmountSold * (_curItemOldPrice/2000) * _itemFactorOfGroup);
-						if (_NEWPRICE<_curITEMmin) then {_NEWPRICE = _curITEMmin};
-						if (_NEWPRICE>_curITEMmax) then {_NEWPRICE = _curITEMmax};
+						if (_NEWPRICE < _curITEMmin) then {_NEWPRICE = _curITEMmin};
+						if (_NEWPRICE > _curITEMmax) then {_NEWPRICE = _curITEMmax};
 						_index = -1;
 						{
 							_index = _index + 1;
 							_curItemName3 = _x select 0;
 							_curItemPrice3 = _x select 1;
 							_curItemAmountSold3 = _x select 2;
-							if (_curItemName3==_curITEMname) then 
+							if (_curItemName3 == _curITEMname) then 
 							{
 								life_dynMarket_Items_CurrentPriceArr set [_index,[_curITEMname,_NEWPRICE,0]];
 							};
@@ -85,8 +85,8 @@ _tempArrayHolder = life_dynMarket_Items_CurrentPriceArr;
 							if (_curItemName3 == _curITEMname) then 
 							{
 								_NEWPRICE = _curItemPrice3 + (_itemAmountSold * (_curItemPrice3/1000) * _itemFactorOfGroup);
-								if (_NEWPRICE<_curITEMmin) then {_NEWPRICE = _curITEMmin};
-								if (_NEWPRICE>_curITEMmax) then {_NEWPRICE = _curITEMmax};
+								if (_NEWPRICE < _curITEMmin) then {_NEWPRICE = _curITEMmin};
+								if (_NEWPRICE > _curITEMmax) then {_NEWPRICE = _curITEMmax};
 								life_dynMarket_Items_CurrentPriceArr set [_index,[_curITEMname,_NEWPRICE,_curItemAmountSold3]];
 							};
 						} forEach life_dynMarket_Items_CurrentPriceArr;
@@ -104,11 +104,18 @@ life_dynMarket_Items_CurrentPriceArr = _tempArrayHolder;
 	{
 		_index = _index + 1;
 		_curItemName = _x select 0;
-		if (_curItemName==_itemName) then 
+		if (_curItemName == _itemName) then 
 		{
 			life_dynMarket_sellarraycopy set [_index, [_itemName,_itemNewPrice]];
 		};
 	} forEach life_dynMarket_sellarraycopy;
 } forEach life_dynMarket_Items_CurrentPriceArr;
+
+if (life_dynMarket_createRandomEvents) then 
+{
+	life_dynMarket_waitForEvent = false;
+	[] spawn TON_fnc_randomEvent;
+	waitUntil {life_dynMarket_waitForEvent};
+};
 
 [[1,life_dynMarket_sellarraycopy],"life_fnc_update",true,false] spawn life_fnc_MP;

@@ -29,8 +29,7 @@ switch(playerSide) do
 	{
 		[[player,0,"images\cop\uniform.paa"],"life_fnc_setTexture",true,false] spawn life_fnc_MP;
 	};
-	
-	case east: {};
+
 	case civilian: {};
 };
 

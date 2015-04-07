@@ -83,8 +83,6 @@ switch(playerSide) do
 	{
 		[_vehicle,"med_offroad",true] spawn life_fnc_vehicleAnimate;
 	};
-
-	case east: {};
 };
 
 _vehicle allowDamage true;

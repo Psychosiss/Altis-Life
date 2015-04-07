@@ -318,7 +318,7 @@ class CfgFunctions
 			class playerCount {};
 			class fetchDeadGear {};
 			class loadDeadGear {};
-			class isnumeric {};
+			class isNumeric {};
 			class escInterupt {};
 			class onTakeItem {};
 			class fetchVehInfo {};
@@ -344,6 +344,8 @@ class CfgFunctions
 			class stripDownPlayer {};
 			class handlerHelp {};
 			class returnInfo {};
+			class colorRGBtoHTML {};
+			class abort {};
 		};
 		
 		class Network
@@ -568,6 +570,7 @@ class CfgFunctions
 			class LoadIntoListbox {};
 			class ForcePrice {};
 			class getPrice {};
+			class getIcon {};
 		};
 
 		class SlotMachine 
@@ -900,6 +903,16 @@ class CfgSounds
 
 class CfgDebriefing
 {
+	class Abort
+	{
+		title = "Déconnection réussi";
+		subtitle = "Votre profil à été sauvegarder au serveur";
+		description = "N'oubliez pas de revenir.";
+		pictureBackground = "";
+		picture = "\a3\ui_f\data\gui\cfg\Hints\tasks_ca.paa";
+		pictureColor[] = { 1, 1, 1, 1 };
+	};
+
 	class NotWhitelisted
 	{
 		title = "Mission echoué";
@@ -909,7 +922,7 @@ class CfgDebriefing
 		picture = "";
 		pictureColor[] = {0,0.3,0.6,1};
 	};
-	
+
 	class Blacklisted
 	{
 		title = "Mission echoué";
@@ -919,7 +932,7 @@ class CfgDebriefing
 		picture = "";
 		pictureColor[] = {0,0.3,0.6,1};
 	};
-	
+
 	class SpyGlass
 	{
 		title = "Arma 3 Corrompu";
@@ -941,7 +954,7 @@ class CfgNotifications
 		duration = 5;
 		priority = 7;
 	};
-	
+
 	class DeliveryAssigned
 	{
 		title = "Livraison acceptée";
@@ -950,7 +963,7 @@ class CfgNotifications
 		duration = 10;
 		priority = 7;
 	};
-	
+
 	class DeliveryFailed
 	{
 		title = "Livraison échouée";
@@ -959,7 +972,7 @@ class CfgNotifications
 		duration = 7;
 		priority = 7;
 	};
-	
+
 	class DeliverySucceeded
 	{
 		title = "Livraison réussie";
@@ -968,7 +981,7 @@ class CfgNotifications
 		duration = 6;
 		priority = 6;
 	};
-	
+
 	class TextMessage
 	{
 		title = "Nouveau SMS";
@@ -977,7 +990,7 @@ class CfgNotifications
 		duration = 10;
 		priority = 6;
 	};
-	
+
 	class PoliceDispatch
 	{
 		title = "Centre d'appel d'urgence";
@@ -986,7 +999,7 @@ class CfgNotifications
 		duration = 10;
 		priority = 6;
 	};
-	
+
 	class AdminDispatch
 	{
 		title = "Demande d'aide Admin";
@@ -995,7 +1008,7 @@ class CfgNotifications
 		duration = 10;
 		priority = 6;
 	};
-	
+
 	class AdminMessage
 	{
 		title = "Message d'Admin";
@@ -1004,4 +1017,19 @@ class CfgNotifications
 		duration = 10;
 		priority = 5;
 	};
+
+	class NameChanged
+	{
+		title = "Pseudo changé";
+		subTitle = "";
+		description = "Pour rejoindre le serveur, remettez votre ancien nom ou demandez un changements sur le teamspeak de celui-ci.";
+		pictureBackground = "";
+		picture = "";
+		pictureColor[] = {0,0.3,0.6,1};
+	};
+};
+
+class CfgRemoteExecFunctions
+{
+	class life_fnc_abort {disabled = 1;};
 };

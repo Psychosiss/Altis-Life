@@ -37,6 +37,13 @@ if(count (_this select 6) > 0) then
 	} foreach (_this select 6);
 };
 
+if(profileName != _this select 1) exitWith 
+{
+	hint format["Votre ancien nom : %1",_this select 1];
+	[format["Veuillez remettre votre précédent nom !<br/><br/>Votre ancien nom : <t color='#b20303'>%1</t><br/><br/>Si vous avez des problèmes pour changer votre pseudo, parlez-en à l'administration.", _this select 1], "Changement de nom", "D'accord"] call BIS_fnc_guiMessage;
+	["NameChanged",false,false] call BIS_fnc_endMission;
+};
+
 life_gear = _this select 8;
 [] call life_fnc_loadGear;
 

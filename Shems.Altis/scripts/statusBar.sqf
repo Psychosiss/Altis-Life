@@ -12,7 +12,7 @@ _rscLayer cutRsc["StatusBar","PLAIN"];
 	{
 		sleep 1;
 		_counter = _counter - 1;
-		_statusText = "gaming-shems.com";
-		((uiNamespace getVariable "StatusBar")displayCtrl 1000) ctrlSetText format["%3 | FPS: %1 | TS3 : 195.154.200.118 | Humains actifs: %2  ", round diag_fps, count playableUnits, _statusText, _counter];
+		_statusText = "github.com/Shems-SH";
+		((uiNamespace getVariable "StatusBar")displayCtrl 1000) ctrlSetText format["%3 | FPS: %1 | Humains actifs: %2  ", round diag_fps, count playableUnits, _statusText, _counter];
 	}; 
 };

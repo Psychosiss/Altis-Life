@@ -56,11 +56,6 @@ _clothes = switch (life_clothing_store) do
 	{
 		[_selection] call life_fnc_clothing_med;
 	};
-	
-	case "east": 
-	{
-		[_selection] call life_fnc_clothing_east;
-	};
 };
 
 if(count _clothes == 0) exitWith {};
