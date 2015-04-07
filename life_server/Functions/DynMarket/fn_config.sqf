@@ -4,7 +4,6 @@ life_dynMarket_PriceUpdateInterval = 01;
 life_dynMarket_CreateBackups = true;
 life_dynMarket_CreateBackupInterval = 03;
 life_dynMarket_UserNotification = true;
-life_dynMarket_createRandomEvents = true;
 
 life_dynMarket_UserNotification_Text = 
 [
