@@ -17,6 +17,7 @@ life_versionInfo = "Altis Life RPG fondé par Tonic et developpé par Shems.";
 [] execVM "scripts\safezone.sqf";
 [] execVM "scripts\teargas.sqf";
 [] execVM "scripts\IgiLoadinit.sqf";
+[] execVM "scripts\fn_taxes.sqf";
 
 [] call life_fnc_fastrope;
 [] call life_fnc_addKey;

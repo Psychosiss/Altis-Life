@@ -1027,6 +1027,33 @@ class CfgNotifications
 		picture = "";
 		pictureColor[] = {0,0.3,0.6,1};
 	};
+
+	class ImpotStandard
+	{
+		title = "SERVICE DES IMPOTS";
+        iconPicture = "icons\clock.paa";
+		description = "%1";
+        duration = 3;
+		priority = 6;
+	};
+
+	class ImpotLevy
+	{
+		title = "SERVICE DES IMPOTS";
+        iconPicture = "icons\bank.paa";
+		description = "%1";
+        duration = 3;
+		priority = 6;
+	};
+
+	class ImpotPoor
+	{
+		title = "SERVICE DES IMPOTS";
+        iconPicture = "\a3\Ui_f\data\GUI\Cfg\CommunicationMenu\transport_ca.paa";
+		description = "%1";
+        duration = 3;
+		priority = 6;
+	};
 };
 
 class CfgRemoteExecFunctions
