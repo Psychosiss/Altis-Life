@@ -9,6 +9,7 @@ disabledAI = true;
 disableChannels[]={0,1,2};
 enableDebugConsole = 0;
 forceRotorLibSimulation = 1;
+onPauseScript[] = {"life_fnc_onPause"};
 
 class Header
 {
@@ -136,6 +137,8 @@ class CfgFunctions
 			class adminFreeze {};
 			class adminMarkers {};
 			class adminGear {};
+			class adminKick {};
+			class adminBan {};
 		};
 		
 		class Medical_System
@@ -346,6 +349,7 @@ class CfgFunctions
 			class returnInfo {};
 			class colorRGBtoHTML {};
 			class abort {};
+			class onPause {};
 		};
 		
 		class Network
@@ -494,7 +498,7 @@ class CfgFunctions
 		{
 			file = "core\items";
 			class pickaxeUse {};
-			class lockpick {};
+			class lockPick {};
 			class spikeStrip {};
 			class jerryRefuel {};
 			class flashbang {};
@@ -506,8 +510,8 @@ class CfgFunctions
 			class gpsTracker {};
 			class demolitionCharge {};
 			class bombDefuseKit {};
-			class bankalarmsound {};
-			class SlotJackpotSound {};
+			class bankAlarmSound {};
+			class slotJackpotSound {};
 			class pressluftUse {};
 			class speedBomb {};
 			class painKillers {};
@@ -1055,6 +1059,8 @@ class CfgNotifications
 		priority = 6;
 	};
 };
+
+class CfgRemoteExecCommands {};
 
 class CfgRemoteExecFunctions
 {

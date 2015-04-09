@@ -196,12 +196,34 @@ class life_admin_menu
 			h = (1 / 25);
 		};
 
-		class 3dEditor : Life_RscButtonMenu 
+		class EconomySystem : Life_RscButtonMenu 
 		{
 			idc = -1;
 			text = "Economie";
 			onButtonClick = "createDialog ""life_dynmarket_changeprice"";";
 			x = -0.06 + (31.3 / 40) + (1 / 250 / (safezoneW / safezoneH));
+			y = 0.88 - (1 / 25);
+			w = (6.25 / 40);
+			h = (1 / 25);
+		};
+
+		class BanButton : Life_RscButtonMenu 
+		{
+			idc = -1;
+			text = "Bannir";
+			onButtonClick = "[] call life_fnc_adminBan;";
+			x = 0.1 + (31.3 / 40) + (1 / 250 / (safezoneW / safezoneH));
+			y = 0.88 - (1 / 25);
+			w = (6.25 / 40);
+			h = (1 / 25);
+		};
+
+		class KickButton : Life_RscButtonMenu 
+		{
+			idc = -1;
+			text = "Kick";
+			onButtonClick = "[] call life_fnc_adminKick;";
+			x = 0.26 + (31.3 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.88 - (1 / 25);
 			w = (6.25 / 40);
 			h = (1 / 25);
