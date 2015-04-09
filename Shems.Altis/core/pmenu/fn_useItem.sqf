@@ -84,7 +84,12 @@ switch (true) do
 		if(vehicle player != player) exitWith {hint "Vous ne pouvez pas faire le plein du véhicule!"};
 		[] spawn life_fnc_jerryRefuel;
 	};
-	
+
+	case (_item == "lockpick"):
+	{
+		[] spawn life_fnc_lockPick;
+	};
+
 	case (_item ==  "adrenalineShot"):
 	{
 		[] spawn life_fnc_adrenalineShot;

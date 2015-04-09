@@ -1,4 +1,4 @@
-private["_itemArray","_uniform","_vest","_backpack","_goggles","_headgear","_items","_prim","_seco","_uItems","_bItems","_vItems","_pItems","_hItems","_yItems","_uMags","_bMags","_vMags","_handle"];
+private["_itemArray","_uniform","_vest","_backpack","_goggles","_headgear","_items","_prim","_seco","_uItems","_bItems","_vItems","_pItems","_sItems","_hItems","_yItems","_uMags","_bMags","_vMags","_handle"];
 _itemArray = life_gear;
 waitUntil {!(isNull (findDisplay 46))};
 
@@ -43,6 +43,8 @@ _vMags = [_itemArray,13,[],[[]]] call BIS_fnc_param;
 _pItems = [_itemArray,14,[],[[]]] call BIS_fnc_param;
 _hItems = [_itemArray,15,[],[[]]] call BIS_fnc_param;
 _yItems = [_itemArray,16,[],[[]]] call BIS_fnc_param;
+_sItems = [_itemArray,17,[],[[]]] call BIS_fnc_param;
+_rpg = [_itemArray,18,"",[""]] call BIS_fnc_param;
 
 if(_goggles != "") then {_handle = [_goggles,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
 if(_headgear != "") then {_handle = [_headgear,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
@@ -83,6 +85,7 @@ switch (playerSide) do
 
 if(_prim != "") then {_handle = [_prim,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
 if(_seco != "") then {_handle = [_seco,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
+if(_rpg != "") then {_handle = [_rpg,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
 
 {
     if (_x != "") then 
@@ -96,6 +99,12 @@ if(_seco != "") then {_handle = [_seco,true,false,false,false] spawn life_fnc_ha
         player addHandgunItem _x;
     };
 } foreach (_hItems);
+{
+	if (_x != "") then 
+	{
+		player addSecondaryWeaponItem _x;
+	};
+} foreach (_sItems);
 
 if(playerSide == independent && {uniform player == "U_Rangemaster"}) then 
 {

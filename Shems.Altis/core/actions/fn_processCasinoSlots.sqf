@@ -77,7 +77,7 @@ if(life_cash >= _cost) then
 		{
 			hint format["Vous avez gagné le jackpot de %1 €",_winAmount]; 
 			_source say3D "jackpotSound";
-			[[_source],"life_fnc_SlotJackpotSound",nil,true] spawn life_fnc_MP;
+			[[_source],"life_fnc_slotJackpotSound",nil,true] spawn life_fnc_MP;
 			[["jackpotSound"],"life_fnc_casinoSounds",nil,true] spawn life_fnc_MP;
 			_cP = 0.01;
 			while{true} do

@@ -2,7 +2,7 @@ private["_vault","_ui","_title","_progressBar","_cP","_titleText"];
 _vault = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 if(isNull _vault) exitWith {};
 if(typeOf _vault != "Land_CargoBox_V1_F") exitWith {};
-if(!(_vault getVariable["chargeplaced",false])) exitWith {hint "There is no charge on the vault?"};
+if(!(_vault getVariable["chargeplaced",false])) exitWith {hint "Il n'y a pas de charge sur le coffre."};
 
 life_action_inUse = true;
 
@@ -74,4 +74,4 @@ _ui cutRsc["StatusBar","PLAIN"];
 
 life_action_inUse = false;
 _vault setVariable["chargeplaced",false,true];
-[[2,"The charge has been defused."],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
+[[2,"La charge à été placé."],"life_fnc_broadcast",west,false] spawn life_fnc_MP;

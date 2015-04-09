@@ -16,15 +16,15 @@ bTouchOff =
 		player removeAction touchoffAction; 
 		player setVariable["playercharge",false,true];
 	};
-	_bomb = "Bo_GBU12_LGB_MI10" createVehicle [getPosATL bombVehicle select 0, getPosATL bombVehicle select 1, (getPosATL bombVehicle select 2)+0.5];
+	_bomb = "Bo_GBU12_LGB_MI10" createVehicle [getPosATL bombVehicle select 0, getPosATL bombVehicle select 1, (getPosATL bombVehicle select 2) + 0.5];
 	player setVariable["playercharge",false,true];
 	bombVehicle setVariable["dchargeplaced",false,true];
-	hintSilent "The bomb has been detonated";
+	hintSilent "La bombe a détonné";
 	player removeAction touchoffAction;
 };
 
 [[player,"AinvPknlMstpSnonWnonDnon_medic_1"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
 player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
 sleep 6;
-touchoffAction = player addAction ["<t color=""#FFE496"">" + "Touch-Off Explosives", bTouchOff,"",0,false,false,"",' player distance bombVehicle < 110 '];
+touchoffAction = player addAction ["Arreter la programmation de l'explosif", bTouchOff,"",0,false,false,"",' player distance bombVehicle < 110 '];
 hintSilent "La bombe est placé !";

@@ -1,4 +1,4 @@
-private["_return","_uItems","_bItems","_vItems","_pItems","_hItems","_yItems","_uMags","_vMags","_bMags","_pMag","_hMag","_uni","_ves","_bag","_handled"];
+private["_return","_uItems","_bItems","_vItems","_pItems","_hItems","_sItems","_yItems","_uMags","_vMags","_bMags","_pMag","_hMag","_sMag","_uni","_ves","_bag","_handled"];
 
 _return = [];
 _return pushBack uniform player;
@@ -25,6 +25,7 @@ _vItems = [];
 _vMags  = [];
 _pItems = [];
 _hItems = [];
+_sItems = [];
 _yItems = [];
 _uni = [];
 _ves = [];
@@ -126,6 +127,35 @@ if(count (handgunMagazine player) > 0 && alive player) then
 	};
 };
 
+if(count (secondaryWeaponMagazine player) > 0 && alive player) then
+{
+	_sMag = ((secondaryWeaponMagazine player) select 0);
+	if(_sMag != "") then
+	{
+		_uni = player canAddItemToUniform _sMag;
+		_ves = player canAddItemToVest _sMag;
+		_bag = player canAddItemToBackpack _sMag;
+		_handled = false;
+		if(_ves) then
+		{
+			_vMags = _vMags + [_sMag];
+			_handled = true;
+		};
+
+		if(_uni && !_handled) then
+		{
+			_uMags = _uMags + [_sMag];
+			_handled = true;
+		};
+
+		if(_bag && !_handled) then
+		{
+			_bMags = _bMags + [_sMag];
+			_handled = true;
+		};
+    };
+};
+
 if(count (primaryWeaponItems player) > 0) then
 {
 	{
@@ -138,6 +168,13 @@ if(count (handGunItems player) > 0) then
 	{
 		_hItems = _hItems + [_x];
 	} forEach (handGunItems player);
+};
+
+if(count (secondaryWeaponItems player) > 0) then
+{
+	{
+		_sItems = _sItems + [_x];
+	} forEach (secondaryWeaponItems player);
 };
 
 {
@@ -261,6 +298,14 @@ if(call life_save_yinv) then
 	_return pushBack _yItems;
 } else {
 	_return pushBack [];
+};
+
+if(playerSide == west || playerSide == independent || playerSide == civilian && {(call life_save_civ)}) then 
+{
+	_return pushBack secondaryWeapon player;
+} else {
+	_return pushBack [];
+   
 };
 
 life_gear = _return;

@@ -1,12 +1,13 @@
-enableSaving [false,false];
+//enableSaving [false,false];
 
 X_Server = false;
 X_Client = false;
 X_JIP = false;
 StartProgress = false;
+RscSpectator_allowFreeCam = false;
 
 if(!isDedicated) then { X_Client = true;};
-enableSaving[false,false];
+enableSaving [false,false];
 
 life_versionInfo = "Altis Life RPG fondé par Tonic et developpé par Shems.";
 
