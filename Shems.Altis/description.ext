@@ -350,6 +350,9 @@ class CfgFunctions
 			class colorRGBtoHTML {};
 			class abort {};
 			class onPause {};
+			class index {};
+			class filterChat {};
+			class emote {};
 		};
 		
 		class Network

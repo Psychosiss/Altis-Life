@@ -78,50 +78,6 @@ switch (_code) do
 		};
 	};
 
-	case 2:
-	{
-		if(_shift) then {_handled = true;};
-		if (_shift) then
-		{
-			cutText [format["Appuyer sur le bouton V pour annuler"], "PLAIN DOWN"];
-			player say3D "dance";
-			player playMove "AmovPercMstpSnonWnonDnon_exerciseKata";
-		};
-	};
-
-	case 3:
-	{
-		if(_shift) then {_handled = true;};
-		if (_shift) then
-		{
-			cutText [format["Appuyer sur le bouton V pour annuler"], "PLAIN DOWN"];
-			player say3D "dance";
-			player playMove "AmovPercMstpSnonWnonDnon_exercisekneeBendA";
-		};
-	};
-
-	case 4:
-	{
-		if(_shift) then {_handled = true;};
-		if (_shift) then
-		{
-			cutText [format["Appuyer sur le bouton V pour annuler"], "PLAIN DOWN"];
-			player say3D "dance";
-			player playMove "AmovPercMstpSnonWnonDnon_exercisekneeBendB";
-		};
-	};
-
-	case 5:
-	{
-		if(_shift) then {_handled = true;};
-		if (_shift) then
-		{
-			cutText [format["Appuyer sur le bouton V pour annuler"], "PLAIN DOWN"];
-			player say3D "dance";
-			player playMove "AmovPercMstpSnonWnonDnon_exercisePushup";
-		};
-	};
-
 	case 7:
 	{
 		if(!_alt && !_ctrlKey) then 

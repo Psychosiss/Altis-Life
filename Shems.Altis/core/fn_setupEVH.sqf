@@ -6,4 +6,7 @@ player addEventHandler["Fired", {_this call life_fnc_onFired}];
 player addEventHandler["InventoryClosed", {_this call life_fnc_inventoryClosed}];
 player addEventHandler["InventoryOpened", {_this call life_fnc_inventoryOpened}];
 player addEventHandler["Fired", {_this call life_fnc_tazerFix}];
+spawnHandlerIDT = [["#t",true,true,true],"life_fnc_filterChat"] call aniChatEvents_addEventHandler;
+spawnHandlerIDR = [["#r",true,true,true],"life_fnc_filterChat"] call aniChatEvents_addEventHandler;
+spawnHandlerIDR = [["#e",true,true,true],"life_fnc_emote"] call aniChatEvents_addEventHandler;
 "life_fnc_MP_packet" addPublicVariableEventHandler {[_this select 0,_this select 1] call life_fnc_MPexec;};

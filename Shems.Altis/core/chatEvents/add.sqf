@@ -1,18 +1,17 @@
-private ["_this", "_needle", "_callback", "_flags", "_paramNum"];
+private ["_this","_needle","_callback","_flags","_paramNum"];
 
-if (isNil "_this") exitWith {diag_log "aniChatEvents_addEventHandler: please provide sufficient parameters"};
-if (typeName _this != typeName []) exitWith {diag_log "aniChatEvents_addEventHandler: please check your syntax"};
-if (count _this < 2) exitWith {diag_log "aniChatEvents_addEventHandler: please check your syntax"};
+if (isNil "_this") exitWith {diag_log "aniChatEvents_addEventHandler: Fournir des paramètres suffisants"};
+if (typeName _this != typeName []) exitWith {diag_log "aniChatEvents_addEventHandler: Verifiez votre syntaxe"};
+if (count _this < 2) exitWith {diag_log "aniChatEvents_addEventHandler: Verifiez votre syntaxe"};
 
 _needle = _this select 0;
 _callback = _this select 1;
 _flags = [false, false, false]; 
 
-if (typeName _callback != typeName "") exitWith {diag_log "aniChatEvents_addEventHandler: the callback-parameter must be a string!"};
+if (typeName _callback != typeName "") exitWith {diag_log "aniChatEvents_addEventHandler: Le rappel de paramètre doit être string!"};
 if (typeName _needle == typeName []) then
 {
 	private "_param";
-	
 	_paramNum 	= count _needle;
 	if (_paramNum > 1) then
 	{
@@ -24,10 +23,10 @@ if (typeName _needle == typeName []) then
 			};			
 		};
 	};
-	_needle		= _needle select 0;
+	_needle	= _needle select 0;
 };
 
-aniChatEvents_eventQueue set [count aniChatEvents_eventQueue, [_needle, _callback, _flags]];
+aniChatEvents_eventQueue set [count aniChatEvents_eventQueue,[_needle, _callback, _flags]];
 
 _paramNum = count aniChatEvents_eventQueue;
 _paramNum;

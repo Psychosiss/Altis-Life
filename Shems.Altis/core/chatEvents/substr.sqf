@@ -1,4 +1,4 @@
-private ["_this", "_newString", "_refString", "_refStringArray", "_start", "_length", "_strLen", "_newStringArray"];
+private ["_this","_newString","_refString","_refStringArray","_start","_length","_strLen","_newStringArray"];
 
 _newString = "";
 _refString = "";
@@ -16,13 +16,13 @@ if (_strLen < 1) exitWith {""};
 if (_start >= _strLen || _start < (_strLen*-1)) exitWith {""};
 if (typeName _refString != typeName "") exitWith {""};
 if (typeName _start != typeName 0) exitWith {""};
-
 if (count _this > 2) then
 {
 	_length = _this select 2;
 } else {
 	_length = _strLen-1;
 };
+
 if (typeName _length != typeName 1) exitWith {""};
 if (_length < ((_strLen-1)*-1)) exitWith {""};
 if (_length >= _strLen) then
@@ -31,19 +31,13 @@ if (_length >= _strLen) then
 };
 
 if (_start+_length == 0) exitWith {""};
-if (_start < 0) then
-{
-	_start = _strLen + _start;
-};
+if (_start < 0) then {_start = _strLen + _start;};
 if (_length < 0) then
 {
 	_length = _strLen + (_length-1);
 } else {
 	_length = _start + (_length-1);
-	if (_length >= _strLen) then
-	{
-		_length = _strLen - 1;
-	};
+	if (_length >= _strLen) then {_length = _strLen - 1;};
 };
 if (_start > _length) exitWith {""};
 

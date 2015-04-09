@@ -1,4 +1,4 @@
-private ["_this", "_ret"];
+private ["_this","_ret"];
 
 _ret = 	if (typeName _this != typeName "") then 
 {

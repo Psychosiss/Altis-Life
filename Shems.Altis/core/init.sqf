@@ -48,7 +48,8 @@ waitUntil {life_session_completed};
 0 cutFadeOut 9999999;
 
 //[] spawn life_fnc_escInterupt;
-
+//execVM "core\chatEvents\init.sqf";
+execVM "core\chatEvents\init.sqf";
 switch (playerSide) do
 {
 	case west:
