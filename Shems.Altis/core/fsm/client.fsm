@@ -17,8 +17,8 @@ link4[] = {4,2};
 link5[] = {5,6};
 link6[] = {6,7};
 link7[] = {7,3};
-globals[] = {0.000000,0,0,0,0,640,480,1,26,6316128,1,-456.200378,358.065338,379.837494,-151.171021,1032,673,1};
-window[] = {0,-1,-1,-1,-1,1018,200,1640,200,1,1050};
+globals[] = {0.000000,0,0,0,0,640,480,1,26,6316128,1,-456.200378,358.065338,379.837494,-151.171021,1115,696,1};
+window[] = {2,-1,-1,-1,-1,974,156,1596,156,3,1133};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -78,16 +78,12 @@ class FSM
       init = /*%FSM<STATEINIT""">*/"if(!alive player) then" \n
        "{" \n
        "	systemChat ""Vous n'avez pas reçu de salaire car vous êtes mort."";" \n
-       "}" \n
-       "	else" \n
-       "{" \n
+       "} else {" \n
        "	if(player distance (getMarkerPos ""fed_reserve"") < 120 && playerSide == west) then" \n
        "	{" \n
        "		systemChat format[""Vous avez reçu un salaire de %1 €"",[(call life_paycheck) + 1500] call life_fnc_numberText];" \n
        "		life_atmcash = life_atmcash + (call life_paycheck) + 1500;" \n
-       "	}" \n
-       "		else" \n
-       "	{" \n
+       "	} else {" \n
        "		life_atmcash = life_atmcash + (call life_paycheck);" \n
        "		systemChat format[""Vous avez reçu un salaire de %1 €"",[(call life_paycheck)] call life_fnc_numberText];" \n
        "	};" \n
@@ -95,11 +91,8 @@ class FSM
        "" \n
        "_lastcheck = time;" \n
        "" \n
-       "//Group clean (Local)" \n
        "{" \n
-       "	if(local _x && {(count units _x == 0)}) then {" \n
-       "		deleteGroup _x;" \n
-       "	};" \n
+       "	if(local _x && {(count units _x == 0)}) then {deleteGroup _x;};" \n
        "} foreach allGroups;"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
@@ -121,6 +114,7 @@ class FSM
   initState="Main_Init";
   finalStates[] =
   {
+
   };
 };
 /*%FSM</COMPILE>*/

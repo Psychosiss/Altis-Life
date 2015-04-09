@@ -1,4 +1,5 @@
 #define __CONST__(var1,var2) var1 = compileFinal (if(typeName var2 == "STRING") then {var2} else {str(var2)})
+
 DB_Async_Active = false;
 DB_Async_ExtraLock = false;
 life_server_isReady = false;
@@ -65,8 +66,6 @@ life_gang_list = [];
 publicVariable "life_gang_list";
 life_wanted_list = [];
 client_session_list = [];
-
-[] execFSM "\life_server\cleanup.fsm";
 
 [] spawn
 {
