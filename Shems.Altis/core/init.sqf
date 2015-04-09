@@ -47,7 +47,7 @@ waitUntil {life_session_completed};
 0 cutText["Fin de la procedure client","BLACK FADED"];
 0 cutFadeOut 9999999;
 
-[] spawn life_fnc_escInterupt;
+//[] spawn life_fnc_escInterupt;
 
 switch (playerSide) do
 {
