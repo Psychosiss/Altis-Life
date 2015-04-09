@@ -1032,7 +1032,7 @@ class CfgNotifications
 		pictureColor[] = {0,0.3,0.6,1};
 	};
 
-	class ImpotStandard
+	class TaxesStandard
 	{
 		title = "SERVICE DES IMPOTS";
         iconPicture = "icons\clock.paa";
@@ -1041,7 +1041,7 @@ class CfgNotifications
 		priority = 6;
 	};
 
-	class ImpotLevy
+	class TaxesLevy
 	{
 		title = "SERVICE DES IMPOTS";
         iconPicture = "icons\bank.paa";
@@ -1050,7 +1050,7 @@ class CfgNotifications
 		priority = 6;
 	};
 
-	class ImpotPoor
+	class TaxesPoor
 	{
 		title = "SERVICE DES IMPOTS";
         iconPicture = "\a3\Ui_f\data\GUI\Cfg\CommunicationMenu\transport_ca.paa";
