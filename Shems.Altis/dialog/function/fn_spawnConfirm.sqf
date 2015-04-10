@@ -21,7 +21,8 @@ if(count life_spawn_point == 0) then
 	} else {
 		player setPos (getMarkerPos (_sp select 0));
 	};
-	titleText[format["%2 %1",_sp select 1,"Tu t'es reveillé à"],"BLACK IN"];
+	//titleText[format["%2 %1",_sp select 1,"Tu t'es reveillé à"],"BLACK IN"];
+	titleText[format["Tu t'es reveillé à %1",_sp select 1],"BLACK IN"];
 } else {
 	if(playerSide == civilian) then
 	{
@@ -37,7 +38,6 @@ if(count life_spawn_point == 0) then
 				{
 					player setPos (getMarkerPos (life_spawn_point select 0));
 				};
-
 				{
 					_bPos = _bPos - [(_house buildingPos _x)];
 				} foreach (_house getVariable ["slots",[]]);
@@ -54,7 +54,8 @@ if(count life_spawn_point == 0) then
 	} else {
 		player setPos (getMarkerPos (life_spawn_point select 0));
 	};
-	titleText[format["%2 %1",life_spawn_point select 1,"Tu t'es reveillé à"],"BLACK IN"];
+	//titleText[format["%2 %1",life_spawn_point select 1,"Tu t'es reveillé à"],"BLACK IN"];
+	titleText[format["Tu t'es reveillé à %1",life_spawn_point select 1],"BLACK IN"];
 };
 
 if(life_firstSpawn) then 

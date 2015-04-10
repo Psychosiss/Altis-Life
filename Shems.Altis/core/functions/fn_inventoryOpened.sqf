@@ -30,7 +30,8 @@ if(_container isKindOf "LandVehicle" OR _container isKindOf "Ship" OR _container
 	};
 };
 
-if(_isPack == 1 && playerSide == west && (!(talent_west_self4))) then 
+/*
+if(_isPack == 1 && playerSide == west) then 
 {
 	hint "Vous ne pouvez pas ouvrir ce sac";
 	[] spawn 
@@ -39,6 +40,7 @@ if(_isPack == 1 && playerSide == west && (!(talent_west_self4))) then
 		closeDialog 0;
 	};
 };
+*/
 
 if(_container isKindOf "Man" && !alive _container) exitWith 
 {

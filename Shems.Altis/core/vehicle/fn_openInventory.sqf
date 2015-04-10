@@ -30,14 +30,11 @@ if(isNull _vehicle OR !
 			"Land_Cargo20_sand_F",
 			"Land_Cargo20_white_F",
 			"Land_Cargo20_yellow_F",
-			"Land_Device_assembled_F",
 			"Land_TentDome_F",
 			"Land_TentA_F"
 		]
 	)
 )) exitWith {};
-
-if((typeOf _vehicle == "Land_Device_assembled_F") && ((_vehicle getVariable "trunk_is_lock") && !talent_civ_utils7)) exitWith {hint "L'usine est vérrouillé pour 2 min par un marchand";};
 
 if((_vehicle getVariable ["trunk_in_use",false])) exitWith {hint "Une seul personne peut ouvrir l'inventaire de ce vehicule."};
 _vehicle setVariable["trunk_in_use",true,true];

@@ -346,7 +346,6 @@ class CfgFunctions
 			class loadGear {};
 			class stripDownPlayer {};
 			class handlerHelp {};
-			class returnInfo {};
 			class colorRGBtoHTML {};
 			class abort {};
 			class onPause {};

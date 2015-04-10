@@ -26,7 +26,6 @@ life_earplugs = false;
 life_animals_spawned = false;
 life_action_gathering = false;
 life_is_alive = false;
-life_cant_talent = false;
 life_request_timer = false;
 life_drug_level = 0;
 life_cocaine_effect = 0;

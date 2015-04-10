@@ -24,7 +24,6 @@ for "_i" from 0 to count(_licenses)-1 do
 };
 
 _licenses = [_licenses] call DB_fnc_mresArray;
-_talent = [_talent] call DB_fnc_mresArray;
 
 switch (_side) do 
 {

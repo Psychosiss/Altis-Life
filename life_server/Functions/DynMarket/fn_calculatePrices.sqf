@@ -111,4 +111,11 @@ life_dynMarket_Items_CurrentPriceArr = _tempArrayHolder;
 	} forEach life_dynMarket_sellarraycopy;
 } forEach life_dynMarket_Items_CurrentPriceArr;
 
+if (life_dynMarket_createRandomEvents) then 
+{
+	life_dynMarket_waitForEvent = false;
+	[] spawn TON_fnc_randomEvent;
+	waitUntil {life_dynMarket_waitForEvent};
+};
+
 [[1,life_dynMarket_sellarraycopy],"life_fnc_update",true,false] spawn life_fnc_MP;
