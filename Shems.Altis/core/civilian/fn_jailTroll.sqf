@@ -7,7 +7,7 @@ if(life_is_arrested) exitWith {};
 _bad = [_this,1,false,[false]] call BIS_fnc_param;
 _time = [_this,2,15,[0]] call BIS_fnc_param;
 
-player setVariable["restrained",false,true];
+player setVariable["Restrained",false,true];
 player setVariable["Escorting",false,true];
 player setVariable["transporting",false,true];
 

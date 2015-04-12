@@ -1,7 +1,7 @@
-private["_cop","_player"];
-_cop = [_this,0,Objnull,[Objnull]] call BIS_fnc_param;
+private["_med","_player"];
+_med = [_this,0,Objnull,[Objnull]] call BIS_fnc_param;
 _player = player;
-if(isNull _cop) exitWith {};
+if(isNull _med) exitWith {};
 
 [] spawn
 {
@@ -10,22 +10,21 @@ if(isNull _cop) exitWith {};
 	{
 		_time = time;
 		waitUntil {(time - _time) > (5 * 60)};
-
-		if(!(player getVariable["restrained",false])) exitWith {};
-		if(!([west,getPos player,30] call life_fnc_nearUnits) && (player getVariable["restrained",false]) && vehicle player == player) exitWith 
+		if(!(player getVariable["Restrained",false])) exitWith {};
+		if(!([independent,getPos player,30] call life_fnc_nearUnits) && (player getVariable["Restrained",false]) && vehicle player == player) exitWith 
 		{
-			player setVariable["restrained",false,true];
+			player setVariable["Restrained",false,true];
 			player setVariable["Escorting",false,true];
 			player setVariable["transporting",false,true];
+			player say3D "cuffout";
 			detach player;
 			titleText["Vous avez automatiquement été démenotté","PLAIN"];
-			player say3D "cuff";
 		};
 	};
 };
 
-titleText[format["Vous avez été menottez par %1",_cop getVariable["realname",name _cop]],"PLAIN"];
-				
+titleText[format["Vous avez été menottez par %1",_med getVariable["realname",name _med]],"PLAIN"];
+
 while {player getVariable "restrained"} do
 {
 	if(vehicle player == player) then 
@@ -41,12 +40,14 @@ while {player getVariable "restrained"} do
 		player setVariable ["restrained",false,true];
 		player setVariable ["Escorting",false,true];
 		player setVariable ["transporting",false,true];
+		player say3D "cuffout";
 		detach _player;
 	};
 
-	if(!alive _cop) exitWith 
+	if(!alive _med) exitWith 
 	{
 		player setVariable ["Escorting",false,true];
+		player say3D "cuffout";
 		detach player;
 	};
 
@@ -64,6 +65,6 @@ if(alive player) then
 	player switchMove "AmovPercMstpSlowWrflDnon_SaluteIn";
 	player setVariable ["Escorting",false,true];
 	player setVariable ["transporting",false,true];
-	detach player;
 	player say3D "cuffout";
+	detach player;
 };

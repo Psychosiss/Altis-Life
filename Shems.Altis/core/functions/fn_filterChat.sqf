@@ -5,7 +5,7 @@ if (_unit != player) exitWith {};
 if ((_msg call aniChatEvents_strlen) > 3) then
 {
 	_trigger = [_msg, 0, 2] call aniChatEvents_substr; 
-	if (_trigger != "#t" && _trigger != "#r") exitWith{};
+	if (_trigger != "#t" && _trigger != "#r") exitWith {};
 	if (_trigger == "#t") then
 	{
 		_filtered = [_msg, 3] call aniChatEvents_substr;

@@ -89,7 +89,7 @@ if(!alive player OR life_istazed) exitWith
 	_hideout setVariable["inCapture",false,true];
 };
 
-if((player getVariable["restrained",false])) exitWith 
+if((player getVariable["Restrained",false])) exitWith 
 {
 	life_action_inUse = false;
 	_hideout setVariable["inCapture",false,true];
@@ -112,7 +112,7 @@ if(!alive player OR life_istazed) exitWith
 	_ui cutRsc["StatusBar","PLAIN"];
 };
 
-if((player getVariable["restrained",false])) exitWith 
+if((player getVariable["Restrained",false])) exitWith 
 {
 	life_action_inUse = false;
 	_hideout setVariable["inCapture",false,true];

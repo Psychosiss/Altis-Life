@@ -1,8 +1,8 @@
 private["_vars"];
 _vars = 
 [
-	"life_revive_fee","life_gangPrice","life_gangUpgradeBase","life_enableFatigue","life_paycheck_period","life_vShop_rentalOnly","buy_array","life_impound_air",
-	"life_weapon_shop_array","life_garage_prices","life_garage_sell","life_houseLimit","life_gangUpgradeMultipler","life_impound_car","life_impound_boat",
+	"life_revive_fee","life_gangPrice","life_gangUpgradeBase","life_enableFatigue","life_paycheck_period","life_taxes_period","life_vShop_rentalOnly","buy_array","life_impound_air",
+	"life_weapon_shop_array","life_garage_prices","life_garage_sell","life_houseLimit","life_gangUpgradeMultipler","life_impound_car","life_impound_boat"
 ];
 
 {

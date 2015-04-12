@@ -1,11 +1,14 @@
 #include <macro.h>
 
-private["_curTarget","_isWater"];
+private["_curTarget","_isWater","_cursor"];
 _curTarget = cursorTarget;
+_cursor = [] call life_fnc_cursorTarget;   // can change _curTarget to _cursor
 if(life_action_inUse) exitWith {};
 if(life_interrupted) exitWith {life_interrupted = false;};
 _isWater = surfaceIsWater (getPosASL player);
-if(isNull _curTarget) exitWith 
+
+//if(isNull _curTarget) exitWith 
+if(isNull _cursor) exitWith 
 {
 	if(_isWater) then 
 	{
@@ -50,14 +53,19 @@ if(_curTarget isKindOf "Man" && {!alive _curTarget} && {playerSide in [west,inde
 
 if(isPlayer _curTarget && _curTarget isKindOf "Man") then 
 {
-	if((_curTarget getVariable["restrained",false]) && !dialog && playerSide == west) then 
+	if((_curTarget getVariable["restrained",false]) && {!(player getVariable["restrained",false])} && !dialog && playerSide == west) then 
 	{
 		[_curTarget] call life_fnc_copInteractionMenu;
 	};
 
-	if((_curTarget getVariable["restrained",false]) && !dialog && playerSide == civilian) then 
+	if((_curTarget getVariable["restrained",false]) && {!(player getVariable["restrained",false])} && !dialog && playerSide == civilian) then
 	{
         [_curTarget] call life_fnc_civInteractionMenu;
+	};
+
+	if((_curTarget getVariable["restrained",false]) && {!(player getVariable["restrained",false])} && !dialog && playerSide == independent) then
+	{
+        [_curTarget] call life_fnc_medInteractionMenu;
 	};
 } else {
 	private["_isVehicle","_miscItems","_money"];
@@ -70,9 +78,19 @@ if(isPlayer _curTarget && _curTarget isKindOf "Man") then
 	{
 		if(!dialog) then 
 		{
-			if(player distance _curTarget < ((boundingBox _curTarget select 1) select 0) + 2) then 
+			if(playerSide == west && player distance _curTarget < (((boundingBox _curTarget select 1) select 0) + 2)) then 
 			{
-				[_curTarget] call life_fnc_vInteractionMenu;
+				[_curTarget] call life_fnc_copVehicleInteractionMenu;
+			};
+
+			if(playerSide == civilian && player distance _curTarget < (((boundingBox _curTarget select 1) select 0) + 2)) then 
+			{
+			    [_curTarget] call life_fnc_civVehicleInteractionMenu;
+			};
+
+			if(playerSide == independent && player distance _curTarget < (((boundingBox _curTarget select 1) select 0) + 2)) then 
+			{
+			    [_curTarget] call life_fnc_medVehicleInteractionMenu;
 			};
 		};
 	} else {
@@ -98,7 +116,7 @@ if(isPlayer _curTarget && _curTarget isKindOf "Man") then
 				if((typeOf _curTarget) == _money && {!(_curTarget getVariable["inUse",false])}) then 
 				{
 					private["_handle"];
-					_curTarget setVariable["inUse",TRUE,TRUE];
+					_curTarget setVariable["inUse",true,true];
 					_handle = [_curTarget] spawn life_fnc_pickupMoney;
 					waitUntil {scriptDone _handle};
 				};

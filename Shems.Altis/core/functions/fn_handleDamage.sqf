@@ -27,7 +27,7 @@ if(!isNull _source) then
 				_damage = false;
 				if(_unit distance _source < _distance) then 
 				{
-					if(!life_istazed && !(_unit getVariable["restrained",false])) then 
+					if(!life_istazed && !(_unit getVariable["Restrained",false])) then 
 					{
 						if(_isVehicle && _isQuad) then 
 						{
@@ -50,7 +50,7 @@ if(!isNull _source) then
 				_damage = 0;
 				if(_unit distance _source < _distance) then 
 				{
-					if(!life_istazed && !(_unit getVariable["restrained",false])) then 
+					if(!life_istazed && !(_unit getVariable["Restrained",false])) then 
 					{
 						if(_isVehicle && _isQuad) then 
 						{
@@ -100,7 +100,7 @@ if(!isNull _source) then
 			_damage = false;
 			if(_unit distance _source < _distance) then 
 			{
-				if(!life_istazed && !(_unit getVariable["restrained",false])) then 
+				if(!life_istazed && !(_unit getVariable["Restrained",false])) then 
 				{
 					if(_isVehicle && _isQuad) then 
 					{

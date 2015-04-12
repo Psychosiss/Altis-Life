@@ -63,6 +63,8 @@ switch(_type) do
 	case "481": {_type = ["Possession de substance illicite",1000]};
 	case "482": {_type = ["Intention De Distribuer",5000]};
 	case "483": {_type = ["Trafic De Drogue",9500]};
+	case "485": {_type = ["Tentative de crochetage de menottes",2500]};
+	case "486": {_type = ["Crochetage de menotte",5000]};
 	case "487": {_type = ["Grand Vol",1500]};
 	case "488": {_type = ["Petit Vol",700]};
 	case "800": {_type = ["Torture sur humain",10000]};

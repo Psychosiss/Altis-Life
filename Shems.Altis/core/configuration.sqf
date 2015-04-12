@@ -6,7 +6,6 @@ life_garage_store = false;
 life_net_dropped = false;
 life_hit_explosive = false;
 life_siren_active = false;
-life_siren2_active = false;
 life_is_processing = false;
 life_session_completed = false;
 life_bail_paid = false;
@@ -39,9 +38,11 @@ life_fatigue = 0.5;
 life_respawn_timer = 2;
 life_clothing_uniform = -1;
 life_animals_spawned_time = -500;
-life_trunk_vehicle = Objnull;
+life_trunk_vehicle = ObjNull;
 life_spikestrip = ObjNull;
 life_cursorTarget = objNull;
+life_handcuffs = ObjNull;
+life_handcuffkeys = ObjNull;
 life_query_time = time;
 life_action_delay = time;
 life_redgull_effect = time;
@@ -61,6 +62,7 @@ __CONST__(life_save_civ,true);
 __CONST__(life_save_yinv,true);
 __CONST__(life_enableFatigue,false);
 __CONST__(life_paycheck_period,5);
+__CONST__(life_taxes_period,10);
 __CONST__(life_impound_car,350);
 __CONST__(life_impound_boat,250);
 __CONST__(life_impound_air,850);
@@ -74,6 +76,7 @@ switch (playerSide) do
 		life_carryWeight = 0;
 		life_atmcash = 10000;
 		life_paycheck = 3000;
+		life_taxes = 2500;
 	};
 
 	case independent: 
@@ -83,6 +86,7 @@ switch (playerSide) do
 		life_carryWeight = 0;
 		life_atmcash = 10000;
 		life_paycheck = 3000;
+		life_taxes = 2500;
 	};
 
 	case civilian : 
@@ -92,6 +96,7 @@ switch (playerSide) do
 		life_carryWeight = 0;
 		life_atmcash = 10000;
 		life_paycheck = 1250;
+		life_taxes = 750;
 	};
 };
 
@@ -249,7 +254,9 @@ life_inv_items =
 	"life_inv_vammo",
 	"life_inv_adrenalineShot",
 	"life_inv_debitcard",
-	"life_inv_underwatercharge"
+	"life_inv_underwatercharge",
+	"life_inv_handcuffs",
+    "life_inv_handcuffkeys"
 ];
 
 {missionNamespace setVariable[_x,0];} foreach life_inv_items;
@@ -307,7 +314,9 @@ life_illegal_items =
 	["cigare",9500],
 	["ipuranium",10000],
 	["dog",2500],
-	["dogp",2500]
+	["dogp",2500],
+	["handcuffs",200],
+	["handcuffkeys",100]
 ];
 
 sell_array = 
@@ -382,7 +391,9 @@ sell_array =
 	["vammo",10000],
 	["adrenalineShot",5000],
 	["debitcard",2500],
-	["underwatercharge",5000]
+	["underwatercharge",5000],
+	["handcuffs",200],
+    ["handcuffkeys",100]
 ];
 //__CONST__(sell_array,sell_array);
 
@@ -435,7 +446,9 @@ buy_array =
 	["vammo",25000],
 	["adrenalineShot",20000],
 	["debitcard",5000],
-	["underwatercharge",10000]
+	["underwatercharge",10000],
+	["handcuffs",500],
+    ["handcuffkeys",300]
 ];
 __CONST__(buy_array,buy_array);
 

@@ -77,14 +77,17 @@ switch (playerSide) do
     };
 };
 
-player setVariable["restrained",false,true];
+player setVariable["Restrained",false,true];
 player setVariable["Escorting",false,true];
 player setVariable["transporting",false,true];
 player setVariable["missingOrgan",false,true];
 player setVariable["hasOrgan",false,true];
 diag_log "Passage a l'initialisation des paramètres";
-[] execFSM "core\fsm\client.fsm";
-diag_log "Execution du client.fsm";
+//[] execFSM "core\fsm\fn_payManager.fsm";
+[] call life_fnc_payManager;
+diag_log "Execution du salaire (fn_payManager.fsm)";
+[] call life_fnc_taxesManager;
+dial_log "Execution des impots (fn_taxesManager.fsm)";
 waitUntil {!(isNull (findDisplay 46))};
 diag_log "Ecran 46 Trouvé";
 (findDisplay 46) displayAddEventHandler ["KeyDown", "_this call life_fnc_keyUpHandler"];
@@ -408,4 +411,5 @@ player disableConversation true;
 0 fadeRadio 0;
 
 __CONST__(life_paycheck,life_paycheck);
+__CONST__(life_taxes,life_taxes);
 player enableFatigue (__GETC__(life_enableFatigue));

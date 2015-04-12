@@ -19,18 +19,9 @@ life_versionInfo = "Altis Life RPG fondé par Tonic et developpé par Shems.";
 [] execVM "scripts\safezone.sqf";
 [] execVM "scripts\teargas.sqf";
 [] execVM "scripts\IgiLoadinit.sqf";
-[] execVM "scripts\fn_taxes.sqf";
 
 [] call life_fnc_fastrope;
 [] call life_fnc_addKey;
-
-MAC_fnc_switchMove = 
-{
-    private["_object","_anim"];
-    _object = _this select 0;
-    _anim = _this select 1;
-    _object switchMove _anim;
-};
 
 fn_whoDunnit = compile preprocessFileLineNumbers "scripts\fn_whoDunnit.sqf";
 

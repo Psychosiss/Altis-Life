@@ -141,7 +141,9 @@ life_dynMarket_Items_ToTrack =
 	["vammo",10000],
 	["adrenalineShot",5000],
 	["debitcard",2500],
-	["underwatercharge",5000]
+	["underwatercharge",5000],
+	["handcuffs",200],
+	["handcuffkeys",100]
 ];
 
 life_dynMarket_Items_CurrentPriceArr = [];

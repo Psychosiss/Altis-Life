@@ -86,8 +86,8 @@ if(!alive player OR life_istazed) exitWith
 	_ui cutRsc["StatusBar","PLAIN"];
 };
 
-//if((player getVariable["restrained",false])) exitWith {life_action_inUse = false;};
-if((player getVariable["restrained",false])) exitWith 
+//if((player getVariable["Restrained",false])) exitWith {life_action_inUse = false;};
+if((player getVariable["Restrained",false])) exitWith 
 {
 	life_action_inUse = false;
 	_ui = "StatusBar" call BIS_fnc_rscLayer;

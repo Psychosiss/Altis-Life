@@ -90,11 +90,11 @@ switch (_code) do
 	{
 		if(!_alt && !_ctrlKey) then
 		{
-			if (vehicle player == player && !(player getVariable ["restrained", false]) && !(player getVariable ["Escorting", false]) ) then 
+			if (vehicle player == player && !(player getVariable ["restrained", false]) && !(player getVariable ["Escorting", false])) then 
 			{
-				if (player getVariable ["playerSurrender", false]) then 
+				if (player getVariable ["playerSurrender",false]) then 
 				{
-					player setVariable ["playerSurrender", false, true];
+					player setVariable ["playerSurrender",false,true];
 				} else {
 					[] spawn life_fnc_surrender;
 				};
@@ -106,12 +106,34 @@ switch (_code) do
 	case 19:
 	{
 		if(_shift) then {_handled = true;};
-		if(_shift && playerSide == west && !isNull cursorTarget && cursorTarget isKindOf "Man" && (isPlayer cursorTarget) && (side cursorTarget in [civilian,independent]) && alive cursorTarget && cursorTarget distance player < 3.5 && !(cursorTarget getVariable "Escorting") && !(cursorTarget getVariable "restrained") && speed cursorTarget < 1) then
+		switch (playerSide) do
 		{
-			[] call life_fnc_restrainAction;
+			case west:
+			{
+				if(_shift && !(player getVariable["restrained",false]) && !isNull cursorTarget && cursorTarget isKindOf "Man" && (isPlayer cursorTarget) && (side cursorTarget in [west,civilian,independent]) && alive cursorTarget && cursorTarget distance player < 3.5 && !(cursorTarget getVariable "Escorting") && !(cursorTarget getVariable "restrained") && !life_knockout && speed cursorTarget < 1) then
+				{
+					[] call life_fnc_copRestrainAction;
+				};
+			};
+
+			case civilian:
+			{
+				if(_shift && !(player getVariable["restrained",false]) && !isNull cursorTarget && cursorTarget isKindOf "Man" && (isPlayer cursorTarget) && (side cursorTarget in [west,civilian,independent]) && alive cursorTarget && cursorTarget distance player < 3.5 && !(cursorTarget getVariable "Escorting") && !(cursorTarget getVariable "restrained") && !life_knockout && speed cursorTarget < 1) then
+				{
+					[] call life_fnc_civRestrainAction;
+				};
+			};
+
+			case independent:
+			{
+				if(_shift && !(player getVariable["restrained",false]) && !isNull cursorTarget && cursorTarget isKindOf "Man" && (isPlayer cursorTarget) && (side cursorTarget in [west,civilian,independent]) && alive cursorTarget && cursorTarget distance player < 3.5 && !(cursorTarget getVariable "Escorting") && !(cursorTarget getVariable "restrained") && !life_knockout && speed cursorTarget < 1) then
+				{
+					[] call life_fnc_medRestrainAction;
+				};
+			};
 		};
 	};
-	
+
 	case 20:
 	{
 		if(!_alt && !_ctrlKey) then
@@ -185,30 +207,31 @@ switch (_code) do
 		{
 			if(vehicle player == player) then 
 			{
-			_veh = cursorTarget;
-		} else {
-			_veh = vehicle player;
-		};
-		if(_veh isKindOf "House_F" && playerSide == civilian) then 
-		{
-			if(_veh in life_vehicles && player distance _veh < 8) then 
-			{
-				_door = [_veh] call life_fnc_nearestDoor;
-				if(_door == 0) exitWith {hint "Vous n'êtes pas à proximité d'une porte!"};
-				_locked = _veh getVariable [format["bis_disabled_Door_%1",_door],0];
-				if(_locked == 0) then 
-				{
-					_veh setVariable[format["bis_disabled_Door_%1",_door],1,true];
-					_veh animate [format["door_%1_rot",_door],0];
-					systemChat "Vous avez fermé votre maison.";
-				} else {
-					_veh setVariable[format["bis_disabled_Door_%1",_door],0,true];
-					_veh animate [format["door_%1_rot",_door],1];
-					systemChat "Vous avez ouvert votre maison.";
-				};
+				_veh = cursorTarget;
+			} else {
+				_veh = vehicle player;
 			};
-		} else {
+			if(_veh isKindOf "House_F" && playerSide == civilian) then 
+			{
+				if(_veh in life_vehicles && player distance _veh < 8) then 
+				{
+					_door = [_veh] call life_fnc_nearestDoor;
+					if(_door == 0) exitWith {hint "Vous n'êtes pas à proximité d'une porte!"};
+					_locked = _veh getVariable [format["bis_disabled_Door_%1",_door],0];
+					if(_locked == 0) then 
+					{
+						_veh setVariable[format["bis_disabled_Door_%1",_door],1,true];
+						_veh animate [format["door_%1_rot",_door],0];
+						systemChat "Vous avez fermé votre maison.";
+					} else {
+						_veh setVariable[format["bis_disabled_Door_%1",_door],0,true];
+						_veh animate [format["door_%1_rot",_door],1];
+						systemChat "Vous avez ouvert votre maison.";
+					};
+				};
+			} else {
 				_locked = locked _veh;
+				_doors = ["door_back_R","door_back_L","door_R","door_L","Door_rear","Door_LM","Door_RM","Door_LF","Door_RF","Door_LB","Door_RB"];
 				if(_veh in life_vehicles && player distance _veh < 8) then
 				{
 					if(_locked == 2) then
@@ -216,64 +239,32 @@ switch (_code) do
 						if(local _veh) then
 						{
 							_veh lock 0;
-							_veh animateDoor ["door_back_R",1];
-							_veh animateDoor ["door_back_L",1];
-							_veh animateDoor ['door_R',1];
-							_veh animateDoor ['door_L',1];
-							_veh animateDoor ['Door_rear',1];
-							_veh animateDoor ['Door_LM',1];
-							_veh animateDoor ['Door_RM',1];
-							_veh animateDoor ['Door_LF',1];
-							_veh animateDoor ['Door_RF',1];
-							_veh animateDoor ['Door_LB',1];
-							_veh animateDoor ['Door_RB',1];
+							{
+								_veh animateDoor [_x,1];
+							} forEach _doors;
 						} else {
 							[[_veh,0], "life_fnc_lockVehicle",_veh,false] spawn life_fnc_MP;
-							_veh animateDoor ["door_back_R",1];
-							_veh animateDoor ["door_back_L",1];
-							_veh animateDoor ['door_R',1];
-							_veh animateDoor ['door_L',1];
-							_veh animateDoor ['Door_rear',1];
-							_veh animateDoor ['Door_LM',1];
-							_veh animateDoor ['Door_RM',1];
-							_veh animateDoor ['Door_LF',1];
-							_veh animateDoor ['Door_RF',1];
-							_veh animateDoor ['Door_LB',1];
-							_veh animateDoor ['Door_RB',1];
+							{
+								_veh animateDoor [_x,1];
+							} forEach _doors;
 						};
-						hint composeText [ image "icons\unlock.paa", " Véhicule ouvert"];
+						hint composeText [image "icons\unlock.paa"," Véhicule ouvert"];
 						_veh say3D "Beep";
 					} else {
 						if(local _veh) then
 						{
 							_veh lock 2;
-							_veh animateDoor ["door_back_R",0];
-							_veh animateDoor ["door_back_L",0];
-							_veh animateDoor ['door_R',0];
-							_veh animateDoor ['door_L',0];
-							_veh animateDoor ['Door_rear',0];
-							_veh animateDoor ['Door_LM',0];
-							_veh animateDoor ['Door_RM',0];
-							_veh animateDoor ['Door_LF',0];
-							_veh animateDoor ['Door_RF',0];
-							_veh animateDoor ['Door_LB',0];
-							_veh animateDoor ['Door_RB',0];
+							{
+								_veh animateDoor [_x,0];
+							} forEach _doors;
 						} else {
 							[[_veh,2], "life_fnc_lockVehicle",_veh,false] spawn life_fnc_MP;
-							_veh animateDoor ["door_back_R",0];
-							_veh animateDoor ["door_back_L",0];
-							_veh animateDoor ['door_R',0];
-							_veh animateDoor ['door_L',0];
-							_veh animateDoor ['Door_rear',0];
-							_veh animateDoor ['Door_LM',0];
-							_veh animateDoor ['Door_RM',0];
-							_veh animateDoor ['Door_LF',0];
-							_veh animateDoor ['Door_RF',0];
-							_veh animateDoor ['Door_LB',0];
-							_veh animateDoor ['Door_RB',0];
+							{
+								_veh animateDoor [_x,0];
+							} forEach _doors;
 						};
-					hint composeText [ image "icons\lock.paa", " Véhicule fermé"];
-					_veh say3D "BeepBeep";
+						hint composeText [image "icons\lock.paa"," Véhicule fermé"];
+						_veh say3D "BeepBeep";
 					};
 				};
 			};
@@ -282,34 +273,6 @@ switch (_code) do
 
 	case 33:
 	{
-		if(_shift) then
-		{
-			if(playerSide == west && vehicle player != player && !life_siren2_active && ((driver vehicle player) == player)) then
-			{
-				[] spawn
-				{
-					life_siren2_active = true;
-					sleep 1.2;
-					life_yelp_active = false;
-				};
-				_veh = vehicle player;
-				if(isNil {_veh getVariable "yelp"}) then 
-				{
-					_veh setVariable["yelp",false,true];
-				};
-
-				if((_veh getVariable "yelp")) then
-				{
-					titleText ["Yelp Off","PLAIN"];
-					_veh setVariable["yelp",false,true];
-				} else {
-					titleText ["Yelp On","PLAIN"];
-					_veh setVariable["yelp",true,true];
-					[[_veh],"life_fnc_copYelp",nil,true] spawn life_fnc_MP;
-				};
-			};
-		};
-
 		if (!_shift) then
 		{
 			if(playerSide == west && vehicle player != player && !life_siren_active && ((driver vehicle player) == player)) then
@@ -342,18 +305,19 @@ switch (_code) do
 	case 34:
 	{
 		if(_shift) then {_handled = true;};
-		if(_shift && playerSide == civilian && !isNull cursorTarget && cursorTarget isKindOf "Man" && isPlayer cursorTarget && alive cursorTarget && cursorTarget distance player < 4 && speed cursorTarget < 1) then
+		if(_shift && !isNull cursorTarget && cursorTarget isKindOf "Man" && (isPlayer cursorTarget) && alive cursorTarget && cursorTarget distance player < 4 && speed cursorTarget < 1 && !(cursorTarget getVariable "restrained")) then
 		{
-			if((animationState cursorTarget) != "Incapacitated" && (currentWeapon player == primaryWeapon player OR currentWeapon player == handgunWeapon player) && currentWeapon player != "" && !life_knockout && !(player getVariable["restrained",false]) && !life_istazed) then
+			if((animationState cursorTarget) != "Incapacitated" && (currentWeapon player == primaryWeapon player || currentWeapon player == handgunWeapon player) && currentWeapon player != "" && !life_knockout && !(player getVariable["Restrained",false]) && !life_istazed) then
 			{
 				[cursorTarget] spawn life_fnc_knockoutAction;
 				if("ItemRadio" in assignedItems cursorTarget) then 
 				{
-				cursorTarget removeweapon "ItemRadio";
-				hint "Le téléphone à été placé au sol.";
-      			_defenceplace1 = "Item_ItemRadio" createVehicle (player modelToWorld[0,0,0]);
-				} else { 
-				hint "La personne que vous avez assomé n'as pas de téléphone."};
+					cursorTarget removeWeapon "ItemRadio";
+					hint "Un téléphone est tombé de la poche de cette personne.";
+					_defenceplace1 = "Item_ItemRadio" createVehicle (player modelToWorld[0,0,0]);
+				//} else {
+					//hint "La personne que vous avez assomé n'as pas de téléphone.";
+				};
 			};
 		};
 	};

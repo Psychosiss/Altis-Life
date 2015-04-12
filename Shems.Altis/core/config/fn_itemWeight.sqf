@@ -21,6 +21,8 @@ switch (_item) do
 	case "snake": {1};
 	case "painkillers": {1};
 	case "frites": {1};
+	case "handcuffs": {1};
+	case "handcuffkeys": {1};
 	case "salema": {2};
 	case "ornate": {2};
 	case "fishing": {2};

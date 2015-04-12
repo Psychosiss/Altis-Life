@@ -17,6 +17,7 @@ if(!dialog) then
 {
 	createDialog "pInteraction_Menu";
 };
+
 disableSerialization;
 _curTarget = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 if(isNull _curTarget) exitWith {closeDialog 0;};
@@ -43,6 +44,7 @@ if(_curTarget isKindOf "House_F") exitWith
 
 		_Btn2 ctrlSetText "Ouvrir / Fermer";
 		_Btn2 buttonSetAction "[life_pInact_curTarget] call life_fnc_doorAnimate;";
+
 		_Btn3 ctrlShow false;
 		_Btn4 ctrlShow false;
 		_Btn5 ctrlShow false;
@@ -73,8 +75,15 @@ life_pInact_curTarget = _curTarget;
 _Btn1 ctrlSetText "Démenotter";
 _Btn1 buttonSetAction "[life_pInact_curTarget] call life_fnc_unrestrain; closeDialog 0;";
 
+if(life_inv_handcuffkeys > 0) then
+{
+    _Btn1 ctrlEnable true;
+} else {
+    _Btn1 ctrlEnable false;
+};
+
 _Btn2 ctrlSetText "Licences";
-_Btn2 buttonSetAction "[[player],""life_fnc_licenseCheck"",life_pInact_curTarget,FALSE] spawn life_fnc_MP";
+_Btn2 buttonSetAction "[[player],""life_fnc_licenseCheck"",life_pInact_curTarget,false] spawn life_fnc_MP";
 
 _Btn3 ctrlSetText "Fouiller";
 _Btn3 buttonSetAction "[life_pInact_curTarget] spawn life_fnc_searchAction; closeDialog 0;";
@@ -82,7 +91,7 @@ _Btn3 buttonSetAction "[life_pInact_curTarget] spawn life_fnc_searchAction; clos
 if((_curTarget getVariable["Escorting",false])) then 
 {
 	_Btn4 ctrlSetText "Stop Escorte";
-	_Btn4 buttonSetAction "[life_pInact_curTarget] call life_fnc_stopEscorting; [life_pInact_curTarget] call life_fnc_copInteractionMenu;";
+	_Btn4 buttonSetAction "[life_pInact_curTarget] call life_fnc_stopEscorting; [life_pInact_curTarget] call life_fnc_copInteractionMenu; closeDialog 0;";
 } else {
 	_Btn4 ctrlSetText "Escorter";
 	_Btn4 buttonSetAction "[life_pInact_curTarget] call life_fnc_escortAction; closeDialog 0;";
@@ -96,7 +105,7 @@ _Btn6 buttonSetAction "closeDialog 0; [life_pInact_curTarget] call life_fnc_arre
 _Btn6 buttonSetAction "closeDialog 0; [] call life_fnc_showArrestDialog;";
 
 _Btn7 ctrlSetText "Véhicule";
-_Btn7 buttonSetAction "[life_pInact_curTarget] call life_fnc_putInCar;";
+_Btn7 buttonSetAction "[life_pInact_curTarget] call life_fnc_putInCar; closeDialog 0;";
 
 _Btn8 ctrlSetText "Retirer Armes";
 _Btn8 buttonSetAction "[life_pInact_curTarget] spawn life_fnc_removeWeaponAction; closeDialog 0;";

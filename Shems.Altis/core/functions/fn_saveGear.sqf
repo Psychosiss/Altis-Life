@@ -281,7 +281,9 @@ if(count (secondaryWeaponItems player) > 0) then
 	["life_inv_vammo", life_inv_vammo],
 	["life_inv_adrenalineShot", life_inv_adrenalineShot],
 	["life_inv_debitcard", life_inv_debitcard],
-	["life_inv_underwatercharge", life_inv_underwatercharge]
+	["life_inv_underwatercharge", life_inv_underwatercharge],
+	["life_inv_handcuffs", life_inv_handcuffs],
+	["life_inv_handcuffkeys", life_inv_handcuffkeys]
 ];
 
 _return pushBack _uItems;

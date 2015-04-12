@@ -40,7 +40,6 @@ if(_isPack == 1 && playerSide == west) then
 		closeDialog 0;
 	};
 };
-*/
 
 if(_container isKindOf "Man" && !alive _container) exitWith 
 {
@@ -51,3 +50,4 @@ if(_container isKindOf "Man" && !alive _container) exitWith
 		closeDialog 0;
 	};
 };
+*/

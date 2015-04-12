@@ -4,7 +4,7 @@ _unit = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 _killer = [_this,1,ObjNull,[ObjNull]] call BIS_fnc_param;
 _unit setVariable["Revive",FALSE,TRUE];
 _unit setVariable["name",profileName,TRUE];
-_unit setVariable["restrained",FALSE,TRUE];
+_unit setVariable["Restrained",false,true];
 _unit setVariable["Escorting",FALSE,TRUE];
 _unit setVariable["transporting",FALSE,TRUE];
 _unit setVariable["steam64id",(getPlayerUID player),true];

@@ -9,7 +9,7 @@ private["_containers"];
 _containers = nearestObjects[getPosATL _corpse,["WeaponHolderSimulated"],5];
 {deleteVehicle _x;} foreach _containers;
 
-_unit setVariable["restrained",false,true];
+_unit setVariable["Restrained",false,true];
 _unit setVariable["Escorting",false,true];
 _unit setVariable["transporting",false,true];
 _unit setVariable["steam64id",(getPlayerUID player),true];

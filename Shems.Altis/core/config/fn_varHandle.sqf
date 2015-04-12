@@ -105,7 +105,8 @@ switch (_mode) do
 			case "adrenaline": {"life_inv_adrenaline"};
 			case "debitcard": {"life_inv_debitcard"};
 			case "underwatercharge": {"life_inv_underwatercharge"};
-			
+			case "handcuffs": {"life_inv_handcuffs"};
+			case "handcuffkeys": {"life_inv_handcuffkeys"};
 		};
 	};
 
@@ -209,6 +210,8 @@ switch (_mode) do
 			case "life_inv_adrenaline": {"adrenaline"};
 			case "life_inv_debitcard": {"debitcard"};
 			case "life_inv_underwatercharge": {"underwatercharge"};
+			case "life_inv_handcuffs": {"handcuffs"};
+            case "life_inv_handcuffkeys": {"handcuffkeys"};
 		};
 	};
 };

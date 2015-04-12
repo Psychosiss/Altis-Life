@@ -32,7 +32,7 @@ while {true} do
 	if(_cP >= 1 OR !alive player) exitWith {};
 	if(life_istazed) exitWith {};
 	if(life_interrupted) exitWith {};
-	if((player getVariable["restrained",false])) exitWith {};
+	if((player getVariable["Restrained",false])) exitWith {};
 	if(player distance _target > 4) exitWith {_badDistance = true;};
 	if(_target getVariable["Revive",FALSE]) exitWith {};
 	if(_target getVariable["Reviving",ObjNull] != player) exitWith {};
@@ -44,7 +44,7 @@ if(_target getVariable ["Reviving",ObjNull] != player) exitWith {hint "Someone e
 _target setVariable["Reviving",NIL,TRUE];
 if(!alive player OR life_istazed) exitWith {life_action_inUse = false;};
 if(_target getVariable["Revive",FALSE]) exitWith {hint "This person either respawned or was already revived."};
-if((player getVariable["restrained",false])) exitWith {life_action_inUse = false;};
+if((player getVariable["Restrained",false])) exitWith {life_action_inUse = false;};
 if(!isNil "_badDistance") exitWith {titleText["You got to far away from the target.","PLAIN"]; life_action_inUse = false;};
 if(life_interrupted) exitWith {life_interrupted = false; titleText["Action annulé","PLAIN"]; life_action_inUse = false;};
 life_atmcash = life_atmcash + (call life_revive_fee);

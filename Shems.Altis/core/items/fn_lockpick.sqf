@@ -6,10 +6,10 @@ if(isNull _curTarget) exitWith {};
 _distance = ((boundingBox _curTarget select 1) select 0) + 2;
 if(player distance _curTarget > _distance) exitWith {};
 _isVehicle = if((_curTarget isKindOf "LandVehicle") OR (_curTarget isKindOf "Ship") OR (_curTarget isKindOf "Air")) then {true} else {false};
-if(_isVehicle && _curTarget in life_vehicles) exitWith {hint "Vous avez déjà les cles du véhicule."};
 
+if(_isVehicle && _curTarget in life_vehicles) exitWith {hint "Vous avez déjà les cles du véhicule."};
 if(!_isVehicle && !isPlayer _curTarget) exitWith {};
-if(!_isVehicle && !(_curTarget getVariable["restrained",false])) exitWith {};
+if(!_isVehicle && !(_curTarget getVariable["Restrained",false])) exitWith {};
 
 _title = format["Crochetage %1",if(!_isVehicle) then {"Handcuffs"} else {getText(configFile >> "CfgVehicles" >> (typeOf _curTarget) >> "displayName")}];
 life_action_inUse = true;
@@ -59,7 +59,7 @@ while {true} do
 		_ui cutRsc["StatusBar","PLAIN"];
 	};
 
-	if((player getVariable["restrained",false])) exitWith 
+	if((player getVariable["Restrained",false])) exitWith 
 	{
 		_ui = "StatusBar" call BIS_fnc_rscLayer;
 		_ui cutRsc["StatusBar","PLAIN"];
@@ -71,19 +71,11 @@ while {true} do
 		_ui = "StatusBar" call BIS_fnc_rscLayer;
 		_ui cutRsc["StatusBar","PLAIN"];
 	};
-	//if(life_istazed) exitWith {};
-	//if(life_interrupted) exitWith {};
-	//if((player getVariable["restrained",false])) exitWith {};
-	//if(player distance _curTarget > _distance) exitWith {_badDistance = true;};
 };
 
 5 cutText ["","PLAIN"];
 player playActionNow "stop";
-//if(!alive player OR life_istazed) exitWith {life_action_inUse = false;};
-//if((player getVariable["restrained",false])) exitWith {life_action_inUse = false;};
-//if(!isNil "_badDistance") exitWith {titleText["You got to far away from the target.","PLAIN"]; life_action_inUse = false;};
-//if(life_interrupted) exitWith {life_interrupted = false; titleText["Action cancelled","PLAIN"]; life_action_inUse = false;};
-//if(!([false,"lockpick",1] call life_fnc_handleInv)) exitWith {life_action_inUse = false;};
+
 if(!alive player OR life_istazed) exitWith 
 {
 	life_action_inUse = false;
@@ -91,7 +83,7 @@ if(!alive player OR life_istazed) exitWith
 	_ui cutRsc["StatusBar","PLAIN"];
 };
 
-if((player getVariable["restrained",false])) exitWith 
+if((player getVariable["Restrained",false])) exitWith 
 {
 	life_action_inUse = false;
 	_ui = "StatusBar" call BIS_fnc_rscLayer;
@@ -100,7 +92,7 @@ if((player getVariable["restrained",false])) exitWith
 
 if(!isNil "_badDistance") exitWith 
 {
-	titleText["You got to far away from the target.","PLAIN"]; 
+	titleText["Vous êtes trop loin de la cible.","PLAIN"]; 
 	life_action_inUse = false;
 	_ui = "StatusBar" call BIS_fnc_rscLayer;
 	_ui cutRsc["StatusBar","PLAIN"];
@@ -124,10 +116,26 @@ if(!([false,"lockpick",1] call life_fnc_handleInv)) exitWith
 
 _ui = "StatusBar" call BIS_fnc_rscLayer;
 _ui cutRsc["StatusBar","PLAIN"];
+
 life_action_inUse = false;
+
+_dice = random(100);
+if (_dice < 30) then 
+{
+	titleText["Vous avez crocheté le véhicule avec succès.","PLAIN"];
+	[[_curTarget],"life_fnc_carAlarmSound",nil,true] spawn life_fnc_MP;
+	life_vehicles pushBack _curTarget;
+	[[getPlayerUID player,profileName,"487"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
+} else {
+	[[getPlayerUID player,profileName,"215"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
+	[[0,format["%1 à été vu en train de crocheter un véhicule.",profileName]],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
+	titleText["Le lockpick est cassé.","PLAIN"];
+};
+
+/*
 if(!_isVehicle) then 
 {
-	_curTarget setVariable["restrained",false,true];
+	_curTarget setVariable["Restrained",false,true];
 	_curTarget setVariable["Escorting",false,true];
 	_curTarget setVariable["transporting",false,true];
 } else {
@@ -135,7 +143,7 @@ if(!_isVehicle) then
 	if(_dice < 30) then 
 	{
 		titleText["Vous avez crocheté le véhicule avec succès.","PLAIN"];
-		[[_curTarget],"life_fnc_CarAlarmSound",nil,true] spawn life_fnc_MP;
+		[[_curTarget],"life_fnc_carAlarmSound",nil,true] spawn life_fnc_MP;
 		life_vehicles pushBack _curTarget;
 		[[getPlayerUID player,profileName,"487"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
 	} else {
@@ -144,3 +152,4 @@ if(!_isVehicle) then
 		titleText["Le lockpick est cassé.","PLAIN"];
 	};
 };
+*/

@@ -42,7 +42,7 @@ while {true} do
 5 cutText ["","PLAIN"];
 player playActionNow "stop";
 if(!alive player OR life_istazed) exitWith {life_action_inUse = false;};
-if((player getVariable["restrained",false])) exitWith {life_action_inUse = false;};
+if((player getVariable["Restrained",false])) exitWith {life_action_inUse = false;};
 if(life_interrupted) exitWith 
 {
 	life_interrupted = false; 
