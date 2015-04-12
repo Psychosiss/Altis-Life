@@ -82,15 +82,11 @@ class FSM
        "	if (life_taxes > life_atmcash) exitWith" \n
        "	{" \n
        "		[""TaxesPoor"",[""Vous ête trop pauvre et ne recevrez pas d'impots""]] call BIS_fnc_showNotification;" \n
+       "	};" \n
        "} else {" \n
        "	life_atmcash = life_atmcash - (call life_paycheck);" \n
        "	[""TaxesLevy"",[format[""Le montant de vos impots s'élève à %1 €"",_taxe]]] call BIS_fnc_showNotification;" \n
        "};" \n
-       "" \n
-       "//if (life_taxes > life_atmcash) exitWith" \n
-       "//{" \n
-       "	//[""TaxesPoor"",[""Vous ête trop pauvre et ne recevrez pas d'impots""]] call BIS_fnc_showNotification;" \n
-       "//};" \n
        "" \n
        "_lastcheck = time;" \n
        "" \n
