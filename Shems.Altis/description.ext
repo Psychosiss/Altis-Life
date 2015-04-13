@@ -647,7 +647,7 @@ class CfgSounds
 	
 	class Intro
 	{
-		name="Intro";
+		name = "Intro";
 		sound[]={"sounds\intro.ogg",1,1};
 		titles[] = {};
 	};
@@ -808,21 +808,21 @@ class CfgSounds
 	
 	class oil
 	{
-		name="oil";
+		name = "oil";
 		sound[] = {"sounds\oil.ogg",1,1};
 		titles[] = {};
 	};
 	
 	class news
 	{
-		name="news";
+		name = "news";
 		sound[] = {"sounds\news.ogg",1,1};
 		titles[] = {};
 	};
 
 	class atm
 	{
-		name="atm";
+		name = "atm";
 		sound[] = {"sounds\atm.ogg",1,1};
 		titles[] = {};
 	};
@@ -871,21 +871,21 @@ class CfgSounds
 	
 	class punch
 	{
-		name="punch";
+		name = "punch";
 		sound[] = {"sounds\punch.ogg",1,1};
 		titles[] = {};
 	};
 	
 	class punch_break
 	{
-		name="punch_break";
+		name = "punch_break";
 		sound[] = {"sounds\punch_break.ogg",1,1};
 		titles[] = {};
 	};
 
 	class punch_balls
 	{
-		name="punch_balls";
+		name = "punch_balls";
 		sound[] = {"sounds\punch_balls.ogg",1,1};
 		titles[] = {};
 	};
@@ -956,6 +956,16 @@ class CfgDebriefing
 		title = "Arma 3 Corrompu";
 		subTitle = "Vous avez été détecté par SPYGLASS";
 		description = "Vous avez été détecté par SpyGlass, votre player id a été rapporté. Profitez encore un peu de vos jeux Bohemia.";
+		pictureBackground = "";
+		picture = "";
+		pictureColor[] = {0,0.3,0.6,1};
+	};
+
+	class NameChanged
+	{
+		title = "Pseudo changé";
+		subTitle = "";
+		description = "Pour rejoindre le serveur, remettez votre ancien nom ou demandez un changements sur le teamspeak de celui-ci.";
 		pictureBackground = "";
 		picture = "";
 		pictureColor[] = {0,0.3,0.6,1};
@@ -1036,16 +1046,6 @@ class CfgNotifications
 		priority = 5;
 	};
 
-	class NameChanged
-	{
-		title = "Pseudo changé";
-		subTitle = "";
-		description = "Pour rejoindre le serveur, remettez votre ancien nom ou demandez un changements sur le teamspeak de celui-ci.";
-		pictureBackground = "";
-		picture = "";
-		pictureColor[] = {0,0.3,0.6,1};
-	};
-
 	class TaxesStandard
 	{
 		title = "SERVICE DES IMPOTS";
@@ -1068,6 +1068,33 @@ class CfgNotifications
 	{
 		title = "SERVICE DES IMPOTS";
         iconPicture = "\a3\Ui_f\data\GUI\Cfg\CommunicationMenu\transport_ca.paa";
+		description = "%1";
+        duration = 3;
+		priority = 6;
+	};
+
+	class PayCheckReceived
+	{
+		title = "JOUR DE PAYE";
+        iconPicture = "icons\paycheck.paa";
+		description = "%1";
+        duration = 3;
+		priority = 6;
+	};
+
+	class PayCheckFed
+	{
+		title = "PROTECTEUR DE LA BANQUE";
+		iconPicture = "icons\paycheck.paa";
+		description = "%1";
+        duration = 3;
+		priority = 6;
+	};
+
+	class YouAreDead
+	{
+		title = "T'ES MORT"
+		iconPicture = "icons\dead.paa";
 		description = "%1";
         duration = 3;
 		priority = 6;

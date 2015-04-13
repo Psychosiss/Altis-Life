@@ -1,4 +1,4 @@
-/*%FSM<COMPILE "D:\Bohemia Interactive\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, Life Client FSM">*/
+/*%FSM<COMPILE "D:\Poseidon\Data\Packages\Bin\fsmEditor\scriptedFSM.cfg, Life Client FSM">*/
 /*%FSM<HEAD>*/
 /*
 item0[] = {"Main_Init",0,250,-40.348839,-141.279068,49.651161,-91.279068,0.000000,"Main Init"};
@@ -17,8 +17,8 @@ link4[] = {4,2};
 link5[] = {5,6};
 link6[] = {6,7};
 link7[] = {7,3};
-globals[] = {0.000000,0,0,0,0,640,480,1,26,6316128,1,-456.200378,358.065338,379.837494,-151.171021,1115,696,1};
-window[] = {2,-1,-1,-1,-1,974,156,1596,156,3,1133};
+globals[] = {0.000000,0,0,0,0,640,480,1,26,6316128,1,-456.200378,358.065338,379.837494,-151.171021,774,696,1};
+window[] = {2,-1,-1,-1,-1,1000,182,1622,182,3,792};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -77,22 +77,27 @@ class FSM
       name = "Pay_me_";
       init = /*%FSM<STATEINIT""">*/"if(!alive player) then" \n
        "{" \n
-       "	systemChat ""Vous n'avez pas reÃ§u de salaire car vous Ãªtes mort."";" \n
+       "	[""YouAreDead"",[""Vous n'avez pas reçu de salaire car vous ête mort.]] call BIS_fnc_showNotification;" \n
        "} else {" \n
        "	if(player distance (getMarkerPos ""fed_reserve"") < 120 && playerSide == west) then" \n
        "	{" \n
-       "		systemChat format[""Vous avez reÃ§u un salaire de %1 â‚¬"",[(call life_paycheck) + 1500] call life_fnc_numberText];" \n
        "		life_atmcash = life_atmcash + (call life_paycheck) + 1500;" \n
+       "		[""PayCheckFed"",[""Vous avez reçu un salaire de %1 € puisque vous défendez la banque fédérale."",[(call life_paycheck) + 1500]]] call BIS_fnc_showNotification;" \n
        "	} else {" \n
        "		life_atmcash = life_atmcash + (call life_paycheck);" \n
-       "		systemChat format[""Vous avez reÃ§u un salaire de %1 â‚¬"",[(call life_paycheck)] call life_fnc_numberText];" \n
+       "		[""PayCheckReceived"",[""Vous avez reçu un salaire de %1 €"",[(call life_paycheck)]]] call BIS_fnc_showNotification;" \n
        "	};" \n
        "};" \n
        "" \n
        "_lastcheck = time;" \n
-       "" \n
        "{" \n
-       "	if(local _x && {(count units _x == 0)}) then {deleteGroup _x;};" \n
+       "	if(local _x && " \n
+       "	{" \n
+       "		(count units _x == 0)" \n
+       "	}) then " \n
+       "	{" \n
+       "		deleteGroup _x;" \n
+       "	};" \n
        "} foreach allGroups;"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
