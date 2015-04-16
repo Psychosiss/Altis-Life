@@ -26,7 +26,7 @@ _name = [_var] call life_fnc_varToStr;
 if(([false,_type,_amount] call life_fnc_handleInv)) then
 {
 	hint format["Vous avez vendu %1 %2 pour %3 €",_amount,_name,[_price] call life_fnc_numberText];
-	life_cash = life_cash + _price;
+	life_money = life_money + _price;
 	life_dynMarket_boughtItems pushBack [_type,_amount];
 	[] call life_fnc_virt_update;
 };

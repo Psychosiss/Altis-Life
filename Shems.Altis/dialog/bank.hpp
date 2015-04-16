@@ -30,14 +30,13 @@ class Life_atm_management
 	
 	class controls 
 	{
-		class CashTitle : Life_RscStructuredText
+		class MoneyTitle : Life_RscStructuredText
 		{
 			idc = 2701;
 			text = "";
 			x = 0.39;
 			y = 0.26;
 			w = 0.3;
-			//h = 0.15;
 			h = 0.14;
 		};
 

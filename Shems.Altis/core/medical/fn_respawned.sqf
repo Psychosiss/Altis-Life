@@ -4,7 +4,7 @@ life_use_atm = true;
 life_hunger = 100;
 life_thirst = 100;
 life_carryWeight = 0;
-life_cash = 0;
+life_money = 0;
 life_respawned = false;
 life_holstered = false;
 player playMove "amovpercmstpsnonwnondnon";
@@ -57,13 +57,13 @@ if(life_is_arrested) exitWith
 
 if(!isNil "life_copRecieve") then 
 {
-	[[player,life_copRecieve,true],"life_fnc_wantedBounty",false,false] spawn life_fnc_MP;
+	[[player,life_copRecieve,true],"life_fnc_wantedBounty",false,false] call life_fnc_MP;
 	life_copRecieve = nil;
 };
 
 if(life_removeWanted) then 
 {
-	[[getPlayerUID player],"life_fnc_wantedRemove",false,false] spawn life_fnc_MP;
+	[[getPlayerUID player],"life_fnc_wantedRemove",false,false] call life_fnc_MP;
 };
 
 [] call SOCK_fnc_updateRequest;

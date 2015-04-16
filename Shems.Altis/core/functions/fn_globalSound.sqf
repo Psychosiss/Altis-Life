@@ -6,4 +6,4 @@ _sound = [_this,1,""] call BIS_fnc_param;
 if(isNull _source) exitWith {};
 if(_sound == "") exitWith {};
 
-[[_source,_sound],"life_fnc_globalSoundClient",true,false] spawn life_fnc_MP;
+[[_source,_sound],"life_fnc_globalSoundClient",true,false] call life_fnc_MP;

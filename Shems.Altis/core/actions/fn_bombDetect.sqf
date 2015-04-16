@@ -3,7 +3,7 @@ _bObject = cursorTarget;
 if(isNull cursorTarget) exitWith {};
 if(!([false,"bombdetect",1] call life_fnc_handleInv)) exitWith {hint "Vous n'avez pas de detecteur de bombe.";};
 
-[[player,"AinvPknlMstpSnonWnonDnon_medic_1"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
+[[player,"AinvPknlMstpSnonWnonDnon_medic_1"],"life_fnc_animSync",true,false] call life_fnc_MP;
 player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
 sleep 5;
 

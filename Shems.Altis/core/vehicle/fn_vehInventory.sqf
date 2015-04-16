@@ -26,7 +26,7 @@ ctrlSetText[3504,format["%1/%2",_veh_data select 1,_veh_data select 0]];
 _data = _veh getVariable ["Trunk",[]];
 if(count _data == 0) then {_veh setVariable["Trunk",[[],0],true]; _data = [];} else {_data = _data select 0;};
 {
-	if(_x != "life_cash") then
+	if(_x != "life_money") then
 	{
 		_str = [_x] call life_fnc_varToStr;
 		_shrt = [_x,1] call life_fnc_varHandle;
@@ -39,9 +39,9 @@ if(count _data == 0) then {_veh setVariable["Trunk",[[],0],true]; _data = [];} e
 			_pInv lbSetPicture [(lbSize _pInv)-1,_icon];
 		};
 	} else {
-		if(life_cash > 0) then
+		if(life_money > 0) then
 		{
-			_pInv lbAdd format["$%1",[life_cash] call life_fnc_numberText];
+			_pInv lbAdd format["$%1",[life_money] call life_fnc_numberText];
 			_pInv lbSetData [(lbSize _pInv)-1,"money"];
 		};
 	};

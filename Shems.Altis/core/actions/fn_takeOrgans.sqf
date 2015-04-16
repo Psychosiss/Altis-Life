@@ -16,4 +16,4 @@ player playMove "AinvPknlMstpSnonWnonDnon_medic";
 sleep 3;
 _unit setVariable["missingOrgan",true,true];
 life_action_inUse = false;
-[[player], "life_fnc_hasOrgan", _unit, false] spawn life_fnc_MP;
+[[player], "life_fnc_hasOrgan", _unit, false] call life_fnc_MP;

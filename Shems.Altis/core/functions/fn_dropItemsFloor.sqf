@@ -6,7 +6,7 @@ _value = "";
 _exit = false;
 if (_death) then 
 {
-	_data2 = life_inv_items + ["life_cash"];
+	_data2 = life_inv_items + ["life_money"];
 } else {
 	_data = lbData[2005,(lbCurSel 2005)];
 	if (_data == "") exitWith{hint "Vous devez choisir un objet.";_exit = true;};
@@ -32,7 +32,7 @@ life_action_delay = time;
 	if (_death) then 
 	{
 		_value = missionNamespace getVariable _item;
-		if(_item!="life_cash") then 
+		if(_item!="life_money") then 
 		{
 			[false,_var,_value] call life_fnc_handleInv;
 		};
@@ -119,7 +119,7 @@ life_action_delay = time;
 			};
 		};
 		
-		case "life_cash":
+		case "life_money":
 		{
 			if(_value > 0) then
 			{
@@ -140,7 +140,7 @@ life_action_delay = time;
 				_pos = _unit modelToWorld[0,3,0];
 				_pos = [_pos select 0, _pos select 1, 0];
 				_obj = "Land_PainKillers_F" createVehicle _pos;
-				[[_obj],"life_fnc_simDisable",false,false] spawn BIS_fnc_MP;
+				[[_obj],"life_fnc_simDisable",false,false] call BIS_fnc_MP;
 				_obj setPos _pos;
 				_obj setVariable["item",[_var,_value],true];
 				_obj enableSimulation false;

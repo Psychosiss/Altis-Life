@@ -14,20 +14,20 @@ if(isNil "_vehicle") exitWith {hint "The selection has an error..."};
 
 _price = [_vehicle,__GETC__(life_garage_prices)] call fnc_index;
 if(_price == -1) then {_price = 1000;} else {_price = (__GETC__(life_garage_prices) select _price) select 1;};
-if(life_atmcash < _price) exitWith {hint format[("Vous n'avez pas %1 € sur votre compte bancaire pour payé les frais."),[_price] call life_fnc_numberText];};
+if(life_atmmoney < _price) exitWith {hint format[("Vous n'avez pas %1 € sur votre compte bancaire pour payé les frais."),[_price] call life_fnc_numberText];};
 
 if(typeName life_garage_sp == "ARRAY") then 
 {
-	[[_vid,_pid,life_garage_sp select 0,_unit,_price,life_garage_sp select 1],"TON_fnc_spawnVehicle",false,false] spawn life_fnc_MP;
+	[[_vid,_pid,life_garage_sp select 0,_unit,_price,life_garage_sp select 1],"TON_fnc_spawnVehicle",false,false] call life_fnc_MP;
 } else {
 	if(life_garage_sp in ["medic_spawn_1","medic_spawn_2","medic_spawn_3"]) then 
 	{
-		[[_vid,_pid,life_garage_sp,_unit,_price],"TON_fnc_spawnVehicle",false,false] spawn life_fnc_MP;
+		[[_vid,_pid,life_garage_sp,_unit,_price],"TON_fnc_spawnVehicle",false,false] call life_fnc_MP;
 	} else {
-		[[_vid,_pid,(getMarkerPos life_garage_sp),_unit,_price,markerDir life_garage_sp],"TON_fnc_spawnVehicle",false,false] spawn life_fnc_MP;
+		[[_vid,_pid,(getMarkerPos life_garage_sp),_unit,_price,markerDir life_garage_sp],"TON_fnc_spawnVehicle",false,false] call life_fnc_MP;
 	};
 };
 
 hint "Livraison du vehicule, merci de patienter un moment...";
 
-life_atmcash = life_atmcash - _price;
+life_atmmoney = life_atmmoney - _price;

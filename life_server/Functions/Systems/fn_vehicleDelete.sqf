@@ -9,4 +9,4 @@ _unit = owner _unit;
 _query = format["UPDATE vehicles SET alive='0' WHERE pid='%1' AND id='%2'",_pid,_vid];
 waitUntil {!DB_Async_Active};
 _thread = [_query,1] call DB_fnc_asyncCall;
-[[[_sp,_type],{life_atmcash = life_atmcash + (_this select 0); hint format[("Vous avez vendu ce véhicule pour %1 €"),[(_this select 0)] call life_fnc_numberText];}],"BIS_fnc_call",_unit,false] spawn life_fnc_MP;
+[[[_sp,_type],{life_atmmoney = life_atmmoney + (_this select 0); hint format[("Vous avez vendu ce véhicule pour %1 €"),[(_this select 0)] call life_fnc_numberText];}],"BIS_fnc_call",_unit,false] call life_fnc_MP;

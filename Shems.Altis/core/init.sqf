@@ -35,7 +35,7 @@ diag_log "::Life Client:: Le serveur est prêt..";
 
 waitUntil{!isNil "life_server_isReady"};
 waitUntil{(life_server_isReady OR !isNil "life_server_extDB_notLoaded")};
-if(!isNil "life_server_extDB_notLoaded") exitWith 
+if(!isNil "life_server_extDB_notLoaded" && {life_server_extDB_notLoaded != ""}) exitWith 
 {
 	diag_log "::Life Client:: Le serveur le trouve pas extDB";
 	999999 cutText ["Un probleme lié à extDB a été rencotré, Merci de le signaler.","BLACK FADED"];
@@ -49,6 +49,8 @@ waitUntil {life_session_completed};
 
 //[] spawn life_fnc_escInterupt;
 [] execVM "core\chatEvents\init.sqf";
+[] call life_fnc_fastRope;
+[] call life_fnc_addKey;
 
 switch (playerSide) do
 {
@@ -83,43 +85,33 @@ player setVariable["transporting",false,true];
 player setVariable["missingOrgan",false,true];
 player setVariable["hasOrgan",false,true];
 diag_log "Passage a l'initialisation des paramètres";
-//[] execFSM "core\fsm\fn_payManager.fsm";
 [] call life_fnc_payManager;
 diag_log "Execution du salaire (fn_payManager.fsm)";
 [] call life_fnc_taxesManager;
 dial_log "Execution des impots (fn_taxesManager.fsm)";
 waitUntil {!(isNull (findDisplay 46))};
 diag_log "Ecran 46 Trouvé";
-(findDisplay 46) displayAddEventHandler ["KeyDown", "_this call life_fnc_keyUpHandler"];
+(findDisplay 46) displayAddEventHandler ["KeyUp", "_this call life_fnc_keyUpHandler"];
+(findDisplay 46) displayAddEventHandler ["KeyDown", "_this call life_fnc_keyDownHandler"];
+(findDisplay 46) displayAddEventHandler ["MouseButtonDown", "_this call life_fnc_mouseDownHandler"];
+(findDisplay 46) displayAddEventHandler ["MouseButtonUp", "_this call life_fnc_mouseUpHandler"];
+(findDisplay 46) displayAddEventHandler ["MouseZchanged", "_this spawn life_fnc_enableActions"];
 player addRating 99999999;
 diag_log "------------------------------------------------------------------------------------------------------";
 diag_log format["                Fin de l'init d'Altis Life Client :: Temps d'execution total : %1 secondes ",(diag_tickTime) - _timeStamp];
 diag_log "------------------------------------------------------------------------------------------------------";
 life_sidechat = true;
-//[[player,life_sidechat,playerSide],"TON_fnc_managesc",false,false] spawn life_fnc_MP;
+//[[player,life_sidechat,playerSide],"TON_fnc_managesc",false,false] call life_fnc_MP;
 0 cutText ["","BLACK IN"];
 [] call life_fnc_hudSetup;
 LIFE_ID_PlayerTags = ["LIFE_PlayerTags","onEachFrame","life_fnc_playerTags"] call BIS_fnc_addStackedEventHandler;
 LIFE_ID_RevealObjects = ["LIFE_RevealObjects","onEachFrame","life_fnc_revealObjects"] call BIS_fnc_addStackedEventHandler;
-[] call life_fnc_settingsInit;
 player setVariable["steam64ID",getPlayerUID player];
 player setVariable["realname",profileName,true];
 
-life_fnc_moveIn = 
-compileFinal "
-	player moveInCargo (_this select 0);
-";
-
-life_fnc_garageRefund = 
-compileFinal "
-	_price = _this select 0;
-	_unit = _this select 1;
-	if(_unit != player) exitWith {};
-	life_atmcash = life_atmcash + _price;
-";
-
+life_fnc_moveIn = compileFinal "player moveInCargo (_this select 0);";
 life_dynMarket_boughtItems = [];
-[[getPlayerUID player],"TON_fnc_playerLogged",false,false] spawn life_fnc_MP;
+[[getPlayerUID player],"TON_fnc_playerLogged",false,false] call life_fnc_MP;
 
 [] spawn  
 {
@@ -258,11 +250,13 @@ life_dynMarket_boughtItems = [];
 				{
 					case (_new > 0.4): 
 					{ 
-						systemChat "Vous êtes fortement en manque."; life_drug_withdrawl = false; 
+						systemChat "Vous êtes fortement en manque."; 
+						life_drug_withdrawl = false; 
 					};
 					case (_new > 0.6): 
 					{ 
-						systemChat "Obtenez de la drogue avant que votre addiction occupe toutes vos pensées."; life_drug_withdrawl = false; 
+						systemChat "Obtenez de la drogue avant que votre addiction occupe toutes vos pensées."; 
+						life_drug_withdrawl = false; 
 					};
 					case (_new > 0.9):
 					{
@@ -367,9 +361,9 @@ life_dynMarket_boughtItems = [];
 {
 	while {true} do
 	{
-		private["_damage"];
+		private "_damage";
 		sleep 1;
-		while {((player distance (getMarkerPos "Warm_Marker") < 250) && (player getVariable["Revive",TRUE]))} do
+		while {((player distance (getMarkerPos "Warm_Marker") < 250) && (player getVariable["Revive",true]))} do
 		{
 			if(uniform player == "U_C_Scientist") then
 			{

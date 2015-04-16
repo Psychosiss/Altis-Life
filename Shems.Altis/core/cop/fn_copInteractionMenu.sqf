@@ -83,7 +83,7 @@ if(life_inv_handcuffkeys > 0) then
 };
 
 _Btn2 ctrlSetText "Licences";
-_Btn2 buttonSetAction "[[player],""life_fnc_licenseCheck"",life_pInact_curTarget,false] spawn life_fnc_MP";
+_Btn2 buttonSetAction "[[player],""life_fnc_licenseCheck"",life_pInact_curTarget,false] call life_fnc_MP";
 
 _Btn3 ctrlSetText "Fouiller";
 _Btn3 buttonSetAction "[life_pInact_curTarget] spawn life_fnc_searchAction; closeDialog 0;";

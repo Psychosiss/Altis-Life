@@ -4,7 +4,7 @@ switch (_mode) do
 {
 	case "heilen":
 	{
-		if(life_cash < 50) exitWith {hint "Vous n'avez pas 50 € pour être guéri."};
+		if(life_money < 50) exitWith {hint "Vous n'avez pas 50 € pour être guéri."};
 		titleText["Docteur Poliashkoff vous guérit... ne vous inquiétez pas...","PLAIN"];
 		sleep 2;
 		titleText["oups... Je pense que j'ai mis l'aiguille trop loin..","PLAIN"];
@@ -12,7 +12,7 @@ switch (_mode) do
 		if(player distance (_this select 0) > 5) exitWith {titleText["Vous avez besoin de rester dans un rayon de 5 m, de sorte que le médecin peut vous traiter.","PLAIN"]};
 		titleText["Vous êtes maintenant en parfaite santé!","PLAIN"];
 		player setdamage 0;
-		life_cash = life_cash - 50;
+		life_money = life_money - 50;
 	};
 
 	case "checken":
@@ -42,11 +42,11 @@ switch (_mode) do
 		if(life_checked == 0) exitWith {hint "Comment dois-je vous traiter si je ne sais même pas ce que vous avez? Donc, nous allons vérifier par nous-même.";};
 		if(life_sex_ill == 1) then
 		{
-			if(life_cash<1000) exitWith {hint "J'ai trouvé en vous une maladie sexuellement transmissible que vous n'avez tout simplement pas laisser assez d'argent pour vous soignez!";};
+			if(life_money < 1000) exitWith {hint "J'ai trouvé en vous une maladie sexuellement transmissible que vous n'avez tout simplement pas laisser assez d'argent pour vous soignez!";};
 			titleText["J'ai découvert la gonorrhée en vous. Je vais vous guérir maintenant. \n Cela peut prendre jusqu'à 20 secondes.","PLAIN"];
 			sleep 20;
-			titleText["Vous êtes guéri! Vous observez mieux!","PLAIN"];
-			life_cash = life_cash - 1000;
+			titleText["Vous êtes guéri! Vous allez mieux!","PLAIN"];
+			life_money = life_money - 1000;
 			player setDamage 0;
 			life_sex_ill = 0;
 			life_checked = 0;
@@ -54,11 +54,11 @@ switch (_mode) do
 
 		if(life_sex_ill == 2) then
 		{
-			if(life_cash<10000) exitWith {hint "J'ai trouvé en vous une maladie sexuellement transmissible que vous n'avez tout simplement pas laisser assez d'argent pour vous soignez!";};
+			if(life_money < 10000) exitWith {hint "J'ai trouvé en vous une maladie sexuellement transmissible que vous n'avez tout simplement pas laisser assez d'argent pour vous soignez!";};
 			titleText["J'ai découvert le SIDA en vous. Je vais vous guérir maintenant. \n Cela peut prendre jusqu'à 40 secondes.","PLAIN"];
 			sleep 40;
-			titleText["Vous êtes guéri! Vous observez mieux!","PLAIN"];
-			life_cash = life_cash - 10000;
+			titleText["Vous êtes guéri! Vous allez mieux!","PLAIN"];
+			life_money = life_money - 10000;
 			player setDamage 0;
 			life_sex_ill = 0;
 			life_checked = 0;

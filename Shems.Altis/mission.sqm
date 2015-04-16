@@ -2416,7 +2416,7 @@ class Mission
 					side="CIV";
 					vehicle="C_man_w_worker_F";
 					skill=0.60000002;
-					init="this enableSimulation false; this allowDamage false; this addAction[""Garage"",  {   [[getPlayerUID player,playerSide,""air"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP; life_garage_type = ""air"";  createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche du véhicule....""];   life_garage_sp = ""air_g_3"";  }]; this addAction[""Ranger le véhicule"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store']; this addAction[""Acheter un hélicoptère"",life_fnc_vehicleShopMenu,[""civ_air"",civilian,[""civ_air_1"",""civ_air_1_2""],""civ"",""Carl's Airial Auto's""]];";
+					init="this enableSimulation false; this allowDamage false; this addAction[""Garage"",  {   [[getPlayerUID player,playerSide,""air"",player],""TON_fnc_getVehicles"",false,false] call life_fnc_MP; life_garage_type = ""air"";  createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche du véhicule....""];   life_garage_sp = ""air_g_3"";  }]; this addAction[""Ranger le véhicule"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store']; this addAction[""Acheter un hélicoptère"",life_fnc_vehicleShopMenu,[""civ_air"",civilian,[""civ_air_1"",""civ_air_1_2""],""civ"",""Carl's Airial Auto's""]];";
 				};
 				class Item19
 				{
@@ -2595,7 +2595,7 @@ class Mission
 					side="CIV";
 					vehicle="C_man_shorts_3_F_euro";
 					skill=0.60000002;
-					init="this enableSimulation false;  this allowDamage false;  this addAction[""Acheter un bateau"",life_fnc_vehicleShopMenu,[""civ_ship"",civilian,""civ_ship_1"",""civ"",""Billy's Boat Rentals & Ownership""]];  this addAction[""Garage"",  {   [[getPlayerUID player,playerSide,""Ship"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche du véhicule....""];   life_garage_sp = ""civ_ship_1""; life_garage_type = ""Ship"";  },"""",0,false,false,"""",'playerSide == civilian'];  this addAction[""Ranger le véhicule"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
+					init="this enableSimulation false;  this allowDamage false;  this addAction[""Acheter un bateau"",life_fnc_vehicleShopMenu,[""civ_ship"",civilian,""civ_ship_1"",""civ"",""Billy's Boat Rentals & Ownership""]];  this addAction[""Garage"",  {   [[getPlayerUID player,playerSide,""Ship"",player],""TON_fnc_getVehicles"",false,false] call life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche du véhicule....""];   life_garage_sp = ""civ_ship_1""; life_garage_type = ""Ship"";  },"""",0,false,false,"""",'playerSide == civilian'];  this addAction[""Ranger le véhicule"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
 				};
 				class Item34
 				{
@@ -2801,7 +2801,7 @@ class Mission
 					side="CIV";
 					vehicle="C_man_1";
 					skill=0.60000002;
-					init="this enableSimulation false; this allowDamage false; this addAction[""Garage"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP; life_garage_type = ""Car"";  createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche du véhicule....""];   life_garage_sp = ""civ_car_3"";  }]; this addAction[""Ranger le véhicule"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
+					init="this enableSimulation false; this allowDamage false; this addAction[""Garage"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] call life_fnc_MP; life_garage_type = ""Car"";  createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche du véhicule....""];   life_garage_sp = ""civ_car_3"";  }]; this addAction[""Ranger le véhicule"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
 				};
 				class Item52
 				{
@@ -2812,7 +2812,7 @@ class Mission
 					side="CIV";
 					vehicle="C_man_1";
 					skill=0.60000002;
-					init="this enableSimulation false; this allowDamage false; this addAction[""Garage"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP; life_garage_type = ""Car"";   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche du véhicule....""];   life_garage_sp = ""car_g_1"";  }];  this addAction[""Ranger le véhicule"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
+					init="this enableSimulation false; this allowDamage false; this addAction[""Garage"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] call life_fnc_MP; life_garage_type = ""Car"";   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche du véhicule....""];   life_garage_sp = ""car_g_1"";  }];  this addAction[""Ranger le véhicule"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
 				};
 				class Item53
 				{
@@ -2834,7 +2834,7 @@ class Mission
 					side="CIV";
 					vehicle="C_man_shorts_3_F_euro";
 					skill=0.60000002;
-					init="this enableSimulation false;  this allowDamage false;  this addAction[""Acheter un bateau"",life_fnc_vehicleShopMenu,[""civ_ship"",civilian,""civ_ship_3"",""civ"",""Billy's Boat Rentals & Ownership""]];  this addAction[""Vehicle Garage"",  {   [[getPlayerUID player,playerSide,""Ship"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""civ_ship_3""; life_garage_type = ""Ship"";  },"""",0,false,false,"""",'playerSide == civilian'];  this addAction[""Store vehicle in Garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
+					init="this enableSimulation false;  this allowDamage false;  this addAction[""Acheter un bateau"",life_fnc_vehicleShopMenu,[""civ_ship"",civilian,""civ_ship_3"",""civ"",""Billy's Boat Rentals & Ownership""]];  this addAction[""Vehicle Garage"",  {   [[getPlayerUID player,playerSide,""Ship"",player],""TON_fnc_getVehicles"",false,false] call life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""civ_ship_3""; life_garage_type = ""Ship"";  },"""",0,false,false,"""",'playerSide == civilian'];  this addAction[""Store vehicle in Garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
 				};
 				class Item55
 				{
@@ -2877,7 +2877,7 @@ class Mission
 					side="WEST";
 					vehicle="B_RangeMaster_F";
 					skill=0.60000002;
-					init="this enableSimulation false;  this allowDamage false;  this addAction[""Marché de Médecin"",life_fnc_virt_menu,""medic""];  this addAction[format[""%1 (%2 €)"",[""license_med_air""] call life_fnc_varToStr,[([""mair""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""mair"",0,false,false,"""",' !license_med_air && playerSide == independent '];  this addAction[""Marché"",life_fnc_weaponShopMenu,""med_basic""];  this addAction[""Acheter une voiture"",life_fnc_vehicleShopMenu,[""med_shop"",independent,""med_a"",""med"",""Kavala Hosptial""]];  this addAction[""Acheter un hélicoptère"",life_fnc_vehicleShopMenu,[""med_air_hs"",independent,""medic_spawn_1"",""med"",""Kavala Hosptial""]];  this addAction[""Garage"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche du véhicule....""];   life_garage_sp = ""med_a""; life_garage_type = ""Car"";  },"""",0,false,false,"""",'playerSide == independent '];  this addAction[""Garage aéronautique"",  {   [[getPlayerUID player,playerSide,""Air"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche du véhicule....""];   life_garage_sp = ""med_a""; life_garage_type = ""Air"";  },"""",0,false,false,"""",'playerSide == independent '];  this addAction[""Ranger le véhicule"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store']; this addAction[""Acheter des vêtements"",life_fnc_clothingMenu,""med""]; this setObjectTexture [0,""images\med\uniform.jpg""]; this addAction[""Med Clothing Shop"",life_fnc_clothingMenu,""med""];";
+					init="this enableSimulation false;  this allowDamage false;  this addAction[""Marché de Médecin"",life_fnc_virt_menu,""medic""];  this addAction[format[""%1 (%2 €)"",[""license_med_air""] call life_fnc_varToStr,[([""mair""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""mair"",0,false,false,"""",' !license_med_air && playerSide == independent '];  this addAction[""Marché"",life_fnc_weaponShopMenu,""med_basic""];  this addAction[""Acheter une voiture"",life_fnc_vehicleShopMenu,[""med_shop"",independent,""med_a"",""med"",""Kavala Hosptial""]];  this addAction[""Acheter un hélicoptère"",life_fnc_vehicleShopMenu,[""med_air_hs"",independent,""medic_spawn_1"",""med"",""Kavala Hosptial""]];  this addAction[""Garage"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] call life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche du véhicule....""];   life_garage_sp = ""med_a""; life_garage_type = ""Car"";  },"""",0,false,false,"""",'playerSide == independent '];  this addAction[""Garage aéronautique"",  {   [[getPlayerUID player,playerSide,""Air"",player],""TON_fnc_getVehicles"",false,false] call life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche du véhicule....""];   life_garage_sp = ""med_a""; life_garage_type = ""Air"";  },"""",0,false,false,"""",'playerSide == independent '];  this addAction[""Ranger le véhicule"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store']; this addAction[""Acheter des vêtements"",life_fnc_clothingMenu,""med""]; this setObjectTexture [0,""images\med\uniform.jpg""]; this addAction[""Med Clothing Shop"",life_fnc_clothingMenu,""med""];";
 				};
 				class Item59
 				{
@@ -3121,7 +3121,7 @@ class Mission
 					vehicle="B_RangeMaster_F";
 					leader=1;
 					skill=0.60000002;
-					init="this enableSimulation false;  this allowDamage false;  this addAction[""Acheter un hélicoptère"",life_fnc_vehicleShopMenu,[""cop_air"",west,""cop_air_1"",""cop"",""APD - Kavala District""]]; this addAction[""Garage"",  {   [[getPlayerUID player,playerSide,""Air"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP; life_garage_type = ""Air"";   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche du véhicule....""];   life_garage_sp = ""cop_air_1_1"";  }]; this addAction[""Ranger le véhicule"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
+					init="this enableSimulation false;  this allowDamage false;  this addAction[""Acheter un hélicoptère"",life_fnc_vehicleShopMenu,[""cop_air"",west,""cop_air_1"",""cop"",""APD - Kavala District""]]; this addAction[""Garage"",  {   [[getPlayerUID player,playerSide,""Air"",player],""TON_fnc_getVehicles"",false,false] call life_fnc_MP; life_garage_type = ""Air"";   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche du véhicule....""];   life_garage_sp = ""cop_air_1_1"";  }]; this addAction[""Ranger le véhicule"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
 				};
 				class Item1
 				{
@@ -3133,7 +3133,7 @@ class Mission
 					side="WEST";
 					vehicle="B_RangeMaster_F";
 					skill=0.60000002;
-					init="this enableSimulation false;  this allowDamage false;  this addAction[""Acheter une voiture"",life_fnc_vehicleShopMenu,[""cop_car"",west,""cop_car_1"",""cop"",""APD - Kavala District""]]; this addAction[""Garage"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche du véhicule....""];   life_garage_sp = ""cop_car_1""; life_garage_type = ""Car"";  }]; this addAction[""Ranger le véhicule"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
+					init="this enableSimulation false;  this allowDamage false;  this addAction[""Acheter une voiture"",life_fnc_vehicleShopMenu,[""cop_car"",west,""cop_car_1"",""cop"",""APD - Kavala District""]]; this addAction[""Garage"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] call life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche du véhicule....""];   life_garage_sp = ""cop_car_1""; life_garage_type = ""Car"";  }]; this addAction[""Ranger le véhicule"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
 				};
 				class Item2
 				{
@@ -3408,7 +3408,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="reb_1_3_1";
-					init="removeallWeapons this;  this enableSimulation false;  this allowDamage false;  this addAction[""Acheter une voiture"",life_fnc_vehicleShopMenu,[""reb_car"",civilian,[""reb_v_1_3""],""reb"",""Rebel Motorpool - Western Side""],0,false,false,"""",'license_civ_rebel'];this enableSimulation false; this allowDamage false; this addAction[""Garage"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP; life_garage_type = ""Car"";   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche du véhicule....""];   life_garage_sp = ""reb_v_1_1_2"";  }];  this addAction[""Ranger le véhicule"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
+					init="removeallWeapons this;  this enableSimulation false;  this allowDamage false;  this addAction[""Acheter une voiture"",life_fnc_vehicleShopMenu,[""reb_car"",civilian,[""reb_v_1_3""],""reb"",""Rebel Motorpool - Western Side""],0,false,false,"""",'license_civ_rebel'];this enableSimulation false; this allowDamage false; this addAction[""Garage"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] call life_fnc_MP; life_garage_type = ""Car"";   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche du véhicule....""];   life_garage_sp = ""reb_v_1_1_2"";  }];  this addAction[""Ranger le véhicule"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
 				};
 			};
 		};
@@ -3449,7 +3449,7 @@ class Mission
 					vehicle="O_officer_F";
 					leader=1;
 					skill=0.60000002;
-					init="this enableSimulation false; this allowDamage false; this addAction[""Acheter un hélicoptère"",life_fnc_vehicleShopMenu,[""civ_air"",civilian,[""civ_air_3""],""civ"",""Carl's Airial Auto's""]]; this addAction[""Garage"",  {   [[getPlayerUID player,playerSide,""air"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP; life_garage_type = ""air"";  createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche du véhicule....""];   life_garage_sp = ""civ_air_3"";  }]; this addAction[""Ranger le véhicule"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
+					init="this enableSimulation false; this allowDamage false; this addAction[""Acheter un hélicoptère"",life_fnc_vehicleShopMenu,[""civ_air"",civilian,[""civ_air_3""],""civ"",""Carl's Airial Auto's""]]; this addAction[""Garage"",  {   [[getPlayerUID player,playerSide,""air"",player],""TON_fnc_getVehicles"",false,false] call life_fnc_MP; life_garage_type = ""air"";  createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche du véhicule....""];   life_garage_sp = ""civ_air_3"";  }]; this addAction[""Ranger le véhicule"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
 				};
 			};
 		};
@@ -3652,7 +3652,7 @@ class Mission
 					vehicle="C_man_1";
 					leader=1;
 					skill=0.60000002;
-					init="removeallWeapons this;  this enableSimulation false; this allowDamage false;  this addAction[""Concessionnaire"",life_fnc_vehicleShopMenu,[""reb_car"",civilian,""reb_v_3_2"",""reb"",""Rebel Motorpool - Western Side""],0,false,false,"""",'license_civ_rebel']; this addAction[""Garage véhicule"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP; life_garage_type = ""Car"";   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche de véhicules....""];   life_garage_sp = ""reb_v_3_2"";  }]; this addAction[""Garage véhicule aérien"",  {   [[getPlayerUID player,playerSide,""Air"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP; life_garage_type = ""Air"";   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche de véhicules....""];   life_garage_sp = ""reb_v_3_2"";  }];this addAction[""Ranger un véhicule au garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
+					init="removeallWeapons this;  this enableSimulation false; this allowDamage false;  this addAction[""Concessionnaire"",life_fnc_vehicleShopMenu,[""reb_car"",civilian,""reb_v_3_2"",""reb"",""Rebel Motorpool - Western Side""],0,false,false,"""",'license_civ_rebel']; this addAction[""Garage véhicule"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] call life_fnc_MP; life_garage_type = ""Car"";   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche de véhicules....""];   life_garage_sp = ""reb_v_3_2"";  }]; this addAction[""Garage véhicule aérien"",  {   [[getPlayerUID player,playerSide,""Air"",player],""TON_fnc_getVehicles"",false,false] call life_fnc_MP; life_garage_type = ""Air"";   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche de véhicules....""];   life_garage_sp = ""reb_v_3_2"";  }];this addAction[""Ranger un véhicule au garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
 				};
 			};
 		};
@@ -3734,7 +3734,7 @@ class Mission
 					vehicle="O_officer_F";
 					leader=1;
 					skill=0.60000002;
-					init="this enableSimulation false; this allowDamage false; this addAction[""Acheter un hélicoptère"",life_fnc_vehicleShopMenu,[""civ_air"",civilian,[""civ_air_3_1""],""civ"",""Carl's Airial Auto's""]]; this addAction[""Garage"",  {   [[getPlayerUID player,playerSide,""air"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP; life_garage_type = ""air"";  createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche du véhicule....""];   life_garage_sp = ""civ_air_3_1"";  }]; this addAction[""Ranger le véhicule"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
+					init="this enableSimulation false; this allowDamage false; this addAction[""Acheter un hélicoptère"",life_fnc_vehicleShopMenu,[""civ_air"",civilian,[""civ_air_3_1""],""civ"",""Carl's Airial Auto's""]]; this addAction[""Garage"",  {   [[getPlayerUID player,playerSide,""air"",player],""TON_fnc_getVehicles"",false,false] call life_fnc_MP; life_garage_type = ""air"";  createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche du véhicule....""];   life_garage_sp = ""civ_air_3_1"";  }]; this addAction[""Ranger le véhicule"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
 				};
 			};
 		};
@@ -3837,7 +3837,7 @@ class Mission
 					vehicle="B_RangeMaster_F";
 					leader=1;
 					skill=0.60000002;
-					init="this enableSimulation false;  this allowDamage false;  this addAction[""Acheter un hélicoptère"",life_fnc_vehicleShopMenu,[""cop_air"",west,""cop_air_w"",""cop"",""APD - Kavala District""]]; this addAction[""Garage"",  {   [[getPlayerUID player,playerSide,""Air"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP; life_garage_type = ""Air"";   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche du véhicule....""];   life_garage_sp = ""cop_air_w"";  }]; this addAction[""Ranger le véhicule"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
+					init="this enableSimulation false;  this allowDamage false;  this addAction[""Acheter un hélicoptère"",life_fnc_vehicleShopMenu,[""cop_air"",west,""cop_air_w"",""cop"",""APD - Kavala District""]]; this addAction[""Garage"",  {   [[getPlayerUID player,playerSide,""Air"",player],""TON_fnc_getVehicles"",false,false] call life_fnc_MP; life_garage_type = ""Air"";   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche du véhicule....""];   life_garage_sp = ""cop_air_w"";  }]; this addAction[""Ranger le véhicule"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
 				};
 			};
 		};
@@ -4006,7 +4006,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="aaq";
-					init="this enableSimulation false; this allowDamage false;  this addAction[""Acheter un bateau"",life_fnc_vehicleShopMenu,[""cop_ship"",west,""cop_ship_w"",""cop"",""APD - Kavala District - Boat Store""]]; this addAction[""Garage vehicule"",  {   [[getPlayerUID player,playerSide,""Ship"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""cop_ship_w""; life_garage_type = ""Ship"";  },"""",0,false,false,"""",'playerSide == west'];  this addAction[""Ranger le véhicule au garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];this setVariable[""realname"",""Bateau Police""];";
+					init="this enableSimulation false; this allowDamage false;  this addAction[""Acheter un bateau"",life_fnc_vehicleShopMenu,[""cop_ship"",west,""cop_ship_w"",""cop"",""APD - Kavala District - Boat Store""]]; this addAction[""Garage vehicule"",  {   [[getPlayerUID player,playerSide,""Ship"",player],""TON_fnc_getVehicles"",false,false] call life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""cop_ship_w""; life_garage_type = ""Ship"";  },"""",0,false,false,"""",'playerSide == west'];  this addAction[""Ranger le véhicule au garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];this setVariable[""realname"",""Bateau Police""];";
 				};
 			};
 		};
@@ -4099,7 +4099,7 @@ class Mission
 					side="WEST";
 					vehicle="B_RangeMaster_F";
 					skill=0.60000002;
-					init="this enableSimulation false;  this allowDamage false;  this addAction[""Acheter une voiture"",life_fnc_vehicleShopMenu,[""cop_car"",west,""cop_car_3"",""cop"",""APD - Kavala District""]]; this addAction[""Garage"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche du véhicule....""];   life_garage_sp = ""cop_car_3""; life_garage_type = ""Car"";  }]; this addAction[""Ranger le véhicule"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
+					init="this enableSimulation false;  this allowDamage false;  this addAction[""Acheter une voiture"",life_fnc_vehicleShopMenu,[""cop_car"",west,""cop_car_3"",""cop"",""APD - Kavala District""]]; this addAction[""Garage"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] call life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche du véhicule....""];   life_garage_sp = ""cop_car_3""; life_garage_type = ""Car"";  }]; this addAction[""Ranger le véhicule"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
 				};
 				class Item2
 				{
@@ -4144,7 +4144,7 @@ class Mission
 					side="CIV";
 					vehicle="C_man_shorts_3_F_euro";
 					skill=0.60000002;
-					init="this enableSimulation false;  this allowDamage false;  this addAction[""Acheter un bateau"",life_fnc_vehicleShopMenu,[""civ_ship"",civilian,""civ_ship_3_1"",""civ"",""Billy's Boat Rentals & Ownership""]];  this addAction[""Vehicle Garage"",  {   [[getPlayerUID player,playerSide,""Ship"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""civ_ship_3_1""; life_garage_type = ""Ship"";  },"""",0,false,false,"""",'playerSide == civilian'];  this addAction[""Store vehicle in Garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
+					init="this enableSimulation false;  this allowDamage false;  this addAction[""Acheter un bateau"",life_fnc_vehicleShopMenu,[""civ_ship"",civilian,""civ_ship_3_1"",""civ"",""Billy's Boat Rentals & Ownership""]];  this addAction[""Vehicle Garage"",  {   [[getPlayerUID player,playerSide,""Ship"",player],""TON_fnc_getVehicles"",false,false] call life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""civ_ship_3_1""; life_garage_type = ""Ship"";  },"""",0,false,false,"""",'playerSide == civilian'];  this addAction[""Store vehicle in Garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
 				};
 				class Item6
 				{
@@ -4178,7 +4178,7 @@ class Mission
 					side="WEST";
 					vehicle="B_RangeMaster_F";
 					skill=0.60000002;
-					init="this enableSimulation false;  this allowDamage false;  this addAction[""Acheter un hélicoptère"",life_fnc_vehicleShopMenu,[""cop_air"",west,""cop_air_3"",""cop"",""APD - Kavala District""]]; this addAction[""Garage"",  {   [[getPlayerUID player,playerSide,""Air"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP; life_garage_type = ""Air"";   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche du véhicule....""];   life_garage_sp = ""cop_air_3"";  }]; this addAction[""Ranger le véhicule"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
+					init="this enableSimulation false;  this allowDamage false;  this addAction[""Acheter un hélicoptère"",life_fnc_vehicleShopMenu,[""cop_air"",west,""cop_air_3"",""cop"",""APD - Kavala District""]]; this addAction[""Garage"",  {   [[getPlayerUID player,playerSide,""Air"",player],""TON_fnc_getVehicles"",false,false] call life_fnc_MP; life_garage_type = ""Air"";   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche du véhicule....""];   life_garage_sp = ""cop_air_3"";  }]; this addAction[""Ranger le véhicule"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
 				};
 				class Item9
 				{
@@ -4189,7 +4189,7 @@ class Mission
 					side="CIV";
 					vehicle="C_man_1";
 					skill=0.60000002;
-					init="this enableSimulation false; this allowDamage false; this addAction[""Garage"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP; life_garage_type = ""Car"";   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche du véhicule....""];   life_garage_sp = ""car_g_1"";  }];  this addAction[""Ranger le véhicule"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
+					init="this enableSimulation false; this allowDamage false; this addAction[""Garage"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] call life_fnc_MP; life_garage_type = ""Car"";   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche du véhicule....""];   life_garage_sp = ""car_g_1"";  }];  this addAction[""Ranger le véhicule"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
 				};
 			};
 		};
@@ -4209,7 +4209,7 @@ class Mission
 					vehicle="B_RangeMaster_F";
 					leader=1;
 					skill=0.60000002;
-					init="this enableSimulation false;  this allowDamage false;  this addAction[""Marché de Médecin"",life_fnc_virt_menu,""medic""];  this addAction[format[""%1 (%2 €)"",[""license_med_air""] call life_fnc_varToStr,[([""mair""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""mair"",0,false,false,"""",' !license_med_air && playerSide == independent '];  this addAction[""Marché"",life_fnc_weaponShopMenu,""med_basic""];  this addAction[""Acheter une voiture"",life_fnc_vehicleShopMenu,[""med_shop"",independent,""med_car_2"",""med"",""Kavala Hosptial""]];  this addAction[""Acheter un hélicoptère"",life_fnc_vehicleShopMenu,[""med_air_hs"",independent,""med_car_2"",""med"",""Kavala Hosptial""]];  this addAction[""Garage"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche du véhicule....""];   life_garage_sp = ""med_car_2""; life_garage_type = ""Car"";  },"""",0,false,false,"""",'playerSide == independent '];  this addAction[""Garage aéronautique"",  {   [[getPlayerUID player,playerSide,""Air"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche du véhicule....""];   life_garage_sp = ""med_a""; life_garage_type = ""Air"";  },"""",0,false,false,"""",'playerSide == independent '];  this addAction[""Ranger le véhicule"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store']; this addAction[""Acheter des vêtements"",life_fnc_clothingMenu,""med""]; this setObjectTexture [0,""images\med\uniform.jpg""]; this addAction[""Med Clothing Shop"",life_fnc_clothingMenu,""med""];";
+					init="this enableSimulation false;  this allowDamage false;  this addAction[""Marché de Médecin"",life_fnc_virt_menu,""medic""];  this addAction[format[""%1 (%2 €)"",[""license_med_air""] call life_fnc_varToStr,[([""mair""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""mair"",0,false,false,"""",' !license_med_air && playerSide == independent '];  this addAction[""Marché"",life_fnc_weaponShopMenu,""med_basic""];  this addAction[""Acheter une voiture"",life_fnc_vehicleShopMenu,[""med_shop"",independent,""med_car_2"",""med"",""Kavala Hosptial""]];  this addAction[""Acheter un hélicoptère"",life_fnc_vehicleShopMenu,[""med_air_hs"",independent,""med_car_2"",""med"",""Kavala Hosptial""]];  this addAction[""Garage"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] call life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche du véhicule....""];   life_garage_sp = ""med_car_2""; life_garage_type = ""Car"";  },"""",0,false,false,"""",'playerSide == independent '];  this addAction[""Garage aéronautique"",  {   [[getPlayerUID player,playerSide,""Air"",player],""TON_fnc_getVehicles"",false,false] call life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche du véhicule....""];   life_garage_sp = ""med_a""; life_garage_type = ""Air"";  },"""",0,false,false,"""",'playerSide == independent '];  this addAction[""Ranger le véhicule"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store']; this addAction[""Acheter des vêtements"",life_fnc_clothingMenu,""med""]; this setObjectTexture [0,""images\med\uniform.jpg""]; this addAction[""Med Clothing Shop"",life_fnc_clothingMenu,""med""];";
 				};
 			};
 		};
@@ -4567,7 +4567,7 @@ class Mission
 			azimut=-402.23712;
 			id=245;
 			side="EMPTY";
-			vehicle="Land_CashDesk_F";
+			vehicle="Land_moneyDesk_F";
 			skill=0.60000002;
 			init="this enableSimulation false; this allowDamage false;";
 		};
@@ -4587,7 +4587,7 @@ class Mission
 			azimut=-402.23712;
 			id=247;
 			side="EMPTY";
-			vehicle="Land_CashDesk_F";
+			vehicle="Land_moneyDesk_F";
 			skill=0.60000002;
 			init="this enableSimulation false; this allowDamage false;";
 		};
@@ -4597,7 +4597,7 @@ class Mission
 			azimut=330;
 			id=248;
 			side="EMPTY";
-			vehicle="Land_CashDesk_F";
+			vehicle="Land_moneyDesk_F";
 			skill=0.60000002;
 			init="this enableSimulation false; this allowDamage false;";
 		};
@@ -9883,7 +9883,7 @@ class Mission
 			offsetY=0.2;
 			id=765;
 			side="EMPTY";
-			vehicle="Land_CashDesk_F";
+			vehicle="Land_moneyDesk_F";
 			skill=0.60000002;
 			init=" this allowDamage false; this enableSimulation false;";
 		};
@@ -12335,7 +12335,7 @@ class Mission
 			offsetY=1;
 			id=985;
 			side="EMPTY";
-			vehicle="Land_CashDesk_F";
+			vehicle="Land_moneyDesk_F";
 			skill=0.40000001;
 		};
 		class Item742
@@ -12486,7 +12486,7 @@ class Mission
 			azimut=65;
 			id=1000;
 			side="EMPTY";
-			vehicle="Land_CashDesk_F";
+			vehicle="Land_moneyDesk_F";
 			skill=0.60000002;
 			init="this enableSimulation false; this allowDamage false;";
 		};
@@ -12496,7 +12496,7 @@ class Mission
 			azimut=30;
 			id=1001;
 			side="EMPTY";
-			vehicle="Land_CashDesk_F";
+			vehicle="Land_moneyDesk_F";
 			skill=0.60000002;
 			init="this enableSimulation false; this allowDamage false;";
 		};
@@ -12524,7 +12524,7 @@ class Mission
 			azimut=245;
 			id=1004;
 			side="EMPTY";
-			vehicle="Land_CashDesk_F";
+			vehicle="Land_moneyDesk_F";
 			skill=0.60000002;
 			init="this enableSimulation false; this allowDamage false;";
 		};
@@ -12534,7 +12534,7 @@ class Mission
 			azimut=65;
 			id=1005;
 			side="EMPTY";
-			vehicle="Land_CashDesk_F";
+			vehicle="Land_moneyDesk_F";
 			skill=0.60000002;
 			init="this enableSimulation false; this allowDamage false;";
 		};
@@ -12544,7 +12544,7 @@ class Mission
 			azimut=65;
 			id=1006;
 			side="EMPTY";
-			vehicle="Land_CashDesk_F";
+			vehicle="Land_moneyDesk_F";
 			skill=0.60000002;
 			init="this enableSimulation false; this allowDamage false;";
 		};
@@ -12564,7 +12564,7 @@ class Mission
 			azimut=245;
 			id=1008;
 			side="EMPTY";
-			vehicle="Land_CashDesk_F";
+			vehicle="Land_moneyDesk_F";
 			skill=0.60000002;
 			init="this enableSimulation false; this allowDamage false;";
 		};
@@ -12895,7 +12895,7 @@ class Mission
 			azimut=243.89166;
 			id=1039;
 			side="EMPTY";
-			vehicle="Land_CashDesk_F";
+			vehicle="Land_moneyDesk_F";
 			skill=0.60000002;
 			init="this enableSimulation false; this allowDamage false;";
 		};
@@ -14561,7 +14561,7 @@ class Mission
 			azimut=25;
 			id=1224;
 			side="EMPTY";
-			vehicle="Land_CashDesk_F";
+			vehicle="Land_moneyDesk_F";
 			skill=0.60000002;
 			init="this enableSimulation false; this allowDamage false;";
 		};
@@ -14744,7 +14744,7 @@ class Mission
 			azimut=150;
 			id=1242;
 			side="EMPTY";
-			vehicle="Land_CashDesk_F";
+			vehicle="Land_moneyDesk_F";
 			skill=0.60000002;
 			init="this enableSimulation false; this allowDamage false;";
 		};
@@ -14754,7 +14754,7 @@ class Mission
 			azimut=150;
 			id=1243;
 			side="EMPTY";
-			vehicle="Land_CashDesk_F";
+			vehicle="Land_moneyDesk_F";
 			skill=0.60000002;
 			init="this enableSimulation false; this allowDamage false;";
 		};
@@ -46810,7 +46810,7 @@ class Mission
 			offsetY=0.5;
 			id=4380;
 			side="EMPTY";
-			vehicle="Land_CashDesk_F";
+			vehicle="Land_moneyDesk_F";
 			skill=0.40000001;
 		};
 		class Item4137
@@ -49100,7 +49100,7 @@ class Mission
 			azimut=-156.76468;
 			id=4598;
 			side="EMPTY";
-			vehicle="Land_CashDesk_F";
+			vehicle="Land_moneyDesk_F";
 			skill=0.60000002;
 			init="this enableSimulation false; this allowDamage false;";
 		};
@@ -49110,7 +49110,7 @@ class Mission
 			azimut=21.837299;
 			id=4599;
 			side="EMPTY";
-			vehicle="Land_CashDesk_F";
+			vehicle="Land_moneyDesk_F";
 			skill=0.60000002;
 			init="this enableSimulation false; this allowDamage false;";
 		};
@@ -49130,7 +49130,7 @@ class Mission
 			azimut=-335.728;
 			id=4601;
 			side="EMPTY";
-			vehicle="Land_CashDesk_F";
+			vehicle="Land_moneyDesk_F";
 			skill=0.60000002;
 			init="this allowDamage false; this enableSimulation false;";
 		};
@@ -49141,7 +49141,7 @@ class Mission
 			offsetY=0.1;
 			id=4602;
 			side="EMPTY";
-			vehicle="Land_CashDesk_F";
+			vehicle="Land_moneyDesk_F";
 			skill=0.60000002;
 			init="this enableSimulation false; this allowDamage false;";
 		};
@@ -49161,7 +49161,7 @@ class Mission
 			azimut=-231.86099;
 			id=4604;
 			side="EMPTY";
-			vehicle="Land_CashDesk_F";
+			vehicle="Land_moneyDesk_F";
 			skill=0.60000002;
 			init="this allowDamage false;";
 		};
@@ -54501,7 +54501,7 @@ class Mission
 			offsetY=0.1;
 			id=5060;
 			side="EMPTY";
-			vehicle="Land_CashDesk_F";
+			vehicle="Land_moneyDesk_F";
 			skill=0.40000001;
 		};
 		class Item4817
@@ -55664,7 +55664,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_InfoStand_V1_F";
 			skill=0.60000002;
-			init="this enableSimulation false;  this allowDamage false;  this addAction[""Acheter un hélicoptère"",life_fnc_vehicleShopMenu,[""cop_air"",west,""cop_air_7"",""cop"",""APD - Kavala District""]]; this addAction[""Garage"",  {   [[getPlayerUID player,playerSide,""Air"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP; life_garage_type = ""Air"";   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche du véhicule....""];   life_garage_sp = ""cop_air_7"";  }]; this addAction[""Ranger le véhicule"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
+			init="this enableSimulation false;  this allowDamage false;  this addAction[""Acheter un hélicoptère"",life_fnc_vehicleShopMenu,[""cop_air"",west,""cop_air_7"",""cop"",""APD - Kavala District""]]; this addAction[""Garage"",  {   [[getPlayerUID player,playerSide,""Air"",player],""TON_fnc_getVehicles"",false,false] call life_fnc_MP; life_garage_type = ""Air"";   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche du véhicule....""];   life_garage_sp = ""cop_air_7"";  }]; this addAction[""Ranger le véhicule"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
 		};
 		class Item4931
 		{
@@ -55684,7 +55684,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_InfoStand_V1_F";
 			skill=0.60000002;
-			init="this enableSimulation false;  this allowDamage false;  this addAction[""Acheter une voiture"",life_fnc_vehicleShopMenu,[""cop_car"",west,""cop_car_2"",""cop"",""APD - Athira District""]];  this addAction[""Garage"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche du véhicule....""];   life_garage_sp = ""cop_car_2""; life_garage_type = ""Car"";  },"""",0,false,false,"""",'playerSide == west'];  this addAction[""Ranger le véhicule"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];  ";
+			init="this enableSimulation false;  this allowDamage false;  this addAction[""Acheter une voiture"",life_fnc_vehicleShopMenu,[""cop_car"",west,""cop_car_2"",""cop"",""APD - Athira District""]];  this addAction[""Garage"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] call life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche du véhicule....""];   life_garage_sp = ""cop_car_2""; life_garage_type = ""Car"";  },"""",0,false,false,"""",'playerSide == west'];  this addAction[""Ranger le véhicule"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];  ";
 		};
 		class Item4933
 		{
@@ -66019,7 +66019,7 @@ class Mission
 			text="radar";
 			name="radar_1_1";
 			expCond="this && (speed player) > 55 && {_x iskindof ""car""} count thislist > 0 && (vehicle player) in thislist && (driver vehicle player == player)";
-			expActiv="nul = [[],""life_fnc_radarFlash50"",player,false] spawn life_fnc_MP;";
+			expActiv="nul = [[],""life_fnc_radarFlash50"",player,false] call life_fnc_MP;";
 			class Effects
 			{
 			};
@@ -66054,7 +66054,7 @@ class Mission
 			text="radar";
 			name="radar_1_1_1";
 			expCond="this && (speed player) > 55 && {_x iskindof ""car""} count thislist > 0 && (vehicle player) in thislist && (driver vehicle player == player)";
-			expActiv="nul = [[],""life_fnc_radarFlash50"",player,false] spawn life_fnc_MP;";
+			expActiv="nul = [[],""life_fnc_radarFlash50"",player,false] call life_fnc_MP;";
 			class Effects
 			{
 			};
@@ -66073,7 +66073,7 @@ class Mission
 			text="radar";
 			name="radar_1";
 			expCond="this && (speed player) > 55 && {_x iskindof ""car""} count thislist > 0 && (vehicle player) in thislist && (driver vehicle player == player)";
-			expActiv="nul = [[],""life_fnc_radarFlash50"",player,false] spawn life_fnc_MP;";
+			expActiv="nul = [[],""life_fnc_radarFlash50"",player,false] call life_fnc_MP;";
 			class Effects
 			{
 			};
@@ -66092,7 +66092,7 @@ class Mission
 			text="radar";
 			name="radar_1_2";
 			expCond="this && (speed player) > 135 && {_x iskindof ""car""} count thislist > 0 && (vehicle player) in thislist && (driver vehicle player == player)";
-			expActiv="nul = [[],""life_fnc_radarFlash"",player,false] spawn life_fnc_MP;";
+			expActiv="nul = [[],""life_fnc_radarFlash"",player,false] call life_fnc_MP;";
 			class Effects
 			{
 			};
@@ -66111,7 +66111,7 @@ class Mission
 			text="radar";
 			name="radar_1_3";
 			expCond="this && (speed player) > 55 && {_x iskindof ""car""} count thislist > 0 && (vehicle player) in thislist && (driver vehicle player == player)";
-			expActiv="nul = [[],""life_fnc_radarFlash50"",player,false] spawn life_fnc_MP;";
+			expActiv="nul = [[],""life_fnc_radarFlash50"",player,false] call life_fnc_MP;";
 			class Effects
 			{
 			};
@@ -66129,7 +66129,7 @@ class Mission
 			text="radar";
 			name="radar_1_4";
 			expCond="this && (speed player) > 55 && {_x iskindof ""car""} count thislist > 0 && (vehicle player) in thislist && (driver vehicle player == player)";
-			expActiv="nul = [[],""life_fnc_radarFlash50"",player,false] spawn life_fnc_MP;";
+			expActiv="nul = [[],""life_fnc_radarFlash50"",player,false] call life_fnc_MP;";
 			class Effects
 			{
 			};

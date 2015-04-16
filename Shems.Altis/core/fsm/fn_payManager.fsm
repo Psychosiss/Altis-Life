@@ -1,4 +1,4 @@
-/*%FSM<COMPILE "D:\Poseidon\Data\Packages\Bin\fsmEditor\scriptedFSM.cfg, Life Client FSM">*/
+/*%FSM<COMPILE "D:\Bohemia Interactive\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, life : Pay Manager">*/
 /*%FSM<HEAD>*/
 /*
 item0[] = {"Main_Init",0,250,-40.348839,-141.279068,49.651161,-91.279068,0.000000,"Main Init"};
@@ -22,7 +22,7 @@ window[] = {2,-1,-1,-1,-1,1000,182,1622,182,3,792};
 *//*%FSM</HEAD>*/
 class FSM
 {
-  fsmName = "Life Client FSM";
+  fsmName = "life : Pay Manager";
   class States
   {
     /*%FSM<STATE "Main_Init">*/
@@ -81,10 +81,10 @@ class FSM
        "} else {" \n
        "	if(player distance (getMarkerPos ""fed_reserve"") < 120 && playerSide == west) then" \n
        "	{" \n
-       "		life_atmcash = life_atmcash + (call life_paycheck) + 1500;" \n
+       "		life_atmmoney = life_atmmoney + (call life_paycheck) + 1500;" \n
        "		[""PayCheckFed"",[""Vous avez reçu un salaire de %1 € puisque vous défendez la banque fédérale."",[(call life_paycheck) + 1500]]] call BIS_fnc_showNotification;" \n
        "	} else {" \n
-       "		life_atmcash = life_atmcash + (call life_paycheck);" \n
+       "		life_atmmoney = life_atmmoney + (call life_paycheck);" \n
        "		[""PayCheckReceived"",[""Vous avez reçu un salaire de %1 €"",[(call life_paycheck)]]] call BIS_fnc_showNotification;" \n
        "	};" \n
        "};" \n

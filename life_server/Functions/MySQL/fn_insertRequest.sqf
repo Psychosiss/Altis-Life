@@ -22,12 +22,12 @@ diag_log "---------------------------------------------------------";
 
 if(typeName _queryResult == "STRING") exitWith 
 {
-	[[],"SOCK_fnc_dataQuery",(owner _returnToSender),false] spawn life_fnc_MP;
+	[[],"SOCK_fnc_dataQuery",(owner _returnToSender),false] call life_fnc_MP;
 };
 
 if(count _queryResult != 0) exitWith 
 {
-	[[],"SOCK_fnc_dataQuery",(owner _returnToSender),false] spawn life_fnc_MP;
+	[[],"SOCK_fnc_dataQuery",(owner _returnToSender),false] call life_fnc_MP;
 };
 
 _name = [_name] call DB_fnc_mresString;
@@ -35,7 +35,7 @@ _alias = [[_name]] call DB_fnc_mresArray;
 _money = [_money] call DB_fnc_numberSafe;
 _bank = [_bank] call DB_fnc_numberSafe;
 
-_query = format["INSERT INTO players (playerid, name, cash, bankacc, aliases, cop_licenses, med_licenses, civ_licenses, civ_gear, cop_gear, med_gear, bounties, civ_position, cop_position, med_position) VALUES('%1', '%2', '%3', '%4', '%5','""[]""','""[]""','""[]""','""[]""','""[]""','""[]""','[]','""[]""','""[]""','""[]""')",
+_query = format["INSERT INTO players (playerid, name, money, atmmoney, aliases, cop_licenses, med_licenses, civ_licenses, civ_gear, cop_gear, med_gear, bounties, civ_position, cop_position, med_position) VALUES('%1', '%2', '%3', '%4', '%5','""[]""','""[]""','""[]""','""[]""','""[]""','""[]""','[]','""[]""','""[]""','""[]""')",
 	_uid,
 	_name,
 	_money,
@@ -45,4 +45,4 @@ _query = format["INSERT INTO players (playerid, name, cash, bankacc, aliases, co
 
 waitUntil {!DB_Async_Active};
 [_query,1] call DB_fnc_asyncCall;
-[[],"SOCK_fnc_dataQuery",(owner _returnToSender),false] spawn life_fnc_MP;
+[[],"SOCK_fnc_dataQuery",(owner _returnToSender),false] call life_fnc_MP;

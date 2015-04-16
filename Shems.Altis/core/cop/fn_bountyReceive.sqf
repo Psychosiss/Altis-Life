@@ -9,4 +9,4 @@ if(_val == _total) then
 	titleText[format["Vous avez recu une prime de %1 € pour le meurtre d'un criminel de l'interpol, si vous l'aurez arrété, vous aurez recu %2 €",[_val] call life_fnc_numberText,[_total] call life_fnc_numberText],"PLAIN"];
 };
 
-life_atmcash = life_atmcash + _val;
+life_atmmoney = life_atmmoney + _val;

@@ -23,6 +23,6 @@ player assignItem "ItemMap";
 player addItem "ItemRadio";
 player assignItem "ItemRadio";
 
-[[player,0,"images\med\uniform.jpg"],"life_fnc_setTexture",true,false] spawn life_fnc_MP;
+[[player,0,"images\med\uniform.jpg"],"life_fnc_setTexture",true,false] call life_fnc_MP;
 
 [] call life_fnc_saveGear;

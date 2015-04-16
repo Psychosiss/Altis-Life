@@ -7,7 +7,7 @@ if((_vehicle isKindOf "Car") || (_vehicle isKindOf "Air") || (_vehicle isKindOf 
 	_vehicleData = _vehicle getVariable["vehicle_info_owners",[]];
 	if(count _vehicleData == 0) exitWith {deleteVehicle _vehicle};
 	_vehicleName = getText(configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "displayName");
-	[[0,"%1 votre %2 est mis en fourrière par la police.",true,[(_vehicleData select 0) select 1,_vehicleName]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+	[[0,"%1 votre %2 est mis en fourrière par la police.",true,[(_vehicleData select 0) select 1,_vehicleName]],"life_fnc_broadcast",true,false] call life_fnc_MP;
 	life_action_inUse = true;
 	
 	_upp = "Mise en fourrière...";
@@ -49,11 +49,11 @@ if((_vehicle isKindOf "Car") || (_vehicle isKindOf "Air") || (_vehicle isKindOf 
 		};
 		
 		life_impound_inuse = true;
-		[[_vehicle,true,player],"TON_fnc_vehicleStore",false,false] spawn life_fnc_MP;
+		[[_vehicle,true,player],"TON_fnc_vehicleStore",false,false] call life_fnc_MP;
 		waitUntil {!life_impound_inuse};
 		hint format["Vous avez mis en fourrière un %1\n\nVous avez reçu %2 € pour le nettoyage de la rue!",_type,_price];
-		[[0,"%1 a mis en fourrière %3 de %2",true,[profileName,(_vehicleData select 0) select 1,_vehicleName]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
-		life_atmcash = life_atmcash + _price;
+		[[0,"%1 a mis en fourrière %3 de %2",true,[profileName,(_vehicleData select 0) select 1,_vehicleName]],"life_fnc_broadcast",true,false] call life_fnc_MP;
+		life_atmmoney = life_atmmoney + _price;
 	} else {
 		hint "La mise en fourrière a été annulée.";
 	};

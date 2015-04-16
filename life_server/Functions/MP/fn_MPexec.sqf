@@ -75,7 +75,7 @@ if (typename _target == typename []) then
 
 		if (_ownerID == -1 || _ownerID == _serverID) then 
 		{
-			["BIS_fnc_MP_packet",BIS_fnc_MP_packet] spawn BIS_fnc_MPexec;
+			["BIS_fnc_MP_packet",BIS_fnc_MP_packet] call BIS_fnc_MPexec;
 		};
 
 		if (_isPersistent) then 

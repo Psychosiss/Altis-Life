@@ -20,8 +20,8 @@ if(_action) then {
 	if(_unitID == "") exitWith {hint "Bad UID?"};
 	grpPlayer setVariable["gang_owner",_unitID,true];
 	grpPlayer selectLeader _unit;
-	[[_unit,grpPlayer],"clientGangLeader",_unit,false] spawn life_fnc_MP;
-	[[3,grpPlayer],"TON_fnc_updateGang",false,false] spawn life_fnc_MP;
+	[[_unit,grpPlayer],"clientGangLeader",_unit,false] call life_fnc_MP;
+	[[3,grpPlayer],"TON_fnc_updateGang",false,false] call life_fnc_MP;
 } else {
 	hint "Transfer of leadership cancelled.";
 };

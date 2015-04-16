@@ -1,4 +1,4 @@
-/*%FSM<COMPILE "D:\Poseidon\Data\Packages\Bin\fsmEditor\scriptedFSM.cfg, life: Simulation Manager">*/
+/*%FSM<COMPILE "D:\Bohemia Interactive\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, life: Simulation Manager">*/
 /*%FSM<HEAD>*/
 /*
 item0[] = {"Init",0,250,-50.000000,-150.000000,50.000000,-100.000000,0.000000,"Init"};

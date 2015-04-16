@@ -53,17 +53,6 @@ class CfgFunctions
 			class repaintVehicle {};
 		};
 	};
-	
-	class Shems_Developpement
-	{
-		tag = "SHEMS";
-		class Shems
-		{
-			file = "\life_server\Functions\Shems";
-			class antiHack {};
-			class clientAntiHack {};
-		};
-	};
 
 	class Life_System
 	{

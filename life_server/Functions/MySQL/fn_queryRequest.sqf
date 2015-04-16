@@ -7,9 +7,9 @@ if(isNull _ownerID) exitWith {};
 _ownerID = owner _ownerID;
 _query = switch(_side) do 
 {
-	case west: {_returnCount = 12; format["SELECT playerid, name, cash, bankacc, adminlevel, donatorlvl, cop_licenses, cop_level, cop_gear, blacklist, cop_position, alive FROM players WHERE playerid='%1'",_uid];};
-	case civilian: {_returnCount = 11; format["SELECT playerid, name, cash, bankacc, adminlevel, donatorlvl, civ_licenses, arrested, civ_gear, civ_position, alive FROM players WHERE playerid='%1'",_uid];};
-	case independent: {_returnCount = 11; format["SELECT playerid, name, cash, bankacc, adminlevel, donatorlvl, med_licenses, med_level, med_gear, med_position, alive FROM players WHERE playerid='%1'",_uid];};
+	case west: {_returnCount = 12; format["SELECT playerid, name, money, atmmoney, adminlevel, donatorlvl, cop_licenses, cop_level, cop_gear, blacklist, cop_position, alive FROM players WHERE playerid='%1'",_uid];};
+	case civilian: {_returnCount = 11; format["SELECT playerid, name, money, atmmoney, adminlevel, donatorlvl, civ_licenses, arrested, civ_gear, civ_position, alive FROM players WHERE playerid='%1'",_uid];};
+	case independent: {_returnCount = 11; format["SELECT playerid, name, money, atmmoney, adminlevel, donatorlvl, med_licenses, med_level, med_gear, med_position, alive FROM players WHERE playerid='%1'",_uid];};
 };
 
 waitUntil{sleep (random 0.3); !DB_Async_Active};
@@ -25,12 +25,12 @@ diag_log "------------------------------------------------";
 
 if(typeName _queryResult == "STRING") exitWith 
 {
-	[[],"SOCK_fnc_insertPlayerInfo",_ownerID,false,true] spawn life_fnc_MP;
+	[[],"SOCK_fnc_insertPlayerInfo",_ownerID,false,true] call life_fnc_MP;
 };
 
 if(count _queryResult == 0) exitWith 
 {
-	[[],"SOCK_fnc_insertPlayerInfo",_ownerID,false,true] spawn life_fnc_MP;
+	[[],"SOCK_fnc_insertPlayerInfo",_ownerID,false,true] call life_fnc_MP;
 };
 
 private["_tmp"];
@@ -141,4 +141,4 @@ switch (_side) do
 _keyArr = missionNamespace getVariable [format["%1_KEYS_%2",_uid,_side],[]];
 _queryResult set[15,_keyArr]; //12
 
-[_queryResult,"SOCK_fnc_requestReceived",_ownerID,false] spawn life_fnc_MP;
+[_queryResult,"SOCK_fnc_requestReceived",_ownerID,false] call life_fnc_MP;

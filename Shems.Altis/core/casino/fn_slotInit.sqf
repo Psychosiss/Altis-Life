@@ -1,4 +1,4 @@
-private ["_bet","_dialog","_jackpot","_cash"];
+private ["_bet","_dialog","_jackpot","_money"];
 
 disableSerialization;
 
@@ -9,8 +9,8 @@ createDialog "life_slotmachine_menu";
 
 _dialog = findDisplay 88800;
 _jackpot = _dialog displayCtrl 88804;
-_cash = _dialog displayCtrl 88807;
-_cash ctrlSetText format ["Vous argent: %1 €", [life_cash] call life_fnc_formatMoney];
+_money = _dialog displayCtrl 88807;
+_money ctrlSetText format ["Vous argent: %1 €", [life_money] call life_fnc_formatMoney];
 
 life_jackpot = nil;
 life_getJackpot = player;

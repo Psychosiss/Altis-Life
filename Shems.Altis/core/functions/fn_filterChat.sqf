@@ -25,7 +25,7 @@ if ((_msg call aniChatEvents_strlen) > 3) then
 				if (([(name _x)] call KRON_StrLower) == _recipientLow) then {_to = _x;};
 			} forEach playableUnits;
 			if (isNull _to) exitWith {};
-			[[_message,name player,0],"life_fnc_clientMessage",_to,false] spawn BIS_fnc_MP;
+			[[_message,name player,0],"life_fnc_clientMessage",_to,false] call BIS_fnc_MP;
 			systemChat format["Vous envoyez un message à %1 : %2",name _to,_message];
 		};
 	} else {
@@ -40,7 +40,7 @@ if ((_msg call aniChatEvents_strlen) > 3) then
 					if (([(name _x)] call KRON_StrLower) == _recipientLow) then {_to = _x;};
 				} forEach playableUnits;
 				if (isNull _to) exitWith {systemChat format["Le téléphone de %1 est eteint.", life_last_message]};
-				[[_message,name player,0],"life_fnc_clientMessage",_to,false] spawn BIS_fnc_MP;
+				[[_message,name player,0],"life_fnc_clientMessage",_to,false] call BIS_fnc_MP;
 				systemChat format["Vous envoyez un message à %1 : %2",name _to,_message];
 			};
 		} else {

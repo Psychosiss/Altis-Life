@@ -11,5 +11,5 @@ if(local _target) then
 {
 	[_caller,_target,_posCaller,_dir] spawn life_fnc_pushFunction;
 } else {
-	[[_caller,_target,_posCaller,_dir],"life_fnc_pushFunction",_target,false] spawn life_fnc_MP;
+	[[_caller,_target,_posCaller,_dir],"life_fnc_pushFunction",_target,false] call life_fnc_MP;
 };

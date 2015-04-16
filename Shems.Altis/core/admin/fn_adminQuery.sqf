@@ -7,5 +7,5 @@ _info = lbData[2902,lbCurSel (2902)];
 _info = call compile format["%1", _info];
 if(isNil "_info") exitWith {_text ctrlSetText "Le joueur existe ?";};
 if(isNull _info) exitWith {_text ctrlSetText "Le joueur existe ?";};
-[[player],"fnc_player_query",_info,false] spawn life_fnc_MP;
+[[player],"fnc_player_query",_info,false] call life_fnc_MP;
 _text ctrlSetText "Interrogation du joueur...";

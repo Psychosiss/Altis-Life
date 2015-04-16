@@ -22,7 +22,7 @@ while {true} do
 {
 	if(animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then 
 	{
-		[[player,"AinvPknlMstpSnonWnonDnon_medic_1"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
+		[[player,"AinvPknlMstpSnonWnonDnon_medic_1"],"life_fnc_animSync",true,false] call life_fnc_MP;
 		player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
 	};
 	sleep 0.15;
@@ -47,10 +47,10 @@ if(_target getVariable["Revive",FALSE]) exitWith {hint "This person either respa
 if((player getVariable["Restrained",false])) exitWith {life_action_inUse = false;};
 if(!isNil "_badDistance") exitWith {titleText["You got to far away from the target.","PLAIN"]; life_action_inUse = false;};
 if(life_interrupted) exitWith {life_interrupted = false; titleText["Action annulé","PLAIN"]; life_action_inUse = false;};
-life_atmcash = life_atmcash + (call life_revive_fee);
+life_atmmoney = life_atmmoney + (call life_revive_fee);
 life_action_inUse = false;
 _target setVariable["Revive",TRUE,TRUE];
-[[profileName],"life_fnc_revived",_target,FALSE] spawn life_fnc_MP;
+[[profileName],"life_fnc_revived",_target,FALSE] call life_fnc_MP;
 titleText[format["Vous avez réanimmé %1 et avez reçu %2 € pour vos services.",_targetName,[(call life_revive_fee)] call life_fnc_numberText],"PLAIN"];
 sleep 0.6;
 player reveal _target;

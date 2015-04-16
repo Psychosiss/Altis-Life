@@ -15,8 +15,8 @@ _robber = false;
 
 if(!life_use_atm) then 
 {
-	life_cash = 0;
+	life_money = 0;
 	_robber = true;
 };
 
-[[player,_inv,_robber],"life_fnc_copSearch",_cop,false] spawn life_fnc_MP;
+[[player,_inv,_robber],"life_fnc_copSearch",_cop,false] call life_fnc_MP;

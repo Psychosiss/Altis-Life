@@ -1,15 +1,9 @@
-"BIS_fnc_MP_packet" addPublicVariableEventHandler 
-{
-	_this call life_fnc_MPexec
-};
+"BIS_fnc_MP_packet" addPublicVariableEventHandler {_this call life_fnc_MPexec};
 if(!hasInterface) exitWith {};
-#define __CONST__(var1,var2) var1 = compileFinal (if(typeName var2 == "STRING") then {var2} else {str(var2)})
-__CONST__(BIS_fnc_endMission,BIS_fnc_endMission);
+BIS_fnc_endMission = compileFinal (if(typeName BIS_fnc_endMission == "STRING") then {BIS_fnc_endMission} else {str(BIS_fnc_endMission)});
 [] execVM "SpyGlass\fn_initSpy.sqf";
 [] execVM "core\init.sqf";
 [] execVM "core\functions\fn_emptyFuel.sqf";
-
-{_x setMarkerAlphaLocal 0} forEach ["mrkRed","mrkRed_1","mrkRed_1_1","mrkRed_1_3","mrkGreen"];
 
 if((_this select 1)) then 
 {

@@ -8,16 +8,16 @@ _time = _price / 1000 * 2;
 _price = _price * 2;
 if(_price < 0) exitWith {};
 _failed = false;
-if(life_cash >= _price) then
+if(life_money >= _price) then
 {
-	life_cash = life_cash - _price;
+	life_money = life_money - _price;
 } else {
-	if(life_atmcash < (_price + 1000)) then
+	if(life_atmmoney < (_price + 1000)) then
 	{
 		_failed = true;
 	} else {
 		hint "$1,000 de surcharge à été pris de votre compte en banque.";
-		life_atmcash = life_atmcash - _price - 1000;
+		life_atmmoney = life_atmmoney - _price - 1000;
 	};
 };
 

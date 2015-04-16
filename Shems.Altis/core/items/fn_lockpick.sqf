@@ -13,7 +13,7 @@ if(!_isVehicle && !(_curTarget getVariable["Restrained",false])) exitWith {};
 
 _title = format["Crochetage %1",if(!_isVehicle) then {"Handcuffs"} else {getText(configFile >> "CfgVehicles" >> (typeOf _curTarget) >> "displayName")}];
 life_action_inUse = true;
-[[player, "alarmevoiture",10],"life_fnc_playSound",true,false] spawn life_fnc_MP;
+[[player, "alarmevoiture",10],"life_fnc_playSound",true,false] call life_fnc_MP;
 
 disableSerialization;
 5 cutRsc ["life_progress","PLAIN"];
@@ -123,12 +123,12 @@ _dice = random(100);
 if (_dice < 30) then 
 {
 	titleText["Vous avez crocheté le véhicule avec succès.","PLAIN"];
-	[[_curTarget],"life_fnc_carAlarmSound",nil,true] spawn life_fnc_MP;
+	[[_curTarget],"life_fnc_carAlarmSound",nil,true] call life_fnc_MP;
 	life_vehicles pushBack _curTarget;
-	[[getPlayerUID player,profileName,"487"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
+	[[getPlayerUID player,profileName,"487"],"life_fnc_wantedAdd",false,false] call life_fnc_MP;
 } else {
-	[[getPlayerUID player,profileName,"215"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
-	[[0,format["%1 à été vu en train de crocheter un véhicule.",profileName]],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
+	[[getPlayerUID player,profileName,"215"],"life_fnc_wantedAdd",false,false] call life_fnc_MP;
+	[[0,format["%1 à été vu en train de crocheter un véhicule.",profileName]],"life_fnc_broadcast",west,false] call life_fnc_MP;
 	titleText["Le lockpick est cassé.","PLAIN"];
 };
 
@@ -143,12 +143,12 @@ if(!_isVehicle) then
 	if(_dice < 30) then 
 	{
 		titleText["Vous avez crocheté le véhicule avec succès.","PLAIN"];
-		[[_curTarget],"life_fnc_carAlarmSound",nil,true] spawn life_fnc_MP;
+		[[_curTarget],"life_fnc_carAlarmSound",nil,true] call life_fnc_MP;
 		life_vehicles pushBack _curTarget;
-		[[getPlayerUID player,profileName,"487"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
+		[[getPlayerUID player,profileName,"487"],"life_fnc_wantedAdd",false,false] call life_fnc_MP;
 	} else {
-		[[getPlayerUID player,profileName,"215"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
-		[[0,format["%1 à été vu en train de crocheter un véhicule.",profileName]],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
+		[[getPlayerUID player,profileName,"215"],"life_fnc_wantedAdd",false,false] call life_fnc_MP;
+		[[0,format["%1 à été vu en train de crocheter un véhicule.",profileName]],"life_fnc_broadcast",west,false] call life_fnc_MP;
 		titleText["Le lockpick est cassé.","PLAIN"];
 	};
 };

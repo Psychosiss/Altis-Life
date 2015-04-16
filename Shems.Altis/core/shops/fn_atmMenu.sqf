@@ -23,8 +23,8 @@ _text ctrlSetStructuredText parseText format
 ["
 	<img size='1.7' image='icons\bank.paa'/> %1 €<br/>
 	<img size='1.6' image='icons\money.paa'/> %2 €"
-	,[life_atmcash] call life_fnc_numberText
-	,[life_cash] call life_fnc_numberText
+	,[life_atmmoney] call life_fnc_numberText
+	,[life_money] call life_fnc_numberText
 ];
 
 {

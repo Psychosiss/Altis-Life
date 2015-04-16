@@ -48,8 +48,8 @@ if ((_message call aniChatEvents_strlen) > 0) then
 	_anim = (_emotes select _index) select 1;
 	if (_anim in _black) exitWith {};
 	if (vehicle player != player) exitWith {};
-	[[player,_anim,"playNow"],"life_fnc_animSync",true,false] spawn BIS_fnc_MP;
-	[[player,_anim,"switch"],"life_fnc_animSync",true,false] spawn BIS_fnc_MP;
+	[[player,_anim,"playNow"],"life_fnc_animSync",true,false] call BIS_fnc_MP;
+	[[player,_anim,"switch"],"life_fnc_animSync",true,false] call BIS_fnc_MP;
 } else {
 	_anims = "Vous pouvez faire ces animations: ";
 	{ 

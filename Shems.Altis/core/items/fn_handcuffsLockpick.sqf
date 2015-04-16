@@ -28,7 +28,7 @@ while {true} do
 {
 	if(animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then 
 	{
-		[[player,"AinvPknlMstpSnonWnonDnon_medic_1"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
+		[[player,"AinvPknlMstpSnonWnonDnon_medic_1"],"life_fnc_animSync",true,false] call life_fnc_MP;
 		player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
 	};
 	sleep 0.26;
@@ -119,9 +119,9 @@ if(_dice < 70) then
 	_unit setVariable["Restrained",false,true];
 	_unit setVariable["Escorting",false,true];
 	_unit setVariable["transporting",false,true];
-	[[getPlayerUID player,profileName,"486"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
+	[[getPlayerUID player,profileName,"486"],"life_fnc_wantedAdd",false,false] call life_fnc_MP;
 } else {
 	titleText["Le lockpick est cassé.","PLAIN"];
-	[[0,format["%1 à été vu en train de crocheter un véhicule.",profileName]],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
-	[[getPlayerUID player,profileName,"485"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
+	[[0,format["%1 à été vu en train de crocheter un véhicule.",profileName]],"life_fnc_broadcast",west,false] call life_fnc_MP;
+	[[getPlayerUID player,profileName,"485"],"life_fnc_wantedAdd",false,false] call life_fnc_MP;
 }; 

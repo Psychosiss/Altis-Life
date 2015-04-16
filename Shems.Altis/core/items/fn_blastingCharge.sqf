@@ -7,10 +7,10 @@ if(_vault getVariable["safe_open",false]) exitWith {hint "The vault is already o
 if(!([false,"blastingcharge",1] call life_fnc_handleInv)) exitWith {};
 
 _vault setVariable["chargeplaced",true,true];
-[[1,"A blasting charge has been placed on the federal reserves vault, You have till the clock runs out to disarm the charge!"],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
+[[1,"A blasting charge has been placed on the federal reserves vault, You have till the clock runs out to disarm the charge!"],"life_fnc_broadcast",west,false] call life_fnc_MP;
 hint "The timer is ticking! Keep the cops away from the vault!";
 _handle = [] spawn life_fnc_demoChargeTimer;
-[[],"life_fnc_demoChargeTimer",west,false] spawn life_fnc_MP;
+[[],"life_fnc_demoChargeTimer",west,false] call life_fnc_MP;
 
 waitUntil {scriptDone _handle};
 sleep 0.9;

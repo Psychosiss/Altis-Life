@@ -13,7 +13,7 @@ with missionnamespace do
 
 	if !(ismultiplayer) then 
 	{
-		["BIS_fnc_MP_packet",BIS_fnc_MP_packet] spawn BIS_fnc_MPexec;
+		["BIS_fnc_MP_packet",BIS_fnc_MP_packet] call BIS_fnc_MPexec;
 	};
 
 	BIS_fnc_MP_packet

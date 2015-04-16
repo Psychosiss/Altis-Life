@@ -14,5 +14,5 @@ _price = _price * _val;
 if([false,"goldbar",life_inv_goldbar] call life_fnc_handleInv) then 
 {
 	titleText[format["Vous avez vendu %1 barre(s) d'or pour %2 €",_val,[_price] call life_fnc_numberText],"PLAIN"];
-	life_cash = life_cash + _price;
+	life_money = life_money + _price;
 };

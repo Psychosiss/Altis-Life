@@ -8,7 +8,7 @@ _dest = _posPlayer;
 
 sleep 1;
 
-[[7,"<t size='1.2'><t color='#FF0000'>Airdrop-Mission</t></t><br/><br/><t size='1'>A helicopter is going to drop a Supplycrate in 15 minutes! The drop-location will be transmitted soon!</t>"],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+[[7,"<t size='1.2'><t color='#FF0000'>Airdrop-Mission</t></t><br/><br/><t size='1'>A helicopter is going to drop a Supplycrate in 15 minutes! The drop-location will be transmitted soon!</t>"],"life_fnc_broadcast",true,false] call life_fnc_MP;
 
 sleep 300;
 
@@ -22,26 +22,26 @@ _markerText = createMarker ["Airdropmarkertext", _dest];
 "Airdropmarkertext" setMarkerText "Airdrop-Mission";
 "Airdropmarkertext" setMarkerType "mil_warning";
 
-[[7,"<t size='1.2'><t color='#FF0000'>Airdrop-Mission</t></t><br/><br/><t size='1'>10 minutes until the helicopter will drop the supplies! Check your map for the drop-location!</t>"],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+[[7,"<t size='1.2'><t color='#FF0000'>Airdrop-Mission</t></t><br/><br/><t size='1'>10 minutes until the helicopter will drop the supplies! Check your map for the drop-location!</t>"],"life_fnc_broadcast",true,false] call life_fnc_MP;
 sleep 300;
 
-[[7,"<t size='1.2'><t color='#FF0000'>Airdrop-Mission</t></t><br/><br/><t size='1'>5 minutes until the helicopter will drop the supplies!</t>"],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+[[7,"<t size='1.2'><t color='#FF0000'>Airdrop-Mission</t></t><br/><br/><t size='1'>5 minutes until the helicopter will drop the supplies!</t>"],"life_fnc_broadcast",true,false] call life_fnc_MP;
 
 sleep 60;
 
-[[7,"<t size='1.2'><t color='#FF0000'>Airdrop-Mission</t></t><br/><br/><t size='1'>4 minutes until the helicopter will drop the supplies!</t>"],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+[[7,"<t size='1.2'><t color='#FF0000'>Airdrop-Mission</t></t><br/><br/><t size='1'>4 minutes until the helicopter will drop the supplies!</t>"],"life_fnc_broadcast",true,false] call life_fnc_MP;
 
 sleep 60;
 
-[[7,"<t size='1.2'><t color='#FF0000'>Airdrop-Mission</t></t><br/><br/><t size='1'>3 minutes until the helicopter will drop the supplies!</t>"],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+[[7,"<t size='1.2'><t color='#FF0000'>Airdrop-Mission</t></t><br/><br/><t size='1'>3 minutes until the helicopter will drop the supplies!</t>"],"life_fnc_broadcast",true,false] call life_fnc_MP;
 
 sleep 60;
 
-[[7,"<t size='1.2'><t color='#FF0000'>Airdrop-Mission</t></t><br/><br/><t size='1'>2 minutes until the helicopter will drop the supplies!</t>"],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+[[7,"<t size='1.2'><t color='#FF0000'>Airdrop-Mission</t></t><br/><br/><t size='1'>2 minutes until the helicopter will drop the supplies!</t>"],"life_fnc_broadcast",true,false] call life_fnc_MP;
 
 sleep 60;
 
-[[7,"<t size='1.2'><t color='#FF0000'>Airdrop-Mission</t></t><br/><br/><t size='1'>1 minute until the helicopter will drop the supplies!</t>"],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+[[7,"<t size='1.2'><t color='#FF0000'>Airdrop-Mission</t></t><br/><br/><t size='1'>1 minute until the helicopter will drop the supplies!</t>"],"life_fnc_broadcast",true,false] call life_fnc_MP;
 
 heli1 = CreateVehicle [life_life_airdrop_helicopter_main, [7950, 9667, 0], [], 0, "FLY"];
 heli2 = CreateVehicle [life_airdrop_helicopter_scnd, [7950, 9700, 0], [], 0, "FLY"];
@@ -80,7 +80,7 @@ while {_dest distance heli1 > 250} do
 	"airbox_marker" setMarkerPos getPos heli1; 
 	sleep 1; 
 };
-[[7,"<t size='1.2'><t color='#FF0000'>Airdrop-Mission</t></t><br/><br/><t size='1'>The supplies have been dropped! 20 minutes until self destruction!</t>"],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+[[7,"<t size='1.2'><t color='#FF0000'>Airdrop-Mission</t></t><br/><br/><t size='1'>The supplies have been dropped! 20 minutes until self destruction!</t>"],"life_fnc_broadcast",true,false] call life_fnc_MP;
 
 deleteVehicle _containerdummy;
 sleep 0.1;
@@ -184,9 +184,9 @@ deleteVehicle heli1;
 deleteVehicle heli2;
 deleteVehicle heli3;
 sleep 600;
-[[7,"<t size='1.2'><t color='#FF0000'>Airdrop-Mission</t></t><br/><br/><t size='1'>5 minutes until self destruction</t>"],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+[[7,"<t size='1.2'><t color='#FF0000'>Airdrop-Mission</t></t><br/><br/><t size='1'>5 minutes until self destruction</t>"],"life_fnc_broadcast",true,false] call life_fnc_MP;
 sleep 300;
-[[7,"<t size='1.2'><t color='#FF0000'>Airdrop-Mission beendet!</t></t><br/><br/><t size='1'>The AirDrop-Mission has ended!</t>"],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+[[7,"<t size='1.2'><t color='#FF0000'>Airdrop-Mission beendet!</t></t><br/><br/><t size='1'>The AirDrop-Mission has ended!</t>"],"life_fnc_broadcast",true,false] call life_fnc_MP;
 deleteVehicle _box; 
 _bmb = "BO_GBU12_LGB" createVehicle [(getPos _box select 0)-21,(getPos _box select 1)+21,0];
 sleep 1;

@@ -5,10 +5,10 @@ if(!(_building isKindOf "House_F")) exitWith {hint "You are not looking at a hou
 if(isNil "life_boltcutter_uses") then {life_boltcutter_uses = 0;};
 if((nearestObject [[16019.5,16952.9,0],"Land_Dome_Big_F"]) == _building OR (nearestObject [[16019.5,16952.9,0],"Land_Research_house_V1_F"]) == _building) then 
 {
-	[[[1,2],"!!!!! Quelqu'un est en train de piller la reserve fédérale !!!!!!"],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
-	[[_building],"life_fnc_bankAlarmSound",nil,true] spawn life_fnc_MP;
+	[[[1,2],"!!!!! Quelqu'un est en train de piller la reserve fédérale !!!!!!"],"life_fnc_broadcast",true,false] call life_fnc_MP;
+	[[_building],"life_fnc_bankAlarmSound",nil,true] call life_fnc_MP;
 } else {
-	[[0,format["%1 à été vu en train d'essayer de braquer la reserve fédérale.",profileName]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+	[[0,format["%1 à été vu en train d'essayer de braquer la reserve fédérale.",profileName]],"life_fnc_broadcast",true,false] call life_fnc_MP;
 };
 
 _doors = getNumber(configFile >> "CfgVehicles" >> (typeOf _building) >> "NumberOfDoors");
@@ -45,7 +45,7 @@ while {true} do
 {
 	if(animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then 
 	{
-		[[player,"AinvPknlMstpSnonWnonDnon_medic_1"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
+		[[player,"AinvPknlMstpSnonWnonDnon_medic_1"],"life_fnc_animSync",true,false] call life_fnc_MP;
 		player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
 	};
 	sleep 0.26;
@@ -129,4 +129,4 @@ if((_building getVariable["locked",false])) then
 	_building setVariable["locked",false,true];
 };
 
-[[getPlayerUID player,profileName,"459A"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
+[[getPlayerUID player,profileName,"459A"],"life_fnc_wantedAdd",false,false] call life_fnc_MP;

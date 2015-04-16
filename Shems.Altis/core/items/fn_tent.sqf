@@ -22,6 +22,6 @@ life_action_inUse = false;
 _tent = _class createVehicle (getPos player);
 _tent setVariable ["Trunk", [[],0], true];
 _tent setVariable ["owner", player, true];
-[[_tent],"life_fnc_simDisable",false,false] spawn BIS_fnc_MP;
+[[_tent],"life_fnc_simDisable",false,false] call BIS_fnc_MP;
 
 titleText["Vous avez dressé une tente à proximité.","PLAIN"];

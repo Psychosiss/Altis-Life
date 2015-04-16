@@ -1,9 +1,9 @@
-private["_uid","_side","_cash","_bank","_licenses","_gear","_name","_query","_thread"];
+private["_uid","_side","_money","_atmmoney","_licenses","_gear","_name","_query","_thread"];
 _uid = [_this,0,"",[""]] call BIS_fnc_param;
 _name = [_this,1,"",[""]] call BIS_fnc_param;
 _side = [_this,2,sideUnknown,[civilian]] call BIS_fnc_param;
-_cash = [_this,3,0,[0]] call BIS_fnc_param;
-_bank = [_this,4,5000,[0]] call BIS_fnc_param;
+_money = [_this,3,0,[0]] call BIS_fnc_param;
+_atmmoney = [_this,4,5000,[0]] call BIS_fnc_param;
 _licenses = [_this,5,[],[[]]] call BIS_fnc_param;
 _gear = [_this,6,[],[[]]] call BIS_fnc_param;
 _civ_position = [_this,9,""] call BIS_fnc_param;
@@ -14,8 +14,8 @@ if((_uid == "") OR (_name == "")) exitWith {};
 
 _name = [_name] call DB_fnc_mresString;
 _gear = [_gear] call DB_fnc_mresArray;
-_cash = [_cash] call DB_fnc_numberSafe;
-_bank = [_bank] call DB_fnc_numberSafe;
+_money = [_money] call DB_fnc_numberSafe;
+_atmmoney = [_atmmoney] call DB_fnc_numberSafe;
 
 for "_i" from 0 to count(_licenses)-1 do 
 {
@@ -31,40 +31,40 @@ switch (_side) do
 	{
 		_query = format["UPDATE players SET 
 		name='%1',
-		cash='%2',
-		bankacc='%3',
+		money='%2',
+		atmmoney='%3',
 		cop_gear='%4',
 		cop_licenses='%5',
 		cop_position='%7'
 		WHERE playerid='%6'
-		",_name,_cash,_bank,_gear,_licenses,_uid];
+		",_name,_money,_atmmoney,_gear,_licenses,_uid];
 	};
 	
 	case civilian: 
 	{
 		_query = format["UPDATE players SET 
 		name='%1',
-		cash='%2',
-		bankacc='%3',
+		money='%2',
+		atmmoney='%3',
 		civ_licenses='%4',
 		civ_gear='%6',
 		arrested='%7',
 		civ_position='%8'
 		WHERE playerid='%5'
-		",_name,_cash,_bank,_licenses,_uid,_gear,[_this select 7] call DB_fnc_bool];
+		",_name,_money,_atmmoney,_licenses,_uid,_gear,[_this select 7] call DB_fnc_bool];
 	};
 	
 	case independent: 
 	{
 		_query = format["UPDATE players SET 
 		name='%1',
-		cash='%2',
-		bankacc='%3',
+		money='%2',
+		atmmoney='%3',
 		med_licenses='%4',
 		med_gear='%6',
 		med_position='%7'
 		WHERE playerid='%5'
-		",_name,_cash,_bank,_licenses,_uid];
+		",_name,_money,_atmmoney,_licenses,_uid];
 	};
 };
 

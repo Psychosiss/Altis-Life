@@ -16,7 +16,7 @@ _exists = false;
 if (_exists) then 
 {
 	hint parseText "dynMarket : Ajustement du prix réussi, il sera actualisé à la prochaine mise à jour des prix";
-	[[_tochangeNameText,_tochangePriceNumber],"TON_fnc_changePrice",false,false] spawn life_fnc_MP;
+	[[_tochangeNameText,_tochangePriceNumber],"TON_fnc_changePrice",false,false] call life_fnc_MP;
 } else {
 	hint parseText "dynMarket : L'élément demandé n'existe pas.";
 };

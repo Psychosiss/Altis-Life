@@ -20,7 +20,7 @@ while {true} do
 {
 	if(animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then 
 	{
-		[[player,"AinvPknlMstpSnonWnonDnon_medic_1"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
+		[[player,"AinvPknlMstpSnonWnonDnon_medic_1"],"life_fnc_animSync",true,false] call life_fnc_MP;
 		player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
 	};
 	sleep 0.26;
@@ -54,4 +54,4 @@ life_action_inUse = false;
 
 _object setPos (getMarkerPos "jail_breakout");
 
-[[getPlayerUID player,profileName,"902"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
+[[getPlayerUID player,profileName,"902"],"life_fnc_wantedAdd",false,false] call life_fnc_MP;

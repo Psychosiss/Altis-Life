@@ -3,10 +3,10 @@ _medicsOnline = {_x != player && {side _x == independent} && {alive _x}} count p
 
 if(_medicsOnline) then 
 {
-	[[life_corpse,profileName],"life_fnc_medicRequest",independent,FALSE] spawn life_fnc_MP;
+	[[life_corpse,profileName],"life_fnc_medicRequest",independent,FALSE] call life_fnc_MP;
 } else {
 
-	[[life_corpse,profileName],"life_fnc_copMedicRequest",west,FALSE] spawn life_fnc_MP;
+	[[life_corpse,profileName],"life_fnc_copMedicRequest",west,FALSE] call life_fnc_MP;
 };
 
 life_request_timer = true;

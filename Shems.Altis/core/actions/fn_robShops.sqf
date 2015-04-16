@@ -23,13 +23,13 @@ _chance = random(100);
 if(_chance >= 85) then 
 {
 	hint "Une alarme silencieuse à été activé, la police à été avertie!";
-	[[1,format["ALARME! - Magasin: %1 est entrain de se faire braquer!", _shop]],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
+	[[1,format["ALARME! - Magasin: %1 est entrain de se faire braquer!", _shop]],"life_fnc_broadcast",west,false] call life_fnc_MP;
 };
 
 _cops = (west countSide playableUnits);
 if(_cops < 2) exitWith
 {
-	[[_vault,-1],"disableSerialization;",false,false] spawn life_fnc_MP; 
+	[[_vault,-1],"disableSerialization;",false,false] call life_fnc_MP; 
 	hint "Il n'y à pas assez de policier pour braquer le magasin!";
 };
 disableSerialization;
@@ -68,13 +68,13 @@ if(_rip) then
 	};
 	5 cutText ["","PLAIN"];
 	titleText[format["Tu as volé %1 €, mais cours! La police arrive...",[_kassa] call life_fnc_numberText],"PLAIN"];
-	life_cash = life_cash + _kassa;
+	life_money = life_money + _kassa;
 	_rip = false;
 	life_use_atm = false;
 	sleep (30 + random(180));
 	life_use_atm = true;
 	if!(alive _robber) exitWith {};
-	[[getPlayerUID _robber,_robber getVariable["realname",name _robber],"212"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
+	[[getPlayerUID _robber,_robber getVariable["realname",name _robber],"212"],"life_fnc_wantedAdd",false,false] call life_fnc_MP;
 };
 sleep 300;
 deleteMarker "Marker200";

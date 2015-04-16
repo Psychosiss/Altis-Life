@@ -65,10 +65,10 @@ _value = 0;
 
 if(_value > 0) then 
 {
-	[[0,format["Une maison a été perquisitionné et a %1 € de contrebande.",[_value] call life_fnc_numberText]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
-	life_atmcash = life_atmcash + _value;
+	[[0,format["Une maison a été perquisitionné et a %1 € de contrebande.",[_value] call life_fnc_numberText]],"life_fnc_broadcast",true,false] call life_fnc_MP;
+	life_atmmoney = life_atmmoney + _value;
 	_house setVariable["Trunk",[_houseInvData,_houseInvVal],true];
-	[[_house],"TON_fnc_updateHouseTrunk",false,false] spawn life_fnc_MP;
+	[[_house],"TON_fnc_updateHouseTrunk",false,false] call life_fnc_MP;
 } else {
 	hint "Il y a rien d'illégal dans cette maison.";
 };

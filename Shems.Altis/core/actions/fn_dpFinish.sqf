@@ -8,4 +8,4 @@ _price = round(1.7 * _dis);
 ["DeliverySucceeded",[format["Vous avez gagné %1 €",[_price] call life_fnc_numberText]]] call bis_fnc_showNotification;
 life_cur_task setTaskState "Succeeded";
 player removeSimpleTask life_cur_task;
-life_cash = life_cash + _price;
+life_money = life_money + _price;

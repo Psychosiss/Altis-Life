@@ -8,7 +8,7 @@ life_action_inUse = true;
 
 if(animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then 
 {
-	[[player,"AinvPknlMstpSnonWnonDnon_medic_1"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
+	[[player,"AinvPknlMstpSnonWnonDnon_medic_1"],"life_fnc_animSync",true,false] call life_fnc_MP;
 	player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
 	sleep 6;
 };

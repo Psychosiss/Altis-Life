@@ -1,23 +1,22 @@
-#define GVAR_UINS uiNamespace getVariable
-#define CONST(var1,var2) var1 = compileFinal (if(typeName var2 == "STRING") then {var2} else {str(var2)})
+#define __CONST__(var1,var2) var1 = compileFinal (if(typeName var2 == "STRING") then {var2} else {str(var2)})
 #define steamid getPlayerUID player
 
 private["_binConfigPatches","_cfgPatches","_endM"];
 if(isServer && !hasInterface) exitWith {};
 
-CONST(W_O_O_K_I_E_ANTI_ANTI_HAX,"false");
-CONST(W_O_O_K_I_E_FUD_ANTI_ANTI_HAX,"false");
-CONST(E_X_T_A_S_Y_ANTI_ANTI_HAX,"false");
-CONST(E_X_T_A_S_Y_Pro_RE,"false");
-CONST(E_X_T_A_S_Y_Car_RE,"false");
-CONST(DO_NUKE,"false");
-CONST(JxMxE_spunkveh,"false");
-CONST(JxMxE_spunkveh2,"false");
-CONST(JxMxE_spunkair,"false");
-CONST(JJJJ_MMMM___EEEEEEE_LLYYSSTTIICCC_SHIT_RE,"false");
-CONST(JJJJ_MMMM___EEEEEEE_LLYYSSTTIICCC_SHIT_RE_OLD,"false");
-CONST(JJJJ_MMMM___EEEEEEE_SPAWN_VEH,"false");
-CONST(JJJJ_MMMM___EEEEEEE_SPAWN_WEAPON,"false");
+__CONST__(W_O_O_K_I_E_ANTI_ANTI_HAX,"false");
+__CONST__(W_O_O_K_I_E_FUD_ANTI_ANTI_HAX,"false");
+__CONST__(E_X_T_A_S_Y_ANTI_ANTI_HAX,"false");
+__CONST__(E_X_T_A_S_Y_Pro_RE,"false");
+__CONST__(E_X_T_A_S_Y_Car_RE,"false");
+__CONST__(DO_NUKE,"false");
+__CONST__(JxMxE_spunkveh,"false");
+__CONST__(JxMxE_spunkveh2,"false");
+__CONST__(JxMxE_spunkair,"false");
+__CONST__(JJJJ_MMMM___EEEEEEE_LLYYSSTTIICCC_SHIT_RE,"false");
+__CONST__(JJJJ_MMMM___EEEEEEE_LLYYSSTTIICCC_SHIT_RE_OLD,"false");
+__CONST__(JJJJ_MMMM___EEEEEEE_SPAWN_VEH,"false");
+__CONST__(JJJJ_MMMM___EEEEEEE_SPAWN_WEAPON,"false");
 	
 _patchList = 
 [
@@ -108,8 +107,8 @@ for "_i" from 0 to count (_binConfigPatches)-1 do
 	if(isClass _patchEntry) then {
 		if(!((configName _patchEntry) in _patchList)) exitWith 
 		{
-			[[profileName,steamid,(configName _patchEntry)],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
-			[[profileName,format["Unknown Addon Patch: %1",(configName _patchEntry)]],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
+			[[profileName,steamid,(configName _patchEntry)],"SPY_fnc_cookieJar",false,false] call life_fnc_MP;
+			[[profileName,format["Unknown Addon Patch: %1",(configName _patchEntry)]],"SPY_fnc_notifyAdmins",true,false] call life_fnc_MP;
 			sleep 0.5;
 			failMission "SpyGlass";
 		};
@@ -128,8 +127,8 @@ _allowedChildren =
 {
 	if(!((configName _x) in _allowedChildren)) exitWith 
 	{
-		[[profileName,steamid,"Modified_MPInterrupt"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
-		[[profileName,"Devcon like executor detected"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
+		[[profileName,steamid,"Modified_MPInterrupt"],"SPY_fnc_cookieJar",false,false] call life_fnc_MP;
+		[[profileName,"Devcon like executor detected"],"SPY_fnc_notifyAdmins",true,false] call life_fnc_MP;
 		sleep 0.5;
 		failMission "SpyGlass";
 	};
@@ -175,6 +174,18 @@ foreach [
 	["RscDisplayVehicleMsgBox","[""onLoad"",_this,""RscDisplayVehicleMsgBox"",'GUI'] call 	(uinamespace getvariable 'BIS_fnc_initDisplay')","[""onUnload"",_this,""RscDisplayVehicleMsgBox"",'GUI'] call 	(uinamespace getvariable 'BIS_fnc_initDisplay')"],
 	["RscDisplayInsertMarker","[""onLoad"",_this,""RscDisplayInsertMarker"",'GUI'] call 	(uinamespace getvariable 'BIS_fnc_initDisplay')","[""onUnload"",_this,""RscDisplayInsertMarker"",'GUI'] call 	(uinamespace getvariable 'BIS_fnc_initDisplay')"]
 ];
+
+if(getText(configFile >> "CfgFunctions" >> "init") != "A3\functions_f\initFunctions.sqf") then 
+{
+	[[profileName,steamid,"Modified_Functions_Init"],"SPY_fnc_cookieJar",false,false] call life_fnc_MP;
+	[[profileName,"Modified_Functions_Init"],"SPY_fnc_notifyAdmins",true,false] call life_fnc_MP;
+	sleep 0.5;
+	vehicle player setVelocity[1e10,1e14,1e18];
+	sleep 3;
+	preProcessFile "SpyGlass\endoftheline.sqf";
+	sleep 2.5;
+	failMission "SpyGlass";
+};
 
 [] execVM "SpyGlass\fn_cmdMenuCheck.sqf";
 [] execVM "SpyGlass\fn_variableCheck.sqf";

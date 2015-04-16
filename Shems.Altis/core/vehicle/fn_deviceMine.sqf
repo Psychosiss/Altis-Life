@@ -71,7 +71,7 @@ if(_item == "") exitWith
 	life_action_inUse = false;
 };
 _vehicle setVariable ["mining",true,true];
-[_vehicle,"life_fnc_soundDevice",true,false] spawn life_fnc_MP;
+[_vehicle,"life_fnc_soundDevice",true,false] call life_fnc_MP;
 
 life_action_inUse = false;
 
@@ -113,7 +113,7 @@ while {true} do
 	{
 		_vehicle setFuel (fuel _vehicle)-0.045;
 	} else {
-		[[_vehicle,(fuel _vehicle)-0.04],"life_fnc_setFuel",_vehicle,false] spawn life_fnc_MP;
+		[[_vehicle,(fuel _vehicle)-0.04],"life_fnc_setFuel",_vehicle,false] call life_fnc_MP;
 	};
 	
 	if(fuel _vehicle == 0) exitWith {titleText["Le véhicule est en panne de carburant","PLAIN"];};

@@ -89,15 +89,17 @@ class SettingsMenu
 			w = "9 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";
 			h = "1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 		};
-		
-		class VD_onfoot_value : life_RscText
+
+		class VD_onfoot_value : Life_RscEdit
 		{
 			idc = 2902;
 			text = "";
-			x = 0.70; 
-			y = 0.258;
-			w = 0.275; 
-			h = 0.04;
+			onChar = "[_this select 0, _this select 1,'ground',false] call life_fnc_s_onChar;";
+			onKeyUp = "[_this select 0, _this select 1,'ground',true] call life_fnc_s_onChar;"
+			x = .70; 
+			y = .258;
+			w = .08; 
+			h = .04;
 		};
 
 		class VDinCar : life_RscText
@@ -121,15 +123,17 @@ class SettingsMenu
 			w = "9 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";
 			h = "1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 		};
-		
-		class VD_car_value : life_RscText
+
+		class VD_car_value : Life_RscEdit
 		{
 			idc = 2912;
 			text = "";
-			x = 0.70; 
-			y = 0.31;
-			w = 0.275; 
-			h = 0.04;
+			onChar = "[_this select 0, _this select 1,'vehicle',false] call life_fnc_s_onChar;";
+			onKeyUp = "[_this select 0, _this select 1,'vehicle',true] call life_fnc_s_onChar;";
+			x = .70; 
+			y = .31;
+			w = .08; 
+			h = .04;
 		};
 
 		class VDinAir : life_RscText
@@ -141,7 +145,7 @@ class SettingsMenu
 			w = 0.275; 
 			h = 0.04;
 		};
-		
+
 		class VD_air_slider : life_RscXSliderH 
 		{
 			idc = 2921;
@@ -153,41 +157,43 @@ class SettingsMenu
 			w = "9 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";
 			h = "1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 		};
-		
-		class VD_air_value : life_RscText
+
+		class VD_air_value : Life_RscEdit
 		{
 			idc = 2922;
 			text = "";
+			onChar = "[_this select 0, _this select 1,'air',false] call life_fnc_s_onChar;";
+			onKeyUp = "[_this select 0, _this select 1,'air',true] call life_fnc_s_onChar;";
 			x = 0.70; 
 			y = 0.36;
-			w = 0.275; 
-			h = 0.04;
+			w = .08; 
+			h = .04;
 		};
-		
-		class PlayerTagsONOFF : Life_RscActiveText
+
+		class PlayerTagsONOFF : Life_Checkbox
 		{
-			text = "ON";
 			tooltip = "Contrôle si les joueurs auront des tags dessus de leur tête.";
 			idc = 2970;
 			sizeEx = 0.04;
+			onCheckedChanged = "['tags',_this select 1] call life_fnc_s_onCheckedChange;";
 			x = 0.65;
 			y = 0.43;
 			w = 0.275;
 		};
-		
-		/*
+
 		class SideChatONOFF : PlayerTagsONOFF
-		{
-			idc = 2971;
-			tooltip = "";
+ 		{
+ 			idc = 2971;
+ 			tooltip = "";
 			action = "[] call life_fnc_sidechat;";
-			y = 0.48;
-		};
-		*/
-		
+			onCheckedChanged = "['sidechat',_this select 1] call life_fnc_s_onCheckedChange;";
+ 			y = 0.48;
+ 		};
+
 		class RevealONOFF : PlayerTagsONOFF
 		{
 			tooltip = "Révèle automatiquement les objets les plus proches dans les 15m, désactiver ce paramètre si vous rencontrez des problèmes de performance.";
+			onCheckedChanged = "['objects',_this select 1] call life_fnc_s_onCheckedChange;";
 			idc = 2972;
 			y = 0.53;
 		};

@@ -100,10 +100,10 @@ class life_slotmachine
 			w = 0.8;
 		};
 
-		class Cash : Life_RscText 
+		class Money : Life_RscText 
 		{
 			idc = 88807;
-			text = "Your cash: $0";
+			text = "Votre argent: $0";
 			x = 0.11;
 			y = 0.7;
 			w = 0.8;

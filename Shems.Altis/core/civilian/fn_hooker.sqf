@@ -32,7 +32,7 @@ switch (_mode) do
 		sleep 1;
 		_playercosts = hookerPrice;
 		_playerSexIll = sexualIll;						
-		if(life_cash < hookerPrice) exitWith 
+		if(life_money < hookerPrice) exitWith 
 		{
 			hint "Pas d'argent? Tu n'auras pas de plaisir avec moi!";
 		};
@@ -42,7 +42,7 @@ switch (_mode) do
 			hint "Les maladies vénériennes? Aller chez le médecin avant de venir ici!";
 		};
 		hint format["J'aime le doux \n \n Vous devez payer% 1 €. \n\n Et vous devriez passé chez le médecin",_playercosts];
-		life_cash = life_cash - _playercosts;
+		life_money = life_money - _playercosts;
 		life_sex_ill = life_sex_ill + _playerSexIll;
 		player say3D "pute";
 		sleep 10;

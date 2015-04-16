@@ -8,14 +8,14 @@ _unit = owner _unit;
 
 if((_vault getVariable["fed_rob_ip",false])) exitWith
 {
-	[[1,"Ce coffre à déjà été pillé par quelqu'un d'autre"],"life_fnc_broadcast",_unit,false] spawn life_fnc_MP;
+	[[1,"Ce coffre à déjà été pillé par quelqu'un d'autre"],"life_fnc_broadcast",_unit,false] call life_fnc_MP;
 };
 
 if((_vault getVariable["fed_locked",false])) exitWith
 {
-	[[1,"Ce coffre a déjà été pillé récemment"],"life_fnc_broadcast",_unit,false] spawn life_fnc_MP;
+	[[1,"Ce coffre a déjà été pillé récemment"],"life_fnc_broadcast",_unit,false] call life_fnc_MP;
 };
 
 if(_unit < 1) exitWith {};
 _vault setVariable["fed_rob_ip",true,true];
-[[_vault,life_federal_funds],"life_fnc_robReserve",_unit,false] spawn life_fnc_MP;
+[[_vault,life_federal_funds],"life_fnc_robReserve",_unit,false] call life_fnc_MP;

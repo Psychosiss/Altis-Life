@@ -13,7 +13,7 @@ if(!([_val] call fnc_isnumber)) exitWith {hint "Vous devez entrer des chiffres."
 if(parseNumber(_val) <= 0) exitWith {hint "You need to enter an actual amount you want to give.";ctrlShow[2002,true];};
 if(isNil "_unit") exitWith {ctrlShow[2001,true]; hint "The selected player is not within range";};
 if(!([false,_item,(parseNumber _val)] call life_fnc_handleInv)) exitWith {hint "Couldn't give that much of that item, maybe you don't have that amount?";ctrlShow[2002,true];};
-[[_unit,_val,_item,player],"life_fnc_receiveItem",_unit,false] spawn life_fnc_MP;
+[[_unit,_val,_item,player],"life_fnc_receiveItem",_unit,false] call life_fnc_MP;
 _type = [_item,0] call life_fnc_varHandle;
 _type = [_type] call life_fnc_varToStr;
 hint format["You gave %1 %2 %3",_unit getVariable["realname",name _unit],_val,_type];

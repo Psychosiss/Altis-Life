@@ -1,12 +1,3 @@
-life_fnc_sidechat =
-compileFinal "
-	if(life_sidechat) then {life_sidechat = false;} else {life_sidechat = true;};
-	[[player,life_sidechat,playerSide],""TON_fnc_managesc"",false,false] spawn life_fnc_MP;
-	[] call life_fnc_settingsMenu;
-";
-
-publicVariable "life_fnc_sidechat";
-
 fnc_index =
 compileFinal "
 	private[""_item"",""_stack""];
@@ -22,29 +13,17 @@ compileFinal "
 	_return;
 ";
 
+publicVariable "fnc_index";
+
 fnc_player_query =
 compileFinal "
 	private[""_ret""];
 	_ret = _this select 0;
 	if(isNull _ret) exitWith {};
 	if(isNil ""_ret"") exitWith {};
-	[[life_atmcash,life_cash,owner player,player],""life_fnc_admininfo"",_ret,false] spawn life_fnc_MP;
+	[[life_atmmoney,life_money,owner player,player],""life_fnc_admininfo"",_ret,false] call life_fnc_MP;
 ";
 publicVariable "fnc_player_query";
-publicVariable "fnc_index";
-
-clientWireTransfer =
-compileFinal "
-	private[""_unit"",""_val"",""_from""];
-	_val = _this select 0;
-	_from = _this select 1;
-	if(!([str(_val)] call fnc_isnumber)) exitWith {};
-	if(_from == """") exitWith {};
-	life_atmcash = life_atmcash + _val;
-	hint format[""%1 vous à transféré %2 €."",_from,[_val] call life_fnc_numberText];
-	
-";
-publicVariable "clientWireTransfer";
 
 fnc_isnumber =
 compileFinal "
@@ -94,7 +73,7 @@ compileFinal "
 		_name = getText(configFile >> ""CfgVehicles"" >> (typeOf _vehicle) >> ""displayName"");
 		hint format[""%1 has gave you keys for a %2"",_giver,_name];
 		life_vehicles pushBack _vehicle;
-		[[getPlayerUID player,playerSide,_vehicle,1],""TON_fnc_keyManagement"",false,false] spawn life_fnc_MP;
+		[[getPlayerUID player,playerSide,_vehicle,1],""TON_fnc_keyManagement"",false,false] call life_fnc_MP;
 	};
 ";
 
@@ -110,7 +89,7 @@ compileFinal "
 	{
 		player setRank ""COLONEL"";
 		_group selectLeader _unit;
-		hint ""You have been made the new leader."";
+		hint ""Vous ête le nouveau leadeur du gang."";
 	};
 ";
 
@@ -124,7 +103,7 @@ private[""_msg"",""_to""];
 	_to = ""EMS Units"";
 	if(_msg == """") exitWith {hint ""Vous devez écrire un message à envoyer!"";ctrlShow[3022,true];};
 		
-	[[_msg,name player,5],""clientMessage"",independent,false] spawn life_fnc_MP;
+	[[_msg,name player,5],""clientMessage"",independent,false] call life_fnc_MP;
 	[] call life_fnc_cellphone;
 	hint format[""Vous avez envoyé un message au médecin."",_to,_msg];
 	ctrlShow[3022,true];
@@ -141,7 +120,7 @@ compileFinal "
 	if(isNil ""_to"") exitWith {ctrlShow[3015,true];};
 	if(_msg == """") exitWith {hint ""Vous devez écrire un message à envoyer!"";ctrlShow[3015,true];};
 	
-	[[_msg,name player,0],""clientMessage"",_to,false] spawn life_fnc_MP;
+	[[_msg,name player,0],""clientMessage"",_to,false] call life_fnc_MP;
 	[] call life_fnc_cellphone;
 	hint format[""Vous envoyez à %1 ce message: %2"",name _to,_msg];
 	ctrlShow[3015,true];
@@ -155,7 +134,7 @@ compileFinal "
 	_to = ""The Police"";
 	if(_msg == """") exitWith {hint ""Vous devez écrire un message à envoyer!"";ctrlShow[3016,true];};
 		
-	[[_msg,name player,1],""clientMessage"",true,false] spawn life_fnc_MP;
+	[[_msg,name player,1],""clientMessage"",true,false] call life_fnc_MP;
 	[] call life_fnc_cellphone;
 	hint format[""Vous envoyez à %1 ce message: %2"",_to,_msg];
 	ctrlShow[3016,true];
@@ -168,7 +147,7 @@ compileFinal "
 	_msg = ctrlText 3003;
 	_to = ""The Admins"";
 	if(_msg == """") exitWith {hint ""Vous devez écrire un message à envoyer!"";ctrlShow[3017,true];};
-	[[_msg,name player,2],""clientMessage"",true,false] spawn life_fnc_MP;
+	[[_msg,name player,2],""clientMessage"",true,false] call life_fnc_MP;
 	[] call life_fnc_cellphone;
 	hint format[""Vous envoyez à %1 ce message: %2"",_to,_msg];
 	ctrlShow[3017,true];
@@ -183,7 +162,7 @@ compileFinal "
 	_to = call compile format[""%1"",(lbData[3004,(lbCurSel 3004)])];
 	if(isNull _to) exitWith {};
 	if(_msg == """") exitWith {hint ""Vous devez écrire un message à envoyer!"";};
-	[[_msg,name player,3],""clientMessage"",_to,false] spawn life_fnc_MP;
+	[[_msg,name player,3],""clientMessage"",_to,false] call life_fnc_MP;
 	[] call life_fnc_cellphone;
 	hint format[""Message Admin Envoyé à: %1 - Message: %2"",name _to,_msg];
 ";
@@ -195,7 +174,7 @@ compileFinal "
 	private[""_msg"",""_from""];
 	_msg = ctrlText 3003;
 	if(_msg == """") exitWith {hint ""Vous devez écrire un message à envoyer!"";};
-	[[_msg,name player,4],""clientMessage"",true,false] spawn life_fnc_MP;
+	[[_msg,name player,4],""clientMessage"",true,false] call life_fnc_MP;
 	[] call life_fnc_cellphone;
 	hint format[""Message Admin à tous: %1"",_msg];
 ";

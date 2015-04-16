@@ -7,6 +7,7 @@ if(isNull _ui) then
 {
 	[] call life_fnc_hudSetup;
 };
+
 _food = _ui displayCtrl 23500;
 _water = _ui displayCtrl 23510;
 _health = _ui displayCtrl 23515;

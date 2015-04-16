@@ -52,4 +52,4 @@ player addRating 9999999;
 
 [] call life_fnc_handlerHelp;
 
-[[getPlayerUID player],"TON_fnc_loadBounties",false,false] spawn life_fnc_MP;
+[[getPlayerUID player],"TON_fnc_loadBounties",false,false] call life_fnc_MP;

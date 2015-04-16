@@ -14,8 +14,8 @@ _queryResult = [_query,2] call DB_fnc_asyncCall;
 
 if(count _queryResult != 0) exitWith 
 {
-	[[1,"There is already a gang created with that name please pick another name."],"life_fnc_broadcast",_ownerID,false] spawn life_fnc_MP;
-	[["life_action_gangInUse",nil,missionNamespace],"life_fnc_netSetVar",_ownerID,false] spawn life_fnc_MP;
+	[[1,"There is already a gang created with that name please pick another name."],"life_fnc_broadcast",_ownerID,false] call life_fnc_MP;
+	[["life_action_gangInUse",nil,missionNamespace],"life_fnc_netSetVar",_ownerID,false] call life_fnc_MP;
 };
 
 _query = format["SELECT id FROM gangs WHERE members LIKE '%2%1%2' AND active='1'",_uid,"%"];
@@ -24,8 +24,8 @@ _queryResult = [_query,2] call DB_fnc_asyncCall;
 
 if(count _queryResult != 0) exitWith 
 {
-	[[1,"Vous êtes déjà dans un gang."],"life_fnc_broadcast",_ownerID,false] spawn life_fnc_MP;
-	[["life_action_gangInUse",nil,missionNamespace],"life_fnc_netSetVar",_ownerID,false] spawn life_fnc_MP;
+	[[1,"Vous êtes déjà dans un gang."],"life_fnc_broadcast",_ownerID,false] call life_fnc_MP;
+	[["life_action_gangInUse",nil,missionNamespace],"life_fnc_netSetVar",_ownerID,false] call life_fnc_MP;
 };
 
 _query = format["SELECT id FROM gangs WHERE members LIKE '%2%1%2' AND active='1'",_uid,"%"];
@@ -49,7 +49,7 @@ _group setVariable["gang_bank",0,true];
 _group setVariable["gang_maxMembers",8,true];
 _group setVariable["gang_members",[_uid],true];
 
-[[_group],"life_fnc_gangCreated",_ownerID,false] spawn life_fnc_MP;
+[[_group],"life_fnc_gangCreated",_ownerID,false] call life_fnc_MP;
 sleep 0.35;
 _query = format["SELECT id FROM gangs WHERE owner='%1' AND active='1'",_uid];
 waitUntil{!DB_Async_Active};

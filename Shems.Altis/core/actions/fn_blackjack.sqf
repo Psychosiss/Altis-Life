@@ -2,8 +2,8 @@ _store = blackjack;
 _denied1 = false;
 _price = 2500;
 
-if(life_cash < _price) exitWith {hint "Vous n'avez pas assez d'argent. Avec moi, un tour coûte 2500 €";};
-life_cash = life_cash - _price;
+if(life_money < _price) exitWith {hint "Vous n'avez pas assez d'argent. Avec moi, un tour coûte 2500 €";};
+life_money = life_money - _price;
 removeAllActions blackjack;
 hint "Vous êtes dans le train!";
 _number = ceil(random 10);
@@ -21,7 +21,7 @@ if (_number == 9) then {robberyreward = 0; hint "11! L comme Loooooser!";};
 if (_number == 10) then {robberyreward = 10000; hint "21!!! Jackpot!!";};
 life_action_inUse = true;
 sleep 2;
-_robberycash = robberyreward;
+_robberymoney = robberyreward;
 _timer = time + (1 * 5);	
 _toFar = false;
 _vault = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
@@ -61,8 +61,8 @@ switch(true) do
 
 	case ((round(_timer - time)) < 1):
 	{
-		hint format["Vous avez gagné %1 €.", _robberycash];
-		life_cash = life_cash + _robberycash;
+		hint format["Vous avez gagné %1 €.", _robberymoney];
+		life_money = life_money + _robberymoney;
 		_denied1 = false;
 		life_action_inUse = false;
 	};	

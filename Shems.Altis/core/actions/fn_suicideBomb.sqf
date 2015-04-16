@@ -3,7 +3,7 @@ if(vest player != "V_HarnessOGL_gry") exitWith {};
 
 life_isSuiciding = true;
 
-[[0,format["Quelqu'un explose dans 10 secondes"]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+[[0,format["Quelqu'un explose dans 10 secondes"]],"life_fnc_broadcast",true,false] call life_fnc_MP;
 sleep 7;
 
 [player, "allahuakbar",50] call life_fnc_globalSound;
@@ -19,5 +19,3 @@ _boom setVelocity [100,0,0];
 if(alive player) then {player setDamage 1;};
 
 life_isSuicide = false;
-
-//[[0,format["%1 blew their load.",name player]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;

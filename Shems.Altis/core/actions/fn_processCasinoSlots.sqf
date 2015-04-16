@@ -23,7 +23,7 @@ switch (_type) do
 };
 _winAmount = 0;
 
-if(life_cash >= _cost) then
+if(life_money >= _cost) then
 {
 	disableSerialization;
 	_source say3D "caching";
@@ -68,17 +68,17 @@ if(life_cash >= _cost) then
 		5 cutText ["","PLAIN"]; 
 		life_is_processing = false;
 	};
-	life_cash = life_cash - _cost;
+	life_money = life_money - _cost;
 	_winAmount = [_idxA,_idxB,_idxC,_type] call life_fnc_slotMachineRewards;
 	if(_winAmount > 0) then
 	{
-		life_cash = life_cash + _winAmount;
+		life_money = life_money + _winAmount;
 		if(_winAmount >= 100000) then
 		{
 			hint format["Vous avez gagné le jackpot de %1 €",_winAmount]; 
 			_source say3D "jackpotSound";
-			[[_source],"life_fnc_slotJackpotSound",nil,true] spawn life_fnc_MP;
-			[["jackpotSound"],"life_fnc_casinoSounds",nil,true] spawn life_fnc_MP;
+			[[_source],"life_fnc_slotJackpotSound",nil,true] call life_fnc_MP;
+			[["jackpotSound"],"life_fnc_casinoSounds",nil,true] call life_fnc_MP;
 			_cP = 0.01;
 			while{true} do
 			{
@@ -100,7 +100,7 @@ if(life_cash >= _cost) then
 	
 	life_is_processing = false;
 } else {
-	if(life_cash < _cost) exitWith {hint (format["Vous devez avoir %1 € pour pouvoir jouez sur cette machine.",_cost]);
+	if(life_money < _cost) exitWith {hint (format["Vous devez avoir %1 € pour pouvoir jouez sur cette machine.",_cost]);
 	life_is_processing = false;};
 };
 

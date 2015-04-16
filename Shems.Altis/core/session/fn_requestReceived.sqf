@@ -19,14 +19,14 @@ if((getPlayerUID player) != _this select 0) exitWith {[] call SOCK_fnc_dataQuery
 
 if(!isServer && (!isNil "life_adminlevel" OR !isNil "life_cop_level" OR !isNil "life_donator" OR !isNil "life_med_level")) exitWith 
 {
-	[[profileName,getPlayerUID player,"VariablesAlreadySet"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
-	[[profileName,format["Variables set before client initialization...\nlife_adminlevel: %1\nlife_cop_level: %2\nlife_donator: %3\nlife_med_level: %4"",life_adminlevel,life_cop_level,life_donator,life_med_level]],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
+	[[profileName,getPlayerUID player,"VariablesAlreadySet"],"SPY_fnc_cookieJar",false,false] call life_fnc_MP;
+	[[profileName,format["Variables set before client initialization...\nlife_adminlevel: %1\nlife_cop_level: %2\nlife_donator: %3\nlife_med_level: %4"",life_adminlevel,life_cop_level,life_donator,life_med_level]],"SPY_fnc_notifyAdmins",true,false] call life_fnc_MP;
 	sleep 0.9;
 	["SpyGlass",false,false] execVM "\a3\functions_f\Misc\fn_endMission.sqf";
 };
 
-life_cash = parseNumber (_this select 2);
-life_atmcash = parseNumber (_this select 3);
+life_money = parseNumber (_this select 2);
+life_atmmoney = parseNumber (_this select 3);
 __CONST__(life_adminlevel,parseNumber(_this select 4));
 __CONST__(life_donator,parseNumber(_this select 5));
 

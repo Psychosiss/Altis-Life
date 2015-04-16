@@ -9,7 +9,7 @@ diag_log format ["%1",_med_position];
 _cop_position = getPos player;
 diag_log format ["%1",_cop_position];
 
-_packet = [getPlayerUID player,(profileName),playerSide,life_cash,life_atmcash];
+_packet = [getPlayerUID player,(profileName),playerSide,life_money,life_atmmoney];
 _array = [];
 _flag = switch(playerSide) do {case west: {"cop"};case civilian: {"civ"};case independent: {"med"};};
 {
@@ -42,4 +42,4 @@ switch (playerSide) do
 	};
 };
 
-[_packet,"DB_fnc_updateRequest",false,false] spawn life_fnc_MP;
+[_packet,"DB_fnc_updateRequest",false,false] call life_fnc_MP;

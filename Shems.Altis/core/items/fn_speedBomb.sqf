@@ -21,9 +21,9 @@ titleText["Vous avez joint la bombe de vitesse a ce véhicule.","PLAIN"];
 {
 	_veh = _this select 0;
 	waitUntil {(speed _veh) > 70};
-	[[_veh, "bombarm",20],"life_fnc_playSound",true,false] spawn BIS_fnc_MP;
+	[[_veh, "bombarm",20],"life_fnc_playSound",true,false] call BIS_fnc_MP;
 	hint "La bombe que vous avez planté sur un véhicule vient d'etre activer!";
-	{ [[2,"Une bombe de vitesse a été activé sur ce véhicule et si vous descender en bas de 50km\H la bombe explose!"],"life_fnc_broadcast",_x,false] spawn BIS_fnc_MP; } foreach (crew _veh);
+	{ [[2,"Une bombe de vitesse a été activé sur ce véhicule et si vous descender en bas de 50km\H la bombe explose!"],"life_fnc_broadcast",_x,false] call BIS_fnc_MP; } foreach (crew _veh);
 	waitUntil {(speed _veh) < 50};
 	serv_killed = [player,"1090"];
 	publicVariableServer "serv_killed";

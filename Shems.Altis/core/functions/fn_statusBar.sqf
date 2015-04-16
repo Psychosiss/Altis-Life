@@ -12,7 +12,6 @@ _rscLayer cutRsc["StatusBar","PLAIN"];
 	{
 		sleep 1;
 		_counter = _counter - 1;
-		_statusText = "github.com/Shems-SH";
-		((uiNamespace getVariable "StatusBar")displayCtrl 1000) ctrlSetText format["%3 | FPS: %1 | Humains actifs: %2  ", round diag_fps, count playableUnits, _statusText, _counter];
+		((uiNamespace getVariable "StatusBar")displayCtrl 1000) ctrlSetText format["github.com/Shems-SH | FPS: %1 | Humains actifs: %2  ", round diag_fps, count playableUnits, _counter];
 	}; 
 };

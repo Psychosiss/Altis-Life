@@ -5,4 +5,4 @@ _cop = [_this,2,ObjNull,[ObjNull]] call BIS_fnc_param;
 if(isNull _unit OR {_unit != life_ticket_unit}) exitWith {};
 if(isNull _cop OR {_cop != player}) exitWith {};
 
-life_atmcash = life_atmcash + _value;
+life_atmmoney = life_atmmoney + _value;

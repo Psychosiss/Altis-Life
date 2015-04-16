@@ -1,4 +1,4 @@
-private["_obj"];
+private "_obj";
 _obj = cursorTarget;
 if(isNull _obj) exitWith {};
 if(alive _obj) exitWith {};

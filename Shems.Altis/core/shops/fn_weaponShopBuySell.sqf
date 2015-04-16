@@ -19,7 +19,7 @@ if((_itemInfo select 6) != "CfgVehicles") then
 if(_bad != "") exitWith {hint _bad};
 if((uiNamespace getVariable["Weapon_Shop_Filter",0]) == 1) then
 {
-	life_cash = life_cash + _price;
+	life_money = life_money + _price;
 	[_item,false] call life_fnc_handleItem;
 	hint parseText format["You sold a %1 for <t color='#8cff9b'>$%2</t>",_itemInfo select 1,[_price] call life_fnc_numberText];
 	[nil,(uiNamespace getVariable["Weapon_Shop_Filter",0])] call life_fnc_weaponShopFilter;
@@ -34,7 +34,7 @@ if((uiNamespace getVariable["Weapon_Shop_Filter",0]) == 1) then
 			[
 				"The gang has enough funds to pay for this, would you like to pay with the gangs funds or your own?<br/><br/>Gang Funds: <t color='#8cff9b'>$%1</t><br/>Your Cash: <t color='#8cff9b'>$%2</t>",
 				[(grpPlayer getVariable "gang_bank")] call life_fnc_numberText,
-				[life_cash] call life_fnc_numberText
+				[life_money] call life_fnc_numberText
 			],
 			"Payer avec votre argent ou celui du gang",
 			"Argent du gang",
@@ -47,17 +47,17 @@ if((uiNamespace getVariable["Weapon_Shop_Filter",0]) == 1) then
 			_funds = _funds - _price;
 			grpPlayer setVariable["gang_bank",_funds,true];
 			[_item,true] spawn life_fnc_handleItem;
-			[[1,grpPlayer],"TON_fnc_updateGang",false,false] spawn life_fnc_MP;
+			[[1,grpPlayer],"TON_fnc_updateGang",false,false] call life_fnc_MP;
 		} else {
-			if(_price > life_cash) exitWith {hint "Vous n'avez pas assez d'argent sur vous!"};
+			if(_price > life_money) exitWith {hint "Vous n'avez pas assez d'argent sur vous!"};
 			hint parseText format["Vous avez acheté %1 pour <t color='#8cff9b'>%2 €</t>",_itemInfo select 1,[_price] call life_fnc_numberText];
-			__SUB__(life_cash,_price);
+			__SUB__(life_money,_price);
 			[_item,true] spawn life_fnc_handleItem;
 		};
 	} else {
-		if(_price > life_cash) exitWith {hint "Vous n'avez pas assez d'argent sur vous!"};
+		if(_price > life_money) exitWith {hint "Vous n'avez pas assez d'argent sur vous!"};
 		hint parseText format["Vous avez acheté %1 pour <t color='#8cff9b'>%2 €</t>",_itemInfo select 1,[_price] call life_fnc_numberText];
-		life_cash = life_cash - _price;
+		life_money = life_money - _price;
 		[_item,true] spawn life_fnc_handleItem;
 	};
 };

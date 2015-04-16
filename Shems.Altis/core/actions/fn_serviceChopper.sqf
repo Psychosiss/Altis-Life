@@ -3,8 +3,8 @@ private["_search","_ui","_progress","_cP","_pgText"];
 if(life_action_inUse) exitWith {hint "Attendez que l'action se termine."};
 _search = nearestObjects[getPos air_sp, ["Air"],5];
 if(count _search == 0) exitWith {hint "Aucun hélicoptère sur l'héliport."};
-if(life_cash < 1000) exitWith {hint "Vous devez avoir 1000 € pour l'entretion de votre hélicoptère."};
-life_cash = life_cash - 1000;
+if(life_money < 1000) exitWith {hint "Vous devez avoir 1000 € pour l'entretion de votre hélicoptère."};
+life_money = life_money - 1000;
 life_action_inUse = true;
 5 cutRsc ["life_progress","PLAIN"];
 _ui = uiNameSpace getVariable "life_progress";
@@ -26,7 +26,7 @@ while {true} do
 if(!alive (_search select 0) || (_search select 0) distance air_sp > 10) exitWith {life_action_inUse = false; hint "The vehicle is no longer alive or on the helipad!"};
 if(!local (_search select 0)) then
 {
-	[[(_search select 0),1],"life_fnc_setFuel",(_search select 0),false] spawn life_fnc_MP;
+	[[(_search select 0),1],"life_fnc_setFuel",(_search select 0),false] call life_fnc_MP;
 } else {
 	(_search select 0) setFuel 1;
 };

@@ -16,7 +16,7 @@ _action =
 
 if(_action) then 
 {
-	life_cash = life_cash + _value;
+	life_money = life_money + _value;
 	hint format ["Vous avez ajouté %1 € à votre compte.",[_value] call life_fnc_numberText];
 	closeDialog 0;
 } else {

@@ -9,7 +9,7 @@ class Life_vehicle_repaint
 	{
 		class Life_RscTitleBackground:Life_RscText 
 		{
-			colorBackground[] = {0.4, 0, 0, 0.7};
+			colorBackground[] = {0.4,0,0,0.7};
 			idc = -1;
 			x = 0.1;
 			y = 0.2;
@@ -19,7 +19,7 @@ class Life_vehicle_repaint
 
 		class MainBackground:Life_RscText 
 		{
-			colorBackground[] = {0, 0, 0, 0.7};
+			colorBackground[] = {0,0,0,0.7};
 			idc = -1;
 			x = 0.1;
 			y = 0.2 + (11 / 250);
@@ -34,7 +34,7 @@ class Life_vehicle_repaint
 		{
 			colorBackground[] = {0,0,0,0};
 			idc = 2301;
-			text = "Repaint vehicle";
+			text = "Peinture de véhicule";
 			x = 0.1;
 			y = 0.2;
 			w = 0.8;
@@ -47,7 +47,7 @@ class Life_vehicle_repaint
 			text = "";
 			sizeEx = 0.035;
 			colorBackground[] = {0,0,0,0};
-			onLBSelChanged = "[_this] call life_fnc_Repaintcolor";
+			onLBSelChanged = "[_this] call life_fnc_repaintColor";
 			x = 0.12;
 			y = 0.26;
 			w = 0.76;

@@ -19,14 +19,14 @@ if(_price == -1) then
 } else {
 	_price = (__GETC__(life_insure_prices) select _price) select 1;
 };
-if(life_atmcash < _price) exitWith 
+if(life_atmmoney < _price) exitWith 
 {
 	hint format["Vous n'avez pas %1 € dans votre compte bancaire pour payé les frais.",[_price] call life_fnc_numberText];
 };
 
-[[_vid,_pid,_unit,_price],"TON_fnc_insureCar",false,false] spawn life_fnc_MP;
+[[_vid,_pid,_unit,_price],"TON_fnc_insureCar",false,false] call life_fnc_MP;
 
 hint "Votre véhicule est désormais assuré";
 
-life_atmcash = life_atmcash - _price;
+life_atmmoney = life_atmmoney - _price;
 closeDialog 0;

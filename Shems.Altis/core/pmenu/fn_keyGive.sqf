@@ -22,4 +22,4 @@ if(_index == -1) then
 };
 
 hint format["Vous avez donné les clés à %1 de votre %2",_unit getVariable["realname",name _unit],typeOf _vehicle];
-[[_vehicle,_unit,profileName], "clientGetKey",_unit,false] spawn life_fnc_MP;
+[[_vehicle,_unit,profileName], "clientGetKey",_unit,false] call life_fnc_MP;

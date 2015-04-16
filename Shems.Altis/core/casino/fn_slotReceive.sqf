@@ -12,11 +12,11 @@ life_slot_update =
 	_jackpot = _dialog displayCtrl 88804;
 	_bettext = _dialog displayCtrl 88805;
 	_last = _dialog displayCtrl 88806;
-	_cash = _dialog displayCtrl 88807;
+	_money = _dialog displayCtrl 88807;
 	_jackpot ctrlSetText format ["Jackpot Actuel: %1 €", [_pot] call life_fnc_formatMoney];
 	_bettext ctrlSetText format ["Votre mise: %1 €", [_bet] call life_fnc_formatMoney];
 	_last ctrlSetText format ["Dernière victoire: %1 €", [_won] call life_fnc_formatMoney];
-	_cash ctrlSetText format ["Votre argent: %1 €", [life_cash] call life_fnc_formatMoney];
+	_money ctrlSetText format ["Votre argent: %1 €", [life_money] call life_fnc_formatMoney];
 };
 
 _bet = _this select 0;
@@ -29,7 +29,7 @@ _jackpot = _this select 5;
 [(_jackpot - _won - _bet), _bet] call life_slot_update;
 
 life_no_injection = true;
-life_cash = life_cash - _bet;
+life_money = life_money - _bet;
 
 _bar = 0;
 _seven = 1;
@@ -103,7 +103,7 @@ if(_won > 0) then
 {
 	player say3D "slot_payoff";
 	life_no_injection = true;
-	life_cash = life_cash + _won;
+	life_money = life_money + _won;
 };
 
 player setVariable ["slotmachine_lastwon", _won];

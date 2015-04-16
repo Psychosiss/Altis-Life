@@ -20,8 +20,8 @@ if (_cops < 4) exitWith
 		hint format ["Braquage en cours...!S'il vous plaît patientez %1 secondes.",_timer];
 		_shop switchMove "AmovPercMstpSsurWnonDnon";
 		_shop removeAction _action;
-		[[2,"€€€ Quelqu'un est en train de piller le casino €€€"],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
-		[[getPlayerUID _robber,name _robber,"489"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
+		[[2,"€€€ Quelqu'un est en train de piller le casino €€€"],"life_fnc_broadcast",true,false] call life_fnc_MP;
+		[[getPlayerUID _robber,name _robber,"489"],"life_fnc_wantedAdd",false,false] call life_fnc_MP;
 		while {true} do
 		{
 			hintSilent format ["%1 seconde(s) restante(s). Tenez vous à proximité de la zone !",_timer];
@@ -45,7 +45,7 @@ if (_cops < 4) exitWith
 		};
 	};
 	if(!_success) exitWith {};
-	life_cash = life_cash + _funds;
+	life_money = life_money + _funds;
 	hint format["a volé %1 €",_funds];
 	_shop switchMove "";
 	_funds = 0;

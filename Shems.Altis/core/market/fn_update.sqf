@@ -8,7 +8,7 @@ switch (_mode) do
 {
 	case 0:
 	{
-		[[life_dynMarket_boughtItems],"TON_fnc_getUpdate",false,false] spawn life_fnc_MP;
+		[[life_dynMarket_boughtItems],"TON_fnc_getUpdate",false,false] call life_fnc_MP;
 		if (life_dynMarket_UserNotification) then {hint _txt2;};
 		life_dynMarket_boughtItems = [];
 	};

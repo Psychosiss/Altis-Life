@@ -1,8 +1,8 @@
-if(life_cash < 500) exitWith 
+if(life_money < 500) exitWith 
 {
 	hint "Vous devez avoir 500 € pour faire un saut en parachute.";
 };
-life_cash = life_cash - 500;
+life_money = life_money - 500;
 if(life_action_inUse) exitWith {};
 life_action_inUse = true;
 life_skydive_backpack = backpack player;

@@ -14,7 +14,7 @@ systemChat "Voilà du bon plaisir!";
 if (!life_smoking) then
 {
 	life_smoking = true;
-	[[player],"life_fnc_attachSmoke",true,false] spawn BIS_fnc_MP;
+	[[player],"life_fnc_attachSmoke",true,false] call BIS_fnc_MP;
 	sleep 300;
 	life_smoking = false;
 };

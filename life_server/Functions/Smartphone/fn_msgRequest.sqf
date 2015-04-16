@@ -8,5 +8,5 @@ _queryResult = [_query,2,true] call DB_fnc_asyncCall;
 
 if(count _queryResult == 0) exitWith {};
 {
-	[[1,_x],"life_fnc_smartphone",_player,false] spawn life_fnc_MP;
+	[[1,_x],"life_fnc_smartphone",_player,false] call life_fnc_MP;
 }forEach _queryResult;

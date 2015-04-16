@@ -1,4 +1,4 @@
-private["_unit"];
+private "_unit";
 _unit = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 if(isNil "_unit" OR isNull _unit OR !isPlayer _unit) exitWith {};
 if((player distance _unit > 3)) exitWith {};

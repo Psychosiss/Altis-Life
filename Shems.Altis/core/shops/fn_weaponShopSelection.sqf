@@ -24,9 +24,9 @@ if((uiNamespace getVariable["Weapon_Shop_Filter",0]) == 1) then
 	else
 {
 	_price = _control lbValue _index;
-	if(_price > life_cash) then
+	if(_price > life_money) then
 	{
-		_priceTag ctrlSetStructuredText parseText format ["<t size='0.8'>Price: <t color='#ff0000'>$%1</t><br/>You lack: <t color='#8cff9b'>$%2</t></t>",[(_price)] call life_fnc_numberText,[(_price - life_cash)] call life_fnc_numberText];
+		_priceTag ctrlSetStructuredText parseText format ["<t size='0.8'>Price: <t color='#ff0000'>$%1</t><br/>You lack: <t color='#8cff9b'>$%2</t></t>",[(_price)] call life_fnc_numberText,[(_price - life_money)] call life_fnc_numberText];
 	}
 		else
 	{

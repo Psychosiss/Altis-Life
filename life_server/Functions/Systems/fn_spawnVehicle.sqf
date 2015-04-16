@@ -35,13 +35,13 @@ if(count _vInfo == 0) exitWith {serv_sv_use = serv_sv_use - [_vid];};
 if((_vInfo select 5) == 0) exitWith
 {
 	serv_sv_use = serv_sv_use - [_vid];
-	[[1,format["1 a été classé comme un véhicule détruit et a été envoyé à la fourrière.",_vInfo select 2]],"life_fnc_broadcast",_unit,false] spawn life_fnc_MP;
+	[[1,format["1 a été classé comme un véhicule détruit et a été envoyé à la fourrière.",_vInfo select 2]],"life_fnc_broadcast",_unit,false] call life_fnc_MP;
 };
 
 if((_vInfo select 6) == 1) exitWith
 {
 	serv_sv_use = serv_sv_use - [_vid];
-	[[1,format["votre %1 à déjà été sortit du garage",_vInfo select 2]],"life_fnc_broadcast",_unit,false] spawn life_fnc_MP;
+	[[1,format["votre %1 à déjà été sortit du garage",_vInfo select 2]],"life_fnc_broadcast",_unit,false] call life_fnc_MP;
 };
 
 if(typeName _sp != "STRING") then 
@@ -53,8 +53,8 @@ if(typeName _sp != "STRING") then
 if(count _nearVehicles > 0) exitWith
 {
 	serv_sv_use = serv_sv_use - [_vid];
-	[[_price,_unit_return],"life_fnc_garageRefund",_unit,false] spawn life_fnc_MP;
-	[[1,"Il existe déjà un véhicule sur le point de spawn."],"life_fnc_broadcast",_unit,false] spawn life_fnc_MP;
+	[[_price,_unit_return],"life_fnc_garageRefund",_unit,false] call life_fnc_MP;
+	[[1,"Il existe déjà un véhicule sur le point de spawn."],"life_fnc_broadcast",_unit,false] call life_fnc_MP;
 };
 
 _query = format["UPDATE vehicles SET active='1' WHERE pid='%1' AND id='%2'",_pid,_vid];
@@ -80,10 +80,10 @@ if(typeName _sp == "STRING") then
 };
 _vehicle allowDamage true;
 
-[[_vehicle],"life_fnc_addVehicle2Chain",_unit,false] spawn life_fnc_MP;
+[[_vehicle],"life_fnc_addVehicle2Chain",_unit,false] call life_fnc_MP;
 [_pid,_side,_vehicle,1] call TON_fnc_keyManagement;
 _vehicle lock 2;
-[[_vehicle,_vInfo select 8],"life_fnc_colorVehicle",nil,false] spawn life_fnc_MP;
+[[_vehicle,_vInfo select 8],"life_fnc_colorVehicle",nil,false] call life_fnc_MP;
 _vehicle setVariable["vehicle_info_owners",[[_pid,_name]],true];
 _vehicle setVariable["dbInfo",[(_vInfo select 4),(_vInfo select 7),(_vInfo select 9)]];
 
@@ -120,24 +120,24 @@ for "_i" from 0 to ((count (_backpacks select 0)) - 1) do
 
 if((_vInfo select 1) == "civ" && (_vInfo select 2) == "B_Heli_Light_01_F" && _vInfo select 8 != 13) then
 {
-	[[_vehicle,"civ_littlebird",true],"life_fnc_vehicleAnimate",_unit,false] spawn life_fnc_MP;
+	[[_vehicle,"civ_littlebird",true],"life_fnc_vehicleAnimate",_unit,false] call life_fnc_MP;
 };
 
 if((_vInfo select 1) == "cop" && (_vInfo select 2) in ["C_Offroad_01_F","B_MRAP_01_F","C_SUV_01_F"]) then
 {
-	[[_vehicle,"cop_offroad",true],"life_fnc_vehicleAnimate",_unit,false] spawn life_fnc_MP;
+	[[_vehicle,"cop_offroad",true],"life_fnc_vehicleAnimate",_unit,false] call life_fnc_MP;
 };
 
 if((_vInfo select 1) == "med" && (_vInfo select 2) == "C_Offroad_01_F") then
 {
-	[[_vehicle,"med_offroad",true],"life_fnc_vehicleAnimate",_unit,false] spawn life_fnc_MP;
+	[[_vehicle,"med_offroad",true],"life_fnc_vehicleAnimate",_unit,false] call life_fnc_MP;
 };
 
 if((_vInfo select 9) == 1) then
 {
-  [[1,"Votre véhicule est prêt et l'assurance est active."],"life_fnc_broadcast",_unit,false] spawn life_fnc_MP;
+  [[1,"Votre véhicule est prêt et l'assurance est active."],"life_fnc_broadcast",_unit,false] call life_fnc_MP;
 } else {
-  [[1,"Votre véhicule est prêt."],"life_fnc_broadcast",_unit,false] spawn life_fnc_MP;
+  [[1,"Votre véhicule est prêt."],"life_fnc_broadcast",_unit,false] call life_fnc_MP;
 };
 
 serv_sv_use = serv_sv_use - [_vid];

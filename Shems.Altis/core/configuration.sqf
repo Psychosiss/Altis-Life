@@ -24,6 +24,7 @@ life_drug_withdrawl = false;
 life_earplugs = false;
 life_animals_spawned = false;
 life_action_gathering = false;
+life_show_actions = false;
 life_is_alive = false;
 life_request_timer = false;
 life_drug_level = 0;
@@ -34,6 +35,7 @@ life_clothing_filter = 0;
 life_sex_ill = 0;
 life_checked = 0;
 life_session_tries = 0;
+life_action_time = 0;
 life_fatigue = 0.5;
 life_respawn_timer = 2;
 life_clothing_uniform = -1;
@@ -74,7 +76,7 @@ switch (playerSide) do
 		life_maxWeight = 50;
 		life_maxWeightT = 50;
 		life_carryWeight = 0;
-		life_atmcash = 10000;
+		life_atmmoney = 10000;
 		life_paycheck = 3000;
 		life_taxes = 2500;
 	};
@@ -84,7 +86,7 @@ switch (playerSide) do
 		life_maxWeight = 50;
 		life_maxWeightT = 50;
 		life_carryWeight = 0;
-		life_atmcash = 10000;
+		life_atmmoney = 10000;
 		life_paycheck = 3000;
 		life_taxes = 2500;
 	};
@@ -94,7 +96,7 @@ switch (playerSide) do
 		life_maxWeight = 24;
 		life_maxWeightT = 24;
 		life_carryWeight = 0;
-		life_atmcash = 10000;
+		life_atmmoney = 10000;
 		life_paycheck = 1250;
 		life_taxes = 750;
 	};
@@ -132,7 +134,7 @@ life_trunk_reserved_ressources = 1;
 life_my_gang = ObjNull;
 life_smartphoneTarget = ObjNull;
 life_pain = 0;
-life_cash = 0;
+life_money = 0;
 life_vehicles = [];
 bank_robber = [];
 player setVariable["downed",false,true];
@@ -501,7 +503,6 @@ __CONST__(life_weapon_shop_array,life_weapon_shop_array);
 
 life_taxi_stands =
 [
-	["donor_town","Ville naturelle",civilian],
 	["civ_spawn_4","Badtown",civilian],
 	["civ_spawn_3","Neochori",civilian],
 	["civ_spawn_2","Pyrgos",civilian],

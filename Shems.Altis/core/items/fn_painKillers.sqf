@@ -9,6 +9,6 @@ if (_unit == player) then
 	[0] spawn life_fnc_setPain;
 	titleText["Vous consommez des antalgiques.","PLAIN"];
 } else {
-	[[0],"life_fnc_setPain",_unit,false] spawn BIS_fnc_MP;
+	[[0],"life_fnc_setPain",_unit,false] call BIS_fnc_MP;
 	titleText[format["Vous nourrissez des antalgiques à %1.", name _unit],"PLAIN"];
 };

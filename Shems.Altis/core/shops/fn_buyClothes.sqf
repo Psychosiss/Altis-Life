@@ -10,18 +10,18 @@ _price = 0;
 	};
 } foreach life_clothing_purchase;
 
-if (life_cash >= _price) then 
+if (life_money >= _price) then 
 {
-	life_cash = life_cash - _price;
+	life_money = life_money - _price;
 	systemChat format ["Vous avez payé %1 € depuis l'argent que vous avez sur vous.",[_price] call life_fnc_numberText];
 	life_clothesPurchased = true;
 	_success = true;
 } else {
 	if (life_inv_debitcard > 0) then 
 	{
-		if (life_atmcash < _price) then {hint format ["Vous n'avez pas %1 € dans votre compte banquaire pour la transaction.", [_price] call life_fnc_numberText]
+		if (life_atmmoney < _price) then {hint format ["Vous n'avez pas %1 € dans votre compte banquaire pour la transaction.", [_price] call life_fnc_numberText]
 		} else {
-			life_atmcash = life_atmcash - _price;
+			life_atmmoney = life_atmmoney - _price;
 			systemChat format ["Vous avez payé %1 € depuis votre banque en utilisant la carte de débit.", [_price] call life_fnc_numberText];
 			life_clothesPurchased = true;
 			_success = true;

@@ -126,8 +126,8 @@ while {true} do
 
 	if((unitRecoilCoefficient player) < 1) then 
 	{
-		[[profileName,steamid,"No_recoil_hack"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
-		[[profileName,"No recoil hack"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
+		[[profileName,steamid,"No_recoil_hack"],"SPY_fnc_cookieJar",false,false] call life_fnc_MP;
+		[[profileName,"No recoil hack"],"SPY_fnc_notifyAdmins",true,false] call life_fnc_MP;
 		sleep 0.5;
 		failMission "SpyGlass";
 	};

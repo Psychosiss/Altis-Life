@@ -1,9 +1,9 @@
 disableSerialization;
 _dialog = findDisplay 7100;
 _listbox = _dialog  displayCtrl 7055;
-_cashdisplay = _dialog displayCtrl 7056;
+_moneydisplay = _dialog displayCtrl 7056;
 _amountsolddisplay = _dialog displayCtrl 7057;
-_cashdisplayold = _dialog displayCtrl 7058;
+_moneydisplayold = _dialog displayCtrl 7058;
 _index = lbCurSel _listbox;
 _costOld = 0;
 _itemArrayOld = [];
@@ -30,7 +30,7 @@ _amountsold = 0;
 } forEach life_dynMarket_boughtItems;
 
 _amountsolddisplay ctrlSetText format ["%1",_amountsold];
-_cashdisplay ctrlSetText format ["%1 €",_cost];
+_moneydisplay ctrlSetText format ["%1 €",_cost];
 _arrowText = "";
 if (_cost<_costOld) then 
 {
@@ -46,4 +46,4 @@ if (_cost<_costOld) then
 		_arrowText = format [""];
 	};
 };
-_cashdisplayold ctrlSetStructuredText parseText format ["%1 € %2",_costOld,_arrowText];
+_moneydisplayold ctrlSetStructuredText parseText format ["%1 € %2",_costOld,_arrowText];

@@ -211,7 +211,7 @@ class CfgFunctions
 			class takeOrgans;
 			class blackjack;
 			class activateNitro;
-			class fastrope;
+			class fastRope;
 			class sport;
 			class robShops;
 			class bombDetect;
@@ -227,6 +227,8 @@ class CfgFunctions
 			class gather;
 			class copRestrainAction;
 			class civRestrainAction;
+			class medRestrainAction;
+			class repaintVehicle;
 		};
 		
 		class Config
@@ -277,9 +279,10 @@ class CfgFunctions
 			class keyGive;
 			class keyDrop;
 			class s_onSliderChange;
+			class s_onChar;
+			class s_onCheckedChange;
 			class updateViewDistance;
 			class settingsMenu;
-			class settingsInit;
 			class smartphone;
 			class newMsg;
 			class showMsg;
@@ -293,8 +296,9 @@ class CfgFunctions
 			class craft_update;
 			class craft_updateFilter;
 			class itemIcon;
+			class repaintMenu;
 		};
-		
+
 		class Functions
 		{
 			file = "core\functions";
@@ -307,6 +311,7 @@ class CfgFunctions
 			class animSync;
 			class simDisable;
 			class keyUpHandler;
+			class keyDownHandler;
 			class dropItems;
 			class dropItemsFloor;
 			class handleDamage;
@@ -320,7 +325,6 @@ class CfgFunctions
 			class clearVehicleAmmo;
 			class pullOutVeh;
 			class nearUnits;
-			class keyDownHandler;
 			class playerCount;
 			class fetchDeadGear;
 			class loadDeadGear;
@@ -357,8 +361,11 @@ class CfgFunctions
 			class emote;
 			class cursorTarget;
 			class isKindOf;
+			class repaintColor;
+			class statusBar;
+			class enableActions;
 		};
-		
+
 		class Network
 		{
 			file = "core\functions\network";
@@ -373,16 +380,7 @@ class CfgFunctions
 			class setTexture;
 			class say3D;
 		};
-		
-		class Repaint
-		{
-			file = "core\repaint";
-			
-			class RepaintMenu;
-			class Repaintcolor;
-			class RepaintVehicle;
-		};
-		
+
 		class Civilian
 		{
 			file = "core\civilian";
@@ -458,6 +456,7 @@ class CfgFunctions
 			class tazerFix;
 			class copLoadout;
 			class ticketPaid;
+			class airHorn;
 		};
 		
 		class Gangs
@@ -557,6 +556,7 @@ class CfgFunctions
 			class callDialog;
 			class sendChannel;
 			class insureCar;
+			class wireTransfer;
 		};
 		
 		class Housing
@@ -572,8 +572,9 @@ class CfgFunctions
 			class lightHouseAction;
 			class lockHouse;
 			class lockupHouse;
-			class raidHouse{};
+			class raidHouse;
 			class sellHouse;
+			class garageRefund;
 		};
 
 		class DynMarket
@@ -907,14 +908,21 @@ class CfgSounds
 	class trunk_open
 	{
 		name = "TrunkOpen";
-		sound[] = {"sounds\trunk_open.ogg", 1,1};
+		sound[] = {"sounds\trunk_open.ogg",1,1};
 		titles[] = {};
 	};
 
 	class trunk_close
 	{
 		name = "TrunkClose";
-		sound[] = {"sounds\trunk_close.ogg", 1,1};
+		sound[] = {"sounds\trunk_close.ogg",1,1};
+		titles[] = {};
+	};
+
+	class airHorn
+	{
+		name = "airHorn";
+		sound[] = {"sounds\airHorn.ogg",2,1};
 		titles[] = {};
 	};
 };

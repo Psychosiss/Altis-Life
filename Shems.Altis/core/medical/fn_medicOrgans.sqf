@@ -10,4 +10,4 @@ _unit setVariable["missingOrgan",false,true];
 sleep 0.1;
 _unit setdamage 0;
 _unit setFatigue .5;
-life_cash = life_cash + 15000;  
+life_money = life_money + 15000;  

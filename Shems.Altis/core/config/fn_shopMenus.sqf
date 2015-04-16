@@ -7,7 +7,7 @@ if(!dialog) then
 	if(!(createDialog "shop_menu")) exitWith {};
 };
 disableSerialization;
-ctrlSetText[601,format["Espèces: %1 €",[life_cash] call life_fnc_numberText]];
+ctrlSetText[601,format["Espèces: %1 €",[life_money] call life_fnc_numberText]];
 
 switch (_shop) do
 {

@@ -12,7 +12,7 @@ _illegal = [_itemInfo select 0,life_illegal_items] call fnc_index;
 if(playerSide == west && _illegal != -1) exitWith
 {
 	titleText[format["%1 a été placé en évidence, vous avez reçu %2 € comme récompense.",_itemName,[(life_illegal_items select _illegal) select 1] call life_fnc_numberText],"PLAIN"];
-	life_atmcash = life_atmcash + ((life_illegal_items select _illegal) select 1);
+	life_atmmoney = life_atmmoney + ((life_illegal_items select _illegal) select 1);
 	deleteVehicle _obj;
 	life_action_delay = time;
 };

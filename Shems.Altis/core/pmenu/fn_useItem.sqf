@@ -1,8 +1,7 @@
-if (player getVariable ["restrained", false]) exitWith {};
-
-private["_item"];
+private "_item";
 disableSerialization;
 if((lbCurSel 2005) == -1) exitWith {};
+if (player getVariable ["restrained", false]) exitWith {};
 _item = lbData[2005,(lbCurSel 2005)];
 
 switch (true) do
@@ -24,7 +23,7 @@ switch (true) do
 		{
 			titleText["Vous créez un feu de camp simple en utilisant le contenu d'un kit de feu de camp.","PLAIN"];
 			_fire = "Campfire_burning_F" createVehicle (getPos player);
-			[[_fire],"life_fnc_simDisable",false,false] spawn BIS_fnc_MP;
+			[[_fire],"life_fnc_simDisable",false,false] call BIS_fnc_MP;
 			_fire setVariable ["owner", player, true];
 		};
 	};

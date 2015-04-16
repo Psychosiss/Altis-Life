@@ -12,8 +12,8 @@ if(!isNull _group) then
 	_gangName = _group getVariable ["gang_name",""];
 	_action = 
 	[
-		format["This hideout is controlled by %1<br/>Are you sure you want to take over their gang area?",_gangName],
-		"Hideout is currently under control..",
+		format["Cette planque est capturé par %1<br/>Ete-vous sûr de vouloir la prendre?",_gangName],
+		"Cette planque est déjà prise..",
 		"Oui",
 		"Non"
 	] call BIS_fnc_guiMessage;
@@ -39,7 +39,8 @@ while {true} do
 {
 	if(animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then 
 	{
-		[[player,"AinvPknlMstpSnonWnonDnon_medic_1"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
+		[[player,"AinvPknlMstpSnonWnonDnon_medic_1"],"life_fnc_animSync",true,false] call life_fnc_MP;
+		player switchMove "AinvPknlMstpSnonWnonDnon_medic_1";
 		player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
 	};
 	sleep 0.26;
@@ -54,9 +55,6 @@ while {true} do
 	_progressBar progressSetPosition _cP;
 	_titleText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_title];
 	_hideout setVariable["inCapture",true,true];
-	//if(_cP >= 1 OR !alive player) exitWith {_hideout setVariable["inCapture",false,true];};
-	//if(life_istazed) exitWith {_hideout setVariable["inCapture",false,true];};
-	//if(life_interrupted) exitWith {_hideout setVariable["inCapture",false,true];};
 	if(_cP >= 1 OR !alive player) exitWith 
 	{
 		_hideout setVariable["inCapture",false,true];
@@ -81,28 +79,6 @@ while {true} do
 
 5 cutText ["","PLAIN"];
 player playActionNow "stop";
-
-/*
-if(!alive player OR life_istazed) exitWith 
-{
-	life_action_inUse = false;
-	_hideout setVariable["inCapture",false,true];
-};
-
-if((player getVariable["Restrained",false])) exitWith 
-{
-	life_action_inUse = false;
-	_hideout setVariable["inCapture",false,true];
-};
-
-if(life_interrupted) exitWith 
-{
-	life_interrupted = false; 
-	titleText["Action annulé","PLAIN"]; 
-	life_action_inUse = false;
-	_hideout setVariable["inCapture",false,true];
-};
-*/
 
 if(!alive player OR life_istazed) exitWith 
 {
@@ -135,18 +111,18 @@ life_action_inUse = false;
 titleText["La planque à été capturé.","PLAIN"];
 _flagTexture = 
 [
-		"\A3\Data_F\Flags\Flag_red_CO.paa",
-		"\A3\Data_F\Flags\Flag_green_CO.paa",
-		"\A3\Data_F\Flags\Flag_blue_CO.paa",
-		"\A3\Data_F\Flags\Flag_white_CO.paa",
-		"\A3\Data_F\Flags\flag_fd_red_CO.paa",
-		"\A3\Data_F\Flags\flag_fd_green_CO.paa",
-		"\A3\Data_F\Flags\flag_fd_blue_CO.paa",
-		"\A3\Data_F\Flags\flag_fd_orange_CO.paa"
+	"\A3\Data_F\Flags\Flag_red_CO.paa",
+	"\A3\Data_F\Flags\Flag_green_CO.paa",
+	"\A3\Data_F\Flags\Flag_blue_CO.paa",
+	"\A3\Data_F\Flags\Flag_white_CO.paa",
+	"\A3\Data_F\Flags\flag_fd_red_CO.paa",
+	"\A3\Data_F\Flags\flag_fd_green_CO.paa",
+	"\A3\Data_F\Flags\flag_fd_blue_CO.paa",
+	"\A3\Data_F\Flags\flag_fd_orange_CO.paa"
 ] call BIS_fnc_selectRandom;
 
 _this select 0 setFlagTexture _flagTexture;
-[[[0,1],"%1 et son gang: %2 ont pris le contrôle d'une planque locale.",true,[name player,(group player) getVariable "gang_name"]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+[[[0,1],"%1 et son gang: %2 ont pris le contrôle d'une planque locale.",true,[name player,(group player) getVariable "gang_name"]],"life_fnc_broadcast",true,false] call life_fnc_MP;
 _hideout setVariable["inCapture",false,true];
 _hideout setVariable["gangOwner",grpPlayer,true];
 _ui = "StatusBar" call BIS_fnc_rscLayer;

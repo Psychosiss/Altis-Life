@@ -6,7 +6,7 @@ with missionNamespace do
 	player setVariable ["slotmachine_lastplay", time];
 	
 	_bet = player getVariable ["slotmachine_bet", 0];
-	if (life_cash < _bet) exitWith 
+	if (life_money < _bet) exitWith 
 	{
 		hint "Vous n'avez pas assez d'argent.";
 	};
