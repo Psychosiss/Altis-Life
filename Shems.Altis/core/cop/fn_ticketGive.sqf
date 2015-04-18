@@ -1,4 +1,4 @@
-private["_val"];
+private "_val";
 if(isNil {life_ticket_unit}) exitWith {hint "La personne n'existe pas"};
 if(isNull life_ticket_unit) exitWith {hint "La personne n'existe pas."};
 _val = ctrlText 2652;

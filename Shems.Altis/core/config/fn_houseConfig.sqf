@@ -1,4 +1,4 @@
-private["_house"];
+private "_house";
 _house = [_this,0,"",[""]] call BIS_fnc_param;
 if(_house == "") exitWith {[]};
 

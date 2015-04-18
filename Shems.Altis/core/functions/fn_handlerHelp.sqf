@@ -1,4 +1,4 @@
-private["_ressourcesZones"];
+private "_ressourcesZones";
 _ressourcesZones = 
 [
 	"apple_1","apple_4","apple_9",

@@ -1,4 +1,4 @@
-private["_nearby"];
+private "_nearby";
 _nearby = nearestObjects[(vehicle player),["Car","Ship","Air"],10];
 if(count (_nearby) > 1) then
 {

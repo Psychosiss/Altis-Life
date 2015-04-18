@@ -1,4 +1,4 @@
-private["_shop"];
+private "_shop";
 _shop = [_this,0,"",[""]] call BIS_fnc_param;
 if(_shop == "") exitWith {closeDialog 0;};
 

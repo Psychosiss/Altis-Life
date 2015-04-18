@@ -1,4 +1,4 @@
-private["_handle"];
+private "_handle";
 
 _handle = [] spawn life_fnc_stripDownPlayer;
 waitUntil {scriptDone _handle};

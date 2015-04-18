@@ -1,4 +1,4 @@
-private["_uid"];
+private "_uid";
 _uid = [_this,0,"",[""]] call BIS_fnc_param;
 if(_uid == "") exitWith {};
 

@@ -1,5 +1,5 @@
 _fnc_scriptName = "Player Synchronization";
-private["_exit"];
+private "_exit";
 if(isNil "life_session_time") then {life_session_time = false;};
 if(life_session_time) exitWith {hint localize "Vous avez déjà sauvegardé il y a de cela moins de 10 minutes.";};
 

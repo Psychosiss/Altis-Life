@@ -1,6 +1,6 @@
 #include <macro.h>
 
-private["_end"];
+private "_end";
 
 player addRating 9999999;
 waitUntil {!(isNull (findDisplay 46))};

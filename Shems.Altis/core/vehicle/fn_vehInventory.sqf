@@ -10,7 +10,7 @@ lbClear _pInv;
 
 if(_veh isKindOf "House_F") then 
 {
-	private["_mWeight"];
+	private "_mWeight";
 	_mWeight = 0;
 	{
 		_mWeight = _mWeight + ([(typeOf _x)] call life_fnc_vehicleWeightCfg);

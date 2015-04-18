@@ -2,7 +2,7 @@ private["_dp","_target"];
 _target = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 if(str(_target) in life_dp_points) then
 {
-	private["_point"];
+	private "_point";
 	_point = life_dp_points - [(str(_target))];
 	_dp = _point call BIS_fnc_selectRandom;
 } else {

@@ -1,4 +1,4 @@
-private["_className"];
+private "_className";
 _className = [_this,0,"",[""]] call BIS_fnc_param;
 
 switch (_className) do

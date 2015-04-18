@@ -1,4 +1,4 @@
-private["_container"];
+private "_container";
 _container = [_this,1,ObjNull,[ObjNull]] call BIS_fnc_param;
 if(isNull _container) exitWith {};
 

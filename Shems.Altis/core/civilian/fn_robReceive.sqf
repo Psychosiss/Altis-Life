@@ -1,4 +1,4 @@
-private["_money"];
+private "_money";
 _money = [_this,0,0,[0]] call BIS_fnc_param;
 if(_money == 0) exitWith {titleText["Je n'ai pas d'argent...","PLAIN"]};
 

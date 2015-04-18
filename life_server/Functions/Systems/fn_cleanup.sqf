@@ -1,4 +1,4 @@
-private["_deleted"];
+private "_deleted";
 _deleted = false;
 while {true} do
 {

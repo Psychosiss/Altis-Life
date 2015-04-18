@@ -9,7 +9,7 @@ if(_ammoType == "GrenadeHand_stone") then
 {
 	_projectile spawn 
 	{
-		private["_position"];
+		private "_position";
 		while {!isNull _this} do 
 		{
 			_position = getPosATL _this;

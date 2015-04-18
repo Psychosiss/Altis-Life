@@ -22,13 +22,12 @@ switch (_index) do
 			_itemList lbSetPicture[(lbSize _itemList)-1,_itemInfo select 2];
 			_itemList lbSetValue[(lbSize _itemList)-1,_x select 2];
 		} foreach (_config select 1);
-		
-		((findDisplay 38400) displayCtrl 38405) ctrlSetText "Buy";
+		((findDisplay 38400) displayCtrl 38405) ctrlSetText "Acheter";
 	};
 	
 	case 1:
 	{
-		private["_listedItems"];
+		private "_listedItems";
 		_config = [];
 		_listedItems = [];
 		if(primaryWeapon player != "") then {_config pushBack primaryWeapon player;};
@@ -41,7 +40,7 @@ switch (_index) do
 		_config = _config + (vestItems player);
 		_config = _config + (backPackItems player);
 
-		((findDisplay 38400) displayCtrl 38405) ctrlSetText "Sell";
+		((findDisplay 38400) displayCtrl 38405) ctrlSetText "Vendre";
 		{
 			if(!(_x in _listedItems) && _x != "") then
 			{

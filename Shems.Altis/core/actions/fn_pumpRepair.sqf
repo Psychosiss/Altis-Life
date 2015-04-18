@@ -1,4 +1,4 @@
-private["_method"];
+private "_method";
 if(life_money < 500) then
 {
 	if(life_atmmoney < 500) exitWith {_method = 0;};

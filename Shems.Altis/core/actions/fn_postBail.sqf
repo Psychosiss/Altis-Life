@@ -1,4 +1,4 @@
-private["_unit"];
+private "_unit";
 _unit = _this select 1;
 if(life_bail_paid) exitWith {};
 if(isNil {life_bail_amount}) then {life_bail_amount = 3500;};

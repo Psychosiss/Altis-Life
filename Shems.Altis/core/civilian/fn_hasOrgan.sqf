@@ -1,4 +1,4 @@
-private["_organThief"];
+private "_organThief";
 _organThief = [_this,0,Objnull,[Objnull]] call BIS_fnc_param;
 if(isNull _organThief) exitWith {};
 

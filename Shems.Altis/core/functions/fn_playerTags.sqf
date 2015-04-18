@@ -1,6 +1,6 @@
 #include <macro.h>
 
-private["_exp","_ui","_units","_goggles","_headgear"];
+private["_ui","_units","_goggles","_headgear"];
 #define iconID 78000
 #define scale 0.8
 

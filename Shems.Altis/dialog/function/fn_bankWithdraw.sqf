@@ -1,4 +1,4 @@
-private["_val"];
+private "_val";
 _val = parseNumber(ctrlText 2702);
 if(_val > 1000000) exitWith {hint "Vous ne pouvez pas retirer plus de 1.000.000 €";};
 if(_val < 0) exitwith {};

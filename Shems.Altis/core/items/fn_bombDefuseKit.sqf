@@ -1,4 +1,4 @@
-private["_vault"];
+private "_vault";
 _vault = cursorTarget;
 if(isNull _vault) exitWith {};
 if(!(_vault getVariable["dchargeplaced",false])) exitWith {hint "Il n'y a pas de dynamite sur le coffre."};

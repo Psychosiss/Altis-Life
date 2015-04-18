@@ -30,6 +30,19 @@ switch (_switch) do
 			diag_log "dynMarket : impossible de charger les prix depuis la base de donnée";
 		} else {
 			life_dynMarket_Items_CurrentPriceArr = _pricearray;
+			{
+				_itemName = _x select 0;
+				_itemNewPrice = _x select 1;		
+				_index = -1;
+				{
+					_index = _index + 1;
+					_curItemName = _x select 0;
+					if (_curItemName == _itemName) then 
+					{
+						life_dynMarket_sellarraycopy set [_index,[_itemName,_itemNewPrice]];
+					};
+				} forEach life_dynMarket__sellarraycopy;
+			} forEach life_dynMarket__Items_CurrentPriceArr;
 			diag_log "dynMarket : Chargement des prix réussi";
 		};
 	};

@@ -12,7 +12,7 @@ if(isNull _cursor) exitWith
 {
 	if(_isWater) then 
 	{
-		private["_fish"];
+		private "_fish";
 		_fish = (nearestObjects[getPos player,["Fish_Base_F"],3]) select 0;
 		if(!isNil "_fish") then 
 		{
@@ -98,24 +98,24 @@ if(isPlayer _curTarget && _curTarget isKindOf "Man") then
 		{
 			if((typeOf _curTarget) == "Turtle_F" && !alive _curTarget) then 
 			{
-				private["_handle"];
+				private "_handle";
 				_handle = [_curTarget] spawn life_fnc_catchTurtle;
 				waitUntil {scriptDone _handle};
 			} else {
-				private["_handle"];
+				private "_handle";
 				_handle = [_curTarget] spawn life_fnc_catchFish;
 				waitUntil {scriptDone _handle};
 			};
 		} else {
 			if((typeOf _curTarget) in _miscItems) then 
 			{
-				private["_handle"];
+				private "_handle";
 				_handle = [_curTarget] spawn life_fnc_pickupItem;
 				waitUntil {scriptDone _handle};
 			} else {
 				if((typeOf _curTarget) == _money && {!(_curTarget getVariable["inUse",false])}) then 
 				{
-					private["_handle"];
+					private "_handle";
 					_curTarget setVariable["inUse",true,true];
 					_handle = [_curTarget] spawn life_fnc_pickupMoney;
 					waitUntil {scriptDone _handle};

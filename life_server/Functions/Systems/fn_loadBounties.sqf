@@ -1,4 +1,4 @@
-private["_uid"];
+private "_uid";
 
 _uid = [_this,0,"",[""]] call BIS_fnc_param;
 _query = format["SELECT bounties FROM players WHERE playerid = '%1'",_uid];	

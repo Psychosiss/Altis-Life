@@ -78,7 +78,7 @@ switch (_cfg) do
 		_magazines = getArray(_config >> "magazines");
 		if(!isNil {_muzzles}) then
 		{
-			private["_tmp"];
+			private "_tmp";
 			{
 				if(_x != "this") then
 				{

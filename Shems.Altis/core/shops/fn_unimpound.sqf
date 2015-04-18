@@ -49,7 +49,7 @@ if(_veh distance impound_obj < 50) then
 	_veh addEventHandler["handleDamage",{false}];
 	[_veh] spawn
 	{
-		private["_v"];
+		private "_v";
 		_v = _this select 0;
 		sleep 10;
 		_v allowDamage true;

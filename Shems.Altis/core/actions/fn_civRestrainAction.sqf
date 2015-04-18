@@ -1,4 +1,4 @@
-private["_unit"];
+private "_unit";
 _unit = cursorTarget;
 if(isNull _unit) exitWith {};
 if((player distance _unit > 3)) exitWith {};

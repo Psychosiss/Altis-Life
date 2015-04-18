@@ -1,11 +1,11 @@
 private["_cop","_player"];
-_cop = [_this,0,Objnull,[Objnull]] call BIS_fnc_param;
+_cop = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 _player = player;
 if(isNull _cop) exitWith {};
 
 [] spawn
 {
-	private["_time"];
+	private "_time";
 	while {true} do
 	{
 		_time = time;

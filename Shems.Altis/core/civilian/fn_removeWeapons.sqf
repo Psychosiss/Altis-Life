@@ -1,6 +1,6 @@
-private["_cop"];
+private "_cop";
 
-_cop = [_this,0,Objnull,[objNull]] call BIS_fnc_param;
+_cop = [_this,0,objNull,[objNull]] call BIS_fnc_param;
 if(_cop == player) then {};
 
 if(isNull _cop OR !(player getVariable["Restrained",false])) exitWith {};

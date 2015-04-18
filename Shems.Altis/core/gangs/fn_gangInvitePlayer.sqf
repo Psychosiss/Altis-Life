@@ -1,6 +1,6 @@
 #include <macro.h>
 
-private["_unit"];
+private "_unit";
 disableSerialization;
 
 if((lbCurSel 2632) == -1) exitWith {hint "Vous devez séléctionner quelqu'un à ajouter au gang!"};

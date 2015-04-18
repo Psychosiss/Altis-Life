@@ -1,4 +1,4 @@
-private["_unit"];
+private "_unit";
 _item = _this select 0;
 _unit = cursorTarget;
 _class = switch (_item) do

@@ -1,8 +1,8 @@
-private["_unit"];
+private "_unit";
 _unit = cursorTarget;
 if(isNull _unit) exitWith {};
-if((_unit getVariable ["missingOrgan",FALSE])) exitWith {};
-if((player getVariable ["hasOrgan",FALSE])) exitWith {};
+if((_unit getVariable ["missingOrgan",false])) exitWith {};
+if((player getVariable ["hasOrgan",false])) exitWith {};
 if((animationState _unit != "Incapacitated")) exitWith {};
 if(!([false,"scalpel",1] call life_fnc_handleInv)) exitWith {hint "Vous n'avez pas de scalpel chirurgicale!"};
 if(player == _unit) exitWith {};

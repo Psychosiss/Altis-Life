@@ -1,4 +1,4 @@
-﻿private["_sum"];
+﻿private "_sum";
 _sum = ["skull",1,life_carryWeight,life_maxWeight] call life_fnc_calWeightDiff;
 if(life_action_in_use) exitWith {};
 

@@ -55,7 +55,7 @@ _unit spawn
 
 [_unit] spawn
 {
-	private["_unit"];
+	private "_unit";
 	_unit = _this select 0;
 	waitUntil {if(speed _unit == 0) exitWith {true}; life_deathCamera camSetTarget _unit; life_deathCamera camSetRelPos [0,3.5,4.5]; life_deathCamera camCommit 0;};
 };

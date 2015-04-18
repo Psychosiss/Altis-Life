@@ -1,4 +1,4 @@
-private["_color"];
+private "_color";
 _color = _this select 3;
 if(!isNil "life_chemlight") exitWith {};
 

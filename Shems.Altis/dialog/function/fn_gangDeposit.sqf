@@ -1,6 +1,6 @@
 #include <macro.h>
 
-private["_value"];
+private "_value";
 _value = parseNumber(ctrlText 2702);
 
 if(_value > 1000000) exitWith {hint "Vous ne pouvez pas déposer plus de 1.000.000 € à la fois.";};

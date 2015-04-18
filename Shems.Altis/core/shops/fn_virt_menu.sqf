@@ -1,4 +1,4 @@
-private["_shop"];
+private "_shop";
 _shop = _this select 3;
 if(isNil {_shop}) exitWith {};
 life_shop_type = _shop;

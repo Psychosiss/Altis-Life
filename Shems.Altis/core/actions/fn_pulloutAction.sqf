@@ -1,4 +1,4 @@
-private["_crew"];
+private "_crew";
 
 _crew = crew cursorTarget;
 {

@@ -1,4 +1,4 @@
-private["_medicsOnline"];
+private "_medicsOnline";
 _medicsOnline = {_x != player && {side _x == independent} && {alive _x}} count playableUnits > 0;
 
 if(_medicsOnline) then 

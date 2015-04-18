@@ -1,4 +1,4 @@
-private["_vars"];
+private "_vars";
 _vars = 
 [
 	"life_revive_fee","life_gangPrice","life_gangUpgradeBase","life_enableFatigue","life_paycheck_period","life_taxes_period","life_vShop_rentalOnly","buy_array","life_impound_air",

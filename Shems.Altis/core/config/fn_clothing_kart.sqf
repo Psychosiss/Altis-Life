@@ -1,4 +1,4 @@
-private["_filter"];
+private "_filter";
 _filter = [_this,0,0,[0]] call BIS_fnc_param;
 
 ctrlSetText[3103,"Bobby's Kart-Racing Outfits"];

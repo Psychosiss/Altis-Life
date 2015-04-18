@@ -1,4 +1,4 @@
-private["_spikes"];
+private "_spikes";
 _spikes = nearestObjects[getPos player,["Land_Razorwire_F"],8] select 0;
 if(isNil "_spikes") exitWith {};
 

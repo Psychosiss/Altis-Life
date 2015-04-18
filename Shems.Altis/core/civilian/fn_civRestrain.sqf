@@ -5,7 +5,7 @@ if(isNull _civ) exitWith {};
 
 [] spawn
 {
-	private["_time"];
+	private "_time";
 	while {true} do
 	{
 		_time = time;

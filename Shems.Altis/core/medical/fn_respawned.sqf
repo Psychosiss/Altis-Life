@@ -1,4 +1,4 @@
-private["_handle"];
+private "_handle";
 
 life_use_atm = true;
 life_hunger = 100;
@@ -37,7 +37,7 @@ switch(playerSide) do
 
 if(!isNull life_corpse) then 
 {
-	private["_containers"];
+	private "_containers";
 	life_corpse setVariable["Revive",true,true];
 	_containers = nearestObjects[life_corpse,["WeaponHolderSimulated"],5];
 	{deleteVehicle _x;} foreach _containers;

@@ -223,7 +223,7 @@ if(_bool) then
 						{
 							player addItemToBackpack _item;
 						} else {
-							private["_type"];
+							private "_type";
 							_type = [_item,201] call life_fnc_accType;
 							if(_ongun) then
 							{
@@ -280,7 +280,7 @@ if(_bool) then
 						{
 							player addItemToBackpack _item;
 						} else {
-							private["_type"];
+							private "_type";
 							_type = [_item,301] call life_fnc_accType;
 							
 							if(_ongun) then
@@ -335,7 +335,7 @@ if(_bool) then
 						{
 							player addItemToBackpack _item;
 						} else {
-							private["_type"];
+							private "_type";
 							_type = [_item,101] call life_fnc_accType;
 							
 							if(_ongun) then
@@ -482,7 +482,7 @@ if(_bool) then
 				{
 					player removeItem _item;
 				} else {
-					private["_tmpfunction"];
+					private "_tmpfunction";
 					_tmpfunction = {
 						private["_tWeapons","_tWeaponCount"];
 						switch(true) do 

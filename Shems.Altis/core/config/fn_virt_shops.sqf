@@ -1,4 +1,4 @@
-private["_shop"];
+private "_shop";
 _shop = _this select 0;
 
 switch (_shop) do

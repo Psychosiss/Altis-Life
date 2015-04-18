@@ -1,4 +1,4 @@
-private["_unit"];
+private "_unit";
 _unit = cursorTarget;
  
 if((!(_unit isKindOf "LandVehicle"))&&(!(_unit getVariable ["restrained",false]))) exitWith {hint "Vous ne pouvez pas poser la bombe sur cette objet."};

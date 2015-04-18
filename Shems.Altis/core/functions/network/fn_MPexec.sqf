@@ -32,7 +32,7 @@ if(_callerUID != "__SERVER__" && _callerName != "__SERVER__" && toLower(_functio
 {
 	if(toLower(_functionName) == "spy_fnc_cookiejar") exitWith 
 	{
-		private["_reportUID"];
+		private "_reportUID";
 		_reportUID = _params select 1;
 		if(_reportUID != _callerUID) exitWith 
 		{
@@ -45,7 +45,7 @@ if(_callerUID != "__SERVER__" && _callerName != "__SERVER__" && toLower(_functio
 		};
 	};
 
-	private["_reportName"];
+	private "_reportName";
 	_reportName = _params select 0;
 	if(_callerName != _reportName) exitWith 
 	{

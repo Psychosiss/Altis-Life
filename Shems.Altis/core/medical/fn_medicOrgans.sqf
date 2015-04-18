@@ -1,4 +1,4 @@
-private["_unit"];
+private "_unit";
 
 _unit = cursorTarget;
 if(!(_unit getVariable ["missingOrgan",FALSE])) then {hint "Cette personne a des reins et n'a pas besoin de chirurgie!"};

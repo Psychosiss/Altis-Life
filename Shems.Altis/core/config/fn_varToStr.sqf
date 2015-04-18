@@ -1,4 +1,4 @@
-private["_var"];
+private "_var";
 _var = [_this,0,"",[""]] call BIS_fnc_param;
 if(_var == "") exitWith {""};
 

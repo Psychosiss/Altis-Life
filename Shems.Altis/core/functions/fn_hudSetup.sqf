@@ -11,7 +11,7 @@ _version ctrlSetText format["BETA: 0.%1.%2",(productVersion select 2),(productVe
 
 [] spawn
 {
-	private["_dam"];
+	private "_dam";
 	while {true} do
 	{
 		_dam = damage player;

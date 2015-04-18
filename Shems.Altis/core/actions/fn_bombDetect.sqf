@@ -1,4 +1,4 @@
-private["_bObject"];
+private "_bObject";
 _bObject = cursorTarget;
 if(isNull cursorTarget) exitWith {};
 if(!([false,"bombdetect",1] call life_fnc_handleInv)) exitWith {hint "Vous n'avez pas de detecteur de bombe.";};

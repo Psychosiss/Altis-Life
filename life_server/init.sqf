@@ -106,8 +106,8 @@ life_wanted_list = [];
 	while {true} do
 	{
 		sleep (30 * 60);
-		_logic = missionnamespace getvariable ["bis_functions_mainscope",objnull];
-		_queue = _logic getvariable "BIS_fnc_MP_queue";
+		_logic = missionNamespace getVariable ["bis_functions_mainscope",objNull];
+		_queue = _logic getVariable "BIS_fnc_MP_queue";
 		_logic setVariable["BIS_fnc_MP_queue",[],true];
 		{
 			_x setVariable["sellers",[],true];

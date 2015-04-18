@@ -1,4 +1,4 @@
-private["_array"];
+private "_array";
 _array = [_this,0,[],[[]]] call BIS_fnc_param;
 _array = str(str(_array));
 _array = toArray(_array);

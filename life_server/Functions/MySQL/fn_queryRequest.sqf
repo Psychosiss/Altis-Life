@@ -33,7 +33,7 @@ if(count _queryResult == 0) exitWith
 	[[],"SOCK_fnc_insertPlayerInfo",_ownerID,false,true] call life_fnc_MP;
 };
 
-private["_tmp"];
+private "_tmp";
 _tmp = _queryResult select 2;
 _queryResult set[2,[_tmp] call DB_fnc_numberSafe];
 _tmp = _queryResult select 3;
