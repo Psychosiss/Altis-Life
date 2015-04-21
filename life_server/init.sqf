@@ -74,9 +74,6 @@ onMapSingleClick "if(_alt) then {vehicle player setPos _pos};";
 	};
 } foreach allUnits;
 
-[8,true,12] call life_fnc_timeManager;
-true call life_fnc_simulationManager;
-
 life_adminlevel = 0;
 life_med_level = 0;
 life_cop_level = 0;
