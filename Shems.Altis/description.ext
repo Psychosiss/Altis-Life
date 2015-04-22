@@ -364,6 +364,7 @@ class CfgFunctions
 			class repaintColor;
 			class statusBar;
 			class enableActions;
+			class voiceCheck;
 		};
 
 		class Network
@@ -932,7 +933,7 @@ class CfgDebriefing
 	class Abort
 	{
 		title = "Déconnection réussi";
-		subtitle = "Votre profil à été sauvegarder au serveur";
+		subtitle = "Votre profil à été sauvegardé";
 		description = "N'oubliez pas de revenir.";
 		pictureBackground = "";
 		picture = "\a3\ui_f\data\gui\cfg\Hints\tasks_ca.paa";
@@ -943,7 +944,7 @@ class CfgDebriefing
 	{
 		title = "Mission echoué";
 		subtitle = "Vous n'êtes pas Whitelist";
-		description = "Vous n'avez pas l'accréditation nécessaire pour vous connecter sur ce slot, veuillez vous reconnectez sur un slot valide.";
+		description = "Vous n'avez pas l'accréditation nécessaire pour vous connecter sur ce slot, veuillez vous reconnecter sur un slot valide.";
 		pictureBackground = "";
 		picture = "";
 		pictureColor[] = {0,0.3,0.6,1};
@@ -953,7 +954,7 @@ class CfgDebriefing
 	{
 		title = "Mission echoué";
 		subtitle = "Vous êtes Blacklisté";
-		description = "Vous êtes suspendu des forces de police, veuillez vous reconnectez sur le slot civil.";
+		description = "Vous ête suspendu des forces de police, veuillez vous reconnecter sur le slot civil.";
 		pictureBackground = "";
 		picture = "";
 		pictureColor[] = {0,0.3,0.6,1};
@@ -974,6 +975,16 @@ class CfgDebriefing
 		title = "Pseudo changé";
 		subTitle = "";
 		description = "Pour rejoindre le serveur, remettez votre ancien nom ou demandez un changements sur le teamspeak de celui-ci.";
+		pictureBackground = "";
+		picture = "";
+		pictureColor[] = {0,0.3,0.6,1};
+	};
+
+	class SpeakingSideChat
+	{
+		title = "Vous avez été kické";
+		subTitle = "Vous avez été kické pour avoir parlé 3 fois dans le side channel";
+		description = "Vous avez été kické pour avoir parlé dans le side channel";
 		pictureBackground = "";
 		picture = "";
 		pictureColor[] = {0,0.3,0.6,1};

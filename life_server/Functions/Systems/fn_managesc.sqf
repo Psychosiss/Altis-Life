@@ -21,9 +21,9 @@ switch (_side) do
 	{
 		if(_bool) then
 		{
-			life_radio_civ radioChannelAdd [_unit];
+			life_radio_civilian radioChannelAdd [_unit];
 		} else {
-			life_radio_civ radioChannelRemove [_unit];
+			life_radio_civilian radioChannelRemove [_unit];
 		};
 	};
 	
@@ -31,9 +31,9 @@ switch (_side) do
 	{
 		if(_bool) then
 		{
-			life_radio_indep radioChannelAdd [_unit];
+			life_radio_independent radioChannelAdd [_unit];
 		} else {
-			life_radio_indep radioChannelRemove [_unit];
+			life_radio_independent radioChannelRemove [_unit];
 		};
 	};
 };

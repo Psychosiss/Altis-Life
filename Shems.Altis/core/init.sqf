@@ -51,6 +51,7 @@ waitUntil {life_session_completed};
 [] execVM "core\chatEvents\init.sqf";
 [] call life_fnc_fastRope;
 [] call life_fnc_addKey;
+[] spawn life_fnc_voiceCheck;
 
 switch (playerSide) do
 {
@@ -101,7 +102,7 @@ diag_log "----------------------------------------------------------------------
 diag_log format["                Fin de l'init d'Altis Life Client :: Temps d'execution total : %1 secondes ",(diag_tickTime) - _timeStamp];
 diag_log "------------------------------------------------------------------------------------------------------";
 life_sidechat = true;
-//[[player,life_sidechat,playerSide],"TON_fnc_managesc",false,false] call life_fnc_MP;
+[[player,life_sidechat,playerSide],"TON_fnc_managesc",false,false] call life_fnc_MP;
 0 cutText ["","BLACK IN"];
 [] call life_fnc_hudSetup;
 LIFE_ID_PlayerTags = ["LIFE_PlayerTags","onEachFrame","life_fnc_playerTags"] call BIS_fnc_addStackedEventHandler;
@@ -398,6 +399,11 @@ while {true} do
 	sleep 600;
 	[] call SOCK_fnc_updateRequest;
 };
+
+/*
+player switchCamera "EXTERNAL";
+player setVariable ["BIS_noCoreConversations",true];
+*/
 
 enableRadio false;
 enableSentences false;

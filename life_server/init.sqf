@@ -81,9 +81,9 @@ life_donator = 0;
 
 __CONST__(JxMxE_PublishVehicle,"false");
 
-//life_radio_west = radioChannelCreate [[0, 0.95, 1, 0.8], "Side Channel", "%UNIT_NAME", []];
-//life_radio_civ = radioChannelCreate [[0, 0.95, 1, 0.8], "Side Channel", "%UNIT_NAME", []];
-//life_radio_indep = radioChannelCreate [[0, 0.95, 1, 0.8], "Side Channel", "%UNIT_NAME", []];
+life_radio_west = radioChannelCreate [[0,0.95,1,0.8],"Side Channel","%UNIT_NAME",[]];
+life_radio_civilian = radioChannelCreate [[0,0.95,1,0.8],"Side Channel","%UNIT_NAME",[]];
+life_radio_independentendent = radioChannelCreate [[0,0.95,1,0.8],"Side Channel","%UNIT_NAME",[]];
 
 fed_bank setVariable ["safe",count playableUnits,true];
 [] spawn TON_fnc_federalUpdate;

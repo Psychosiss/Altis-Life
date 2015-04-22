@@ -1,6 +1,5 @@
 #include <macro.h>
 
-// 																								Backend Variables
 life_channel_send = true;
 life_garage_store = false;
 life_net_dropped = false;
@@ -36,6 +35,7 @@ life_sex_ill = 0;
 life_checked = 0;
 life_session_tries = 0;
 life_action_time = 0;
+//life_speaking_warnings = 0;
 life_fatigue = 0.5;
 life_respawn_timer = 2;
 life_clothing_uniform = -1;
@@ -102,6 +102,7 @@ switch (playerSide) do
 	};
 };
 
+/*
 life_eat_Salema = 40;
 life_eat_Ornate = 20;
 life_eat_Mackerel = 20;
@@ -115,8 +116,7 @@ life_eat_donuts = 30;
 life_eat_burgers = 35;
 life_eat_frites = 35;
 life_eat_pizza = 70;
-
-// 																								Life Variables
+*/
 
 life_net_dropped = false;
 life_hit_explosive = false;
