@@ -35,7 +35,7 @@ _alias = [[_name]] call DB_fnc_mresArray;
 _money = [_money] call DB_fnc_numberSafe;
 _bank = [_bank] call DB_fnc_numberSafe;
 
-_query = format["INSERT INTO players (playerid, name, money, atmmoney, aliases, cop_licenses, med_licenses, civ_licenses, civ_gear, cop_gear, med_gear, bounties, civ_position, cop_position, med_position) VALUES('%1', '%2', '%3', '%4', '%5','""[]""','""[]""','""[]""','""[]""','""[]""','""[]""','[]','""[]""','""[]""','""[]""')",
+_query = format["INSERT INTO players (playerid, name, money, atmmoney, aliases, cop_licenses, med_licenses, civ_licenses, civ_gear, cop_gear, med_gear, civ_position, cop_position, med_position) VALUES('%1', '%2', '%3', '%4', '%5','""[]""','""[]""','""[]""','""[]""','""[]""','""[]""','""[]""','""[]""','""[]""')",
 	_uid,
 	_name,
 	_money,

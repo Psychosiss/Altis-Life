@@ -6,5 +6,3 @@ _index = [_uid,life_wanted_list] call fnc_index;
 if(_index == -1) exitWith {};
 life_wanted_list set[_index,-1];
 life_wanted_list = life_wanted_list - [-1];
-
-[[],_uid] spawn TON_fnc_saveBounties;

@@ -51,5 +51,3 @@ player setVariable["adminlevel", __GETC__(life_adminlevel), true];
 player addRating 9999999;
 
 [] call life_fnc_handlerHelp;
-
-[[getPlayerUID player],"TON_fnc_loadBounties",false,false] call life_fnc_MP;

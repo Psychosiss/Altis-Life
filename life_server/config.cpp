@@ -114,8 +114,6 @@ class CfgFunctions
 			class clientDisconnect {};
 			class cleanupRequest {};
 			class vehicleRepaint {};
-			class saveBounties {};
-			class loadBounties {};
 			class vehicleIsDead {};
 			class keyManagement {};
 			class setObjVar {};
