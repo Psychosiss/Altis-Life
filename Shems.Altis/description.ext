@@ -50,7 +50,6 @@ corpseRemovalMaxTime = 9999;
 #include "dialog\federalReserve.hpp"
 #include "dialog\compensate.hpp"
 #include "dialog\smartphone.hpp"
-#include "dialog\wantedadd2.hpp"
 #include "dialog\veh_repaint.hpp"
 #include "dialog\jail_time.hpp"
 #include "dialog\channel.hpp"
@@ -286,8 +285,6 @@ class CfgFunctions
 			class smartphone;
 			class newMsg;
 			class showMsg;
-			class wantedadd2;
-			class wanted2;
 			class cellphone2;
 			class AAN;
 			class revokeLicense;

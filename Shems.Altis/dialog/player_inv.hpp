@@ -5,7 +5,7 @@ class playerSettings
 	idd = playersys_DIALOG;
 	movingEnable = true;
 	enableSimulation = true;
-	
+
 	class controlsBackground 
 	{
 		class life_RscTitleBackground:life_RscText 
@@ -17,7 +17,7 @@ class playerSettings
 			w = 0.8;
 			h = (1 / 25);
 		};
-		
+
 		class MainBackground:life_RscText 
 		{
 			colorBackground[] = {0,0,0,0.7};
@@ -27,7 +27,7 @@ class playerSettings
 			w = 0.8;
 			h = 0.6 - (22 / 250);
 		};
-		
+
 		class Title : life_RscTitle 
 		{
 			colorBackground[] = {0,0,0,0};
@@ -38,7 +38,7 @@ class playerSettings
 			w = 0.8;
 			h = (1 / 25);
 		};
-		
+
 		class moneyStatusInfo : Life_RscStructuredText
 		{
 			idc = 2015;
@@ -49,7 +49,7 @@ class playerSettings
 			w = 0.3; 
 			h = 0.6;
 		};
-		
+
 		class PlayersName : Title 
 		{
 			idc = carry_weight;
@@ -57,7 +57,7 @@ class playerSettings
 			text = "";
 		};
 	};
-	
+
 	class controls 
 	{
 		class itemHeader : Life_RscText
@@ -71,7 +71,7 @@ class playerSettings
 			w = 0.275; 
 			h = 0.04;
 		};
-		
+
 		class licenseHeader : Life_RscText
 		{
 			idc = -1;
@@ -83,7 +83,7 @@ class playerSettings
 			w = 0.275; 
 			h = 0.04;
 		};
-		
+
 		class moneySHeader : Life_RscText
 		{
 			idc = -1;
@@ -95,7 +95,7 @@ class playerSettings
 			w = 0.219; 
 			h = 0.04;
 		};
-	
+
 		class itemList : life_RscListBox 
 		{
 			idc = item_list;
@@ -105,7 +105,7 @@ class playerSettings
 			w = 0.275; 
 			h = 0.3;
 		};
-		
+
 		class moneyEdit : Life_RscEdit 
 		{
 			idc = 2018;
@@ -116,7 +116,7 @@ class playerSettings
 			w = 0.18; 
 			h = 0.03;
 		};
-		
+
 		class NearPlayers : Life_RscCombo 
 		{
 			idc = 2022;
@@ -125,7 +125,7 @@ class playerSettings
 			w = 0.18; 
 			h = 0.03;
 		};
-		
+
 		class moneyDrop : Life_RscButtonMenu
 		{
 			idc = 2001;
@@ -138,7 +138,7 @@ class playerSettings
 			w = 0.13;
 			h = 0.036;
 		};
-		
+
 		class itemEdit : Life_RscEdit 
 		{
 			idc = item_edit;
@@ -149,6 +149,7 @@ class playerSettings
 			w = 0.275; 
 			h = 0.03;
 		};
+
 		class iNearPlayers : Life_RscCombo
 		{
 			idc = 2023;
@@ -157,7 +158,7 @@ class playerSettings
 			w = 0.275; 
 			h = 0.03;
 		};
-		
+
 		class DropButton : life_RscButtonMenu 
 		{
 			idc = 2002;
@@ -169,7 +170,7 @@ class playerSettings
 			w = (5.25 / 40);
 			h = (1 / 25);
 		};
-		
+
 		class UseButton : life_RscButtonMenu 
 		{
 			text = "Utiliser";
@@ -180,7 +181,7 @@ class playerSettings
 			w = (5.25 / 40);
 			h = (1 / 25);
 		};
-		
+
 		class RemoveButton : life_RscButtonMenu 
 		{
 			text = "Jeter";
@@ -191,7 +192,7 @@ class playerSettings
 			w = (5.25 / 40);
 			h = (1 / 25);
 		};
-		
+
 		class ButtonClose : life_RscButtonMenu 
 		{
 			idc = -1;
@@ -202,7 +203,7 @@ class playerSettings
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
-		
+
 		class ButtonSettings : life_RscButtonMenu 
 		{
 			idc = -1;
@@ -213,7 +214,7 @@ class playerSettings
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
-		
+
 		class ButtonMyGang : Life_RscButtonMenu 
 		{
 			idc = 2011;
@@ -224,7 +225,7 @@ class playerSettings
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
-		
+
 		class Licenses_Menu : Life_RscControlsGroup
 		{
 			idc = -1;
@@ -232,7 +233,7 @@ class playerSettings
 			h = 0.38;
 			x = 0.34;
 			y = 0.30;
-			
+
 			class Controls
 			{
 				class Life_Licenses : Life_RscStructuredText
@@ -247,7 +248,7 @@ class playerSettings
 				};
 			};
 		};
-		
+
 		class ButtonGangList : Life_RscButtonMenu 
 		{
 			idc = 2012;
@@ -258,7 +259,7 @@ class playerSettings
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
-	
+
 		class ButtonKeys : Life_RscButtonMenu 
 		{
 			idc = 2013;
@@ -269,19 +270,18 @@ class playerSettings
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
-		
+
 		class ButtonCell : Life_RscButtonMenu 
 		{
 			idc = 2014;
 			text = "Téléphone";
-			//onButtonClick = "[] call life_fnc_cellphone2;";
 			onButtonClick = "if (player getVariable[""restrained"",false]) then {hint ""Vous êtes mennoté!"";} else {[] call life_fnc_cellphone2;};";
 			x = 0.42 + (6.25 / 19.8) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.8 - (1 / 25);
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
-		
+
 		class ButtonSyncData : life_RscButtonMenu 
 		{
 			idc = -1;
@@ -292,7 +292,7 @@ class playerSettings
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
-		
+
 		class ButtonMarket : Life_RscButtonMenu 
 		{
 			idc = -1;
@@ -303,18 +303,7 @@ class playerSettings
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
-		
-		class ButtonWantedAdd : life_RscButtonMenu 
-		{
-			idc = 9800;
-			text = "Wanted +";
-			onButtonClick = "createDialog ""life_wantedadd2"";";
-			x = 0.1 + (6.25 / 19.8) + (1 / 250 / (safezoneW / safezoneH));
-			y = 0.805;
-			w = (6.25 / 40);
-			h = (1 / 25);
-		};
-		
+
 		class ButtonAdminMenu : Life_RscButtonMenu 
 		{
 			idc = 2021;
@@ -325,7 +314,7 @@ class playerSettings
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
-		
+
 		class ButtonTaxi : Life_RscButtonMenu 
 		{
 			idc = 2024;
@@ -336,7 +325,7 @@ class playerSettings
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
-		
+
 		class ButtonCraft : Life_RscButtonMenu 
 		{
 			idc = 2025;
