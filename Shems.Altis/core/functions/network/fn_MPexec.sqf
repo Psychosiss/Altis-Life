@@ -1,4 +1,5 @@
 private ["_validFunctions","_params","_functionName","_target","_isPersistent","_isCall","_varName","_varValue","_function","_callerName","_callerUID","_exitScope"];
+
 _exitScope = false;
 _varName = _this select 0;
 _varValue = _this select 1;
@@ -28,7 +29,7 @@ if(_functionName == "BIS_fnc_execVM") then
 };
 
 if(_callerName == "" OR _callerUID == "") exitWith {};
-if(_callerUID != "__SERVER__" && _callerName != "__SERVER__" && toLower(_functionName) in ["spy_fnc_cookiejar","spy_fnc_notifyadmins"]) then 
+if(_callerUID != "__SERVER__" && _callerName != "__SERVER__" && toLower(_functionName) in ["SPY_fnc_cookieJar","SPY_fnc_notifyAdmins"]) then 
 {
 	if(toLower(_functionName) == "spy_fnc_cookiejar") exitWith 
 	{
@@ -39,7 +40,7 @@ if(_callerUID != "__SERVER__" && _callerName != "__SERVER__" && toLower(_functio
 			if(isServer && _mode == 0) then 
 			{
 				[_callerName,_callerUID,"false_reports_to_spyglass"] call SPY_fnc_cookieJar;
-				[[_callerName,"False reporting to SpyGlass (cheater)"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
+				[[_callerName,"Rapport de spyglass corrompu (cheater)"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
 			};
 			_exitScope = true;
 		};
@@ -52,7 +53,7 @@ if(_callerUID != "__SERVER__" && _callerName != "__SERVER__" && toLower(_functio
 		if(isServer && _mode == 0) then 
 		{
 			[_callerName,_callerUID,"false_reports_to_spyglass"] call SPY_fnc_cookieJar;
-			[[_callerName,"False reporting to SpyGlass (cheater)"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
+			[[_callerName,"Rapport de spyglass corrompu (cheater)"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
 		};
 		_exitScope = true;
 	};
@@ -92,7 +93,7 @@ if (isMultiplayer && _mode == 0) then
 				};
 			};
 
-			if (_ownerID < 0 || _ownerID == _serverID) then 
+			if (_ownerID < 0 || _ownerID == _serverID) then // --- or if (_ownerID == -1 ...
 			{
 				["life_fnc_MP_packet",life_fnc_MP_packet] call life_fnc_MPexec;
 			};
@@ -104,42 +105,64 @@ if (isMultiplayer && _mode == 0) then
 					private ["_logic","_queue"];
 					_logic = missionNamespace getVariable ["BIS_functions_mainscope",objNull];
 					_queue = _logic getVariable ["BIS_fnc_MP_queue",[]];
-					_queue set 
-					[
-						count _queue,
-						+life_fnc_MP_packet
-					];
+					_queue set [count _queue,+life_fnc_MP_packet];
 					_logic setVariable ["BIS_fnc_MP_queue",_queue,true];
 				} else {
-					["Persistent execution is not allowed when target is %1. Use %2 or %3 instead.",typeName 0,typeName objNull,typeName false] call BIS_fnc_error;
+					["L'execution persistante n'est pas disponible quand la cible est %1. Utiliser %2 ou %3 plutôt.",typeName 0,typeName objNull,typeName false] call BIS_fnc_error;
 				};
 			};
-		};
-	};
-} else {
-	private ["_canExecute"];
-	_canExecute = switch (typeName _target) do 
-	{
-		case (typeName grpNull): {player in units _target};
-		case (typeName sideUnknown): {playerSide == _target;};
-		case (typeName ""): {if(!isNull player) then {getPlayerUID player == _target;} else {false}};
-		default {true};
-	};
-	if (_canExecute) then 
-	{
-		_function = missionNamespace getVariable _functionName;
-		if (!isNil "_function") then 
-		{
-			if (_isCall) then 
-			{
-				_params call _function;
-			} else {
-				_params spawn _function;
-			};
-			true
+		//};
+	//};
 		} else {
-			["Function '%1' does not exist",_functionName] call BIS_fnc_error;
-			false
+			private "_canExecute";
+			_canExecute = switch (typeName _target) do 
+			{
+				case (typeName grpNull): {player in units _target};
+				case (typeName sideUnknown): {playerSide == _target;};
+				case (typeName ""): {if(!isNull player) then {getPlayerUID player == _target;} else {false}};
+				default {true};
+			};
+			if (_canExecute) then 
+			{
+				_function = missionNamespace getVariable _functionName;
+				if (!isNil "_function") then 
+				{
+					if (_isCall) then 
+					{
+						_params call _function;
+					} else {
+						_params spawn _function;
+					};
+					true
+				} else {
+				/*
+					["Fonction '%1' n'existe pas",_functionName] call BIS_fnc_error;
+					false
+				*/
+					_supportInfo = supportInfo format ["*:%1*", _functionName];
+					if (count _supportInfo > 0) then 
+					{
+						_cfgRemoteExecCommands = [["CfgRemoteExecCommands"], configfile] call BIS_fnc_loadClass;
+						if (isClass (_cfgRemoteExecCommands >> _functionName)) then 
+						{
+							_paramCount = if (typeName _params == typeName []) then {count _params} else {1};
+							switch (_paramCount) do 
+							{
+								case 0: {_params call compile format ["%1", _functionName];true};
+								case 1: {_params call compile format ["%1 (_this)", _functionName ];true};
+								case 2: {_params call compile format ["(_this select 0) %1 (_this select 1)", _functionName ];true};
+								default {["Erreur lors de l'exécution à distance '%1' - nombre incorrect d'arguments (%2) passé, doit être 0, 1 ou 2", _functionName, count _params] call BIS_fnc_error;false};
+							};
+						} else {
+							["Commande de script '%1' n'est pas autorisé à être éxécuté à distance.", _functionName] call BIS_fnc_error;
+							false
+						};
+					} else {
+						["Fonction ou commande de script '%1' n'existe pas", _functionName] call BIS_fnc_error;
+						false
+					}; //
+				};
+			};
 		};
 	};
 };

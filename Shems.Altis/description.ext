@@ -228,6 +228,8 @@ class CfgFunctions
 			class civRestrainAction;
 			class medRestrainAction;
 			class repaintVehicle;
+			class actionChairSit;
+			class actionChairStand;
 		};
 		
 		class Config
