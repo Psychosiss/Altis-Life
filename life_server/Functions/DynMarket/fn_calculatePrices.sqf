@@ -118,4 +118,4 @@ if (life_dynMarket_createRandomEvents) then
 	waitUntil {life_dynMarket_waitForEvent};
 };
 
-[[1,life_dynMarket_sellarraycopy],"life_fnc_update",true,false] call life_fnc_MP;
+[[1,life_dynMarket_sellarraycopy],"life_fnc_update",true,false] spawn life_fnc_MP;

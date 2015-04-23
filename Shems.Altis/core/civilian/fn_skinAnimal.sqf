@@ -8,7 +8,7 @@ if (isNull _corpse || !((typeOf _corpse) in _animals) || alive _corpse) exitWith
 	hint "Ce n'est pas un cadavre valable pour le dépecage!"; 
 };
 
-[[player,"AinvPknlMstpSnonWnonDnon_medic_2"],"life_fnc_animSync",true,false] call life_fnc_MP;
+[[player,"AinvPknlMstpSnonWnonDnon_medic_2"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
 player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_2";
 sleep 5.2;
 

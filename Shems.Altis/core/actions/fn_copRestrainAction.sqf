@@ -15,6 +15,6 @@ if(life_inv_handcuffs < 1) then
 	_unit say3D "cuff";
 	_unit setVariable["restrained",true,true];
 	hint "La cible n'est pas menotté";
-	[[player], "life_fnc_copRestrain", _unit, false] call life_fnc_MP;
-	[[0,format["%1 a été menotté par %2",_unit getVariable["realname", name _unit], profileName]],"life_fnc_broadcast",west,false] call life_fnc_MP;
+	[[player], "life_fnc_copRestrain", _unit, false] spawn life_fnc_MP;
+	[[0,format["%1 a été menotté par %2",_unit getVariable["realname", name _unit], profileName]],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
 }; 

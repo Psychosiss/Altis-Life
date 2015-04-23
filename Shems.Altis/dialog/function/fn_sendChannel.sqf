@@ -20,7 +20,7 @@ if !(life_channel_send) exitWith
 
 life_money = life_money - 6000;
 _message = ctrlText 9001;
-[[4,format ["Canal - : %1",_message]],"life_fnc_broadcast",true,false] call life_fnc_MP;
+[[4,format ["Canal - : %1",_message]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 life_channel_send = false;
 
 [] spawn

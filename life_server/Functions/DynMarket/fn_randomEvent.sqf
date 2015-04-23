@@ -54,4 +54,4 @@ life_dynMarket_waitForEvent = true;
 
 sleep 2;
 
-[[0,_eventMessage],"life_fnc_broadcast",true,false] call life_fnc_MP;
+[[0,_eventMessage],"life_fnc_broadcast",true,false] spawn life_fnc_MP;

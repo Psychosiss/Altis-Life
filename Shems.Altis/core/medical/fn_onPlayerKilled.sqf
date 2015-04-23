@@ -64,18 +64,18 @@ if(!isNull _killer && {_killer != _unit} && {side _killer != west} && {alive _ki
 {
 	if(vehicle _killer isKindOf "LandVehicle") then 
 	{
-		[[getPlayerUID _killer,_killer getVariable["realname",name _killer],"187V"],"life_fnc_wantedAdd",false,false] call life_fnc_MP;
+		[[getPlayerUID _killer,_killer getVariable["realname",name _killer],"187V"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
 
 		if(!local _killer) then 
 		{
-			[[2],"life_fnc_removeLicenses",_killer,false] call life_fnc_MP;
+			[[2],"life_fnc_removeLicenses",_killer,false] spawn life_fnc_MP;
 		};
 	} else {
-		[[getPlayerUID _killer,_killer getVariable["realname",name _killer],"187"],"life_fnc_wantedAdd",false,false] call life_fnc_MP;
+		[[getPlayerUID _killer,_killer getVariable["realname",name _killer],"187"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
 		
 		if(!local _killer) then 
 		{
-			[[3],"life_fnc_removeLicenses",_killer,false] call life_fnc_MP;
+			[[3],"life_fnc_removeLicenses",_killer,false] spawn life_fnc_MP;
 		};
 	};
 };
@@ -86,7 +86,7 @@ if(side _killer == west && playerSide != west) then
 
 	if(!life_use_atm && {life_money > 0}) then 
 	{
-		[format["%1 € ont été remis à la banque férérale car le voleur a été neutralisé.",[life_money] call life_fnc_numberText],"life_fnc_broadcast",true,false] call life_fnc_MP;
+		[format["%1 € ont été remis à la banque férérale car le voleur a été neutralisé.",[life_money] call life_fnc_numberText],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 		life_money = 0;
 	};
 };
@@ -110,7 +110,7 @@ life_carryWeight = 0;
 life_money = 0;
 
 [] call life_fnc_hudUpdate;
-[[player,life_sidechat,playerSide],"TON_fnc_managesc",false,false] call life_fnc_MP;
+[[player,life_sidechat,playerSide],"TON_fnc_managesc",false,false] spawn life_fnc_MP;
 
 [0] call SOCK_fnc_updatePartial;
 [3] call SOCK_fnc_updatePartial;

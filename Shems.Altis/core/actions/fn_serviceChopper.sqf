@@ -26,7 +26,7 @@ while {true} do
 if(!alive (_search select 0) || (_search select 0) distance air_sp > 10) exitWith {life_action_inUse = false; hint "The vehicle is no longer alive or on the helipad!"};
 if(!local (_search select 0)) then
 {
-	[[(_search select 0),1],"life_fnc_setFuel",(_search select 0),false] call life_fnc_MP;
+	[[(_search select 0),1],"life_fnc_setFuel",(_search select 0),false] spawn life_fnc_MP;
 } else {
 	(_search select 0) setFuel 1;
 };

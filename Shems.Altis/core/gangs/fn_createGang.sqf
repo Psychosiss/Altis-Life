@@ -18,7 +18,7 @@ _badChar = false;
 if(_badChar) exitWith {hint "You have invalid characters in your gang name. It can only consist of Numbers & letters with an underscore";};
 if(life_atmmoney < (__GETC__(life_gangPrice))) exitWith {hint format["Vous n'avez pas assez d'argent en banque.\n\nIl vous manque: %1 €",[((__GETC__(life_gangPrice)) - life_atmmoney)] call life_fnc_numberText];};
 
-[[player,getPlayerUID player,_gangName],"TON_fnc_insertGang",false,false] call life_fnc_MP;
+[[player,getPlayerUID player,_gangName],"TON_fnc_insertGang",false,false] spawn life_fnc_MP;
 hint "Envoi d'une requete en cours.....";
 closeDialog 0;
 life_action_gangInUse = true;

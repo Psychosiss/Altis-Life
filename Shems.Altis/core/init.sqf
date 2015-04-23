@@ -102,7 +102,7 @@ diag_log "----------------------------------------------------------------------
 diag_log format["                Fin de l'init d'Altis Life Client :: Temps d'execution total : %1 secondes ",(diag_tickTime) - _timeStamp];
 diag_log "------------------------------------------------------------------------------------------------------";
 life_sidechat = true;
-[[player,life_sidechat,playerSide],"TON_fnc_managesc",false,false] call life_fnc_MP;
+[[player,life_sidechat,playerSide],"TON_fnc_managesc",false,false] spawn life_fnc_MP;
 0 cutText ["","BLACK IN"];
 [] call life_fnc_hudSetup;
 LIFE_ID_PlayerTags = ["LIFE_PlayerTags","onEachFrame","life_fnc_playerTags"] call BIS_fnc_addStackedEventHandler;
@@ -112,7 +112,7 @@ player setVariable["realname",profileName,true];
 
 life_fnc_moveIn = compileFinal "player moveInCargo (_this select 0);";
 life_dynMarket_boughtItems = [];
-[[getPlayerUID player],"TON_fnc_playerLogged",false,false] call life_fnc_MP;
+[[getPlayerUID player],"TON_fnc_playerLogged",false,false] spawn life_fnc_MP;
 
 [] spawn  
 {
@@ -413,3 +413,4 @@ player disableConversation true;
 __CONST__(life_paycheck,life_paycheck);
 __CONST__(life_taxes,life_taxes);
 player enableFatigue (__GETC__(life_enableFatigue));
+[[getPlayerUID player,player getVariable["realname",name player]],"life_fnc_wantedProfUpdate",false,false] spawn life_fnc_MP;

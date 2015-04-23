@@ -56,4 +56,4 @@ switch(_mode) do
 	case 7: {};
 };
 
-[_packet,"DB_fnc_updatePartial",false,false] call life_fnc_MP;
+[_packet,"DB_fnc_updatePartial",false,false] spawn life_fnc_MP;

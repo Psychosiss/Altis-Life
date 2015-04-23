@@ -29,7 +29,7 @@ if(!isNil "_group") then
 	if((life_gangData select 1) == (getPlayerUID player)) then 
 	{
 		_group selectLeader player;
-		[[player,_group],"clientGangLeader",(units _group),false] call life_fnc_MP;
+		[[player,_group],"clientGangLeader",(units _group),false] spawn life_fnc_MP;
 	};
 } else {
 	_group = group player;

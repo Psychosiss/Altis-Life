@@ -13,4 +13,4 @@ _query = format["SELECT IF( remainingtime <= '0', TRUE, FALSE ) FROM players WHE
 waitUntil{!DB_Async_Active};
 _money_result = [_query,2] call DB_fnc_asyncCall;
 
-[ [_injail] ,"life_fnc_execJailTimer",_player,false] call life_fnc_MP;
+[ [_injail] ,"life_fnc_execJailTimer",_player,false] spawn life_fnc_MP;

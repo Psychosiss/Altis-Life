@@ -22,12 +22,12 @@ diag_log "---------------------------------------------------------";
 
 if(typeName _queryResult == "STRING") exitWith 
 {
-	[[],"SOCK_fnc_dataQuery",(owner _returnToSender),false] call life_fnc_MP;
+	[[],"SOCK_fnc_dataQuery",(owner _returnToSender),false] spawn life_fnc_MP;
 };
 
 if(count _queryResult != 0) exitWith 
 {
-	[[],"SOCK_fnc_dataQuery",(owner _returnToSender),false] call life_fnc_MP;
+	[[],"SOCK_fnc_dataQuery",(owner _returnToSender),false] spawn life_fnc_MP;
 };
 
 _name = [_name] call DB_fnc_mresString;
@@ -45,4 +45,4 @@ _query = format["INSERT INTO players (playerid, name, money, atmmoney, aliases, 
 
 waitUntil {!DB_Async_Active};
 [_query,1] call DB_fnc_asyncCall;
-[[],"SOCK_fnc_dataQuery",(owner _returnToSender),false] call life_fnc_MP;
+[[],"SOCK_fnc_dataQuery",(owner _returnToSender),false] spawn life_fnc_MP;

@@ -21,11 +21,11 @@ if(count _invs > 0) then
 	} foreach _invs;
 	if(_illegal > 6000) then
 	{
-		[[getPlayerUID _civ,_civ getVariable["realname",name _civ],"482"],"life_fnc_wantedAdd",false,false] call life_fnc_MP;
+		[[getPlayerUID _civ,_civ getVariable["realname",name _civ],"482"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
 	};
 
-	[[getPlayerUID _civ,_civ getVariable["realname",name _civ],"481"],"life_fnc_wantedAdd",false,false] call life_fnc_MP;
-	[[0,format["%1 a %2 € de contrebande sur lui.",(_civ getVariable["realname",name _civ]),[_illegal] call life_fnc_numberText]],"life_fnc_broadcast",west,false] call life_fnc_MP;
+	[[getPlayerUID _civ,_civ getVariable["realname",name _civ],"481"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
+	[[0,format["%1 a %2 € de contrebande sur lui.",(_civ getVariable["realname",name _civ]),[_illegal] call life_fnc_numberText]],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
 } else {
 	_inv = "Aucun objet illégale";
 };
@@ -34,5 +34,5 @@ hint parseText format["<t color='#FF0000'><t size='2'>%1</t></t><br/><t color='#
 
 if(_robber) then
 {
-	[[0,format["%1 a été identifié comme le pilleur de la banque fédérale!",(_civ getVariable["realname",name _civ])]],"life_fnc_broadcast",true,false] call life_fnc_MP;
+	[[0,format["%1 a été identifié comme le pilleur de la banque fédérale!",(_civ getVariable["realname",name _civ])]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 };

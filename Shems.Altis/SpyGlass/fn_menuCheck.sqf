@@ -32,8 +32,8 @@ while {true} do
 
 		if(_detection) exitWith 
 		{
-			[[profileName,steamid,format["MenuBasedHack_%1",_targetName]],"SPY_fnc_cookieJar",false,false] call life_fnc_MP;
-			[[profileName,format["Menu Hack: %1",_targetName]],"SPY_fnc_notifyAdmins",true,false] call life_fnc_MP;
+			[[profileName,steamid,format["MenuBasedHack_%1",_targetName]],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
+			[[profileName,format["Menu Hack: %1",_targetName]],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
 			sleep 0.5;
 			SPYGLASS_END
 		};
@@ -51,8 +51,8 @@ while {true} do
 		sleep 0.5;
 		if((lbSize 104)-1 > 3) exitWith 
 		{
-			[[profileName,steamid,"MenuBasedHack_RscDisplayConfigureControllers"],"SPY_fnc_cookieJar",false,false] call life_fnc_MP;
-			[[profileName,"Menu Hack: RscDisplayConfigureControllers (JME 313)"],"SPY_fnc_notifyAdmins",true,false] call life_fnc_MP;
+			[[profileName,steamid,"MenuBasedHack_RscDisplayConfigureControllers"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
+			[[profileName,"Menu Hack: RscDisplayConfigureControllers (JME 313)"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
 			closeDialog 0;
 			SPYGLASS_END
 		};
@@ -64,8 +64,8 @@ while {true} do
 		{
 			if (_x && !isNull _display) exitWith 
 			{
-				[[profileName,steamid,"MenuBasedHack_RscDisplayInsertMarker"],"SPY_fnc_cookieJar",false,false] call life_fnc_MP;
-				[[profileName,"Menu Hack: RscDisplayInsertMarker"],"SPY_fnc_notifyAdmins",true,false] call life_fnc_MP;
+				[[profileName,steamid,"MenuBasedHack_RscDisplayInsertMarker"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
+				[[profileName,"Menu Hack: RscDisplayInsertMarker"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
 				closeDialog 0;
 				SPYGLASS_END
 			};
@@ -83,8 +83,8 @@ while {true} do
 		{
 			if (_x && !isNull _display) exitWith 
 			{
-				[[profileName,steamid,"MenuBasedHack_RscDisplayConfigureAction"],"SPY_fnc_cookieJar",false,false] call life_fnc_MP;
-				[[profileName,"Menu Hack: RscDisplayConfigureAction"],"SPY_fnc_notifyAdmins",true,false] call life_fnc_MP;
+				[[profileName,steamid,"MenuBasedHack_RscDisplayConfigureAction"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
+				[[profileName,"Menu Hack: RscDisplayConfigureAction"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
 				closeDialog 0;
 				SPYGLASS_END
 			};
@@ -102,8 +102,8 @@ while {true} do
 		{
 			if (_x && !isNull _display) exitWith 
 			{
-				[[profileName,steamid,"MenuBasedHack_RscDisplayControlSchemes"],"SPY_fnc_cookieJar",false,false] call life_fnc_MP;
-				[[profileName,"Menu Hack: RscDisplayControlSchemes"],"SPY_fnc_notifyAdmins",true,false] call life_fnc_MP;
+				[[profileName,steamid,"MenuBasedHack_RscDisplayControlSchemes"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
+				[[profileName,"Menu Hack: RscDisplayControlSchemes"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
 				closeDialog 0;
 				SPYGLASS_END
 			};
@@ -117,17 +117,17 @@ while {true} do
 	if(!isNull _display && {count (allControls _display) > 85}) then 
 	{
 		_count = count allControls _display;
-		[[profileName,steamid,format["MenuBasedHack_RscDisplayInventory_Controls_%1",_count]],"SPY_fnc_cookieJar",false,false,true] call life_fnc_MP;
-		[[profileName,format["Menu Hack: RscDisplayInventory number of controls do not match (Count %1)",_count]],"SPY_fnc_notifyAdmins",true,false,true] call life_fnc_MP;
-		[[SPY,[(format["Menu Hack: RscDisplayInventory number of controls do not match (Count %1)",_count])],profileName,steamid],"TON_fnc_logIt",false,false] call life_fnc_MP;
+		[[profileName,steamid,format["MenuBasedHack_RscDisplayInventory_Controls_%1",_count]],"SPY_fnc_cookieJar",false,false,true] spawn life_fnc_MP;
+		[[profileName,format["Menu Hack: RscDisplayInventory number of controls do not match (Count %1)",_count]],"SPY_fnc_notifyAdmins",true,false,true] spawn life_fnc_MP;
+		[[SPY,[(format["Menu Hack: RscDisplayInventory number of controls do not match (Count %1)",_count])],profileName,steamid],"TON_fnc_logIt",false,false] spawn life_fnc_MP;
 		closeDialog 0;
 		SPYGLASS_END
 	};
 
 	if((unitRecoilCoefficient player) < 1) then 
 	{
-		[[profileName,steamid,"No_recoil_hack"],"SPY_fnc_cookieJar",false,false] call life_fnc_MP;
-		[[profileName,"No recoil hack"],"SPY_fnc_notifyAdmins",true,false] call life_fnc_MP;
+		[[profileName,steamid,"No_recoil_hack"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
+		[[profileName,"No recoil hack"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
 		sleep 0.5;
 		failMission "SpyGlass";
 	};
@@ -140,8 +140,8 @@ while {true} do
 			_onUnload = getText(configFile >> (_x select 0) >> "onUnload");
 			if(_onLoad != (_x select 1) OR _onUnload != (_x select 2)) exitWith 
 			{
-				[[profileName,steamid,format["Modified_Method_%1",_x select 0]],"SPY_fnc_cookieJar",false,false] call life_fnc_MP;
-				[[profileName,format["Modified Display Method %1 (Memory Edit)",_x select 0]],"SPY_fnc_notifyAdmins",true,false] call life_fnc_MP;
+				[[profileName,steamid,format["Modified_Method_%1",_x select 0]],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
+				[[profileName,format["Modified Display Method %1 (Memory Edit)",_x select 0]],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
 				sleep 0.5;
 				SPYGLASS_END
 			};

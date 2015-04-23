@@ -4,5 +4,5 @@ if(isNull _unit) exitWith {};
 hint "Recherche d'armes...";
 sleep 2;
 if(player distance _unit > 5 || !alive player || !alive _unit) exitWith {hint "Vous ne pouvez pas faire de recherche sur cette personne."};
-[[player],"life_fnc_removeWeapons",_unit,false] call life_fnc_MP;
+[[player],"life_fnc_removeWeapons",_unit,false] spawn life_fnc_MP;
 life_action_inUse = false;

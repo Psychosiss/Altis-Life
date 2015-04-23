@@ -20,5 +20,5 @@ _unit addRating 9999999999999999;
 player playMoveNow "amovppnemstpsraswrfldnon";
 
 [] call life_fnc_setupActions;
-[[_unit,life_sidechat,playerSide],"TON_fnc_managesc",false,false] call life_fnc_MP;
+[[_unit,life_sidechat,playerSide],"TON_fnc_managesc",false,false] spawn life_fnc_MP;
 player enableFatigue (__GETC__(life_enableFatigue));

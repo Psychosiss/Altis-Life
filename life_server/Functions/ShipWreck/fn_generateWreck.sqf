@@ -21,7 +21,7 @@ if (_chance>life_ship_chance) exitWith {};
 _toWait = (random (life_ship_time_max - life_ship_time_min)) + life_ship_time_min;
 sleep _toWait;
 
-[[7,"<t size='1.4'><t color='#A5DF00'>Navire</t></t><br/><br/><t size='1'>Une épave a été localisée, elle peut contenir des éléments importants!</t>"],"life_fnc_broadcast",true,false] call life_fnc_MP;
+[[7,"<t size='1.4'><t color='#A5DF00'>Navire</t></t><br/><br/><t size='1'>Une épave a été localisée, elle peut contenir des éléments importants!</t>"],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 
 _poses = count life_ship_positions;
 _inArr = floor(random _poses);
@@ -80,4 +80,4 @@ deleteMarker "wreckMarker";
 deleteMarker "wreckMarkerText";
 deleteVehicle _wreck;
 
-[[7,"<t size='1.4'><t color='#A5DF00'>Navire</t></t><br/><br/><t size='1'>Le navire à été pillé avec succès et à disparu!</t>"],"life_fnc_broadcast",true,false] call life_fnc_MP;
+[[7,"<t size='1.4'><t color='#A5DF00'>Navire</t></t><br/><br/><t size='1'>Le navire à été pillé avec succès et à disparu!</t>"],"life_fnc_broadcast",true,false] spawn life_fnc_MP;

@@ -1,24 +1,40 @@
-private["_ret","_list","_jailedUnits"];
+private["_ret","_list","_result","_queryResult","_units","_inStatement"];
 _ret = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 if(isNull _ret) exitWith {};
 _ret = owner _ret;
-_jailedUnits = [];
-{
-	if(_x distance (getMarkerPos "jail_marker") < 120) then 
-	{
-		_jailedUnits pushBack getPlayerUID _x
-	}
-} forEach playableUnits;
-
+_inStatement = "";
 _list = [];
+_units = [];
+_tickTime = diag_tickTime;
 {
-	_uid = _x select 1;
-	if([_uid] call life_fnc_isUIDActive) then
+	if((side _x) == civilian) then 
 	{
-		if(!(_uid in _jailedUnits)) then 
-		{
-			_list pushBack _x;
-		};
+		_units pushBack (getPlayerUID _x)
 	};
-} foreach life_wanted_list;
-[[_list],"life_fnc_wantedList",_ret,false] call life_fnc_MP;
+} foreach playableUnits;
+
+{
+	if(_inStatement == "") then
+	{
+		_inStatement = _x;
+	} else {
+		_inStatement = _inStatement + "','" + _x;
+	};
+} forEach _units;
+
+_result = format["SELECT wantedID, wantedName FROM wanted WHERE active='1' AND wantedID in ('%1')",_inStatement];
+waitUntil{!DB_Async_Active};
+_queryResult = [_result,2,true] call DB_fnc_asyncCall;
+{
+	_list pushBack (_x);
+} forEach _queryResult;
+
+if(count _list == 0) exitWith {[[_list],"life_fnc_wantedList",_ret,false] spawn life_fnc_MP;};
+
+diag_log "------------- Requête Query du client -------------";
+diag_log format["QUERY: %1",_result];
+diag_log format["Temps à compléter: %1 seconde(s)",(diag_tickTime - _tickTime)];
+diag_log format["Resultat: %1",_list];
+diag_log "---------------------------------------------------";
+
+[[_list],"life_fnc_wantedList",_ret,false] spawn life_fnc_MP;

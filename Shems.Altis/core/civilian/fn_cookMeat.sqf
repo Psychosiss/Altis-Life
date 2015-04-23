@@ -12,7 +12,7 @@ if (_meats == 0) exitWith
 
 for "_i" from 1 to _meats do
 {
-	[[player,"AinvPknlMstpSnonWnonDnon_medic_2"],"life_fnc_animSync",true,false] call life_fnc_MP;
+	[[player,"AinvPknlMstpSnonWnonDnon_medic_2"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
 	player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_2";
 	sleep 2.3;
 };

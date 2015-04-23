@@ -1,7 +1,7 @@
 while {true} do 
 {
 	sleep (life_dynMarket_PriceUpdateInterval * 60);
-	[[0],"life_fnc_update",true,false] call life_fnc_MP;
+	[[0],"life_fnc_update",true,false] spawn life_fnc_MP;
 	sleep 5;
 	[] spawn TON_fnc_calculatePrices;
 	life_dynMarket_UpdateCount = life_dynMarket_UpdateCount + 1;

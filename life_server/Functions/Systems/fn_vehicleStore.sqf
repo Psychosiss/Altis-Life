@@ -55,14 +55,14 @@ if(_impound) then
 } else {
 	if(count _vInfo == 0) exitWith
 	{
-		[[1,"Ce véhicule est une location et ne peut pas être placé dans votre garage."],"life_fnc_broadcast",(owner _unit),false] call life_fnc_MP;
+		[[1,"Ce véhicule est une location et ne peut pas être placé dans votre garage."],"life_fnc_broadcast",(owner _unit),false] spawn life_fnc_MP;
 		life_garage_store = false;
 		(owner _unit) publicVariableClient "life_garage_store";
 	};
 	
 	if(_uid != getPlayerUID _unit) exitWith
 	{
-		[[1,"Ce véhicule ne vous appartient pas. Vous ne pouvez pas le stocker dans votre garage."],"life_fnc_broadcast",(owner _unit),false] call life_fnc_MP;
+		[[1,"Ce véhicule ne vous appartient pas. Vous ne pouvez pas le stocker dans votre garage."],"life_fnc_broadcast",(owner _unit),false] spawn life_fnc_MP;
 		life_garage_store = false;
 		(owner _unit) publicVariableClient "life_garage_store";
 	};
@@ -76,5 +76,5 @@ if(_impound) then
 	};
 	life_garage_store = false;
 	(owner _unit) publicVariableClient "life_garage_store";
-	[[1,"Le véhicule a été entreposé dans le garage."],"life_fnc_broadcast",(owner _unit),false] call life_fnc_MP;
+	[[1,"Le véhicule a été entreposé dans le garage."],"life_fnc_broadcast",(owner _unit),false] spawn life_fnc_MP;
 };

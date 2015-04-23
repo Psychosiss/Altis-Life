@@ -13,7 +13,7 @@ _action =
 if(_action) then 
 {
 	hint "Suppression du gang....";
-	[[grpPlayer],"TON_fnc_removeGang",false,false] call life_fnc_MP;
+	[[grpPlayer],"TON_fnc_removeGang",false,false] spawn life_fnc_MP;
 } else {
 	hint "Gang supprimé";
 };

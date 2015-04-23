@@ -13,7 +13,7 @@ if((_val + _tax) > life_atmmoney) exitWith {hint format["Vous n'avez pas assez d
 
 life_atmmoney = life_atmmoney - (_val + _tax);
 
-[[_val,profileName],"clientWireTransfer",_unit,false] call life_fnc_MP;
+[[_val,profileName],"clientWireTransfer",_unit,false] spawn life_fnc_MP;
 [] call life_fnc_atmMenu;
 hint format["Vous avez transféré %1 € à %2.\n\nDes frais de %3 € ont été prise pour le transfert.",[_val] call life_fnc_numberText,_unit getVariable["realname",name _unit],[_tax] call life_fnc_numberText];
 playSound "atm";

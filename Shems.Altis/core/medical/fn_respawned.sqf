@@ -10,7 +10,7 @@ life_holstered = false;
 player playMove "amovpercmstpsnonwnondnon";
 
 life_corpse setVariable["Revive",nil,true];
-life_corpse setVariable["name",nil,TRUE];
+life_corpse setVariable["name",nil,true];
 life_corpse setVariable["Reviving",nil,true];
 player setVariable["Revive",nil,true];
 player setVariable["name",nil,true];
@@ -57,13 +57,13 @@ if(life_is_arrested) exitWith
 
 if(!isNil "life_copRecieve") then 
 {
-	[[player,life_copRecieve,true],"life_fnc_wantedBounty",false,false] call life_fnc_MP;
+	[[getPlayerUID player,player,life_copRecieve,true],"life_fnc_wantedBounty",false,false] spawn life_fnc_MP;
 	life_copRecieve = nil;
 };
 
 if(life_removeWanted) then 
 {
-	[[getPlayerUID player],"life_fnc_wantedRemove",false,false] call life_fnc_MP;
+	[[getPlayerUID player],"life_fnc_wantedRemove",false,false] spawn life_fnc_MP;
 };
 
 [] call SOCK_fnc_updateRequest;

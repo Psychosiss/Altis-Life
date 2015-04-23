@@ -110,4 +110,4 @@ switch(_rand) do
 
 life_action_inUse = false;
 
-[[getPlayerUID player,profileName,"800"],"life_fnc_wantedAdd",false,false] call life_fnc_MP;
+[[getPlayerUID player,profileName,"800"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;

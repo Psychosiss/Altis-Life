@@ -108,10 +108,10 @@ if(_rpg != "") then {_handle = [_rpg,true,false,false,false] spawn life_fnc_hand
 
 if(playerSide == independent && {uniform player == "U_Rangemaster"}) then 
 {
-	[[player,0,"images\med\uniform.jpg"],"life_fnc_setTexture",true,false] call life_fnc_MP;
+	[[player,0,"images\med\uniform.jpg"],"life_fnc_setTexture",true,false] spawn life_fnc_MP;
 };
 
 if(playerSide == west && {uniform player == "U_Rangemaster"}) then 
 {
-	[[player,0,"images\cop\uniform.paa"],"life_fnc_setTexture",true,false] call life_fnc_MP;
+	[[player,0,"images\cop\uniform.paa"],"life_fnc_setTexture",true,false] spawn life_fnc_MP;
 };

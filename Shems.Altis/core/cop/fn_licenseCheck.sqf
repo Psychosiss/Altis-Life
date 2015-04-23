@@ -12,4 +12,4 @@ _licenses = "";
 
 if(_licenses == "") then {_licenses = "Aucune license<br/>";};
 
-[[profileName,_licenses],"life_fnc_licensesRead",_cop,false] call life_fnc_MP;
+[[profileName,_licenses],"life_fnc_licensesRead",_cop,false] spawn life_fnc_MP;

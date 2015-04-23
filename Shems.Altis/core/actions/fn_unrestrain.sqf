@@ -15,4 +15,4 @@ _unit setVariable["transporting",false,true];
 _unit say3D "cuffout";
 detach _unit;
 
-[[0,format["%1 à été démenotté par %2",_unit getVariable["realname",name _unit], profileName]],"life_fnc_broadcast",west,false] call life_fnc_MP;
+[[0,format["%1 à été démenotté par %2",_unit getVariable["realname",name _unit], profileName]],"life_fnc_broadcast",west,false] spawn life_fnc_MP;

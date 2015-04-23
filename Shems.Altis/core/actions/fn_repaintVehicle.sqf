@@ -28,7 +28,7 @@ if(!isNull (findDisplay 2300)) then
 	{
 		if(animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then 
 		{
-			[[player,"AinvPknlMstpSnonWnonDnon_medic_1"],"life_fnc_animSync",true,false] call life_fnc_MP;
+			[[player,"AinvPknlMstpSnonWnonDnon_medic_1"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
 			player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
 		}; 
 		sleep 0.29;
@@ -56,7 +56,7 @@ if(!isNull (findDisplay 2300)) then
 		titleText["Vous devez sortir du véhicule afin de le peindre!","PLAIN"];
 	};
 	life_money = life_money - _basePrice;
-	[[_veh,_color_index],"TON_fnc_vehicleRepaint",false,false] call life_fnc_MP;
+	[[_veh,_color_index],"TON_fnc_vehicleRepaint",false,false] spawn life_fnc_MP;
 	[_veh,_color_index] call life_fnc_colorVehicle;
 	[] call SOCK_fnc_updateRequest;
 	hint format["Véhicule: %1 || Nouvelle couleur: %2 || Propriétaire: %3",_veh,_color_index,_vehicledata];

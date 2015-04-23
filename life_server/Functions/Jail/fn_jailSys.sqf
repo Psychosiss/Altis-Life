@@ -30,4 +30,4 @@ diag_log format["**TIMEJAIL** Le temps de prison pour le joueur %1 est de %2",na
 _id = owner _unit;
 
 _ret = [_unit] call life_fnc_wantedPerson;
-[[_ret,_bad,_time],"life_fnc_jailMe",_id,false] call life_fnc_MP;
+[[_ret,_bad,_time],"life_fnc_jailMe",_id,false] spawn life_fnc_MP;

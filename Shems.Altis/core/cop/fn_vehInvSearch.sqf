@@ -24,7 +24,7 @@ _value = 0;
 
 if(_value > 0) then
 {
-	[[0,format["Un véhicule a été fouillé et a une valeur de %1 € de drogue.",[_value] call life_fnc_numberText]],"life_fnc_broadcast",true,false] call life_fnc_MP;
+	[[0,format["Un véhicule a été fouillé et a une valeur de %1 € de drogue.",[_value] call life_fnc_numberText]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 	life_atmmoney = life_atmmoney + _value;
 	_vehicle setVariable["Trunk",[],true];
 } else {

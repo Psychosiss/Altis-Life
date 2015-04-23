@@ -19,4 +19,4 @@ if(!life_use_atm) then
 	_robber = true;
 };
 
-[[player,_inv,_robber],"life_fnc_copSearch",_cop,false] call life_fnc_MP;
+[[player,_inv,_robber],"life_fnc_copSearch",_cop,false] spawn life_fnc_MP;

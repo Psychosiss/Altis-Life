@@ -60,5 +60,5 @@ player addUniform "U_Rangemaster";
 
 player say3D "jail";
 
-[[player,_bad,_time],"life_fnc_jailSys",false,false] call life_fnc_MP;
+[[player,_bad,_time],"life_fnc_jailSys",false,false] spawn life_fnc_MP;
 [5] call SOCK_fnc_updatePartial;

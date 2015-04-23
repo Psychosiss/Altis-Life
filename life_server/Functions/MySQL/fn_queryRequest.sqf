@@ -25,12 +25,12 @@ diag_log "------------------------------------------------";
 
 if(typeName _queryResult == "STRING") exitWith 
 {
-	[[],"SOCK_fnc_insertPlayerInfo",_ownerID,false,true] call life_fnc_MP;
+	[[],"SOCK_fnc_insertPlayerInfo",_ownerID,false,true] spawn life_fnc_MP;
 };
 
 if(count _queryResult == 0) exitWith 
 {
-	[[],"SOCK_fnc_insertPlayerInfo",_ownerID,false,true] call life_fnc_MP;
+	[[],"SOCK_fnc_insertPlayerInfo",_ownerID,false,true] spawn life_fnc_MP;
 };
 
 private "_tmp";
@@ -141,4 +141,4 @@ switch (_side) do
 _keyArr = missionNamespace getVariable [format["%1_KEYS_%2",_uid,_side],[]];
 _queryResult set[15,_keyArr]; //12
 
-[_queryResult,"SOCK_fnc_requestReceived",_ownerID,false] call life_fnc_MP;
+[_queryResult,"SOCK_fnc_requestReceived",_ownerID,false] spawn life_fnc_MP;

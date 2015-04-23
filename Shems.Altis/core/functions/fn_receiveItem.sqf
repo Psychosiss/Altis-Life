@@ -12,9 +12,9 @@ if(_diff != (parseNumber _val)) then
 	if(([true,_item,_diff] call life_fnc_handleInv)) then
 	{
 		hint format["%1 has gave you %2 but you can only hold %3 so %4 was returned back.",_from getVariable["realname",name _from],_val,_diff,((parseNumber _val) - _diff)];
-		[[_from,_item,str((parseNumber _val) - _diff),_unit],"life_fnc_giveDiff",_from,false] call life_fnc_MP;
+		[[_from,_item,str((parseNumber _val) - _diff),_unit],"life_fnc_giveDiff",_from,false] spawn life_fnc_MP;
 	} else {
-		[[_from,_item,_val,_unit,false],"life_fnc_giveDiff",_from,false] call life_fnc_MP;
+		[[_from,_item,_val,_unit,false],"life_fnc_giveDiff",_from,false] spawn life_fnc_MP;
 	};
 } else {
 	if(([true,_item,(parseNumber _val)] call life_fnc_handleInv)) then
@@ -24,6 +24,6 @@ if(_diff != (parseNumber _val)) then
 		_type = [_type] call life_fnc_varToStr;
 		hint format["%1 has gave you %2 %3",_from getVariable["realname",name _from],_val,_type];
 	} else {
-		[[_from,_item,_val,_unit,false],"life_fnc_giveDiff",_from,false] call life_fnc_MP;
+		[[_from,_item,_val,_unit,false],"life_fnc_giveDiff",_from,false] spawn life_fnc_MP;
 	};
 };

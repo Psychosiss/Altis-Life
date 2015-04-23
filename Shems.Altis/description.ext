@@ -294,6 +294,7 @@ class CfgFunctions
 			class craft_updateFilter;
 			class itemIcon;
 			class repaintMenu;
+			class wantedAddPlayer;
 		};
 
 		class Functions
@@ -455,6 +456,7 @@ class CfgFunctions
 			class copLoadout;
 			class ticketPaid;
 			class airHorn;
+			class wantedGrab;
 		};
 		
 		class Gangs

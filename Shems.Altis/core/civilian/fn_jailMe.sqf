@@ -62,7 +62,7 @@ switch (true) do
 		player addUniform "U_C_Poloshirt_tricolour";
 		serv_wanted_remove = [player];
 		player setPos (getMarkerPos "jail_release");
-		[[getPlayerUID player],"life_fnc_wantedRemove",false,false] call life_fnc_MP;
+		[[getPlayerUID player],"life_fnc_wantedRemove",false,false] spawn life_fnc_MP;
 		[5] call SOCK_fnc_updatePartial;
 	};
 
@@ -70,8 +70,8 @@ switch (true) do
 	{
 		life_is_arrested = false;
 		hint "Vous vous êtes enfui.";
-		[[0,format["%1 s'est enfui de la prison !",name player]],"life_fnc_broadcast",nil,false] call life_fnc_MP;
-		[[getPlayerUID player,name player,"901"],"life_fnc_wantedAdd",false,false] call life_fnc_MP;
+		[[0,format["%1 s'est enfui de la prison !",name player]],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
+		[[getPlayerUID player,name player,"901"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
 		[5] call SOCK_fnc_updatePartial;
 	};
 
@@ -81,7 +81,7 @@ switch (true) do
 		hint "Vous avez servi votre temps en prison. Vous êtes libéré.";
 		removeUniform player;
 		player addUniform "U_C_Poloshirt_tricolour";
-		[[getPlayerUID player],"life_fnc_wantedRemove",false,false] call life_fnc_MP;
+		[[getPlayerUID player],"life_fnc_wantedRemove",false,false] spawn life_fnc_MP;
 		player setPos (getMarkerPos "jail_release");
 		[5] call SOCK_fnc_updatePartial;
 	};

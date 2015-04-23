@@ -36,7 +36,7 @@ if(_action) then
 	__SUB__(_funds,_upgradePrice);
 	grpPlayer setVariable["gang_maxMembers",_slotUpgrade,true];
 	hint parseText format["Vous avez mis à niveau à partir de %1 à %2 membres maximum pour &lt;t color='#8cff9b'&gt;%3 €&lt;/t&gt;",_maxMembers,_slotUpgrade,[_upgradePrice] call life_fnc_numberText];
-	[[2,grpPlayer],"TON_fnc_updateGang",false,false] call life_fnc_MP;
+	[[2,grpPlayer],"TON_fnc_updateGang",false,false] spawn life_fnc_MP;
 } else {
 	hint "Mise à jour annulée.";
 };

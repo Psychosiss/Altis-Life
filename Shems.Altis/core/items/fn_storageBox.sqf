@@ -30,7 +30,7 @@ switch (_boxType) do
 		_container setPosATL _pos;
 		_containers pushBack _container;
 		_house setVariable["containers",_containers,true];
-		[[_house],"TON_fnc_updateHouseContainers",false,false] call life_fnc_MP;
+		[[_house],"TON_fnc_updateHouseContainers",false,false] spawn life_fnc_MP;
 		clearWeaponCargoGlobal _container;
 		clearMagazineCargoGlobal _container;
 		clearItemCargoGlobal _container;
@@ -43,7 +43,7 @@ switch (_boxType) do
 		_container setPosATL _pos;
 		_containers pushBack _container;
 		_house setVariable["containers",_containers,true];
-		[[_house],"TON_fnc_updateHouseContainers",false,false] call life_fnc_MP;
+		[[_house],"TON_fnc_updateHouseContainers",false,false] spawn life_fnc_MP;
 		clearWeaponCargoGlobal _container;
 		clearMagazineCargoGlobal _container;
 		clearItemCargoGlobal _container;

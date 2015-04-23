@@ -38,6 +38,6 @@ switch(_option) do
 		} else {
 			life_sidechat = !true;
 		};
-		[[player,life_sidechat,playerSide],"TON_fnc_managesc",false,false,true] call life_fnc_MP;
+		[[player,life_sidechat,playerSide],"TON_fnc_managesc",false,false,true] spawn life_fnc_MP;
 	};
 };

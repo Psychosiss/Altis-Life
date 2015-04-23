@@ -47,7 +47,7 @@ if((uiNamespace getVariable["Weapon_Shop_Filter",0]) == 1) then
 			_funds = _funds - _price;
 			grpPlayer setVariable["gang_bank",_funds,true];
 			[_item,true] spawn life_fnc_handleItem;
-			[[1,grpPlayer],"TON_fnc_updateGang",false,false] call life_fnc_MP;
+			[[1,grpPlayer],"TON_fnc_updateGang",false,false] spawn life_fnc_MP;
 		} else {
 			if(_price > life_money) exitWith {hint "Vous n'avez pas assez d'argent sur vous!"};
 			hint parseText format["Vous avez acheté %1 pour <t color='#8cff9b'>%2 €</t>",_itemInfo select 1,[_price] call life_fnc_numberText];

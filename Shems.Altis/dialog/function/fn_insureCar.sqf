@@ -24,7 +24,7 @@ if(life_atmmoney < _price) exitWith
 	hint format["Vous n'avez pas %1 € dans votre compte bancaire pour payé les frais.",[_price] call life_fnc_numberText];
 };
 
-[[_vid,_pid,_unit,_price],"TON_fnc_insureCar",false,false] call life_fnc_MP;
+[[_vid,_pid,_unit,_price],"TON_fnc_insureCar",false,false] spawn life_fnc_MP;
 
 hint "Votre véhicule est désormais assuré";
 

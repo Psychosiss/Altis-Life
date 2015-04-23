@@ -43,7 +43,7 @@ switch (_code) do
 		{
 			SOCK_fnc_updateRequest;
 			diag_log format ["%1 utilise CTRL + ESC pour se déconnecter",_player getVariable["realname",name _player]];
-			[[1,format["%1 utilise CTRL + ESC pour se déconnecter",_player getVariable["realname",name _player]]],"life_fnc_broadcast",nil,false] call life_fnc_MP;
+			[[1,format["%1 utilise CTRL + ESC pour se déconnecter",_player getVariable["realname",name _player]]],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
 			SOCK_fnc_updateRequest;
 		};
 	};
@@ -213,7 +213,7 @@ switch (_code) do
 								_veh animateDoor [_x,1];
 							} forEach _doors;
 						} else {
-							[[_veh,0], "life_fnc_lockVehicle",_veh,false] call life_fnc_MP;
+							[[_veh,0], "life_fnc_lockVehicle",_veh,false] spawn life_fnc_MP;
 							{
 								_veh animateDoor [_x,1];
 							} forEach _doors;
@@ -228,7 +228,7 @@ switch (_code) do
 								_veh animateDoor [_x,0];
 							} forEach _doors;
 						} else {
-							[[_veh,2], "life_fnc_lockVehicle",_veh,false] call life_fnc_MP;
+							[[_veh,2], "life_fnc_lockVehicle",_veh,false] spawn life_fnc_MP;
 							{
 								_veh animateDoor [_x,0];
 							} forEach _doors;
@@ -266,7 +266,7 @@ switch (_code) do
 				} else {
 					titleText ["Sirènes Activés","PLAIN"];
 					_veh setVariable["siren",true,true];
-					[[_veh],"life_fnc_copSiren",nil,true] call life_fnc_MP;
+					[[_veh],"life_fnc_copSiren",nil,true] spawn life_fnc_MP;
                 };
             };
         };
@@ -330,7 +330,7 @@ switch (_code) do
 		if(animationState player != "AovrPercMrunSrasWrflDf" && {isTouchingGround player} && {stance player == "STAND"} && {speed player > 2}) then 
 		{
 			[player,true] spawn life_fnc_jumpFnc;
-			[[player,false],"life_fnc_jumpFnc",nil,FALSE] call life_fnc_MP;
+			[[player,false],"life_fnc_jumpFnc",nil,FALSE] spawn life_fnc_MP;
 			_handled = true;
 		};
 	};
@@ -341,7 +341,7 @@ switch (_code) do
 		{
 			SOCK_fnc_updateRequest;
 			diag_log format ["%1 utilise ALT+F4 pour se déconnecter",_player getVariable["realname",name _player]];
-			[[1,format["%1 utilise ALT+F4 pour se déconnecter",_player getVariable["realname",name _player]]],"life_fnc_broadcast",nil,false] call life_fnc_MP;
+			[[1,format["%1 utilise ALT+F4 pour se déconnecter",_player getVariable["realname",name _player]]],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
 			SOCK_fnc_updateRequest;
 		};
 	};
@@ -378,7 +378,7 @@ switch (_code) do
 		{
 			SOCK_fnc_updateRequest;
 			diag_log format ["%1 utilise CTRL + ALT + DEL pour se déconnecter",_player getVariable["realname",name _player]];
-			[[1,format["%1 utilise CTRL + ALT + DEL  pour se déconnecter",_player getVariable["realname",name _player]]],"life_fnc_broadcast",nil,false] call life_fnc_MP;
+			[[1,format["%1 utilise CTRL + ALT + DEL  pour se déconnecter",_player getVariable["realname",name _player]]],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
 			SOCK_fnc_updateRequest;
 		};
 	};

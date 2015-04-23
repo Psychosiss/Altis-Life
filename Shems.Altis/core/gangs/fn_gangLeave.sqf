@@ -9,7 +9,7 @@ _grpMembers = _grpMembers - [steamid];
 _grp setVariable["gang_members",_grpMembers,true];
 [player] joinSilent (createGroup civilian);
 
-[[4,_grp],"TON_fnc_updateGang",false,false] call life_fnc_MP;
+[[4,_grp],"TON_fnc_updateGang",false,false] spawn life_fnc_MP;
 closeDialog 0;
 sleep 1.0;
 [player] joinSilent (createGroup civilian);

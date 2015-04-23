@@ -3,7 +3,7 @@ if(vest player != "V_HarnessOGL_gry") exitWith {};
 
 life_isSuiciding = true;
 
-[[0,format["Quelqu'un explose dans 10 secondes"]],"life_fnc_broadcast",true,false] call life_fnc_MP;
+[[0,format["Quelqu'un explose dans 10 secondes"]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 sleep 7;
 
 [player, "allahuakbar",50] call life_fnc_globalSound;

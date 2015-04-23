@@ -7,4 +7,4 @@ if(life_atmmoney < life_bail_amount) exitWith {hint format["Vous n'avez pas %1 â
 
 life_atmmoney = life_atmmoney - life_bail_amount;
 life_bail_paid = true;
-[[0,format["%1 est mis sous caution!", _unit getVariable ["realname",name _unit]]],"life_fnc_broadcast",true,false] call life_fnc_MP;
+[[0,format["%1 est mis sous caution!", _unit getVariable ["realname",name _unit]]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;

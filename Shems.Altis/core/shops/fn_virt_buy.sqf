@@ -38,7 +38,7 @@ if(([true,_type,_amount] call life_fnc_handleInv)) then
 			_funds = grpPlayer getVariable "gang_bank";
 			_funds = _funds - (_price * _amount);
 			grpPlayer setVariable["gang_bank",_funds,true];
-			[[1,grpPlayer],"TON_fnc_updateGang",false,false] call life_fnc_MP;
+			[[1,grpPlayer],"TON_fnc_updateGang",false,false] spawn life_fnc_MP;
 		} else {
 			if((_price * _amount) > life_money) exitWith {[false,_type,_amount] call life_fnc_handleInv; hint "Vous n'avez pas assez d'argent.";};
 			hint format["Vous avez acheté %1 %2 pour %3 €",_amount,_name,[(_price * _amount)] call life_fnc_numberText];

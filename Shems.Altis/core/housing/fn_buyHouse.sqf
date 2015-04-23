@@ -25,7 +25,7 @@ _action =
 if(_action) then 
 {
 	if(life_atmmoney < (_houseCfg select 0)) exitWith {hint format ["Vous n'avez pas assez d'argent!"]};
-	[[_uid,_house],"TON_fnc_addHouse",false,false] call life_fnc_MP;
+	[[_uid,_house],"TON_fnc_addHouse",false,false] spawn life_fnc_MP;
 	_house setVariable["house_owner",[_uid,profileName],true];
 	_house setVariable["locked",true,true];
 	_house setVariable["Trunk",[[],0],true];
