@@ -115,9 +115,9 @@ life_wanted_list = [];
 [] spawn TON_fnc_initHouses;
 
 [] execVM "\life_server\Functions\DynMarket\fn_config.sqf";
-[] execVM "\life_server\Functions\ShipWreck\fn_generateWreck.sqf";
-[] execVM "\life_server\Functions\AirDrop\config.sqf";
-[] execVM "\life_server\Functions\AirDrop\fn_generateAuto.sqf";
+[] execVM "\life_server\Functions\DynamicEvents\fn_generateWreck.sqf";
+[] execVM "\life_server\Functions\DynamicEvents\config.sqf";
+[] execVM "\life_server\Functions\DynamicEvents\fn_generateAuto.sqf";
 
 private["_dome","_rsb"];
 

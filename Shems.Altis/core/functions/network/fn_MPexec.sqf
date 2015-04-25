@@ -142,7 +142,7 @@ if (isMultiplayer && _mode == 0) then
 					_supportInfo = supportInfo format ["*:%1*", _functionName];
 					if (count _supportInfo > 0) then 
 					{
-						_cfgRemoteExecCommands = [["CfgRemoteExecCommands"], configfile] call BIS_fnc_loadClass;
+						_cfgRemoteExecCommands = [["CfgRemoteExecCommands"], configFile] call BIS_fnc_loadClass;
 						if (isClass (_cfgRemoteExecCommands >> _functionName)) then 
 						{
 							_paramCount = if (typeName _params == typeName []) then {count _params} else {1};
@@ -160,7 +160,7 @@ if (isMultiplayer && _mode == 0) then
 					} else {
 						["Fonction ou commande de script '%1' n'existe pas", _functionName] call BIS_fnc_error;
 						false
-					}; //
+					};
 				};
 			};
 		};

@@ -935,7 +935,7 @@ class CfgDebriefing
 	{
 		title = "Déconnection réussi";
 		subtitle = "Votre profil à été sauvegardé";
-		description = "N'oubliez pas de revenir.";
+		description = "nous avons hate de vous revoir.";
 		pictureBackground = "";
 		picture = "\a3\ui_f\data\gui\cfg\Hints\tasks_ca.paa";
 		pictureColor[] = { 1, 1, 1, 1 };

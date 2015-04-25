@@ -10,3 +10,4 @@ spawnHandlerIDT = [["#t",true,true,true],"life_fnc_filterChat"] call aniChatEven
 spawnHandlerIDR = [["#r",true,true,true],"life_fnc_filterChat"] call aniChatEvents_addEventHandler;
 spawnHandlerIDR = [["#e",true,true,true],"life_fnc_emote"] call aniChatEvents_addEventHandler;
 "life_fnc_MP_packet" addPublicVariableEventHandler {[_this select 0,_this select 1] call life_fnc_MPexec;};
+"BIS_fnc_MP_packet" addPublicVariableEventHandler {_this call life_fnc_MPexec}; // --- Make a test to move this initPlayerLocal -> fn_setupEVH

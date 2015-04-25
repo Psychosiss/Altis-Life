@@ -22,17 +22,6 @@ _markerText = createMarker ["Airdropmarkertext", _dest];
 "Airdropmarkertext" setMarkerText "Airdrop-Mission";
 "Airdropmarkertext" setMarkerType "mil_warning";
 
-[[7,"<t size='1.2'><t color='#FF0000'>Airdrop-Mission</t></t><br/><br/><t size='1'>10 minutes until the helicopter will drop the supplies! Check your map for the drop-location!</t>"],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
-sleep 300;
-
-[[7,"<t size='1.2'><t color='#FF0000'>Airdrop-Mission</t></t><br/><br/><t size='1'>5 minutes until the helicopter will drop the supplies!</t>"],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
-
-sleep 60;
-
-[[7,"<t size='1.2'><t color='#FF0000'>Airdrop-Mission</t></t><br/><br/><t size='1'>4 minutes until the helicopter will drop the supplies!</t>"],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
-
-sleep 60;
-
 [[7,"<t size='1.2'><t color='#FF0000'>Airdrop-Mission</t></t><br/><br/><t size='1'>3 minutes until the helicopter will drop the supplies!</t>"],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 
 sleep 60;
