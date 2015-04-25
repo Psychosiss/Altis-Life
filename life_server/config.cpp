@@ -153,13 +153,15 @@ class CfgFunctions
 			class randomEvent {};
 		};
 
-		class Airdrop
+		class DynamicEvents
 		{
-			file = "\life_server\Functions\AirDrop";
+			file = "\life_server\Functions\DynamicEvents";
 			class generateAirDrop {};
+			class generateAuto {};
+			class generateWreck {};
 		};
 	};
-		
+
 	class GHBSystem
 	{
 		tag = "GHB";
