@@ -1,4 +1,4 @@
-"BIS_fnc_MP_packet" addPublicVariableEventHandler {_this call life_fnc_MPexec};
+//"BIS_fnc_MP_packet" addPublicVariableEventHandler {_this call life_fnc_MPexec};
 
 [] call compileFinal PreprocessFileLineNumbers "KRON_Strings.sqf";
 
@@ -12,7 +12,30 @@ BIS_fnc_endMission = compileFinal (if(typeName BIS_fnc_endMission == "STRING") t
 
 if((_this select 1)) then 
 {
-	[] execVM "core\jip.sqf";
+	{
+		_index = _x getVariable "life_VEH_color";
+		if(!isNil "_index") then 
+		{
+			[_x,_index] spawn life_fnc_colorVehicle;
+		};
+	} foreach (allMissionObjects "Car");
+
+	{
+		_index = _x getVariable "life_VEH_color";
+		if(!isNil "_index") then 
+		{
+			[_x,_index] spawn life_fnc_colorVehicle;
+		};
+	} foreach (allMissionObjects "Air");
+
+	// --- Test this
+	{
+		_index = _x getVariable "life_VEH_color";
+		if(!isNil "_index") then 
+		{
+			[_x,_index] spawn life_fnc_colorVehicle;
+		};
+	} foreach (allMissionObjects "Ship");
 };
 
-false call GTA_fnc_simulationManager;
+false call life_fnc_simulationManager;
