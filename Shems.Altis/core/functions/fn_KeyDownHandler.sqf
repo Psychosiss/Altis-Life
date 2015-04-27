@@ -41,10 +41,9 @@ switch (_code) do
 	{
 		if(_ctrlKey)  then 
 		{
-			SOCK_fnc_updateRequest;
 			diag_log format ["%1 utilise CTRL + ESC pour se déconnecter",_player getVariable["realname",name _player]];
 			[[1,format["%1 utilise CTRL + ESC pour se déconnecter",_player getVariable["realname",name _player]]],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
-			SOCK_fnc_updateRequest;
+			[] call SOCK_fnc_updateRequest;
 		};
 	};
 
@@ -163,14 +162,6 @@ switch (_code) do
 		};
 	};
 
-	case 21:
-	{
-		if((_code in (actionKeys "SelectAll") || _code in (actionKeys "ForceCommandingMode"))) then 
-		{
-			[] call life_fnc_p_openMenu;
-		};
-	};
-
 	case 22:
 	{
 		if(!_alt && !_ctrlKey) then 
@@ -193,10 +184,12 @@ switch (_code) do
 						_veh setVariable[format["bis_disabled_Door_%1",_door],1,true];
 						_veh animate [format["door_%1_rot",_door],0];
 						systemChat "Vous avez fermé votre maison.";
+						[[player,"key_jangling",15],"life_fnc_playSound",true,false] spawn life_fnc_MP;
 					} else {
 						_veh setVariable[format["bis_disabled_Door_%1",_door],0,true];
 						_veh animate [format["door_%1_rot",_door],1];
 						systemChat "Vous avez ouvert votre maison.";
+						[[player,"key_jangling",15],"life_fnc_playSound",true,false] spawn life_fnc_MP;
 					};
 				};
 			} else {
@@ -219,7 +212,7 @@ switch (_code) do
 							} forEach _doors;
 						};
 						hint composeText [image "icons\unlock.paa"," Véhicule ouvert"];
-						_veh say3D "Beep";
+						_veh say3D "unlock";
 					} else {
 						if(local _veh) then
 						{
@@ -234,7 +227,7 @@ switch (_code) do
 							} forEach _doors;
 						};
 						hint composeText [image "icons\lock.paa"," Véhicule fermé"];
-						_veh say3D "BeepBeep";
+						_veh say3D "lock";
 					};
 				};
 			};
@@ -320,7 +313,18 @@ switch (_code) do
 		};
 	};
 
-	case 47:
+	case 41: 
+	{
+		if (isNull (uiNamespace getVariable ["life_RscHUD_display",displayNull])) then 
+		{
+			["life_RscHUD",nil,nil,false] call life_fnc_createRscLayer;
+		} else {
+			["life_RscHUD"] call life_fnc_destroyRscLayer;
+		};
+		_handled = true;
+	};
+
+	case 47: 
 	{
 		if(playerSide != west && (player getVariable "restrained") OR (player getVariable "transporting")) then {_handled = true;};
 	};
@@ -329,20 +333,18 @@ switch (_code) do
 	{
 		if(animationState player != "AovrPercMrunSrasWrflDf" && {isTouchingGround player} && {stance player == "STAND"} && {speed player > 2}) then 
 		{
-			[player,true] spawn life_fnc_jumpFnc;
-			[[player,false],"life_fnc_jumpFnc",nil,FALSE] spawn life_fnc_MP;
+			[player,true] spawn life_fnc_jump;
+			[[player,false],"life_fnc_jump",nil,FALSE] spawn life_fnc_MP;
 			_handled = true;
 		};
 	};
-	
+
 	case 62:
 	{
 		if(_alt && !_shift) then 
 		{
-			SOCK_fnc_updateRequest;
-			diag_log format ["%1 utilise ALT+F4 pour se déconnecter",_player getVariable["realname",name _player]];
-			[[1,format["%1 utilise ALT+F4 pour se déconnecter",_player getVariable["realname",name _player]]],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
-			SOCK_fnc_updateRequest;
+			diag_log format ["%1 utilise ALT + F4 pour se déconnecter",_player getVariable["realname",name _player]];
+			[[1,format["%1 utilise ALT + F4 pour se déconnecter",_player getVariable["realname",name _player]]],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
 		};
 	};
 	
@@ -376,11 +378,17 @@ switch (_code) do
 	{
 		if(_ctrlKey && _alt)  then 
 		{
-			SOCK_fnc_updateRequest;
 			diag_log format ["%1 utilise CTRL + ALT + DEL pour se déconnecter",_player getVariable["realname",name _player]];
 			[[1,format["%1 utilise CTRL + ALT + DEL  pour se déconnecter",_player getVariable["realname",name _player]]],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
-			SOCK_fnc_updateRequest;
+			[] call SOCK_fnc_updateRequest;
 		};
+	};
+
+	case in [21,59,60,61,62,63,64,65,66,67,68,87,88,211]:
+	{
+		closeDialog 0;
+		hintC "Ces touches ont été retirées";
+		_handled = false;
 	};
 };
 

@@ -63,11 +63,12 @@ corpseRemovalMaxTime = 9999;
 
 class RscTitles
 {
-	#include "dialog\ui.hpp"
+	//#include "dialog\ui.hpp"
 	#include "dialog\progress.hpp"
 	#include "dialog\hud_nameTags.hpp"
 	#include "dialog\statusBar.hpp"
 	#include "dialog\slotmachine.hpp"
+	#include "dialog\RscHUD.h"
 };
 
 class CfgFunctions
@@ -117,6 +118,7 @@ class CfgFunctions
 			class initMedic;
 			class initZeus;
 			class addKey;
+			class initSurvival;
 		};
 		
 		class Admin
@@ -297,6 +299,9 @@ class CfgFunctions
 			class itemIcon;
 			class repaintMenu;
 			class wantedAddPlayer;
+			class initDisplay;
+			class createRscLayer;
+			class destroyRscLayer;
 		};
 
 		class Functions
@@ -365,6 +370,7 @@ class CfgFunctions
 			class statusBar;
 			class enableActions;
 			class voiceCheck;
+			class log;
 		};
 
 		class Network
@@ -375,7 +381,7 @@ class CfgFunctions
 			class MPexec;
 			class netSetVar;
 			class corpse;
-			class jumpFnc;
+			class jump;
 			class soundDevice;
 			class setFuel;
 			class setTexture;
@@ -655,17 +661,17 @@ class CfgSounds
 		titles[] = {};
 	};
 	
-	class BeepBeep
+	class Unlock
 	{
-		name = "BeepBeep";
-		sound[] = {"sounds\beepbeep.ogg",1,1};
+		name = "Unlock";
+		sound[] = {"sounds\unlock.ogg",1,1};
 		titles[] = {};
 	};
 	
-	class Beep
+	class Lock
 	{
-		name = "Beep";
-		sound[] = {"sounds\beep.ogg",1,1};
+		name = "Lock";
+		sound[] = {"sounds\lock.ogg",1,1};
 		titles[] = {};
 	};
   
@@ -710,112 +716,70 @@ class CfgSounds
 		sound[] = {"sounds\siren_long2.ogg",1,1};
 		titles[] = {};
 	};
-	
-	class dog_whine
-	{
-		name = "dog_whine";
-		sound[] = {"sounds\dog_whine.ogg",1,1};
-		titles[] = {};
-	};
-	
-	class dog_growl
-	{
-		name = "dog_growl";
-		sound[] = {"sounds\dog_growl.ogg",1,1};
-		titles[] = {};
-	};
-	
-	class dog_ruff
-	{
-		name = "dog_ruff";
-		sound[] = {"sounds\dog_ruff.ogg",1,1};
-		titles[] = {};
-	};
-	
-	class whistle
-	{
-		name = "whistle";
-		sound[] = {"sounds\whistle.ogg",1,1};
-		titles[] = {};
-	};
-	
-	class dog_close
-	{
-		name = "dog_close";
-		sound[] = {"sounds\dog_close.ogg",1,1};
-		titles[] = {};
-	};
-	
-	class dog_one
-	{
-		name = "dog_one";
-		sound[] = {"sounds\dog_one.ogg",1,1};
-		titles[] = {};
-	};
-	
+
 	class allahuakbar
 	{
 		name = "allahuakbar";
 		sound[] = {"sounds\allahuakbar.ogg",1,1};
 		titles[] = {};
 	};
-	
+
 	class Patdown
 	{
 		name = "Patdown";
 		sound[] = {"sounds\patdown.ogg",1,1};
 		titles[] = {};
 	};
-	
+
 	class pute
 	{
 		name = "pute";	
 		sound[] = {"sounds\pute.ogg",1,1};
 		titles[] = {};
 	};
-	
+
 	class jail
 	{
 		name = "jail";
 		sound[] = {"sounds\jail.ogg",1,1};
 		titles[] = {};
 	};
-	
+
 	class eat
 	{
 		name = "eat";
 		sound[] = {"sounds\eat.ogg",1,1};
 		titles[] = {};
 	};
-	
+
 	class drink
 	{
 		name = "drink";
 		sound[] = {"sounds\drink.ogg",1,1};
 		titles[] = {};
 	};
-	
+
 	class Mining
 	{
 		name = "mining";
 		sound[] = {"sounds\mining.ogg",1,1};
 		titles[] = {};
 	};
-	
+
 	class spraycan
 	{
 		name = "spraycan";	
 		sound[] = {"sounds\spraycan.ogg",1,1};
 		titles[] = {};
 	};
-	
+
 	class oil
 	{
 		name = "oil";
 		sound[] = {"sounds\oil.ogg",1,1};
 		titles[] = {};
 	};
-	
+
 	class news
 	{
 		name = "news";
@@ -850,14 +814,14 @@ class CfgSounds
 		sound[] = {"sounds\slot_spin.ogg",1,1};
 		titles[] = {};
 	};
-	
+
 	class Caching
 	{
 		name = "caching";
 		sound[] = {"sounds\caching.ogg",1,1};
 		titles[] = {};
 	};
-	
+
 	class marteau
 	{
 		name = "marteau";
@@ -925,6 +889,13 @@ class CfgSounds
 	{
 		name = "airHorn";
 		sound[] = {"sounds\airHorn.ogg",2,1};
+		titles[] = {};
+	};
+
+	class key_jangling
+	{
+		name = "key_jangling";
+		sound[] = {"sounds\key_jangling.ogg",1,1};
 		titles[] = {};
 	};
 };

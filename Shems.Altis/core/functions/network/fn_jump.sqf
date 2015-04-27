@@ -13,7 +13,7 @@ if(local _unit) then
 	_v2 = .4;
 	_dir = direction player;
 	_vel = velocity _unit;
-	_unit setVelocity[(_vel select 0)+(sin _dir*_v2),(_vel select 1)+(cos _dir*_v2),(_vel select 2)+_v1];
+	_unit setVelocity [(_vel select 0) + (sin _dir * _v2),(_vel select 1) + (cos _dir * _v2),(_vel select 2) + _v1];
 };
 
 _anim = animationState _unit;
