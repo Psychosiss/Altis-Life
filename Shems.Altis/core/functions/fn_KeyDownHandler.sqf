@@ -350,20 +350,15 @@ switch (_code) do
 	
 	case 86:
 	{
-		if((!life_action_inUse) && (vehicle player == player) ) then
 		{
+			if((!life_action_inUse) && (vehicle player == player)) then
 			{
-				_str = [_x] call life_fnc_varToStr;
-				_val = missionNameSpace getVariable _x;
-				if(_val > 0 ) then
+				if(life_inv_pickaxe > 0) then
 				{
-					if( _str == "Pickaxe" || _str == "pickaxe" ) then
-					{
-						[] spawn life_fnc_pickAxeUse;
-					};
+					[] spawn life_fnc_pickAxeUse;
 				};
-			} foreach life_inv_items;
-		}
+			}
+		};
 	};
 
 	case 181:
@@ -372,7 +367,7 @@ switch (_code) do
 		{
 			[] call life_fnc_radar;
 		};
-	}; 
+	};
 
     case 211:
 	{

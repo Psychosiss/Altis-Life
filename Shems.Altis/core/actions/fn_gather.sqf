@@ -24,9 +24,9 @@ _zone = "";
 gather_var = true;
 _noEscKey = (findDisplay 46) displayAddEventHandler ["KeyDown", "if ((_this select 1) == 1) then {true}"];
 noEscKey = (findDisplay 46) displayAddEventHandler ["KeyDown", "if ((_this select 1) == 1) then {gather_var = false}"];
-
 titleText ["Appuyez sur echap pour annuler la récolte.","PLAIN",2];
 life_action_inUse = true;
+
 while {gather_var} do 
 {
 	{
@@ -38,8 +38,9 @@ while {gather_var} do
 		gather_var = false;
 		life_action_inUse = false;
 	};
-	 switch(true) do 
-	 {
+
+	switch(true) do 
+	{
 		case (_zone in ["apple_1","apple_4","apple_9"]): {_gather = "apple"; _val = 3;};
 		case (_zone in ["peaches_2","peaches_3","peaches_9"]): {_gather = "peach"; _val = 3;};
 		case (_zone in ["heroin_1"]): {_gather = "heroinu"; _val = 1;};
