@@ -1,14 +1,13 @@
-#include <macro.h>
-
-life_action_inUse = false;
 private["_civ","_invs","_license","_robber","_guns","_gun"];
 _civ = [_this,0,Objnull,[Objnull]] call BIS_fnc_param;
 _invs = [_this,1,[],[[]]] call BIS_fnc_param;
 _robber = [_this,2,false,[false]] call BIS_fnc_param;
 if(isNull _civ) exitWith {};
-
 _illegal = 0;
 _inv = "";
+
+life_action_inUse = false;
+
 if(count _invs > 0) then
 {
 	{

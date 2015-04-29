@@ -18,7 +18,7 @@ with missionNamespace do
 	_video = [_videoFile] spawn BIS_fnc_playVideo;
 	playSound ("Transition" + str _effectID);
 	sleep 1;
-	0 = [format[ "<br/><t color='%4'>%3</t><br/><br/><t size='0.7'>%1 %2.</t>","Nous espérons vous revoir bientôt", profileName,"Synchronisation avec le serveur",_colorHighlight],0,0.2,2,0.5,0,1000] spawn BIS_fnc_dynamicText;
+	0 = [format["<br/><t color='%4'>%3</t><br/><br/><t size='0.7'>%1 %2.</t>","Nous espérons vous revoir bientôt",profileName,"Synchronisation avec le serveur",_colorHighlight],0,0.2,2,0.5,0,1000] spawn BIS_fnc_dynamicText;
 	[] spawn 
 	{
 		if !(life_is_arrested) then 

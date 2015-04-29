@@ -1,5 +1,3 @@
-#include <macro.h>
-
 private["_filter","_ret"];
 _filter = [_this,0,0,[0]] call BIS_fnc_param;
 
@@ -19,7 +17,7 @@ switch (_filter) do
 	//Hats
 	case 1:
 	{
-		if(__GETC__(life_cop_level) > 1) then
+		if((call life_cop_level) > 1) then 
 		{
 			_ret pushBack ["H_HelmetB_plain_mcamo",nil,75];
 			_ret pushBack ["H_Booniehat_mcamo",nil,120];
@@ -36,26 +34,23 @@ switch (_filter) do
 	//Glasses
 	case 2:
 	{
-		_ret = 
-		[
-			["G_Shades_Black",nil,25],
-			["G_Shades_Blue",nil,20],
-			["G_Sport_Blackred",nil,20],
-			["G_Sport_Checkered",nil,20],
-			["G_Sport_Blackyellow",nil,20],
-			["G_Sport_BlackWhite",nil,20],
-			["G_Aviator",nil,75],
-			["G_Squares",nil,10],
-			["G_Lowprofile",nil,30],
-			["G_Combat",nil,55]
-		];
+		_ret pushBack ["G_Shades_Black",nil,25],
+		_ret pushBack ["G_Shades_Blue",nil,20],
+		_ret pushBack ["G_Sport_Blackred",nil,20],
+		_ret pushBack ["G_Sport_Checkered",nil,20],
+		_ret pushBack ["G_Sport_Blackyellow",nil,20],
+		_ret pushBack ["G_Sport_BlackWhite",nil,20],
+		_ret pushBack ["G_Aviator",nil,75],
+		_ret pushBack ["G_Squares",nil,10],
+		_ret pushBack ["G_Lowprofile",nil,30],
+		_ret pushBack ["G_Combat",nil,55]
 	};
 	
 	//Vest
 	case 3:
 	{
 		_ret pushBack ["V_Rangemaster_belt",nil,800];
-		if(__GETC__(life_cop_level) > 1) then
+		if((call life_cop_level) > 1) then
 		{
 			_ret pushBack ["V_PlateCarrier1_rgr",nil,1500];
 			_ret pushBack ["V_PlateCarrier2_rgr",nil,1500];
@@ -67,15 +62,12 @@ switch (_filter) do
 	//Backpacks
 	case 4:
 	{
-		_ret =
-		[
-			["B_Kitbag_cbr",nil,800],
-			["B_FieldPack_cbr",nil,500],
-			["B_AssaultPack_cbr",nil,700],
-			["B_Bergen_sgg",nil,2500],
-			["B_Carryall_cbr",nil,3500],
-			["B_Parachute",nil,5000]
-		];
+		_ret pushBack ["B_Kitbag_cbr",nil,800],
+		_ret pushBack ["B_FieldPack_cbr",nil,500],
+		_ret pushBack ["B_AssaultPack_cbr",nil,700],
+		_ret pushBack ["B_Bergen_sgg",nil,2500],
+		_ret pushBack ["B_Carryall_cbr",nil,3500],
+		_ret pushBack ["B_Parachute",nil,5000]
 	};
 };
 

@@ -1,5 +1,3 @@
-#include <macro.h>
-
 private["_house","_uid","_cpRate","_cP","_title","_titleText","_ui","_houseInv","_houseInvData","_houseInvVal"];
 _house = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 if(isNull _house OR !(_house isKindOf "House_F")) exitWith {};

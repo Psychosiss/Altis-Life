@@ -1,8 +1,7 @@
-#include <macro.h>
+private["_price","_item","_itemInfo","_bad"];
 
 disableSerialization;
-private["_price","_item","_itemInfo","_bad"];
-if((lbCurSel 38403) == -1) exitWith {hint "You need to select an item to buy/sell."};
+if((lbCurSel 38403) == -1) exitWith {hint "Vous devez séléctionner un objet à acheter/vendre."};
 _price = lbValue[38403,(lbCurSel 38403)]; if(isNil "_price") then {_price = 0;};
 _item = lbData[38403,(lbCurSel 38403)];
 _itemInfo = [_item] call life_fnc_fetchCfgDetails;
@@ -12,7 +11,7 @@ if((_itemInfo select 6) != "CfgVehicles") then
 {
 	if((_itemInfo select 4) in [4096,131072]) then
 	{
-		if(!(player canAdd _item) && (uiNamespace getVariable["Weapon_Shop_Filter",0]) != 1) exitWith {_bad = "You don't have enough room for that item."};
+		if(!(player canAdd _item) && (uiNamespace getVariable["Weapon_Shop_Filter",0]) != 1) exitWith {_bad = "Vous n'avez plus de place dans votre inventaire."};
 	};
 };
 
@@ -26,14 +25,14 @@ if((uiNamespace getVariable["Weapon_Shop_Filter",0]) == 1) then
 } else {
 	private "_hideout";
 	_hideout = (nearestObjects[getPosATL player,["Land_u_Barracks_V2_F","Land_i_Barracks_V2_F"],25]) select 0;
-	if(!isNil "_hideout" && {!isNil {grpPlayer getVariable "gang_bank"}} && {(grpPlayer getVariable "gang_bank") >= _price}) then 
+	if(!isNil "_hideout" && {!isNil {group player getVariable "gang_bank"}} && {(group player getVariable "gang_bank") >= _price}) then 
 	{
 		_action = 
 		[
 			format
 			[
 				"The gang has enough funds to pay for this, would you like to pay with the gangs funds or your own?<br/><br/>Gang Funds: <t color='#8cff9b'>$%1</t><br/>Your Cash: <t color='#8cff9b'>$%2</t>",
-				[(grpPlayer getVariable "gang_bank")] call life_fnc_numberText,
+				[(group player getVariable "gang_bank")] call life_fnc_numberText,
 				[life_money] call life_fnc_numberText
 			],
 			"Payer avec votre argent ou celui du gang",
@@ -43,15 +42,15 @@ if((uiNamespace getVariable["Weapon_Shop_Filter",0]) == 1) then
 		if(_action) then 
 		{
 			hint parseText format["Vous avez acheté %1 pour <t color='#8cff9b'>%2 €</t> avec l'argent du gang.",_itemInfo select 1,[_price] call life_fnc_numberText];
-			_funds = grpPlayer getVariable "gang_bank";
+			_funds = group player getVariable "gang_bank";
 			_funds = _funds - _price;
-			grpPlayer setVariable["gang_bank",_funds,true];
+			group player setVariable["gang_bank",_funds,true];
 			[_item,true] spawn life_fnc_handleItem;
-			[[1,grpPlayer],"TON_fnc_updateGang",false,false] spawn life_fnc_MP;
+			[[1,group player],"TON_fnc_updateGang",false,false] spawn life_fnc_MP;
 		} else {
 			if(_price > life_money) exitWith {hint "Vous n'avez pas assez d'argent sur vous!"};
 			hint parseText format["Vous avez acheté %1 pour <t color='#8cff9b'>%2 €</t>",_itemInfo select 1,[_price] call life_fnc_numberText];
-			__SUB__(life_money,_price);
+			life_money = life_money - _price;
 			[_item,true] spawn life_fnc_handleItem;
 		};
 	} else {

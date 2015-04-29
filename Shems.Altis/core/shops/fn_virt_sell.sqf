@@ -1,12 +1,9 @@
-#include <macro.h>
-
 private["_type","_index","_price","_var","_amount","_name"];
 if((lbCurSel 2402) == -1) exitWith {};
 _type = lbData[2402,(lbCurSel 2402)];
 _index = [_type,sell_array] call fnc_index;
 if(_index == -1) exitWith {};
 _index2 = [_type,life_dynMarket_prices] call fnc_index;
-//_price = (sell_array select _index) select 1;
 _price = 0.0;
 if(_index2 == -1) then 
 {

@@ -1,11 +1,8 @@
-#include <macro.h>
-
 private["_maxMembers","_slotUpgrade","_upgradePrice"];
-_maxMembers = grpPlayer getVariable ["gang_maxMembers",8];
+_maxMembers = group player getVariable ["gang_maxMembers",8];
 _slotUpgrade = _maxMembers + 4;
-_upgradePrice = round(_slotUpgrade * (__GETC__(life_gangUpgradeBase)) / (__GETC__(life_gangUpgradeMultipler)));
-_funds = grpPlayer getVariable "gang_bank";
-
+_upgradePrice = round(_slotUpgrade * ((call life_gangUpgradeBase)) / ((call life_gangUpgradeMultipler)));
+_funds = group player getVariable "gang_bank";
 _action = 
 [
 	format
@@ -22,7 +19,7 @@ _action =
 
 if(_action) then 
 {
-	if((grpPlayer getVariable "gang_bank") < _upgradePrice) exitWith 
+	if((group player getVariable "gang_bank") < _upgradePrice) exitWith 
 	{
 		hint parseText format 
 		[
@@ -33,10 +30,10 @@ if(_action) then
 			[_upgradePrice - _funds] call life_fnc_numberText
 		];
 	};
-	__SUB__(_funds,_upgradePrice);
-	grpPlayer setVariable["gang_maxMembers",_slotUpgrade,true];
+	_funds = _funds - _upgradePrice;
+	group player setVariable["gang_maxMembers",_slotUpgrade,true];
 	hint parseText format["Vous avez mis à niveau à partir de %1 à %2 membres maximum pour &lt;t color='#8cff9b'&gt;%3 €&lt;/t&gt;",_maxMembers,_slotUpgrade,[_upgradePrice] call life_fnc_numberText];
-	[[2,grpPlayer],"TON_fnc_updateGang",false,false] spawn life_fnc_MP;
+	[[2,group player],"TON_fnc_updateGang",false,false] spawn life_fnc_MP;
 } else {
 	hint "Mise à jour annulée.";
 };

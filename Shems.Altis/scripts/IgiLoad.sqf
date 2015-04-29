@@ -1,12 +1,5 @@
-IL_DevMod = false;
-
 waitUntil { time > 0 };
 IL_Script_Inst = time;
-
-if (IL_DevMod) then
-{
-	Player globalChat Format["IgiLoad ""%1"" IN.", IL_Script_Inst];
-};
 
 _obj_main = _this select 0;
 _obj_main_type = (typeOf _obj_main);
@@ -53,7 +46,6 @@ if (isnil "IL_Variables") then
 	IL_LU_Alt = 3;
 	IL_Ramp = true;
 	IL_Mass = true;
-
 	IL_Supported_Vehicles_OFFROAD = ["C_Offroad_01_F","B_G_Offroad_01_F"];
 	IL_Supported_Vehicles_VAN = ["C_Van_01_box_F","B_G_Van_01_transport_F","C_Van_01_transport_F"];
 	IL_Supported_Vehicles_HEMTT = ["B_Truck_01_covered_F","B_Truck_01_transport_F","B_Truck_01_box_F","B_mas_mar_Truck_01_transport_F"];
@@ -119,10 +111,6 @@ if (isnil "IL_Procedures") then
 	IL_Procedures = true;
 	IL_Init_Veh =
 	{
-		if (IL_DevMod) then
-		{
-			Player globalChat Format["IgiLoad ""%1"" IL_Init_Veh.", IL_Script_Inst];
-		};
 
 		private["_obj","_obj_type","_force"];
 		_obj = _this select 0;
@@ -130,14 +118,15 @@ if (isnil "IL_Procedures") then
 		_obj_type = (typeOf _obj);
 
 		if ((isNil {_obj getVariable "default_mass"}) || (_force)) then
+		{
+			if (isNil {_obj getVariable "default_mass"}) then
 			{
-				if (isNil {_obj getVariable "default_mass"}) then
-				{
-					_obj setVariable["default_mass", getMass _obj, true];
-				} else {
-					_obj setMass (_obj getVariable "default_mass");
-				};
+				_obj setVariable["default_mass", getMass _obj, true];
+			} else {
+				_obj setMass (_obj getVariable "default_mass");
 			};
+		};
+
 		if (_obj_type in IL_Supported_Vehicles_MOHAWK) then
 		{
 			if ((isNil {_obj getVariable "box_num"}) || (_force)) then {_obj setVariable["box_num", 0, true];};
@@ -149,11 +138,11 @@ if (isnil "IL_Procedures") then
 			if ((isNil {_obj getVariable "load_offset"}) || (_force)) then {_obj setVariable["load_offset", 4.5, true];};
 			if ((isNil {_obj getVariable "usable_ramp"}) || (_force)) then {_obj setVariable["usable_ramp", IL_Ramp, true];};
 		};
+
 		if (_obj_type in IL_Supported_Vehicles_MH9) then
 		{
 			if ((isNil {_obj getVariable "box_l"}) || (_force)) then {_obj setVariable["box_l", _obj, true];};
 			if ((isNil {_obj getVariable "box_r"}) || (_force)) then {_obj setVariable["box_r", _obj, true];};
-
 			if ((isNil {_obj getVariable "box_num_l"}) || (_force)) then {_obj setVariable["box_num_l", 0, true];};
 			if ((isNil {_obj getVariable "box_num_r"}) || (_force)) then {_obj setVariable["box_num_r", 0, true];};
 			if ((isNil {_obj getVariable "slots_num_l"}) || (_force)) then {_obj setVariable["slots_num_l", IL_Num_Slots_MH9, true];};
@@ -165,6 +154,7 @@ if (isnil "IL_Procedures") then
 			if ((isNil {_obj getVariable "load_offset"}) || (_force)) then {_obj setVariable["load_offset", 1, true];};
 			if ((isNil {_obj getVariable "usable_ramp"}) || (_force)) then {_obj setVariable["usable_ramp", IL_Ramp, true];};
 		};
+
 		if (_obj_type in IL_Supported_Vehicles_OFFROAD) then
 		{
 			if ((isNil {_obj getVariable "box_num"}) || (_force)) then {_obj setVariable["box_num", 0, true];};
@@ -174,6 +164,7 @@ if (isnil "IL_Procedures") then
 			if ((isNil {_obj getVariable "zload"}) || (_force)) then {_obj setVariable["zload", -0.65, true];};
 			if ((isNil {_obj getVariable "load_offset"}) || (_force)) then {_obj setVariable["load_offset", 1.5, true];};
 		};
+
 		if (_obj_type in IL_Supported_Vehicles_VAN) then
 		{
 			if ((isNil {_obj getVariable "box_num"}) || (_force)) then {_obj setVariable["box_num", 0, true];};
@@ -183,6 +174,7 @@ if (isnil "IL_Procedures") then
 			if ((isNil {_obj getVariable "zload"}) || (_force)) then {_obj setVariable["zload", -0.6, true];};
 			if ((isNil {_obj getVariable "load_offset"}) || (_force)) then {_obj setVariable["load_offset", 1, true];};
 		};
+
 		if (_obj_type in IL_Supported_Vehicles_KAMAZ) then
 		{
 			if ((isNil {_obj getVariable "box_num"}) || (_force)) then {_obj setVariable["box_num", 0, true];};
@@ -192,6 +184,7 @@ if (isnil "IL_Procedures") then
 			if ((isNil {_obj getVariable "zload"}) || (_force)) then {_obj setVariable["zload", -0.8, true];};
 			if ((isNil {_obj getVariable "load_offset"}) || (_force)) then {_obj setVariable["load_offset", -0.5, true];};
 		};
+
 		if (_obj_type in IL_Supported_Vehicles_TEMPEST) then
 		{
 			if ((isNil {_obj getVariable "box_num"}) || (_force)) then {_obj setVariable["box_num", 0, true];};
@@ -201,6 +194,7 @@ if (isnil "IL_Procedures") then
 			if ((isNil {_obj getVariable "zload"}) || (_force)) then {_obj setVariable["zload", -0.4, true];};
 			if ((isNil {_obj getVariable "load_offset"}) || (_force)) then {_obj setVariable["load_offset", 0.5, true];};
 		};
+
 		if (_obj_type in IL_Supported_Vehicles_HEMTT) then
 		{
 			if ((isNil {_obj getVariable "box_num"}) || (_force)) then {_obj setVariable["box_num", 0, true];};
@@ -220,100 +214,104 @@ if (isnil "IL_Procedures") then
 
 	IL_Init_Box =
 	{
-		if (IL_DevMod) then
-		{
-			Player globalChat Format["IgiLoad ""%1"" IL_Init_Box.", IL_Script_Inst];
-		};
-
 		private["_obj","_obj_type","_bbr","_p0","_p1"];
 		_obj = _this select 0;
-		
 		_obj setVariable["attachedPos", 0, true];
 		_obj setVariable["attachedTruck", _obj, true];
 		_obj setVariable["doors","N", true];
-		
 		_obj setVariable["slots", 1, true];
 		_obj setVariable["cargo_offset", 0, true];
-		
 		_bbr = boundingBoxReal _obj;
 		_p0 = _bbr select 0;
 		_p1 = _bbr select 1;
 		_obj setVariable["zload_cargo", abs (_p0 select 2), true];
-		
 		_obj_type = (typeOf _obj);
-		
+
 		if (_obj_type in IL_Supported_Cargo20) then
 		{
 			_obj setVariable["slots", 6, true];
 			_obj setVariable["cargo_offset", 2.6, true];
 			[_obj, 2400] call IL_SetNewMass;
 		};
-		
+
 		if (_obj_type in IL_Supported_HEMTT) then
 		{
 			_obj setVariable["slots", 10, true];
 			_obj setVariable["cargo_offset", 4.2, true];
 		};
+
 		if (_obj_type in IL_Supported_Strider) then
 		{
 			_obj setVariable["slots", 6, true];
 			_obj setVariable["cargo_offset", 2.2, true];
 		};
+
 		if (_obj_type in IL_Supported_Hunter) then
 		{
 			_obj setVariable["slots", 7, true];
 			_obj setVariable["cargo_offset", 1.5, true];
 		};
+
 		if (_obj_type in IL_Supported_Ifrit) then
 		{
 			_obj setVariable["slots", 7, true];
 			_obj setVariable["cargo_offset", 1.3, true];
 		};
+
 		if (_obj_type in IL_Supported_VAN) then
 		{
 			_obj setVariable["slots", 6, true];
 			_obj setVariable["cargo_offset", 1.8, true];
 		};
+
 		if (_obj_type in IL_Supported_UGV) then
 		{
 			_obj setVariable["slots", 5, true];
 			_obj setVariable["cargo_offset", 2.1, true];
 		};
+
 		if (_obj_type in IL_Supported_Hatchback) then
 		{
 			_obj setVariable["slots", 5, true];
 			_obj setVariable["cargo_offset", 1.9, true];
 		};
+
 		if (_obj_type in IL_Supported_SUV) then
 		{
 			_obj setVariable["slots", 6, true];
 			_obj setVariable["cargo_offset", 2, true];
 		};
+
 		if (_obj_type in IL_Supported_OFFROAD) then
 		{
 			_obj setVariable["slots", 6, true];
 			_obj setVariable["cargo_offset", 2.4, true];
 		};
+
 		if (_obj_type in IL_Supported_Rubberboat) then
 		{
 			_obj setVariable["slots", 5, true];
 			_obj setVariable["cargo_offset", 2, true];
 		};
+
 		if (_obj_type in IL_Supported_SDV) then
 		{
 			_obj setVariable["slots", 6, true];
 			_obj setVariable["cargo_offset", 1.6, true];
 		};
+
 		if (_obj_type in IL_Supported_Quadbike) then
 		{
 			_obj setVariable["slots", 2, true];
 			_obj setVariable["cargo_offset", 0.5, true];
 		};
+
 		if (_obj_type in IL_Supported_Veh_Ammo) then
 		{
 			_obj setVariable["slots", 2, true];
 			_obj setVariable["cargo_offset", 0.4, true];
 		};
+
 		if (_obj_type in IL_Supported_Tank) then
 		{
 			if (_obj_type == "Land_WaterTank_F") then
@@ -330,23 +328,19 @@ if (isnil "IL_Procedures") then
 
 	IL_Server_SetDir =
 	{
-		if (IL_DevMod) then
-		{
-			Player globalChat Format["IgiLoad ""%1"" IL_Server_SetDir.", IL_Script_Inst];
-		};
 		private ["_obj","_dir"];
 		_obj = _this select 1 select 0;
 		_dir = _this select 1 select 1;
-		
+
 		if (_dir < 0) then
 		{
 			_dir = _dir + 360;
 		};
+
 		if (_dir > 360) then
 		{
 			_dir = _dir - 360;
 		};
-
 		_obj setDir _dir;
 		_obj setPos (getPos _obj);
 	};
@@ -356,13 +350,10 @@ if (isnil "IL_Procedures") then
 	IL_Rotate = 
 	{
 		private ["_obj","_to","_change"];
-		
 		_obj = _this select 0;
 		_to = _this select 1;
 		_change = _this select 2;
-		
 		_change = (getDir _obj + _change) - getDir _to;
-		
 		IL_SetDir = [_obj, _change];
 		if (local _obj) then
 		{
@@ -379,10 +370,6 @@ if (isnil "IL_Procedures") then
 
 	IL_Server_SetMass =
 	{
-		if (IL_DevMod) then
-		{
-			Player globalChat Format["IgiLoad ""%1"" IL_Server_SetMass.", IL_Script_Inst];
-		};
 		private ["_obj","_mass"];
 		_obj = _this select 1 select 0;
 		_mass = _this select 1 select 1;
@@ -416,11 +403,6 @@ if (isnil "IL_Procedures") then
 
 	IL_SetNewMass =
 	{
-		if (IL_DevMod) then
-		{
-			Player globalChat Format ["IgiLoad ""%1"" in IL_SetMass", IL_Script_Inst];
-		};
-		
 		if !(IL_Mass) ExitWith {};
 		private ["_v","_v_def_mass","_cargo_mass"];
 		_v = _this select 0;
@@ -505,52 +487,25 @@ if (isnil "IL_Procedures") then
 		_to = _this select 3;
 		_step = _this select 4;
 		_turn = if (count _this > 5) then {_this select 5} else {false};
-		
 		_from_x = _from select 0;
 		_from_y = _from select 1;
 		_from_z = _from select 2;
-		if (IL_DevMod) then
-		{
-			Player globalChat Format ["IgiLoad ""%1"". IL_Move_Attach _from_x =""%2"", _from_y =""%3"", _from_z =""%4""", IL_Script_Inst, _from_x, _from_y, _from_z];
-		};
-
 		_to_x = _to select 0;
 		_to_y = _to select 1;
 		_to_z = _to select 2;
-		if (IL_DevMod) then
-		{
-			Player globalChat Format ["IgiLoad ""%1"". IL_Move_Attach _to_x =""%2"", _to_y =""%3"", _to_z =""%4""", IL_Script_Inst, _to_x, _to_y, _to_z];
-		};
-		
 		_x = _to_x - _from_x;
 		_y = _to_y - _from_y;
 		_z = _to_z - _from_z;
-		if (IL_DevMod) then
-		{
-			Player globalChat Format ["IgiLoad ""%1"". IL_Move_Attach _x =""%2"", _y =""%3"", _z =""%4""", IL_Script_Inst, _x, _y, _z];
-		};
-		
+
 		if (((abs _x) > (abs _y)) && ((abs _x) > (abs _z))) then
 		{
 			_steps = round ((abs _x) / _step);
-			if (IL_DevMod) then
-			{
-				Player globalChat Format ["IgiLoad ""%1"". IL_Move_Attach _x > _y and _z, _steps =""%2""", IL_Script_Inst, _steps];
-			};
 		} else {
 			if ((abs _y) > (abs _z)) then
 			{
 				_steps = round ((abs _y) / _step);
-				if (IL_DevMod) then
-				{
-					Player globalChat Format ["IgiLoad ""%1"". IL_Move_Attach _y > _z, _steps =""%2""", IL_Script_Inst, _steps];
-				};
 			} else {
 				_steps = round ((abs _z) / _step);
-				if (IL_DevMod) then
-				{
-					Player globalChat Format ["IgiLoad ""%1"". IL_Move_Attach _z > _y, _steps =""%2""", IL_Script_Inst, _steps];
-				};
 			};
 		};
 
@@ -566,10 +521,6 @@ if (isnil "IL_Procedures") then
 				[_obj, _veh, -90] call IL_Rotate;
 				_turn = false;
 			};
-			if (IL_DevMod) then
-			{
-				Player globalChat Format ["IgiLoad ""%1"". IL_Move_Attach _pos =""%2""", IL_Script_Inst, _pos];
-			};
 			sleep 0.25;
 		};
 		_obj AttachTo [_veh, _to];
@@ -577,10 +528,6 @@ if (isnil "IL_Procedures") then
 
 	IL_Create_And_Attach =
 	{
-		if (IL_DevMod) then
-		{
-			Player globalChat Format ["IgiLoad ""%1"" in IL_Create_And_Attach", IL_Script_Inst];
-		};
 		_type = _this select 0;
 		_to = _this select 1;
 		_x = if (count _this > 2) then {_this select 2} else {0};
@@ -593,10 +540,6 @@ if (isnil "IL_Procedures") then
 
 	IL_Cargo_Para =
 	{
-		if (IL_DevMod) then
-		{
-			Player globalChat Format ["IgiLoad ""%1"" in IL_Cargo_Para", IL_Script_Inst];
-		};
 		private ["_smoke","_light","_damage","_smoke_type","_chemlight_type","_cargo_pos","_last_attach_pos","_dist","_velocity","_tmp"];
 		_cargo = _this select 0;
 		_v = _this select 1;
@@ -703,11 +646,6 @@ if (isnil "IL_Procedures") then
 
 	IL_Do_Load =
 	{
-		if (IL_DevMod) then
-		{
-			Player globalChat Format ["IgiLoad ""%1"" in IL_Do_Load", IL_Script_Inst];
-		};
-
 		private["_NoBoxHint","_v","_supported_cargo","_zload","_x_cargo_offset","_cargo_offset","_sdist","_spoint","_slot_num","_counter","_done","_obj_lst","_damage","_obj_type","_doors","_box_num","_dummy","_nic","_turn","_force","_cargo"];
 		_NoBoxHint = "The box is in the vicinity. Perhaps it is outside of the loading area.";
 		_v = _this select 0;
@@ -715,22 +653,16 @@ if (isnil "IL_Procedures") then
 		_doors = if (count _this > 2) then {_this select 2} else {"B"};
 		_force = if (count _this > 3) then {_this select 3} else {false};
 		_cargo = if (count _this > 4) then {_this select 4} else {ObjNull};
-		
 		_v setVariable["can_load", false, true];
 		_zload = _v getVariable "zload";
 		_obj_type = (typeOf _v);
 		_sdist = 0;
-
 		_counter = 0;
 		_done = false;
 		_turn = false;
 
 		if ((_obj_type in IL_Supported_Vehicles_VAN) && (_doors == "B")) then
 		{
-			if (IL_DevMod) then
-			{
-				Player globalChat Format ["IgiLoad ""%1"". Do_load vehicle type: ""%2"" and doors: ""%3""", IL_Script_Inst, _obj_type, _doors];
-			};
 			_sdist = IL_SDistL;
 			_spoint = _v modelToWorld [0,-4.5,-1.6];
 			_box_num = _v getVariable "box_num";
@@ -738,10 +670,6 @@ if (isnil "IL_Procedures") then
 		};
 		if ((_obj_type in IL_Supported_Vehicles_OFFROAD) && (_doors == "B")) then
 		{
-			if (IL_DevMod) then
-			{
-				Player globalChat Format ["IgiLoad ""%1"". Do_load vehicle type: ""%2"" and doors: ""%3""", IL_Script_Inst, _obj_type, _doors];
-			};
 			_sdist = IL_SDistL;
 			_spoint = _v modelToWorld [0,-4.5,-1.6];
 			_box_num = _v getVariable "box_num";
@@ -749,10 +677,6 @@ if (isnil "IL_Procedures") then
 		};
 		if ((_obj_type in IL_Supported_Vehicles_KAMAZ) && (_doors == "B")) then
 		{
-			if (IL_DevMod) then
-			{
-				Player globalChat Format ["IgiLoad ""%1"". Do_load vehicle type: ""%2"" and doors: ""%3""", IL_Script_Inst, _obj_type, _doors];
-			};
 			_sdist = IL_SDistL;
 			_spoint = _v modelToWorld [0,-6 - (_v getVariable "load_offset"),0];
 			_box_num = _v getVariable "box_num";
@@ -760,10 +684,6 @@ if (isnil "IL_Procedures") then
 		};
 		if ((_obj_type in IL_Supported_Vehicles_HEMTT) && (_doors == "B")) then
 		{
-			if (IL_DevMod) then
-			{
-				Player globalChat Format ["IgiLoad ""%1"". Do_load vehicle type: ""%2"" and doors: ""%3""", IL_Script_Inst, _obj_type, _doors];
-			};
 			_sdist = IL_SDistL;
 			_spoint = _v modelToWorld [0,-7 - (_v getVariable "load_offset"),0];
 			_box_num = _v getVariable "box_num";
@@ -771,10 +691,6 @@ if (isnil "IL_Procedures") then
 		};
 		if ((_obj_type in IL_Supported_Vehicles_TEMPEST) && (_doors == "B")) then
 		{
-			if (IL_DevMod) then
-			{
-				Player globalChat Format ["IgiLoad ""%1"". Do_load vehicle type: ""%2"" and doors: ""%3""", IL_Script_Inst, _obj_type, _doors];
-			};
 			_sdist = IL_SDistL;
 			_spoint = _v modelToWorld [0,-6.5 - (_v getVariable "load_offset"),0];
 			_box_num = _v getVariable "box_num";
@@ -782,10 +698,6 @@ if (isnil "IL_Procedures") then
 		};
 		if ((_obj_type in IL_Supported_Vehicles_MOHAWK) && (_doors == "B")) then
 		{
-			if (IL_DevMod) then
-			{
-				Player globalChat Format ["IgiLoad ""%1"". Do_load vehicle type: ""%2"" and doors: ""%3""", IL_Script_Inst, _obj_type, _doors];
-			};
 			_sdist = IL_SDistL + IL_SDistL_Heli_offset;
 			_spoint = _v modelToWorld [0,-6,-3];
 			_box_num = _v getVariable "box_num";
@@ -793,10 +705,6 @@ if (isnil "IL_Procedures") then
 		};
 		if ((_obj_type in IL_Supported_Vehicles_MH9) && (_doors == "L")) then
 		{
-			if (IL_DevMod) then
-			{
-				Player globalChat Format ["IgiLoad ""%1"". Do_load vehicle type: ""%2"" and doors: ""%3""", IL_Script_Inst, _obj_type, _doors];
-			};
 			_sdist = IL_SDistL + IL_SDistL_Heli_offset;
 			_spoint = _v modelToWorld [0-3,1.3,-1.3];
 			_box_num = _v getVariable "box_num_l";
@@ -804,10 +712,6 @@ if (isnil "IL_Procedures") then
 		};
 		if ((_obj_type in IL_Supported_Vehicles_MH9) && (_doors == "R")) then
 		{
-			if (IL_DevMod) then
-			{
-				Player globalChat Format ["IgiLoad ""%1"". Do_load vehicle type: ""%2"" and doors: ""%3""", IL_Script_Inst, _obj_type, _doors];
-			};
 			_sdist = IL_SDistL + IL_SDistL_Heli_offset;
 			_spoint = _v modelToWorld [0+3,1.3,-1.3];
 			_box_num = _v getVariable "box_num_r";
@@ -824,16 +728,8 @@ if (isnil "IL_Procedures") then
 		if (count (_obj_lst) > 0) then
 		{
 			{
-				if (IL_DevMod) then
-				{
-					Player globalChat Format ["IgiLoad ""%1"". Cargo: ""%2"" found.", IL_Script_Inst, _x];
-				};
 				if (isNil {_x getVariable "attachedPos"}) then
 				{
-					if (IL_DevMod) then
-					{
-						Player globalChat Format ["IgiLoad ""%1"". Init box: ""%2"".", IL_Script_Inst, _x];
-					};
 					[_x] call IL_Init_Box;
 				};
 				if ((typeOf _x) in (IL_Supported_Cargo20 + ["Land_WaterTank_F"])) then
@@ -845,14 +741,11 @@ if (isnil "IL_Procedures") then
 				{
 					[_v, "This cargo is to big. "] call IL_Vehicle_Chat;
 				} else {
-					if (IL_DevMod) then
-					{
-						Player globalChat Format ["IgiLoad ""%1"". _box_num: ""%2"" _slot_num: ""%3""", IL_Script_Inst,  _box_num, _slot_num];
-					};
 					if (_obj_type in IL_Supported_Vehicles_MH9) then
 					{
 						_turn = !_turn;
 					};
+
 					if ((_box_num > _slot_num) && !_done) then
 					{
 						[_v, Format ["Chargement du ""%1"" dans ""%2"" ", getText(configFile >> "cfgVehicles" >> typeOf _x >> "displayName"), getText(configFile >> "cfgVehicles" >> typeOf _v >> "displayName")]] call IL_Vehicle_Chat;
@@ -982,11 +875,6 @@ if (isnil "IL_Procedures") then
 
 	IL_Do_Unload =
 	{
-		if (IL_DevMod) then
-		{
-			Player globalChat Format["IgiLoad ""%1"" IL_Do_Unload.", IL_Script_Inst];
-		};
-
 		private ["_v","_para","_supported_cargo","_doors","_counter","_done","_obj_lst","_zload","_x_cargo_offset","_cargo_offset","_obj_type","_damage","_nic","_free_slots","_turn","_skip","_last_attach_pos"];
 		_v = _this select 0;
 		_para = if (count _this > 1) then {_this select 1} else {false};
@@ -1193,11 +1081,6 @@ if (isnil "IL_Procedures") then
 
 	IL_GetOut =
 	{
-		if (IL_DevMod) then
-		{
-			Player globalChat Format["IgiLoad ""%1"" IL_GetOut.", IL_Script_Inst];
-		};
-
 		private ["_v","_player","_para","_chute",  "_backpack","_pos","_x_offset","_dist","_dist_out","_dist_out_para","_velocity"];
 		_v = _this select 0;
 		_player = _this select 1;
@@ -1274,33 +1157,22 @@ if (isnil "IL_Procedures") then
 			};
 		};
 		_player allowDamage true;
-		if (IL_DevMod) then
-		{
-			Player globalChat Format["IgiLoad ""%1"" IL_GetOut.", IL_Script_Inst];
-		};
-		if (IL_DevMod) then
-		{
-			Player globalChat Format["IgiLoad ""%1"" IL_GetOut. Player ATL: ""%2""", IL_Script_Inst, _pos];
-		};
 	};
 };
 
 _vsupported = false;
 if (_obj_main_type in IL_Supported_Vehicles_MOHAWK) then
 {
-	if (IL_DevMod) then
-	{
-		Player globalChat Format["IgiLoad ""%1"" Vehicle is in IL_Supported_Vehicles_MOHAWK.", IL_Script_Inst];
-	};
 	_vsupported = true;
 	[_obj_main] call IL_Init_Veh;
 
-	_obj_main addAction [
-	"Charger le Cargo dans le  CH-49",
-	{
-		[_this select 0, IL_Supported_Cargo_NonVeh_Mohawk] call IL_Do_Load;
-	},[],IL_Action_LU_Priority,true,true,"",
-	"(count(nearestObjects[ _target modelToWorld [0,-6,-3], IL_Supported_Cargo_NonVeh_Mohawk, IL_SDistL + IL_SDistL_Heli_offset]) > 0) && (abs(speed _target) <= IL_LU_Speed) && ((IL_Can_Inside && (driver _target == _this)) || (IL_Can_Inside && ('Turret' in (assignedVehicleRole _this)) && (vehicle _this == _target) && (_target getVariable 'can_copilot')) || ((_this in (nearestObjects[ _target modelToWorld [0,-6,-3], [], IL_SDistL + IL_SDistL_Heli_offset])) && (_target getVariable 'can_outside'))) && (_target getVariable 'box_num' > _target getVariable 'slots_num') && (_target getVariable 'can_load') && (((getPos _target) select 2) <= IL_LU_Alt) && (_target animationPhase 'CargoRamp_Open' == 1)"
+	_obj_main addAction 
+	[
+		"Charger le Cargo dans le  CH-49",
+		{
+			[_this select 0, IL_Supported_Cargo_NonVeh_Mohawk] call IL_Do_Load;
+		},[],IL_Action_LU_Priority,true,true,"",
+		"(count(nearestObjects[ _target modelToWorld [0,-6,-3], IL_Supported_Cargo_NonVeh_Mohawk, IL_SDistL + IL_SDistL_Heli_offset]) > 0) && (abs(speed _target) <= IL_LU_Speed) && ((IL_Can_Inside && (driver _target == _this)) || (IL_Can_Inside && ('Turret' in (assignedVehicleRole _this)) && (vehicle _this == _target) && (_target getVariable 'can_copilot')) || ((_this in (nearestObjects[ _target modelToWorld [0,-6,-3], [], IL_SDistL + IL_SDistL_Heli_offset])) && (_target getVariable 'can_outside'))) && (_target getVariable 'box_num' > _target getVariable 'slots_num') && (_target getVariable 'can_load') && (((getPos _target) select 2) <= IL_LU_Alt) && (_target animationPhase 'CargoRamp_Open' == 1)"
 	];
 
 	_obj_main addAction [
@@ -1428,10 +1300,6 @@ if (_obj_main_type in IL_Supported_Vehicles_MOHAWK) then
 };
 if (_obj_main_type in IL_Supported_Vehicles_MH9) then
 {
-	if (IL_DevMod) then
-	{
-		Player globalChat Format["IgiLoad ""%1"" Vehicle is in IL_Supported_Vehicles_MH9.", IL_Script_Inst];
-	};
 	_vsupported = true;
 	[_obj_main] call IL_Init_Veh;
 
@@ -1551,10 +1419,6 @@ if (_obj_main_type in IL_Supported_Vehicles_MH9) then
 };
 if (_obj_main_type in IL_Supported_Vehicles_OFFROAD) then
 {
-	if (IL_DevMod) then
-	{
-		Player globalChat Format["IgiLoad ""%1"" Vehicle is in IL_Supported_Vehicles_OFFROAD.", IL_Script_Inst];
-	};
 	_vsupported = true;
 	[_obj_main] call IL_Init_Veh;
 	
@@ -1597,207 +1461,207 @@ if (_obj_main_type in IL_Supported_Vehicles_OFFROAD) then
 	"((driver _target == _this) && (_target getVariable 'can_outside') && IL_Can_Outside)"
 	];
 };
+
 if (_obj_main_type in IL_Supported_Vehicles_VAN) then
 {
-	if (IL_DevMod) then
-	{
-		Player globalChat Format["IgiLoad ""%1"" Vehicle is in IL_Supported_Vehicles_VAN.", IL_Script_Inst];
-	};
 	_vsupported = true;
 	[_obj_main] call IL_Init_Veh;
-	
-	_obj_main addAction [
-	"Charger le Cargo dans le Van",
-	{
-		[_this select 0, IL_Supported_Cargo_NonVeh_VAN] call IL_Do_Load;
-	},[],IL_Action_LU_Priority,true,true,"",
-	"(count(nearestObjects[ _target modelToWorld [0,-4.5,0], IL_Supported_Cargo_NonVeh_VAN, IL_SDistL]) > 0) && (abs(speed _target) <= IL_LU_Speed) && ((IL_Can_Inside && (driver _target == _this)) || ((((_this in (nearestObjects[ _target modelToWorld [0,-4.5,0], [], IL_SDistL + IL_SDistL_Heli_offset]))) && (_target getVariable 'can_outside')))) && (_target getVariable 'box_num' > _target getVariable 'slots_num') && (_target getVariable 'can_load')"
+
+	_obj_main addAction 
+	[
+		"Charger le Cargo dans le Van",
+		{
+			[_this select 0, IL_Supported_Cargo_NonVeh_VAN] call IL_Do_Load;
+		},[],IL_Action_LU_Priority,true,true,"",
+		"(count(nearestObjects[ _target modelToWorld [0,-4.5,0], IL_Supported_Cargo_NonVeh_VAN, IL_SDistL]) > 0) && (abs(speed _target) <= IL_LU_Speed) && ((IL_Can_Inside && (driver _target == _this)) || ((((_this in (nearestObjects[ _target modelToWorld [0,-4.5,0], [], IL_SDistL + IL_SDistL_Heli_offset]))) && (_target getVariable 'can_outside')))) && (_target getVariable 'box_num' > _target getVariable 'slots_num') && (_target getVariable 'can_load')"
 	];
-	
-	_obj_main addAction [
-	"Charger le Véhicule dans le Van",
-	{
-		[_this select 0, IL_Supported_Cargo_Veh_VAN] call IL_Do_Load;
-	},[],IL_Action_LU_Priority,true,true,"",
-	"(count(nearestObjects[ _target modelToWorld [0,-4.5,0], IL_Supported_Cargo_Veh_VAN, IL_SDistL]) > 0) && (abs(speed _target) <= IL_LU_Speed) && ((IL_Can_Inside && (driver _target == _this)) || ((((_this in (nearestObjects[ _target modelToWorld [0,-4.5,0], [], IL_SDistL + IL_SDistL_Heli_offset]))) && (_target getVariable 'can_outside')))) && (_target getVariable 'box_num' > _target getVariable 'slots_num') && (_target getVariable 'can_load')"
+
+	_obj_main addAction 
+	[
+		"Charger le Véhicule dans le Van",
+		{
+			[_this select 0, IL_Supported_Cargo_Veh_VAN] call IL_Do_Load;
+		},[],IL_Action_LU_Priority,true,true,"",
+		"(count(nearestObjects[ _target modelToWorld [0,-4.5,0], IL_Supported_Cargo_Veh_VAN, IL_SDistL]) > 0) && (abs(speed _target) <= IL_LU_Speed) && ((IL_Can_Inside && (driver _target == _this)) || ((((_this in (nearestObjects[ _target modelToWorld [0,-4.5,0], [], IL_SDistL + IL_SDistL_Heli_offset]))) && (_target getVariable 'can_outside')))) && (_target getVariable 'box_num' > _target getVariable 'slots_num') && (_target getVariable 'can_load')"
 	];
-	
-	_obj_main addAction [
-	"Décharger le Cargo du Van",
-	{
-		[_this select 0] call IL_Do_Unload;
-	},[],IL_Action_LU_Priority,false,true,"",
-	"(_target getVariable 'box_num' < 0) && ((IL_Can_Inside && (driver _target == _this)) || (((_this in (nearestObjects[ _target modelToWorld [0,-4.5,0], [], IL_SDistL + IL_SDistL_Heli_offset])) && (_target getVariable 'can_outside')))) && (_target getVariable 'can_load') && (abs(speed _target) <= IL_LU_Speed)"
+
+	_obj_main addAction 
+	[
+		"Décharger le Cargo du Van",
+		{
+			[_this select 0] call IL_Do_Unload;
+		},[],IL_Action_LU_Priority,false,true,"",
+		"(_target getVariable 'box_num' < 0) && ((IL_Can_Inside && (driver _target == _this)) || (((_this in (nearestObjects[ _target modelToWorld [0,-4.5,0], [], IL_SDistL + IL_SDistL_Heli_offset])) && (_target getVariable 'can_outside')))) && (_target getVariable 'can_load') && (abs(speed _target) <= IL_LU_Speed)"
 	];
-	
-	_obj_main addAction [
-	"Activer le chargement extérieur",
-	{
-		(_this select 0) setVariable["can_outside", true, true];;
-	},[],IL_Action_S_Priority,false,true,"",
-	"((driver _target == _this) && !(_target getVariable 'can_outside') && IL_Can_Outside)"
+
+	_obj_main addAction 
+	[
+		"Activer le chargement extérieur",
+		{
+			(_this select 0) setVariable["can_outside", true, true];;
+		},[],IL_Action_S_Priority,false,true,"",
+		"((driver _target == _this) && !(_target getVariable 'can_outside') && IL_Can_Outside)"
 	];
-	
-	_obj_main addAction [
-	"Désactiver le chargement extérieur",
-	{
-		(_this select 0) setVariable["can_outside", false, true];;
-	},[],IL_Action_S_Priority,false,true,"",
-	"((driver _target == _this) && (_target getVariable 'can_outside') && IL_Can_Outside)"
+
+	_obj_main addAction 
+	[
+		"Désactiver le chargement extérieur",
+		{
+			(_this select 0) setVariable["can_outside", false, true];;
+		},[],IL_Action_S_Priority,false,true,"",
+		"((driver _target == _this) && (_target getVariable 'can_outside') && IL_Can_Outside)"
 	];
 };
+
 if (_obj_main_type in IL_Supported_Vehicles_KAMAZ) then
 {
-	if (IL_DevMod) then
-	{
-		Player globalChat Format["IgiLoad ""%1"" Vehicle is in IL_Supported_Vehicles_KAMAZ.", IL_Script_Inst];
-	};
 	_vsupported = true;
 	[_obj_main] call IL_Init_Veh;
 	
-	_obj_main addAction [
-	"Charger le Cargo dans le Zamak",
-	{
-		[_this select 0, IL_Supported_Cargo_NonVeh_Kamaz] call IL_Do_Load;
-	},[],IL_Action_LU_Priority,true,true,"",
-	"(count(nearestObjects[ _target modelToWorld [0,-6 - (_target getVariable 'load_offset'),0], IL_Supported_Cargo_NonVeh_Kamaz, IL_SDistL]) > 0) && (abs(speed _target) <= IL_LU_Speed) && ((IL_Can_Inside && (driver _target == _this)) || ((((_this in (nearestObjects[ _target modelToWorld [0,-6 - (_target getVariable 'load_offset'),0], [], IL_SDistL + IL_SDistL_Heli_offset]))) && (_target getVariable 'can_outside')))) && (_target getVariable 'box_num' > _target getVariable 'slots_num') && (_target getVariable 'can_load')"
+	_obj_main addAction 
+	[
+		"Charger le Cargo dans le Zamak",
+		{
+			[_this select 0, IL_Supported_Cargo_NonVeh_Kamaz] call IL_Do_Load;
+		},[],IL_Action_LU_Priority,true,true,"",
+		"(count(nearestObjects[ _target modelToWorld [0,-6 - (_target getVariable 'load_offset'),0], IL_Supported_Cargo_NonVeh_Kamaz, IL_SDistL]) > 0) && (abs(speed _target) <= IL_LU_Speed) && ((IL_Can_Inside && (driver _target == _this)) || ((((_this in (nearestObjects[ _target modelToWorld [0,-6 - (_target getVariable 'load_offset'),0], [], IL_SDistL + IL_SDistL_Heli_offset]))) && (_target getVariable 'can_outside')))) && (_target getVariable 'box_num' > _target getVariable 'slots_num') && (_target getVariable 'can_load')"
 	];
-	
-	_obj_main addAction [
-	"Charger le Véhicule dans le Zamak",
-	{
-		[_this select 0, IL_Supported_Cargo_Veh_Kamaz] call IL_Do_Load;
-	},[],IL_Action_LU_Priority,true,true,"",
-	"(count(nearestObjects[ _target modelToWorld [0,-6 - (_target getVariable 'load_offset'),0], IL_Supported_Cargo_Veh_Kamaz, IL_SDistL]) > 0) && (abs(speed _target) <= IL_LU_Speed) && ((IL_Can_Inside && (driver _target == _this)) || ((((_this in (nearestObjects[ _target modelToWorld [0,-6 - (_target getVariable 'load_offset'),0], [], IL_SDistL + IL_SDistL_Heli_offset]))) && (_target getVariable 'can_outside')))) && (_target getVariable 'box_num' > _target getVariable 'slots_num') && (_target getVariable 'can_load')"
+
+	_obj_main addAction 
+	[
+		"Charger le Véhicule dans le Zamak",
+		{
+			[_this select 0, IL_Supported_Cargo_Veh_Kamaz] call IL_Do_Load;
+		},[],IL_Action_LU_Priority,true,true,"",
+		"(count(nearestObjects[ _target modelToWorld [0,-6 - (_target getVariable 'load_offset'),0], IL_Supported_Cargo_Veh_Kamaz, IL_SDistL]) > 0) && (abs(speed _target) <= IL_LU_Speed) && ((IL_Can_Inside && (driver _target == _this)) || ((((_this in (nearestObjects[ _target modelToWorld [0,-6 - (_target getVariable 'load_offset'),0], [], IL_SDistL + IL_SDistL_Heli_offset]))) && (_target getVariable 'can_outside')))) && (_target getVariable 'box_num' > _target getVariable 'slots_num') && (_target getVariable 'can_load')"
 	];
-	
-	_obj_main addAction [
-	"Décharger le Cargo du Zamak",
-	{
-		[_this select 0] call IL_Do_Unload;
-	},[],IL_Action_LU_Priority,false,true,"",
-	"(_target getVariable 'box_num' < 0) && ((IL_Can_Inside && (driver _target == _this)) || (((_this in (nearestObjects[ _target modelToWorld [0,-6 - (_target getVariable 'load_offset'),0], [], IL_SDistL + IL_SDistL_Heli_offset])) && (_target getVariable 'can_outside')))) && (_target getVariable 'can_load') && (abs(speed _target) <= IL_LU_Speed)"
+
+	_obj_main addAction 
+	[
+		"Décharger le Cargo du Zamak",
+		{
+			[_this select 0] call IL_Do_Unload;
+		},[],IL_Action_LU_Priority,false,true,"",
+		"(_target getVariable 'box_num' < 0) && ((IL_Can_Inside && (driver _target == _this)) || (((_this in (nearestObjects[ _target modelToWorld [0,-6 - (_target getVariable 'load_offset'),0], [], IL_SDistL + IL_SDistL_Heli_offset])) && (_target getVariable 'can_outside')))) && (_target getVariable 'can_load') && (abs(speed _target) <= IL_LU_Speed)"
 	];
-	_obj_main addAction [
-	"Activer le chargement extérieur",
-	{
-		(_this select 0) setVariable["can_outside", true, true];;
-	},[],IL_Action_S_Priority,false,true,"",
-	"((driver _target == _this) && !(_target getVariable 'can_outside') && IL_Can_Outside)"
+
+	_obj_main addAction 
+	[
+		"Activer le chargement extérieur",
+		{
+			(_this select 0) setVariable["can_outside", true, true];;
+		},[],IL_Action_S_Priority,false,true,"",
+		"((driver _target == _this) && !(_target getVariable 'can_outside') && IL_Can_Outside)"
 	];
-	
-	_obj_main addAction [
-	"Désactiver le chargement extérieur",
-	{
-		(_this select 0) setVariable["can_outside", false, true];;
-	},[],IL_Action_S_Priority,false,true,"",
-	"((driver _target == _this) && (_target getVariable 'can_outside') && IL_Can_Outside)"
+
+	_obj_main addAction 
+	[
+		"Désactiver le chargement extérieur",
+		{
+			(_this select 0) setVariable["can_outside", false, true];;
+		},[],IL_Action_S_Priority,false,true,"",
+		"((driver _target == _this) && (_target getVariable 'can_outside') && IL_Can_Outside)"
 	];
 };
+
 if (_obj_main_type in IL_Supported_Vehicles_TEMPEST) then
 {
-	if (IL_DevMod) then
-	{
-		Player globalChat Format["IgiLoad ""%1"" Vehicle is in IL_Supported_Vehicles_TEMPEST.", IL_Script_Inst];
-	};
 	_vsupported = true;
 	[_obj_main] call IL_Init_Veh;
-	
-	_obj_main addAction [
-	"Charger le Cargo dans le Tempest",
-	{
-		[_this select 0, IL_Supported_Cargo_NonVeh_TEMPEST] call IL_Do_Load;
-	},[],IL_Action_LU_Priority,true,true,"",
-	"(count(nearestObjects[ _target modelToWorld [0,-6.5 - (_target getVariable 'load_offset'),0], IL_Supported_Cargo_NonVeh_TEMPEST, IL_SDistL]) > 0) && (abs(speed _target) <= IL_LU_Speed) && ((IL_Can_Inside && (driver _target == _this)) || ((((_this in (nearestObjects[ _target modelToWorld [0,-6.5 - (_target getVariable 'load_offset'),0], [], IL_SDistL + IL_SDistL_Heli_offset]))) && (_target getVariable 'can_outside')))) && (_target getVariable 'box_num' > _target getVariable 'slots_num') && (_target getVariable 'can_load')"
+
+	_obj_main addAction 
+	[
+		"Charger le Cargo dans le Tempest",
+		{
+			[_this select 0, IL_Supported_Cargo_NonVeh_TEMPEST] call IL_Do_Load;
+		},[],IL_Action_LU_Priority,true,true,"",
+		"(count(nearestObjects[ _target modelToWorld [0,-6.5 - (_target getVariable 'load_offset'),0], IL_Supported_Cargo_NonVeh_TEMPEST, IL_SDistL]) > 0) && (abs(speed _target) <= IL_LU_Speed) && ((IL_Can_Inside && (driver _target == _this)) || ((((_this in (nearestObjects[ _target modelToWorld [0,-6.5 - (_target getVariable 'load_offset'),0], [], IL_SDistL + IL_SDistL_Heli_offset]))) && (_target getVariable 'can_outside')))) && (_target getVariable 'box_num' > _target getVariable 'slots_num') && (_target getVariable 'can_load')"
 	];
-	
-	_obj_main addAction [
-	"Charger le Véhicule dans le Tempest",
-	{
-		[_this select 0, IL_Supported_Cargo_Veh_TEMPEST] call IL_Do_Load;
-	},[],IL_Action_LU_Priority,true,true,"",
-	"(count(nearestObjects[ _target modelToWorld [0,-6.5 - (_target getVariable 'load_offset'),0], IL_Supported_Cargo_Veh_TEMPEST, IL_SDistL]) > 0) && (abs(speed _target) <= IL_LU_Speed) && ((IL_Can_Inside && (driver _target == _this)) || ((((_this in (nearestObjects[ _target modelToWorld [0,-6.5 - (_target getVariable 'load_offset'),0], [], IL_SDistL + IL_SDistL_Heli_offset]))) && (_target getVariable 'can_outside')))) && (_target getVariable 'box_num' > _target getVariable 'slots_num') && (_target getVariable 'can_load')"
+
+	_obj_main addAction 
+	[
+		"Charger le Véhicule dans le Tempest",
+		{
+			[_this select 0, IL_Supported_Cargo_Veh_TEMPEST] call IL_Do_Load;
+		},[],IL_Action_LU_Priority,true,true,"",
+		"(count(nearestObjects[ _target modelToWorld [0,-6.5 - (_target getVariable 'load_offset'),0], IL_Supported_Cargo_Veh_TEMPEST, IL_SDistL]) > 0) && (abs(speed _target) <= IL_LU_Speed) && ((IL_Can_Inside && (driver _target == _this)) || ((((_this in (nearestObjects[ _target modelToWorld [0,-6.5 - (_target getVariable 'load_offset'),0], [], IL_SDistL + IL_SDistL_Heli_offset]))) && (_target getVariable 'can_outside')))) && (_target getVariable 'box_num' > _target getVariable 'slots_num') && (_target getVariable 'can_load')"
 	];
-	
-	_obj_main addAction [
-	"Décharger le Cargo du Tempest",
-	{
-		[_this select 0] call IL_Do_Unload;
-	},[],IL_Action_LU_Priority,false,true,"",
-	"(_target getVariable 'box_num' < 0) && ((IL_Can_Inside && (driver _target == _this)) || (((_this in (nearestObjects[ _target modelToWorld [0,-6.5 - (_target getVariable 'load_offset'),0], [], IL_SDistL + IL_SDistL_Heli_offset])) && (_target getVariable 'can_outside')))) && (_target getVariable 'can_load') && (abs(speed _target) <= IL_LU_Speed)"
+
+	_obj_main addAction 
+	[
+		"Décharger le Cargo du Tempest",
+		{
+			[_this select 0] call IL_Do_Unload;
+		},[],IL_Action_LU_Priority,false,true,"",
+		"(_target getVariable 'box_num' < 0) && ((IL_Can_Inside && (driver _target == _this)) || (((_this in (nearestObjects[ _target modelToWorld [0,-6.5 - (_target getVariable 'load_offset'),0], [], IL_SDistL + IL_SDistL_Heli_offset])) && (_target getVariable 'can_outside')))) && (_target getVariable 'can_load') && (abs(speed _target) <= IL_LU_Speed)"
 	];
-	_obj_main addAction [
-	"Activer le chargement extérieur",
-	{
-		(_this select 0) setVariable["can_outside", true, true];;
-	},[],IL_Action_S_Priority,false,true,"",
-	"((driver _target == _this) && !(_target getVariable 'can_outside') && IL_Can_Outside)"
+
+	_obj_main addAction 
+	[
+		"Activer le chargement extérieur",
+		{
+			(_this select 0) setVariable["can_outside", true, true];;
+		},[],IL_Action_S_Priority,false,true,"",
+		"((driver _target == _this) && !(_target getVariable 'can_outside') && IL_Can_Outside)"
 	];
-	
-	_obj_main addAction [
-	"Désactiver le chargement extérieur",
-	{
-		(_this select 0) setVariable["can_outside", false, true];;
-	},[],IL_Action_S_Priority,false,true,"",
-	"((driver _target == _this) && (_target getVariable 'can_outside') && IL_Can_Outside)"
+
+	_obj_main addAction 
+	[
+		"Désactiver le chargement extérieur",
+		{
+			(_this select 0) setVariable["can_outside", false, true];;
+		},[],IL_Action_S_Priority,false,true,"",
+		"((driver _target == _this) && (_target getVariable 'can_outside') && IL_Can_Outside)"
 	];
 };
+
 if (_obj_main_type in IL_Supported_Vehicles_HEMTT) then
 {
-	if (IL_DevMod) then
-	{
-		Player globalChat Format["IgiLoad ""%1"" Vehicle is in IL_Supported_Vehicles_HEMTT.", IL_Script_Inst];
-	};
 	_vsupported = true;
 	[_obj_main] call IL_Init_Veh;
 
-	_obj_main addAction [
-	"Charger le Cargo dans le HEMTT",
-	{
-		[_this select 0, IL_Supported_Cargo_NonVeh_HEMTT] call IL_Do_Load;
-	},[],IL_Action_LU_Priority,true,true,"",
-	"(count(nearestObjects[ _target modelToWorld [0,-7 - (_target getVariable 'load_offset'),0], IL_Supported_Cargo_NonVeh_HEMTT, IL_SDistL]) > 0) && (abs(speed _target) <= IL_LU_Speed) && ((IL_Can_Inside && (driver _target == _this)) || (((_this in (nearestObjects[ _target modelToWorld [0,-7 - (_target getVariable 'load_offset'),0], [], IL_SDistL + IL_SDistL_Heli_offset])) && (_target getVariable 'can_outside')))) && (_target getVariable 'box_num' > _target getVariable 'slots_num') && (_target getVariable 'can_load')"
+	_obj_main addAction 
+	[
+		"Charger le Cargo dans le HEMTT",
+		{
+			[_this select 0, IL_Supported_Cargo_NonVeh_HEMTT] call IL_Do_Load;
+		},[],IL_Action_LU_Priority,true,true,"",
+		"(count(nearestObjects[ _target modelToWorld [0,-7 - (_target getVariable 'load_offset'),0], IL_Supported_Cargo_NonVeh_HEMTT, IL_SDistL]) > 0) && (abs(speed _target) <= IL_LU_Speed) && ((IL_Can_Inside && (driver _target == _this)) || (((_this in (nearestObjects[ _target modelToWorld [0,-7 - (_target getVariable 'load_offset'),0], [], IL_SDistL + IL_SDistL_Heli_offset])) && (_target getVariable 'can_outside')))) && (_target getVariable 'box_num' > _target getVariable 'slots_num') && (_target getVariable 'can_load')"
 	];
 
-	_obj_main addAction [
-	"Charger Véhicule dans le HEMTT",
-	{
-		[_this select 0, IL_Supported_Cargo_Veh_HEMTT] call IL_Do_Load;
-	},[],IL_Action_LU_Priority,true,true,"",
-	"(count(nearestObjects[ _target modelToWorld [0,-7 - (_target getVariable 'load_offset'),0], IL_Supported_Cargo_Veh_HEMTT, IL_SDistL]) > 0) && (abs(speed _target) <= IL_LU_Speed) && ((IL_Can_Inside && (driver _target == _this)) || (((_this in (nearestObjects[ _target modelToWorld [0,-7 - (_target getVariable 'load_offset'),0], [], IL_SDistL + IL_SDistL_Heli_offset])) && (_target getVariable 'can_outside')))) && (_target getVariable 'box_num' > _target getVariable 'slots_num') && (_target getVariable 'can_load')"
+	_obj_main addAction 
+	[
+		"Charger Véhicule dans le HEMTT",
+		{
+			[_this select 0, IL_Supported_Cargo_Veh_HEMTT] call IL_Do_Load;
+		},[],IL_Action_LU_Priority,true,true,"",
+		"(count(nearestObjects[ _target modelToWorld [0,-7 - (_target getVariable 'load_offset'),0], IL_Supported_Cargo_Veh_HEMTT, IL_SDistL]) > 0) && (abs(speed _target) <= IL_LU_Speed) && ((IL_Can_Inside && (driver _target == _this)) || (((_this in (nearestObjects[ _target modelToWorld [0,-7 - (_target getVariable 'load_offset'),0], [], IL_SDistL + IL_SDistL_Heli_offset])) && (_target getVariable 'can_outside')))) && (_target getVariable 'box_num' > _target getVariable 'slots_num') && (_target getVariable 'can_load')"
 	];
 
-	_obj_main addAction [
-	"Décharger le Cargo du HEMTT",
-	{
-		[_this select 0] call IL_Do_Unload;
-	},[],IL_Action_LU_Priority,false,true,"",
-	"(_target getVariable 'box_num' < 0) && ((IL_Can_Inside && (driver _target == _this)) || (((_this in (nearestObjects[ _target modelToWorld [0,-7 - (_target getVariable 'load_offset'),0], [], IL_SDistL + IL_SDistL_Heli_offset])) && (_target getVariable 'can_outside')))) && (_target getVariable 'can_load') && (abs(speed _target) <= IL_LU_Speed)"
+	_obj_main addAction 
+	[
+		"Décharger le Cargo du HEMTT",
+		{
+			[_this select 0] call IL_Do_Unload;
+		},[],IL_Action_LU_Priority,false,true,"",
+		"(_target getVariable 'box_num' < 0) && ((IL_Can_Inside && (driver _target == _this)) || (((_this in (nearestObjects[ _target modelToWorld [0,-7 - (_target getVariable 'load_offset'),0], [], IL_SDistL + IL_SDistL_Heli_offset])) && (_target getVariable 'can_outside')))) && (_target getVariable 'can_load') && (abs(speed _target) <= IL_LU_Speed)"
 	];
 
-	_obj_main addAction [
-	"Activer le chargement extérieur",
-	{
-		(_this select 0) setVariable["can_outside", true, true];;
-	},[],IL_Action_S_Priority,false,true,"",
-	"((driver _target == _this) && !(_target getVariable 'can_outside') && IL_Can_Outside)"
+	_obj_main addAction 
+	[
+		"Activer le chargement extérieur",
+		{
+			(_this select 0) setVariable["can_outside", true, true];;
+		},[],IL_Action_S_Priority,false,true,"",
+		"((driver _target == _this) && !(_target getVariable 'can_outside') && IL_Can_Outside)"
 	];
 
-	_obj_main addAction [
-	"Désactiver le chargement extérieur",
-	{
-		(_this select 0) setVariable["can_outside", false, true];;
-	},[],IL_Action_S_Priority,false,true,"",
-	"((driver _target == _this) && (_target getVariable 'can_outside') && IL_Can_Outside)"
+	_obj_main addAction 
+	[
+		"Désactiver le chargement extérieur",
+		{
+			(_this select 0) setVariable["can_outside", false, true];;
+		},[],IL_Action_S_Priority,false,true,"",
+		"((driver _target == _this) && (_target getVariable 'can_outside') && IL_Can_Outside)"
 	];
-};
-
-if (!(_vsupported) && (IL_DevMod)) then
-{
-	Player globalChat Format["Object type: ""%1"" is not supported.", _obj_main_type];
-};
-
-if (IL_DevMod) then
-{
-	Player globalChat Format["IgiLoad ""%1"" END.", IL_Script_Inst];
 };

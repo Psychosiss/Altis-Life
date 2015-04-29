@@ -1,5 +1,3 @@
-#include <macro.h>
-
 private["_shop","_return"];
 _shop = [_this,0,"",[""]] call BIS_fnc_param;
 if(_shop == "") exitWith {[]};
@@ -20,9 +18,6 @@ switch (_shop) do
 		_return pushBack ["B_Heli_Light_01_F",255000];
 		_return pushBack ["O_Heli_Light_02_unarmed_F",850000];
 		_return pushBack ["B_Heli_Transport_03_unarmed_F",6500000];
-			//_return pushBack ["C_Heli_Light_01_civil_F",500000];
-			//_return pushBack ["O_Heli_Transport_04_F",500000];
-			//_return pushBack ["O_Heli_Transport_04_box_F",2000000];
 	};
 
 	case "civ_box":
@@ -69,21 +64,15 @@ switch (_shop) do
 
 	case "reb_car":
 	{
-		_return =
-		[
-			["C_Offroad_01_F",7000],
-			["O_MRAP_02_F",650000],
-			["I_MRAP_03_F",900000],
-			["B_G_Offroad_01_armed_F",1000000]
-		];
+		_return pushBack ["C_Offroad_01_F",7000],
+		_return pushBack ["O_MRAP_02_F",650000],
+		_return pushBack ["I_MRAP_03_F",900000],
+		_return pushBack ["B_G_Offroad_01_armed_F",1000000]
 	};
 
 	case "reb_air":
 	{
-		_return = 
-		[
-			["C_Heli_Light_01_civil_F",400000]
-		];	
+		_return pushBack ["C_Heli_Light_01_civil_F",400000]
 	};
 
 	case "dep_car":
@@ -99,35 +88,26 @@ switch (_shop) do
 
 	case "kart_shop":
 	{
-		_return = 
-		[
-			["C_Kart_01_Blu_F",15000],
-			["C_Kart_01_Fuel_F",15000],
-			["C_Kart_01_Red_F",15000],
-			["C_Kart_01_Vrana_F",15000]
-		];
+			_return pushBack ["C_Kart_01_Blu_F",15000],
+			_return pushBack ["C_Kart_01_Fuel_F",15000],
+			_return pushBack ["C_Kart_01_Red_F",15000],
+			_return pushBack ["C_Kart_01_Vrana_F",15000]
 	};
 
 	case "med_shop":
 	{
-		_return = 
-		[
-			["C_Offroad_01_F",7000],
-			["I_Truck_02_medical_F",25000],
-			["O_Truck_03_medical_F",45000],
-			["B_Truck_01_medical_F",60000],
-			["C_SUV_01_F",15000]
-		];
+		_return pushBack ["C_Offroad_01_F",7000],
+		_return pushBack ["I_Truck_02_medical_F",25000],
+		_return pushBack ["O_Truck_03_medical_F",45000],
+		_return pushBack ["B_Truck_01_medical_F",60000],
+		_return pushBack ["C_SUV_01_F",15000]
 	};
 	
 	case "med_air_hs": 
 	{
-		_return = 
-		[
-			["B_Heli_Light_01_F",50000],
-			["O_Heli_Light_02_unarmed_F",75000],
-			["O_Heli_Transport_04_medevac_F",125000]
-		];
+		_return pushBack ["B_Heli_Light_01_F",50000],
+		_return pushBack ["O_Heli_Light_02_unarmed_F",75000],
+		_return pushBack ["O_Heli_Transport_04_medevac_F",125000]
 	};
 
 	case "med_boat":
@@ -139,11 +119,11 @@ switch (_shop) do
 	{
 		_return pushBack ["C_Offroad_01_F",5000];
 		_return pushBack ["C_SUV_01_F",20000];
-		if(__GETC__(life_cop_level) > 3) then
+		if((call life_cop_level) > 3) then
 		{
 			_return pushBack ["B_MRAP_01_F",100000];
 		};
-		if(__GETC__(life_cop_level) > 5) then
+		if((call life_cop_level) > 5) then
 		{
 			_return pushBack ["B_MRAP_01_hmg_F",100000];
 		};
@@ -151,12 +131,12 @@ switch (_shop) do
 	
 	case "cop_air":
 	{
-		if(__GETC__(life_cop_level) > 2) then
+		if((call life_cop_level) > 2) then
 		{
 			_return pushBack ["O_Heli_Light_02_unarmed_F",750000];
 			_return pushBack ["C_Heli_Light_01_civil_F",75000];
 		};
-		if(__GETC__(life_cop_level) > 4) then
+		if((call life_cop_level) > 4) then
 		{
 			_return pushBack ["O_Heli_Light_02_unarmed_F",1000000];
 			_return pushBack ["C_Heli_Light_01_civil_F",246000];
@@ -166,29 +146,26 @@ switch (_shop) do
 
 	case "cop_ship":
 	{
-		_return =
-		[
-			["B_Boat_Transport_01_F",3000],
-			["C_Boat_Civil_01_police_F",20000],
-			["B_SDV_01_F",50000],
-			["B_Boat_Armed_01_minigun_F",200000]
-		];
+		_return pushBack ["B_Boat_Transport_01_F",3000],
+		_return pushBack ["C_Boat_Civil_01_police_F",20000],
+		_return pushBack ["B_SDV_01_F",50000],
+		_return pushBack ["B_Boat_Armed_01_minigun_F",200000]
 	};
 
 	case "donator_shop":
 	{
-		if(__GETC__(life_donator) > 0) then
+		if((call life_donator) > 0) then
 		{
 			_return pushBack ["I_Truck_02_box_F",50000];
 			_return pushBack ["C_Hatchback_01_sport_F",40000];
 		};
-		if(__GETC__(life_donator) > 2) then
+		if((call life_donator) > 2) then
 		{
 			_return pushBack ["I_Truck_02_box_F",50000];
 			_return pushBack ["C_Hatchback_01_sport_F",40000];
 			_return pushBack ["B_Truck_01_box_F",400000];
 		};
-		if(__GETC__(life_donator) > 3) then
+		if((call life_donator) > 3) then
 		{
 			_return pushBack ["I_Truck_02_box_F",50000];
 			_return pushBack ["C_Hatchback_01_sport_F",40000];
@@ -196,7 +173,7 @@ switch (_shop) do
 			_return pushBack ["I_Heli_Transport_02_F",600000];
 			_return pushBack ["I_Heli_light_03_unarmed_F",500000];
 		};
-		if(__GETC__(life_donator) > 4) then
+		if((call life_donator) > 4) then
 		{
 			_return pushBack ["I_Truck_02_box_F",50000];
 			_return pushBack ["C_Hatchback_01_sport_F",40000];

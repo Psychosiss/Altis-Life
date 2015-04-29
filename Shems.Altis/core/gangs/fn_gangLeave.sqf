@@ -1,11 +1,9 @@
-#include <macro.h>
-
 private["_grp","_grpMembers"];
-if(steamid == (grpPlayer getVariable "gang_owner")) exitWith {hint "You cannot leave the gang without appointing a new leader first!"};
+if(getPlayerUID player == (group player getVariable "gang_owner")) exitWith {hint "Vous ne pouvez pas quitter le gang, désignez d'abord un nouveau leadeur!"};
 
-_grp = grpPlayer;
-_grpMembers = grpPlayer getVariable "gang_members";
-_grpMembers = _grpMembers - [steamid];
+_grp = group player;
+_grpMembers = group player getVariable "gang_members";
+_grpMembers = _grpMembers - [getPlayerUID player];
 _grp setVariable["gang_members",_grpMembers,true];
 [player] joinSilent (createGroup civilian);
 

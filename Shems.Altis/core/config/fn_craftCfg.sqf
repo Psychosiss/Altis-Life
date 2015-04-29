@@ -1,5 +1,3 @@
-#include <macro.h>
-
 private "_craft";
 _craft = [_this,0,"",[""]] call BIS_fnc_param;
 if(_craft == "") exitWith {closeDialog 0};

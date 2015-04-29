@@ -1,5 +1,3 @@
-#include <macro.h>
-
 private "_type";
 _type = _this select 3;
 _success = false;

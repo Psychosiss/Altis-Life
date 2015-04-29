@@ -1,5 +1,3 @@
-#include <macro.h>
-
 private "_action";
 
 _action = 
@@ -13,7 +11,7 @@ _action =
 if(_action) then 
 {
 	hint "Suppression du gang....";
-	[[grpPlayer],"TON_fnc_removeGang",false,false] spawn life_fnc_MP;
+	[[group player],"TON_fnc_removeGang",false,false] spawn life_fnc_MP;
 } else {
 	hint "Gang supprimé";
 };

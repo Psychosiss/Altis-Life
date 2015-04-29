@@ -1,5 +1,3 @@
-#include <macro.h>
-
 private["_vehicle","_vid","_pid","_unit","_price"];
 disableSerialization;
 if(lbCurSel 2802 == -1) exitWith {hint "Vous n'avez rien sélectionné."};
@@ -11,13 +9,13 @@ _unit = player;
 
 if(isNil "_vehicle") exitWith {hint "Il y a une erreur dans la sélection..."};
 
-_price = [_vehicle,__GETC__(life_insure_prices)] call fnc_index;
+_price = [_vehicle,(call life_insure_prices)] call fnc_index;
 
 if(_price == -1) then 
 {
 	_price = 10000;
 } else {
-	_price = (__GETC__(life_insure_prices) select _price) select 1;
+	_price = ((call life_insure_prices) select _price) select 1;
 };
 if(life_atmmoney < _price) exitWith 
 {

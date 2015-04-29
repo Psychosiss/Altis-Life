@@ -1,5 +1,3 @@
-#include <macro.h>
-
 private["_display","_units","_type","_data","_rowData","_msg"];
 _type = [_this,0,0] call BIS_fnc_param;
 _data = [_this,1,0,["",[],0]] call BIS_fnc_param;
@@ -51,8 +49,8 @@ switch(_type) do
 	case 4:
 	{
 		createDialog "Life_smartphone_schreiben";
-		ctrlSetText[88886, format["Nachricht an: %1",name life_smartphoneTarget]];
-		if((__GETC__(life_adminlevel) < 1)) then
+		ctrlSetText[88886, format["Message à: %1",name life_smartphoneTarget]];
+		if(((call life_adminlevel) < 1)) then
 		{
 			ctrlShow[888897,false];
 		};

@@ -1,5 +1,3 @@
-#include <macro.h>
-
 life_session_tries = life_session_tries + 1;
 if(life_session_completed) exitWith {};
 if(life_session_tries > 3) exitWith 
@@ -20,15 +18,15 @@ if((getPlayerUID player) != _this select 0) exitWith {[] call SOCK_fnc_dataQuery
 if(!isServer && (!isNil "life_adminlevel" OR !isNil "life_cop_level" OR !isNil "life_donator" OR !isNil "life_med_level")) exitWith 
 {
 	[[profileName,getPlayerUID player,"VariablesAlreadySet"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
-	[[profileName,format["Variables set before client initialization...\nlife_adminlevel: %1\nlife_cop_level: %2\nlife_donator: %3\nlife_med_level: %4"",life_adminlevel,life_cop_level,life_donator,life_med_level]],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
+	[[profileName,format["Variables définies avant l'initialisation du client...\nlife_adminlevel: %1\nlife_cop_level: %2\nlife_donator: %3\nlife_med_level: %4"",life_adminlevel,life_cop_level,life_donator,life_med_level]],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
 	sleep 0.9;
-	["SpyGlass",false,false] execVM "\a3\functions_f\Misc\fn_endMission.sqf";
+	["SpyGlass",false,false] call BIS_fnc_endMission;
 };
 
 life_money = parseNumber (_this select 2);
 life_atmmoney = parseNumber (_this select 3);
-__CONST__(life_adminlevel,parseNumber(_this select 4));
-__CONST__(life_donator,parseNumber(_this select 5));
+life_adminlevel = compileFinal (if(typeName parseNumber(_this select 4) == "STRING") then {parseNumber(_this select 4)} else {str(parseNumber(_this select 4))});
+life_donator = compileFinal (if(typeName parseNumber(_this select 5) == "STRING") then {parseNumber(_this select 5)} else {str(parseNumber(_this select 5))});
 
 if(count (_this select 6) > 0) then 
 {
@@ -51,8 +49,8 @@ switch(playerSide) do
 {
 	case west: 
 	{
-		__CONST__(life_cop_level, parseNumber(_this select 7));
-		__CONST__(life_med_level,0);
+		life_cop_level = compileFinal (if(typeName parseNumber(_this select 7) == "STRING") then {parseNumber(_this select 7)} else {str(parseNumber(_this select 7))});
+		life_med_level = compileFinal (if(typeName 0 == "STRING") then {0} else {str(0)});
 		life_blacklisted = _this select 9;
 		cop_position = _this select 10;
 		life_is_alive = _this select 11;
@@ -63,14 +61,14 @@ switch(playerSide) do
 		life_is_arrested = _this select 7;
 		civ_position = _this select 9;
 		life_is_alive = _this select 10;
-		__CONST__(life_cop_level,0);
-		__CONST__(life_med_level,0);
+		life_cop_level = compileFinal (if(typeName 0 == "STRING") then {0} else {str(0)});
+		life_med_level = compileFinal (if(typeName 0 == "STRING") then {0} else {str(0)});
 		life_houses = _this select 12;
 		{
 			_house = nearestBuilding (call compile format["%1", _x select 0]);
 			life_vehicles pushBack _house;
 		} foreach life_houses;
-		
+
 		life_gangData = _this select 13;
 		if(count life_gangData != 0) then 
 		{
@@ -81,8 +79,8 @@ switch(playerSide) do
 
 	case independent: 
 	{
-		__CONST__(life_med_level, parseNumber(_this select 7));
-		__CONST__(life_cop_level,0);
+		life_med_level = compileFinal (if(typeName parseNumber(_this select 7) == "STRING") then {parseNumber(_this select 7)} else {str(parseNumber(_this select 7))});
+		life_cop_level = compileFinal (if(typeName 0 == "STRING") then {0} else {str(0)});
 		med_position = _this select 9;
 		life_is_alive = _this select 10;
 	};

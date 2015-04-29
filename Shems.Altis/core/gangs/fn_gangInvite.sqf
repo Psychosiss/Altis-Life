@@ -1,5 +1,3 @@
-#include <macro.h>
-
 private["_name","_group"];
 _name = [_this,0,"",[""]] call BIS_fnc_param;
 _group = [_this,1,grpNull,[grpNull]] call BIS_fnc_param;
@@ -20,8 +18,8 @@ if(_action) then
 	[player] join _group;
 	[[4,_group],"TON_fnc_updateGang",false,false] spawn life_fnc_MP;
 } else {
-	_grpMembers = grpPlayer getVariable "gang_members";
-	_grpMembers = _grpMembers - [steamid];
-	grpPlayer setVariable["gang_members",_grpMembers,true];
+	_grpMembers = group player getVariable "gang_members";
+	_grpMembers = _grpMembers - [getPlayerUID player];
+	group player setVariable["gang_members",_grpMembers,true];
 	[[4,_grpMembers],"TON_fnc_updateGang",false,false] spawn life_fnc_MP;
 };

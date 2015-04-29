@@ -6,7 +6,7 @@ _unit = lbData [2406,lbCurSel 2406];
 _unit = call compile format["%1",_unit];
 _amount = lbData [2407,lbCurSel 2407];
 if(isNil "_unit") exitWith {};
-if(side _unit == west) exitWith {hint "Pourquoi essayez vous de faire cela ? Voulez-vous une guerre policière ?"}; // selon ColinM ils sont des têtes de bites...
+if(side _unit == west) exitWith {hint "Pourquoi essayez vous de faire cela ? Voulez-vous une guerre policière ?"};
 if(_unit == player) exitWith {hint "Vous ne pouvez pas vous mettre en homme recherché.";};
 if(isNull _unit) exitWith {};
 

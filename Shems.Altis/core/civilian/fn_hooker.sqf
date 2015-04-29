@@ -37,13 +37,13 @@ switch (_mode) do
 			hint "Pas d'argent? Tu n'auras pas de plaisir avec moi!";
 		};
 
-		if(life_sex_ill > 0) exitWith
+		if(life_sex > 0) exitWith
 		{
 			hint "Les maladies vénériennes? Aller chez le médecin avant de venir ici!";
 		};
 		hint format["J'aime le doux \n \n Vous devez payer% 1 €. \n\n Et vous devriez passé chez le médecin",_playercosts];
 		life_money = life_money - _playercosts;
-		life_sex_ill = life_sex_ill + _playerSexIll;
+		life_sex = life_sex + _playerSexIll;
 		player say3D "pute";
 		sleep 10;
 		if(_playerSexIll == 0) then

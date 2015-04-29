@@ -112,12 +112,11 @@ class CfgFunctions
 		{
 			file = "core";
 			class setupActions;
-			class setupEVH;
+			class setupEventHandlers;
 			class initCiv;
 			class initCop;
 			class initMedic;
 			class initZeus;
-			class addKey;
 			class initSurvival;
 		};
 		
@@ -432,6 +431,7 @@ class CfgFunctions
 			class copVehicleInteractionMenu;
 			class civVehicleInteractionMenu;
 			class medVehicleInteractionMenu;
+			class vehicleSync;
 		};
 		
 		class Cop

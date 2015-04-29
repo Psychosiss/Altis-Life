@@ -1,5 +1,3 @@
-#include <macro.h>
-
 private["_vehicle","_vid","_pid","_unit","_price"];
 
 disableSerialization;
@@ -12,8 +10,8 @@ _unit = player;
 
 if(isNil "_vehicle") exitWith {hint "The selection has an error..."};
 
-_price = [_vehicle,__GETC__(life_garage_prices)] call fnc_index;
-if(_price == -1) then {_price = 1000;} else {_price = (__GETC__(life_garage_prices) select _price) select 1;};
+_price = [_vehicle,(call life_garage_prices)] call fnc_index;
+if(_price == -1) then {_price = 1000;} else {_price = ((call life_garage_prices) select _price) select 1;};
 if(life_atmmoney < _price) exitWith {hint format[("Vous n'avez pas %1 € sur votre compte bancaire pour payé les frais."),[_price] call life_fnc_numberText];};
 
 if(typeName life_garage_sp == "ARRAY") then 

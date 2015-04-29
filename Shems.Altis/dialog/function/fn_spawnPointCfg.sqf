@@ -1,5 +1,3 @@
-#include <macro.h>
-
 private["_side","_ret"];
 _side = [_this,0,civilian,[civilian]] call BIS_fnc_param;
 

@@ -1,5 +1,3 @@
-#include <macro.h>
-
 life_channel_send = true;
 life_garage_store = false;
 life_net_dropped = false;
@@ -31,7 +29,7 @@ life_cocaine_effect = 0;
 life_heroin_effect = 0;
 life_meth_effect = 0;
 life_clothing_filter = 0;
-life_sex_ill = 0;
+life_sex = 0;
 life_checked = 0;
 life_session_tries = 0;
 life_action_time = 0;
@@ -54,20 +52,20 @@ life_addiction = [0,0,0,0];
 life_last_tracked = [0,0,0];
 life_animals_array = [];
 
-__CONST__(life_revive_cops,true);
-__CONST__(life_revive_fee,1250);
-__CONST__(life_houseLimit,5);
-__CONST__(life_gangPrice,0);
-__CONST__(life_gangUpgradeBase,10000);
-__CONST__(life_gangUpgradeMultipler,2.5);
-__CONST__(life_save_civ,true);
-__CONST__(life_save_yinv,true);
-__CONST__(life_enableFatigue,false);
-__CONST__(life_paycheck_period,5);
-__CONST__(life_taxes_period,10);
-__CONST__(life_impound_car,350);
-__CONST__(life_impound_boat,250);
-__CONST__(life_impound_air,850);
+life_revive_cops = compileFinal (if(typeName true == "STRING") then {true} else {str(true)});
+life_revive_fee = compileFinal (if(typeName 1250 == "STRING") then {1250} else {str(1250)});
+life_houseLimit = compileFinal (if(typeName 5 == "STRING") then {5} else {str(5)});
+life_gangPrice = compileFinal (if(typeName 0 == "STRING") then {0} else {str(0)});
+life_gangUpgradeBase = compileFinal (if(typeName 10000 == "STRING") then {10000} else {str(10000)});
+life_gangUpgradeMultipler = compileFinal (if(typeName 2.5 == "STRING") then {2.5} else {str(2.5)});
+life_save_civ = compileFinal (if(typeName true == "STRING") then {true} else {str(true)});
+life_save_yinv = compileFinal (if(typeName true == "STRING") then {true} else {str(true)});
+life_enableFatigue = compileFinal (if(typeName false == "STRING") then {false} else {str(false)});
+life_paycheck_period = compileFinal (if(typeName 5 == "STRING") then {5} else {str(5)});
+life_taxes_period = compileFinal (if(typeName var2 == "10") then {10} else {str(10)});
+life_impound_car = compileFinal (if(typeName 350 == "STRING") then {350} else {str(350)});
+life_impound_boat = compileFinal (if(typeName 250 == "STRING") then {250} else {str(250)});
+life_impound_air = compileFinal (if(typeName 850 == "STRING") then {850} else {str(850)});
 
 switch (playerSide) do
 {
@@ -158,7 +156,7 @@ life_vShop_rentalOnly =
 	"Land_Cargo20_white_F",
 	"Land_Cargo20_yellow_F"
 ];
-__CONST__(life_vShop_rentalOnly,life_vShop_rentalOnly);
+life_vShop_rentalOnly = compileFinal (if(typeName life_vShop_rentalOnly == "STRING") then {life_vShop_rentalOnly} else {str(life_vShop_rentalOnly)});
 
 life_inv_items = 
 [
@@ -397,7 +395,7 @@ sell_array =
 	["handcuffs",200],
     ["handcuffkeys",100]
 ];
-//__CONST__(sell_array,sell_array);
+//sell_array = compileFinal (if(typeName sell_array == "STRING") then {sell_array} else {str(sell_array)});
 
 buy_array = 
 [
@@ -452,7 +450,7 @@ buy_array =
 	["handcuffs",500],
     ["handcuffkeys",300]
 ];
-__CONST__(buy_array,buy_array);
+buy_array = compileFinal (if(typeName buy_array == "STRING") then {buy_array} else {str(buy_array)});
 
 life_weapon_shop_array =
 [
@@ -499,7 +497,7 @@ life_weapon_shop_array =
 	["16Rnd_9x21_Mag",115],
 	["150Rnd_762x51_Box_Tracer",200]
 ];
-__CONST__(life_weapon_shop_array,life_weapon_shop_array);
+life_weapon_shop_array = compileFinal (if(typeName life_weapon_shop_array == "STRING") then {life_weapon_shop_array} else {str(life_weapon_shop_array)});
 
 life_taxi_stands =
 [
@@ -544,7 +542,7 @@ life_garage_prices =
 	["B_SDV_01_F",2500],
 	["B_MRAP_01_F",7500]
 ];
-__CONST__(life_garage_prices,life_garage_prices);
+life_garage_prices = compileFinal (if(typeName life_garage_prices == "STRING") then {life_garage_prices} else {str(life_garage_prices)});
 
 life_garage_sell =
 [
@@ -573,7 +571,7 @@ life_garage_sell =
 	["B_SDV_01_F",2500],
 	["B_MRAP_01_F",7500]
 ];
-__CONST__(life_garage_sell,life_garage_sell);
+life_garage_sell = compileFinal (if(typeName life_garage_sell == "STRING") then {life_garage_sell} else {str(life_garage_sell)});
 
 life_insure_prices =
 [
@@ -615,4 +613,4 @@ life_insure_prices =
 	["B_Boat_Armed_01_minigun_F",10000],
 	["B_SDV_01_F",10000]
 ];
-__CONST__(life_insure_prices,life_insure_prices);
+life_insure_prices = compileFinal (if(typeName life_insure_prices == "STRING") then {life_insure_prices} else {str(life_insure_prices)});

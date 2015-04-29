@@ -1,8 +1,5 @@
-#include <macro.h>
-
 private["_display","_list","_name","_crimes","_bounty","_units"];
 disableSerialization;
-
 createDialog "life_wanted_menu";
 
 _display = findDisplay 2400;
@@ -17,7 +14,7 @@ lbClear _players;
     _players lbSetdata [(lbSize _players)-1,str(_x)];
 } foreach playableUnits;
 
-_list2 = getControl(2400,2407);
+_list2 = ((findDisplay ##2400) displayCtrl ##2407);
 lbClear _list2;
 
 _crimes = 
@@ -39,7 +36,7 @@ _crimes =
 
 ctrlSetText[2404,"Connexion établie..."];
 
-if(__GETC__(life_cop_level) < 3 && __GETC__(life_adminlevel) == 0) then
+if((call life_cop_level) < 3) then
 {
 	ctrlShow[2405,false];
 };

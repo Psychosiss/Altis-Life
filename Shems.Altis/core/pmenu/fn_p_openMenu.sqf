@@ -1,5 +1,3 @@
-#include <macro.h>
-
 if(!alive player || dialog) exitWith {};
 createDialog "playerSettings";
 disableSerialization;
@@ -22,7 +20,7 @@ switch(playerSide) do
 	};
 };
 
-if(__GETC__(life_adminlevel) < 1) then
+if((call life_adminlevel) < 1) then
 {
 	ctrlShow[2020,false];
 	ctrlShow[2021,false];

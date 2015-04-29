@@ -1,8 +1,6 @@
-#include <macro.h>
-
 private["_mode","_packet","_array","_flag"];
 _mode = [_this,0,0,[0]] call BIS_fnc_param;
-_packet = [steamid,playerSide,nil,_mode];
+_packet = [getPlayerUID player,playerSide,nil,_mode];
 _array = [];
 _flag = switch(playerSide) do 
 {

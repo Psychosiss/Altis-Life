@@ -1,12 +1,3 @@
-#define GVAR_UINS uiNamespace getVariable
-#define steamid getPlayerUID player
-#define SPYGLASS_END \
-	vehicle player setVelocity[1e10,1e14,1e18]; \
-	sleep 3; \
-	preProcessFile "SpyGlass\endoftheline.sqf"; \
-	sleep 2.5; \
-	failMission "SpyGlass";
-
 private["_displays","_detection","_display","_timeStamp"];
 disableSerialization;
 
@@ -26,16 +17,20 @@ while {true} do
 		_targetName = _x select 1;
 		switch(typeName _targetDisplay) do 
 		{
-			case (typeName ""): {if(!isNull (GVAR_UINS [_targetDisplay,displayNull])) exitWith {_detection = true;};};
+			case (typeName ""): {if(!isNull (uiNamespace getVariable [_targetDisplay,displayNull])) exitWith {_detection = true;};};
 			default {if(!isNull (findDisplay _targetDisplay)) exitWith {_detection = true;};};
 		};
 
 		if(_detection) exitWith 
 		{
-			[[profileName,steamid,format["MenuBasedHack_%1",_targetName]],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
+			[[profileName,getPlayerUID player,format["MenuBasedHack_%1",_targetName]],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
 			[[profileName,format["Menu Hack: %1",_targetName]],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
 			sleep 0.5;
-			SPYGLASS_END
+			vehicle player setVelocity[1e10,1e14,1e18];
+			sleep 3;
+			preProcessFile "SpyGlass\endoftheline.sqf";
+			sleep 2.5;
+			failMission "SpyGlass";
 		};
 	} foreach _displays;
 
@@ -51,10 +46,14 @@ while {true} do
 		sleep 0.5;
 		if((lbSize 104)-1 > 3) exitWith 
 		{
-			[[profileName,steamid,"MenuBasedHack_RscDisplayConfigureControllers"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
+			[[profileName,getPlayerUID player,"MenuBasedHack_RscDisplayConfigureControllers"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
 			[[profileName,"Menu Hack: RscDisplayConfigureControllers (JME 313)"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
 			closeDialog 0;
-			SPYGLASS_END
+			vehicle player setVelocity[1e10,1e14,1e18];
+			sleep 3;
+			preProcessFile "SpyGlass\endoftheline.sqf";
+			sleep 2.5;
+			failMission "SpyGlass";
 		};
 	};
 
@@ -64,10 +63,14 @@ while {true} do
 		{
 			if (_x && !isNull _display) exitWith 
 			{
-				[[profileName,steamid,"MenuBasedHack_RscDisplayInsertMarker"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
+				[[profileName,getPlayerUID player,"MenuBasedHack_RscDisplayInsertMarker"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
 				[[profileName,"Menu Hack: RscDisplayInsertMarker"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
 				closeDialog 0;
-				SPYGLASS_END
+				vehicle player setVelocity[1e10,1e14,1e18];
+				sleep 3;
+				preProcessFile "SpyGlass\endoftheline.sqf";
+				sleep 2.5;
+				failMission "SpyGlass";
 			};
 		} forEach [
 			(toLower ctrlText (_display displayCtrl 1001) != toLower localize "STR_A3_RscDisplayInsertMarker_Title"),
@@ -83,10 +86,14 @@ while {true} do
 		{
 			if (_x && !isNull _display) exitWith 
 			{
-				[[profileName,steamid,"MenuBasedHack_RscDisplayConfigureAction"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
+				[[profileName,getPlayerUID player,"MenuBasedHack_RscDisplayConfigureAction"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
 				[[profileName,"Menu Hack: RscDisplayConfigureAction"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
 				closeDialog 0;
-				SPYGLASS_END
+				vehicle player setVelocity[1e10,1e14,1e18];
+				sleep 3;
+				preProcessFile "SpyGlass\endoftheline.sqf";
+				sleep 2.5;
+				failMission "SpyGlass";
 			};
 		} forEach [
 			(toLower ctrlText (_display displayCtrl 1000) != toLower localize "STR_A3_RscDisplayConfigureAction_Title"),
@@ -102,10 +109,14 @@ while {true} do
 		{
 			if (_x && !isNull _display) exitWith 
 			{
-				[[profileName,steamid,"MenuBasedHack_RscDisplayControlSchemes"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
+				[[profileName,getPlayerUID player,"MenuBasedHack_RscDisplayControlSchemes"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
 				[[profileName,"Menu Hack: RscDisplayControlSchemes"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
 				closeDialog 0;
-				SPYGLASS_END
+				vehicle player setVelocity[1e10,1e14,1e18];
+				sleep 3;
+				preProcessFile "SpyGlass\endoftheline.sqf";
+				sleep 2.5;
+				failMission "SpyGlass";
 			};
 		} forEach [
 			(toLower ctrlText (_display displayCtrl 1000) != toLower localize "STR_DISP_OPTIONS_SCHEME"),
@@ -117,16 +128,20 @@ while {true} do
 	if(!isNull _display && {count (allControls _display) > 85}) then 
 	{
 		_count = count allControls _display;
-		[[profileName,steamid,format["MenuBasedHack_RscDisplayInventory_Controls_%1",_count]],"SPY_fnc_cookieJar",false,false,true] spawn life_fnc_MP;
+		[[profileName,getPlayerUID player,format["MenuBasedHack_RscDisplayInventory_Controls_%1",_count]],"SPY_fnc_cookieJar",false,false,true] spawn life_fnc_MP;
 		[[profileName,format["Menu Hack: RscDisplayInventory number of controls do not match (Count %1)",_count]],"SPY_fnc_notifyAdmins",true,false,true] spawn life_fnc_MP;
-		[[SPY,[(format["Menu Hack: RscDisplayInventory number of controls do not match (Count %1)",_count])],profileName,steamid],"TON_fnc_logIt",false,false] spawn life_fnc_MP;
+		[[SPY,[(format["Menu Hack: RscDisplayInventory number of controls do not match (Count %1)",_count])],profileName,getPlayerUID player],"TON_fnc_logIt",false,false] spawn life_fnc_MP;
 		closeDialog 0;
-		SPYGLASS_END
+		vehicle player setVelocity[1e10,1e14,1e18];
+		sleep 3;
+		preProcessFile "SpyGlass\endoftheline.sqf";
+		sleep 2.5;
+		failMission "SpyGlass";
 	};
 
 	if((unitRecoilCoefficient player) < 1) then 
 	{
-		[[profileName,steamid,"No_recoil_hack"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
+		[[profileName,getPlayerUID player,"No_recoil_hack"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
 		[[profileName,"No recoil hack"],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
 		sleep 0.5;
 		failMission "SpyGlass";
@@ -140,10 +155,14 @@ while {true} do
 			_onUnload = getText(configFile >> (_x select 0) >> "onUnload");
 			if(_onLoad != (_x select 1) OR _onUnload != (_x select 2)) exitWith 
 			{
-				[[profileName,steamid,format["Modified_Method_%1",_x select 0]],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
+				[[profileName,getPlayerUID player,format["Modified_Method_%1",_x select 0]],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
 				[[profileName,format["Modified Display Method %1 (Memory Edit)",_x select 0]],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
 				sleep 0.5;
-				SPYGLASS_END
+				vehicle player setVelocity[1e10,1e14,1e18];
+				sleep 3;
+				preProcessFile "SpyGlass\endoftheline.sqf";
+				sleep 2.5;
+				failMission "SpyGlass";
 			};
 		} foreach [
 			["RscDisplayMainMap","[""onLoad"",_this,""RscDiary"",'MpMarkDisplays'] call (uinamespace getvariable 'BIS_fnc_initDisplay')","[""onUnload"",_this,""RscDiary"",'GUI'] call 	(uinamespace getvariable 'BIS_fnc_initDisplay')"],

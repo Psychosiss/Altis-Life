@@ -11,7 +11,6 @@ _uid = [_this,3,"",[""]] call BIS_fnc_param;
 		case "spy_log": {[1,format["1:SPY_LOG:SpyGlass: Name: %1 || UID: %2 || %3",_name,_uid,_x]];};
 		default {[1,format["1:%1:extDB: %2",_mode,_x]];};
 	};
-	//if(EQUAL(SEL(_output,0),1)) then 
 	if ((_output select 0) isEqualTo 1) then
 	{
 		"extDB" callExtension (_output select 1);

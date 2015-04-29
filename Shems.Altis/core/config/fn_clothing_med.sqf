@@ -1,5 +1,3 @@
-#include <macro.h>
-
 private["_filter","_ret"];
 _filter = [_this,0,0,[0]] call BIS_fnc_param;
 

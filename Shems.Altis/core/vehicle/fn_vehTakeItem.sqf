@@ -1,12 +1,10 @@
-#define ctrlSelData(ctrl) (lbData[##ctrl,(lbCurSel ##ctrl)])
-
 private["_ctrl","_num","_index","_data","_old","_value","_weight","_diff"];
 disableSerialization;
 if(isNull life_trunk_vehicle OR !alive life_trunk_vehicle) exitWith {hint "The vehicle either doesn't exist or is destroyed."};
 if(!alive player) exitwith {closeDialog 0;};
 
 if((lbCurSel 3502) == -1) exitWith {hint "You need to select an item!";};
-_ctrl = ctrlSelData(3502);
+_ctrl = (lbData[##3502,(lbCurSel ##3502)]);
 _num = ctrlText 3505;
 if(!([_num] call fnc_isnumber)) exitWith {hint "Invalid Number format";};
 _num = parseNumber(_num);
@@ -27,34 +25,26 @@ if(_ctrl == "money") then
 	{
 		_data set[_index,-1];
 		_data = _data - [-1];
-	}
-		else
-	{
+	} else {
 		_data set[_index,[_ctrl,(_value - _num)]];
 	};
 	
 	life_money = life_money + _num;
 	life_trunk_vehicle setVariable["Trunk",[_data,(_old select 1) - _weight],true];
 	[life_trunk_vehicle] call life_fnc_vehInventory;
-}
-	else
-{
+} else {
 	if([true,_ctrl,_num] call life_fnc_handleInv) then
 	{
 		if(_num == _value) then
 		{
 			_data set[_index,-1];
 			_data = _data - [-1];
-		}
-			else
-		{
+		} else {
 			_data set[_index,[_ctrl,(_value - _num)]];
 		};
 		life_trunk_vehicle setVariable["Trunk",[_data,(_old select 1) - _weight],true];
 		[life_trunk_vehicle] call life_fnc_vehInventory;
-	}
-		else
-	{
+	} else {
 		hint "Couldn't add to your inventory, are you full?";
 	};
 };

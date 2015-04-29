@@ -1,12 +1,10 @@
-#include <macro.h>
-
 private["_group","_hideout","_action","_cpRate","_cP","_progressBar","_title","_titleText","_ui","_flagTexture"];
 _hideout = (nearestObjects[getPosATL player,["Land_u_Barracks_V2_F","Land_i_Barracks_V2_F"],25]) select 0;
 _group = _hideout getVariable ["gangOwner",grpNull];
 
-if(isNil {grpPlayer getVariable "gang_name"}) exitWith {titleText["You must create a gang first before capturing it!","PLAIN"];};
-if(_group == grpPlayer) exitWith {titleText["Your gang already has control over this hideout!","PLAIN"]};
-if((_hideout getVariable ["inCapture",FALSE])) exitWith {hint"Only one person shall capture at once";};
+if(isNil {group player getVariable "gang_name"}) exitWith {titleText["You must create a gang first before capturing it!","PLAIN"];};
+if(_group == group player) exitWith {titleText["Your gang already has control over this hideout!","PLAIN"]};
+if((_hideout getVariable ["inCapture",false])) exitWith {hint"Only one person shall capture at once";};
 if(!isNull _group) then 
 {
 	_gangName = _group getVariable ["gang_name",""];
@@ -124,6 +122,6 @@ _flagTexture =
 _this select 0 setFlagTexture _flagTexture;
 [[[0,1],"%1 et son gang: %2 ont pris le contrôle d'une planque locale.",true,[name player,(group player) getVariable "gang_name"]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 _hideout setVariable["inCapture",false,true];
-_hideout setVariable["gangOwner",grpPlayer,true];
+_hideout setVariable["gangOwner",group player,true];
 _ui = "StatusBar" call BIS_fnc_rscLayer;
 _ui cutRsc["StatusBar","PLAIN"];

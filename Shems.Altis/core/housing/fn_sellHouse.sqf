@@ -1,5 +1,3 @@
-#include <macro.h>
-
 private["_house","_uid","_action","_houseCfg"];
 _house = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 _uid = getPlayerUID player;

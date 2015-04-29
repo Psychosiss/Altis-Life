@@ -1,5 +1,3 @@
-#include <macro.h>
-
 private["_display","_text","_units","_type"];
 
 if(!life_use_atm) exitWith
@@ -43,7 +41,7 @@ _text ctrlSetStructuredText parseText format
 
 lbSetCurSel [2703,0];
 
-if(isNil {(grpPlayer getVariable "gang_bank")}) then 
+if(isNil {(group player getVariable "gang_bank")}) then 
 {
-	(getControl(2700,2705)) ctrlEnable false;
+	(((findDisplay ##2700) displayCtrl ##2705)) ctrlEnable false;
 };

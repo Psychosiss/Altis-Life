@@ -1,5 +1,3 @@
-#include <macro.h>
-
 #define Btn1 37450
 #define Btn2 37451
 #define Btn3 37452

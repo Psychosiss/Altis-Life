@@ -1,9 +1,7 @@
-#define ctrlSelData(ctrl) (lbData[##ctrl,(lbCurSel ##ctrl)])
-
 private["_ctrl","_num","_totalWeight","_itemWeight","_veh_data","_inv","_index","_val","_Truck","_FuelTrucks","_FuelStuff"];
 disableSerialization;
 
-_ctrl = ctrlSelData(3503);
+_ctrl = (lbData[##3503,(lbCurSel ##3503)]);
 _num = ctrlText 3506;
 if(!([_num] call fnc_isnumber)) exitWith {hint "Entrez un nombre.";};
 _num = parseNumber(_num);
@@ -23,8 +21,8 @@ _itemWeight = ([_ctrl] call life_fnc_itemWeight) * _num;
 _veh_data = life_trunk_vehicle getVariable ["Trunk",[[],0]];
 _inv = _veh_data select 0;
 
-if(_ctrl == "goldbar" && {!(life_trunk_vehicle isKindOf "LandVehicle" OR life_trunk_vehicle isKindOf "House_F")}) exitWith {hint "You cannot store that in anything but a land vehicle!"};
-if(_ctrl == "uranium1" && {!(life_trunk_vehicle isKindOf "LandVehicle" OR life_trunk_vehicle isKindOf "House_F")}) exitWith {hint "Tu ne peux pas transporter les déchets d'Uranium en hélicoptère!"};
+if(_ctrl == "goldbar" && {!(life_trunk_vehicle isKindOf "LandVehicle" OR life_trunk_vehicle isKindOf "House_F")}) exitWith {hint "Vous ne pouvez mettre l'or que dans un vehicule terrestre."};
+if(_ctrl == "uranium1" && {!(life_trunk_vehicle isKindOf "LandVehicle" OR life_trunk_vehicle isKindOf "House_F")}) exitWith {hint "Tu ne peux pas transporter les déchets d'Uranium en hélicoptère."};
 
 _Truck = TypeOf life_trunk_vehicle;
 _FuelStuff = ["oilu","oilp"];

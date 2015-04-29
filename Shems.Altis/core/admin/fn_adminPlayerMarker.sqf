@@ -1,5 +1,3 @@
-#include <macro.h>
-
 if !("ItemMap" in items player) then {player addweapon "ItemMap";};
 	Wookie_Noobs = [];
 	Wookie_Bitches = [];

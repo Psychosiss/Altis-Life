@@ -1,6 +1,4 @@
-#include <macro.h>
-
-if(__GETC__(life_adminlevel) < 3) exitWith {closeDialog 0; hint "Votre niveau admin n'est pas suffisamment élevée.";};
+if((call life_adminlevel) < 3) exitWith {closeDialog 0; hint "Votre niveau admin n'est pas suffisamment élevée.";};
 life_markers = !life_markers;
 if(life_markers) then 
 {
@@ -27,11 +25,11 @@ if(life_markers) then
 				_pSee setMarkerTextLocal format['%1',_x getVariable["realname",name _x]];
 				_pSee setMarkerColorLocal ("ColorRed");
 				PlayerMarkers = PlayerMarkers + [_x];
-		};
-	} forEach allUnits;
-	sleep 0.2;
-};
-FinishedLoop = true;
+			};
+		} forEach allUnits;
+		sleep 0.2;
+	};
+	FinishedLoop = true;
 } else {
 	if(isNil "FinishedLoop") exitWith {};
 	hint "Markers désactivé.";

@@ -1,10 +1,8 @@
-#define ctrlSelData(ctrl) (lbData[##ctrl,(lbCurSel ##ctrl)])
-
 private["_ctrl","_num","_safeInfo"];
 disableSerialization;
 
 if((lbCurSel 3502) == -1) exitWith {hint "Vous devez séléctionner un item!";};
-_ctrl = ctrlSelData(3502);
+_ctrl = (lbData[##3502,(lbCurSel ##3502)]);
 _num = ctrlText 3505;
 _safeInfo = life_safeObj getVariable["safe",0];
 

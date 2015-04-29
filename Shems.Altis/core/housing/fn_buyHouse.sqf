@@ -1,5 +1,3 @@
-#include <macro.h>
-
 private["_house","_uid","_action","_houseCfg"];
 _house = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 _uid = getPlayerUID player;
@@ -9,7 +7,7 @@ if(!(_house isKindOf "House_F")) exitWith {};
 if((_house getVariable["house_owned",false])) exitWith {hint "Cette maison est déjà habité"};
 if(!isNil {(_house getVariable "house_sold")}) exitWith {hint "Cette maison a été récemment vendu et est en cours de traitement dans la base de données."};
 if(!license_civ_home) exitWith {hint "Vous n'avez pas de droit de propriété"};
-if(count life_houses >= (__GETC__(life_houseLimit))) exitWith {hint format["Vous avez suffisament de maison",__GETC__(life_houseLimit)]};
+if(count life_houses >= ((call life_houseLimit))) exitWith {hint format["Vous avez suffisament de maison",(call life_houseLimit)]};
 closeDialog 0;
 
 _houseCfg = [(typeOf _house)] call life_fnc_houseConfig;

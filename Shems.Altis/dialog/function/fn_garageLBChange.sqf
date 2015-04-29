@@ -1,5 +1,3 @@
-#include <macro.h>
-
 disableSerialization;
 private["_control","_index","_className","_dataArr","_vehicleColor","_vehicleInfo","_trunkSpace","_sellPrice","_retrievePrice","_insurePrice","_insure"];
 _control = _this select 0;
@@ -11,14 +9,14 @@ _insure = (_dataArr select 2);
 _vehicleColor = [_className,_dataArr select 1] call life_fnc_vehicleColorStr;
 _vehicleInfo = [_className] call life_fnc_fetchVehInfo;
 _trunkSpace = [_className] call life_fnc_vehicleWeightCfg;
-_retrievePrice = [_className,__GETC__(life_garage_prices)] call fnc_index;
-_sellPrice = [_className,__GETC__(life_garage_sell)] call fnc_index;
-_insurePrice = [_className,__GETC__(life_insure_prices)] call fnc_index;
-_retrievePrice = if(_retrievePrice == -1) then {1000} else {(__GETC__(life_garage_prices) select _retrievePrice) select 1;};
-_sellPrice = if(_sellPrice == -1) then {1000} else {(__GETC__(life_garage_sell) select _sellPrice) select 1;};
-_insurePrice = if(_insurePrice == -1) then {1000} else {(__GETC__(life_insure_prices) select _insurePrice) select 1;};
+_retrievePrice = [_className,(call life_garage_prices)] call fnc_index;
+_sellPrice = [_className,(call life_garage_sell)] call fnc_index;
+_insurePrice = [_className,(call life_insure_prices)] call fnc_index;
+_retrievePrice = if(_retrievePrice == -1) then {1000} else {((call life_garage_prices) select _retrievePrice) select 1;};
+_sellPrice = if(_sellPrice == -1) then {1000} else {((call life_garage_sell) select _sellPrice) select 1;};
+_insurePrice = if(_insurePrice == -1) then {1000} else {((call life_insure_prices) select _insurePrice) select 1;};
 
-(getControl(2800,2803)) ctrlSetStructuredText parseText format[
+(((findDisplay ##2800) displayCtrl ##2803)) ctrlSetStructuredText parseText format[
 	"
 		Prix de sortie: <t color='#8cff9b'>%1 €</t><br/>
 		Prix de vente: <t color='#8cff9b'>%2 €</t><br/>

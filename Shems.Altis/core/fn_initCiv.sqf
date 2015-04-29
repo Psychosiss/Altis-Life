@@ -1,5 +1,3 @@
-#include <macro.h>
-
 private["_spawnPos","_playerPosition"];
 
 _playerPosition = civ_position;
@@ -42,11 +40,11 @@ if (!life_is_alive) then
 		player setPos _playerPosition;
 	};	
 	life_is_alive = true;
-}; 
+};
 
-player setVariable["cop_level", __GETC__(life_cop_level), true];
-player setVariable["med_level", __GETC__(life_med_level), true];
-player setVariable["adminlevel", __GETC__(life_adminlevel), true];
+player setVariable["cop_level",(call life_cop_level),true];
+player setVariable["med_level",(call life_med_level),true];
+player setVariable["adminlevel",(call life_adminlevel),true];
 
 player addRating 9999999;
 

@@ -1,5 +1,3 @@
-#define __CONST__(var1,var2) var1 = compileFinal (if(typeName var2 == "STRING") then {var2} else {str(var2)})
-
 "BIS_fnc_MP_packet" addPublicVariableEventHandler {_this call life_fnc_MPexec};
 
 DB_Async_Active = false;
@@ -15,7 +13,7 @@ _extDB = false;
 if(isNil {uiNamespace getVariable "life_sql_id"}) then 
 {
 	life_sql_id = round(random(9999));
-	__CONST__(life_sql_id,life_sql_id);
+	life_sql_id = compileFinal (if(typeName life_sql_id == "STRING") then {life_sql_id} else {str(life_sql_id)});
 	uiNamespace setVariable ["life_sql_id",life_sql_id];
 	_result = "extDB" callExtension "9:VERSION";
 	diag_log format ["extDB: Version: %1", _result];
@@ -30,7 +28,7 @@ if(isNil {uiNamespace getVariable "life_sql_id"}) then
 	diag_log "extDB: Connecté à la base de données.";
 } else {
 	life_sql_id = uiNamespace getVariable "life_sql_id";
-	__CONST__(life_sql_id,life_sql_id);
+	life_sql_id = compileFinal (if(typeName life_sql_id == "STRING") then {life_sql_id} else {str(life_sql_id)});
 	diag_log "extDB: Toujours connecté à la base de données.";
 };
 
@@ -79,7 +77,8 @@ life_med_level = 0;
 life_cop_level = 0;
 life_donator = 0;
 
-__CONST__(JxMxE_PublishVehicle,"false");
+//__CONST__(JxMxE_PublishVehicle,"false");
+JxMxE_PublishVehicle = compileFinal (if(typeName "false" == "STRING") then {"false"} else {str("false")});
 
 life_radio_west = radioChannelCreate [[0,0.95,1,0.8],"Side Channel","%UNIT_NAME",[]];
 life_radio_civilian = radioChannelCreate [[0,0.95,1,0.8],"Side Channel","%UNIT_NAME",[]];

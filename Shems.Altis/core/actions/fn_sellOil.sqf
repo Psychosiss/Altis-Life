@@ -1,5 +1,3 @@
-#include <macro.h>
-
 private["_index","_price","_val"];
 _index = ["oilp",sell_array] call fnc_index;
 _price = (sell_array select _index) select 1;

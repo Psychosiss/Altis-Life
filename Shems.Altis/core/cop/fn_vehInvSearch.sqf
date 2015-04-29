@@ -1,5 +1,3 @@
-#include <macro.h>
-
 private["_vehicle","_vehicleInfo","_value"];
 _vehicle = cursorTarget;
 if(isNull _vehicle) exitWith {};

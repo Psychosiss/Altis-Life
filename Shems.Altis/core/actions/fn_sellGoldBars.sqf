@@ -1,5 +1,3 @@
-#include <macro.h>
-
 private["_index","_price","_val"];
 if(life_inv_goldbar == 0) exitWith 
 {

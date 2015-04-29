@@ -1,24 +1,22 @@
 private["_binConfigPatches","_cfgPatches"];
-#define __CONST__(var1,var2) var1 = compileFinal (if(typeName var2 == "STRING") then {var2} else {str(var2)})
-#define __GETC__(var) (call var)
 
-__CONST__(W_O_O_K_I_E_ANTI_ANTI_HAX,"No");
-__CONST__(W_O_O_K_I_E_FUD_ANTI_ANTI_HAX,"No");
-__CONST__(E_X_T_A_S_Y_ANTI_ANTI_HAX,"CopyPasta");
-__CONST__(E_X_T_A_S_Y_Pro_RE,"Iswhat");
-__CONST__(E_X_T_A_S_Y_Car_RE,"Youdo");
-__CONST__(DO_NUKE,"LOL");
-__CONST__(JxMxE_spunkveh,"Blah");
-__CONST__(JxMxE_spunkveh2,"Blah");
-__CONST__(JxMxE_spunkair,"Blah");
-__CONST__(JJJJ_MMMM___EEEEEEE_LLYYSSTTIICCC_SHIT_RE,"No");
-__CONST__(JJJJ_MMMM___EEEEEEE_LLYYSSTTIICCC_SHIT_RE_OLD,"No");
-__CONST__(JJJJ_MMMM___EEEEEEE_SPAWN_VEH,"No");
-__CONST__(JJJJ_MMMM___EEEEEEE_SPAWN_WEAPON,"No");
+W_O_O_K_I_E_ANTI_ANTI_HAX = compileFinal (if(typeName "No" == "STRING") then {"No"} else {str("No")});
+W_O_O_K_I_E_FUD_ANTI_ANTI_HAX = compileFinal (if(typeName "No" == "STRING") then {"No"} else {str("No")});
+E_X_T_A_S_Y_ANTI_ANTI_HAX = compileFinal (if(typeName "CopyPasta" == "STRING") then {"CopyPasta"} else {str("CopyPasta")});
+E_X_T_A_S_Y_Pro_RE = compileFinal (if(typeName "Iswhat" == "STRING") then {"Iswhat"} else {str("Iswhat")});
+E_X_T_A_S_Y_Car_RE = compileFinal (if(typeName "Youdo" == "STRING") then {"Youdo"} else {str("Youdo")});
+DO_NUKE = compileFinal (if(typeName "LOL" == "STRING") then {"LOL"} else {str("LOL")});
+JxMxE_spunkveh = compileFinal (if(typeName "Blah" == "STRING") then {"Blah"} else {str("Blah")});
+JxMxE_spunkveh2 = compileFinal (if(typeName "Blah" == "STRING") then {"Blah"} else {str("Blah")});
+JxMxE_spunkair = compileFinal (if(typeName "Blah" == "STRING") then {"Blah"} else {str("Blah")});
+JJJJ_MMMM___EEEEEEE_LLYYSSTTIICCC_SHIT_RE = compileFinal (if(typeName "No" == "STRING") then {"No"} else {str("No")});
+JJJJ_MMMM___EEEEEEE_LLYYSSTTIICCC_SHIT_RE_OLD = compileFinal (if(typeName "No" == "STRING") then {"No"} else {str("No")});
+JJJJ_MMMM___EEEEEEE_SPAWN_VEH = compileFinal (if(typeName "No" == "STRING") then {"No"} else {str("No")});
+JJJJ_MMMM___EEEEEEE_SPAWN_WEAPON = compileFinal (if(typeName "No" == "STRING") then {"No"} else {str("No")});
 
 waitUntil {!isNil "SPY_fnc_menuCheck" && !isNil "SPY_fnc_variablecheck" && !isNil "SPY_fnc_cmdMenuCheck"};
 
-if(__GETC__(SPY_cfg_runPatchCheck)) then 
+if((call SPY_cfg_runPatchCheck)) then 
 {
 	_binConfigPatches = configFile >> "CfgPatches";
 	for "_i" from 0 to count (_binConfigPatches)-1 do 

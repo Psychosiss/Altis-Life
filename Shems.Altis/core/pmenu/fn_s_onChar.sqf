@@ -1,5 +1,3 @@
-#include <macro.h>
-
 private["_control","_code","_slider","_value","_varName","_onKeyUp"];
 _control = _this select 0;
 _code = _this select 1;

@@ -1,5 +1,3 @@
-#include <macro.h>
-
 private["_index","_data","_status"];
 _index = [_this,0,0] call BIS_fnc_param;
 

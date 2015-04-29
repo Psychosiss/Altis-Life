@@ -1,7 +1,5 @@
-#include <macro.h>
-
 private["_value","_action"];
-if(__GETC__(life_adminlevel) < 1) exitWith {closeDialog 0; hint "Votre niveau admin n'est pas suffisamment élevée.";};
+if((call life_adminlevel) < 1) exitWith {closeDialog 0; hint "Votre niveau admin n'est pas suffisamment élevée.";};
 _value = parseNumber(ctrlText 9922);
 if(_value < 0) exitWith {};
 if(_value > 10000000) exitWith {hint "Vous ne pouvez pas aller au-dessus 1.000.000 €."};

@@ -1,5 +1,3 @@
-#include <macro.h>
-
 private["_vehicles","_control"];
 disableSerialization;
 _vehicles = [_this,0,[],[[]]] call BIS_fnc_param;

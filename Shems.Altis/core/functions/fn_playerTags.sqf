@@ -1,5 +1,3 @@
-#include <macro.h>
-
 private["_ui","_units","_goggles","_headgear"];
 #define iconID 78000
 #define scale 0.8
@@ -50,7 +48,7 @@ _units = _units - [player];
 			{
 				case ((goggles _x) in _goggles): {format["???"];};
 				case ((headgear _x) in _headgear): {format["???"];};
-				case (_x in (units grpPlayer) && playerSide == civilian): 
+				case (_x in (units group player) && playerSide == civilian): 
 				{
 					_text = format["<t color='#00FF00'>%1</t>", _name];
 				};

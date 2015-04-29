@@ -1,5 +1,3 @@
-#include <macro.h>
-
 private["_option","_state"];
 _option = _this select 0;
 _state = _this select 1;

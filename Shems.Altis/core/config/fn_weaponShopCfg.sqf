@@ -1,5 +1,3 @@
-#include <macro.h>
-
 private "_shop";
 _shop = [_this,0,"",[""]] call BIS_fnc_param;
 if(_shop == "") exitWith {closeDialog 0;};
@@ -69,7 +67,7 @@ switch(_shop) do
 		switch(true) do
 		{
 			case (playerSide != west): {"Vous n'êtes pas Policier"};
-			case (__GETC__(life_cop_level) < 2): {"Vous n'avez pas le rang d'officier!"};
+			case ((call life_cop_level) < 2): {"Vous n'avez pas le rang d'officier!"};
 			default
 			{
 				["Magasin Officier",
@@ -117,7 +115,7 @@ switch(_shop) do
 		switch(true) do
 		{
 			case (playerSide != west): {"Vous n'êtes pas Policier"};
-			case (__GETC__(life_cop_level) < 3): {"Vous n'avez pas le rang de caporal!"};
+			case ((call life_cop_level) < 3): {"Vous n'avez pas le rang de caporal!"};
 			default
 			{
 				["Magasin Caporal",
@@ -172,7 +170,7 @@ switch(_shop) do
 		switch(true) do
 		{
 			case (playerSide != west): {"Vous n'êtes pas Policier"};
-			case (__GETC__(life_cop_level) < 4): {"Vous n'avez pas le rang de sergent!"};
+			case ((call life_cop_level) < 4): {"Vous n'avez pas le rang de sergent!"};
 			default
 			{
 				["Magasin Sergent",
@@ -227,7 +225,7 @@ switch(_shop) do
 		switch(true) do
 		{
 			case (playerSide != west): {"Vous n'êtes pas Policier"};
-			case (__GETC__(life_cop_level) < 5): {"Vous n'avez pas le rang de lieutenant!"};
+			case ((call life_cop_level) < 5): {"Vous n'avez pas le rang de lieutenant!"};
 			default
 			{
 				["Magasin Lieutenant",
@@ -284,7 +282,7 @@ switch(_shop) do
 		switch(true) do
 		{
 			case (playerSide != west): {"Vous n'êtes pas Policier"};
-			case (__GETC__(life_cop_level) < 6): {"Vous n'avez pas le rang de capitaine!"};
+			case ((call life_cop_level) < 6): {"Vous n'avez pas le rang de capitaine!"};
 			default
 			{
 				["Magasin Capitaine",
@@ -334,7 +332,7 @@ switch(_shop) do
 		switch(true) do
 		{
 			case (playerSide != west): {"Vous n'êtes pas Policier"};
-			case (__GETC__(life_cop_level) < 7): {"Vous n'avez pas le rang de Chef adjoint!"};
+			case ((call life_cop_level) < 7): {"Vous n'avez pas le rang de Chef adjoint!"};
 			default
 			{
 				["Magasin Chef Ajoint",

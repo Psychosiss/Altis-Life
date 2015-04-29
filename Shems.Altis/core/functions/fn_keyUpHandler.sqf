@@ -1,5 +1,3 @@
-#include <macro.h>
-
 private["_curTarget","_isWater","_cursor"];
 _curTarget = cursorTarget;
 _cursor = [] call life_fnc_cursorTarget;   // can change _curTarget to _cursor

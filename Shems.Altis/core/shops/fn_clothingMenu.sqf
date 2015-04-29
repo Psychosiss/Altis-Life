@@ -1,4 +1,4 @@
-#define __GETC__(var) (call var)
+
 private["_list","_clothes","_pic","_filter"];
 createDialog "Life_Clothing";
 disableSerialization;
