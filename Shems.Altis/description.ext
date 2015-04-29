@@ -298,7 +298,6 @@ class CfgFunctions
 			class itemIcon;
 			class repaintMenu;
 			class wantedAddPlayer;
-			class initDisplay;
 			class createRscLayer;
 			class destroyRscLayer;
 		};
@@ -370,6 +369,9 @@ class CfgFunctions
 			class enableActions;
 			class voiceCheck;
 			class log;
+			class compile;
+			class initDisplay;
+			class initDisplays {preInit = 1;};
 		};
 
 		class Network
