@@ -1,0 +1,1 @@
+UPDATE players SET civ_position='"[]"', cop_position='"[]"', med_position='"[]"', alive='0'
