@@ -1,1 +1,1 @@
-_this select 0 addMPEventHandler ["MPKilled", {_this call fn_whoDunnit}];
+_this select 0 addMPEventHandler ["MPKilled", {_this call life_fn_whoDunnit}];

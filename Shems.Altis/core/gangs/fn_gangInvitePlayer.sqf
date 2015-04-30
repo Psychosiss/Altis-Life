@@ -1,8 +1,10 @@
+#define getSelData(ctrl) (lbData[##ctrl,(lbCurSel ##ctrl)])
+
 private "_unit";
 disableSerialization;
 
 if((lbCurSel 2632) == -1) exitWith {hint "Vous devez séléctionner quelqu'un à ajouter au gang!"};
-_unit = call compile format["%1",(lbData[##2632,(lbCurSel ##2632)])];
+_unit = call compile format["%1",getSelData(2632)];
 if(isNull _unit) exitWith {};
 if(_unit == player) exitWith {hint "You cannot kick yourself!"};
 if(!isNil {(group _unit) getVariable "gang_name"}) exitWith {hint "Ce joueur est déjà dans un gang."};

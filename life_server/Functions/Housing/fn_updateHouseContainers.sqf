@@ -4,7 +4,7 @@ if(isNull _house) exitWith {systemChat "House null";};
 _houseID = _house getVariable["house_id",-1];
 if(_houseID == -1) exitWith {systemChat "HouseID invalid";};
 _containers = _house getVariable ["containers",[]];
-systemChat format["Number of containers found: %1",count _containers];
+systemChat format["Nombre de coffre trouvé: %1",count _containers];
 _arr = [];
 {
 	_className = typeOf _x;
@@ -12,7 +12,7 @@ _arr = [];
 	_magazines = getMagazineCargo _x;
 	_items = getItemCargo _x;
 	_backpacks = getBackpackCargo _x;
-	__arr pushBack [_className,[_weapons,_magazines,_items,_backpacks]];
+	_arr pushBack [_className,[_weapons,_magazines,_items,_backpacks]];
 } foreach _containers;
 
 _arr = [_arr] call DB_fnc_mresArray;

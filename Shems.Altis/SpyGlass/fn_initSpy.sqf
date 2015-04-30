@@ -2,19 +2,19 @@ private["_binConfigPatches","_cfgPatches","_endM"];
 
 if(isServer && !hasInterface) exitWith {};
 
-W_O_O_K_I_E_ANTI_ANTI_HAX = compileFinal (if(typeName "false" == "STRING") then {"false"} else {str("false")})
-W_O_O_K_I_E_FUD_ANTI_ANTI_HAX = compileFinal (if(typeName "false" == "STRING") then {"false"} else {str("false")})
-E_X_T_A_S_Y_ANTI_ANTI_HAX = compileFinal (if(typeName "false" == "STRING") then {"false"} else {str("false")})
-E_X_T_A_S_Y_Pro_RE = compileFinal (if(typeName "false" == "STRING") then {"false"} else {str("false")})
-E_X_T_A_S_Y_Car_RE = compileFinal (if(typeName "false" == "STRING") then {"false"} else {str("false")})
-DO_NUKE = compileFinal (if(typeName "false" == "STRING") then {"false"} else {str("false")})
-JxMxE_spunkveh = compileFinal (if(typeName "false" == "STRING") then {"false"} else {str("false")})
-JxMxE_spunkveh2 = compileFinal (if(typeName "false" == "STRING") then {"false"} else {str("false")})
-JxMxE_spunkair = compileFinal (if(typeName "false" == "STRING") then {"false"} else {str("false")})
-JJJJ_MMMM___EEEEEEE_LLYYSSTTIICCC_SHIT_RE = compileFinal (if(typeName "false" == "STRING") then {"false"} else {str("false")})
-JJJJ_MMMM___EEEEEEE_LLYYSSTTIICCC_SHIT_RE_OLD = compileFinal (if(typeName "false" == "STRING") then {"false"} else {str("false")})
-JJJJ_MMMM___EEEEEEE_SPAWN_VEH = compileFinal (if(typeName "false" == "STRING") then {"false"} else {str("false")})
-JJJJ_MMMM___EEEEEEE_SPAWN_WEAPON = compileFinal (if(typeName "false" == "STRING") then {"false"} else {str("false")})
+W_O_O_K_I_E_ANTI_ANTI_HAX = compileFinal (if(typeName "false" == "STRING") then {"false"} else {str("false")});
+W_O_O_K_I_E_FUD_ANTI_ANTI_HAX = compileFinal (if(typeName "false" == "STRING") then {"false"} else {str("false")});
+E_X_T_A_S_Y_ANTI_ANTI_HAX = compileFinal (if(typeName "false" == "STRING") then {"false"} else {str("false")});
+E_X_T_A_S_Y_Pro_RE = compileFinal (if(typeName "false" == "STRING") then {"false"} else {str("false")});
+E_X_T_A_S_Y_Car_RE = compileFinal (if(typeName "false" == "STRING") then {"false"} else {str("false")});
+DO_NUKE = compileFinal (if(typeName "false" == "STRING") then {"false"} else {str("false")});
+JxMxE_spunkveh = compileFinal (if(typeName "false" == "STRING") then {"false"} else {str("false")});
+JxMxE_spunkveh2 = compileFinal (if(typeName "false" == "STRING") then {"false"} else {str("false")});
+JxMxE_spunkair = compileFinal (if(typeName "false" == "STRING") then {"false"} else {str("false")});
+JJJJ_MMMM___EEEEEEE_LLYYSSTTIICCC_SHIT_RE = compileFinal (if(typeName "false" == "STRING") then {"false"} else {str("false")});
+JJJJ_MMMM___EEEEEEE_LLYYSSTTIICCC_SHIT_RE_OLD = compileFinal (if(typeName "false" == "STRING") then {"false"} else {str("false")});
+JJJJ_MMMM___EEEEEEE_SPAWN_VEH = compileFinal (if(typeName "false" == "STRING") then {"false"} else {str("false")});
+JJJJ_MMMM___EEEEEEE_SPAWN_WEAPON = compileFinal (if(typeName "false" == "STRING") then {"false"} else {str("false")});
 	
 _patchList = 
 [

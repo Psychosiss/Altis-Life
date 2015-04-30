@@ -1,5 +1,8 @@
-disableSerialization;
+#define getControl(disp,ctrl) ((findDisplay ##disp) displayCtrl ##ctrl)
+
 private["_control","_index","_className","_dataArr","_vehicleColor","_vehicleInfo","_trunkSpace","_sellPrice","_retrievePrice","_insurePrice","_insure"];
+disableSerialization;
+
 _control = _this select 0;
 _index = _this select 1;
 _dataArr = _control lbData _index; 
@@ -16,7 +19,7 @@ _retrievePrice = if(_retrievePrice == -1) then {1000} else {((call life_garage_p
 _sellPrice = if(_sellPrice == -1) then {1000} else {((call life_garage_sell) select _sellPrice) select 1;};
 _insurePrice = if(_insurePrice == -1) then {1000} else {((call life_insure_prices) select _insurePrice) select 1;};
 
-(((findDisplay ##2800) displayCtrl ##2803)) ctrlSetStructuredText parseText format[
+(getControl(2800,2803)) ctrlSetStructuredText parseText format[
 	"
 		Prix de sortie: <t color='#8cff9b'>%1 €</t><br/>
 		Prix de vente: <t color='#8cff9b'>%2 €</t><br/>

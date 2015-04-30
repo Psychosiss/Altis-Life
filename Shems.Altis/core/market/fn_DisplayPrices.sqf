@@ -48,4 +48,3 @@ if (_cost < _costOld) then
 		_arrowText = format [""];
 	};
 };
-_moneydisplayold ctrlSetStructuredText parseText format ["%1 € %2",_costOld,_arrowText];

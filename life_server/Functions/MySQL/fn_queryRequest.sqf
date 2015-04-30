@@ -64,7 +64,7 @@ switch (_side) do
 	{
 		_queryResult set[9,([_queryResult select 9,1] call DB_fnc_bool)];
 
-		*/
+		/*
 		_new = [(_queryResult select 10)] call DB_fnc_mresToArray;
 		if(typeName _new == "STRING") then {_new = call compile format["%1", _new];};
 		_queryResult set[10,_new];
@@ -100,7 +100,7 @@ switch (_side) do
 		if(typeName _new == "STRING") then {_new = call compile format["%1", _new];};
 		_queryResult set[9,_new];
 		_old = _queryResult select 9;
-		/*
+		*/
 		for "_i" from 0 to (count _old)-1 do
 		{
 			_data = _old select _i;

@@ -1,5 +1,8 @@
-disableSerialization;
+#define getControl(disp,ctrl) ((findDisplay ##disp) displayCtrl ##ctrl)
+
 private["_control","_index","_className","_basePrice","_vehicleInfo","_colorArray","_ctrl"];
+disableSerialization;
+
 _control = _this select 0;
 _index = _this select 1;
 _className = _control lbData _index;
@@ -10,7 +13,7 @@ _vehicleInfo = [_className] call life_fnc_fetchVehInfo;
 _trunkSpace = [_className] call life_fnc_vehicleWeightCfg;
 
 ctrlShow [2330,true];
-(((findDisplay ##2300) displayCtrl ##2303)) ctrlSetStructuredText parseText format["
+(getControl(2300,2303)) ctrlSetStructuredText parseText format["
 	Location: <t color='#8cff9b'>%1 €</t><br/>
 	Acheter: <t color='#8cff9b'>%2 €</t><br/>
 	Vitesse maximale: %3 km/h<br/>
@@ -29,7 +32,7 @@ ctrlShow [2330,true];
 	_vehicleInfo select 9
 ];
 
-_ctrl = ((findDisplay ##2300) displayCtrl ##2304);
+_ctrl = getControl(2300,2304);
 lbClear _ctrl;
 _colorArray = [_className] call life_fnc_vehicleColorCfg;
 

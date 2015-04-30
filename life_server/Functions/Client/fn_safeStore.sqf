@@ -1,6 +1,8 @@
+#define ctrlSelData(ctrl) (lbData[##ctrl,(lbCurSel ##ctrl)])
+
 private["_ctrl","_num"];
 disableSerialization;
-_ctrl = (lbData[##3503,(lbCurSel ##3503)]);
+_ctrl = ctrlSelData(3503);
 _num = ctrlText 3506;
 
 if(!([_num] call fnc_isnumber)) exitWith {hint "Invalid Number format";};

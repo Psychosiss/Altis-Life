@@ -1,8 +1,10 @@
+#define ctrlSelData(ctrl) (lbData[##ctrl,(lbCurSel ##ctrl)])
+
 private["_ctrl","_num","_safeInfo"];
 disableSerialization;
 
 if((lbCurSel 3502) == -1) exitWith {hint "You need to select an item!";};
-_ctrl = (lbData[##3502,(lbCurSel ##3502)]);
+_ctrl = ctrlSelData(3502);
 _num = ctrlText 3505;
 _safeInfo = life_safeObj getVariable["safe",0];
 if(!([_num] call fnc_isnumber)) exitWith {hint "Entrer un nombre";};
@@ -13,5 +15,5 @@ if(_num > _safeInfo) exitWith {hint format["There isn't %1 gold bar(s) in the sa
 _num = [_ctrl,_num,life_carryWeight,life_maxWeight] call life_fnc_calWeightDiff;
 if(_num == 0) exitWith {hint "Votre inventaire est plein."};
 if(!([true,_ctrl,_num] call life_fnc_handleInv)) exitWith {hint "Couldn't add it to your inventory.";};
-life_safeObj setVariable["safe",_safeInfo - _num,TRUE];
+life_safeObj setVariable["safe",_safeInfo - _num,true];
 [life_safeObj] call life_fnc_safeInventory;

@@ -1,3 +1,51 @@
+#define GUI_GRID_CENTER_H		(GUI_GRID_CENTER_HAbs / 25)
+#define GUI_GRID_CENTER_HAbs		(GUI_GRID_CENTER_WAbs / 1.2)
+#define GUI_GRID_CENTER_WAbs		((safezoneW / safezoneH) min 1.2)
+#define GUI_GRID_CENTER_W		(GUI_GRID_CENTER_WAbs / 40)
+
+class Life_Checkbox
+{
+	access = 0;
+	idc = -1;
+	type = 77;
+	style = 0x00 + 0x10;
+	default = 0;
+	blinkingPeriod = 0;
+	x = 0;
+	y = 0;
+	w = 1 * GUI_GRID_CENTER_W;
+	h = 1 * GUI_GRID_CENTER_H;
+	color[] = {1,1,1,0.7};
+	colorFocused[] = {1,1,1,1};
+	colorHover[] = {1,1,1,1};
+	colorPressed[] = {1,1,1,1};
+	colorDisabled[] = {1,1,1,0.2};
+	colorBackground[] = {0,0,0,0};
+	colorBackgroundFocused[] = {0,0,0,0};
+	colorBackgroundHover[] = {0,0,0,0};
+	colorBackgroundPressed[] = {0,0,0,0};
+	colorBackgroundDisabled[] = {0,0,0,0};
+	textureChecked = "\A3\Ui_f\data\GUI\RscCommon\RscCheckBox\CheckBox_checked_ca.paa";
+	textureUnchecked = "\A3\Ui_f\data\GUI\RscCommon\RscCheckBox\CheckBox_unchecked_ca.paa";
+	textureFocusedChecked = "\A3\Ui_f\data\GUI\RscCommon\RscCheckBox\CheckBox_checked_ca.paa";
+	textureFocusedUnchecked = "\A3\Ui_f\data\GUI\RscCommon\RscCheckBox\CheckBox_unchecked_ca.paa";
+	textureHoverChecked = "\A3\Ui_f\data\GUI\RscCommon\RscCheckBox\CheckBox_checked_ca.paa";
+	textureHoverUnchecked = "\A3\Ui_f\data\GUI\RscCommon\RscCheckBox\CheckBox_unchecked_ca.paa";
+	texturePressedChecked = "\A3\Ui_f\data\GUI\RscCommon\RscCheckBox\CheckBox_checked_ca.paa";
+	texturePressedUnchecked = "\A3\Ui_f\data\GUI\RscCommon\RscCheckBox\CheckBox_unchecked_ca.paa";
+	textureDisabledChecked = "\A3\Ui_f\data\GUI\RscCommon\RscCheckBox\CheckBox_checked_ca.paa";
+	textureDisabledUnchecked = "\A3\Ui_f\data\GUI\RscCommon\RscCheckBox\CheckBox_unchecked_ca.paa";
+	tooltip = "";
+	tooltipColorShade[] = {0,0,0,1};
+	tooltipColorText[] = {1,1,1,1};
+	tooltipColorBox[] = {1,1,1,1};
+	soundClick[] = { "\A3\ui_f\data\sound\RscButton\soundClick",0.09,1};
+	soundEnter[] = { "\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1};
+	soundPush[] = { "\A3\ui_f\data\sound\RscButton\soundPush",0.09,1};
+	soundEscape[] = { "\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1};
+
+};
+
 class Life_RscScrollBar
 {
 	color[] = {1,1,1,0.6};
@@ -60,8 +108,8 @@ class Life_RscHud
 	idc = -1;
 	type = 0;
 	style = 0x00;
-	colorBackground[] = { 1 , 1 , 1 , 0 };
-	colorText[] = { 1 , 1 , 1 , 1 };
+	colorBackground[] = {1,1,1,0};
+	colorText[] = {1,1,1,1};
 	font = "PuristaSemibold";
 	sizeEx = 0.025;
 	h = 0.25;

@@ -10,7 +10,7 @@ if (!hasInterface) exitWith {};
 			if (_scriptName == "") then {_scriptName = configName _x;};
 			if (_scriptPath == "") then {_scriptName = "GUI";};
 			_fileName = _scriptName;
-			if (_fileName find "life_" > -1) then {_fileName = [ _fileName, 4 ] call BIS_fnc_trimString};
+			if (_fileName find "life_" > -1) then {_fileName = [_fileName, 4] call BIS_fnc_trimString};
 			missionNamespace setVariable 
 			[
 				_scriptName + "_script",
@@ -21,7 +21,7 @@ if (!hasInterface) exitWith {};
 						_fnc_scriptName = '%1';
 					",_scriptName]
 					+ 
-					preprocessFileLineNumbers format ["%1%2.sqf", getText (missionConfigFile >> "GTA_CfgScriptPaths" >> _scriptPath), _fileName]
+					preProcessFileLineNumbers format ["%1%2.sqf", getText (missionConfigFile >> "life_CfgScriptPaths" >> _scriptPath), _fileName]
 				)
 			];
 		};

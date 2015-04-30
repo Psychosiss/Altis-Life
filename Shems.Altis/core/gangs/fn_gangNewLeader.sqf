@@ -1,8 +1,10 @@
+#define getSelData(ctrl) (lbData[##ctrl,(lbCurSel ##ctrl)])
+
 private["_unit","_unitID","_members","_action","_index"];
 disableSerialization;
 
 if((lbCurSel 2621) == -1) exitWith {hint "You need to select a person first!"};
-_unit = call compile format["%1",(lbData[##2621,(lbCurSel ##2621)])];
+_unit = call compile format["%1",getSelData(2621)];
 if(isNull _unit) exitWith {};
 if(_unit == player) exitWith {hint "You are already the leader!"};
 

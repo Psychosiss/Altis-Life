@@ -8,7 +8,7 @@ class playerHUD
 	name="playerHUD";
 	onLoad="uiNamespace setVariable ['playerHUD',_this select 0]";
 	objects[]={};
-		
+
 	class controlsBackground
 	{
 		class foodHIcon : life_RscPicture 
@@ -32,7 +32,7 @@ class playerHUD
 			h = 0.06;
 			colorBackground[] = {0,0,0,0.5};
 		};
-			
+
 		class healthHIcon : life_RscPicture
 		{
 			idc = 23533;

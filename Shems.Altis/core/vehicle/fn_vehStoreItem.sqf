@@ -1,7 +1,9 @@
+#define ctrlSelData(ctrl) (lbData[##ctrl,(lbCurSel ##ctrl)])
+
 private["_ctrl","_num","_totalWeight","_itemWeight","_veh_data","_inv","_index","_val","_Truck","_FuelTrucks","_FuelStuff"];
 disableSerialization;
 
-_ctrl = (lbData[##3503,(lbCurSel ##3503)]);
+_ctrl = ctrlSelData(3503);
 _num = ctrlText 3506;
 if(!([_num] call fnc_isnumber)) exitWith {hint "Entrez un nombre.";};
 _num = parseNumber(_num);
@@ -45,7 +47,7 @@ if(_ctrl == "money") then
 	if(life_money < _num) exitWith {hint "You don't have that much cash on you to store in the vehicle!"};
 	if(_index == -1) then
 	{
-		__inv pushBack [_ctrl,_num];
+		_inv pushBack [_ctrl,_num];
 	} else {
 		_val = _inv select _index select 1;
 		_inv set[_index,[_ctrl,_val + _num]];

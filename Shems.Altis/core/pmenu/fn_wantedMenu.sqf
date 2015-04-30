@@ -1,3 +1,5 @@
+#define getControl(disp,ctrl) ((findDisplay ##disp) displayCtrl ##ctrl)
+
 private["_display","_list","_name","_crimes","_bounty","_units"];
 disableSerialization;
 createDialog "life_wanted_menu";
@@ -14,7 +16,7 @@ lbClear _players;
     _players lbSetdata [(lbSize _players)-1,str(_x)];
 } foreach playableUnits;
 
-_list2 = ((findDisplay ##2400) displayCtrl ##2407);
+_list2 = getControl(2400,2407);
 lbClear _list2;
 
 _crimes = 

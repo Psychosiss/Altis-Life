@@ -1,3 +1,5 @@
+#define getControl(disp,ctrl) ((findDisplay ##disp) displayCtrl ##ctrl)
+
 private["_display","_text","_units","_type"];
 
 if(!life_use_atm) exitWith
@@ -43,5 +45,5 @@ lbSetCurSel [2703,0];
 
 if(isNil {(group player getVariable "gang_bank")}) then 
 {
-	(((findDisplay ##2700) displayCtrl ##2705)) ctrlEnable false;
+	(getControl(2700,2705)) ctrlEnable false;
 };

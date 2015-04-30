@@ -1,10 +1,12 @@
+#define ctrlSelData(ctrl) (lbData[##ctrl,(lbCurSel ##ctrl)])
+
 private["_ctrl","_num","_index","_data","_old","_value","_weight","_diff"];
 disableSerialization;
 if(isNull life_trunk_vehicle OR !alive life_trunk_vehicle) exitWith {hint "The vehicle either doesn't exist or is destroyed."};
 if(!alive player) exitwith {closeDialog 0;};
 
 if((lbCurSel 3502) == -1) exitWith {hint "You need to select an item!";};
-_ctrl = (lbData[##3502,(lbCurSel ##3502)]);
+_ctrl = ctrlSelData(3502);
 _num = ctrlText 3505;
 if(!([_num] call fnc_isnumber)) exitWith {hint "Invalid Number format";};
 _num = parseNumber(_num);

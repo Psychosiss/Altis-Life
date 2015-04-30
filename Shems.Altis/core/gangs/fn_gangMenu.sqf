@@ -1,3 +1,5 @@
+#define getControl(disp,ctrl) ((findDisplay ##disp) displayCtrl ##ctrl)
+
 private["_ownerID","_gangBank","_gangMax","_gangName","_members","_allUnits","_ctrl"];
 disableSerialization;
 if(isNull (findDisplay 2620)) then 
@@ -13,17 +15,17 @@ _gangMax = group player getVariable "gang_maxMembers";
 
 if(_ownerID != getPlayerUID player) then 
 {
-	(((findDisplay ##2620) displayCtrl ##2622)) ctrlEnable false;
-	(((findDisplay ##2620) displayCtrl ##2624)) ctrlEnable false;
-	(((findDisplay ##2620) displayCtrl ##2625)) ctrlEnable false;
-	(((findDisplay ##2620) displayCtrl ##2630)) ctrlEnable false;
-	(((findDisplay ##2620) displayCtrl ##2631)) ctrlEnable false;
+	(getControl(2620,2622)) ctrlEnable false;
+	(getControl(2620,2624)) ctrlEnable false;
+	(getControl(2620,2625)) ctrlEnable false;
+	(getControl(2620,2630)) ctrlEnable false;
+	(getControl(2620,2631)) ctrlEnable false;
 };
 
-(((findDisplay ##2620) displayCtrl ##2629)) ctrlSetText _gangName;
-(((findDisplay ##2620) displayCtrl ##601)) ctrlSetText format["Fonds: %1 €",[_gangBank] call life_fnc_numberText];
+(getControl(2620,2629)) ctrlSetText _gangName;
+(getControl(2620,601)) ctrlSetText format["Fonds: %1 €",[_gangBank] call life_fnc_numberText];
 
-_members = ((findDisplay ##2620) displayCtrl ##2621);
+_members = getControl(2620,2621);
 lbClear _members;
 {
 	if((getPlayerUID _x) == _ownerID) then 
@@ -45,8 +47,7 @@ _allUnits = playableUnits;
 	};
 } foreach _allUnits;
 _allUnits = _allUnits - [-1];
-
-_ctrl = ((findDisplay ##2620) displayCtrl ##2632);
+_ctrl = getControl(2620,2632);
 lbClear _ctrl;
 {
 	_ctrl lbAdd format["%1",_x getVariable["realname",name _x]];

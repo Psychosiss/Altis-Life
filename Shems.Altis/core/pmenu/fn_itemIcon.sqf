@@ -99,5 +99,5 @@ switch (_var) do
 	//case "life_inv_underwatercharge": {("")};
 	case "life_inv_handcuffs": {("icons\items\handcuffs.paa")};
 	case "life_inv_handcuffkeys": {("icons\items\handcuffkeys.paa")};
-	case default: {("")};
+	case default {("")};
 };

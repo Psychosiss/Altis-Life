@@ -18,16 +18,15 @@ _ctrlManual ctrlEnable false;
 _ctrlAbort ctrlEnable false;
 _waitTime = time + 10;
 
-while { !isNull _display } do 
+while {!isNull _display} do 
 {
-	if ( time < _waitTime ) then 
+	if (time < _waitTime) then 
 	{
-		_ctrlAbort ctrlSetText format ["Déconnection disponible dans %1",[_waitTime - time,"SS.MS"] call BIS_fnc_secondsToString];
+		_ctrlAbort ctrlSetText format ["Déconnecter dans %1",[_waitTime - time,"SS.MS"] call BIS_fnc_secondsToString];
 	} else {
-		_ctrlAbort ctrlSetText "STR_DISP_INT_ABORT";
+		_ctrlAbort ctrlSetText localize "STR_DISP_INT_ABORT";
 		_ctrlAbort ctrlEnable true;
 	};
-
 	_ctrlRespawn ctrlEnable !(player getVariable ["restrained", false] && player getVariable ["escorting", false] && player getVariable ["transporting", false] || !isNil "life_is_arrested" && {life_is_arrested} || !isNil "life_istazed" && {life_istazed});
 	sleep 0.01;
 };

@@ -41,8 +41,8 @@ switch (_switch) do
 					{
 						life_dynMarket_sellarraycopy set [_index,[_itemName,_itemNewPrice]];
 					};
-				} forEach life_dynMarket__sellarraycopy;
-			} forEach life_dynMarket__Items_CurrentPriceArr;
+				} forEach life_dynMarket_sellarraycopy;
+			} forEach life_dynMarket_Items_CurrentPriceArr;
 			diag_log "dynMarket : Chargement des prix réussi";
 		};
 	};

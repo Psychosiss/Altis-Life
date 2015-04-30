@@ -26,9 +26,9 @@ waitUntil {(!isNil {clientGangLeader})};
 
 waitUntil{!isNil "life_server_isReady"};
 waitUntil{(life_server_isReady OR !isNil "life_server_extDB_notLoaded")};
-if(!isNil "life_server_extDB_notLoaded" && {life_server_extDB_notLoaded != ""}) exitWith 
+if(!isNil "life_server_extDB_notLoaded") exitWith 
 {
-	999999 cutText ["Un probleme lié à extDB a été rencotré, Merci de le signaler.","BLACK FADED"];
+	999999 cutText ["Un probleme lié à extDB a été rencontré, Merci de le signaler.","BLACK FADED"];
 	999999 cutFadeOut 99999999;
 };
 
@@ -37,7 +37,6 @@ waitUntil {life_session_completed};
 0 cutText["Fin de la procedure client","BLACK FADED"];
 0 cutFadeOut 9999999;
 
-//[] spawn life_fnc_escInterupt;
 [] call life_fnc_fastRope;
 [] spawn life_fnc_voiceCheck;
 //[] call life_fnc_initSurvival;
@@ -45,12 +44,14 @@ waitUntil {life_session_completed};
 
 waitUntil {!isNull (findDisplay 46)};
 
+/*
 //--- Hide development watermark
 {
 
 	((findDisplay 46) displayCtrl _x) ctrlShow false;
 
 } forEach [1000,1001,1002,1200,1202];
+*/
 
 ["Chargement des rôles"] call life_fnc_log;
 switch (playerSide) do
@@ -143,7 +144,7 @@ doStop units player;
 ["Life_RscHUD",nil,nil,false] call life_fnc_createRscLayer;
 
 //0 cutText ["","BLACK IN"];
-//[] call life_fnc_hudSetup;
+[] call life_fnc_hudSetup;
 
 LIFE_ID_PlayerTags = ["LIFE_PlayerTags","onEachFrame","life_fnc_playerTags"] call BIS_fnc_addStackedEventHandler;
 LIFE_ID_RevealObjects = ["LIFE_RevealObjects","onEachFrame","life_fnc_revealObjects"] call BIS_fnc_addStackedEventHandler;

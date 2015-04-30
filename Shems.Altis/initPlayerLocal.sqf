@@ -1,3 +1,5 @@
+"BIS_fnc_MP_packet" addPublicVariableEventHandler {_this call life_fnc_MPexec};
+
 [] call compileFinal PreprocessFileLineNumbers "KRON_Strings.sqf";
 
 if(!hasInterface) exitWith {};

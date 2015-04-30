@@ -17,8 +17,7 @@ publicVariable "fnc_index";
 
 fnc_player_query =
 compileFinal "
-	//private[""_ret""];
-	private ""_ret"";
+	private[""_ret""];
 	_ret = _this select 0;
 	if(isNull _ret) exitWith {};
 	if(isNil ""_ret"") exitWith {};
@@ -199,8 +198,7 @@ compileFinal "
 	{
 		case 0 :
 		{
-			//private[""_message""];
-			private ""_message"";
+			private[""_message""];
 			_message = format["">>>MESSAGE DE %1: %2"",_from,_msg];
 			hint parseText format [""<t color='#FFCC00'><t size='2'><t align='center'>Nouveau Message<br/><br/><t color='#33CC33'><t align='left'><t size='1'>à: <t color='#ffffff'>Vous<br/><t color='#33CC33'>De: <t color='#ffffff'>%1<br/><br/><t color='#33CC33'>Message:<br/><t color='#ffffff'>%2"",_from,_msg];
 			[""TextMessage"",[format[""Vous avez reçu un nouveau SMS de %1"",_from]]] call bis_fnc_showNotification;
@@ -211,8 +209,7 @@ compileFinal "
 		case 1 :
 		{
 			if(side player != west) exitWith {};
-			//private[""_message""];
-			private ""_message"";
+			private[""_message""];
 			_message = format[""Police %1: %2"",_from,_msg];
 			hint parseText format [""<t color='#316dff'><t size='2'><t align='center'>Nouveau message<br/><br/><t color='#33CC33'><t align='left'><t size='1'>à: <t color='#ffffff'>Tout les policiers<br/><t color='#33CC33'>De: <t color='#ffffff'>%1<br/><br/><t color='#33CC33'>Message:<br/><t color='#ffffff'>%2"",_from,_msg];
 			[""PoliceDispatch"",[format[""Un nouveau rapport de police de: %1"",_from]]] call bis_fnc_showNotification;
@@ -223,8 +220,7 @@ compileFinal "
 		case 2 :
 		{
 			if((call life_adminlevel) < 1) exitWith {};
-			//private[""_message""];
-			private ""_message"";
+			private[""_message""];
 			_message = format[""Requête Administrative de %1: %2"",_from,_msg];
 			hint parseText format [""<t color='#ffcefe'><t size='2'><t align='center'>Requête Administrative<br/><br/><t color='#33CC33'><t align='left'><t size='1'>à: <t color='#ffffff'>Administrateurs<br/><t color='#33CC33'>De: <t color='#ffffff'>%1<br/><br/><t color='#33CC33'>Message:<br/><t color='#ffffff'>%2"",_from,_msg];
 			[""AdminDispatch"",[format[""%1 As fait une requête à l'administration!"",_from]]] call bis_fnc_showNotification;
@@ -234,8 +230,7 @@ compileFinal "
 
 		case 3 :
 		{
-			//private[""_message""];
-			private ""_message"";
+			private[""_message""];
 			_message = format[""MESSAGE ADMIN : %1"",_msg];
 			_admin = format[""Envoyer par: %1"", _from];
 			hint parseText format [""<t color='#FF0000'><t size='2'><t align='center'>Message Admin<br/><br/><t color='#33CC33'><t align='left'><t size='1'>à: <t color='#ffffff'>Vous<br/><t color='#33CC33'>De: <t color='#ffffff'>Un Administrateur<br/><br/><t color='#33CC33'>Message:<br/><t color='#ffffff'>%1"",_msg];
@@ -259,8 +254,7 @@ compileFinal "
 
 		case 5 : 
 		{
-			//private[""_message""];
-			private ""_message"";
+			private[""_message""];
 			_message = format[""Requête Medicale: %1"",_msg];
 			hint parseText format [""<t color='#FFCC00'><t size='2'><t align='center'>Requête medicale<br/><br/><t color='#33CC33'><t align='left'><t size='1'>à: <t color='#ffffff'>Vous<br/><t color='#33CC33'>De: <t color='#ffffff'>%1<br/><br/><t color='#33CC33'>Message:<br/><t color='#ffffff'>%2"",_from,_msg];
 			[""TextMessage"",[format[""Requête médicale de %1"",_from]]] call bis_fnc_showNotification;

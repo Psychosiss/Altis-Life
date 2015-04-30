@@ -13,7 +13,8 @@ if(isNull _vehicle OR !
 	_vehicle isKindOF "Box" OR
 	(typeOf _vehicle in 
 		[
-			"Land_Pod__Heli_Transport_04_covered_F",
+			//"Land_Pod__Heli_Transport_04_covered_F",
+			"Land_Pod_Heli_Transport_04_covered_F",
 			"Land_Portable_generator_F",
 			"Box_NATO_AmmoVeh_F",
 			"Box_East_AmmoVeh_F",

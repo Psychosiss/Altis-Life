@@ -74,7 +74,7 @@ switch (_itemName) do
 	case "life_inv_speedbomb": {_iconPath = "icons\items\speedbomb.paa";};
 	case "life_inv_handcuffs": {_iconPath = "icons\items\handcuffs.paa";};
 	case "life_inv_handcuffkeys": {_iconPath = "icons\items\handcuffkeys.paa";};
-	case default: {_iconPath = "";};
+	case default {_iconPath = "";};
 };
 
 _iconPath;

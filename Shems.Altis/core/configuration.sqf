@@ -62,7 +62,7 @@ life_save_civ = compileFinal (if(typeName true == "STRING") then {true} else {st
 life_save_yinv = compileFinal (if(typeName true == "STRING") then {true} else {str(true)});
 life_enableFatigue = compileFinal (if(typeName false == "STRING") then {false} else {str(false)});
 life_paycheck_period = compileFinal (if(typeName 5 == "STRING") then {5} else {str(5)});
-life_taxes_period = compileFinal (if(typeName var2 == "10") then {10} else {str(10)});
+life_taxes_period = compileFinal (if(typeName 10 == "STRING") then {10} else {str(10)});
 life_impound_car = compileFinal (if(typeName 350 == "STRING") then {350} else {str(350)});
 life_impound_boat = compileFinal (if(typeName 250 == "STRING") then {250} else {str(250)});
 life_impound_air = compileFinal (if(typeName 850 == "STRING") then {850} else {str(850)});

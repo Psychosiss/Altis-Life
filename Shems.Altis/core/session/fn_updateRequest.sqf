@@ -11,7 +11,7 @@ diag_log format ["%1",_cop_position];
 
 _packet = [getPlayerUID player,(profileName),playerSide,life_money,life_atmmoney];
 _array = [];
-_flag = switch(playerSide) do {case west: {"cop"};case civilian: {"civ"};case independent: {"med"};};
+_flag = switch(playerSide) do {case west: {"cop"}; case civilian: {"civ"}; case independent: {"med"};};
 {
 	if(_x select 1 == _flag) then
 	{
