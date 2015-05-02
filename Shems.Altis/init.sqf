@@ -1,3 +1,1 @@
-life_versionInfo = "Altis Life RPG";
-
-//[] execVM "scripts\teargas.sqf";
+life_cleanupThread = [] spawn life_fnc_cleanUpManager;

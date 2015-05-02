@@ -383,6 +383,9 @@ class CfgFunctions
 			class compile;
 			class initDisplay;
 			class initDisplays {preInit = 1;};
+			class unitByUID;
+			class cleanUpManager;
+			class listPlayers;
 		};
 
 		class Network
