@@ -3,8 +3,6 @@
 DB_Async_Active = false;
 DB_Async_ExtraLock = false;
 life_server_isReady = false;
-publicVariable "life_server_isReady";
-
 serv_sv_use = [];
 publicVariable "life_server_isReady";
 
@@ -18,7 +16,7 @@ if(isNil {uiNamespace getVariable "life_sql_id"}) then
 	_result = "extDB" callExtension "9:VERSION";
 	diag_log format ["extDB: Version: %1", _result];
 	if(_result == "") exitWith {};
-	if ((parseNumber _result) < 14) exitWith {diag_log "Erreur: Vous devez avoir la version 14 ou + d'extDB.";};
+	if ((parseNumber _result) < 14) exitWith {diag_log "extDB: Vous devez avoir la version 14 ou + d'extDB.";};
 	_result = "extDB" callExtension "9:DATABASE:Database2";
 	if(_result != "[1]") exitWith {diag_log "extDB: Erreur de connection à la base de données.";};
 	_result = "extDB" callExtension format["9:ADD:DB_RAW_V2:%1",(call life_sql_id)];

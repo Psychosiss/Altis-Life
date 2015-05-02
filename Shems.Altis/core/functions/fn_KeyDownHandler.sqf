@@ -380,7 +380,7 @@ switch (_code) do
 	};
 
 	/*
-	case in [21,59,60,61,62,63,64,65,66,67,68,87,88,211]:
+	case [21,59,60,61,62,63,64,65,66,67,68,87,88,211]:
 	{
 		closeDialog 0;
 		hintC "Ces touches ont été retirées";
