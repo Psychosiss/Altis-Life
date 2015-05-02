@@ -156,7 +156,7 @@ compileFinal "
 fnc_cell_adminmsg =
 compileFinal "
 	if(isServer) exitWith {};
-	if((call life_adminlevel) < 1) exitWith {hint ""Vous n'êtes pas administrateur!"";};
+	if((call life_adminlevel) < 1) exitWith {hint ""Vous n'ête pas administrateur!"";};
 	private[""_msg"",""_to""];
 	_msg = ctrlText 3003;
 	_to = call compile format[""%1"",(lbData[3004,(lbCurSel 3004)])];
@@ -170,7 +170,7 @@ compileFinal "
 fnc_cell_adminmsgall =
 compileFinal "
 	if(isServer) exitWith {};
-	if((call life_adminlevel) < 1) exitWith {hint ""Vous n'êtes pas administrateur!"";};
+	if((call life_adminlevel) < 1) exitWith {hint ""Vous n'ête pas administrateur!"";};
 	private[""_msg"",""_from""];
 	_msg = ctrlText 3003;
 	if(_msg == """") exitWith {hint ""Vous devez écrire un message à envoyer!"";};
@@ -179,12 +179,26 @@ compileFinal "
 	hint format[""Message Admin à tous: %1"",_msg];
 ";
 
+fnc_cell_serverMessageall =
+compileFinal "
+	if(isServer) exitWith {};
+	if((call life_adminlevel) < 1) exitWith {hint ""Vous n'ête pas administrateur!"";};
+	private[""_msg"",""_from""];
+	_msg = ctrlText 3003;
+	if(_msg == """") exitWith {hint ""Vous devez écrire un message à envoyer!"";};
+	[[_msg,name player,7],""clientMessage"",true,false] spawn life_fnc_MP;
+	[] call life_fnc_cellphone;
+	hint format[""Evenement du serveur à tous: %1"",_msg];
+";
+//Test : hint format[""Purge: %1"",_msg];
+
 publicVariable "fnc_cell_textmsg";
 publicVariable "fnc_cell_textcop";
 publicVariable "fnc_cell_textadmin";
 publicVariable "fnc_cell_adminmsg";
 publicVariable "fnc_cell_adminmsgall";
 publicVariable "fnc_cell_emsrequest";
+publicVariable "fnc_cell_serverMessageall";
 
 clientMessage =
 compileFinal "
@@ -245,7 +259,7 @@ compileFinal "
 			private[""_message"",""_admin""];
 			_message = format[""!!!ADMIN MESSAGE: %1"",_msg];
 			_admin = format[""Envoyer par: %1"", _from];
-			hint parseText format [""<t color='#FF0000'><t size='2'><t align='center'>Message Admin<br/><br/><t color='#33CC33'><t align='left'><t size='1'>à: <t color='#ffffff'>tout les joueurs<br/><t color='#33CC33'>De: <t color='#ffffff'>The Admins<br/><br/><t color='#33CC33'>Message:<br/><t color='#ffffff'>%1"",_msg];
+			hint parseText format [""<t color='#FF0000'><t size='2'><t align='center'>Message Admin<br/><br/><t color='#33CC33'><t align='left'><t size='1'>à: <t color='#ffffff'>Tout les joueurs<br/><t color='#33CC33'>De: <t color='#ffffff'>The Admins<br/><br/><t color='#33CC33'>Message:<br/><t color='#ffffff'>%1"",_msg];
 			[""AdminMessage"",[""Vous avez reçu un message d'un admin!""]] call bis_fnc_showNotification;
 			player say3D ""message"";
 			systemChat _message;
@@ -259,6 +273,24 @@ compileFinal "
 			hint parseText format [""<t color='#FFCC00'><t size='2'><t align='center'>Requête medicale<br/><br/><t color='#33CC33'><t align='left'><t size='1'>à: <t color='#ffffff'>Vous<br/><t color='#33CC33'>De: <t color='#ffffff'>%1<br/><br/><t color='#33CC33'>Message:<br/><t color='#ffffff'>%2"",_from,_msg];
 			[""TextMessage"",[format[""Requête médicale de %1"",_from]]] call bis_fnc_showNotification;
 		};
+
+		case 6 :
+		{
+			private[""_message"",""_admin""];
+			_message = format[""Evenement: %1"",_msg];
+			_admin = format[""Envoyé par l'administrateur: %1"", _from];
+			hint parseText format [""<t color='#A00ED0'><t size='2'><t align='center'>Evenement<br/><br/><t color='#33CC33'><t align='left'><t size='1'>à: <t color='#ffffff'>Tout les joueurs<br/><t color='#33CC33'>De: <t color='#ffffff'>L'administration<br/><br/><t color='#33CC33'>Message:<br/><t color='#ffffff'>%1"",_msg];
+			[""AdminMessage"",[""Vous avez reçu un message par rapport à un evenement!""]] call bis_fnc_showNotification;
+			systemChat _message;
+			if((call life_adminlevel) > 1) then {systemChat _admin;};
+		};
 	};
 ";
+/*
+in case 6 :
+_message = format[""Purge: %1"",_msg];
+hint parseText format [""<t color='#A00ED0'><t size='2'><t align='center'>Purge<br/><br/><t color='#33CC33'><t align='left'><t size='1'>à: <t color='#ffffff'>Tout les joueurs<br/><t color='#33CC33'>De: <t color='#ffffff'>L'administration<br/><br/><t color='#33CC33'>Message:<br/><t color='#ffffff'>%1"",_msg];
+[""AdminMessage"",[""Vous avez reçu un message par rapport à la purge!""]] call bis_fnc_showNotification;
+*/
+
 publicVariable "clientMessage";

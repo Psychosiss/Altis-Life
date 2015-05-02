@@ -228,5 +228,17 @@ class life_admin_menu
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
+
+		class Purge : Life_RscButtonMenu 
+		{
+			idc = 6847;
+			text = "Purge";
+			colorBackground[] = {0.584,0.086,0.086,1.0};
+			onButtonClick = "[] call life_fnc_purge;";
+			x = 0.1 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
+			y = 0.885;
+			w = (6.25 / 40);
+			h = (1 / 25);
+		};
 	};
 };

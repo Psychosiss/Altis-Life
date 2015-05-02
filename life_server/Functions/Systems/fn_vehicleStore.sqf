@@ -1,5 +1,4 @@
-//private["_vehicle","_impound","_vInfo","_vInfo","_plate","_uid","_query","_sql","_unit"];
-private["_vehicle","_impound","_vInfo","_vInfo","_plate","_uid","_query","_sql","_unit","_trunk","_vehItems","_vehMags","_vehWeapons","_vehBackpacks","_cargo"];
+private["_vehicle","_impound","_vInfo","_vInfo","_plate","_uid","_query","_unit","_trunk","_vehItems","_vehMags","_vehWeapons","_vehBackpacks","_cargo"];
 
 _vehicle = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 _impound = [_this,1,false,[true]] call BIS_fnc_param;

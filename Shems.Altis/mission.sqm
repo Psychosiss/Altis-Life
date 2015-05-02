@@ -5,9 +5,9 @@ class Mission
 	{
 		"A3_Characters_F_BLUFOR",
 		"A3_Characters_F_Civil",
-		"a3_map_altis",
+		"A3_Map_Altis",
 		"A3_Structures_F_Civ_Garbage",
-		"a3_characters_f_gamma",
+		"A3_characters_F_Gamma",
 		"A3_Structures_F_Civ_Dead",
 		"A3_Signs_F",
 		"A3_Structures_F_Walls",
@@ -32,11 +32,11 @@ class Mission
 		"A3_Structures_F_Wrecks",
 		"A3_Structures_F_EPA_Mil_Scrapyard",
 		"A3_Air_F_Heli_Light_02",
-		"a3_characters_f",
+		"A3_characters_F",
 		"A3_Structures_F_EPA_Civ_Camping",
 		"A3_Structures_F_Civ_Accessories",
 		"A3_Weapons_F_Vests",
-		"a3_weapons_f",
+		"A3_weapons_F",
 		"A3_Weapons_F_CSAT",
 		"A3_Structures_F_EPB_Items_Military",
 		"A3_Structures_F_EPA_Items_Vessels",
@@ -61,10 +61,10 @@ class Mission
 		"A3_Structures_F_Ind_ReservoirTank",
 		"A3_Structures_F_Ind_DieselPowerPlant",
 		"A3_Data_F",
-		"a3_roads_f",
+		"A3_Roads_F",
 		"A3_Structures_F_EPB_Furniture",
 		"A3_Structures_F_Ind_Transmitter_Tower",
-		"a3_sounds_f_bootcamp",
+		"A3_Sounds_F_Bootcamp",
 		"A3_Structures_F_Households_Stone_Big",
 		"A3_Structures_F_EPC_Dominants_GhostHotel",
 		"A3_Structures_F_Dominants_Hospital",
@@ -84,7 +84,7 @@ class Mission
 		"A3_Structures_F_Ind_SolarPowerPlant",
 		"A3_Structures_F_EPB_Items_Luggage",
 		"A3_Static_F_Gamma",
-		"a3_static_f",
+		"A3_Static_F",
 		"A3_Structures_F_Mil_Bunker",
 		"A3_Structures_F_Ind_Factory",
 		"A3_Structures_F_Ind_PowerLines",
@@ -3486,7 +3486,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={8464.9795,85.290443,25218.145};
+					position[]={8462.5898,84.843109,25218.691};
 					azimut=29.242399;
 					special="NONE";
 					id=186;
@@ -4521,7 +4521,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=4966;
+		items=4970;
 		class Item0
 		{
 			position[]={8065.1616,35.674362,24985.314};
@@ -48803,6 +48803,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Campfire_burning_F";
 			skill=0.60000002;
+			init="this enableSimulation false; this allowDamage false;";
 		};
 		class Item4328
 		{
@@ -56013,6 +56014,62 @@ class Mission
 			vehicle="Land_Icebox_F";
 			skill=0.60000002;
 			init="this enableSimulation false; this allowDamage false;";
+		};
+		class Item4966
+		{
+			position[]={3652.0601,10.265897,13110.699};
+			azimut=95;
+			special="NONE";
+			id=5208;
+			side="EMPTY";
+			vehicle="Land_Loudspeakers_F";
+			leader=1;
+			skill=0.60000002;
+			text="purge_kavala";
+			init="this enableSimulation false; this allowDamage false;";
+			description="Civil";
+		};
+		class Item4967
+		{
+			position[]={16783.211,22.731915,12693.819};
+			azimut=95;
+			special="NONE";
+			id=5209;
+			side="EMPTY";
+			vehicle="Land_Loudspeakers_F";
+			leader=1;
+			skill=0.60000002;
+			text="purge_pyrgos";
+			init="this enableSimulation false; this allowDamage false;";
+			description="Civil";
+		};
+		class Item4968
+		{
+			position[]={12585.748,14.707184,14353.836};
+			azimut=95;
+			special="NONE";
+			id=5210;
+			side="EMPTY";
+			vehicle="Land_Loudspeakers_F";
+			leader=1;
+			skill=0.60000002;
+			text="purge_neochori";
+			init="this enableSimulation false; this allowDamage false;";
+			description="Civil";
+		};
+		class Item4969
+		{
+			position[]={23340.443,3.1900001,18032.75};
+			azimut=95;
+			special="NONE";
+			id=5211;
+			side="EMPTY";
+			vehicle="Land_Loudspeakers_F";
+			leader=1;
+			skill=0.60000002;
+			text="purge_badtown";
+			init="this enableSimulation false; this allowDamage false;";
+			description="Civil";
 		};
 	};
 	class Markers

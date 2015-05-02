@@ -41,6 +41,7 @@ if((_vehicle getVariable ["trunk_in_use",false])) exitWith {hint "Une seul perso
 _vehicle setVariable["trunk_in_use",true,true];
 if(!createDialog "TrunkMenu") exitWith {"Erreur Dialog";};
 disableSerialization;
+[_vehicle] call life_fnc_updateVehTrunk;
 
 if(_vehicle isKindOf "House_F") then 
 {

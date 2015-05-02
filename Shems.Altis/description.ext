@@ -386,6 +386,7 @@ class CfgFunctions
 			class unitByUID;
 			class cleanUpManager;
 			class listPlayers;
+			class purge;
 		};
 
 		class Network
@@ -448,6 +449,7 @@ class CfgFunctions
 			class civVehicleInteractionMenu;
 			class medVehicleInteractionMenu;
 			class vehicleSync;
+			class updateVehTrunk;
 		};
 		
 		class Cop
@@ -912,6 +914,13 @@ class CfgSounds
 	{
 		name = "key_jangling";
 		sound[] = {"sounds\key_jangling.ogg",1,1};
+		titles[] = {};
+	};
+
+	class purge
+	{
+		name = "purge";
+		sound[] = {"sounds\purge.ogg",1,1};
 		titles[] = {};
 	};
 };
