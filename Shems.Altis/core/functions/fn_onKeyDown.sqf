@@ -30,7 +30,7 @@ switch (_code) do
 			[] spawn 
 			{
 				private "_handle";
-				_handle = [] spawn life_fnc_keyDownHandler;
+				_handle = [] spawn life_fnc_interact;
 				waitUntil {scriptDone _handle};
 				life_action_inUse = false;
 			};
@@ -341,7 +341,6 @@ switch (_code) do
 		};
 	};
 
-	
 	case 59;
 	case 60;
 	case 61;
@@ -438,7 +437,7 @@ if(count (actionKeys "User10") != 0 && {(inputAction "User10" > 0)}) exitWith
 		[] spawn 
 		{
 			private "_handle";
-			_handle = [] spawn life_fnc_keyDownHandler;
+			_handle = [] spawn life_fnc_interact;
 			waitUntil {scriptDone _handle};
 			life_action_inUse = false;
 		};

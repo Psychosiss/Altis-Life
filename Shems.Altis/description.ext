@@ -332,8 +332,7 @@ class CfgFunctions
 			class tazeSound;
 			class animSync;
 			class simDisable;
-			class keyUpHandler;
-			class keyDownHandler;
+			class onKeyDown;
 			class dropItems;
 			class dropItemsFloor;
 			class handleDamage;
@@ -395,6 +394,7 @@ class CfgFunctions
 			class listPlayers;
 			class purge;
 			class hasDisplay;
+			class interact;
 		};
 
 		class Network
