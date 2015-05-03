@@ -1,24 +1,36 @@
-author = "Tonic & Shems";
-onLoadName = "Altis Life RPG";
-loadScreen = "";
-onLoadMission = "";
-joinUnassigned = 0;
-respawn = BASE;
-respawnDelay = 2;
-disabledAI = true;
-disableChannels[]={0,1,2};
-enableDebugConsole = 0;
-forceRotorLibSimulation = 0;
-corpseManagerMode = 0;
-wreckManagerMode = 0;
-RscSpectator_allowFreeCam = false;
-onPauseScript[] = {"life_fnc_onPause"};
-
 class Header
 {
 	gameType = RPG;
 	minPlayers = 1;
 	maxPlayers = 99;
+};
+
+author = "Tonic & Shems";
+onLoadName = "Altis Life";
+onLoadMission = "";
+loadScreen = "";
+joinUnassigned = 1; //--- Edited : 03/05/15 at 00:39 AM | Default 0
+
+respawn = BASE;
+respawnDelay = 2;
+
+disabledAI = true;
+disableChannels[]={0,1,2};
+enableDebugConsole = 0;
+allowFunctionsLog = 1; //--- Added : 03/05/15 at 00:39 AM
+
+corpseManagerMode = 0;
+wreckManagerMode = 0;
+
+onPauseScript[] = {"life_fnc_onPause"};
+
+forceRotorLibSimulation = 0;
+RscSpectator_allowFreeCam = false;
+
+class life_CfgScriptPaths
+{
+	default = "dialog\scripts\";
+	GUI = "dialog\scripts\";
 };
 
 /*
@@ -66,12 +78,6 @@ corpseRemovalMaxTime = 9999;
 #include "dialog\dynmarket_changeprice.hpp"
 #include "dialog\dynmarket_prices.hpp"
 
-class life_CfgScriptPaths
-{
-	default = "dialog\scripts\";
-	GUI = "dialog\scripts\";
-};
-
 class RscTitles
 {
 	#include "dialog\ui.hpp"
@@ -80,6 +86,7 @@ class RscTitles
 	#include "dialog\statusBar.hpp"
 	#include "dialog\slotmachine.hpp"
 	#include "dialog\RscHUD.hpp"
+	#include "dialog\RscSoundStatus.hpp"
 };
 
 class CfgFunctions
@@ -119,18 +126,18 @@ class CfgFunctions
 	class Life_Client_Core
 	{
 		tag = "life";
-		class Master_Directory
+		class Initialization
 		{
-			file = "core";
-			class setupActions;
-			class setupEventHandlers;
+			file = "core\initlialization";
+			class initActions;
+			class initEventHandlers;
 			class initCiv;
 			class initCop;
 			class initMedic;
 			class initZeus;
 			class initSurvival;
 		};
-		
+
 		class Admin
 		{
 			file = "core\admin";
@@ -151,7 +158,7 @@ class CfgFunctions
 			class adminKick;
 			class adminBan;
 		};
-		
+
 		class Medical_System
 		{
 			file = "core\medical";
@@ -174,7 +181,7 @@ class CfgFunctions
 			class medInteractionMenu;
 			class whoDunnit;
 		};
-		
+
 		class Actions
 		{
 			file = "core\actions";
@@ -244,7 +251,7 @@ class CfgFunctions
 			class actionChairSit;
 			class actionChairStand;
 		};
-		
+
 		class Config
 		{
 			file = "core\config";
@@ -387,6 +394,7 @@ class CfgFunctions
 			class cleanUpManager;
 			class listPlayers;
 			class purge;
+			class hasDisplay;
 		};
 
 		class Network
@@ -431,7 +439,7 @@ class CfgFunctions
 			class trackAnimal;
 			class civRestrain;
 		};
-		
+
 		class Vehicle
 		{
 			file = "core\vehicle";
@@ -451,7 +459,7 @@ class CfgFunctions
 			class vehicleSync;
 			class updateVehTrunk;
 		};
-		
+
 		class Cop
 		{
 			file = "core\cop";
@@ -484,7 +492,7 @@ class CfgFunctions
 			class airHorn;
 			class wantedGrab;
 		};
-		
+
 		class Gangs
 		{
 			file = "core\gangs";
@@ -502,7 +510,7 @@ class CfgFunctions
 			class gangDisbanded;
 			class gangMarkers;
 		};
-		
+
 		class Shops
 		{
 			file = "core\shops";
@@ -527,7 +535,7 @@ class CfgFunctions
 			class chopShopSell;
 			class licenses;
 		};
-		
+
 		class Items
 		{
 			file = "core\items";
@@ -584,7 +592,7 @@ class CfgFunctions
 			class insureCar;
 			class wireTransfer;
 		};
-		
+
 		class Housing
 		{
 			file = "core\housing";

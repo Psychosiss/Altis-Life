@@ -7,7 +7,6 @@ with missionNamespace do
 	disableUserInput true;
 	showChat false;
 	hint "";
-	//false call life_fnc_playerTags;
 	1 fadeSound 0;
 	1 fadeMusic 0;
 	1 fadeRadio 0;

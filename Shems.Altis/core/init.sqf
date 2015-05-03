@@ -125,6 +125,11 @@ player setVariable["hasOrgan",false,true];
 ["Chargement des impots"] call life_fnc_log;
 [] call life_fnc_taxesManager;
 
+["Mise en place du suppresseur de son"] call life_fnc_log;
+life_soundMuted = false;
+life_soundSuppressed = false;
+["life_RscSoundStatus"] call life_fnc_createRscLayer;
+
 ["Ecran 46 trouvé"] call life_fnc_log;
 waitUntil {!(isNull (findDisplay 46))};
 
@@ -132,8 +137,8 @@ waitUntil {!(isNull (findDisplay 46))};
 "colorCorrections" ppEffectCommit 0;
 "colorCorrections" ppEffectEnable true;
 
-[] call life_fnc_setupEventHandlers;
-[] call life_fnc_setupActions;
+[] call life_fnc_initEventHandlers;
+[] call life_fnc_initActions;
 
 life_sidechat = true;
 [[player,life_sidechat,playerSide],"TON_fnc_managesc",false,false] spawn life_fnc_MP;

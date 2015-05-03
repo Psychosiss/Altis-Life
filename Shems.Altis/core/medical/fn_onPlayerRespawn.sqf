@@ -17,6 +17,6 @@ _unit setVariable["hasOrgan",false,true];
 _unit addRating 9999999999999999;
 player playMoveNow "amovppnemstpsraswrfldnon";
 
-[] call life_fnc_setupActions;
+[] call life_fnc_initActions;
 [[_unit,life_sidechat,playerSide],"TON_fnc_managesc",false,false] spawn life_fnc_MP;
 player enableFatigue ((call life_enableFatigue));

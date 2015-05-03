@@ -10,6 +10,8 @@ BIS_fnc_endMission = compileFinal (if(typeName BIS_fnc_endMission == "STRING") t
 [] execVM "core\init.sqf";
 [] execVM "core\functions\fn_emptyFuel.sqf";
 
+#include "initBriefing.hpp"
+
 if((_this select 1)) then 
 {
 	{

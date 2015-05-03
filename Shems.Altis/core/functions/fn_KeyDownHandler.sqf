@@ -162,6 +162,8 @@ switch (_code) do
 		};
 	};
 
+	case 21;
+
 	case 22:
 	{
 		if(!_alt && !_ctrlKey) then 
@@ -315,11 +317,11 @@ switch (_code) do
 
 	case 41: 
 	{
-		if (isNull (uiNamespace getVariable ["life_RscHUD_display",displayNull])) then 
+		if (["life_RscHUD"] call life_fnc_hasDisplay) then 
 		{
-			["life_RscHUD",nil,nil,false] call life_fnc_createRscLayer;
-		} else {
 			["life_RscHUD"] call life_fnc_destroyRscLayer;
+		} else {
+			["life_RscHUD"] call life_fnc_createRscLayer;
 		};
 		_handled = true;
 	};
@@ -339,6 +341,11 @@ switch (_code) do
 		};
 	};
 
+	
+	case 59;
+	case 60;
+	case 61;
+
 	case 62:
 	{
 		if(_alt && !_shift) then 
@@ -347,6 +354,14 @@ switch (_code) do
 			[[1,format["%1 utilise ALT + F4 pour se déconnecter",_player getVariable["realname",name _player]]],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
 		};
 	};
+
+	
+	case 63;
+	case 64;
+	case 65;
+	case 66;
+	case 67;
+	case 68;
 	
 	case 86:
 	{
@@ -360,6 +375,9 @@ switch (_code) do
 			}
 		};
 	};
+
+	case 87;
+	case 88;
 
 	case 181:
 	{
@@ -379,14 +397,16 @@ switch (_code) do
 		};
 	};
 
-	/*
-	case [21,59,60,61,62,63,64,65,66,67,68,87,88,211]:
+	case ( _userKeys select 8 );
+	case 221: 
 	{
-		closeDialog 0;
-		hintC "Ces touches ont été retirées";
-		_handled = false;
+		if (!life_soundMuted && life_soundSuppressed) then 
+		{
+			life_soundSuppressed = false;
+			0 fadeSound 1;
+			["onToggleSound", [false]] call GTA_RscSoundStatus_script;
+		};
 	};
-	*/
 };
 
 if(life_action_inUse) exitWith 

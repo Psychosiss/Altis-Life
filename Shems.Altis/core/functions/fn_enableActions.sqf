@@ -11,7 +11,7 @@ if (!life_show_actions) then
 		};
 		life_cursorTarget = objNull;
 	};
-	[] spawn life_fnc_setupActions;
+	[] spawn life_fnc_initActions;
 };
 life_show_actions = true;
 if (time > life_action_time) exitWith {life_action_time = time + 9;};
