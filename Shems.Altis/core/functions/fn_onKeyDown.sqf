@@ -280,8 +280,8 @@ switch (_code) do
 					cursorTarget removeWeapon "ItemRadio";
 					hint "Un téléphone est tombé de la poche de cette personne.";
 					_defenceplace1 = "Item_ItemRadio" createVehicle (player modelToWorld[0,0,0]);
-				//} else {
-					//hint "La personne que vous avez assomé n'as pas de téléphone.";
+				} else {
+					hint "La personne que vous avez assomé n'as pas de téléphone.";
 				};
 			};
 		};
@@ -289,15 +289,15 @@ switch (_code) do
 
 	case 35:
 	{
-		if(_shift && !_ctrlKey && (currentWeapon player == "")) then 
+		if (_shift && !_ctrlKey && currentWeapon player != "") then 
 		{
 			[0] call life_fnc_holsterHandgun;
 		};
 
-		if(!_shift && _ctrlKey && (currentWeapon player != "")) then 
+		if(!_shift && _ctrlKey && currentWeapon player != "") then 
 		{
 			[1] call life_fnc_holsterHandgun;
-		};	
+		};
 	};
 
 	case 38: 
