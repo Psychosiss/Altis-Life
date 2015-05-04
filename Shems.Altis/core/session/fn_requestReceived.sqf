@@ -18,15 +18,17 @@ if((getPlayerUID player) != _this select 0) exitWith {[] call SOCK_fnc_dataQuery
 if(!isServer && (!isNil "life_adminlevel" OR !isNil "life_cop_level" OR !isNil "life_donator" OR !isNil "life_med_level")) exitWith 
 {
 	[[profileName,getPlayerUID player,"VariablesAlreadySet"],"SPY_fnc_cookieJar",false,false] spawn life_fnc_MP;
-	[[profileName,format["Variables définies avant l'initialisation du client...\nlife_adminlevel: %1\nlife_cop_level: %2\nlife_donator: %3\nlife_med_level: %4"",life_adminlevel,life_cop_level,life_donator,life_med_level]],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
+	[[profileName,format["Variables définies avant l'initialisation du client...\nlife_adminlevel: %1\nlife_cop_level: %2\nlife_donator: %3\nlife_med_level: %4",life_adminlevel,life_cop_level,life_donator,life_med_level]],"SPY_fnc_notifyAdmins",true,false] spawn life_fnc_MP;
 	sleep 0.9;
 	["SpyGlass",false,false] call BIS_fnc_endMission;
 };
 
 life_money = parseNumber (_this select 2);
 life_atmmoney = parseNumber (_this select 3);
-life_adminlevel = compileFinal (if(typeName parseNumber(_this select 4) == "STRING") then {parseNumber(_this select 4)} else {str(parseNumber(_this select 4))});
-life_donator = compileFinal (if(typeName parseNumber(_this select 5) == "STRING") then {parseNumber(_this select 5)} else {str(parseNumber(_this select 5))});
+//life_adminlevel = compileFinal (if(typeName parseNumber(_this select 4) == "STRING") then {parseNumber(_this select 4)} else {str(parseNumber(_this select 4))});
+life_adminlevel = parseNumber (_this select 4);
+//life_donator = compileFinal (if(typeName parseNumber(_this select 5) == "STRING") then {parseNumber(_this select 5)} else {str(parseNumber(_this select 5))});
+life_donator = compileFinal (_this select 5);
 
 if(count (_this select 6) > 0) then 
 {

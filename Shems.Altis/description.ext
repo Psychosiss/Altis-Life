@@ -333,6 +333,7 @@ class CfgFunctions
 			class animSync;
 			class simDisable;
 			class onKeyDown;
+			class onKeyUp;
 			class dropItems;
 			class dropItemsFloor;
 			class handleDamage;

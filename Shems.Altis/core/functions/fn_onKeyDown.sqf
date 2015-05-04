@@ -1,9 +1,10 @@
-private ["_handled","_shift","_alt","_code","_ctrl","_alt","_ctrlKey","_veh","_locked","_interactionKey","_mapKey","_interruptionKeys","_player"];
+private ["_handled","_shift","_alt","_code","_ctrl","_alt","_ctrlKey","_veh","_locked","_interactionKey","_mapKey","_interruptionKeys","_player","_userKeys"];
 _ctrl = _this select 0;
 _code = _this select 1;
 _shift = _this select 2;
 _ctrlKey = _this select 3;
 _alt = _this select 4;
+_userKeys = [];
 _speed = speed cursorTarget;
 _handled = false;
 _player = player;
@@ -11,7 +12,14 @@ _interactionKey = if(count (actionKeys "User10") == 0) then {219} else {(actionK
 _mapKey = actionKeys "ShowMap" select 0;
 _interruptionKeys = [17,30,31,32];
 
-switch (_code) do
+for "_x" from 1 to 20 do 
+{
+	private "_userKey";
+	_userKey = actionKeys format ["User%1", _x];
+	_userKeys pushBack (if (count _userKey > 0) then [{_userKey select 0}, {-1}]);
+};
+
+switch _code do
 {
 	case _mapKey:
 	{
@@ -45,6 +53,33 @@ switch (_code) do
 			[[1,format["%1 utilise CTRL + ESC pour se déconnecter",_player getVariable["realname",name _player]]],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
 			[] call SOCK_fnc_updateRequest;
 		};
+	};
+
+	case 2: 
+	{
+		if (!_shift && !_ctrlKey && !_alt) then 
+		{
+			player selectWeapon (primaryWeapon player);
+		};
+		_handled = true;
+	};
+
+	case 3: 
+	{
+		if (!_shift && !_ctrlKey && !_alt) then 
+		{
+			player selectWeapon (handgunWeapon player);
+		};
+		_handled = true;
+	};
+
+	case 4: 
+	{
+		if ( !_shift && !_ctrlKey && !_alt ) then 
+		{
+			player selectWeapon (secondaryWeapon player);
+		};
+		_handled = true;
 	};
 
 	case 7:
@@ -123,14 +158,9 @@ switch (_code) do
 					cursorTarget isKindOf "House_F"
 				) && player distance cursorTarget < 7 && vehicle player == player && alive cursorTarget) then
 				{
-					if(cursorTarget in life_vehicles OR {!(cursorTarget getVariable ["locked",true])}) then
-					//if(cursorTarget in life_vehicles) then
+					if(cursorTarget in life_vehicles OR {!(cursorTarget getVariable ["locked",true])}) then 
 					{
 						[cursorTarget] call life_fnc_openInventory;
-					};
-					if (cursorTarget isKindOf "Land_Wreck_Traw_F" OR cursorTarget isKindOf "Land_Wreck_Traw2_F") then 
-					{
-						[cursorTarget] spawn life_fnc_openInventory;
 					};
 				} else {
 					if((typeOf cursorTarget in 
@@ -354,7 +384,6 @@ switch (_code) do
 		};
 	};
 
-	
 	case 63;
 	case 64;
 	case 65;
@@ -396,14 +425,14 @@ switch (_code) do
 		};
 	};
 
-	case ( _userKeys select 8 );
+	case (_userKeys select 8);
 	case 221: 
 	{
 		if (!life_soundMuted && life_soundSuppressed) then 
 		{
 			life_soundSuppressed = false;
 			0 fadeSound 1;
-			["onToggleSound", [false]] call GTA_RscSoundStatus_script;
+			["onToggleSound", [false]] call life_RscSoundStatus_script;
 		};
 	};
 };
