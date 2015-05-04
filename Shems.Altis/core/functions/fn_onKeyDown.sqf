@@ -374,7 +374,6 @@ switch _code do
 	case 59;
 	case 60;
 	case 61;
-
 	case 62:
 	{
 		if(_alt && !_shift) then 
@@ -390,7 +389,6 @@ switch _code do
 	case 66;
 	case 67;
 	case 68;
-	
 	case 86:
 	{
 		{
@@ -406,7 +404,6 @@ switch _code do
 
 	case 87;
 	case 88;
-
 	case 181:
 	{
 		if (!_alt && !_ctrlKey && playerSide == west) then
@@ -455,7 +452,7 @@ if (_code in (actionKeys "NextAction") || _code in (actionKeys "PrevAction")) th
 
 if (life_brokenLeg && (_code in (actionKeys "MoveUp") || _code in (actionKeys "MoveDown") || _code in (actionKeys "Stand") || _code in (actionKeys "Crouch"))) then
 {
-	systemChat "Votre jambe est fracturé.";
+	systemChat "Vous avez les jambes fracturées.";
 	_handled = true;
 };
 

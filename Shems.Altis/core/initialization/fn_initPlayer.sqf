@@ -17,30 +17,33 @@ _resourceZones =
 	"diamond_1",
 	"oil_1","oil_2",
 	"rock_1",
-	"silver_1"
+	"silver_1",
+	"archeo_1"
 ];
-
-/*
-if("life_blacklisted" call GTA_fnc_const) exitWith 
-{
-	[ "Blacklisted", false, 0 ] call BIS_fnc_endMission;
-};
-*/
 
 player addRating 99999999;
 player addScore 99999999;
+
+waitUntil {!(isNull (findDisplay 46))};
+
+if("life_blacklisted" call life_fnc_const) exitWith 
+{
+	["Blacklisted",false,0] call BIS_fnc_endMission;
+};
 
 switch playerSide do
 {
 	case west:
 	{
-		_handle = [] spawn life_fnc_initCop;
-		waitUntil {scriptDone _handle};
+		if(life_cop_level < 1) then 
 		{
-
-			_x setMarkerAlphaLocal 0;
-
-		} forEach _resourceZones;
+			["NotWhitelisted",false,true] call BIS_fnc_endMission;
+			sleep 35;
+		} else {
+			_handle = [] spawn life_fnc_initCop;
+			waitUntil {scriptDone _handle};
+		};
+		{_x setMarkerAlphaLocal 0;} forEach _resourceZones;
 	};
 
 	case civilian:
@@ -51,18 +54,22 @@ switch playerSide do
 
 	case independent:
 	{
-		_handle = [] spawn life_fnc_initMedic;
-		waitUntil {scriptDone _handle};
+		if(life_med_level < 1) exitWith 
 		{
-
-			_x setMarkerAlphaLocal 0;
-
-		} forEach _resourceZones;
+			["NotWhitelisted",false,true] call BIS_fnc_endMission;
+			sleep 35;
+		} else {
+			_handle = [] spawn life_fnc_initMedic;
+			waitUntil {scriptDone _handle};
+		};
+		{_x setMarkerAlphaLocal 0;} forEach _resourceZones;
 	};
 
 	case sideLogic:
     {
-        _handle = [] spawn life_fnc_initZeus;
-        waitUntil {scriptDone _handle};
+		if(life_adminlevel < 2) exitWith
+		{
+			hintC "Vous n'avez pas le niveau administratif necessaire pour être Zeus.";
+		};
     };
 };

@@ -42,13 +42,6 @@ waitUntil {life_session_completed};
 
 waitUntil {!isNull (findDisplay 46)};
 
-//--- Hide development watermark
-{
-
-	((findDisplay 46) displayCtrl _x) ctrlShow false;
-
-} forEach [1000,1001,1002,1200,1202];
-
 ["Chargement des rôles"] call life_fnc_log;
 [] call life_fnc_initPlayer;
 

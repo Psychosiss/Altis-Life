@@ -133,7 +133,6 @@ class CfgFunctions
 			class initCiv;
 			class initCop;
 			class initMedic;
-			class initZeus;
 			class initActions;
 			class initEventHandlers;
 			class initSurvival;
@@ -951,7 +950,7 @@ class CfgDebriefing
 	class NotWhitelisted
 	{
 		title = "Mission echoué";
-		subtitle = "Vous n'êtes pas Whitelist";
+		subtitle = "Vous n'êtes pas Whitelisté";
 		description = "Vous n'avez pas l'accréditation nécessaire pour vous connecter sur ce slot, veuillez vous reconnecter sur un slot valide.";
 		pictureBackground = "";
 		picture = "";

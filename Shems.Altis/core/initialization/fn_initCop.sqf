@@ -1,19 +1,7 @@
-private "_end";
+private "_playerPosition";
 
-waitUntil {!(isNull (findDisplay 46))};
-_end = false;
-
-if(life_blacklisted) exitWith
-{
-	["Blacklisted",false,true] call BIS_fnc_endMission;
-	sleep 30;
-};
-
-if((call life_cop_level) == 0) then 
-{
-	["NotWhitelisted",false,true] call BIS_fnc_endMission;
-	sleep 35;
-};
+_playerPosition = cop_position;
+diag_log format ["%1",_playerPosition];
 
 if (!life_is_alive) then
 {

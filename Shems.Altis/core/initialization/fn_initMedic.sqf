@@ -1,10 +1,7 @@
-waitUntil {!(isNull (findDisplay 46))};
+private "_playerPosition";
 
-if((call life_med_level) < 1) exitWith 
-{
-	["NotWhitelisted",false,true] call BIS_fnc_endMission;
-	sleep 35;
-};
+_playerPosition = med_position;
+diag_log format ["%1",_playerPosition];
 
 if (!life_is_alive) then
 {

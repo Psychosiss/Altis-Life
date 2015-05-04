@@ -3054,7 +3054,7 @@ class Mission
 						items=4;
 						class Item0
 						{
-							value="76561198057533066";
+							value="";
 							parentCls="ModuleCurator_F";
 							typeName="Owner";
 						};
@@ -57487,7 +57487,7 @@ class Mission
 		class Item175
 		{
 			position[]={20406.699,0,23105.172};
-			name="archeo_3_1";
+			name="archeo_1";
 			text="Site archéologique";
 			type="loc_Ruin";
 			colorName="ColorWhite";
