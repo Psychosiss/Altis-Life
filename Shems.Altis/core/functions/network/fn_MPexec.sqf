@@ -146,7 +146,7 @@ if (isMultiplayer && _mode == 0) then
 						if (isClass (_cfgRemoteExecCommands >> _functionName)) then 
 						{
 							_paramCount = if (typeName _params == typeName []) then {count _params} else {1};
-							switch (_paramCount) do 
+							switch _paramCount do 
 							{
 								case 0: {_params call compile format ["%1", _functionName];true};
 								case 1: {_params call compile format ["%1 (_this)", _functionName ];true};

@@ -13,7 +13,7 @@ if(count _fish == 0) exitWith
 {
 	if(_x isKindOf "Fish_Base_F") then
 	{
-		switch(true) do
+		switch true do
 		{
 			case ((typeOf _x) == "Salema_F"): {_typeName = "Salema"; _type = "salema";};
 			case ((typeOf _x) == "Ornate_random_F") : {_typeName = "Ornate"; _type = "ornate";};

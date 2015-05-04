@@ -2,7 +2,7 @@ private "_color";
 _color = _this select 3;
 if(!isNil "life_chemlight") exitWith {};
 
-switch (_color) do
+switch _color do
 {
 	case "red": {life_chemlight = "Chemlight_red" createVehicle [0,0,0]; player removeMagazine "Chemlight_red";};
 	case "green": {life_chemlight = "Chemlight_green" createVehicle [0,0,0]; player removeMagazine "Chemlight_green";};

@@ -3,11 +3,11 @@ _vehicle = [_this,0,"",[""]] call BIS_fnc_param;
 _index = [_this,1,-1,[0]] call BIS_fnc_param;
 _color = "";
 
-switch (_vehicle) do
+switch _vehicle do
 {
 	case "C_Offroad_01_F" :
 	{
-		switch (_index) do
+		switch _index do
 		{
 			case 0: {_color = "Rouge"};
 			case 1: {_color = "Marron"};
@@ -23,7 +23,7 @@ switch (_vehicle) do
 	
 	case "C_Hatchback_01_F":
 	{
-		switch (_index) do
+		switch _index do
 		{
 			case 0: {_color = "Beige";};
 			case 1: {_color = "Vert";};
@@ -43,7 +43,7 @@ switch (_vehicle) do
 	
 	case "I_Heli_light_03_unarmed_F":
 	{
-		switch (_index) do
+		switch _index do
 		{
 			case 0: {_color = "Police"};
 			case 1: {_color = "Camo"};
@@ -53,7 +53,7 @@ switch (_vehicle) do
 	
 	case "C_Hatchback_01_sport_F":
 	{
-		switch(_index) do
+		switch _index do
 		{
 			case 0: {_color = "Rouge"};
 			case 1: {_color = "Bleu foncé"};
@@ -71,7 +71,7 @@ switch (_vehicle) do
 	
 	case "C_SUV_01_F":
 	{
-		switch (_index) do
+		switch _index do
 		{
 			case 0: {_color = "Rouge foncé"};
 			case 1: {_color = "Gris"};
@@ -90,7 +90,7 @@ switch (_vehicle) do
 	
 	case "C_Van_01_box_F":
 	{
-		switch (_index) do
+		switch _index do
 		{
 			case 0: {_color = "Blanc"};
 			case 1: {_color = "Rouge"};
@@ -99,7 +99,7 @@ switch (_vehicle) do
 	
 	case "C_Van_01_transport_F":
 	{
-		switch (_index) do
+		switch _index do
 		{
 			case 0: {_color = "Blanc"};
 			case 1: {_color = "Rouge"};
@@ -108,7 +108,7 @@ switch (_vehicle) do
 	
 	case "C_Van_01_fuel_F":
 	{
-		switch (_index) do
+		switch _index do
 		{
 			case 0: {_color = "Blanc"};
 			case 1: {_color = "Rouge"};
@@ -117,7 +117,7 @@ switch (_vehicle) do
 	
 	case "C_Quadbike_01_F":
 	{
-		switch (_index) do
+		switch _index do
 		{
 			case 0: {_color = "Desert"};
 			case 1: {_color = "Noir"};
@@ -131,7 +131,7 @@ switch (_vehicle) do
 	
 	case "B_Heli_Light_01_F":
 	{
-		switch (_index) do
+		switch _index do
 		{
 			case 0: {_color = "Police"};
 			case 1: {_color = "Civ Bleu"};
@@ -151,7 +151,7 @@ switch (_vehicle) do
 	
 	case "O_Heli_Light_02_unarmed_F":
 	{
-		switch (_index) do
+		switch _index do
 		{
 			case 0: {_color = "Noir"};
 			case 1: {_color = "Blanc / Bleu"};
@@ -161,7 +161,7 @@ switch (_vehicle) do
 	
 	case "B_MRAP_01_F":
 	{
-		switch (_index) do
+		switch _index do
 		{
 			case 0: {_color = "Police"};
 		};
@@ -169,7 +169,7 @@ switch (_vehicle) do
 	
 	case "I_Truck_02_covered_F":
 	{
-		switch (_index) do
+		switch _index do
 		{
 			case 0: {_color = "Gris"};
 			case 1: {_color = "Orange"};
@@ -178,7 +178,7 @@ switch (_vehicle) do
 	
 	case "I_Truck_02_transport_F":
 	{
-		switch (_index) do
+		switch _index do
 		{
 			case 0: {_color = "Noir"};
 		};
@@ -186,7 +186,7 @@ switch (_vehicle) do
 	
 	case "B_APC_Wheeled_01_cannon_F":
 	{
-		switch (_index) do
+		switch _index do
 		{
 			case 0: {_color = "Noir"};
 		};
@@ -194,7 +194,7 @@ switch (_vehicle) do
 	
 	case "O_Heli_Attack_02_black_F":
 	{
-		switch (_index) do
+		switch _index do
 		{
 			case 0: {_color = "Noir"};
 		};
@@ -202,7 +202,7 @@ switch (_vehicle) do
 	
 	case "I_Heli_Transport_02_F":
 	{
-		switch (_index) do
+		switch _index do
 		{
 			case 0: {_color = "Ion"};
 			case 1: {_color = "Dahoman"};
@@ -211,7 +211,7 @@ switch (_vehicle) do
 	
 	case "B_APC_Wheeled_01_cannon_F":
 	{
-		switch (_index) do
+		switch _index do
 		{
 			case 0: {_color = "Noir"};
 		};
@@ -219,7 +219,7 @@ switch (_vehicle) do
 	
 	case "B_Heli_Transport_01_F":
 	{
-		switch (_index) do
+		switch _index do
 		{
 			case 0: {_color = "Police"};
 		};
@@ -227,7 +227,7 @@ switch (_vehicle) do
 	
 	case "B_G_Offroad_01_F":
 	{
-		switch (_index) do
+		switch _index do
 		{
 			case 0: {_color = "Police"};
 		};
@@ -235,7 +235,7 @@ switch (_vehicle) do
 
 	case "O_Heli_Light_02_F":
 	{
-		switch (_index) do
+		switch _index do
 		{
 			case 0: {_color = "Medicale"};
 		};
@@ -243,7 +243,7 @@ switch (_vehicle) do
 
 	case "B_SDV_01_F":
 	{
-		switch (_index) do
+		switch _index do
 		{
 			case 0: {_color = "Police"};
 		};

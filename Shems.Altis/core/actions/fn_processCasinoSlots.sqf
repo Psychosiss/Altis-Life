@@ -15,7 +15,7 @@ if(player distance _source > 3.5) exitWith
 	life_is_processing = false;
 };
 
-switch (_type) do
+switch _type do
 {
 	case 0:{_cost = 1000;};
 	case 1:{_cost = 1000;};

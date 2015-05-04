@@ -14,7 +14,7 @@ life_action_inUse = true;
 
 _rand = [0,4] call life_fnc_randomRound;
 
-switch(_rand) do 
+switch _rand do 
 {
 	case 0:
 	{

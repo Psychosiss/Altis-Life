@@ -30,7 +30,7 @@ _Truck = TypeOf life_trunk_vehicle;
 _FuelStuff = ["oilu","oilp"];
 _FuelTrucks = ["C_Van_01_fuel_F","B_Truck_01_fuel_F"];
 
-switch (true) do
+switch true do
 {
 	case ((_ctrl in _FuelStuff) && (_Truck in _FuelTrucks)): {life_trunk_reserved_ressources = 1};
 	case (!(_ctrl in _FuelStuff) && !(_Truck in _FuelTrucks)): {life_trunk_reserved_ressources = 2};

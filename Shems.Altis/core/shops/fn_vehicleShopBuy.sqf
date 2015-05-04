@@ -60,7 +60,7 @@ if((life_veh_shop select 0) == "med_air_hs") then
 
 _vehicle allowDamage true;
 
-switch(playerSide) do 
+switch playerSide do 
 {
 	case west: 
 	{

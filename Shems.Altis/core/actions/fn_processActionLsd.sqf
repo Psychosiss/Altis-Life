@@ -4,7 +4,7 @@ _type = [_this,3,"",[""]] call BIS_fnc_param;
 
 if(isNull _vendor OR _type == "" OR (player distance _vendor > 10)) exitWith {};
 
-_itemInfo = switch (_type) do
+_itemInfo = switch _type do
 {
 	case "uranium3": {["uranium3","uranium4",10000,"Séparation de l'Uranium"]};
 	default {[]};

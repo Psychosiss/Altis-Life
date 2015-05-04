@@ -9,7 +9,7 @@ if(!dialog) then
 disableSerialization;
 ctrlSetText[601,format["Espèces: %1 €",[life_money] call life_fnc_numberText]];
 
-switch (_shop) do
+switch _shop do
 {
 	case "reb":
 	{

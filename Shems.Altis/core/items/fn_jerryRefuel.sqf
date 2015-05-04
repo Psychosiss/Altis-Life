@@ -48,7 +48,7 @@ if(!alive player) exitWith {};
 if(life_interrupted) exitWith {life_interrupted = false; titleText["Action cancelled","PLAIN"];};
 
 
-switch (true) do
+switch true do
 {
 	case (_vehicle isKindOF "LandVehicle"):
 	{

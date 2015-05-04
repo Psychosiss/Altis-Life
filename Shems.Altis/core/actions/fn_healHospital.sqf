@@ -1,11 +1,11 @@
 _mode = _this select 3;
 
-switch (_mode) do 
+switch _mode do 
 {
 	case "heilen":
 	{
 		if(life_money < 50) exitWith {hint "Vous n'avez pas 50 € pour être guéri."};
-		titleText["Docteur Poliashkoff vous guérit... ne vous inquiétez pas...","PLAIN"];
+		titleText["Docteur Poliashkoff vous guéri ... ne vous inquiétez pas...","PLAIN"];
 		sleep 2;
 		titleText["oups... Je pense que j'ai mis l'aiguille trop loin..","PLAIN"];
 		sleep 5;

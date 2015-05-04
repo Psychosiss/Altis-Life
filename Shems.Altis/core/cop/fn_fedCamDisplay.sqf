@@ -14,7 +14,7 @@ if(isNil "life_fed_scam") then
 	_laptop setObjectTexture [0,"#(argb,256,256,1)r2t(rendertarget0,1.0)"];
 };
 
-switch (_mode) do 
+switch _mode do 
 {
 	case "side": 
 	{

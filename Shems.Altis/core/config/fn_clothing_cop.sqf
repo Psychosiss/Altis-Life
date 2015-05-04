@@ -4,7 +4,7 @@ _filter = [_this,0,0,[0]] call BIS_fnc_param;
 ctrlSetText[3103,"Altis Police Department Shop"];
 
 _ret = [];
-switch (_filter) do
+switch _filter do
 {
 	//Uniforms
 	case 0:

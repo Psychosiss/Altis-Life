@@ -2,7 +2,7 @@ private["_shop","_return"];
 _shop = [_this,0,"",[""]] call BIS_fnc_param;
 if(_shop == "") exitWith {[]};
 _return = [];
-switch (_shop) do
+switch _shop do
 {
 	case "civ_car":
 	{

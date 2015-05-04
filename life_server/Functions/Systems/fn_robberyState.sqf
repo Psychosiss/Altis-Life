@@ -5,9 +5,13 @@ _funds = [_this,2,-1,[0]] call BIS_fnc_param;
 
 if(isNull _vault) exitWith {};
 
-switch(_state) do
+switch _state do
 {
-	case -1: {_vault setVariable["fed_rob_ip",false,true]; _vault setVariable["fed_locked",false,true];};
+	case -1: 
+	{
+		_vault setVariable["fed_rob_ip",false,true]; 
+		_vault setVariable["fed_locked",false,true];
+	};
 	case 0:
 	{
 		[[2,"Le vol de la réserve fédérale a échoué pour des raisons inconnues"],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;

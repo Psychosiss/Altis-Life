@@ -31,7 +31,7 @@ if(_enable && !life_animals_spawned) then
 					_animal = _type createVehicleLocal ([_pos, [1,500] call BIS_fnc_randomInt, [0,359] call BIS_fnc_randomInt] call BIS_fnc_relPos);
 					_animal enableSimulation false;
 					_pos = getPos _animal;
-					_z = switch (_type) do
+					_z = switch _type do
 					{
 						case "Hen_random_F";
 						case "Cock_random_F": {0.3};

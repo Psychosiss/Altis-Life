@@ -6,7 +6,7 @@ if(!isNull (findDisplay 2300)) then
 	lbClear 2303;
 	_veh = lbData[2302,_index];
 	_c_arr = [_veh] call life_fnc_vehicleColorCfg;
-	_id = switch(playerSide) do 
+	_id = switch playerSide do 
 	{
 		case civilian: {"civ"};
 		case west:{"cop"};

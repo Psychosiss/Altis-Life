@@ -3,7 +3,7 @@ _filter = [_this,0,0,[0]] call BIS_fnc_param;
 
 ctrlSetText[3103,"Mohammed's Jihadi Shop"];
 
-switch (_filter) do
+switch _filter do
 {
 	case 0:
 	{

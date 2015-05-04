@@ -2,7 +2,7 @@ private["_mode","_val","_sum"];
 _mode = _this select 3;
 _val = 0;
 
-switch (_mode) do 
+switch _mode do 
 {
 	case "ficken": 
 	{

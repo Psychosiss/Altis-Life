@@ -2,7 +2,7 @@ private "_type";
 _type = [_this,0,"",[""]] call BIS_fnc_param;
 if(_type == "") exitWith {-1};
 
-switch (_type) do
+switch _type do
 {
 	case "admin": {1};
 	case "driver": {500};

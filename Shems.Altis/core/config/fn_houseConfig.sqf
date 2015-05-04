@@ -2,7 +2,7 @@ private "_house";
 _house = [_this,0,"",[""]] call BIS_fnc_param;
 if(_house == "") exitWith {[]};
 
-switch (true) do 
+switch true do 
 {
 	case (_house in ["Land_i_House_Big_02_V1_F","Land_i_House_Big_02_V2_F","Land_i_House_Big_02_V3_F"]): {[1550000,3]};
 	case (_house in ["Land_i_House_Big_01_V1_F","Land_i_House_Big_01_V2_F","Land_i_House_Big_01_V3_F"]): {[2200000,4]};

@@ -2,7 +2,7 @@ private "_item";
 _item = [_this,0,"",[""]] call BIS_fnc_param;
 if(_item == "") exitWith {};
 
-switch (_item) do
+switch _item do
 {
 	case "money": {0};
 	case "debitcard": {0};

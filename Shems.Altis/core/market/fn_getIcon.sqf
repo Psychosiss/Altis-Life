@@ -1,7 +1,7 @@
 _itemName = [_this,0,""] call BIS_fnc_param;
 _iconPath = "";
 
-switch (_itemName) do 
+switch _itemName do 
 {
 	case "life_inv_oilu": {_iconPath = "icons\items\oil_unprocessed.paa";};
 	case "life_inv_oilp": {_iconPath = "icons\items\oil_processed.paa";};

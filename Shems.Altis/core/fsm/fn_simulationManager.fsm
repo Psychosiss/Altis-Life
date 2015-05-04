@@ -83,7 +83,7 @@ class FSM
        "		{" \n
        "			_multiplier = 1.5;" \n
        "		};" \n
-       "		switch (true) do " \n
+       "		switch true do " \n
        "		{" \n
        "			case ( _object getVariable [""life_fnc_simulationManager_ignore"",false]) : {};" \n
        "			case ([ _object,[""Car_F"",""Tank_F"",""Ship_F"",""Air"",""StaticWeapon""]] call life_fnc_isKindOf) : " \n
@@ -127,7 +127,7 @@ class FSM
        "	{" \n
        "		_object = _x;" \n
        "		_type = typeOf _object;" \n
-       "		switch ( true ) do" \n
+       "		switch (true) do" \n
        "		 {" \n
        "			case (_object getVariable [""life_fnc_simulationManager_ignore"",false]) : {};" \n
        "			case (_type in [""Land_BottlePlastic_V1_F"",""Land_TacticalBacon_F"",""Land_Can_V3_F"",""Land_CanisterFuel_F"",""Land_Can_V3_F"",""Land_Money_F"",""Land_Suitcase_F"" ] ) : " \n

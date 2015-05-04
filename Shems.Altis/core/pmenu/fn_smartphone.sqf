@@ -10,7 +10,7 @@ _cMessageList = _display displayCtrl 88882;
 _cMessageHeader = _display displayCtrl 88886;
 _cMessageHeader ctrlSetText format["De:                 Message:"];
 ctrlEnable[887892,false];
-switch(_type) do
+switch _type do
 {
 	case 0:
 	{

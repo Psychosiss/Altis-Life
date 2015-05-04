@@ -7,7 +7,7 @@ waitUntil {scriptDone _handle};
 
 if(count _itemArray == 0) exitWith
 {
-    switch(playerSide) do 
+    switch playerSide do 
 	{
         case west: 
 		{
@@ -65,7 +65,7 @@ if(_backpack != "") then {_handle = [_backpack,true,false,false,false] spawn lif
     [true,_item,1] call life_fnc_handleInv;
 } foreach (_yItems);
 
-switch (playerSide) do
+switch playerSide do
 {
 	case west: 
 	{

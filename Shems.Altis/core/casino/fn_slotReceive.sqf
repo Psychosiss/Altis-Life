@@ -54,7 +54,7 @@ sleep 1;
 	_r = _x select 0;
 	_idc = _x select 1;
 	_ctrl = _display displayCtrl _idc;
-	switch (_r) do 
+	switch _r do 
 	{
 		case _bar: 
 		{

@@ -6,7 +6,7 @@ _ctrlKey = _this select 3;
 _alt = _this select 4;
 _handled = false;
 
-switch (_code) do 
+switch _code do 
 {
 	case 0: 
 	{

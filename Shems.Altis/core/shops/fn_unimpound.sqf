@@ -15,7 +15,7 @@ if(_veh distance impound_obj < 50) then
 	{
 		case "civ":
 		{
-			switch (true) do
+			switch true do
 			{
 				case (_veh isKindOf "Car") : {_pos = getPos car_impound;};
 				case (_veh isKindOf "Air") : {_pos = getPos air_impound;};
@@ -25,7 +25,7 @@ if(_veh distance impound_obj < 50) then
 		
 		case "cop":
 		{
-			switch (true) do
+			switch true do
 			{
 				case (_veh isKindOf "Car") : {_pos = getPos cop_car_impound;};
 				case (_veh isKindOf "Air") : {_pos = getPos cop_air_impound;};

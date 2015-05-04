@@ -10,7 +10,7 @@ _priceTag ctrlSetStructuredText parseText "";
 _itemList = ((findDisplay 38400) displayCtrl 38403);
 lbClear _itemList;
 
-switch (_index) do
+switch _index do
 {
 	case 0:
 	{

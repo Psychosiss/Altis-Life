@@ -6,7 +6,7 @@ _speed = "medium";
 if(isNull _vendor OR _type == "" OR (player distance _vendor > 10)) exitWith {};
 if ((_type == "uranium2") && (life_inv_puranium == 0)) exitWith {hint "Tu n'as pas de produit pour dissoudre l'uranium.";};
 
-_itemInfo = switch (_type) do
+_itemInfo = switch _type do
 {
 	case "uranium2": {["uranium2","puranium","uranium3",6000,"Dissolution Légal Uranium"];};
 	case "uranium2b": {["uranium2","ipuranium","uranium3",6000,"Dissolution Illégal Uranium"];};

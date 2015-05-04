@@ -4,7 +4,7 @@ _txt1 = life_dynMarket_UserNotification_Text select 0;
 _txt2 = life_dynMarket_UserNotification_Text select 1;
 if (isNil "life_dynMarket_boughtItems") then {life_dynMarket_boughtItems = [];};
 
-switch (_mode) do 
+switch _mode do 
 {
 	case 0:
 	{

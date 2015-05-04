@@ -3,9 +3,9 @@ _unit = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 _bool = [_this,1,false,[false]] call BIS_fnc_param;
 _side = [_this,2,civilian,[west]] call BIS_fnc_param;
 
-if(isNull _unit) exitWith {};
+if (isNull _unit) exitWith {};
 
-switch (_side) do
+switch _side do
 {
 	case west:
 	{

@@ -12,7 +12,7 @@ _ret = owner _ret;
 _crimesArr = [];
 _type = _queryResult select 0;
 {
-	switch(_x) do
+	switch _x do
 	{
 		case "1": {_x = "Conduite sans permis de conduire"};
 		case "2": {_x = "Vol de véhicule"};

@@ -14,7 +14,7 @@ while {true} do
 			//_units = {(_x distance _veh < 300)} count playableUnits;
 			if(count crew _x == 0) then
 			{
-				switch (true) do
+				switch true do
 				{
 					case ((_x getHitPointDamage "HitEngine") > 0.7 && _units == 0) : {deleteVehicle _x; _deleted = true;};
 					case ((_x getHitPointDamage "HitLFWheel") > 0.98 && _units == 0) : {deleteVehicle _x; _deleted = true;};

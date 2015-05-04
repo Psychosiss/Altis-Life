@@ -208,7 +208,7 @@ compileFinal "
 	_from = _this select 1;
 	_type = _this select 2;
 	if(_from == """") exitWith {};
-	switch (_type) do
+	switch _type do
 	{
 		case 0 :
 		{

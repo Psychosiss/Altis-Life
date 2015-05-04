@@ -1,4 +1,4 @@
-switch (playerSide) do
+switch playerSide do
 {
 	case west:
 	{

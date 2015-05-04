@@ -10,7 +10,7 @@ if(isNull _control) exitWith {};
 if(_onKeyUp) then 
 {
 	_value = parseNumber(ctrlText _control);
-	_varName = switch(_slider) do 	
+	_varName = switch _slider do 	
 	{
 		case "ground": {"life_vdFoot"};
 		case "vehicle": {"life_vdCar"};

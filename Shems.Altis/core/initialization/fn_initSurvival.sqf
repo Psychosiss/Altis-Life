@@ -131,7 +131,7 @@
 			life_addiction set [_i, _new];
 			if (_new > 0 && (time - (life_used_drug select _i)) > 600) then
 			{
-				switch (true) do
+				switch true do
 				{
 					case (_new > 0.4): 
 					{ 

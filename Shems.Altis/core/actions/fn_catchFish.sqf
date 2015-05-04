@@ -2,7 +2,7 @@ private["_fish","_type"];
 _fish = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 if(!(_fish isKindOf "Fish_Base_F")) exitWith {};
 if(player distance _fish > 3.5) exitWith {};
-switch(true) do
+switch true do
 {
 	case ((typeOf _fish) == "Salema_F"): {_type = "salema"};
 	case ((typeOf _fish) == "Ornate_random_F") : {_type = "ornate"};

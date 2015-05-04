@@ -47,7 +47,7 @@ if(profileName != _this select 1) exitWith
 life_gear = _this select 8;
 [] call life_fnc_loadGear;
 
-switch(playerSide) do 
+switch playerSide do 
 {
 	case west: 
 	{

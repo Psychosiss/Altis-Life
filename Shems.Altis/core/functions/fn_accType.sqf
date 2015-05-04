@@ -21,7 +21,16 @@ _weaponArray = [primaryWeapon player, secondaryWeapon player, handgunWeapon play
 				_legacyItems set[_i,toLower(_legacyItems select _i)];
 			};
 			
-			if((toLower _item) in _legacyItems) exitWith {_ret = switch(_weapon) do {case (primaryWeapon player): {1};case (secondaryWeapon player) : {2};case (handgunWeapon player): {3};default {0};};};
+			if((toLower _item) in _legacyItems) exitWith 
+			{
+				_ret = switch _weapon do 
+				{
+					case (primaryWeapon player): {1};
+					case (secondaryWeapon player) : {2};
+					case (handgunWeapon player): {3};
+					default {0};
+				};
+			};
 		};
 
 		if(count _newItems > 0) then
@@ -32,7 +41,13 @@ _weaponArray = [primaryWeapon player, secondaryWeapon player, handgunWeapon play
 				if(isNil "_cfg") then {_cfg = 0;};
 				if(_cfg == 1) exitWith
 				{
-					_ret = switch(_weapon) do {case (primaryWeapon player): {1};case (secondaryWeapon player) : {2};case (handgunWeapon player): {3};default {0};};
+					_ret = switch _weapon do 
+					{
+						case (primaryWeapon player): {1};
+						case (secondaryWeapon player) : {2};
+						case (handgunWeapon player): {3};
+						default {0};
+					};
 				};
 			} foreach _newItems;
 			if(_ret != 0) exitWith {};

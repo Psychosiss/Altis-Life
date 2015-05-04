@@ -22,7 +22,7 @@ _pos = [0,0,0];
 } foreach _positions;
 if(_pos isEqualTo [0,0,0]) exitWith {hint "No more free storage spaces in your house."};
 if(!([false,_boxType,1] call life_fnc_handleInv)) exitWith {};
-switch (_boxType) do 
+switch _boxType do 
 {
 	case "storagesmall": 
 	{

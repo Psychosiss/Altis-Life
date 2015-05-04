@@ -1,7 +1,7 @@
 private "_unit";
 _item = _this select 0;
 _unit = cursorTarget;
-_class = switch (_item) do
+_class = switch _item do
 {
 	case "tent1": {"Land_TentA_F"};
 	case "tent2": {"Land_TentDome_F"};

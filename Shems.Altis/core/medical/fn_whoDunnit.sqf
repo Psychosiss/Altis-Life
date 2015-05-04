@@ -13,7 +13,7 @@ if(isServer) then
 	_killerVeh = vehicle _killer;
 	_vehName = getText(configFile >> "CfgVehicles" >> (typeOf _killerVeh) >> "displayName");
 
-	switch (true) do 
+	switch true do 
 	{
 		case (vehicle _killer isKindOf "Car"):
 		{

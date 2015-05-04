@@ -41,7 +41,7 @@ if((_vehicle isKindOf "Car") || (_vehicle isKindOf "Air") || (_vehicle isKindOf 
 	{
 		if(!((_vehicle isKindOf "Car") || (_vehicle isKindOf "Air") || (_vehicle isKindOf "Ship"))) exitWith {life_action_inUse = false;};
 		_type = getText(configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "displayName");
-		switch (true) do
+		switch true do
 		{
 			case (_vehicle isKindOf "Car"): {_price = (call life_impound_car);};
 			case (_vehicle isKindOf "Ship"): {_price = (call life_impound_boat);};

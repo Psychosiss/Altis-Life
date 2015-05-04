@@ -2,7 +2,7 @@ private "_var";
 _var = [_this,0,"",[""]] call BIS_fnc_param;
 if(_var == "") exitWith {""};
 
-switch (_var) do
+switch _var do
 {
 	case "life_inv_oilu": {("icons\items\oil_unprocessed.paa")};
 	case "life_inv_oilp": {("icons\items\oil_processed.paa")};

@@ -3,7 +3,7 @@ _vehicle = [_this,0,"",[""]] call BIS_fnc_param;
 if(_vehicle == "") exitWith {[]};
 _ret = [];
 
-switch (_vehicle) do
+switch _vehicle do
 {
 	case "I_Heli_Transport_02_F":
 	{

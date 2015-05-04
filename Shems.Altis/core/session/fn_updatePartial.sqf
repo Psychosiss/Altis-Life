@@ -2,14 +2,14 @@ private["_mode","_packet","_array","_flag"];
 _mode = [_this,0,0,[0]] call BIS_fnc_param;
 _packet = [getPlayerUID player,playerSide,nil,_mode];
 _array = [];
-_flag = switch(playerSide) do 
+_flag = switch playerSide do 
 {
 	case west: {"cop"}; 
 	case civilian: {"civ"}; 
 	case independent: {"med"}; 
 };
 
-switch(_mode) do 
+switch _mode do 
 {
 	case 0: 
 	{

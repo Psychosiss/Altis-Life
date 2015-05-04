@@ -4,7 +4,7 @@ if(_food == "") exitWith {};
 
 if([false,_food,1] call life_fnc_handleInv) then 
 {
-	switch (_food) do
+	switch _food do
 	{
 		case "apple": {_val = 10};
 		case "salema": {_val = 30};

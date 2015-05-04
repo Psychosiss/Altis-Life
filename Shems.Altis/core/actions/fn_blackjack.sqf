@@ -36,7 +36,7 @@ while {true} do
 	if(life_istazed) exitWith {hint "Vous étiez tazé, jeu pas!";};
 };
 
-switch(true) do
+switch true do
 {
 	case (_toFar):
 	{

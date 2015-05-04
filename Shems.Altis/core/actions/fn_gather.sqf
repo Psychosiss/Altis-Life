@@ -39,7 +39,7 @@ while {gather_var} do
 		life_action_inUse = false;
 	};
 
-	switch(true) do 
+	switch true do 
 	{
 		case (_zone in ["apple_1","apple_4","apple_9"]): {_gather = "apple"; _val = 3;};
 		case (_zone in ["peaches_2","peaches_3","peaches_9"]): {_gather = "peach"; _val = 3;};

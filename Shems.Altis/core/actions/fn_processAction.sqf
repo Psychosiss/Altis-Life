@@ -6,7 +6,7 @@ if(isNull _vendor OR _type == "" OR (player distance _vendor > 10)) exitWith {};
 
 _error = false;
 
-_itemInfo = switch (_type) do
+_itemInfo = switch _type do
 {
 	case "oil": 
 	{

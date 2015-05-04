@@ -23,7 +23,7 @@ switch _code do
 {
 	case _mapKey:
 	{
-		switch (playerSide) do 
+		switch playerSide do 
 		{
 			case west: {if(!visibleMap) then {[] spawn life_fnc_copMarkers;}};
 			case independent: {if(!visibleMap) then {[] spawn life_fnc_medicMarkers;}};
@@ -110,7 +110,7 @@ switch _code do
 	case 19:
 	{
 		if(_shift) then {_handled = true;};
-		switch (playerSide) do
+		switch playerSide do
 		{
 			case west:
 			{

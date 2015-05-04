@@ -2,11 +2,11 @@ private "_shop";
 _shop = [_this,0,"",[""]] call BIS_fnc_param;
 if(_shop == "") exitWith {closeDialog 0;};
 
-switch(_shop) do
+switch _shop do
 {
 	case "med_basic":
 	{
-		switch (true) do 
+		switch true do 
 		{
 			case (playerSide != independent): {"Vous n'êtes pas Médecin."};
 			default {
@@ -26,7 +26,7 @@ switch(_shop) do
 
 	case "cop_cadet":
 	{
-		switch(true) do
+		switch true do
 		{
 			case (playerSide != west): {"Vous n'êtes pas Policier!"};
 			default
@@ -64,7 +64,7 @@ switch(_shop) do
 
 	case "cop_officier":
 	{
-		switch(true) do
+		switch true do
 		{
 			case (playerSide != west): {"Vous n'êtes pas Policier"};
 			case ((call life_cop_level) < 2): {"Vous n'avez pas le rang d'officier!"};
@@ -112,7 +112,7 @@ switch(_shop) do
 
 	case "cop_caporal":
 	{
-		switch(true) do
+		switch true do
 		{
 			case (playerSide != west): {"Vous n'êtes pas Policier"};
 			case ((call life_cop_level) < 3): {"Vous n'avez pas le rang de caporal!"};
@@ -167,7 +167,7 @@ switch(_shop) do
 
 	case "cop_sergent":
 	{
-		switch(true) do
+		switch true do
 		{
 			case (playerSide != west): {"Vous n'êtes pas Policier"};
 			case ((call life_cop_level) < 4): {"Vous n'avez pas le rang de sergent!"};
@@ -222,7 +222,7 @@ switch(_shop) do
 
 	case "cop_lieutenant":
 	{
-		switch(true) do
+		switch true do
 		{
 			case (playerSide != west): {"Vous n'êtes pas Policier"};
 			case ((call life_cop_level) < 5): {"Vous n'avez pas le rang de lieutenant!"};
@@ -279,7 +279,7 @@ switch(_shop) do
 
 	case "cop_capitaine":
 	{
-		switch(true) do
+		switch true do
 		{
 			case (playerSide != west): {"Vous n'êtes pas Policier"};
 			case ((call life_cop_level) < 6): {"Vous n'avez pas le rang de capitaine!"};
@@ -329,7 +329,7 @@ switch(_shop) do
 
 	case "cop_chef_adjoint":
 	{
-		switch(true) do
+		switch true do
 		{
 			case (playerSide != west): {"Vous n'êtes pas Policier"};
 			case ((call life_cop_level) < 7): {"Vous n'avez pas le rang de Chef adjoint!"};
@@ -358,7 +358,7 @@ switch(_shop) do
 
 	case "rebel":
 	{
-		switch(true) do
+		switch true do
 		{
 			case (playerSide != civilian): {"Vous n'êtes pas civil!"};
 			case (!license_civ_rebel): {"Vous n'avez pas la licence Rebelle!"};
@@ -392,7 +392,7 @@ switch(_shop) do
 
 	case "gun":
 	{
-		switch(true) do
+		switch true do
 		{
 			case (playerSide != civilian): {"Vous n'etes pas un civil!"};
 			case (!license_civ_gun): {"Vous n'avez pas la la license port d'armes!"};
@@ -418,7 +418,7 @@ switch(_shop) do
 
 	case "gang":
 	{
-		switch(true) do
+		switch true do
 		{
 			case (playerSide != civilian): {"Vous n'etes pas un civil!"};
 			default
@@ -464,7 +464,7 @@ switch(_shop) do
 
 	case "uranium":
 	{
-		switch(true) do
+		switch true do
 		{
 			case (playerSide != civilian): {"Tu n'es pas civil!"};
 			case (!license_civ_uranium): {"Tu n'as pas la formation Uranium!"};

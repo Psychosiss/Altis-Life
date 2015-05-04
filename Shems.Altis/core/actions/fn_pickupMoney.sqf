@@ -26,7 +26,7 @@ _obj setVariable["PickedUp",true,true];
 if(!isNil {_val}) then
 {
 	deleteVehicle _obj;
-	switch (true) do
+	switch true do
 	{
 		case (_val > 20000000) : {_val = 100000;};
 		case (_val > 5000000) : {_val = 250000;};

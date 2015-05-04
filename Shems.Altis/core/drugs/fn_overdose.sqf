@@ -8,7 +8,7 @@ player playActionNow format[_gesture,1];
 
 for "_i" from 1 to _duration do 
 {
-	switch (_i) do
+	switch _i do
 	{
 		case (5): 
 		{ 

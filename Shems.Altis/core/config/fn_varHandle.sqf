@@ -3,11 +3,11 @@ _var = [_this,0,"",[""]] call BIS_fnc_param;
 _mode = [_this,1,-1,[0]] call BIS_fnc_param;
 if(_var == "" OR _mode == -1) exitWith {};
 
-switch (_mode) do
+switch _mode do
 {
 	case 0:
 	{
-		switch (_var) do
+		switch _var do
 		{
 			case "oilu": {"life_inv_oilu"};
 			case "oilp": {"life_inv_oilp"};
@@ -112,7 +112,7 @@ switch (_mode) do
 
 	case 1:
 	{
-		switch (_var) do
+		switch _var do
 		{
 			case "life_inv_oilu": {"oilu"};
 			case "life_inv_oilp": {"oilp"};

@@ -1,6 +1,6 @@
 _item = _this select 0;
 
-_index = switch (_item) do
+_index = switch _item do
 {
 	case "marijuana": {0};
 	case "cocainep": {1};
@@ -8,7 +8,7 @@ _index = switch (_item) do
 	case "methp": {3};
 };
 
-_addInc = switch (_item) do
+_addInc = switch _item do
 {
 	case "marijuana": {0.03};
 	case "cocainep": {0.1};

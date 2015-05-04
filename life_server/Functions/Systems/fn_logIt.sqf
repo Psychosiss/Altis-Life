@@ -5,7 +5,7 @@ _name = [_this,2,"",[""]] call BIS_fnc_param;
 _uid = [_this,3,"",[""]] call BIS_fnc_param;
 
 {
-	_output = switch(_mode) do 
+	_output = switch _mode do 
 	{
 		case "diag_log": {[0,diag_log _x];};
 		case "spy_log": {[1,format["1:SPY_LOG:SpyGlass: Name: %1 || UID: %2 || %3",_name,_uid,_x]];};

@@ -18,7 +18,7 @@ if(life_atmmoney > (call life_revive_fee)) then
 	life_atmmoney = 0;
 };
 
-switch(playerSide) do 
+switch playerSide do 
 {
 	case independent: 
 	{

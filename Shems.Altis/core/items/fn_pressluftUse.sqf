@@ -1,6 +1,6 @@
 closeDialog 0;
 private["_mine","_itemWeight","_diff","_itemName","_val"];
-switch (true) do
+switch true do
 {
     case (player distance (getMarkerPos "lead_1") < 30): {_mine = "copperore"; _val = 3;};
 	case (player distance (getMarkerPos "iron_1") < 30): {_mine = "ironore"; _val = 3;};

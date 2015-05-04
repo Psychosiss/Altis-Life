@@ -6,7 +6,7 @@ _weight = -1;
 _used = (_vehicle getVariable "Trunk") select 1;
 _weight = [(typeOf _vehicle)] call life_fnc_vehicleWeightCfg;
 
-switch ((typeOf _vehicle)) do
+switch (typeOf _vehicle) do
 {
 	case "Land_TentA_F": {_weight = 400;};
 	case "Land_TentDome_F": {_weight = 600;};

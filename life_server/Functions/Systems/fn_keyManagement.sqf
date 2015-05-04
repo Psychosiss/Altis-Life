@@ -5,7 +5,7 @@ _mode = [_this,3,0,[0]] call BIS_fnc_param;
 
 if(_uid == "" OR _side == sideUnknown) exitWith {};
 
-switch(_mode) do 
+switch _mode do 
 {
 	case 0: 
 	{

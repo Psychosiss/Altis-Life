@@ -49,7 +49,7 @@ life_action_delay = time;
 	if(_exit) exitWith {};
 	_weight = ([_var] call life_fnc_itemWeight) * _value;
 
-	switch(_item) do
+	switch _item do
 	{
 		case "life_inv_water":
 		{

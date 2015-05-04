@@ -4,7 +4,7 @@ if((lbCurSel 2005) == -1) exitWith {};
 if (player getVariable ["restrained", false]) exitWith {};
 _item = lbData[2005,(lbCurSel 2005)];
 
-switch (true) do
+switch true do
 {
 	case (_item in ["water","coffee"]): 
 	{

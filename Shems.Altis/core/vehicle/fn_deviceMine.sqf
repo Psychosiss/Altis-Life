@@ -44,7 +44,7 @@ if(_zone == "") exitWith
 	life_action_inUse = false;
 };
 
-_item = switch(true) do 
+_item = switch true do 
 {
 	case (_zone in ["apple_1","apple_4","apple_9"]): {"apple"};
 	case (_zone in ["peaches_2","peaches_3","peaches_9"]): {"peach"};

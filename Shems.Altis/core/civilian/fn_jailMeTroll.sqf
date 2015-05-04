@@ -51,7 +51,7 @@ while {true} do
 };
 
 
-switch (true) do
+switch true do
 {
 	case (_bail):
 	{

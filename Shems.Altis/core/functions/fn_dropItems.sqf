@@ -3,7 +3,7 @@ _unit = _this select 0;
 {
 	_item = _x;
 	_value = missionNamespace getVariable _item;
-	switch(_item) do
+	switch _item do
 	{
 		case "life_inv_water":
 		{

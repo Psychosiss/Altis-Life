@@ -2,11 +2,11 @@ private "_craft";
 _craft = [_this,0,"",[""]] call BIS_fnc_param;
 if(_craft == "") exitWith {closeDialog 0};
 
-switch(_craft) do
+switch _craft do
 {
 	case "weapon":
 	{
-		switch(true) do
+		switch true do
 		{
 			default
 			{
@@ -23,7 +23,7 @@ switch(_craft) do
 
 	case "uniform":
 	{
-		switch(true) do
+		switch true do
 		{
 			default
 			{
@@ -38,7 +38,7 @@ switch(_craft) do
 
 	case "backpack":
 	{
-		switch(true) do
+		switch true do
 		{
 			default
 			{
@@ -53,7 +53,7 @@ switch(_craft) do
 
 	case "item":
 	{
-		switch(true) do
+		switch true do
 		{
 			default
 			{

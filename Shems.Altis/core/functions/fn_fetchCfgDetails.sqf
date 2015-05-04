@@ -12,7 +12,7 @@ _magazines = [];
 if(_entity == "") exitWith {[]};
 _cfg = if(isNil {_this select 1}) then
 {
-	switch (true) do
+	switch true do
 	{
 		case (isClass (configFile >> "CfgMagazines" >> _entity)) : {"CfgMagazines";};
 		case (isClass (configFile >> "CfgWeapons" >> _entity)) : {"CfgWeapons";};
@@ -34,7 +34,7 @@ _picture = getText(_config >> "picture");
 _desc = getText(_config >> "descriptionshort");
 _base = inheritsFrom _config;
 
-switch (_cfg) do
+switch _cfg do
 {
 	case "CfgVehicles":
 	{

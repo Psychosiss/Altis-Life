@@ -4,7 +4,7 @@ _msg = [_this,1,"",[""]] call BIS_fnc_param;
 _player = [_this,2,ObjNull,[ObjNull]] call BIS_fnc_param;
 _type = [_this,3,-1] call BIS_fnc_param;
 
-switch(_type) do
+switch _type do
 {
 	case 0:
 	{

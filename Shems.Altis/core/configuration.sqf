@@ -72,7 +72,7 @@ life_impound_car = compileFinal (if(typeName 350 == "STRING") then {350} else {s
 life_impound_boat = compileFinal (if(typeName 250 == "STRING") then {250} else {str(250)});
 life_impound_air = compileFinal (if(typeName 850 == "STRING") then {850} else {str(850)});
 
-switch (playerSide) do
+switch playerSide do
 {
 	case west: 
 	{

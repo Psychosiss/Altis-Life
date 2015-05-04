@@ -1,7 +1,7 @@
 private "_className";
 _className = [_this,0,"",[""]] call BIS_fnc_param;
 
-switch (_className) do
+switch _className do
 {
 	case "B_Quadbike_01_F": {25};
 	case "B_Boat_Transport_01_F": {25};

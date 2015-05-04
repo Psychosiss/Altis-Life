@@ -11,7 +11,7 @@ diag_log format ["%1",_cop_position];
 
 _packet = [getPlayerUID player,(profileName),playerSide,life_money,life_atmmoney];
 _array = [];
-_flag = switch(playerSide) do {case west: {"cop"}; case civilian: {"civ"}; case independent: {"med"};};
+_flag = switch playerSide do {case west: {"cop"}; case civilian: {"civ"}; case independent: {"med"};};
 {
 	if(_x select 1 == _flag) then
 	{
@@ -24,7 +24,7 @@ _packet pushBack _array;
 _packet pushBack life_gear;
 _packet pushBack life_is_alive;
 
-switch (playerSide) do 
+switch playerSide do 
 {
 	case west: 
 	{

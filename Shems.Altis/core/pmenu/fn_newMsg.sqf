@@ -8,7 +8,7 @@ _display = findDisplay 88888;
 _cPlayerList = _display displayCtrl 88881;
 _cMessageEdit = _display displayCtrl 88884;
 
-switch(_type) do
+switch _type do
 {
 	case 0:
 	{

@@ -1,7 +1,7 @@
 private["_side","_ret"];
 _side = [_this,0,civilian,[civilian]] call BIS_fnc_param;
 
-switch (_side) do
+switch _side do
 {
 	case west:
 	{

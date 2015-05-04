@@ -44,7 +44,7 @@ _units = _units - [player];
 			_text = "";
 			_icon = "";
 
-			switch (true) do 
+			switch true do 
 			{
 				case ((goggles _x) in _goggles): {format["???"];};
 				case ((headgear _x) in _headgear): {format["???"];};

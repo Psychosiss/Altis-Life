@@ -18,7 +18,7 @@ for "_i" from 0 to (count life_vehicles)-1 do
 	if(_veh distance impound_obj < 50) then
 	{
 		_price = [_veh] call life_fnc_impoundPrice;
-		switch (true) do
+		switch true do
 		{
 			case (_veh isKindOf "Car") : {_price = _price + 100;};
 			case (_veh isKindOf "Air") : {_price = _price + 650;};

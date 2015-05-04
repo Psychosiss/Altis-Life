@@ -5,7 +5,7 @@ if(isNull _container) exitWith {};
 if((typeOf _container) in ["Box_IND_Grenades_F","B_supplyCrate_F"]) exitWith 
 {
 	_house = lineIntersectsWith [getPosASL player, ATLtoASL screenToWorld[0.5,0.5]];
-	switch(true) do 
+	switch true do 
 	{
 		case (count _house == 0): {_exit = true;};
 		case (count _house == 1): {_house = _house select 0;};

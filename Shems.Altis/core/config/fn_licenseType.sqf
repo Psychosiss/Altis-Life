@@ -3,11 +3,11 @@ _type = [_this,0,"",[""]] call BIS_fnc_param;
 _mode = [_this,1,-1,[0]] call BIS_fnc_param;
 if(_type == "" OR _mode == -1) exitWith {[]};
 
-switch (_mode) do
+switch _mode do
 {
 	case 0:
 	{
-		switch (_type) do
+		switch _type do
 		{
 			case "driver": {_var = "license_civ_driver"};
 			case "boat": {_var = "license_civ_boat"};
@@ -50,7 +50,7 @@ switch (_mode) do
 	
 	case 1:
 	{
-		switch (_type) do
+		switch _type do
 		{
 			case "license_civ_driver": {_var = "driver"};
 			case "license_civ_boat": {_var = "boat"};

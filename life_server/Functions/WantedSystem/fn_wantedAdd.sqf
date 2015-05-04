@@ -5,7 +5,7 @@ _type = [_this,2,"",[""]] call BIS_fnc_param;
 _customBounty = [_this,3,-1,[0]] call BIS_fnc_param;
 if(_uid == "" OR _type == "" OR _name == "") exitWith {};
 
-switch(_type) do
+switch _type do
 {
 	case "1": {_type = ["Conduite sans permis de conduire",1500]};
     case "2": {_type = ["Vol de véhicule",3500]};

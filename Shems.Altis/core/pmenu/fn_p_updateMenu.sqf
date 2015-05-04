@@ -7,7 +7,7 @@ if((call life_adminlevel) < 1) then
 	ctrlShow[2021,false];
 };
 
-_side = switch(playerSide) do 
+_side = switch playerSide do 
 {
 	case west:{"cop"};
 	case civilian:{"civ"};

@@ -4,7 +4,7 @@ _value = [_this,1,-1,[0]] call BIS_fnc_param;
 if(_mode == -1 OR _value == -1) exitWith {};
 disableSerialization;
 
-switch (_mode) do
+switch _mode do
 {
 	case 0:
 	{

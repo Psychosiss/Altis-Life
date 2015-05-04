@@ -7,7 +7,7 @@ _curBack = backpackItems player;
 _curVest = vestItems player;
 _curAmmo = magazinesAmmoFull player;
 
-switch (_type) do 
+switch _type do 
 {
 	case 0:
 	{
