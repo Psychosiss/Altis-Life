@@ -129,12 +129,13 @@ class CfgFunctions
 		class Initialization
 		{
 			file = "core\initlialization";
-			class initActions;
-			class initEventHandlers;
+			class initPlayer;
 			class initCiv;
 			class initCop;
 			class initMedic;
 			class initZeus;
+			class initActions;
+			class initEventHandlers;
 			class initSurvival;
 		};
 
@@ -396,6 +397,7 @@ class CfgFunctions
 			class purge;
 			class hasDisplay;
 			class interact;
+			class const;
 		};
 
 		class Network

@@ -1,6 +1,5 @@
 private "_end";
 
-player addRating 9999999;
 waitUntil {!(isNull (findDisplay 46))};
 _end = false;
 

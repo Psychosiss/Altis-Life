@@ -1,7 +1,6 @@
 life_firstSpawn = true;
 life_session_completed = false;
 
-private "_handle";
 0 cutText["Mise en place client, patientez...","BLACK FADED"];
 0 cutFadeOut 9999999;
 
@@ -51,32 +50,7 @@ waitUntil {!isNull (findDisplay 46)};
 } forEach [1000,1001,1002,1200,1202];
 
 ["Chargement des rôles"] call life_fnc_log;
-switch (playerSide) do
-{
-	case west:
-	{
-		_handle = [] spawn life_fnc_initCop;
-		waitUntil {scriptDone _handle};
-	};
-
-	case civilian:
-	{
-		_handle = [] spawn life_fnc_initCiv;
-		waitUntil {scriptDone _handle};
-	};
-
-	case independent:
-	{
-		_handle = [] spawn life_fnc_initMedic;
-		waitUntil {scriptDone _handle};
-	};
-
-	case sideLogic:
-    {
-        _handle = [] spawn life_fnc_initZeus;
-        waitUntil {scriptDone _handle};
-    };
-};
+[] call life_fnc_initPlayer;
 
 if (playerSide != sideLogic) then
 {

@@ -88,6 +88,8 @@ switch(playerSide) do
 	};
 };
 
+life_paycheck = life_paycheck + (life_donator * 500);
+
 switch (life_licenses) do
 {
 	case "license_civ_admin":{life_paycheck = life_paycheck + 10000;};

@@ -1,6 +1,3 @@
-private "_end";
-
-player addRating 99999999;
 waitUntil {!(isNull (findDisplay 46))};
 
 if((call life_med_level) < 1) exitWith 

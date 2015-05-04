@@ -1,4 +1,4 @@
-private["_spawnPos","_playerPosition"];
+private "_playerPosition";
 
 _playerPosition = civ_position;
 diag_log format ["%1",_playerPosition];
@@ -45,7 +45,5 @@ if (!life_is_alive) then
 player setVariable["cop_level",(call life_cop_level),true];
 player setVariable["med_level",(call life_med_level),true];
 player setVariable["adminlevel",(call life_adminlevel),true];
-
-player addRating 9999999;
 
 [] call life_fnc_handlerHelp;
