@@ -24,6 +24,8 @@ _resourceZones =
 player addRating 99999999;
 player addScore 99999999;
 
+[] call life_fnc_initPlayerVariables;
+
 waitUntil {!(isNull (findDisplay 46))};
 
 if("life_blacklisted" call life_fnc_const) exitWith 

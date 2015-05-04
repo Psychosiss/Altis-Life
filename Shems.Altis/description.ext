@@ -137,6 +137,7 @@ class CfgFunctions
 			class initActions;
 			class initEventHandlers;
 			class initSurvival;
+			class initPlayerVariables;
 		};
 
 		class Admin
@@ -181,6 +182,7 @@ class CfgFunctions
 			class brokenLeg;
 			class medInteractionMenu;
 			class whoDunnit;
+			class isMedic;
 		};
 
 		class Actions
@@ -496,6 +498,7 @@ class CfgFunctions
 			class ticketPaid;
 			class airHorn;
 			class wantedGrab;
+			class isCop;
 		};
 
 		class Gangs

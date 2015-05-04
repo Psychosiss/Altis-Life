@@ -212,7 +212,7 @@ class life_admin_menu
 			idc = -1;
 			text = "Bannir";
 			onButtonClick = "[] call life_fnc_adminBan;";
-			x = 0.1 + (31.3 / 40) + (1 / 250 / (safezoneW / safezoneH));
+			x = -0.06 + (37.6 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.88 - (1 / 25);
 			w = (6.25 / 40);
 			h = (1 / 25);
@@ -223,7 +223,7 @@ class life_admin_menu
 			idc = -1;
 			text = "Kick";
 			onButtonClick = "[] call life_fnc_adminKick;";
-			x = 0.26 + (31.3 / 40) + (1 / 250 / (safezoneW / safezoneH));
+			x = 0.26 + (43.9 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.88 - (1 / 25);
 			w = (6.25 / 40);
 			h = (1 / 25);
@@ -235,8 +235,8 @@ class life_admin_menu
 			text = "Purge";
 			colorBackground[] = {0.584,0.086,0.086,1.0};
 			onButtonClick = "[] call life_fnc_purge;";
-			x = 0.1 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
-			y = 0.885;
+			x = 0.26 + (50.2/ 40) + (1 / 250 / (safezoneW / safezoneH));
+			y = 0.88 - (1 / 25);
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
