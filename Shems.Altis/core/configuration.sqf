@@ -51,6 +51,11 @@ life_used_drug = [0,0,0,0];
 life_addiction = [0,0,0,0];
 life_last_tracked = [0,0,0];
 life_animals_array = [];
+life_masks = [
+	["G_Balaclava_blk","G_Balaclava_combat","G_Balaclava_lowprofile","G_Balaclava_oli","G_Bandanna_aviator","G_Bandanna_beast","G_Bandanna_blk","G_Bandanna_khk","G_Bandanna_oli","G_Bandanna_shades","G_Bandanna_sport","G_Bandanna_tan"],
+	["H_Shemag_khk","H_Shemag_tan","H_Shemag_olive","H_Shemag_olive_hs","H_ShemagOpen_khk","H_ShemagOpen_tan"],
+	["U_B_GhillieSuit","U_O_GhillieSuit","U_I_GhillieSuit"]
+];
 
 life_revive_cops = compileFinal (if(typeName true == "STRING") then {true} else {str(true)});
 life_revive_fee = compileFinal (if(typeName 1250 == "STRING") then {1250} else {str(1250)});

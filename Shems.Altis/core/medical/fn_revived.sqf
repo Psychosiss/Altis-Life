@@ -5,7 +5,7 @@ _oldGear = [life_corpse] call life_fnc_fetchDeadGear;
 life_corpse setVariable["realname",nil,true];
 [[life_corpse],"life_fnc_corpse",nil,FALSE] spawn life_fnc_MP;
 _dir = getDir life_corpse;
-hint format["%1 vous a reanimé et une taxe de %2 € a été prise à partir de votre compte bancaire pour son service.",_medic,[(call life_revive_fee)] call life_fnc_numberText];
+hint format["%1 vous as reanimé et une taxe de %2 €  été prise à partir de votre compte bancaire pour son service.",_medic,[(call life_revive_fee)] call life_fnc_numberText];
 
 closeDialog 0;
 life_deathCamera cameraEffect ["TERMINATE","BACK"];

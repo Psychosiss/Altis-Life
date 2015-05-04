@@ -12,7 +12,7 @@ _ctrlTitle = (_this select 0) displayCtrl 1050;
 uiNamespace setVariable ["life_interruptDisplay",_display];
 
 _ctrlAbort ctrlSetTooltip "Synchronisation du profil et déconnection";
-_ctrlAbort ctrlSetEventHandler ["ButtonClick", "[] spawn life_fnc_abort; ( uiNamespace getVariable ""life_interruptDisplay"" ) closeDisplay 2; true"];
+_ctrlAbort ctrlSetEventHandler ["ButtonClick", "[] spawn life_fnc_abort; (uiNamespace getVariable ""life_interruptDisplay"") closeDisplay 2; true"];
 _ctrlRespawn ctrlEnable false;
 _ctrlManual ctrlEnable false;
 _ctrlAbort ctrlEnable false;

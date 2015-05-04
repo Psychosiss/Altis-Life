@@ -8,10 +8,10 @@ switch(_option) do
 	{
 		if(_state == 1) then 
 		{
-			life_tagson = true;
+			life_tagsOn = true;
 			LIFE_ID_PlayerTags = ["LIFE_PlayerTags","onEachFrame","life_fnc_playerTags"] call BIS_fnc_addStackedEventHandler;
 		} else {
-			life_tagson = !true;
+			life_tagsOn = !true;
 			[LIFE_ID_PlayerTags,"onEachFrame"] call BIS_fnc_removeStackedEventHandler;
 		};
 	};

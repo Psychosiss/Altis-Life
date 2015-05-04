@@ -21,7 +21,7 @@ _units = nearestObjects[(visiblePosition player),["Man","Land_Pallet_MilBoxes_F"
 _units = _units - [player];
 
 {
-	private["_name", "_text", "_icon", "_hasName"];
+	private["_name","_text","_icon","_hasName"];
 	_name = _x getVariable ["realname", name _x];
 	_hasName = if(!isNil {(_x getVariable "realname")}) then {true} else {false};
 
@@ -33,7 +33,7 @@ _units = _units - [player];
 		{
 			case "Land_Pallet_MilBoxes_F": {[visiblePosition _x select 0, visiblePosition _x select 1, (getPosATL _x select 2) + 1.5]};
 			case "Land_Sink_F": {[visiblePosition _x select 0, visiblePosition _x select 1, (getPosATL _x select 2) + 2]};
-			default {[visiblePosition _x select 0, visiblePosition _x select 1, ((_x modelToWorld (_x selectionPosition "head")) select 2)+.5]};
+			default {[visiblePosition _x select 0, visiblePosition _x select 1, ((_x modelToWorld (_x selectionPosition "head")) select 2) + .5]};
 		};
 
 		_sPos = worldToScreen _pos;
@@ -84,7 +84,7 @@ _units = _units - [player];
 				case(_x getVariable["adminlevel", 0] > 0): 
 				{
 					_text = format["<t color='#FFFF00'><img image='%2' size='1'></img> %1</t>", _name, _icon];
-				};				
+				};
 
 				default 
 				{

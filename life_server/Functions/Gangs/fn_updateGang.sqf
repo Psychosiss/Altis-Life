@@ -7,7 +7,7 @@ if(isNull _group) exitWith {};
 _groupID = _group getVariable["gang_id",-1];
 if(_groupID == -1) exitWith {};
 
-switch (_mode) do 
+switch _mode do 
 {
 	case 0: 
 	{

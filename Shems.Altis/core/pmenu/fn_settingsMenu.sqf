@@ -16,5 +16,5 @@ ctrlSetText[2922, format["%1", life_vdAir]];
 } foreach [[2901,life_vdFoot],[2911,life_vdCar],[2921,life_vdAir]];
 
 ((findDisplay 2900) displayCtrl 2971) cbSetChecked life_sidechat;
-((findDisplay 2900) displayCtrl 2970) cbSetChecked life_tagson;
+((findDisplay 2900) displayCtrl 2970) cbSetChecked life_tagsOn;
 ((findDisplay 2900) displayCtrl 2972) cbSetChecked life_revealObjects;

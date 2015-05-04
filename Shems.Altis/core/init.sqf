@@ -112,6 +112,9 @@ doStop units player;
 ["Demarrage de l'HUD"] call life_fnc_log;
 ["Life_RscHUD",nil,nil,false] call life_fnc_createRscLayer;
 
+["Demarrage du tag du joueur"] call life_fnc_log;
+["life_RscNameTags"] call life_fnc_createRscLayer;
+
 //0 cutText ["","BLACK IN"];
 [] call life_fnc_hudSetup;
 

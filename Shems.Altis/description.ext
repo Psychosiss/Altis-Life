@@ -87,6 +87,7 @@ class RscTitles
 	#include "dialog\slotmachine.hpp"
 	#include "dialog\RscHUD.hpp"
 	#include "dialog\RscSoundStatus.hpp"
+	#include "dialog\RscNameTags.hpp"
 };
 
 class CfgFunctions
@@ -397,6 +398,8 @@ class CfgFunctions
 			class hasDisplay;
 			class interact;
 			class const;
+			class getPos3D;
+			class isMasked;
 		};
 
 		class Network

@@ -1,12 +1,12 @@
 _switch = _this select 0;
 _whatanumber = 1;
 
-switch (_switch) do
+switch _switch do
 {
 	case 0:
 	{
 		_query = "";
-		switch (_whatanumber) do 
+		switch _whatanumber do 
 		{
 			case 1: {_query = format["UPDATE dynmarket SET prices='%1'",life_dynMarket_Items_CurrentPriceArr];};
 		};
@@ -17,7 +17,7 @@ switch (_switch) do
 	
 	case 1:
 	{
-		_query = switch(_whatanumber) do 
+		_query = switch _whatanumber do 
 		{
 			case 1: {_returnCount = 11; format["SELECT prices FROM dynmarket WHERE id='1'"];};
 		};
