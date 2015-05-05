@@ -128,7 +128,7 @@ class CfgFunctions
 		tag = "life";
 		class Initialization
 		{
-			file = "core\initlialization";
+			file = "core\initialization";
 			class initPlayer;
 			class initCiv;
 			class initCop;
