@@ -603,6 +603,7 @@ class CfgFunctions
 			class sendChannel;
 			class insureCar;
 			class wireTransfer;
+			class gangWithDraw;
 		};
 
 		class Housing

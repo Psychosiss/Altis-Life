@@ -1,7 +1,9 @@
 private "_value";
+
 _value = parseNumber(ctrlText 2702);
 
 if(_value > 1000000) exitWith {hint "Vous ne pouvez pas déposer plus de 1.000.000 € à la fois.";};
+if((playerSide == west) OR (playerSide == independent)) exitWith {};
 if(_value < 0) exitWith {};
 if(!([str(_value)] call life_fnc_isNumeric)) exitWith {hint "La quantité saisie n'est pas une valeur numérique."};
 if(_value > life_atmmoney) exitWith {hint "Vous n'avez pas assez dans votre compte bancaire."};

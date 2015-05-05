@@ -24,7 +24,7 @@ class Life_atm_management
 			x = 0.35;
 			y = 0.2 + (11 / 250);
 			w = 0.3;
-			h = 0.6 - (22 / 250);
+			h = 0.65 - (22 / 250);
 		};
 	};
 	
@@ -112,7 +112,18 @@ class Life_atm_management
 			idc = 2705;
 			text = "Deposer au gang";
 			onButtonClick = "[] call life_fnc_gangDeposit";
-			y = .7; x = 0.365;
+			y = .7; 
+			x = 0.365;
+			w = 0.275;
+		};
+
+		class GangWithDraw : TransferButton
+		{
+			idc = 2706;
+			text = "Retirer du gang";
+			onButtonClick = "[] call life_fnc_gangWithdraw";
+			y = 0.75;
+			x = 0.365;
 			w = 0.275;
 		};
 
@@ -122,7 +133,7 @@ class Life_atm_management
 			text = "Fermer";
 			onButtonClick = "closeDialog 0; [] call SOCK_fnc_updateRequest;";
 			x = 0.35;
-			y = 0.8 - (1 / 25);
+			y = 0.85 - (1 / 25);
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
