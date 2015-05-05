@@ -22,40 +22,20 @@ lbClear _list;
 
 _clothes = switch (life_clothing_store) do
 {
-	case "bruce": 
-	{
-		[_selection] call life_fnc_clothing_bruce;
-	};
-	
-	case "cop": 
-	{
-		[_selection] call life_fnc_clothing_cop;
-	};
-	
-	case "reb": 
-	{
-		[_selection] call life_fnc_clothing_reb;
-	};
-	
-	case "dive": 
-	{
-		[_selection] call life_fnc_clothing_dive;
-	};
-	
-	case "kart": 
-	{
-		[_selection] call life_fnc_clothing_kart;
-	};
-	
-	case "donator": 
-	{
-		[_selection] call life_fnc_clothing_donator;
-	};
-	
-	case "med": 
-	{
-		[_selection] call life_fnc_clothing_med;
-	};
+	case "bruce": {[_selection] call life_fnc_clothing_bruce;};
+	case "cop": {[_selection] call life_fnc_clothing_cop;};
+	case "cop_safe": {[_selection] call life_fnc_clothing_cop_safe;};
+	case "cop_training": {[_selection] call life_fnc_clothing_cop_training;};
+	case "reb": {[_selection] call life_fnc_clothing_reb;};
+	case "advreb": {[_selection] call life_fnc_clothing_advreb;};
+	case "dive": {[_selection] call life_fnc_clothing_dive;};
+	case "kart": {[_selection] call life_fnc_clothing_kart;};
+	case "bounty": {[_selection] call life_fnc_clothing_bounty;};
+	case "jet": {[_selection] call life_fnc_clothing_jet;};
+	case "heli": {[_selection] call life_fnc_clothing_heli;};
+	case "medic": {[_selection] call life_fnc_clothing_med;};
+	case "press": {[_selection] call life_fnc_clothing_press;};
+	case "donator": {[_selection] call life_fnc_clothing_donator;};
 };
 
 if(count _clothes == 0) exitWith {};

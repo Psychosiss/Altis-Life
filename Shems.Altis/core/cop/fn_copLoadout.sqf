@@ -22,5 +22,9 @@ player addItem "ItemGPS";
 player assignItem "ItemGPS";
 player addItem "ItemRadio";
 player assignItem "ItemRadio";
+player addItem "Binocular";
+player assignItem "Binocular";
+player addItem "NVGoggles_OPFOR";
+player assignItem "NVGoggles_OPFOR";
 
 [] call life_fnc_saveGear;

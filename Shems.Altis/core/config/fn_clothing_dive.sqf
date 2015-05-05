@@ -8,11 +8,12 @@ switch _filter do
 	case 0:
 	{
 		[
-			["U_B_Wetsuit",nil,2000]
+			["U_B_Wetsuit","Batman",5000],
+			["U_O_Wetsuit",nil,5000]
 		];
 	};
 
-	case 1: {[];};
+	case 1: {};
 
 	case 2:
 	{
@@ -24,8 +25,9 @@ switch _filter do
 	case 3:
 	{
 		[
-			["V_RebreatherB",nil,5000]
+			["V_RebreatherIR",nil,5000]
 		];
+	};
 
-	case 4: {[];};
+	case 4: {};
 };

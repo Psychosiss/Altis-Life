@@ -28,7 +28,7 @@ player addScore 99999999;
 
 waitUntil {!(isNull (findDisplay 46))};
 
-if("life_blacklisted" call life_fnc_const) exitWith 
+if("life_blacklisted") exitWith 
 {
 	["Blacklisted",false,0] call BIS_fnc_endMission;
 };

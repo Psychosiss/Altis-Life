@@ -8,14 +8,18 @@ switch _filter do
 	case 0:
 	{
 		[
-			["U_C_Poloshirt_blue",nil,250],
-			["U_NikosAgedBody","Homme d'affaire",15000],
-			["U_C_Scientist","Anti-Radiation",30000],
-			["U_C_Poloshirt_burgundy","Poloshirt Burgundy",275],
-			["U_C_Poloshirt_redwhite","Poloshirt Red/White",150],
-			["U_C_Poloshirt_salmon","Poloshirt Salmon",175],
-			["U_C_Poloshirt_stripped","Poloshirt stripped",125],
-			["U_C_Poloshirt_tricolour","Poloshirt Tricolor",350],
+			["U_C_Commoner1_1","1v1 me in jail m9",250],
+			["U_C_Commoner1_2","Hobo Outfit (Black)",250],
+			["U_C_Commoner1_3","Hobo Outfit (Blue)",250],
+			["U_C_Commoner_shorts","Hobo Outfit (Green)",250],
+			["U_C_Poloshirt_blue","Hobo Outfit (Maroon)",250],
+			["U_C_Poloshirt_burgundy","Hobo Outfit (Yellow Claw)",250],
+			["U_C_Poloshirt_redwhite","Pat",250],
+			["U_C_Poloshirt_salmon","Phil",250],
+			["U_C_Poloshirt_stripped","Manners",250],
+			["U_C_Poloshirt_tricolour","Britannia",250],
+			["U_C_ShirtSurfer_shorts","Squirtle",250],
+			["U_C_TeeSurfer_shorts_1","DnA",250],
 			["U_C_Poor_2","Rag tagged clothes",250],
 			["U_IG_Guerilla2_2","Green stripped shirt & Pants",650],
 			["U_IG_Guerilla3_1","Brown Jacket & Pants",735],
@@ -23,10 +27,9 @@ switch _filter do
 			["U_C_HunterBody_grn","The Hunters Look",1500],
 			["U_C_WorkerCoveralls","Mechanic Coveralls",2500],
 			["U_OrestesBody","Surfing On Land",1100],
-			["U_C_HunterBody_grn","Panoplie Chasseur",3500],
-			["U_C_WorkerCoveralls","Combinaison Dépanneur",3500],
-			["U_OrestesBody","CheesePanda Style",3500],
-			["U_C_Journalist","Journaliste",3500]
+			["U_NikosBody","Russian Hobo",5000],
+			["U_NikosAgedBody","Casual Wears",5000],
+			["U_C_Scientist","Anti-Radiation",6000]
 		];
 	};
 
@@ -53,52 +56,51 @@ switch _filter do
 			["H_Cap_grn_BI",nil,150],
 			["H_Cap_oli",nil,150],
 			["H_Cap_red",nil,150],
-			["H_Cap_tan",nil,150],
-			["H_Cap_press","Casquette Journaliste",2500]
+			["H_Cap_tan",nil,150]
 		];
 	};
 
 	case 2:
 	{
-		_ret pushBack ["G_Sport_BlackWhite",nil,20];
-		_ret pushBack ["G_Sport_Blackyellow",nil,20];
-		_ret pushBack ["G_Shades_Blue",nil,20];
-		_ret pushBack ["G_Shades_Black",nil,25];
-		_ret pushBack ["G_Shades_Red",nil,25];
-		_ret pushBack ["G_Shades_Green",nil,25];
-		_ret pushBack ["G_Squares_Tinted",nil,50];
-		_ret pushBack ["G_Sport_Red",nil,20];
-		_ret pushBack ["G_Sport_Checkered",nil,20];
-		_ret pushBack ["G_Sport_Greenblack",nil,20];
-		_ret pushBack ["G_Sport_Blackred",nil,20];
-		_ret pushBack ["G_Lady_Mirror",nil,150];
-		_ret pushBack ["G_Lady_Dark",nil,150];
-		_ret pushBack ["G_Lady_Blue",nil,150];
-		_ret pushBack ["G_Lowprofile",nil,30];
-		_ret pushBack ["G_Squares",nil,10];
-		_ret pushBack ["G_Spectacles",nil,100];
-		_ret pushBack ["G_Aviator",nil,100];
-		_ret pushBack ["G_Spectacles_Tinted",nil,100];
-		_ret pushBack ["G_Goggles_VR",nil,500];
-		_ret pushBack ["G_Combat",nil,55];
+		[
+			["G_Shades_Black",nil,25],
+			["G_Shades_Blue",nil,20],
+			["G_Sport_Blackred",nil,20],
+			["G_Sport_Checkered",nil,20],
+			["G_Sport_Blackyellow",nil,20],
+			["G_Sport_BlackWhite",nil,20],
+			["G_Squares",nil,10],
+			["G_Aviator",nil,100],
+			["G_Lady_Mirror",nil,150],
+			["G_Lady_Dark",nil,150],
+			["G_Lady_Blue",nil,150],
+			["G_Lowprofile",nil,30],
+			["G_Combat",nil,55]
+		];
 	};
 
 	case 3:
 	{
-		_ret pushBack ["V_Press_F","Journaliste",400];
-		_ret pushBack ["V_Rangemaster_belt",nil,1200];
+		[
+			["V_Rangemaster_belt",nil,5000],
+			["V_BandollierB_khk",nil,8000],
+			["V_BandollierB_cbr",nil,8000],
+			["V_BandollierB_blk",nil,8000],
+			["V_BandollierB_oli",nil,8000]
+		];
 	};
 
 	case 4:
 	{
-		_ret pushBack ["B_AssaultPack_cbr",nil,2500];
-		_ret pushBack ["B_Kitbag_mcamo",nil,4500];
-		_ret pushBack ["B_TacticalPack_oli",nil,3500];
-		_ret pushBack ["B_FieldPack_ocamo",nil,3000];
-		_ret pushBack ["B_FieldPack_ocamo",nil,3000];
-		_ret pushBack ["B_Bergen_sgg",nil,4500];
-		_ret pushBack ["B_Kitbag_cbr",nil,4500];
-		_ret pushBack ["B_Carryall_oli",nil,5000];
-		_ret pushBack ["B_Carryall_khk",nil,5000];
+		[
+			["B_AssaultPack_cbr",nil,2500],
+			["B_FieldPack_ocamo",nil,3000],
+			["B_Kitbag_mcamo",nil,4500],
+			["B_Kitbag_cbr",nil,4500],
+			["B_TacticalPack_oli",nil,3500],
+			["B_Bergen_sgg",nil,4500],
+			["B_Carryall_oli",nil,5000],
+			["B_Carryall_khk",nil,5000]
+		];
 	};
 };

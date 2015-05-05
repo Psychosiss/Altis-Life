@@ -38,7 +38,7 @@ switch _filter do
 	case 3:
 	{
 		[
-			["V_HarnessOGL_gry","gilet explosif",1500000]
+			["V_HarnessOGL_gry","gilet explosif",500000]
 		];
 	};
 

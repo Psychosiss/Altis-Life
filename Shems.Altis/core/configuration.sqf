@@ -79,8 +79,8 @@ switch playerSide do
 		life_maxWeight = 50;
 		life_maxWeightT = 50;
 		life_carryWeight = 0;
-		life_atmmoney = 10000;
-		life_paycheck = 3000;
+		life_atmmoney = 100000;
+		life_paycheck = 10000;
 		life_taxes = 2500;
 	};
 
@@ -89,8 +89,8 @@ switch playerSide do
 		life_maxWeight = 50;
 		life_maxWeightT = 50;
 		life_carryWeight = 0;
-		life_atmmoney = 10000;
-		life_paycheck = 3000;
+		life_atmmoney = 100000;
+		life_paycheck = 5000;
 		life_taxes = 2500;
 	};
 
@@ -99,8 +99,8 @@ switch playerSide do
 		life_maxWeight = 24;
 		life_maxWeightT = 24;
 		life_carryWeight = 0;
-		life_atmmoney = 10000;
-		life_paycheck = 1250;
+		life_atmmoney = 100000;
+		life_paycheck = 1500;
 		life_taxes = 750;
 	};
 };
@@ -144,7 +144,6 @@ player setVariable["downed",false,true];
 
 life_vShop_rentalOnly = 
 [
-	"B_MRAP_01_hmg_F",
 	"Box_NATO_AmmoVeh_F",
 	"Box_East_AmmoVeh_F",
 	"Box_IND_AmmoVeh_F",
@@ -159,7 +158,8 @@ life_vShop_rentalOnly =
 	"Land_Cargo20_red_F",
 	"Land_Cargo20_sand_F",
 	"Land_Cargo20_white_F",
-	"Land_Cargo20_yellow_F"
+	"Land_Cargo20_yellow_F",
+	"B_G_Offroad_01_armed_F"
 ];
 life_vShop_rentalOnly = compileFinal (if(typeName life_vShop_rentalOnly == "STRING") then {life_vShop_rentalOnly} else {str(life_vShop_rentalOnly)});
 
@@ -294,8 +294,11 @@ life_licenses =
 	["license_civ_home","civ"],
 	["license_civ_uranium","civ"],
 	["license_civ_skull","civ"],
-	["license_civ_admin","civ"],
-	["license_civ_silver","civ"]
+	["license_civ_silver","civ"],
+	["license_cop_tfu","cop"],
+	["license_civ_advrebel", "civ"],
+	["license_civ_jet","civ"],
+	["license_civ_press","civ"]
 ];
 
 {missionNamespace setVariable[(_x select 0),false];} foreach life_licenses;

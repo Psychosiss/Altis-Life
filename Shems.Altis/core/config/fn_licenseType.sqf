@@ -41,9 +41,12 @@ switch _mode do
 			case "uranium3": {_var = "license_civ_uranium"};
 			case "uranium4": {_var = "license_civ_uranium"};
 			case "skull": {_var = "license_civ_skull"};
-			case "admin": {_var = "license_civ_admin"};
 			case "silver": {_var = "license_civ_silver"};
 			case "archeologue": {_var = "license_civ_archeologue"};
+			case "advrebel": {_var = "license_civ_advrebel"};
+			case "jet": {_var = "license_civ_jet"};
+			case "press": {_var = "license_civ_press"};
+			case "tfu": {_var = "license_cop_tfu"};
 			default {_var = ""};
 		};
 	};
@@ -84,9 +87,12 @@ switch _mode do
 			case "license_civ_uranium": {_var = "uranium3"};
 			case "license_civ_uranium": {_var = "uranium4"};
 			case "license_civ_skull": {_var = "skull"};
-			case "license_civ_admin": {_var = "admin"};
 			case "license_civ_silver": {_var = "silver"};
 			case "license_civ_archeologue": {_var = "archeologue"};
+			case "license_civ_advrebel": {_var = "advrebel"};
+			case "license_civ_jet": {_var = "jet"};
+			case "license_civ_press": {_var = "press"};
+			case "license_cop_tfu": {_var = "tfu"};
 			default {_var = ""};
 		};
 	};

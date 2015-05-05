@@ -1,13 +1,16 @@
-
 private["_list","_clothes","_pic","_filter"];
 createDialog "Life_Clothing";
 disableSerialization;
 
-if((_this select 3) in ["bruce","dive","reb","kart","donator"] && playerSide != civilian) exitWith {hint "Vous n'etes pas un civil!"; closeDialog 0;};
-if((_this select 3) == "reb" && !license_civ_rebel) exitWith {hint "Vous n'etes pas un rebel!"; closeDialog 0;};
-if((_this select 3) == "cop" && playerSide != west) exitWith {hint "Vous n'etes pas un flic!"; closeDialog 0;};
-if((_this select 3) == "med" && playerSide != independent) exitWith {hint "Vous n'etes pas un medecin!"; closeDialog 0;};
-if((_this select 3) == "dive" && !license_civ_dive) exitWith {hint "Vous n'avez pas la license de plongée!"; closeDialog 0;};
+_type = _this select 3;
+
+if(_type in ["bruce","dive","reb","kart","donator","bounty"] && playerSide != civilian) exitWith {hint "Vous n'etes pas un civil!"; closeDialog 0;};
+if(_type == "reb" && !license_civ_rebel) exitWith {hint "Vous n'etes pas un rebel!"; closeDialog 0;};
+if(_type == "cop" && playerSide != west) exitWith {hint "Vous n'etes pas un flic!"; closeDialog 0;};
+if(_type == "medic" && playerSide != independent) exitWith {hint "Vous n'etes pas un medecin!"; closeDialog 0;};
+if(_type == "dive" && !license_civ_dive) exitWith {hint "Vous n'avez pas la license de plongée!"; closeDialog 0;};
+if(_type == "jet" && !license_civ_jet) exitWith {hint "Vous n'avez pas la license requise"; closeDialog 0;};
+if(_type == "heli" && !license_civ_air) exitWith {hint "Vous n'avez pas de permis aérien"; closeDialog 0;};
 
 life_clothing_store = _this select 3;
 
@@ -32,11 +35,11 @@ _filter = (findDisplay 3100) displayCtrl 3105;
 lbClear _filter;
 lbClear _list;
 
-_filter lbAdd "Clothing";
-_filter lbAdd "Hats";
-_filter lbAdd "Glasses";
-_filter lbAdd "Vests";
-_filter lbAdd "Backpacks";
+_filter lbAdd "Vetements";
+_filter lbAdd "Chapeaux";
+_filter lbAdd "Lunettes";
+_filter lbAdd "Gilets";
+_filter lbAdd "Sacs";
 
 _filter lbSetCurSel 0;
 

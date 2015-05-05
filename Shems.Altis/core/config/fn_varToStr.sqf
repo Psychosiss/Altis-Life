@@ -129,5 +129,8 @@ switch _var do
 	case "license_civ_cement": {"Fabrication de ciment"};
 	case "license_cop_cg": {"Garde de côte"};
 	case "license_civ_uranium": {"Formation Uranium"};
-	case "license_civ_admin": {"Administrateur"};
+	case "license_civ_advrebel": {"License rebelle avancée"};
+	case "license_cop_tfu": {"Tactical Firearms Unit Membership"};
+	case "license_civ_press": {"Dan Daily News"};
+	case "license_civ_jet": {"Jet License"};
 };

@@ -276,10 +276,17 @@ class CfgFunctions
 			class vehicleWeightCfg;
 			class houseConfig;
 			class clothing_cop;
+			class clothing_cop_safe;
+			class clothing_cop_training;
 			class clothing_bruce;
 			class clothing_reb;
+			class clothing_advreb;
 			class clothing_dive;
 			class clothing_kart;
+			class clothing_bounty;
+			class clothing_jet;
+			class clothing_heli;
+			class clothing_press;
 			class clothing_donator;
 			class clothing_med;
 			class craftCfg;

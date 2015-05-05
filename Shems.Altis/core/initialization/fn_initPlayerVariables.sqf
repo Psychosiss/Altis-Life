@@ -19,11 +19,11 @@ switch true do
 {
 	case ([] call life_fnc_isCop): 
 	{
-		_unit setVariable ["cop_rank", ["life_copRank"] call life_fnc_const, true];
+		_unit setVariable ["cop_rank", life_cop_level, true];
 	};
 
 	case ([] call life_fnc_isMedic): 
 	{
-		_unit setVariable ["med_rank", ["life_medRank"] call life_fnc_const, true];
+		_unit setVariable ["med_rank", life_med_level, true];
 	};
 };
