@@ -82,7 +82,6 @@ class RscTitles
 {
 	#include "dialog\ui.hpp"
 	#include "dialog\progress.hpp"
-	#include "dialog\hud_nameTags.hpp"
 	#include "dialog\statusBar.hpp"
 	#include "dialog\slotmachine.hpp"
 	#include "dialog\RscHUD.hpp"
@@ -353,7 +352,6 @@ class CfgFunctions
 			class receiveItem;
 			class giveDiff;
 			class receiveMoney;
-			class playerTags;
 			class clearVehicleAmmo;
 			class pullOutVeh;
 			class nearUnits;

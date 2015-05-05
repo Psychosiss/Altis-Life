@@ -118,9 +118,6 @@ doStop units player;
 //0 cutText ["","BLACK IN"];
 [] call life_fnc_hudSetup;
 
-LIFE_ID_PlayerTags = ["LIFE_PlayerTags","onEachFrame","life_fnc_playerTags"] call BIS_fnc_addStackedEventHandler;
-LIFE_ID_RevealObjects = ["LIFE_RevealObjects","onEachFrame","life_fnc_revealObjects"] call BIS_fnc_addStackedEventHandler;
-
 player setVariable["steam64ID",getPlayerUID player];
 player setVariable["realname",profileName,true];
 

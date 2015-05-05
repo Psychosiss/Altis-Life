@@ -49340,7 +49340,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_InfoStand_V2_F";
 			skill=0.60000002;
-			init="this allowDamage false; this enableSimulation false; this addAction[""Insérez des pièces"",life_fnc_processCasinoslots,0,0,false,false,"""",' !life_is_processing']; this setObjectTexture [0, ""images\slots\slotmachine1000.jpg""];";
+			init="this allowDamage false; this enableSimulation false; this addAction[""Insérez des pièces"",life_fnc_processCasinoslots,0,0,false,false,"""",' !life_is_processing']; this setObjectTexture [0, ""images\casino\slotmachine1000.jpg""];";
 		};
 		class Item4380
 		{
@@ -49351,7 +49351,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_InfoStand_V2_F";
 			skill=0.60000002;
-			init="this allowDamage false; this enableSimulation false; this addAction[""Insérez des pièces"",life_fnc_processCasinoslots,0,0,false,false,"""",' !life_is_processing']; this setObjectTexture [0, ""images\slots\slotmachine1000.jpg""];";
+			init="this allowDamage false; this enableSimulation false; this addAction[""Insérez des pièces"",life_fnc_processCasinoslots,0,0,false,false,"""",' !life_is_processing']; this setObjectTexture [0, ""images\casino\slotmachine1000.jpg""];";
 		};
 		class Item4381
 		{
@@ -49362,7 +49362,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_InfoStand_V2_F";
 			skill=0.60000002;
-			init="this allowDamage false; this enableSimulation false; this addAction[""Insérez des pièces"",life_fnc_processCasinoslots,0,0,false,false,"""",' !life_is_processing']; this setObjectTexture [0, ""images\slots\slotmachine1000.jpg""];";
+			init="this allowDamage false; this enableSimulation false; this addAction[""Insérez des pièces"",life_fnc_processCasinoslots,0,0,false,false,"""",' !life_is_processing']; this setObjectTexture [0, ""images\casino\slotmachine1000.jpg""];";
 		};
 		class Item4382
 		{
@@ -49373,7 +49373,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_InfoStand_V2_F";
 			skill=0.60000002;
-			init="this allowDamage false; this enableSimulation false; this addAction[""Insérez des pièces"",life_fnc_processCasinoslots,0,0,false,false,"""",' !life_is_processing']; this setObjectTexture [0, ""images\slots\slotmachine1000.jpg""];";
+			init="this allowDamage false; this enableSimulation false; this addAction[""Insérez des pièces"",life_fnc_processCasinoslots,0,0,false,false,"""",' !life_is_processing']; this setObjectTexture [0, ""images\casino\slotmachine1000.jpg""];";
 		};
 		class Item4383
 		{

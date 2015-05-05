@@ -14,7 +14,7 @@ class life_slotmachine
 		class background : life_RscPicture 
 		{
 			idc = -1;
-			text = "images\slots\SlotMachine\slotbg.jpg";
+			text = "images\casino\SlotMachine\slotbg.jpg";
 			x = safeZoneX+(safezoneW * 0.5)-0.5; y = safeZoneY+(safezoneH * 0.5)-0.5;
 			w = 1; h = 1;
 		};
@@ -31,7 +31,7 @@ class life_slotmachine
 		class roll1 : life_RscPicture
 		{
 			idc = 38207;
-			text = "images\slots\SlotMachine\bar.jpg";
+			text = "images\casino\SlotMachine\bar.jpg";
 			x = safeZoneX+(safezoneW * 0.25) + 0.240; 
 			y = safeZoneY+(safezoneH * 0.5)-0.09;
 			w = 0.13; h = 0.25;
@@ -40,7 +40,7 @@ class life_slotmachine
 		class roll2 : life_RscPicture
 		{
 			idc = 38208;
-			text = "images\slots\SlotMachine\bar.jpg";
+			text = "images\casino\SlotMachine\bar.jpg";
 			x = safeZoneX+(safezoneW * 0.25) + 0.380; 
 			y = safeZoneY+(safezoneH * 0.5)-0.09;
 			w = 0.13; h = 0.25;
@@ -49,7 +49,7 @@ class life_slotmachine
 		class roll3 : life_RscPicture
 		{
 			idc = 38209;
-			text = "images\slots\SlotMachine\bar.jpg";
+			text = "images\casino\SlotMachine\bar.jpg";
 			x = safeZoneX+(safezoneW * 0.25) + 0.520; 
 			y = safeZoneY+(safezoneH * 0.5)-0.09;
 			w = 0.13; h = 0.25;

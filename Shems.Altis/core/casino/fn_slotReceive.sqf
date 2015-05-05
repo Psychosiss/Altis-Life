@@ -45,7 +45,7 @@ player say3D "slot_spin";
 sleep 0.5;
 {
 	_ctrl = _display displayCtrl _x;
-	_ctrl ctrlSetText "images\slots\SlotMachine\spinning.paa";
+	_ctrl ctrlSetText "images\casino\SlotMachine\spinning.paa";
 	sleep 1.0;
 } forEach [88801, 88802, 88803];
 
@@ -58,42 +58,42 @@ sleep 1;
 	{
 		case _bar: 
 		{
-			_ctrl ctrlSetText "images\slots\SlotMachine\bar.paa"
+			_ctrl ctrlSetText "images\casino\SlotMachine\bar.paa"
 		};
 
 		case _seven: 
 		{
-			_ctrl ctrlSetText "images\slots\SlotMachine\seven.paa"
+			_ctrl ctrlSetText "images\casino\SlotMachine\seven.paa"
 		};
 
 		case _bell: 
 		{
-			_ctrl ctrlSetText "images\slots\SlotMachine\bell.paa"
+			_ctrl ctrlSetText "images\casino\SlotMachine\bell.paa"
 		};
 
 		case _diamond: 
 		{
-			_ctrl ctrlSetText "images\slots\SlotMachine\diamond.paa"
+			_ctrl ctrlSetText "images\casino\SlotMachine\diamond.paa"
 		};
 
 		case _grapes: 
 		{
-			_ctrl ctrlSetText "images\slots\SlotMachine\grapes.paa"
+			_ctrl ctrlSetText "images\casino\SlotMachine\grapes.paa"
 		};
 
 		case _plum: 
 		{
-			_ctrl ctrlSetText "images\slots\SlotMachine\plum.paa"
+			_ctrl ctrlSetText "images\casino\SlotMachine\plum.paa"
 		};
 
 		case _cherry: 
 		{
-			_ctrl ctrlSetText "images\slots\SlotMachine\cherry.paa"
+			_ctrl ctrlSetText "images\casino\SlotMachine\cherry.paa"
 		};
 
 		case _heart: 
 		{
-			_ctrl ctrlSetText "images\slots\SlotMachine\heart.paa"
+			_ctrl ctrlSetText "images\casino\SlotMachine\heart.paa"
 		};
 	};
 	sleep 0.5;

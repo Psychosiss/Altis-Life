@@ -54,7 +54,7 @@ class life_slotmachine
 		class Reel1 : RscPicture 
 		{
 			idc = 88801;
-			text = "images\slots\SlotMachine\bar.paa";
+			text = "images\casino\SlotMachine\bar.paa";
 			x = 0.1;
 			y = 0.3;
 			w = 0.15;
@@ -64,7 +64,7 @@ class life_slotmachine
 		class Reel2 : RscPicture 
 		{
 			idc = 88802;
-			text = "images\slots\SlotMachine\bar.paa";
+			text = "images\casino\SlotMachine\bar.paa";
 			x = 0.26;
 			y = 0.3;
 			w = 0.15;
@@ -74,7 +74,7 @@ class life_slotmachine
 		class Reel3 : RscPicture 
 		{
 			idc = 88803;
-			text = "images\slots\SlotMachine\bar.paa";
+			text = "images\casino\SlotMachine\bar.paa";
 			x = 0.42;
 			y = 0.3;
 			w = 0.15;
