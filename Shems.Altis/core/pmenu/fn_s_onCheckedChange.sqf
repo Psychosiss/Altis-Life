@@ -10,7 +10,7 @@ switch _option do
 		{
 			life_tagsOn = true;
 			//LIFE_ID_PlayerTags = ["LIFE_PlayerTags","onEachFrame","life_fnc_playerTags"] call BIS_fnc_addStackedEventHandler;
-			[ ""life_RscNameTags"" ] call life_fnc_createRscLayer; 
+			[""life_RscNameTags""] call life_fnc_createRscLayer;
 			[] call life_fnc_settingsMenu;
 		} else {
 			life_tagsOn = !true;

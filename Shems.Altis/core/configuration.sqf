@@ -327,8 +327,8 @@ life_illegal_items =
 	["dog",2500], // --- TODO : search a price
 	["dogp",2500], // --- TODO : search a price
 	["handcuffs",10000],
-	["handcuffkeys",5000] // --- TODO : search a price
-	["kidney",5000], // --- TODO : search a price
+	["handcuffkeys",5000], // --- TODO : search a price
+	["kidney",5000] // --- TODO : search a price
 ];
 
 sell_array = 

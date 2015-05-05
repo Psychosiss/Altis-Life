@@ -13,7 +13,7 @@ switch _side do
 			["cop_spawn_4","Barrage","icons\police.paa"]
 		];
 	};
-	
+
 	case civilian:
 	{
 		_ret = 

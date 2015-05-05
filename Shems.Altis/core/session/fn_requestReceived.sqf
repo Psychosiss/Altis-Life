@@ -25,9 +25,7 @@ if(!isServer && (!isNil "life_adminlevel" OR !isNil "life_cop_level" OR !isNil "
 
 life_money = parseNumber (_this select 2);
 life_atmmoney = parseNumber (_this select 3);
-//life_adminlevel = compileFinal (if(typeName parseNumber(_this select 4) == "STRING") then {parseNumber(_this select 4)} else {str(parseNumber(_this select 4))});
 life_adminlevel = parseNumber (_this select 4);
-//life_donator = compileFinal (if(typeName parseNumber(_this select 5) == "STRING") then {parseNumber(_this select 5)} else {str(parseNumber(_this select 5))});
 life_donator = compileFinal (_this select 5);
 
 if(count (_this select 6) > 0) then 
@@ -70,13 +68,13 @@ switch playerSide do
 			_house = nearestBuilding (call compile format["%1", _x select 0]);
 			life_vehicles pushBack _house;
 		} foreach life_houses;
-
+		[] spawn life_fnc_initHouses;
 		life_gangData = _this select 13;
 		if(count life_gangData != 0) then 
 		{
-			[] spawn life_fnc_initGang;
+			_handle = [] spawn life_fnc_initGang;
+			waitUntil {scriptDone _handle};
 		};
-		[] spawn life_fnc_initHouses;
 	};
 
 	case independent: 

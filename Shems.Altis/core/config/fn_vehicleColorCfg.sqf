@@ -126,7 +126,7 @@ switch _vehicle do
 		_ret = 
 		[
 			[_path + "van_01_ext_co.paa","civ"],
-			[_path + "van_01_ext_red_co.paa","civ"]
+			[_path + "van_01_ext_red_co.paa","civ"],
 			["images\civ\dep_ISU_Truck_Flat_Cab.paa","dep","images\civ\dep_ISU_Truck_Flat_Back.paa"]
 		];
 	};
