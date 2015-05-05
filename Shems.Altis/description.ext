@@ -406,7 +406,6 @@ class CfgFunctions
 			class purge;
 			class hasDisplay;
 			class interact;
-			class const;
 			class getPos3D;
 			class isMasked;
 		};

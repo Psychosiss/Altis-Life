@@ -192,7 +192,7 @@ player createDiaryRecord ["copRules",
 
 player createDiaryRecord ["copRules",
 	[
-		"City Protocol", 
+		"Protocole de la ville", 
 		"
 			A venir
 		"
@@ -320,7 +320,28 @@ player createDiaryRecord ["illegalItems",
 	[
 		"Objets illégaux",
 		"
-			A venir
+			Lingot d 'or = 150 000 € / unité
+			Feuille d'Heroine =  1 875 € / unité
+			Heroine pure = 3 750 € / unité
+			Feuille de Cocaine = 2 500 € / unité
+			Cocaine Pure = 5 000 € / unité
+			Cannabis = 1 750 € / unité
+			Marijuana = 3 500 € / unité
+			Viande de tortue = 7 000 € / unité
+			Charge explosive = 125 000 € / unité
+			Pince coupante = 50 000 € / unité
+			Pétrole non purifié = 5 500 € / unité
+			Pétrole purifié = 9 500 € / unité
+			Methemphetamine = 5 500 € / unité
+			Methemphetamine Pure = 9 500 € / unité
+			Feuille de tabac = 5 500 € / unité
+			Cigare = 9 500 € / unité
+			Uranium illégal = 10 000 € / unité
+			Viande de chien cru = 2 500 € / unité
+			Viande de chien cuisinée = 2 500 € / unité
+			Menottes = 10 000 € / unité
+			Clé de menottes = 5 000 € / unité
+			Organe = 5 000 € / unité
 		"
 	]
 ];

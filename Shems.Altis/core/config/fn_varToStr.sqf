@@ -46,15 +46,15 @@ switch _var do
 	case "life_inv_spikeStrip": {"Herse"};
 	case "life_inv_rock": {"Pierre"};
 	case "life_inv_cement": {"Ciment"};
-	case "life_inv_goldbar": {"Lingo d'or"};
-	case "life_inv_blastingcharge": {"Charges d'explosifs"};
+	case "life_inv_goldbar": {"Lingot d'or"};
+	case "life_inv_blastingcharge": {"Charge explosive"};
 	case "life_inv_boltcutter": {"Pince coupante"};
 	case "life_inv_defusekit": {"Desamorceur"};
 	case "life_inv_storagesmall": {"Petit coffre"};
 	case "life_inv_storagebig": {"Grand coffre"};
 	case "life_inv_kidney": {"Organe"};
-	case "life_inv_methu": {"Feuille de Meth"};
-	case "life_inv_methp": {"Meth Pure"};
+	case "life_inv_methu": {"Methemphetamine"};
+	case "life_inv_methp": {"Methemphetamine Pure"};
 	case "life_inv_tabac": {"Feuille de Tabac"};
 	case "life_inv_cigare": {"Cigare"};
 	case "life_inv_puranium": {"Produit Uranium"};
@@ -100,7 +100,7 @@ switch _var do
 	case "life_inv_debitcard": {"Carte de débit"};
 	case "life_inv_underwatercharge": {"Charge sous marine"};
 	case "life_inv_handcuffs": {"Menottes"};
-	case "life_inv_handcuffkeys": {"Clés de menottes"};
+	case "life_inv_handcuffkeys": {"Clé de menottes"};
 
 	case "license_civ_driver": {"Permis de conduire"};
 	case "license_civ_air": {"Permis aérien"};

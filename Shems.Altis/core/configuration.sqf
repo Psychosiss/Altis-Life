@@ -307,101 +307,108 @@ life_dp_points = ["dp_1","dp_2","dp_3","dp_4","dp_5","dp_6","dp_7","dp_8","dp_9"
 
 life_illegal_items = 
 [
-	["heroinu",1200],
-	["heroinp",2500],
-	["cocaine",1500],
-	["cocainep",3500],
-	["marijuana",2000],
-	["turtle",3000],
-	["blastingcharge",10000],
-	["boltcutter",500],
-	["kidney",5000],
-	["methu",400],
-	["methp",4000],
-	["tabac",5000],
-	["cigare",9500],
-	["ipuranium",10000],
-	["dog",2500],
-	["dogp",2500],
-	["handcuffs",200],
-	["handcuffkeys",100]
+	["goldbar",150000],
+	["heroinu",1875],
+	["heroinp",3750],
+	["cocaine",2500],
+	["cocainep",5000],
+	["cannabis",1750],
+	["marijuana",3500],
+	["turtle",7000],
+	["blastingcharge",125000],
+	["boltcutter",50000],
+	["oil_u",5500],
+	["oil_p",9500],
+	["methu",5500],
+	["methp",9500],
+	["tabac",5500], // --- TODO : search a price
+	["cigare",9500], // --- TODO : search a price
+	["ipuranium",10000], // --- TODO : search a price
+	["dog",2500], // --- TODO : search a price
+	["dogp",2500], // --- TODO : search a price
+	["handcuffs",10000],
+	["handcuffkeys",5000] // --- TODO : search a price
+	["kidney",5000], // --- TODO : search a price
 ];
 
 sell_array = 
 [
 	["apple",50],
-	["heroinu",1850],
-	["heroinp",3650],
-	["salema",45],
-	["ornate",40],
-	["mackerel",175],
-	["tuna",700],
-	["mullet",250],
 	["catshark",300],
-	["oilp",3200],
-	["turtle",3000],
-	["water",5],
-	["burgers",175],
-	["frites",150],
-	["pizza",200],
-	["coffee",5],
-	["turtlesoup",1000],
-	["donuts",60],
-	["marijuana",5350],
-	["tbacon",25],
-	["lockpick",75],
-	["pickaxe",750],
-	["redgull",200],
-	["peach",55],
-	["cocaine",3000],
-	["cocainep",8750],
-	["diamond",750],
-	["diamondc",4000],
-	["iron_r",3275],
-	["copper_r",2500],
-	["salt_r",1650],
-	["glass",1450],
+	["cement",2250],
+	//["methu",400],
+	["methp",12000],
+	//["cocaine",3000],
+	["cocainep",10000],
+	["copper_r",2250],
+	//["diamond",750],
+	["diamondc",3000],
+	//["fuelE",0],
 	["fuelF",500],
-	["spikeStrip",1200],
-	["cement",1950],
-	["goldbar",95000],
-	["methu",400],
-	["methp",4000],
-	["tabac",5000],
-	["cigare",7600],
-	["uranium",35000],
-	["skull",750],
-	["skullp",1500],
-	["nitro",5000],
-	["kidney",50000],
-	["gpstracker",500],
-	["scalpel",100],
-	["silver_r",2100],
-	["pressluft",5000],
-	["speedbomb",500000],
-	["campfire",3000],
-	["painkillers",50],
-	["tent1",9000],
-	["tent2",10000],
-	["skinningknife",1000],
-	["dog",3000],
-	["goat",2000],
-	["chicken",2500],
-	["sheep",2000],
-	["snake",850],
-	["rabbit",800],
-	["dogp",14000],
-	["goatp",8000],
-	["chickenp",9000],
-	["sheepp",8000],
-	["snakep",1900],
-	["rabbitp",1800],
-	["vammo",10000],
-	["adrenalineShot",5000],
-	["debitcard",2500],
-	["underwatercharge",5000],
-	["handcuffs",200],
-    ["handcuffkeys",100]
+	["glass",2800],
+	["goldbar",260000],
+	//["heroinu",1850],
+	["heroinp",8000],
+	["iron_r",2600],
+	["lockpick",75], // --- TODO : edit the price
+	["mackerel",170],
+	["marijuana",7000],
+	["mullet",250],
+	["oilp",9500],
+	["ornate",50],
+	["peach",50],
+	["pickaxe",750], // --- TODO : edit the price
+	["rabbit",800], // --- TODO : edit the price
+	["redgull",200], // --- TODO : edit the price
+	["salema",50],
+	["salt_r",2700],
+	["silver_r",3000],
+	["spikeStrip",1200], // --- TODO : edit the price
+	["storagebig",0], // --- TODO : edit the price
+	["storagesmall",0], // --- TODO : edit the price
+	["tbacon",25], // --- TODO : edit the price
+	["tuna",700], // --- TODO : edit the price
+	["turtle",15000],
+	["water",5], // --- TODO : edit the price
+	["burgers",175], // --- TODO : edit the price
+	["frites",150], // --- TODO : edit the price
+	["pizza",200], // --- TODO : edit the price
+	["coffee",5], // --- TODO : edit the price
+	["turtlesoup",1000],
+	["donuts",60], // --- TODO : edit the price
+	["tabac",5000], // --- TODO : edit the price
+	["cigare",7600], // --- TODO : edit the price
+	["uranium",35000], // --- TODO : edit the price
+	["skull",750], // --- TODO : edit the price
+	["skullp",1500], // --- TODO : edit the price
+	["nitro",5000], // --- TODO : edit the price
+	["kidney",50000], // --- TODO : edit the price
+	["gpstracker",500], // --- TODO : edit the price
+	["scalpel",100], // --- TODO : edit the price
+	["pressluft",5000], // --- TODO : edit the price
+	["speedbomb",500000], // --- TODO : edit the price
+	["campfire",3000], // --- TODO : edit the price
+	["painkillers",50], // --- TODO : edit the price
+	["tent1",9000], // --- TODO : edit the price
+	["tent2",10000], // --- TODO : edit the price
+	["skinningknife",1000], // --- TODO : edit the price
+	["dog",3000], // --- TODO : edit the price
+	["goat",2000], // --- TODO : edit the price
+	["chicken",2500], // --- TODO : edit the price
+	["sheep",2000], // --- TODO : edit the price
+	["snake",850], // --- TODO : edit the price
+	["dogp",14000], // --- TODO : edit the price
+	["goatp",8000], // --- TODO : edit the price
+	["chickenp",9000], // --- TODO : edit the price
+	["sheepp",8000], // --- TODO : edit the price
+	["snakep",1900], // --- TODO : edit the price
+	["rabbitp",1800], // --- TODO : edit the price
+	["vammo",10000], // --- TODO : edit the price
+	["adrenalineShot",5000], // --- TODO : edit the price
+	["debitcard",2500], // --- TODO : edit the price
+	["underwatercharge",5000], // --- TODO : edit the price
+	["handcuffs",200], // --- TODO : edit the price
+    ["handcuffkeys",100] // --- TODO : edit the price
 ];
 //sell_array = compileFinal (if(typeName sell_array == "STRING") then {sell_array} else {str(sell_array)});
 
