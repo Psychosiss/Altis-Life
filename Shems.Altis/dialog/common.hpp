@@ -75,18 +75,18 @@ class Life_RscControlsGroup
 	h = 1;
 	shadow = 0;
 	style = 16;
-	
+
 	class VScrollBar : Life_RscScrollBar
 	{
 		width = 0.021;
 		autoScrollEnabled = 1;
 	};
-	
+
 	class HScrollBar : Life_RscScrollBar
 	{
 		height = 0.028;
 	};
-	
+
 	class Controls {};
 };
 
@@ -150,28 +150,30 @@ class Life_RscListNBox
 	class ScrollBar: Life_RscScrollBar{};
 };
 
-class Life_RscText 
+class Life_RscText
 {
+	access = 0;
+	type = 0;
+	text = "";
 	x = 0;
 	y = 0;
 	h = 0.037;
 	w = 0.3;
-	type = 0;
 	style = 0;
 	shadow = 1;
-	colorShadow[] = {0, 0, 0, 0.5};
+	colorShadow[] = {0,0,0,0.5};
 	font = "PuristaMedium";
-	SizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
-	text = "";
-	colorText[] = {1, 1, 1, 1.0};
-	colorBackground[] = {0, 0, 0, 0};
+	SizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)* 1)";
+	colorText[] = {1,1,1,1.0};
+	colorBackground[] = {0,0,0,0};
 	linespacing = 1;
 	tooltipColorText[] = {1,1,1,1};
 	tooltipColorBox[] = {1,1,1,1};
 	tooltipColorShade[] = {0,0,0,0.65};
 };
 
-class Life_RscLine : Life_RscText {
+class Life_RscLine : Life_RscText 
+{
 	idc = -1;
 	style = 176;
 	x = 0.17;
@@ -183,7 +185,8 @@ class Life_RscLine : Life_RscText {
 	colorText[] = {1, 1, 1, 1.0};
 };
 
-class Life_RscTree {
+class Life_RscTree 
+{
 	style = 2;
 	font = "PuristaMedium";
 	sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8)";
@@ -198,7 +201,8 @@ class Life_RscTree {
 	borderSize = 0;
 };
 
-class Life_RscTitle : Life_RscText {
+class Life_RscTitle : Life_RscText 
+{
 	style = 0;
 	sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 	colorText[] = {0.95,0.95,0.95,1};
@@ -228,9 +232,57 @@ class Life_RscTextMulti : Life_RscText
 	style = 0 + 16 + 0x200;
 };
 
-class Life_RscPictureKeepAspect : Life_RscPicture 
+class Life_RscActiveText 
 {
-	style = 0x30 + 0x800;
+	access = 0;
+	default = 0;
+    type = 11;
+	idc = -1;
+    style = 0;
+    x = 0;
+    y = 0;
+    //h = 0.037;
+    //w = 0.3;
+	h = 0.035;
+	w = 0.035;
+    //sizeEx = 0.040;
+	sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)* 1)";
+    //font = "PuristaLight";
+	font = "PuristaMedium";
+    //color[] = {1,1,1,1};
+	color[] = {0,0,0,1};
+	colorText[] = {0,0,0,1};
+	colorActive[] = {0.3,0.4,0,1};
+	tooltipColorText[] = {1,1,1,1};
+	tooltipColorBox[] = {1,1,1,1};
+	tooltipColorShade[] = {0,0,0,0.65};
+	soundClick[] = {"",0.1,1};
+	soundEnter[] = {"",0.1,1};
+	soundEscape[] = {"",0.1,1};
+	soundPush[] = {"",0.1,1};
+    //colorActive[] = {1,0.2,0.2,1};
+	//soundEnter[] = {"\A3\ui_f\data\sound\onover",0.09,1};
+	//soundPush[] = {"\A3\ui_f\data\sound\new1",0.0,0};
+	//soundClick[] = {"\A3\ui_f\data\sound\onclick",0.07,1};
+	//soundEscape[] = {"\A3\ui_f\data\sound\onescape",0.09,1};
+	action = "";
+	text = "";
+	//tooltipColorText[] = {1,1,1,1};
+	//tooltipColorBox[] = {1,1,1,1};
+	//tooltipColorShade[] = {0,0,0,0.65};
+};
+
+class Life_RscActivePicture: Life_RscActiveText
+{
+	style = 48;
+	color[] = {1,1,1,0.5};
+	colorActive[] = {1,1,1,1};
+};
+
+class Life_RscPictureKeepAspect : /*Life_RscPicture*/ Life_RscActivePicture 
+{
+	//style = 0x30 + 0x800;
+	style = "0x30 + 0x800";
 };
 
 class Life_RscStructuredText 
@@ -253,30 +305,6 @@ class Life_RscStructuredText
 		align = "left";
 		shadow = 1;
 	};
-};
-
-class Life_RscActiveText 
-{
-idc = -1;
-    type = 11;
-    style = 0;
-    x = 0;
-    y = 0;
-    h = 0.037;
-    w = 0.3;
-    sizeEx = 0.040;
-    font = "PuristaLight";
-    color[] = {1,1,1,1};
-    colorActive[] = {1, 0.2, 0.2, 1};
-    soundEnter[] = {"\A3\ui_f\data\sound\onover", 0.09, 1};
-    soundPush[] = {"\A3\ui_f\data\sound\new1", 0.0, 0};
-    soundClick[] = {"\A3\ui_f\data\sound\onclick", 0.07, 1};
-    soundEscape[] = {"\A3\ui_f\data\sound\onescape", 0.09, 1};
-    action = "";
-    text = "";
-	tooltipColorText[] = {1,1,1,1};
-	tooltipColorBox[] = {1,1,1,1};
-	tooltipColorShade[] = {0,0,0,0.65};
 };
 
 class Life_RscButton 
