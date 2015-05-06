@@ -146,8 +146,8 @@ class Life_RscListNBox
 	drawSideArrows = 0;
 	idcLeft = -1;
 	idcRight = -1;
-	class ListScrollBar: Life_RscScrollBar{};
-	class ScrollBar: Life_RscScrollBar{};
+	class ListScrollBar: Life_RscScrollBar {};
+	class ScrollBar: Life_RscScrollBar {};
 };
 
 class Life_RscText
@@ -181,8 +181,8 @@ class Life_RscLine : Life_RscText
 	w = 0.66;
 	h = 0;
 	text = "";
-	colorBackground[] = {0, 0, 0, 0};
-	colorText[] = {1, 1, 1, 1.0};
+	colorBackground[] = {0,0,0,0};
+	colorText[] = {1,1,1,1};
 };
 
 class Life_RscTree 
@@ -194,10 +194,10 @@ class Life_RscTree
 	hiddenTexture = "A3\ui_f\data\gui\Rsccommon\Rsctree\hiddenTexture_ca.paa";
 	rowHeight = 0.0439091;
 	color[] = {1,1,1,1};
-	colorSelect[] = {0.7, 0.7, 0.7, 1};
-	colorBackground[] = {0, 0, 0, 0};
-	colorSelectBackground[] = {0, 0, 0, 0.5};
-	colorBorder[] = {0, 0, 0, 0};
+	colorSelect[] = {0.7,0.7,0.7,1};
+	colorBackground[] = {0,0,0,0};
+	colorSelectBackground[] = {0,0,0,0.5};
+	colorBorder[] = {0,0,0,0};
 	borderSize = 0;
 };
 
@@ -267,9 +267,6 @@ class Life_RscActiveText
 	//soundEscape[] = {"\A3\ui_f\data\sound\onescape",0.09,1};
 	action = "";
 	text = "";
-	//tooltipColorText[] = {1,1,1,1};
-	//tooltipColorBox[] = {1,1,1,1};
-	//tooltipColorShade[] = {0,0,0,0.65};
 };
 
 class Life_RscActivePicture: Life_RscActiveText
@@ -568,17 +565,22 @@ class Life_RscCheckbox
 
 class Life_RscProgress 
 {
+	access = 0;
 	type = 8;
 	style = 0;
 	x = 0.344;
 	y = 0.619;
-	w = 0.313726;
+	//w = 0.313726;
+	w = 0.3137255;
 	h = 0.0261438;
-	texture = "";
+	//texture = "";
+	texture = "#(argb,8,8,3)color(1,1,1,1)";
 	shadow = 2;
-	colorFrame[] = {0,0,0,1};
+	//colorFrame[] = {0,0,0,1};
+	colorFrame[] = {0,0,0,0};
 	colorBackground[] = {0,0,0,0.7};
-	colorBar[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
+	//colorBar[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
+	colorBar[] = {"(profilenamespace getVariable ['GUI_BCG_RGB_R',0.77])","(profilenamespace getVariable ['GUI_BCG_RGB_G',0.51])","(profilenamespace getVariable ['GUI_BCG_RGB_B',0.08])","(profilenamespace getVariable [ 'GUI_BCG_RGB_A',0.8])"};
 };
 
 class Life_RscListBox 
