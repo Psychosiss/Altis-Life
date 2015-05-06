@@ -2,9 +2,9 @@ private["_group","_hideout","_action","_cpRate","_cP","_progressBar","_title","_
 _hideout = (nearestObjects[getPosATL player,["Land_u_Barracks_V2_F","Land_i_Barracks_V2_F"],25]) select 0;
 _group = _hideout getVariable ["gangOwner",grpNull];
 
-if(isNil {group player getVariable "gang_name"}) exitWith {titleText["You must create a gang first before capturing it!","PLAIN"];};
-if(_group == group player) exitWith {titleText["Your gang already has control over this hideout!","PLAIN"]};
-if((_hideout getVariable ["inCapture",false])) exitWith {hint"Only one person shall capture at once";};
+if(isNil {group player getVariable "gang_name"}) exitWith {titleText["Vous devrez créer un gang avant de prendre cette planque!","PLAIN"];};
+if(_group == group player) exitWith {titleText["Votre gang possède déjà cette planque!","PLAIN"]};
+if((_hideout getVariable ["inCapture",false])) exitWith {hint "Une seul personnes peut capturé cette planque.";};
 if(!isNull _group) then 
 {
 	_gangName = _group getVariable ["gang_name",""];
@@ -96,8 +96,8 @@ if((player getVariable["Restrained",false])) exitWith
 
 if(life_interrupted) exitWith 
 {
-	life_interrupted = false; 
-	titleText["Action annulé","PLAIN"]; 
+	life_interrupted = false;
+	titleText["Action annulé","PLAIN"];
 	life_action_inUse = false;
 	_hideout setVariable["inCapture",false,true];
 	_ui = "StatusBar" call BIS_fnc_rscLayer;
@@ -120,7 +120,7 @@ _flagTexture =
 ] call BIS_fnc_selectRandom;
 
 _this select 0 setFlagTexture _flagTexture;
-[[[0,1],"%1 et son gang: %2 ont pris le contrôle d'une planque locale.",true,[name player,(group player) getVariable "gang_name"]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+[[[0,1],"%1 et son gang %2 ont pris le contrôle d'une planque locale.",true,[name player,(group player) getVariable "gang_name"]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 _hideout setVariable["inCapture",false,true];
 _hideout setVariable["gangOwner",group player,true];
 _ui = "StatusBar" call BIS_fnc_rscLayer;

@@ -132,8 +132,9 @@ life_dynMarket_boughtItems = [];
 [] execVM "core\chatEvents\init.sqf";
 [] execVM "scripts\IgiLoadinit.sqf";
 
-
 life_paycheck = compileFinal (if(typeName life_paycheck == "STRING") then {life_paycheck} else {str(life_paycheck)});
 life_taxes = compileFinal (if(typeName life_taxes == "STRING") then {life_taxes} else {str(life_taxes)});
 player enableFatigue ((call life_enableFatigue));
 [[getPlayerUID player,player getVariable["realname",name player]],"life_fnc_wantedProfUpdate",false,false] spawn life_fnc_MP;
+
+life_init = true;
