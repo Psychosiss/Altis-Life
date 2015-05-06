@@ -9,7 +9,7 @@ author = "Tonic & Shems";
 onLoadName = "Altis Life";
 onLoadMission = "";
 loadScreen = "";
-joinUnassigned = 1; //--- Edited : 03/05/15 at 00:39 AM | Default 0
+joinUnassigned = 1;                             //--- Edited : 03/05/15 at 00:39 AM | Default 0
 
 respawn = BASE;
 respawnDelay = 2;
@@ -17,7 +17,7 @@ respawnDelay = 2;
 disabledAI = true;
 disableChannels[]={0,1,2};
 enableDebugConsole = 0;
-allowFunctionsLog = 1; //--- Added : 03/05/15 at 00:39 AM
+allowFunctionsLog = 1;                          //--- Added : 03/05/15 at 00:39 AM
 
 corpseManagerMode = 0;
 wreckManagerMode = 0;
@@ -84,9 +84,10 @@ class RscTitles
 	#include "dialog\progress.hpp"
 	#include "dialog\statusBar.hpp"
 	#include "dialog\slotmachine.hpp"
-	#include "dialog\RscHUD.hpp"
+	#include "dialog\RscHUD.hpp"                // --- Replace ui.hpp
 	#include "dialog\RscSoundStatus.hpp"
 	#include "dialog\RscNameTags.hpp"
+	#include "dialog\RscActionProgress.hpp"     // --- Replace progress.hpp
 };
 
 class CfgFunctions

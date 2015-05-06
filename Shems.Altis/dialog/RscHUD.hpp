@@ -4,6 +4,9 @@ class Life_RscHUD
 	fadein = 0;
 	fadeout = 0;
 	duration = 1e+011;
+	scriptName = "life_RscHUD";
+	scriptPath = "GUI";
+	scriptIsInternal = 1;
 	onLoad = "[_this,""RscHUD"",true] call life_fnc_initDisplay";
 
 	class Controls
