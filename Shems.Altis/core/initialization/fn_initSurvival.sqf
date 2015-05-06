@@ -16,7 +16,7 @@ if (_enable) then
 		#define THIRST_DELTA TIME_DELTA * (100 / THIRST_TIME)
 
 		private	["_speed","_hunger","_thirst","_death","_exit"];
-		_exit = false
+		_exit = false;
 		life_hunger = 100;
 		life_thirst = 100;
 
