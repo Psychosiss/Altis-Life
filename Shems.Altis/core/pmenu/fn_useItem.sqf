@@ -6,7 +6,7 @@ _item = lbData[2005,(lbCurSel 2005)];
 
 switch true do
 {
-	case (_item in ["water","coffee"]): 
+	case (_item in ["water","coffee","kfc_pepsi"]): 
 	{
 		if(([false,_item,1] call life_fnc_handleInv)) then
 		{
@@ -61,7 +61,7 @@ switch true do
 			{
 				playSound "drink";
 				life_redgull_effect = time;
-				titleText["Tu peux courrir comme un fou pendant 5 minutes ! Pas le temps de niaiser","PLAIN"];
+				titleText["Redbull ne donne pas des ailes, désolé. Tu peux courrir 5 minutes","PLAIN"];
 				player enableFatigue false;
 				waitUntil {!alive player OR ((time - life_redgull_effect) > (5 * 60))};
 				player enableFatigue true;
@@ -109,7 +109,7 @@ switch true do
 		[cursorTarget] spawn life_fnc_gpsTracker;
 	};
 
-	case (_item in ["apple","salema","ornate","mackerel","tuna","mullet","catshark","turtle","turtlesoup","donuts","tbacon","peach","burgers","pizza","frites","chickenp","dogp","sheepp","goatp","rabbitp","snakep"]):
+	case (_item in ["apple","salema","ornate","mackerel","tuna","mullet","catshark","turtle","turtlesoup","donuts","tbacon","peach","burgers","pizza","frites","chickenp","dogp","sheepp","goatp","rabbitp","snakep","kfc_popcorn","kfc_wings","kfc_bucket"]):
 	{
 		[_item] call life_fnc_eatFood;
 		playSound "eat";
@@ -191,6 +191,22 @@ switch true do
 				shipWeapons = true;
 				publicVariableServer "shipWeapons";
 			};
+		};
+	};
+  
+   	case (_item == "team_red"):
+	{
+		if(([false,_item,1] call life_fnc_handleInv)) then
+		{
+			[] spawn life_fnc_redTeam;
+		};
+	};
+
+	case (_item == "team_blue"):
+	{
+		if(([false,_item,1] call life_fnc_handleInv)) then
+		{
+			[] spawn life_fnc_blueTeam;
 		};
 	};
 

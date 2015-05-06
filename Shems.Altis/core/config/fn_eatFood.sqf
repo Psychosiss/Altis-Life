@@ -24,9 +24,17 @@ if([false,_food,1] call life_fnc_handleInv) then
 		case "chickenp": {_val = 20};
 		case "rabbitp":{ _val = 20};
 		case "dogp": {_val = 30};
+		case "kfc_popcorn": {_val = 20};
+		case "kfc_wings": {_val = 50};
+		case "kfc_bucket": {_val = 100};
 	};
 
 	_sum = life_hunger + _val;
-	if(_sum > 100) then {_sum = 100; player setFatigue 1; hint "Vous avez trop mangé ! Vous vous sentez maintenant fatigué.";};
+	if(_sum > 100) then 
+	{
+		_sum = 100; 
+		player setFatigue 1; 
+		hint "Vous avez trop mangé ! Vous vous sentez maintenant balonné.";
+	};
 	life_hunger = _sum;
 };

@@ -4,7 +4,7 @@ if(_shop == "") exitWith {[]};
 _return = [];
 
 /*
-if ("life_donator" call GTA_fnc_const > 0) then 
+if (life_donator > 0) then 
 {
 	{
 		_x set [1, ( _x select 1 ) / 2];
@@ -16,19 +16,14 @@ switch _shop do
 {
 	case "kart_shop":
 	{
-		_return pushBack ["C_Kart_01_Blu_F",150000],
-		_return pushBack ["C_Kart_01_Fuel_F",150000],
-		_return pushBack ["C_Kart_01_Red_F",150000],
-		_return pushBack ["C_Kart_01_Vrana_F",150000]
+		_return pushBack ["C_Kart_01_Blu_F",150000];
+		_return pushBack ["C_Kart_01_Fuel_F",150000];
+		_return pushBack ["C_Kart_01_Red_F",150000];
+		_return pushBack ["C_Kart_01_Vrana_F",150000];
 	};
 
 	case "med_shop":
 	{
-		/*_return pushBack ["C_Offroad_01_F",7000],
-		_return pushBack ["I_Truck_02_medical_F",25000],
-		_return pushBack ["O_Truck_03_medical_F",45000],
-		_return pushBack ["B_Truck_01_medical_F",60000],
-		_return pushBack ["C_SUV_01_F",15000]*/
 		_return pushBack ["C_SUV_01_F",0];
 		_return pushBack ["C_Hatchback_01_F",0];
 		_return pushBack ["C_Van_01_box_F",0];
@@ -40,19 +35,11 @@ switch _shop do
 	
 	case "med_air_hs": 
 	{
-		/*_return pushBack ["B_Heli_Light_01_F",50000],
-		_return pushBack ["O_Heli_Light_02_unarmed_F",75000],
-		_return pushBack ["O_Heli_Transport_04_medevac_F",125000]*/
 		if (life_med_level >= 2) then 
 		{
 			_return pushBack ["O_Heli_Light_02_unarmed_F",0];
 			_return pushBack ["C_Heli_Light_01_civil_F",0];
 		};	
-	};
-
-	case "med_boat":
-	{
-		//_return pushBack ["C_Boat_Civil_01_rescue_F",10000];
 	};
 
 	case "civ_car":
@@ -64,7 +51,6 @@ switch _shop do
 		_return pushBack ["C_Van_01_transport_F",68000];
 	};
 
-	// To add
 	case "event_derby":
 	{
 		_return pushBack ["B_Quadbike_01_F",0];

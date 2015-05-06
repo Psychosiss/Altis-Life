@@ -101,6 +101,12 @@ switch _var do
 	case "life_inv_underwatercharge": {"Charge sous marine"};
 	case "life_inv_handcuffs": {"Menottes"};
 	case "life_inv_handcuffkeys": {"Clé de menottes"};
+	case "life_inv_team_red": {"Equipe Rouge"};
+	case "life_inv_team_blue": {"Equipe Bleu"};
+	case "life_inv_kfc_popcorn": {"Popcorn au poulet"};
+	case "life_inv_kfc_wings": {"Ailes de poulet épicées"};
+	case "life_inv_kfc_bucket": {"Sceau de poulet"};
+	case "life_inv_kfc_pepsi": {"Pepsi"};
 
 	case "license_civ_driver": {"Permis de conduire"};
 	case "license_civ_air": {"Permis aérien"};
@@ -133,4 +139,5 @@ switch _var do
 	case "license_cop_tfu": {"Tactical Firearms Unit Membership"};
 	case "license_civ_press": {"Dan Daily News"};
 	case "license_civ_jet": {"Jet License"};
+	case "license_civ_event": {"Autorisation d'évènement"};
 };

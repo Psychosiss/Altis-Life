@@ -23,6 +23,11 @@ switch _item do
 	case "frites": {1};
 	case "handcuffs": {1};
 	case "handcuffkeys": {1};
+	case "team_red": {1};
+	case "team_blue": {1};
+	case "kfc_popcorn": {1};
+	case "kfc_pepsi": {1};
+	case "kfc_wings": {2};
 	case "salema": {2};
 	case "ornate": {2};
 	case "fishing": {2};
@@ -42,6 +47,7 @@ switch _item do
 	case "goatp": {2};
 	case "sheepp": {2};
 	case "chickenp": {2};
+	case "kfc_bucket": {3};
 	case "copper_r": {3};
 	case "iron_r": {3};
 	case "sand": {3};

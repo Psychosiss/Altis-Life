@@ -107,6 +107,12 @@ switch _mode do
 			case "underwatercharge": {"life_inv_underwatercharge"};
 			case "handcuffs": {"life_inv_handcuffs"};
 			case "handcuffkeys": {"life_inv_handcuffkeys"};
+			case "team_red": {"life_inv_team_red"};
+			case "team_blue": {"life_inv_team_blue"};
+			case "kfc_popcorn": {"life_inv_kfc_popcorn"};
+			case "kfc_wings": {"life_inv_kfc_wings"};
+			case "kfc_bucket": {"life_inv_kfc_bucket"};
+			case "kfc_pepsi": {"life_inv_kfc_pepsi"};
 		};
 	};
 
@@ -212,6 +218,12 @@ switch _mode do
 			case "life_inv_underwatercharge": {"underwatercharge"};
 			case "life_inv_handcuffs": {"handcuffs"};
             case "life_inv_handcuffkeys": {"handcuffkeys"};
+			case "life_inv_team_red": {"team_red"};
+			case "life_inv_team_blue": {"team_blue"};
+			case "life_inv_kfc_popcorn": {"kfc_popcorn"};
+			case "life_inv_kfc_wings": {"kfc_wings"};
+			case "life_inv_kfc_bucket": {"kfc_bucket"};
+			case "life_inv_kfc_pepsi": {"kfc_pepsi"};
 		};
 	};
 };

@@ -47,6 +47,7 @@ switch _mode do
 			case "jet": {_var = "license_civ_jet"};
 			case "press": {_var = "license_civ_press"};
 			case "tfu": {_var = "license_cop_tfu"};
+			case "event": {_var = "license_civ_event"};
 			default {_var = ""};
 		};
 	};
@@ -93,6 +94,7 @@ switch _mode do
 			case "license_civ_jet": {_var = "jet"};
 			case "license_civ_press": {_var = "press"};
 			case "license_cop_tfu": {_var = "tfu"};
+			case "license_civ_event": {_var = "event"};
 			default {_var = ""};
 		};
 	};
