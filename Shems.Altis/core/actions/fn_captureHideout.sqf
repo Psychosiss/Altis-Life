@@ -53,26 +53,9 @@ while {true} do
 	_progressBar progressSetPosition _cP;
 	_titleText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_title];
 	_hideout setVariable["inCapture",true,true];
-	if(_cP >= 1 OR !alive player) exitWith 
-	{
-		_hideout setVariable["inCapture",false,true];
-		_ui = "StatusBar" call BIS_fnc_rscLayer;
-		_ui cutRsc["StatusBar","PLAIN"];
-	};
-
-	if(life_istazed) exitWith 
-	{
-		_hideout setVariable["inCapture",false,true];
-		_ui = "StatusBar" call BIS_fnc_rscLayer;
-		_ui cutRsc["StatusBar","PLAIN"];
-	};
-
-	if(life_interrupted) exitWith 
-	{
-		_hideout setVariable["inCapture",false,true];
-		_ui = "osefStatusBar" call BIS_fnc_rscLayer;
-		_ui cutRsc["osefStatusBar","PLAIN"];
-	};
+	if(_cP >= 1 OR !alive player) exitWith {_hideout setVariable["inCapture",false,true];};
+	if(life_istazed) exitWith {_hideout setVariable["inCapture",false,true];};
+	if(life_interrupted) exitWith {_hideout setVariable["inCapture",false,true];};
 };
 
 5 cutText ["","PLAIN"];
@@ -82,16 +65,12 @@ if(!alive player OR life_istazed) exitWith
 {
 	life_action_inUse = false;
 	_hideout setVariable["inCapture",false,true];
-	_ui = "StatusBar" call BIS_fnc_rscLayer;
-	_ui cutRsc["StatusBar","PLAIN"];
 };
 
 if((player getVariable["Restrained",false])) exitWith 
 {
 	life_action_inUse = false;
 	_hideout setVariable["inCapture",false,true];
-	_ui = "StatusBar" call BIS_fnc_rscLayer;
-	_ui cutRsc["StatusBar","PLAIN"];
 };
 
 if(life_interrupted) exitWith 
@@ -100,8 +79,6 @@ if(life_interrupted) exitWith
 	titleText["Action annulé","PLAIN"];
 	life_action_inUse = false;
 	_hideout setVariable["inCapture",false,true];
-	_ui = "StatusBar" call BIS_fnc_rscLayer;
-	_ui cutRsc["StatusBar","PLAIN"];
 };
 
 life_action_inUse = false;
@@ -123,5 +100,3 @@ _this select 0 setFlagTexture _flagTexture;
 [[[0,1],"%1 et son gang %2 ont pris le contrôle d'une planque locale.",true,[name player,(group player) getVariable "gang_name"]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 _hideout setVariable["inCapture",false,true];
 _hideout setVariable["gangOwner",group player,true];
-_ui = "StatusBar" call BIS_fnc_rscLayer;
-_ui cutRsc["StatusBar","PLAIN"];

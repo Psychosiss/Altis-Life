@@ -43,55 +43,22 @@ while {true} do
 	_progressBar progressSetPosition _cP;
 	_titleText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_title];
 	if(_cP >= 1 OR !alive player) exitWith {};
-	if(life_istazed) exitWith 
-	{
-		_ui = "StatusBar" call BIS_fnc_rscLayer;
-		_ui cutRsc["StatusBar","PLAIN"];
-	};
-
-	if(life_interrupted) exitWith 
-	{
-		_ui = "StatusBar" call BIS_fnc_rscLayer;
-		_ui cutRsc["StatusBar","PLAIN"];
-	};
-
-	if((player getVariable["Restrained",false])) exitWith 
-	{
-		_ui = "StatusBar" call BIS_fnc_rscLayer;
-		_ui cutRsc["StatusBar","PLAIN"];
-	};
-
-	if(player distance _curTarget > _distance) exitWith 
-	{
-		_badDistance = true;
-		_ui = "StatusBar" call BIS_fnc_rscLayer;
-		_ui cutRsc["StatusBar","PLAIN"];
-	};
+	if(life_istazed) exitWith {};
+	if(life_interrupted) exitWith {};
+	if((player getVariable["Restrained",false])) exitWith {};
+	if(player distance _curTarget > _distance) exitWith {_badDistance = true;};
 };
 
 5 cutText ["","PLAIN"];
 player playActionNow "stop";
 
-if(!alive player OR life_istazed) exitWith 
-{
-	life_action_inUse = false;
-	_ui = "StatusBar" call BIS_fnc_rscLayer;
-	_ui cutRsc["StatusBar","PLAIN"];
-};
-
-if((player getVariable["Restrained",false])) exitWith 
-{
-	life_action_inUse = false;
-	_ui = "StatusBar" call BIS_fnc_rscLayer;
-	_ui cutRsc["StatusBar","PLAIN"];
-};
+if(!alive player OR life_istazed) exitWith {life_action_inUse = false;};
+if((player getVariable["Restrained",false])) exitWith {life_action_inUse = false;};
 
 if(!isNil "_badDistance") exitWith 
 {
 	titleText["Vous êtes trop loin de la cible.","PLAIN"]; 
 	life_action_inUse = false;
-	_ui = "StatusBar" call BIS_fnc_rscLayer;
-	_ui cutRsc["StatusBar","PLAIN"];
 };
 
 if(life_interrupted) exitWith 
@@ -99,15 +66,11 @@ if(life_interrupted) exitWith
 	life_interrupted = false; 
 	titleText["Action annulé","PLAIN"]; 
 	life_action_inUse = false;
-	_ui = "StatusBar" call BIS_fnc_rscLayer;
-	_ui cutRsc["StatusBar","PLAIN"];
 };
 
 if(!([false,"lockpick",1] call life_fnc_handleInv)) exitWith 
 {
 	life_action_inUse = false;
-	_ui = "StatusBar" call BIS_fnc_rscLayer;
-	_ui cutRsc["StatusBar","PLAIN"];
 };
 
 life_action_inUse = false;

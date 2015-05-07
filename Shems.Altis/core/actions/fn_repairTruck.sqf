@@ -33,33 +33,10 @@ if((_veh isKindOf "Car") OR (_veh isKindOf "Ship") OR (_veh isKindOf "Air")) the
 			_cP = _cP + 0.01;
 			_progress progressSetPosition _cP;
 			_pgText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_upp];
-			//if(_cP >= 1) exitWith {};
-			//if(!alive player) exitWith {};
-			//if(player != vehicle player) exitWith {};
-			//if(life_interrupted) exitWith {};
-			if(_cP >= 1) exitWith 
-			{
-				_ui = "StatusBar" call BIS_fnc_rscLayer;
-				_ui cutRsc["StatusBar","PLAIN"];
-			};
-
-			if(!alive player) exitWith 
-			{
-				_ui = "StatusBar" call BIS_fnc_rscLayer;
-				_ui cutRsc["StatusBar","PLAIN"];
-			};
-
-			if(player != vehicle player) exitWith 
-			{
-				_ui = "StatusBar" call BIS_fnc_rscLayer;
-				_ui cutRsc["StatusBar","PLAIN"];
-			};
-
-			if(life_interrupted) exitWith 
-			{
-				_ui = "StatusBar" call BIS_fnc_rscLayer;
-				_ui cutRsc["StatusBar","PLAIN"];
-			};
+			if(_cP >= 1) exitWith {};
+			if(!alive player) exitWith {};
+			if(player != vehicle player) exitWith {};
+			if(life_interrupted) exitWith {};
 		};
 		
 		life_action_inUse = false;
@@ -72,5 +49,3 @@ if((_veh isKindOf "Car") OR (_veh isKindOf "Ship") OR (_veh isKindOf "Air")) the
 		titleText["Vous avez réparé ce vehicule.","PLAIN"];
 	};
 };
-_ui = "StatusBar" call BIS_fnc_rscLayer;
-_ui cutRsc["StatusBar","PLAIN"];

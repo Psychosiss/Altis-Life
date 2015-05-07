@@ -146,12 +146,7 @@ if(_hasLicense) then
 		_progress progressSetPosition _cP;
 		_pgText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_upp];
 		if(_cP >= 1) exitWith {};
-		//if(player distance _vendor > 10) exitWith {};
-		if(player distance _vendor > 10) exitWith 
-		{
-			_ui = "StatusBar" call BIS_fnc_rscLayer;
-			_ui cutRsc["StatusBar","PLAIN"];
-		};
+		if(player distance _vendor > 10) exitWith {};
 	};
 
 	if(player distance _vendor > 10) exitWith {hint "Vous devez rester a 10m du traitement."; 5 cutText ["","PLAIN"]; life_is_processing = false;};
@@ -160,8 +155,6 @@ if(_hasLicense) then
 	5 cutText ["","PLAIN"];
 	titleText[format["Vous avez traiter %1 en %2",_oldVal,_itemName],"PLAIN"];
 	life_is_processing = false;
-	_ui = "StatusBar" call BIS_fnc_rscLayer;
-	_ui cutRsc["StatusBar","PLAIN"];
 } else {
 	if(life_money < _cost) exitWith 
 	{
@@ -188,6 +181,4 @@ if(_hasLicense) then
 	titleText[format["Vous avez traiter %1 en %2 pour %3 €",_oldVal,_itemName,[_cost] call life_fnc_numberText],"PLAIN"];
 	life_money = life_money - _cost;
 	life_is_processing = false;
-	_ui = "StatusBar" call BIS_fnc_rscLayer;
-	_ui cutRsc["StatusBar","PLAIN"];
 };

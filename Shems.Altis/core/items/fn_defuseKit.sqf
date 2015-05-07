@@ -34,43 +34,21 @@ while {true} do
 	_cP = _cP + .0035;
 	_progressBar progressSetPosition _cP;
 	_titleText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_title];
-	if(_cP >= 1 OR !alive player) exitWith 
-	{
-		_ui = "StatusBar" call BIS_fnc_rscLayer;
-		_ui cutRsc["StatusBar","PLAIN"];
-	};
-
-	if(life_interrupted) exitWith 
-	{
-		_ui = "StatusBar" call BIS_fnc_rscLayer;
-		_ui cutRsc["StatusBar","PLAIN"];
-	};
-	//if(_cP >= 1 OR !alive player) exitWith {};
-	//if(life_interrupted) exitWith {};
+	if(_cP >= 1 OR !alive player) exitWith {};
+	if(life_interrupted) exitWith {};
 };
 
 5 cutText ["","PLAIN"];
 player playActionNow "stop";
 
-//if(!alive player) exitWith {life_action_inUse = false;};
-if(!alive player) exitWith 
-{
-	life_action_inUse = false;
-	_ui = "StatusBar" call BIS_fnc_rscLayer;
-	_ui cutRsc["StatusBar","PLAIN"];
-};
+if(!alive player) exitWith {life_action_inUse = false;};
 
 if(life_interrupted) exitWith 
 {
 	life_interrupted = false; 
 	titleText["Action annulé","PLAIN"]; 
 	life_action_inUse = false;
-	_ui = "StatusBar" call BIS_fnc_rscLayer;
-	_ui cutRsc["StatusBar","PLAIN"];
 };
-_ui = "StatusBar" call BIS_fnc_rscLayer;
-_ui cutRsc["StatusBar","PLAIN"];
-//if(life_interrupted) exitWith {life_interrupted = false; titleText["Action annulé","PLAIN"]; life_action_inUse = false;};
 
 life_action_inUse = false;
 _vault setVariable["chargeplaced",false,true];
