@@ -77,7 +77,7 @@ switch _var do
 	case "life_inv_speedbomb": {("icons\items\speedbomb.paa")};
 	//case "life_inv_pressluft": {("")};
 	//case "life_inv_campfire": {("")};
-	//case "life_inv_painkillers": {("")};
+	case "life_inv_painkillers": {("icons\items\painkillers.paa")};
 	//case "life_inv_tent1": {("")};
 	//case "life_inv_tent2": {("")};
 	//case "life_inv_dog": {("")};

@@ -10,7 +10,7 @@ class marketView
 	idd = 39500;
 	movingEnabled = false;
 	enableSimulation = true;
-	
+
 	class controlsBackground
 	{
 		class RscStructuredText_1100: RscStructuredText

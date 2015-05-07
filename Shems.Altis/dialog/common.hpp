@@ -43,7 +43,16 @@ class Life_Checkbox
 	soundEnter[] = { "\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1};
 	soundPush[] = { "\A3\ui_f\data\sound\RscButton\soundPush",0.09,1};
 	soundEscape[] = { "\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1};
+};
 
+class Life_RscVignette: Life_RscPicture
+{
+	x = "safezoneXAbs";
+	y = "safezoneY";
+	w = "safezoneWAbs";
+	h = "safezoneH";
+	text = "\A3\ui_f\data\gui\rsccommon\rscvignette\vignette_gs.paa";
+	colortext[] = {0,0,0,0.3};
 };
 
 class Life_RscScrollBar
