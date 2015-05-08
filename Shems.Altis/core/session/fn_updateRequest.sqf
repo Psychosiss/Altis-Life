@@ -9,7 +9,7 @@ diag_log format ["%1",_med_position];
 _cop_position = getPos player;
 diag_log format ["%1",_cop_position];
 
-_packet = [getPlayerUID player,(profileName),playerSide,life_money,life_atmmoney];
+_packet = [getPlayerUID player,(profileName),playerSide,life_money,life_atmmoney,life_karma];
 _array = [];
 _flag = switch playerSide do {case west: {"cop"}; case civilian: {"civ"}; case independent: {"med"};};
 {

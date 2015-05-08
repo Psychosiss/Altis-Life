@@ -1,3 +1,4 @@
+life_afkCheck = getPos player;
 life_channel_send = true;
 life_garage_store = false;
 life_net_dropped = false;
@@ -33,6 +34,7 @@ life_sex = 0;
 life_checked = 0;
 life_session_tries = 0;
 life_action_time = 0;
+life_karma = 0;
 //life_speaking_warnings = 0;
 life_fatigue = 0.5;
 life_respawn_timer = 2;
@@ -43,8 +45,6 @@ life_spikestrip = ObjNull;
 life_cursorTarget = objNull;
 life_handcuffs = ObjNull;
 life_handcuffkeys = ObjNull;
-life_copTower = ObjNull;
-life_rebWall = ObjNull;
 life_query_time = time;
 life_action_delay = time;
 life_redgull_effect = time;
@@ -264,8 +264,6 @@ life_inv_items =
 	"life_inv_underwatercharge",
 	"life_inv_handcuffs",
     "life_inv_handcuffkeys",
-	"life_inv_miltower",
-	"life_inv_rebwall",
 	"life_inv_team_red",
 	"life_inv_team_blue",
 	"life_inv_kfc_popcorn",
@@ -339,9 +337,7 @@ life_illegal_items =
 	["dogp",2500], // --- TODO : search a price
 	["handcuffs",10000],
 	["handcuffkeys",5000], // --- TODO : search a price
-	["kidney",5000], // --- TODO : search a price
-	["rebwall",2000], // --- TODO : search a price
-	["miltower",10000] // --- TODO : search a price
+	["kidney",5000] // --- TODO : search a price
 ];
 
 sell_array = 
@@ -422,8 +418,6 @@ sell_array =
 	["underwatercharge",5000], // --- TODO : edit the price
 	["handcuffs",200], // --- TODO : edit the price
     ["handcuffkeys",100], // --- TODO : edit the price
-	["miltower",0], // --- TODO : edit the price
-	["rebwall",0], // --- TODO : edit the price
 	["team_blue",0], // --- TODO : edit the price
 	["team_red",0], // --- TODO : edit the price
 	["kfc_popcorn",0], // --- TODO : edit the price
@@ -485,8 +479,6 @@ buy_array =
 	["underwatercharge",10000],
 	["handcuffs",500],
     ["handcuffkeys",300],
-	["miltower",100000], // --- TODO : edit the price
-	["rebwall",20000], // --- TODO : edit the price
 	["team_red",0], // --- TODO : edit the price
 	["team_blue",0], // --- TODO : edit the price
 	["kfc_popcorn",5],

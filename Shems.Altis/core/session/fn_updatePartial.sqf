@@ -51,7 +51,10 @@ switch _mode do
 		_packet set[4,life_atmmoney];
 	};
 
-	case 7: {};
+	case 9:
+	{
+		_packet set[2,life_karma];
+	};
 };
 
 [_packet,"DB_fnc_updatePartial",false,false] spawn life_fnc_MP;

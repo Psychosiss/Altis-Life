@@ -51,6 +51,7 @@ class CfgFunctions
 			class mresString {};
 			class updatePartial {};
 			class repaintVehicle {};
+			class insertKarma {};
 		};
 	};
 

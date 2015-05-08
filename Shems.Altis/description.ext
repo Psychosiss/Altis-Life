@@ -42,9 +42,14 @@ corpseRemovalMinTime = 999;
 corpseRemovalMaxTime = 9999;
 */
 
+#include "dialog\defineRscIncDesign.inc"
+#include "dialog\RscDisplayAdmin.hpp"
+#include "dialog\RscDisplayMessaging.hpp"
+#include "dialog\RscRevive.hpp"
+#include "dialog\RscDisplayMenu.hpp"
+#include "dialog\RscDisplaySpawnSelection.hpp"
 #include "dialog\common.hpp"
 #include "dialog\shop_items.hpp"
-#include "dialog\player_inv.hpp"
 #include "dialog\gang.hpp"
 #include "dialog\key_chain.hpp"
 #include "dialog\impound.hpp"
@@ -52,16 +57,12 @@ corpseRemovalMaxTime = 9999;
 #include "dialog\veh_shop.hpp"
 #include "dialog\shops.hpp"
 #include "dialog\ui.hpp"
-#include "dialog\admin_menu.hpp"
-#include "dialog\cell_phone.hpp"
 #include "dialog\wanted_list.hpp"
 #include "dialog\ticket.hpp"
 #include "dialog\clothing.hpp"
 #include "dialog\trunk.hpp"
-#include "dialog\spawnSelection.hpp"
 #include "dialog\chop_shop.hpp"
 #include "dialog\pInteraction.hpp"
-#include "dialog\deathScreen.hpp"
 #include "dialog\vehicleShop.hpp"
 #include "dialog\settings.hpp"
 #include "dialog\federalReserve.hpp"
@@ -81,13 +82,11 @@ corpseRemovalMaxTime = 9999;
 class RscTitles
 {
 	#include "dialog\ui.hpp"
-	#include "dialog\progress.hpp"
-	#include "dialog\statusBar.hpp"
 	#include "dialog\slotmachine.hpp"
+	#include "dialog\RscActionProgress.hpp"
 	#include "dialog\RscHUD.hpp"                // --- Replace ui.hpp
 	#include "dialog\RscSoundStatus.hpp"
 	#include "dialog\RscNameTags.hpp"
-	#include "dialog\RscActionProgress.hpp"     // --- Replace progress.hpp
 };
 
 class CfgFunctions
@@ -392,7 +391,6 @@ class CfgFunctions
 			class cursorTarget;
 			class isKindOf;
 			class repaintColor;
-			class statusBar;
 			class enableActions;
 			class voiceCheck;
 			class log;
@@ -575,6 +573,8 @@ class CfgFunctions
 			class adrenalineShot;
 			class handcuffsLockpick;
 			class carAlarmSound;
+			class blueTeam;
+			class redTeam;
 		};
 
 		class Dialog_Controls

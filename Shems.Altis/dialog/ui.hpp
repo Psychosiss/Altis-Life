@@ -15,9 +15,9 @@ class playerHUD
 		{
 			idc = 23531;
 			text = "icons\food.paa";
-			x = safeZoneX+safeZoneW-0.15; 
-			y = safeZoneY+safeZoneH-0.510;
-			w = 0.05; 
+			x = safeZoneX + safeZoneW - 0.15;
+			y = safeZoneY + safeZoneH - 0.510;
+			w = 0.05;
 			h = 0.06;
 			colorBackground[] = {0,0,0,0.5};
 		};
@@ -26,9 +26,9 @@ class playerHUD
 		{
 			idc = 23532;
 			text = "icons\water.paa";
-			x = safeZoneX+safeZoneW-0.15; 
-			y = safeZoneY+safeZoneH-0.445;
-			w = 0.05; 
+			x = safeZoneX + safeZoneW-  0.15;
+			y = safeZoneY + safeZoneH - 0.445;
+			w = 0.05;
 			h = 0.06;
 			colorBackground[] = {0,0,0,0.5};
 		};
@@ -37,9 +37,20 @@ class playerHUD
 		{
 			idc = 23533;
 			text = "icons\health.paa";
-			x = safeZoneX+safeZoneW-0.15; 
-			y = safeZoneY+safeZoneH-0.380;
-			w = 0.05; 
+			x = safeZoneX + safeZoneW - 0.15;
+			y = safeZoneY + safeZoneH - 0.380;
+			w = 0.05;
+			h = 0.06;
+			colorBackground[] = {0,0,0,0.5};
+		};
+
+		class KarmaHIcon : life_RscPicture
+		{
+			idc = 23534;
+			text = "icons\karma.paa";
+			x = safeZoneX + safeZoneW - 0.15;
+			y = safeZoneY + safeZoneH - 0.315;
+			w = 0.05;
 			h = 0.06;
 			colorBackground[] = {0,0,0,0.5};
 		};
@@ -87,6 +98,24 @@ class playerHUD
 		{
 			type=0;
 			idc=23515;
+			style=0;
+			x=-1;
+			y=-1;
+			w=0.3;
+			h=0.05;
+			sizeEx=0.03;
+			size=1;
+			font="PuristaSemibold";
+			colorBackground[] = {0,0,0,0.5};
+			colorText[] = {1,1,1,1};
+			shadow=true;
+			text="";
+		};
+
+		class karmatext
+		{
+			type=0;
+			idc=23520;
 			style=0;
 			x=-1;
 			y=-1;

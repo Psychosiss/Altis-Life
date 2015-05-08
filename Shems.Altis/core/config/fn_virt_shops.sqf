@@ -4,7 +4,7 @@ _shop = _this select 0;
 switch _shop do
 {
 	case "market": {["Marché légal d'Altis",["campfire","tent1","tent2","skinningknife","water","rabbit","burgers","frites","pizza","apple","redgull","debitcard","chicken","chickenp","snake","snakep","rabbitp","goat","goatp","sheep","sheepp","tbacon","lockpick","pickaxe","fuelF","peach","storagesmall","storagebig","gpstracker","pressluft","underwatercharge"]]};
-	case "rebel": {["Marché illégal d'Altis",["water","apple","redgull","tbacon","lockpick","pickaxe","fuelF","peach","boltcutter","blastingcharge","debitcard","vammo","painkillers","ipuranium","frites","pizza","scalpel","pressluft","painkillers","handcuffs","handcuffkeys","miltower","rebwall"]]};
+	case "rebel": {["Marché illégal d'Altis",["water","apple","redgull","tbacon","lockpick","pickaxe","fuelF","peach","boltcutter","blastingcharge","debitcard","vammo","painkillers","ipuranium","frites","pizza","scalpel","pressluft","painkillers","handcuffs","handcuffkeys"]]};
 	case "gang": {["Marché des gangs", ["water","apple","redgull","tbacon","lockpick","debitcard","pickaxe","fuelF","peach","blastingcharge","boltcutter"]]};
 	case "wongs": {["Charcuterie chinoise",["turtlesoup","turtle","dog","dogp"]]};
 	case "coffee": {["Starbuck café",["coffee","donuts","gpstracker"]]};

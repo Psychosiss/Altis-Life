@@ -7,9 +7,9 @@ if(isNull _ownerID) exitWith {};
 _ownerID = owner _ownerID;
 _query = switch _side do 
 {
-	case west: {_returnCount = 12; format["SELECT playerid, name, money, atmmoney, adminlevel, donatorlvl, cop_licenses, cop_level, cop_gear, blacklist, cop_position, alive FROM players WHERE playerid='%1'",_uid];};
-	case civilian: {_returnCount = 11; format["SELECT playerid, name, money, atmmoney, adminlevel, donatorlvl, civ_licenses, arrested, civ_gear, civ_position, alive FROM players WHERE playerid='%1'",_uid];};
-	case independent: {_returnCount = 11; format["SELECT playerid, name, money, atmmoney, adminlevel, donatorlvl, med_licenses, med_level, med_gear, med_position, alive FROM players WHERE playerid='%1'",_uid];};
+	case west: {_returnCount = 13; format["SELECT playerid, name, money, atmmoney, adminlevel, donatorlvl, cop_licenses, cop_level, cop_gear, blacklist, cop_position, alive, karma FROM players WHERE playerid='%1'",_uid];};
+	case civilian: {_returnCount = 12; format["SELECT playerid, name, money, atmmoney, adminlevel, donatorlvl, civ_licenses, arrested, civ_gear, civ_position, alive, karma FROM players WHERE playerid='%1'",_uid];};
+	case independent: {_returnCount = 12; format["SELECT playerid, name, money, atmmoney, adminlevel, donatorlvl, med_licenses, med_level, med_gear, med_position, alive, karma FROM players WHERE playerid='%1'",_uid];};
 };
 
 waitUntil{sleep (random 0.3); !DB_Async_Active};
@@ -135,6 +135,10 @@ switch _side do
 		_queryResult set[10,_new];
 	};
 };
+/*
+_tmp = _queryResult select 5;
+_queryResult set[14,[_tmp] call DB_fnc_numberSafe];
+*/
 
 _keyArr = missionNamespace getVariable [format["%1_KEYS_%2",_uid,_side],[]];
 _queryResult set[15,_keyArr]; //12

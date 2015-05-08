@@ -19,7 +19,7 @@ DELIMITER $$
 -- Procedures
 -- Edit arma3 and root to match a user in MySQL
 --
-CREATE DEFINER=`arma3`@`localhost` PROCEDURE `resetLifeVehicles`()
+CREATE DEFINER=`root`@`localhost` PROCEDURE `resetLifeVehicles`()
 BEGIN
 	UPDATE `vehicles` SET `active`= 0;
 END$$
@@ -75,7 +75,9 @@ CREATE TABLE IF NOT EXISTS `players` (
   `jail_time` int(11) NOT NULL DEFAULT '0',
   `arrested` tinyint(1) NOT NULL DEFAULT '0',
   `alive` tinyint(4) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`uid`),
+  `karma` int(100) NOT NULL DEFAULT '1',
+  `lastLogin` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`uid`,`playerid`,`lastLogin`),
   UNIQUE KEY `playerid` (`playerid`),
   KEY `name` (`name`),
   KEY `blacklist` (`blacklist`)
@@ -190,6 +192,15 @@ CREATE TABLE `wanted` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
+
+-- ----------------------------
+-- Event structure for `6WeeksPlayerDelete`
+-- ----------------------------
+DROP EVENT IF EXISTS `6WeeksPlayerDelete`;
+DELIMITER ;;
+CREATE DEFINER=`shems_life`@`localhost` EVENT `6WeeksPlayerDelete` ON SCHEDULE EVERY 1 DAY STARTS '2014-09-13 23:59:55' ON COMPLETION NOT PRESERVE ENABLE DO DELETE FROM players where lastLogin < DATE_SUB( CURRENT_TIME(), INTERVAL 6 Week)
+;;
+DELIMITER ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

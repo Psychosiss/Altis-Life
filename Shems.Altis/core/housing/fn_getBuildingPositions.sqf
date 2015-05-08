@@ -18,7 +18,8 @@ _restricted = switch(typeOf _building) do
 
 _i = 0;
 _exitLoop = false;
-while {true} do {
+while {true} do 
+{
 	if(!(_i in _restricted)) then 
 	{
 		_pos = _building buildingPos _i;

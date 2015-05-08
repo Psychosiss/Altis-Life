@@ -43,6 +43,7 @@ if (!_extDB) exitWith
 ["CALL deleteDeadVehicles",1] spawn DB_fnc_asyncCall;
 ["CALL deleteOldHouses",1] spawn DB_fnc_asyncCall;
 ["CALL deleteOldGangs",1] spawn DB_fnc_asyncCall;
+["DELETE FROM houses WHERE owned='0'",1] spawn DB_fnc_asyncCall;
 
 master_group attachTo[bank_obj,[0,0,0]];
 

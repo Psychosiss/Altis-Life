@@ -75,6 +75,7 @@ switch playerSide do
 			_handle = [] spawn life_fnc_initGang;
 			waitUntil {scriptDone _handle};
 		};
+		life_karma = parseNumber (_this select 14);
 	};
 
 	case independent: 
