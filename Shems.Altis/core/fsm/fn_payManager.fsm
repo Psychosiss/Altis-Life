@@ -1,4 +1,4 @@
-/*%FSM<COMPILE "D:\Poseidon\Data\Packages\Bin\fsmEditor\scriptedFSM.cfg, life : Pay Manager">*/
+/*%FSM<COMPILE "D:\Bohemia Interactive\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, life : Pay Manager">*/
 /*%FSM<HEAD>*/
 /*
 item0[] = {"Main_Init",0,250,-40.348839,-141.279068,49.651161,-91.279068,0.000000,"Main Init"};
