@@ -252,6 +252,8 @@ class CfgFunctions
 			class repaintVehicle;
 			class actionChairSit;
 			class actionChairStand;
+			class punchBallsAction;
+			class punchBalls;
 		};
 
 		class Config
