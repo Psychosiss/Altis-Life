@@ -27,6 +27,7 @@ switch _item do
 	case "team_blue": {1};
 	case "kfc_popcorn": {1};
 	case "kfc_pepsi": {1};
+	case "bottles": {1};
 	case "kfc_wings": {2};
 	case "salema": {2};
 	case "ornate": {2};
@@ -47,6 +48,11 @@ switch _item do
 	case "goatp": {2};
 	case "sheepp": {2};
 	case "chickenp": {2};
+	case "rye": {2};
+	case "hops": {2};
+	case "yeast": {2};
+	case "cornmeal": {2};
+	case "mash": {2};
 	case "kfc_bucket": {3};
 	case "copper_r": {3};
 	case "iron_r": {3};
@@ -70,6 +76,12 @@ switch _item do
 	case "uranium3": {4};
 	case "uranium4": {4};
 	case "uranium": {4};
+	case "whiskey": {4};
+	case "beerp": {4};
+	case "moonshine": {5};
+	case "bottledwhiskey": {5};
+	case "bottledbeer": {5};
+	case "bottledshine": {5};
 	case "fuelF": {5};
 	case "ironore": {5};
 	case "cement": {5};

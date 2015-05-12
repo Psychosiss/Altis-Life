@@ -5,39 +5,98 @@
 DB_Async_Active = false;
 DB_Async_ExtraLock = false;
 life_server_isReady = false;
-publicVariable "life_server_isReady";
+life_server_extDB_notLoaded = "";
 serv_sv_use = [];
-
-_extDB = false;
+publicVariable "life_server_isReady";
 
 if(isNil {uiNamespace getVariable "life_sql_id"}) then 
 {
 	life_sql_id = round(random(9999));
 	__CONST__(life_sql_id,life_sql_id);
 	uiNamespace setVariable ["life_sql_id",life_sql_id];
-	_result = "extDB" callExtension "9:VERSION";
-	diag_log format ["extDB: Version: %1", _result];
-	if(_result == "") exitWith {};
-	if ((parseNumber _result) < 14) exitWith {diag_log "extDB: Vous devez avoir la version 14 ou + d'extDB.";};
-	_result = "extDB" callExtension "9:DATABASE:Database2";
-	if(_result != "[1]") exitWith {diag_log "extDB: Erreur de connection à la base de données.";};
-	_result = "extDB" callExtension format["9:ADD:DB_RAW_V2:%1",(call life_sql_id)];
-	if(_result != "[1]") exitWith {diag_log "extDB: Erreur de connection à la base de données.";};
-	"extDB" callExtension "9:LOCK";
-	_extDB = true;
-	diag_log "extDB: Connecté à la base de données.";
+	_result = "extDB2" callExtension "9:VERSION";
+	["diag_log",[format["extDB2: Version: %1",_result]]] call TON_fnc_logIt;
+	if(_result isEqualTo "") exitWith {diag_log "L'extension extDB2 du serveur n'a pas été trouvé, merci de le reporter à un developpeur.";};
+	if ((parseNumber _result) < 52) exitWith {diag_log "extDB2: Vous devez avoir la version 52 ou + d'extDB2.";};
+	"extDB2" callExtension "9:ADD_PROTOCOL:LOG:SPY_LOG:spyglass";
+	//_result = "extDB2" callExtension "9:DATABASE:ALTISLIFERPG";
+	_result = "extDB2" callExtension "9:ADD_DATABASE:ALTISLIFERPG";
+	if(_result != "[1]") exitWith {diag_log "extDB2: Erreur de connection à la base de données.";};
+	//_result = "extDB2" callExtension format["9:ADD:DB_RAW_V2:%1",(call life_sql_id)];
+	_result = "extDB2" callExtension format["9:ADD_DATABASE_PROTOCOL:ALTISLIFERPG:SQL_CUSTOM_V2:%1",(call life_sql_id)];
+	if(_result != "[1]") exitWith {diag_log "extDB2: Erreur de connection à la base de données.";};
+
+	if(getNumber(configFile >> "CfgServerSettings" >> "extDB" >> "LOG") isEqualTo 1) then 
+	{
+		{
+			"extDB2" callExtension format["9:ADD_PROTOCOL:LOG:%1:%2",_x select 0,_x select 1];
+			["diag_log",[format["extDB2: %1 is successfully added",_x select 0]]] call TON_fnc_logIt;
+		} forEach getArray(configFile >> "CfgServerSettings" >> "extDB" >> "LOG_Settings");
+	};
+
+	if(getNumber(configFile >> "CfgServerSettings" >> "extDB" >> "RCON") isEqualTo 1) then 
+	{
+		RCON_ID = round(random(9999));
+		RCON_ID = compileFinal (if(typeName RCON_ID == "STRING") then {RCON_ID} else {str(RCON_ID)});
+		uiNamespace setVariable ["RCON_ID",RCON_ID];
+		"extDB2" callExtension format["9:START_RCON:%1",RCON_SELECTION];
+		"extDB2" callExtension format["9:ADD:RCON:%1",(call RCON_ID)];
+		["diag_log",["extDB2: RCON est activé"]] call TON_fnc_logIt;
+	};
+
+	if(getNumber(configFile >> "CfgServerSettings" >> "extDB" >> "VAC") isEqualTo 1) then 
+	{
+		VAC_ID = round(random(9999));
+		CONSTVAR(VAC_ID);
+		uiNamespace setVariable ["VAC_ID",VAC_ID];
+		"extDB2" callExtension "9:START_VAC";
+		"extDB2" callExtension format["9:ADD_PROTOCOL:STEAM:%1",(call VAC_ID)];
+		["diag_log",["extDB2: VAC est activé"]] call TON_fnc_logIt;
+	};
+
+	if(getNumber(configFile >> "CfgServerSettings" >> "extDB" >> "MISC") isEqualTo 1) then 
+	{
+		MISC_ID = round(random(9999));
+		CONSTVAR(MISC_ID);
+		uiNamespace setVariable ["MISC_ID",MISC_ID];
+		"extDB2" callExtension format["9:ADD_PROTOCOL:MISC:%1",(call MISC_ID)];
+		["diag_log",["extDB2: MISC est activé"]] call TON_fnc_logIt;
+	};
+	"extDB2" callExtension "9:LOCK";
+	["diag_log",["extDB2: Connecté à la base de données."]] call TON_fnc_logIt;
 } else {
 	life_sql_id = uiNamespace getVariable "life_sql_id";
 	__CONST__(life_sql_id,life_sql_id);
-	diag_log "extDB: Toujours connecté à la base de données.";
+	["diag_log",["extDB2: Toujours connecté à la base de données"]] call TON_fnc_logIt;
+	if(getNumber(configFile >> "CfgServerSettings" >> "extDB" >> "RCON") isEqualTo 1) then 
+	{
+		RCON_ID = uiNamespace getVariable "RCON_ID";
+		RCON_ID = compileFinal (if(typeName RCON_ID == "STRING") then {RCON_ID} else {str(RCON_ID)});
+		["diag_log",["extDB2: RCON toujours activé"]] call TON_fnc_logIt;
+	};
+
+	if(getNumber(configFile >> "CfgServerSettings" >> "extDB" >> "VAC") isEqualTo 1) then 
+	{
+		VAC_ID = uiNamespace getVariable "VAC_ID";
+		VAC_ID = compileFinal (if(typeName VAC_ID == "STRING") then {VAC_ID} else {str(VAC_ID)});
+		["diag_log",["extDB2: VAC toujours activé"]] call TON_fnc_logIt;
+	};
+
+	if(getNumber(configFile >> "CfgServerSettings" >> "extDB" >> "MISC") isEqualTo 1) then 
+	{
+		MISC_ID = uiNamespace getVariable "MISC_ID";
+		MISC_ID = compileFinal (if(typeName MISC_ID == "STRING") then {MISC_ID} else {str(MISC_ID)});
+		["diag_log",["extDB2: MISC toujours activé"]] call TON_fnc_logIt;
+	};
 };
 
-if (!_extDB) exitWith 
+if(!life_server_extDB_notLoaded isEqualTo "") exitWith {};
+/*if (!_extDB) exitWith 
 {
 	life_server_extDB_notLoaded = true;
 	publicVariable "life_server_extDB_notLoaded";
-	diag_log "extDB: Erreur, regardez les logs d'extDB pour plus d'informations.";
-};
+	diag_log "extDB2: Erreur, regardez les logs d'extDB2 pour plus d'informations.";
+};*/
 
 ["CALL resetLifeVehicles",1] spawn DB_fnc_asyncCall;
 ["CALL deleteDeadVehicles",1] spawn DB_fnc_asyncCall;

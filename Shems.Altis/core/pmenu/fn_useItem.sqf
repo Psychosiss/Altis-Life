@@ -210,6 +210,46 @@ switch true do
 		};
 	};
 
+	case (_item == "bottledwhiskey"):
+	{
+		if(playerSide in [west,independent]) exitWith {hint "Ne pas boire pendant le travail!";};
+		if((player getVariable ["inDrink",false])) exitWith {hint "Vous buvez déjà";};
+		if(([false,_item,1] call life_fnc_handleInv)) then
+		{
+			if(isNil "life_drink") then {life_drink = 0;};
+			life_drink = life_drink + 0.06;
+			if (life_drink < 0.07) exitWith {};
+			[] spawn life_fnc_drinkWhiskey;
+		};
+	};
+
+	case (_item == "bottledshine"):
+	{
+		if(playerSide in [west,independent]) exitWith {hint "Ne pas boire pendant le travail!";};
+		if((player getVariable ["inDrink",false])) exitWith {hint "Vous buvez déjà";};
+		if(([false,_item,1] call life_fnc_handleInv)) then
+		{
+			if(isNil "life_drink") then {life_drink = 0;};
+			life_drink = life_drink + 0.08;
+			if (life_drink < 0.09) exitWith {};
+			[] spawn life_fnc_drinkMoonshine;
+		};
+	};
+
+	case (_item == "bottledbeer"):
+	{
+		
+		if(playerSide in [west,independent]) exitWith {hint "Ne pas boire pendant le travail!";};
+		if((player getVariable ["inDrink",false])) exitWith {hint "Vous buvez déjà";};
+		if(([false,_item,1] call life_fnc_handleInv)) then
+		{
+			if(isNil "life_drink") then {life_drink = 0;};
+			life_drink = life_drink + 0.02;
+			if (life_drink < 0.06) exitWith {};
+			[] spawn life_fnc_drinkBeer;
+		};
+	};
+
 	default
 	{
 		hint "Cet objet n'est pas utilisable !";

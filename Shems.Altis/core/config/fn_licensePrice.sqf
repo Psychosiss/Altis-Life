@@ -34,4 +34,8 @@ switch _type do
 	case "swat": {35000};
 	case "tabac": {50000};
 	case "uranium": {750000};
+	case "stiller":{50000};
+	case "liquor":{100000};
+	case "bottler":{100000};
+	case "mash":{100000};
 };

@@ -502,6 +502,7 @@ class CfgFunctions
 			class airHorn;
 			class wantedGrab;
 			class isCop;
+			class breathalyzer;
 		};
 
 		class Gangs
@@ -575,6 +576,9 @@ class CfgFunctions
 			class carAlarmSound;
 			class blueTeam;
 			class redTeam;
+			class drinkBeer;
+			class drinkMoonshine;
+			class drinkWhiskey;
 		};
 
 		class Dialog_Controls

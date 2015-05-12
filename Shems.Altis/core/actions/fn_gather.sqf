@@ -16,7 +16,10 @@ _resourceZones =
 	"diamond_1",
 	"oil_1","oil_2",
 	"rock_1",
-	"silver_1"
+	"silver_1",
+	"rye_1",
+	"hops_1",
+	"yeast_1"
 ];
 
 _zone = "";
@@ -57,6 +60,9 @@ while {gather_var} do
 		case (_zone in ["oil_1","oil_2"] && life_inv_pickaxe > 0): {_gather = "oilu"; _val = 1;};
 		case (_zone in ["rock_1"] && life_inv_pickaxe > 0): {_gather = "rock"; _val = 1;};
 		case (_zone in ["silver_1"] && life_inv_pickaxe > 0): {_gather = "silver"; _val = 1;};
+		case (_zone in ["rye_1"]): {_gather = "rye"; _val = 2;};
+		case (_zone in ["yeast_1"]): {_gather = "yeast"; _val = 2;};
+		case (_zone in ["hops_1"]): {_gather = "hops"; _val = 2;}; 
 		default {""};
 	};
 

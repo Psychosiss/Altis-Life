@@ -48,6 +48,17 @@ switch _mode do
 			case "press": {_var = "license_civ_press"};
 			case "tfu": {_var = "license_cop_tfu"};
 			case "event": {_var = "license_civ_event"};
+			case "liquor": {_var = "license_civ_liquor"};
+			case "beer": {_var = "license_civ_liquor"};
+			case "stiller": {_var = "license_civ_stiller"};
+			case "whiskey": {_var = "license_civ_stiller"};
+			case "moonshine": {_var = "license_civ_stiller"};
+			case "mash": {_var = "license_civ_stiller"};
+			case "bottledshine": {_var = "license_civ_bottler"};
+			case "bottledbeer": {_var = "license_civ_bottler"};
+			case "bottledwhiskey": {_var = "license_civ_bottler"};
+			case "bottler": {_var = "license_civ_bottler"};
+			case "glassbottle": {_var = "license_civ_bottler"};
 			default {_var = ""};
 		};
 	};

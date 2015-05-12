@@ -29,7 +29,10 @@ _resourceZones =
 	"diamond_1",
 	"oil_1","oil_2",
 	"rock_1",
-	"silver_1"
+	"silver_1",
+	"rye_1",
+	"hops_1",
+	"yeast_1"
 ];
 
 _zone = "";
@@ -62,6 +65,9 @@ _item = switch true do
 	case (_zone in ["oil_1","oil_2"]): {"oilu"};
 	case (_zone in ["rock_1"]): {"rock"};
 	case (_zone in ["silver_1"]): {"silver"};
+	case (_zone in ["rye_1"]): {"rye"};
+	case (_zone in ["yeast_1"]): {"yeast"};
+	case (_zone in ["hops_1"]): {"hops"}; 
 	default {""};
 };
 

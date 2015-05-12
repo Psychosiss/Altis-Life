@@ -25,7 +25,7 @@ waitUntil {(!isNil {clientGangLeader})};
 
 waitUntil{!isNil "life_server_isReady"};
 waitUntil{(life_server_isReady OR !isNil "life_server_extDB_notLoaded")};
-if(!isNil "life_server_extDB_notLoaded") exitWith 
+if(!isNil "life_server_extDB_notLoaded" && {life_server_extDB_notLoaded != ""}) exitWith 
 {
 	999999 cutText ["Un probleme lié à extDB a été rencontré, Merci de le signaler.","BLACK FADED"];
 	999999 cutFadeOut 99999999;

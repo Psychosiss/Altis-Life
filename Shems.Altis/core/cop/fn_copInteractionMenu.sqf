@@ -8,9 +8,11 @@
 #define Btn8 37457
 #define Btn9 37458
 #define Btn10 37459
+#define Btn11 37460
 #define Title 37401
 
-private["_display","_curTarget","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5","_Btn6","_Btn7","_Btn8","_Btn9","_Btn10"];
+private["_display","_curTarget","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5","_Btn6","_Btn7","_Btn8","_Btn9","_Btn10","_Btn11"];
+
 if(!dialog) then 
 {
 	createDialog "pInteraction_Menu";
@@ -19,7 +21,6 @@ if(!dialog) then
 disableSerialization;
 _curTarget = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 if(isNull _curTarget) exitWith {closeDialog 0;};
-
 if(_curTarget isKindOf "House_F") exitWith 
 {
 	if((nearestObject [[16019.5,16952.9,0],"Land_Dome_Big_F"]) == _curTarget OR (nearestObject [[16019.5,16952.9,0],"Land_Research_house_V1_F"]) == _curTarget) then 
@@ -35,6 +36,7 @@ if(_curTarget isKindOf "House_F") exitWith
 		_Btn8 = _display displayCtrl Btn8;
 		_Btn9 = _display displayCtrl Btn9;
 		_Btn10 = _display displayCtrl Btn10;
+		_Btn11 = _display displayCtrl Btn11;
 		life_pInact_curTarget = _curTarget;
 
 		_Btn1 ctrlSetText "Reparer";
@@ -51,6 +53,7 @@ if(_curTarget isKindOf "House_F") exitWith
 		_Btn8 ctrlShow false;
 		_Btn9 ctrlShow false;
 		_Btn10 ctrlShow false;
+		_Btn11 ctrlShow false;
 	} else {
 		closeDialog 0;
 	};
@@ -68,6 +71,7 @@ _Btn7 = _display displayCtrl Btn7;
 _Btn8 = _display displayCtrl Btn8;
 _Btn9 = _display displayCtrl Btn9;
 _Btn10 = _display displayCtrl Btn10;
+_Btn11 = _display displayCtrl Btn11;
 life_pInact_curTarget = _curTarget;
 
 _Btn1 ctrlSetText "Démenotter";
@@ -113,6 +117,9 @@ _Btn9 buttonSetAction "[life_pInact_curTarget] call life_fnc_arrestActionTroll;"
 
 _Btn10 ctrlSetText "Supprimer Licenses";
 _Btn10 buttonSetAction "[life_pInact_curTarget] call life_fnc_revokeLicense;";
+
+_Btn11 ctrlSetText localize "Alcootest";
+_Btn11 buttonSetAction "[[player],""life_fnc_breathalyzer"",life_pInact_curTarget,false] spawn life_fnc_MP; closeDialog 0";
 
 if(!((player distance (getMarkerPos "cop_spawn_1") < 250) OR (player distance (getMarkerPos "cop_spawn_2") < 50) OR (player distance (getMarkerPos "cop_spawn_3") < 50) OR (player distance (getMarkerPos "cop_spawn_4") < 50) OR (player distance (getMarkerPos "cop_spawn_5") < 50) OR (player distance (getMarkerPos "cop_spawn_6") < 50) OR (player distance (getMarkerPos "fdp_01") < 50))) then
 {

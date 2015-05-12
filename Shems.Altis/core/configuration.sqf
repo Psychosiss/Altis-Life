@@ -35,6 +35,7 @@ life_checked = 0;
 life_session_tries = 0;
 life_action_time = 0;
 life_karma = 0;
+life_drink = 0;
 //life_speaking_warnings = 0;
 life_fatigue = 0.5;
 life_respawn_timer = 2;
@@ -269,7 +270,19 @@ life_inv_items =
 	"life_inv_kfc_popcorn",
 	"life_inv_kfc_wings",
 	"life_inv_kfc_bucket",
-	"life_inv_kfc_pepsi"
+	"life_inv_kfc_pepsi",
+	"life_inv_cornmeal",
+	"life_inv_beerp",
+	"life_inv_whiskey",
+	"life_inv_rye",
+	"life_inv_hops",
+	"life_inv_yeast",
+	"life_inv_bottles",
+	"life_inv_bottledshine",
+	"life_inv_bottledbeer",
+	"life_inv_bottledwhiskey",
+	"life_inv_moonshine",
+	"life_inv_mash"
 ];
 
 {missionNamespace setVariable[_x,0];} foreach life_inv_items;
@@ -307,7 +320,10 @@ life_licenses =
 	["license_civ_advrebel", "civ"],
 	["license_civ_jet","civ"],
 	["license_civ_press","civ"],
-	["license_civ_event","civ"]
+	["license_civ_event","civ"],
+	["license_civ_stiller","civ"],
+	["license_civ_liquor","civ"],
+	["license_civ_bottler","civ"]
 ];
 
 {missionNamespace setVariable[(_x select 0),false];} foreach life_licenses;
@@ -326,8 +342,8 @@ life_illegal_items =
 	["turtle",7000],
 	["blastingcharge",125000],
 	["boltcutter",50000],
-	["oil_u",5500],
-	["oil_p",9500],
+	["oil_u",5500], // --- TODO : delete oil to illegal
+	["oil_p",9500], // --- TODO : delete oil to illegal
 	["methu",5500],
 	["methp",9500],
 	["tabac",5500], // --- TODO : search a price
@@ -337,7 +353,10 @@ life_illegal_items =
 	["dogp",2500], // --- TODO : search a price
 	["handcuffs",10000],
 	["handcuffkeys",5000], // --- TODO : search a price
-	["kidney",5000] // --- TODO : search a price
+	["kidney",5000], // --- TODO : search a price
+	["moonshine",9000], // --- TODO : get a price
+	["bottledshine",11000], // --- TODO : get a price
+	["mash",5000] // --- TODO : get a price
 ];
 
 sell_array = 
@@ -423,7 +442,19 @@ sell_array =
 	["kfc_popcorn",0], // --- TODO : edit the price
 	["kfc_wings",0], // --- TODO : edit the price
 	["kfc_bucket",0], // --- TODO : edit the price
-	["kfc_pepsi",0] // --- TODO : edit the price
+	["kfc_pepsi",0], // --- TODO : edit the price
+	["bottledshine",15000], // --- TODO : get a price
+	["bottledwhiskey",11000], // --- TODO : get a price
+	["bottledbeer",10000], // --- TODO : get a price
+	["moonshine",7000], // --- TODO : get a price
+	["whiskey",5000], // --- TODO : get a price
+	["beerp",4500], // --- TODO : get a price
+	["mash",2500], // --- TODO : get a price
+	["rye",2000], // --- TODO : get a price
+	["hops",1800], // --- TODO : get a price
+	["yeast",2000], // --- TODO : get a price
+	["cornmeal",200], // --- TODO : get a price
+	["bottles",75] // --- TODO : get a price
 ];
 //sell_array = compileFinal (if(typeName sell_array == "STRING") then {sell_array} else {str(sell_array)});
 
@@ -484,7 +515,16 @@ buy_array =
 	["kfc_popcorn",5],
 	["kfc_wings",15],
 	["kfc_bucket",30],
-	["kfc_pepsi",7]
+	["kfc_pepsi",7],
+	["bottledshine",12500], // --- TODO : get a price
+	["bottledwhiskey",8000], // --- TODO : get a price
+	["bottledbeer",8000], // --- TODO : get a price
+	["moonshine",7500], // --- TODO : get a price
+	["whiskey",5500], // --- TODO : get a price
+	["beerp",5000], // --- TODO : get a price
+	["cornmeal",500], // --- TODO : get a price
+	["mash",2500], // --- TODO : get a price
+	["bottles",100] // --- TODO : get a price
 ];
 buy_array = compileFinal (if(typeName buy_array == "STRING") then {buy_array} else {str(buy_array)});
 

@@ -14,7 +14,7 @@ _query = switch _side do
 
 waitUntil{sleep (random 0.3); !DB_Async_Active};
 _tickTime = diag_tickTime;
-_queryResult = [_query,2] call DB_fnc_asyncCall;
+_queryResult = [_query,2,true] call DB_fnc_asyncCall;
 
 diag_log "------------- Requête Client Query -------------";
 //diag_log format["%1 || %2 || %3 || %4 || %5 || %6 || %7 || %8 || %9 || %10 || %11",_queryResult select 0,_queryResult select 1,_queryResult select 2,_queryResult select 3,_queryResult select 4,_queryResult select 5,_queryResult select 6,_queryResult select 7,_queryResult select 8,_queryResult select 9,_queryResult select 10];
@@ -28,22 +28,25 @@ if(typeName _queryResult == "STRING") exitWith
 	[[],"SOCK_fnc_insertPlayerInfo",_ownerID,false,true] spawn life_fnc_MP;
 };
 
-if(count _queryResult == 0) exitWith 
+if(count _queryResult isEqualTo 0) exitWith 
 {
 	[[],"SOCK_fnc_insertPlayerInfo",_ownerID,false,true] spawn life_fnc_MP;
 };
+
+_queryResult = _queryResult select 0;
 
 private "_tmp";
 _tmp = _queryResult select 2;
 _queryResult set[2,[_tmp] call DB_fnc_numberSafe];
 _tmp = _queryResult select 3;
 _queryResult set[3,[_tmp] call DB_fnc_numberSafe];
-
 _new = [(_queryResult select 6)] call DB_fnc_mresToArray;
+
 if(typeName _new == "STRING") then 
 {
 	_new = call compile format["%1", _new];
 };
+
 _queryResult set[6,_new];
 
 _old = _queryResult select 6;

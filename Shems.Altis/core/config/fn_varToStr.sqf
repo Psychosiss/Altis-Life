@@ -107,6 +107,18 @@ switch _var do
 	case "life_inv_kfc_wings": {"Ailes de poulet épicées"};
 	case "life_inv_kfc_bucket": {"Sceau de poulet"};
 	case "life_inv_kfc_pepsi": {"Pepsi"};
+	case "life_inv_mash": {"Grain Mash Mixture"};
+	case "life_inv_yeast": {"Yeast"};
+	case "life_inv_rye": {"Rye"};
+	case "life_inv_hops": {"Hops"};
+	case "life_inv_whiskey": {"Distilled Whiskey"};
+	case "life_inv_beerp": {"Fermented Beer"};
+	case "life_inv_bottles": {"Glass Bottles"};
+	case "life_inv_cornmeal": {"Cornmeal Grains"};
+	case "life_inv_bottledwhiskey": {"Bottled Whiskey"};
+	case "life_inv_bottledbeer": {"Bottled Beer"};
+	case "life_inv_bottledshine": {"Bottled Moonshine"};
+	case "life_inv_moonshine": {"Distilled Moonshine"};
 
 	case "license_civ_driver": {"Permis de conduire"};
 	case "license_civ_air": {"Permis aérien"};
@@ -140,4 +152,7 @@ switch _var do
 	case "license_civ_press": {"Dan Daily News"};
 	case "license_civ_jet": {"Jet License"};
 	case "license_civ_event": {"Autorisation d'évènement"};
+	case "license_civ_stiller": {"Distillers License"};
+	case "license_civ_liquor": {"Liquor License"};
+	case "license_civ_bottler": {"Bottling License"};
 };

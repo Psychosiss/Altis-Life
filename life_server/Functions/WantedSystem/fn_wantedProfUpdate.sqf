@@ -11,7 +11,7 @@ _wantedCheck = format["SELECT wantedName FROM wanted WHERE wantedID='%1'",_uid];
 
 waitUntil{!DB_Async_Active};
 
-_wantedQuery = [_wantedCheck,2] call DB_fnc_asyncCall;
+_wantedQuery = [_wantedCheck,2,true] call DB_fnc_asyncCall;
 
 if(count _wantedQuery == 0) exitWith {diag_log "Personne non recherché, pas de mise à jour.";};
 

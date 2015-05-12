@@ -10,7 +10,7 @@ _ownerID = owner _ownerID;
 _gangName = [_gangName] call DB_fnc_mresString;
 _query = format["SELECT id FROM gangs WHERE name='%1' AND active='1'",_gangName];
 waitUntil{!DB_Async_Active};
-_queryResult = [_query,2] call DB_fnc_asyncCall;
+_queryResult = [_query,2,true] call DB_fnc_asyncCall;
 
 if(count _queryResult != 0) exitWith 
 {
@@ -30,7 +30,7 @@ if(count _queryResult != 0) exitWith
 
 _query = format["SELECT id FROM gangs WHERE members LIKE '%2%1%2' AND active='1'",_uid,"%"];
 waitUntil{!DB_Async_Active};
-_queryResult = [_query,2] call DB_fnc_asyncCall;
+_queryResult = [_query,2,true] call DB_fnc_asyncCall;
 _gangMembers = [[_uid]] call DB_fnc_mresArray;
 
 if(count _queryResult != 0) then 
@@ -53,5 +53,5 @@ _group setVariable["gang_members",[_uid],true];
 sleep 0.35;
 _query = format["SELECT id FROM gangs WHERE owner='%1' AND active='1'",_uid];
 waitUntil{!DB_Async_Active};
-_queryResult = [_query,2] call DB_fnc_asyncCall;
+_queryResult = [_query,2,true] call DB_fnc_asyncCall;
 _group setVariable["gang_id",(_queryResult select 0),true];

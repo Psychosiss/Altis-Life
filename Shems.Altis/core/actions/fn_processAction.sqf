@@ -4,101 +4,36 @@ _type = [_this,3,"",[""]] call BIS_fnc_param;
 
 if(isNull _vendor OR _type == "" OR (player distance _vendor > 10)) exitWith {};
 
-_error = false;
+_error1 = false;
+_error2 - false;
 
 _itemInfo = switch _type do
 {
-	case "oil": 
-	{
-		["oilu","oilp",1200,"Processing Oil"];
-		playSound "oil";
-	};
-	
-	case "diamond": 
-	{
-		["diamond","diamondc",1350,"Processing Diamond"]
-	};
-	
-	case "heroin": 
-	{
-		["heroinu","heroinp",2100,"Processing Heroin"]
-	};
-	
-	case "copper": 
-	{
-		["copperore","copper_r",750,"Processing Copper"]
-	};
-	
-	case "iron": 
-	{
-		["ironore","iron_r",1120,"Processing Iron"]
-	};
-	
-	case "sand": 
-	{
-		["sand","glass",650,"Processing Sand"]
-	};
-	
-	case "glassbottle":
-	{
-		["glass","bottles",650,"Making Bottles",false]
-	};
-	
-	case "salt": 
-	{
-		["salt","salt_r",450,"Processing Salt"]
-	};
-	
-	case "cocaine": 
-	{
-		["cocaine","cocainep",1500,"Processing Cocaine"]
-	};
-	
-	case "marijuana": 
-	{
-		["cannabis","marijuana",500,"Processing Marijuana"]
-	};
-	
-	case "heroin": 
-	{
-		["heroinu","heroinp",1720,"Processing Heroin"]
-	};
-	
-	case "uranium1": 
-	{
-		["uranium1","uranium2",5000,"Nettoyage de l'Uranium"]
-	};
-	
-	case "uranium4": 
-	{
-		["uranium4","uranium",15000,"Séchage de l'Uranium"]
-	};
-	
-	case "cement": 
-	{
-		["rock","cement",350,"Mixing Cement"]
-	};
-	
-	case "meth": 
-	{
-		["methu","methp",5000,"Cooking Meth"]
-	};
-	
-	case "tabac": 
-	{
-		["tabac","cigare",8000,"Rouler les Cigares"]
-	};
-	
-	case "skull": 
-	{
-		["skull","skullp",1500,"Restauration d'une antiquité"]
-	};
-	
-	case "silver": 
-	{
-		["silver","silver_r",1120,"Fonte de l'argent"];
-	};
-
+	case "oil": {["oilu","oilp",1200,"Processing Oil"];playSound "oil";}; //test playsound
+	case "diamond": {["diamond","diamondc",1350,"Taillage du diamant"]};
+	case "heroin": {["heroinu","heroinp",2100,"Purification de l'héroine"]};
+	case "copper": {["copperore","copper_r",750,"Processing Copper"]};
+	case "iron": {["ironore","iron_r",1120,"Processing Iron"]};
+	case "sand": {["sand","glass",650,"Traitement du sable"]};
+	case "salt": {["salt","salt_r",450,"Traitement du sel"]};
+	case "cocaine": {["cocaine","cocainep",1500,"Purification de la cocaine"]};
+	case "marijuana": {["cannabis","marijuana",500,"Purification de la marijuana"]};
+	//case "heroin": {["heroinu","heroinp",1720,"Purification de l'heroine"]};
+	case "uranium1": {["uranium1","uranium2",5000,"Nettoyage de l'Uranium"]};
+	case "uranium4": {["uranium4","uranium",15000,"Séchage de l'Uranium"]};
+	case "cement": {["rock","cement",350,"Melange du ciment"]};
+	case "meth": {["methu","methp",5000,"Cuisinage de la Meth"]};
+	case "tabac": {["tabac","cigare",8000,"Roulement des cigares"]};
+	case "skull": {["skull","skullp",1500,"Restauration d'une antiquité"]};
+	case "silver": {["silver","silver_r",1120,"Fonte de l'argent"];};
+	case "mash": {["water","mash",100,"Mixing Grain Mash",true,"cornmeal"]};
+	case "whiskey": {["yeast","whiskey",1000,"Fermenting Whiskey",true,"rye"]};
+	case "beer": {["yeast","beerp",1500,"Brewing Beer",true,"hops"]};
+	case "moonshine": {["yeast","moonshine",250,"Moonshining",true,"mash"]};
+	case "bottledshine": {["moonshine","bottledshine",500,"Bootle Moonshine",true,"bottles"]};
+	case "bottledbeer": {["beerp","bottledbeer",500,"Bottle Beer",true,"bottles"]};
+	case "bottledwhiskey": {["whiskey","bottledwhiskey",500,"Bottle Whiskey",true,"bottles"]};
+	case "glassbottle": {["glass","bottles",650,"Making Bottles",false]};
     default 
 	{
 		//[]

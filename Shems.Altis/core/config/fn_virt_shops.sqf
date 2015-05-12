@@ -26,4 +26,7 @@ switch _shop do
 	case "station": {["station éssence",["campfire","water","burgers","frites","pizza","redgull","tbacon","fuelF"]]};
 	case "event": {["Boutique d'évènement",["team_red","team_blue"]]};
 	case "kfc": {["Restaurant KFC",["kfc_popcorn","kfc_wings","kfc_bucket","kfc_pepsi"]]};
+	case "bar": {["The Lounge",["bottledbeer","bottledwhiskey"]]};
+	case "speakeasy": {["Speakeasy's",["bottledwhiskey","bottledshine","bottledbeer","moonshine"]]};
+	case "boozemarket": {["Booze Market",["water","cornmeal","bottles"]]};
 };
