@@ -9,5 +9,5 @@ _grp setVariable["gang_members",_grpMembers,true];
 
 [[4,_grp],"TON_fnc_updateGang",false,false] spawn life_fnc_MP;
 closeDialog 0;
-sleep 1.0;
+sleep 1;
 [player] joinSilent (createGroup civilian);

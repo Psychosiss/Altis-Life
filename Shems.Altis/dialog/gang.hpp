@@ -69,7 +69,7 @@ class Life_My_Gang_Diag
 			idc = -1;
 			text = "Quitter";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			onButtonClick = "[] call life_fnc_gangLeave;";
+			onButtonClick = "[] spawn life_fnc_gangLeave;";
 			x = 0.47;
 			y = 0.26;
 			w = (9 / 40);
@@ -93,7 +93,7 @@ class Life_My_Gang_Diag
 			idc = 2624;
 			text = "Kick";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			onButtonClick = "[] call life_fnc_gangKick;";
+			onButtonClick = "[] spawn life_fnc_gangKick;";
 			x = 0.47;
 			y = 0.36;
 			w = (9 / 40);
