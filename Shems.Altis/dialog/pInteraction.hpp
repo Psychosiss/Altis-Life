@@ -6,7 +6,7 @@ class pInteraction_Menu
 
 	class controlsBackground
 	{
-		class RscTitleBackground:life_RscText 
+		class RscTitleBackground : life_RscText 
 		{
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
 			idc = -1;
@@ -21,7 +21,7 @@ class pInteraction_Menu
 			idc = -1;
 			colorBackground[] = {0,0,0,0.7};
 			x = 0.35;
-			y = 0.2 + (11 / 250);
+			y = 0.7 + (11 / 250); //y = 0.2 + (11 / 250);
 			w = 0.3;
 			h = 0.6 - (22 / 250);
 		};
@@ -40,17 +40,6 @@ class pInteraction_Menu
 
 	class controls
 	{
-		class ButtonClose : life_RscButtonMenu 
-		{
-			idc = -1;
-			text = "Fermer";
-			onButtonClick = "closeDialog 0;";
-			x = 0.35;
-			y = 0.8 - (1 / 25);
-			w = (6.25 / 40);
-			h = (1 / 25);
-		};
-
 		class ButtonOne : life_RscButtonMenu
 		{
 			idc = 37450;
@@ -182,6 +171,17 @@ class pInteraction_Menu
 			w = 0.24;
 			h = 0.038;
 		};
+
+		class ButtonClose : life_RscButtonMenu 
+		{
+			idc = -1;
+			text = "Fermer";
+			onButtonClick = "closeDialog 0;";
+			x = 0.35;
+			y = 1.3 - (1 / 25); //y = 0.8 - (1 / 25);
+			w = (6.25 / 40);
+			h = (1 / 25);
+		};
 	};
 };
 
@@ -193,7 +193,7 @@ class vInteraction_Menu
 
 	class controlsBackground
 	{
-		class RscTitleBackground:life_RscText 
+		class RscTitleBackground : life_RscText 
 		{
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
 			idc = -1;
