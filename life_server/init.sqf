@@ -91,12 +91,6 @@ if(isNil {uiNamespace getVariable "life_sql_id"}) then
 };
 
 if(!life_server_extDB_notLoaded isEqualTo "") exitWith {};
-/*if (!_extDB) exitWith 
-{
-	life_server_extDB_notLoaded = true;
-	publicVariable "life_server_extDB_notLoaded";
-	diag_log "extDB2: Erreur, regardez les logs d'extDB2 pour plus d'informations.";
-};*/
 
 ["CALL resetLifeVehicles",1] spawn DB_fnc_asyncCall;
 ["CALL deleteDeadVehicles",1] spawn DB_fnc_asyncCall;
@@ -170,7 +164,9 @@ life_wanted_list = [];
 	};
 };
 
+life_HouseInitDone = false;
 [] spawn TON_fnc_initHouses;
+waitUntil{life_HouseInitDone};
 
 [] execVM "\life_server\Functions\DynMarket\fn_config.sqf";
 [] execVM "\life_server\Functions\DynamicEvents\fn_generateWreck.sqf";

@@ -146,6 +146,9 @@ class CfgFunctions
 			class sellHouse {};
 			class updateHouseContainers {};
 			class updateHouseTrunk {};
+			class queryHouseRent {};
+			class buyHouseCheck {};
+			class insertHouseGangKey {};
 		};
 		
 		class Gangs

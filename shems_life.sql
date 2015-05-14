@@ -31,7 +31,7 @@ END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `deleteOldHouses`()
 BEGIN
-  DELETE FROM `houses` WHERE `owned` = 0;
+  DELETE FROM `houses` WHERE `rentdate` < 1;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `deleteOldGangs`()
@@ -117,11 +117,13 @@ CREATE TABLE IF NOT EXISTS `vehicles` (
 CREATE TABLE IF NOT EXISTS `houses` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `pid` varchar(32) NOT NULL,
+  `gid` varchar(12) NOT NULL DEFAULT '0',
   `pos` varchar(64) DEFAULT NULL,
   `inventory` text,
   `containers` text,
   `owned` tinyint(4) DEFAULT '0',
-  PRIMARY KEY (`id`,`pid`)
+  `rentdate` int(4) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`,`pid`,`gid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 -- --------------------------------------------------------
@@ -193,12 +195,22 @@ CREATE TABLE `wanted` (
 
 -- --------------------------------------------------------
 
--- ----------------------------
+--
+-- Event structure for `4hHouseRentTimer`
+--
+DROP EVENT IF EXISTS `4hHouseRentTimer`;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` EVENT `4hHouseRentTimer` ON SCHEDULE EVERY 4 HOUR STARTS '2014-09-13 03:59:55' ON COMPLETION NOT PRESERVE ENABLE DO UPDATE houses
+SET rentdate = rentdate - 1
+;;
+DELIMITER ;
+
+--
 -- Event structure for `6WeeksPlayerDelete`
--- ----------------------------
+--
 DROP EVENT IF EXISTS `6WeeksPlayerDelete`;
 DELIMITER ;;
-CREATE DEFINER=`shems_life`@`localhost` EVENT `6WeeksPlayerDelete` ON SCHEDULE EVERY 1 DAY STARTS '2014-09-13 23:59:55' ON COMPLETION NOT PRESERVE ENABLE DO DELETE FROM players where lastLogin < DATE_SUB( CURRENT_TIME(), INTERVAL 6 Week)
+CREATE DEFINER=`root`@`localhost` EVENT `6WeeksPlayerDelete` ON SCHEDULE EVERY 1 DAY STARTS '2014-09-13 23:59:55' ON COMPLETION NOT PRESERVE ENABLE DO DELETE FROM players where lastLogin < DATE_SUB( CURRENT_TIME(), INTERVAL 6 Week)
 ;;
 DELIMITER ;
 

@@ -440,6 +440,7 @@ if(life_action_inUse) exitWith
 	_handled;
 };
 
+//if((_code in (actionKeys "pushToTalk") || _code in (actionKeys "voiceOverNet")) && currentchannel == 7) exitWith {true;};
 if((_code in (actionKeys "GetOver") || _code in (actionKeys "salute")) && {(player getVariable ["restrained",false])}) exitWith {true;};
 if((_code in (actionKeys "SelectAll") || _code in (actionKeys "ForceCommandingMode"))) then {_handled = true;};
 if (_code in (actionKeys "NextAction") || _code in (actionKeys "PrevAction")) then 

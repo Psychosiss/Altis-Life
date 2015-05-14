@@ -523,6 +523,8 @@ class CfgFunctions
 			class gangDisband;
 			class gangDisbanded;
 			class gangMarkers;
+			class keyGiveGang;
+			class keyTakeGang;
 		};
 
 		class Shops
@@ -629,6 +631,7 @@ class CfgFunctions
 			class raidHouse;
 			class sellHouse;
 			class garageRefund;
+			class getRentDate;
 		};
 
 		class DynMarket

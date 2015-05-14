@@ -118,15 +118,21 @@ if(!(_curTarget in life_vehicles)) then
 		_Btn3 ctrlSetText "Ranger le vehicule";
 		_Btn3 buttonSetAction "[life_pInact_curTarget,player] spawn life_fnc_storeVehicle; closeDialog 0;";
 		_Btn3 ctrlShow true;
+
+		_Btn4 ctrlSetText "Louer";
+		_Btn4 buttonSetAction "[getPosATL cursorTarget,0] spawn life_fnc_getRentDate; closeDialog 0;";
+		_Btn4 ctrlShow true;
+		if(((_curTarget getVariable "house_owner") select 0) != (getPlayerUID player)) then {_Btn4 ctrlEnable false;};
+
+		_Btn5 ctrlSetText "Payer le loyer";
+		_Btn5 buttonSetAction "[getPosATL cursorTarget,1,life_pInact_curTarget] spawn life_fnc_getRentDate; closeDialog 0;";
+		_Btn5 ctrlShow true;
+		if(((_curTarget getVariable "house_owner") select 0) != (getPlayerUID player)) then {_Btn5 ctrlEnable false;};
 	} else {
 		_Btn1 ctrlSetText "Vendre la maison";
 		_Btn1 buttonSetAction "[life_pInact_curTarget] spawn life_fnc_sellHouse; closeDialog 0;";
 		_Btn1 ctrlShow true;
-
-		if(((_curTarget getVariable "house_owner") select 0) != (getPlayerUID player)) then 
-		{
-			_Btn1 ctrlEnable false;
-		};
+		if(((_curTarget getVariable "house_owner") select 0) != (getPlayerUID player)) then {_Btn1 ctrlEnable false;};
 
 		if(_curTarget getVariable ["locked",false]) then 
 		{
@@ -145,5 +151,15 @@ if(!(_curTarget in life_vehicles)) then
 		};
 		_Btn3 buttonSetAction "[life_pInact_curTarget] call life_fnc_lightHouseAction; closeDialog 0;";
 		_Btn3 ctrlShow true;
+
+		_Btn4 ctrlSetText "Louer";
+		_Btn4 buttonSetAction "[getPosATL cursorTarget,0] spawn life_fnc_getRentDate; closeDialog 0;";
+		_Btn4 ctrlShow true;
+		if(((_curTarget getVariable "house_owner") select 0) != (getPlayerUID player)) then {_Btn4 ctrlEnable false;};
+
+		_Btn5 ctrlSetText "Payer le loyer";
+		_Btn5 buttonSetAction "[getPosATL cursorTarget,1,life_pInact_curTarget] spawn life_fnc_getRentDate; closeDialog 0;";
+		_Btn5 ctrlShow true;
+		if(((_curTarget getVariable "house_owner") select 0) != (getPlayerUID player)) then {_Btn5 ctrlEnable false;};
 	};
 };

@@ -1,8 +1,10 @@
 private["_type","_index","_price","_var","_amount","_name"];
-if((lbCurSel 2402) == -1) exitWith {};
+if(life_isBuying == 1) exitWith {hint "Merci de ne pas spammer la touche.";};
+life_isBuying = 1;
+if((lbCurSel 2402) == -1) exitWith {life_isBuying = 0;};
 _type = lbData[2402,(lbCurSel 2402)];
 _index = [_type,sell_array] call fnc_index;
-if(_index == -1) exitWith {};
+if(_index == -1) exitWith {life_isBuying = 0;};
 _index2 = [_type,life_dynMarket_prices] call fnc_index;
 _price = 0.0;
 if(_index2 == -1) then 
@@ -14,9 +16,9 @@ if(_index2 == -1) then
 _var = [_type,0] call life_fnc_varHandle;
 
 _amount = ctrlText 2405;
-if(!([_amount] call fnc_isnumber)) exitWith {hint "Vous devez mettre des nombres";};
+if(!([_amount] call fnc_isnumber)) exitWith {life_isBuying = 0; hint "Ce n'est pas un caractère alpha-numérique.";};
 _amount = parseNumber (_amount);
-if(_amount > (missionNameSpace getVariable _var)) exitWith {hint "Vous n'avez pas autant d'objets à vendre."};
+if(_amount > (missionNameSpace getVariable _var)) exitWith {life_isBuying = 0; hint "Vous n'avez pas autant d'objets à vendre."};
 
 _price = (_price * _amount);
 _name = [_var] call life_fnc_varToStr;
@@ -45,5 +47,7 @@ if(life_shop_type == "heroin") then
 	};
 };
 
+disableUserInput false;
+life_isBuying = 0;
 [0] call SOCK_fnc_updatePartial;
 [3] call SOCK_fnc_updatePartial;
