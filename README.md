@@ -3,7 +3,7 @@
 
 <p align="center">
   <a href="https://github.com/Shems-SH/Arma-3/commits/master">
-    <img src="http://img.shields.io/badge/Version-2.8-blue.svg?style=flat"
+    <img src="http://img.shields.io/badge/Version-6.x-blue.svg?style=flat"
     alt="Changelog" />
   </a>
   <a href="https://github.com/Shems-SH/arma-3/issues">
