@@ -57,7 +57,13 @@ _unit spawn
 {
 	private "_unit";
 	_unit = _this select 0;
-	waitUntil {if(speed _unit == 0) exitWith {true}; life_deathCamera camSetTarget _unit; life_deathCamera camSetRelPos [0,3.5,4.5]; life_deathCamera camCommit 0;};
+	waitUntil 
+	{
+		if(speed _unit == 0) exitWith {true}; 
+		life_deathCamera camSetTarget _unit; 
+		life_deathCamera camSetRelPos [0,3.5,4.5]; 
+		life_deathCamera camCommit 0;
+	};
 };
 
 if(!isNull _killer && {_killer != _unit} && {side _killer != west} && {alive _killer}) then 
@@ -70,6 +76,7 @@ if(!isNull _killer && {_killer != _unit} && {side _killer != west} && {alive _ki
 		{
 			[[2],"life_fnc_removeLicenses",_killer,false] spawn life_fnc_MP;
 		};
+		[[-100,1,life_karma],"life_fnc_karmaSys",_killer,false] call life_fnc_MP;
 	} else {
 		[[getPlayerUID _killer,_killer getVariable["realname",name _killer],"187"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
 		
@@ -77,6 +84,7 @@ if(!isNull _killer && {_killer != _unit} && {side _killer != west} && {alive _ki
 		{
 			[[3],"life_fnc_removeLicenses",_killer,false] spawn life_fnc_MP;
 		};
+		[[-100,1,life_karma],"life_fnc_karmaSys",_killer,false] call life_fnc_MP;
 	};
 };
 

@@ -75,6 +75,7 @@ if(_rip) then
 	life_use_atm = true;
 	if!(alive _robber) exitWith {};
 	[[getPlayerUID _robber,_robber getVariable["realname",name _robber],"212"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
+	[-30,0] call life_fnc_karmaSys;
 };
 sleep 300;
 deleteMarker "Marker200";

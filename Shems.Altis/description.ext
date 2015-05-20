@@ -43,11 +43,11 @@ corpseRemovalMaxTime = 9999;
 */
 
 #include "dialog\defineRscIncDesign.inc"
-#include "dialog\RscDisplayAdmin.hpp"
-#include "dialog\RscDisplayMessaging.hpp"
+#include "dialog\admin_menu.hpp"
+#include "dialog\messaging.hpp"
 #include "dialog\RscRevive.hpp"
-#include "dialog\RscDisplayMenu.hpp"
-#include "dialog\RscDisplaySpawnSelection.hpp"
+#include "dialog\player_inv.hpp"
+#include "dialog\spawn_selection.hpp"
 #include "dialog\common.hpp"
 #include "dialog\shop_items.hpp"
 #include "dialog\gang.hpp"
@@ -83,7 +83,7 @@ class RscTitles
 {
 	#include "dialog\ui.hpp"
 	#include "dialog\slotmachine.hpp"
-	#include "dialog\RscActionProgress.hpp"
+	#include "dialog\progress.hpp"
 	#include "dialog\RscHUD.hpp"                // --- Replace ui.hpp
 	#include "dialog\RscSoundStatus.hpp"
 	#include "dialog\RscNameTags.hpp"
@@ -141,7 +141,7 @@ class CfgFunctions
 
 		class Admin
 		{
-			file = "core\admin";
+			file = "core\administrator";
 			class adminInfo;
 			class adminId;
 			class adminGetID;
@@ -666,7 +666,7 @@ class CfgFunctions
 			class attachSmoke;
 		};
 
-		class TaxiShopFunctions 
+		class Taxi
 		{
 			file = "core\taxi";
 			class taxiService;
@@ -682,6 +682,13 @@ class CfgFunctions
 			class timeManager {ext = ".fsm";};
 			class simulationManager {ext = ".fsm";};
 			class taxesManager {ext = ".fsm";};
+		};
+
+		class Karma
+		{
+			file = "core\karma";
+			class karmaSys;
+			class karmaSysP;
 		};
 	};
 };

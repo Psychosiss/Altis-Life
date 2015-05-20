@@ -1,6 +1,7 @@
 private "_unit";
 _unit = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 if(isNull _unit OR !(_unit getVariable["Restrained",false])) exitWith {};
+if(side player == civilian) then {[-10,0] call life_fnc_karmaSys;}; // --- Test it
 
 if(life_inv_handcuffs > 0) then
 {

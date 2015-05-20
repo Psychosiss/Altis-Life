@@ -78,6 +78,7 @@ if(_rip) then
 	life_use_atm = true;
 	if!(alive _robber) exitWith {};
 	[[getPlayerUID _robber,name _robber,"211A"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
+	[-30,0] call life_fnc_karmaSys;
 };
 sleep 300;
 _action = _shop addAction["Braquer le distributeur",life_fnc_robATM];

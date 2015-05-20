@@ -80,12 +80,14 @@ if (_dice < 30) then
 {
 	titleText["Vous avez crocheté le véhicule avec succès.","PLAIN"];
 	[[_curTarget],"life_fnc_carAlarmSound",nil,true] spawn life_fnc_MP;
+	[-50,0] call life_fnc_karmaSys;
 	life_vehicles pushBack _curTarget;
 	[[getPlayerUID player,profileName,"487"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
 } else {
 	[[getPlayerUID player,profileName,"215"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
 	[[0,format["%1 à été vu en train de crocheter un véhicule.",profileName]],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
 	titleText["Le lockpick est cassé.","PLAIN"];
+	[-10,0] call life_fnc_karmaSys;
 };
 
 /*

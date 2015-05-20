@@ -49,8 +49,8 @@ switch playerSide do
 {
 	case west: 
 	{
-		life_cop_level = compileFinal (if(typeName parseNumber(_this select 7) == "STRING") then {parseNumber(_this select 7)} else {str(parseNumber(_this select 7))});
-		life_med_level = compileFinal (if(typeName 0 == "STRING") then {0} else {str(0)});
+		life_cop_level = parseNumber(_this select 7);
+		life_med_level = 0;
 		life_blacklisted = _this select 9;
 		cop_position = _this select 10;
 		life_is_alive = _this select 11;
@@ -61,8 +61,8 @@ switch playerSide do
 		life_is_arrested = _this select 7;
 		civ_position = _this select 9;
 		life_is_alive = _this select 10;
-		life_cop_level = compileFinal (if(typeName 0 == "STRING") then {0} else {str(0)});
-		life_med_level = compileFinal (if(typeName 0 == "STRING") then {0} else {str(0)});
+		life_cop_level = 0;
+		life_med_level = 0;
 		life_houses = _this select 12;
 		{
 			_house = nearestBuilding (call compile format["%1", _x select 0]);
@@ -80,8 +80,8 @@ switch playerSide do
 
 	case independent: 
 	{
-		life_med_level = compileFinal (if(typeName parseNumber(_this select 7) == "STRING") then {parseNumber(_this select 7)} else {str(parseNumber(_this select 7))});
-		life_cop_level = compileFinal (if(typeName 0 == "STRING") then {0} else {str(0)});
+		life_med_level = parseNumber(_this select 7);
+		life_cop_level = 0;
 		med_position = _this select 9;
 		life_is_alive = _this select 10;
 	};
@@ -96,7 +96,7 @@ life_paycheck = life_paycheck + (life_donator * 500);
 
 if (playerside == west) then
 {
-	switch(life_cop_level) do
+	switch (life_cop_level) do
 	{
 		case 0: {life_paycheck = life_paycheck;};
 		case 1: {life_paycheck = life_paycheck + 1750;};

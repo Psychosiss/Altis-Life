@@ -59,6 +59,7 @@ player addUniform "U_Rangemaster";
 };
 
 player say3D "jail";
+[-100,0] call life_fnc_karmaSys;
 
 [[player,_bad,_time],"life_fnc_jailSystroll",false,false] spawn life_fnc_MP;
 [5] call SOCK_fnc_updatePartial;

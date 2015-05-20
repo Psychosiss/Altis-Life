@@ -25,6 +25,18 @@ life_action_gathering = false;
 life_show_actions = false;
 life_is_alive = false;
 life_request_timer = false;
+life_net_dropped = false;
+life_hit_explosive = false;
+life_siren_active = false;
+life_bank_fail = false;
+life_use_atm = true;
+life_is_arrested = false;
+life_action_in_use = false;
+life_istazed = false;
+life_brokenLeg = false;
+life_delivery_in_progress = false;
+life_pos_delivery_in_progress = false;
+life_neg_delivery_in_progress = false;
 life_drug_level = 0;
 life_cocaine_effect = 0;
 life_heroin_effect = 0;
@@ -39,15 +51,22 @@ life_drink = 0;
 life_take = 0;
 life_isBuying = 0;
 //life_speaking_warnings = 0;
+life_pain = 0;
+life_money = 0;
+life_thirst = 100;
+life_hunger = 100;
 life_fatigue = 0.5;
 life_respawn_timer = 2;
 life_clothing_uniform = -1;
 life_animals_spawned_time = -500;
+life_trunk_reserved_ressources = 1;
 life_trunk_vehicle = ObjNull;
 life_spikestrip = ObjNull;
 life_cursorTarget = objNull;
 life_handcuffs = ObjNull;
 life_handcuffkeys = ObjNull;
+life_my_gang = ObjNull;
+life_smartphoneTarget = ObjNull;
 life_query_time = time;
 life_action_delay = time;
 life_redgull_effect = time;
@@ -56,6 +75,8 @@ life_used_drug = [0,0,0,0];
 life_addiction = [0,0,0,0];
 life_last_tracked = [0,0,0];
 life_animals_array = [];
+life_vehicles = [];
+bank_robber = [];
 life_masks = [
 	["G_Balaclava_blk","G_Balaclava_combat","G_Balaclava_lowprofile","G_Balaclava_oli","G_Bandanna_aviator","G_Bandanna_beast","G_Bandanna_blk","G_Bandanna_khk","G_Bandanna_oli","G_Bandanna_shades","G_Bandanna_sport","G_Bandanna_tan"],
 	["H_Shemag_khk","H_Shemag_tan","H_Shemag_olive","H_Shemag_olive_hs","H_ShemagOpen_khk","H_ShemagOpen_tan"],
@@ -125,27 +146,6 @@ life_eat_burgers = 35;
 life_eat_frites = 35;
 life_eat_pizza = 70;
 */
-
-life_net_dropped = false;
-life_hit_explosive = false;
-life_siren_active = false;
-life_bank_fail = false;
-life_use_atm = true;
-life_is_arrested = false;
-life_delivery_in_progress = false;
-life_action_in_use = false;
-life_istazed = false;
-life_brokenLeg = false;
-life_thirst = 100;
-life_hunger = 100;
-life_trunk_reserved_ressources = 1;
-life_my_gang = ObjNull;
-life_smartphoneTarget = ObjNull;
-life_pain = 0;
-life_money = 0;
-life_vehicles = [];
-bank_robber = [];
-player setVariable["downed",false,true];
 
 life_vShop_rentalOnly = 
 [
@@ -329,7 +329,8 @@ life_licenses =
 ];
 
 {missionNamespace setVariable[(_x select 0),false];} foreach life_licenses;
-
+life_pos_karma_points = ["dp_pos_01","dp_pos_02","dp_pos_03","dp_pos_04","dp_pos_05","dp_pos_06","dp_pos_07","dp_pos_08","dp_pos_09","dp_pos_10","dp_pos_11","dp_pos_12","dp_pos_13","dp_pos_14"];
+life_neg_karma_points = ["dp_neg_01","dp_neg_02","dp_neg_03","dp_neg_04","dp_neg_05","dp_neg_06","dp_neg_07","dp_neg_08","dp_neg_09","dp_neg_10","dp_neg_11"];
 life_dp_points = ["dp_1","dp_2","dp_3","dp_4","dp_5","dp_6","dp_7","dp_8","dp_9","dp_10","dp_11","dp_12","dp_13","dp_14","dp_15","dp_15","dp_16","dp_17","dp_18","dp_19","dp_20","dp_21","dp_22","dp_23","dp_24","dp_25"];
 
 life_illegal_items = 

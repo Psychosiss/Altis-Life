@@ -82,6 +82,7 @@ player setVariable["Escorting",false,true];
 player setVariable["transporting",false,true];
 player setVariable["missingOrgan",false,true];
 player setVariable["hasOrgan",false,true];
+player setVariable["downed",false,true];
 
 ["Chargement du salaire"] call life_fnc_log;
 [] call life_fnc_payManager;
