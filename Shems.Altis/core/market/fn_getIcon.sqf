@@ -74,6 +74,24 @@ switch _itemName do
 	case "life_inv_speedbomb": {_iconPath = "icons\items\speedbomb.paa";};
 	case "life_inv_handcuffs": {_iconPath = "icons\items\handcuffs.paa";};
 	case "life_inv_handcuffkeys": {_iconPath = "icons\items\handcuffkeys.paa";};
+	case "life_inv_adrenalineShot": {_iconPath = "icons\items\adrenalineShot.paa";};
+	case "life_inv_campfire": {_iconPath = "icons\items\campfire.paa";};
+	case "life_inv_tent1": {_iconPath = "icons\items\tent1.paa";};
+	case "life_inv_tent2": {_iconPath = "icons\items\tent2.paa";};
+	case "life_inv_vammo": {_iconPath = "icons\items\vammo.paa";};
+	case "life_inv_skinningknife": {_iconPath = "icons\items\skinningknife.paa";};
+	case "life_inv_sheep": {_iconPath = "icons\items\sheep.paa";};
+	case "life_inv_sheepp": {_iconPath = "icons\items\sheepp.paa";};
+	case "life_inv_chicken": {_iconPath = "icons\items\chicken.paa";};
+	case "life_inv_chickenp": {_iconPath = "icons\items\chickenp.paa";};
+	case "life_inv_snakep": {_iconPath = "icons\items\snakep.paa";};
+	case "life_inv_snake": {_iconPath = "icons\items\snake.paa";};
+	case "life_inv_rabbit": {_iconPath = "icons\items\rabbit.paa";};
+	case "life_inv_rabbitp": {_iconPath = "icons\items\rabbitp.paa";};
+	case "life_inv_goat": {_iconPath = "icons\items\goat.paa";};
+	case "life_inv_goatp": {_iconPath = "icons\items\goatp.paa";};
+	case "life_inv_dog": {_iconPath = "icons\items\dog.paa";};
+	case "life_inv_dogp": {_iconPath = "icons\items\dogp.paa";};
 	case default {_iconPath = "";};
 };
 
