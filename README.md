@@ -16,7 +16,7 @@ ___
 
 The official website of Tonic is : http://www.altisliferpg.com
 
-The official website of Shems is : not exist
+The official website of Shems is : no exist
 
 ___
 
@@ -49,6 +49,7 @@ Features :
 - Log system advanced
 - Prison Break
 - Casino
+- Icon Items
 
 ...
 
