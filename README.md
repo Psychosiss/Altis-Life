@@ -6,10 +6,6 @@
     <img src="http://img.shields.io/badge/Version-6.x-blue.svg?style=flat"
     alt="Changelog" />
   </a>
-  <a href="https://github.com/Shems-SH/arma-3/issues">
-    <img src="http://img.shields.io/github/issues-raw/TAWTonic/VAS.svg?label=Issues&style=flat"
-    alt="Issues" />
-  </a>
 </p>
 
 ___
