@@ -22,6 +22,8 @@ ___
 
 The codes on these files are completely free to access, if you quote the two main developers.
 
+Read this : http://www.bistudio.com/community/licenses/arma-public-license-share-alike
+
 Features :
 
 (you can see the base on http://www.github.com/TAWTonic/Altis-Life)
