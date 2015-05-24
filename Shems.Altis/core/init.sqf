@@ -37,7 +37,6 @@ waitUntil {life_session_completed};
 0 cutFadeOut 9999999;
 
 [] call life_fnc_fastRope;
-[] spawn life_fnc_voiceCheck;
 [] call life_fnc_vehicleSync;
 
 waitUntil {!isNull (findDisplay 46)};
@@ -83,6 +82,8 @@ player setVariable["transporting",false,true];
 player setVariable["missingOrgan",false,true];
 player setVariable["hasOrgan",false,true];
 player setVariable["downed",false,true];
+player setVariable["steam64ID",getPlayerUID player];
+player setVariable["realname",profileName,true];
 
 ["Chargement du salaire"] call life_fnc_log;
 [] call life_fnc_payManager;
@@ -118,9 +119,6 @@ doStop units player;
 
 //0 cutText ["","BLACK IN"];
 [] call life_fnc_hudSetup;
-
-player setVariable["steam64ID",getPlayerUID player];
-player setVariable["realname",profileName,true];
 
 life_fnc_moveIn = compileFinal 
 "

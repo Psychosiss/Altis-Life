@@ -52,7 +52,7 @@ switch playerSide do
 	{
 		_handle = [] spawn life_fnc_initCiv;
 		waitUntil {scriptDone _handle};
-		{_x setMarkerAlphaLocal 0;} forEach ["prison"];
+		{_x setMarkerAlphaLocal 0;} forEach ["jail"];
 	};
 
 	case independent:

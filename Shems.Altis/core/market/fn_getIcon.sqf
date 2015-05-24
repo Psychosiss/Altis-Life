@@ -10,21 +10,20 @@ switch _itemName do
 	case "life_inv_cannabis": {_iconPath = "icons\items\cannabis.paa";};
 	case "life_inv_marijuana": {_iconPath = "icons\items\marijuana.paa";};
 	case "life_inv_apple": {_iconPath = "icons\items\apple.paa";};
-	case "life_inv_rabbit": {_iconPath = "icons\items\meat.paa";};
-	case "life_inv_salema": {_iconPath = "icons\items\fish.paa";};
-	case "life_inv_ornate": {_iconPath = "icons\items\fish.paa";};
-	case "life_inv_mackerel": {_iconPath = "icons\items\fish.paa";};
-	case "life_inv_tuna": {_iconPath = "icons\items\fish.paa";};
-	case "life_inv_mullet": {_iconPath = "icons\items\fish.paa";};
-	case "life_inv_catshark": {_iconPath = "icons\items\fish.paa";};
+	case "life_inv_salema": {_iconPath = "icons\items\salema.paa";};
+	case "life_inv_ornate": {_iconPath = "icons\items\ornate.paa";};
+	case "life_inv_mackerel": {_iconPath = "icons\items\mackerel.paa";};
+	case "life_inv_tuna": {_iconPath = "icons\items\tuna.paa";};
+	case "life_inv_mullet": {_iconPath = "icons\items\mullet.paa";};
+	case "life_inv_catshark": {_iconPath = "icons\items\catshark.paa";};
 	case "life_inv_turtle": {_iconPath = "icons\items\turtle.paa";};
 	case "life_inv_fishingpoles": {_iconPath = "icons\items\fishingpoles.paa";};
 	case "life_inv_water": {_iconPath = "icons\items\water.paa";};
 	case "life_inv_coffee": {_iconPath = "icons\items\coffee.paa";};
 	case "life_inv_turtlesoup": {_iconPath = "icons\items\turtle_soup.paa";};
 	case "life_inv_donuts": {_iconPath = "icons\items\donut.paa";};
-	case "life_inv_fuelE": {_iconPath = "icons\items\fuel_can.paa";};
-	case "life_inv_fuelF": {_iconPath = "icons\items\fuel_can.paa";};
+	case "life_inv_fuelE": {_iconPath = "icons\items\fuelE.paa";};
+	case "life_inv_fuelF": {_iconPath = "icons\items\fuelF.paa";};
 	case "life_inv_pickaxe": {_iconPath = "icons\items\pickaxe.paa";};
 	case "life_inv_copperore": {_iconPath = "icons\items\copper_ore.paa";};
 	case "life_inv_ironore": {_iconPath = "icons\items\iron_ore.paa";};
@@ -36,7 +35,7 @@ switch _itemName do
 	case "life_inv_glass": {_iconPath = "icons\items\glass.paa";};
 	case "life_inv_diamond": {_iconPath = "icons\items\diamond_unprocessed.paa";};
 	case "life_inv_diamondr": {_iconPath = "icons\items\diamond.paa";};
-	case "life_inv_tbacon": {_iconPath = "icons\items\meat.paa";};
+	case "life_inv_tbacon": {_iconPath = "icons\items\tbacon.paa";};
 	case "life_inv_redgull": {_iconPath = "icons\items\redgull.paa";};
 	case "life_inv_lockpick": {_iconPath = "icons\items\lockpick.paa";};
 	case "life_inv_peach": {_iconPath = "icons\items\peach.paa";};
@@ -71,7 +70,7 @@ switch _itemName do
 	case "life_inv_scalpel": {_iconPath = "icons\items\scalpel.paa";};
 	case "life_inv_silver": {_iconPath = "icons\items\silver.paa";};
 	case "life_inv_silverr": {_iconPath = "icons\items\silver.paa";};
-	case "life_inv_speedbomb": {_iconPath = "icons\items\speedbomb.paa";};
+	case "life_inv_speedbomb": {_iconPath = "icons\items\carbomb.paa";};
 	case "life_inv_handcuffs": {_iconPath = "icons\items\handcuffs.paa";};
 	case "life_inv_handcuffkeys": {_iconPath = "icons\items\handcuffkeys.paa";};
 	case "life_inv_adrenalineShot": {_iconPath = "icons\items\adrenalineShot.paa";};
@@ -92,6 +91,7 @@ switch _itemName do
 	case "life_inv_goatp": {_iconPath = "icons\items\goatp.paa";};
 	case "life_inv_dog": {_iconPath = "icons\items\dog.paa";};
 	case "life_inv_dogp": {_iconPath = "icons\items\dogp.paa";};
+	case "life_inv_demolitioncharge": {_iconPath = "icons\items\demoCharge.paa";};
 	case default {_iconPath = "";};
 };
 

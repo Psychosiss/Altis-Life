@@ -394,7 +394,6 @@ class CfgFunctions
 			class isKindOf;
 			class repaintColor;
 			class enableActions;
-			class voiceCheck;
 			class log;
 			class compile;
 			class initDisplay;
@@ -407,6 +406,7 @@ class CfgFunctions
 			class interact;
 			class getPos3D;
 			class isMasked;
+			class firstViewCombat;
 		};
 
 		class Network
@@ -1010,16 +1010,6 @@ class CfgDebriefing
 		title = "Pseudo changé";
 		subTitle = "";
 		description = "Pour rejoindre le serveur, remettez votre ancien nom ou demandez un changements sur le teamspeak de celui-ci.";
-		pictureBackground = "";
-		picture = "";
-		pictureColor[] = {0,0.3,0.6,1};
-	};
-
-	class SpeakingSideChat
-	{
-		title = "Vous avez été kické";
-		subTitle = "Vous avez été kické pour avoir parlé 3 fois dans le side channel";
-		description = "Vous avez été kické pour avoir parlé dans le side channel";
 		pictureBackground = "";
 		picture = "";
 		pictureColor[] = {0,0.3,0.6,1};

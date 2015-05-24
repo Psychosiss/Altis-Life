@@ -20,8 +20,7 @@ switch _side do
 		[
 			["civ_spawn_1","Kavala","icons\spawn.paa"],
 			["civ_spawn_2","Pyrgos","icons\spawn.paa"],
-			["civ_spawn_3","Neochori","icons\spawn.paa"],
-			["civ_spawn_4","Badtown","icons\spawn.paa"]
+			["civ_spawn_3","Neochori","icons\spawn.paa"]
 		];
 
 		if(license_civ_rebel) then 
