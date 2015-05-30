@@ -1,3 +1,5 @@
+private "_handle";
+
 life_firstSpawn = true;
 life_session_completed = false;
 
@@ -103,8 +105,26 @@ waitUntil {!(isNull (findDisplay 46))};
 "colorCorrections" ppEffectCommit 0;
 "colorCorrections" ppEffectEnable true;
 
-[] call life_fnc_initEventHandlers;
+_handle = [] spawn life_fnc_initEventHandlers;
+waitUntil {scriptDone _handle};
 [] call life_fnc_initActions;
+
+["Vidage de toutes les pompes à essences"] call life_fnc_log;
+_pumps = [];
+_pumpClass = "Land_fs_feed_F";
+if (worldName == "Altis") then
+{
+	_pumps = [[9205.75,12112.2,-0.0487232],[11831.6,14155.9,-0.0342026],[12024.7,15830,-0.0298138],[12026.6,15830.1,-0.0342979],[12028.4,15830,-0.0388737],[9025.78,15729.4,-0.0206451],[9023.75,15729,-0.027153],[9021.82,15728.7,-0.0293427],[16750.9,12513.1,-0.0525198],[6798.15,15561.6,-0.0441475],[6198.83,15081.4,-0.0912418],[14173.2,16541.8,-0.0946102],[5023.26,14429.6,-0.0978947],[5019.68,14436.7,-0.0114822],[4001.12,12592.1,-0.0966625],[17417.2,13936.7,-0.106519],[3757.14,13477.9,-0.0540276],[3757.54,13485.9,-0.010498],[16875.2,15469.4,0.0373325],[16871.7,15476.6,0.0102873],[8481.69,18260.7,-0.0266876],[15297.1,17565.9,-0.283808],[14221.4,18302.5,-0.0697155],[15781,17453.2,-0.285282],[19961.3,11454.6,-0.0349236],[19965.1,11447.6,-0.0483704],[5768.99,20085.7,-0.0189667],[21230.4,7116.56,-0.0604229],[20784.8,16665.9,-0.0521202],[20789.6,16672.3,-0.0213318],[23379.4,19799,-0.0544052],[25701.2,21372.6,-0.0774155]];
+} else {
+	_pumps = [[2707.91,5787.74,-0.0527279],[2711.07,5793.77,-0.0502887],[2714.46,5799.8,-0.0476766]];
+	_pumpClass = "Land_fuelstation_feed_F";
+};
+
+{
+	_pump = (nearestObject [_x, _pumpClass]);
+	_pump setFuelCargo 0;
+	_pump addAction ["Faire le plein",life_fnc_refuelVehicle,1,3,true,true,"",'_this distance _target < 5 && cursorTarget == _target'];
+} forEach _pumps;
 
 life_sidechat = true;
 [[player,life_sidechat,playerSide],"TON_fnc_managesc",false,false] spawn life_fnc_MP;
@@ -128,7 +148,9 @@ life_fnc_moveIn = compileFinal
 life_dynMarket_boughtItems = [];
 [[getPlayerUID player],"TON_fnc_playerLogged",false,false] spawn life_fnc_MP;
 
+["Chargement du moniteur de chat"] call life_fnc_log;
 [] execVM "core\chatEvents\init.sqf";
+waitUntil {!isNil "aniChatEvents_initated"};
 [] execVM "scripts\IgiLoadinit.sqf";
 
 life_paycheck = compileFinal (if(typeName life_paycheck == "STRING") then {life_paycheck} else {str(life_paycheck)});
