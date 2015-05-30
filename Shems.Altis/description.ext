@@ -696,270 +696,233 @@ class CfgFunctions
 class CfgSounds
 {
 	sounds[] = {};
+	titles[] = {};
 	class SirenLong
 	{
 		name = "SirenLong";
 		sound[] = {"sounds\siren_long.ogg",1,1};
-		titles[] = {};
 	};
 	
 	class tazer
 	{
 		name = "Tazer";
 		sound[] = {"sounds\tazer.ogg",1,1};
-		titles[] = {};
 	};
 	
 	class Intro
 	{
 		name = "Intro";
 		sound[]={"sounds\intro.ogg",1,1};
-		titles[] = {};
 	};
 	
 	class Unlock
 	{
 		name = "Unlock";
 		sound[] = {"sounds\unlock.ogg",1,1};
-		titles[] = {};
 	};
 	
 	class Lock
 	{
 		name = "Lock";
 		sound[] = {"sounds\lock.ogg",1,1};
-		titles[] = {};
 	};
   
 	class Message
 	{
 		name = "message";
 		sound[] = {"sounds\message.ogg",1,1};
-		titles[] = {};
 	};
 	
 	class Cuff
 	{
 		name = "cuff";
 		sound[] = {"sounds\cuff.ogg",1,1};
-		titles[] = {};
 	};
 	
 	class Flashbang
 	{
 		name = "Flashbang";
 		sound[] = {"sounds\flashbang.ogg",1,1};
-		titles[] = {};
 	};
 	
 	class alarmevoiture
 	{
 		name = "alarmevoiture";
 		sound[] = {"sounds\alarmevoiture.ogg",1,1};
-		titles[] = {};
 	};
 	
 	class cuffout
 	{
 		name = "cuffout";
 		sound[] = {"sounds\cuffout.ogg",1,1};
-		titles[] = {};
 	};
 	
 	class Siren_MED
 	{
 		name = "Siren_MED";
 		sound[] = {"sounds\siren_long2.ogg",1,1};
-		titles[] = {};
 	};
 
 	class allahuakbar
 	{
 		name = "allahuakbar";
 		sound[] = {"sounds\allahuakbar.ogg",1,1};
-		titles[] = {};
 	};
 
 	class Patdown
 	{
 		name = "Patdown";
 		sound[] = {"sounds\patdown.ogg",1,1};
-		titles[] = {};
 	};
 
 	class pute
 	{
 		name = "pute";	
 		sound[] = {"sounds\pute.ogg",1,1};
-		titles[] = {};
 	};
 
 	class jail
 	{
 		name = "jail";
 		sound[] = {"sounds\jail.ogg",1,1};
-		titles[] = {};
 	};
 
 	class eat
 	{
 		name = "eat";
 		sound[] = {"sounds\eat.ogg",1,1};
-		titles[] = {};
 	};
 
 	class drink
 	{
 		name = "drink";
 		sound[] = {"sounds\drink.ogg",1,1};
-		titles[] = {};
 	};
 
 	class Mining
 	{
 		name = "mining";
 		sound[] = {"sounds\mining.ogg",1,1};
-		titles[] = {};
 	};
 
 	class spraycan
 	{
 		name = "spraycan";	
 		sound[] = {"sounds\spraycan.ogg",1,1};
-		titles[] = {};
 	};
 
 	class oil
 	{
 		name = "oil";
 		sound[] = {"sounds\oil.ogg",1,1};
-		titles[] = {};
 	};
 
 	class news
 	{
 		name = "news";
 		sound[] = {"sounds\news.ogg",1,1};
-		titles[] = {};
 	};
 
 	class atm
 	{
 		name = "atm";
 		sound[] = {"sounds\atm.ogg",1,1};
-		titles[] = {};
 	};
 
 	class bank_alarm
 	{
 	    name = "bank_alarm";
 	    sound[] = {"sounds\bankalarm.ogg",1,1};
-	    titles[] = {};
 	};
 
 	class jackpotSound
 	{
 		name = "jackpotSound";
 		sound[] = {"sounds\slot_payoff.ogg",1,1};
-		titles[] = {};
 	};
 
 	class slotspinSound
 	{
 		name = "slotspinSound";
 		sound[] = {"sounds\slot_spin.ogg",1,1};
-		titles[] = {};
 	};
 
 	class Caching
 	{
 		name = "caching";
 		sound[] = {"sounds\caching.ogg",1,1};
-		titles[] = {};
 	};
 
 	class marteau
 	{
 		name = "marteau";
 		sound[] = {"sounds\marteau.ogg",1,1};
-		titles[] = {};
 	};
 
 	class bombarm
 	{
 		name = "bombarm";
 		sound[] = {"sounds\bombarm.ogg",1,1};
-		titles[] = {};
 	};
 	
 	class punch
 	{
 		name = "punch";
 		sound[] = {"sounds\punch.ogg",1,1};
-		titles[] = {};
 	};
 	
 	class punch_break
 	{
 		name = "punch_break";
 		sound[] = {"sounds\punch_break.ogg",1,1};
-		titles[] = {};
 	};
 
 	class punch_balls
 	{
 		name = "punch_balls";
 		sound[] = {"sounds\punch_balls.ogg",1,1};
-		titles[] = {};
 	};
 
 	class bonebreak
 	{
 		name = "bonebreak";
 		sound[] = {"sounds\break.ogg",1,1};
-		titles[] = {};
 	};
 
 	class airplane
 	{
 		name = "airplane";
 		sound[] = {"sounds\airplane.ogg",1,1};
-		titles[] = {};
 	};
 
 	class trunk_open
 	{
 		name = "TrunkOpen";
 		sound[] = {"sounds\trunk_open.ogg",1,1};
-		titles[] = {};
 	};
 
 	class trunk_close
 	{
 		name = "TrunkClose";
 		sound[] = {"sounds\trunk_close.ogg",1,1};
-		titles[] = {};
 	};
 
 	class airHorn
 	{
 		name = "airHorn";
 		sound[] = {"sounds\airHorn.ogg",2,1};
-		titles[] = {};
 	};
 
 	class key_jangling
 	{
 		name = "key_jangling";
 		sound[] = {"sounds\key_jangling.ogg",1,1};
-		titles[] = {};
 	};
 
 	class purge
 	{
 		name = "purge";
 		sound[] = {"sounds\purge.ogg",1,1};
-		titles[] = {};
 	};
 };
 
