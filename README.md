@@ -48,6 +48,10 @@ Features :
 - Prison Break
 - Casino
 - Icon Items
+- Load an vehicle in an other vehicle
+- Can make a move in the chat
+- Hoslter
+- Advanced log system
 
 ...
 
