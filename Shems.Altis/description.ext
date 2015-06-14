@@ -25,13 +25,7 @@ wreckManagerMode = 0;
 onPauseScript[] = {"life_fnc_onPause"};
 
 forceRotorLibSimulation = 0;
-RscSpectator_allowFreeCam = false;
-
-class life_CfgScriptPaths
-{
-	default = "dialog\scripts\";
-	GUI = "dialog\scripts\";
-};
+//RscSpectator_allowFreeCam = false;
 
 /*
 wreckLimit = 3;
@@ -42,13 +36,12 @@ corpseRemovalMinTime = 999;
 corpseRemovalMaxTime = 9999;
 */
 
-#include "dialog\defineRscIncDesign.inc"
+#include "dialog\common.hpp"
 #include "dialog\admin_menu.hpp"
 #include "dialog\messaging.hpp"
 #include "dialog\RscRevive.hpp"
 #include "dialog\player_inv.hpp"
 #include "dialog\spawn_selection.hpp"
-#include "dialog\common.hpp"
 #include "dialog\shop_items.hpp"
 #include "dialog\gang.hpp"
 #include "dialog\key_chain.hpp"
@@ -84,9 +77,6 @@ class RscTitles
 	#include "dialog\ui.hpp"
 	#include "dialog\slotmachine.hpp"
 	#include "dialog\progress.hpp"
-	#include "dialog\RscHUD.hpp"                // --- Replace ui.hpp
-	#include "dialog\RscSoundStatus.hpp"
-	#include "dialog\RscNameTags.hpp"
 };
 
 class CfgFunctions
@@ -136,7 +126,6 @@ class CfgFunctions
 			class initActions;
 			class initEventHandlers;
 			class initSurvival;
-			class initPlayerVariables;
 		};
 
 		class Admin
@@ -181,7 +170,6 @@ class CfgFunctions
 			class brokenLeg;
 			class medInteractionMenu;
 			class whoDunnit;
-			class isMedic;
 		};
 
 		class Actions
@@ -328,8 +316,6 @@ class CfgFunctions
 			class itemIcon;
 			class repaintMenu;
 			class wantedAddPlayer;
-			class createRscLayer;
-			class destroyRscLayer;
 		};
 
 		class Functions
@@ -343,8 +329,7 @@ class CfgFunctions
 			class tazeSound;
 			class animSync;
 			class simDisable;
-			class onKeyDown;
-			class onKeyUp;
+			class onKeyHandler;
 			class dropItems;
 			class dropItemsFloor;
 			class handleDamage;
@@ -395,18 +380,14 @@ class CfgFunctions
 			class repaintColor;
 			class enableActions;
 			class log;
-			class compile;
-			class initDisplay;
-			class initDisplays {preInit = 1;};
 			class unitByUID;
 			class cleanUpManager;
 			class listPlayers;
 			class purge;
 			class hasDisplay;
 			class interact;
-			class getPos3D;
-			class isMasked;
 			class firstViewCombat;
+			class playerTags;
 		};
 
 		class Network
@@ -503,7 +484,6 @@ class CfgFunctions
 			class ticketPaid;
 			class airHorn;
 			class wantedGrab;
-			class isCop;
 			class breathalyzer;
 		};
 

@@ -14,8 +14,7 @@ spawnHandlerIDR = [["#e",true,true,true],"life_fnc_emote"] call aniChatEvents_ad
 
 "life_fnc_MP_packet" addPublicVariableEventHandler {[_this select 0,_this select 1] call life_fnc_MPexec;};
 
-findDisplay 46 displayAddEventHandler ["KeyDown",life_fnc_onKeyDown];
-//findDisplay 46 displayAddEventHandler ["KeyUp", life_fnc_onKeyUp];
+findDisplay 46 displayAddEventHandler ["KeyDown",life_fnc_onKeyHandler];
 findDisplay 46 displayAddEventHandler ["MouseButtonDown",life_fnc_mouseDownHandler];
 findDisplay 46 displayAddEventHandler ["MouseButtonUp",life_fnc_mouseUpHandler];
 findDisplay 46 displayAddEventHandler ["MouseZchanged",life_fnc_enableActions];

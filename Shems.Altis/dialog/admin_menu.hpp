@@ -8,7 +8,7 @@ class life_admin_menu
 
 	class controlsBackground 
 	{
-		class Life_RscTitleBackground:Life_RscText 
+		class Life_RscTitleBackground : Life_RscText 
 		{
 			colorBackground[] = {0.4,0.05,0.05,0.7};
 			idc = -1;
@@ -18,7 +18,7 @@ class life_admin_menu
 			h = (1 / 25);
 		};
 
-		class MainBackground:Life_RscText 
+		class MainBackground : Life_RscText 
 		{
 			colorBackground[] = {0,0,0,0.7};
 			idc = -1;
@@ -206,7 +206,7 @@ class life_admin_menu
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
-
+/*
 		class BanButton : Life_RscButtonMenu 
 		{
 			idc = -1;
@@ -228,7 +228,7 @@ class life_admin_menu
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
-
+*/
 		class Purge : Life_RscButtonMenu 
 		{
 			idc = 6847;

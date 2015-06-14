@@ -1,56 +1,7 @@
 private "_enable";
 _enable = [_this,0,true,[true]] call BIS_fnc_param;
 
-if (_enable) then 
-{
-	life_fnc_survival_thread = [] spawn 
-	{
-		#define TIME_DELTA 1
-		#define HEALTH_TIME (60 * 5)
-		#define FATIGUE_TIME (60 * 1)
-		#define HUNGER_TIME (140 * 60)
-		#define THIRST_TIME (120 * 60)
-		#define HEALTH_DELTA TIME_DELTA * (100 / HEALTH_TIME) / 100
-		#define FATIGUE_DELTA TIME_DELTA * (100 / FATIGUE_TIME) / 100
-		#define HUNGER_DELTA TIME_DELTA * (100 / HUNGER_TIME)
-		#define THIRST_DELTA TIME_DELTA * (100 / THIRST_TIME)
-
-		private	["_speed","_hunger","_thirst","_death","_exit"];
-		_exit = false;
-		life_hunger = 100;
-		life_thirst = 100;
-
-		while {true} do 
-		{
-			_speed = (velocity player vectorDistance [0,0,0]) * 3.6;
-			_hunger = HUNGER_DELTA;
-			_thirst = THIRST_DELTA;
-			if (vehicle player == player && {_speed > 0}) then 
-			{
-				_hunger = _hunger + (_hunger * ( _speed / 10 ));
-				_thirst = _thirst + (_thirst * ( _speed / 10 ));
-			};
-
-			life_hunger = life_hunger - _hunger;
-			life_thirst = life_thirst - _thirst;
-
-			if (damage player >= 0.85) then 
-			{
-				addCamShake	[2,1,25];
-			};
-
-			if (life_hunger <= 0 || {life_thirst <= 0}) exitWith 
-			{
-				player setFatigue 1;
-			};
-			uiSleep TIME_DELTA;
-		};
-	}
-} else {
-	if (!isNil "life_fnc_survival_thread" && {!isNull life_fnc_survival_thread}) then {terminate life_fnc_survival_thread};
-};
-
-/*[] spawn  
+[] spawn  
 {
 	private["_fnc_food","_fnc_water"]; 
 	_fnc_food = 
@@ -106,9 +57,7 @@ if (_enable) then
 		sleep 200;
 		[] call _fnc_food;
 	};
-};*/
-
-
+};
 
 [] spawn
 {

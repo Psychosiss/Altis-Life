@@ -130,15 +130,11 @@ life_sidechat = true;
 [[player,life_sidechat,playerSide],"TON_fnc_managesc",false,false] spawn life_fnc_MP;
 
 doStop units player;
-
-["Demarrage de l'HUD"] call life_fnc_log;
-["Life_RscHUD",nil,nil,false] call life_fnc_createRscLayer;
-
-["Demarrage du tag du joueur"] call life_fnc_log;
-["life_RscNameTags"] call life_fnc_createRscLayer;
-
-//0 cutText ["","BLACK IN"];
+0 cutText ["","BLACK IN"];
 [] call life_fnc_hudSetup;
+
+LIFE_ID_PlayerTags = ["LIFE_PlayerTags","onEachFrame","life_fnc_playerTags"] call BIS_fnc_addStackedEventHandler;
+LIFE_ID_RevealObjects = ["LIFE_RevealObjects","onEachFrame","life_fnc_revealObjects"] call BIS_fnc_addStackedEventHandler;
 
 life_fnc_moveIn = compileFinal 
 "

@@ -10,7 +10,6 @@ class life_spawn_selection
 		{
 			idc = 114998;
 		};
-
 		class Tiles: Life_RscTitle {};
 	};
 
@@ -107,7 +106,7 @@ class life_spawn_selection
 			y = "23.2 *					( (	( ( safezoneW / safezoneH ) min 1.2 ) / 1.2 ) / 25 ) + ( safezoneY + ( safezoneH - ( ( ( safezoneW / safezoneH ) min 1.2 ) / 1.2 ) ) / 2 )";
 			w = "12 * 					( ( ( safezoneW / safezoneH ) min 1.2 ) / 40 )";
 			h = "1 *	 				( ( ( ( safezoneW / safezoneH ) min 1.2 ) / 1.2 ) / 25 )";
-			text = "$STR_DISP_CANCEL";
+			text = "Fermer";
 		};
 
 		class spawnButton : Life_RscButtonMenu

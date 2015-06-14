@@ -1,1 +1,0 @@
-_this modelToWorldVisual [0,0,0];

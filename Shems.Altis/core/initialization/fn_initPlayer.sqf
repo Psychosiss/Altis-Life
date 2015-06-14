@@ -33,6 +33,10 @@ if("life_blacklisted") exitWith
 	["Blacklisted",false,0] call BIS_fnc_endMission;
 };
 
+player setVariable["coplevel",life_coplevel,true];
+player setVariable["medlevel",life_medicLevel,true];
+player setVariable["adminlevel",life_adminlevel,true];
+
 switch playerSide do
 {
 	case west:
