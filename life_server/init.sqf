@@ -47,7 +47,7 @@ if(isNil {uiNamespace getVariable "life_sql_id"}) then
 	if(getNumber(configFile >> "CfgServerSettings" >> "extDB" >> "VAC") isEqualTo 1) then 
 	{
 		VAC_ID = round(random(9999));
-		CONSTVAR(VAC_ID);
+		VAC_ID = compileFinal (if(typeName VAC_ID == "STRING") then {VAC_ID} else {str(VAC_ID)});
 		uiNamespace setVariable ["VAC_ID",VAC_ID];
 		"extDB2" callExtension "9:START_VAC";
 		"extDB2" callExtension format["9:ADD_PROTOCOL:STEAM:%1",(call VAC_ID)];
@@ -57,7 +57,7 @@ if(isNil {uiNamespace getVariable "life_sql_id"}) then
 	if(getNumber(configFile >> "CfgServerSettings" >> "extDB" >> "MISC") isEqualTo 1) then 
 	{
 		MISC_ID = round(random(9999));
-		CONSTVAR(MISC_ID);
+		MISC_ID = compileFinal (if(typeName MISC_ID == "STRING") then {MISC_ID} else {str(MISC_ID)});
 		uiNamespace setVariable ["MISC_ID",MISC_ID];
 		"extDB2" callExtension format["9:ADD_PROTOCOL:MISC:%1",(call MISC_ID)];
 		["diag_log",["extDB2: MISC est activé"]] call TON_fnc_logIt;

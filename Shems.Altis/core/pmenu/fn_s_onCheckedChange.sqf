@@ -9,13 +9,11 @@ switch _option do
 		if(_state == 1) then 
 		{
 			life_tagsOn = true;
-			//LIFE_ID_PlayerTags = ["LIFE_PlayerTags","onEachFrame","life_fnc_playerTags"] call BIS_fnc_addStackedEventHandler;
-			[""life_RscNameTags""] call life_fnc_createRscLayer;
+			LIFE_ID_PlayerTags = ["LIFE_PlayerTags","onEachFrame","life_fnc_playerTags"] call BIS_fnc_addStackedEventHandler;
 			[] call life_fnc_settingsMenu;
 		} else {
 			life_tagsOn = !true;
-			//[LIFE_ID_PlayerTags,"onEachFrame"] call BIS_fnc_removeStackedEventHandler;
-			[""life_RscNameTags""] call life_fnc_destroyRscLayer;
+			[LIFE_ID_PlayerTags,"onEachFrame"] call BIS_fnc_removeStackedEventHandler;
 			[] call life_fnc_settingsMenu;
 		};
 	};
