@@ -345,17 +345,6 @@ switch _code do
 		};
 	};
 
-	case 41: 
-	{
-		if (["life_RscHUD"] call life_fnc_hasDisplay) then 
-		{
-			["life_RscHUD"] call life_fnc_destroyRscLayer;
-		} else {
-			["life_RscHUD"] call life_fnc_createRscLayer;
-		};
-		_handled = true;
-	};
-
 	case 47: 
 	{
 		if(playerSide != west && (player getVariable "restrained") OR (player getVariable "transporting")) then {_handled = true;};

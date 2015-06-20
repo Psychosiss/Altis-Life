@@ -93,11 +93,6 @@ player setVariable["realname",profileName,true];
 ["Chargement des impots"] call life_fnc_log;
 [] call life_fnc_taxesManager;
 
-["Mise en place du suppresseur de son"] call life_fnc_log;
-life_soundMuted = false;
-life_soundSuppressed = false;
-["life_RscSoundStatus"] call life_fnc_createRscLayer;
-
 ["Ecran 46 trouvé"] call life_fnc_log;
 waitUntil {!(isNull (findDisplay 46))};
 

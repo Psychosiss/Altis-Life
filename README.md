@@ -20,13 +20,15 @@ The codes on these files are completely free to access, if you quote the two mai
 
 Read this : http://www.bistudio.com/community/licenses/arma-public-license-share-alike
 
+You need to download extDB2 for using this files : https://github.com/Torndeco/extDB2/releases/
+
 Features :
 
 (you can see the base on http://www.github.com/TAWTonic/Altis-Life)
 - Admin Menu advanced
 - Map extented
 - Taxi system
-- Dynamic system
+- Dynamic market system (Thank RyanTT)
 - Taxes
 - Shipwreck
 - extDB2
