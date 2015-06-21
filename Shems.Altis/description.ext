@@ -6,7 +6,7 @@ class Header
 };
 
 author = "Tonic & Shems";
-onLoadName = "Altis Life";
+onLoadName = "Altis Life RPG";
 onLoadMission = "";
 loadScreen = "";
 joinUnassigned = 1;                             //--- Edited : 03/05/15 at 00:39 AM | Default 0

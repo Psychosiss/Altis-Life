@@ -13,7 +13,7 @@ class CfgPatches
 
 class CfgServerSettings
 {
-	class extDB
+	class extDB2
 	{
 		Database = "ALTISLIFERPG";
 		RCON = false;

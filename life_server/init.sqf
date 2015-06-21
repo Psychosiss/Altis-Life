@@ -5,7 +5,7 @@
 DB_Async_Active = false;
 DB_Async_ExtraLock = false;
 life_server_isReady = false;
-life_server_extDB_notLoaded = "";
+life_server_extDB2_notLoaded = "";
 serv_sv_use = [];
 publicVariable "life_server_isReady";
 
@@ -26,15 +26,15 @@ if(isNil {uiNamespace getVariable "life_sql_id"}) then
 	_result = "extDB2" callExtension format["9:ADD_DATABASE_PROTOCOL:ALTISLIFERPG:SQL_CUSTOM_V2:%1",(call life_sql_id)];
 	if(_result != "[1]") exitWith {diag_log "extDB2: Erreur de connection à la base de données.";};
 
-	if(getNumber(configFile >> "CfgServerSettings" >> "extDB" >> "LOG") isEqualTo 1) then 
+	if(getNumber(configFile >> "CfgServerSettings" >> "extDB2" >> "LOG") isEqualTo 1) then 
 	{
 		{
 			"extDB2" callExtension format["9:ADD_PROTOCOL:LOG:%1:%2",_x select 0,_x select 1];
 			["diag_log",[format["extDB2: %1 is successfully added",_x select 0]]] call TON_fnc_logIt;
-		} forEach getArray(configFile >> "CfgServerSettings" >> "extDB" >> "LOG_Settings");
+		} forEach getArray(configFile >> "CfgServerSettings" >> "extDB2" >> "LOG_Settings");
 	};
 
-	if(getNumber(configFile >> "CfgServerSettings" >> "extDB" >> "RCON") isEqualTo 1) then 
+	if(getNumber(configFile >> "CfgServerSettings" >> "extDB2" >> "RCON") isEqualTo 1) then 
 	{
 		RCON_ID = round(random(9999));
 		RCON_ID = compileFinal (if(typeName RCON_ID == "STRING") then {RCON_ID} else {str(RCON_ID)});
@@ -44,7 +44,7 @@ if(isNil {uiNamespace getVariable "life_sql_id"}) then
 		["diag_log",["extDB2: RCON est activé"]] call TON_fnc_logIt;
 	};
 
-	if(getNumber(configFile >> "CfgServerSettings" >> "extDB" >> "VAC") isEqualTo 1) then 
+	if(getNumber(configFile >> "CfgServerSettings" >> "extDB2" >> "VAC") isEqualTo 1) then 
 	{
 		VAC_ID = round(random(9999));
 		VAC_ID = compileFinal (if(typeName VAC_ID == "STRING") then {VAC_ID} else {str(VAC_ID)});
@@ -54,7 +54,7 @@ if(isNil {uiNamespace getVariable "life_sql_id"}) then
 		["diag_log",["extDB2: VAC est activé"]] call TON_fnc_logIt;
 	};
 
-	if(getNumber(configFile >> "CfgServerSettings" >> "extDB" >> "MISC") isEqualTo 1) then 
+	if(getNumber(configFile >> "CfgServerSettings" >> "extDB2" >> "MISC") isEqualTo 1) then 
 	{
 		MISC_ID = round(random(9999));
 		MISC_ID = compileFinal (if(typeName MISC_ID == "STRING") then {MISC_ID} else {str(MISC_ID)});
@@ -68,21 +68,21 @@ if(isNil {uiNamespace getVariable "life_sql_id"}) then
 	life_sql_id = uiNamespace getVariable "life_sql_id";
 	__CONST__(life_sql_id,life_sql_id);
 	["diag_log",["extDB2: Toujours connecté à la base de données"]] call TON_fnc_logIt;
-	if(getNumber(configFile >> "CfgServerSettings" >> "extDB" >> "RCON") isEqualTo 1) then 
+	if(getNumber(configFile >> "CfgServerSettings" >> "extDB2" >> "RCON") isEqualTo 1) then 
 	{
 		RCON_ID = uiNamespace getVariable "RCON_ID";
 		RCON_ID = compileFinal (if(typeName RCON_ID == "STRING") then {RCON_ID} else {str(RCON_ID)});
 		["diag_log",["extDB2: RCON toujours activé"]] call TON_fnc_logIt;
 	};
 
-	if(getNumber(configFile >> "CfgServerSettings" >> "extDB" >> "VAC") isEqualTo 1) then 
+	if(getNumber(configFile >> "CfgServerSettings" >> "extDB2" >> "VAC") isEqualTo 1) then 
 	{
 		VAC_ID = uiNamespace getVariable "VAC_ID";
 		VAC_ID = compileFinal (if(typeName VAC_ID == "STRING") then {VAC_ID} else {str(VAC_ID)});
 		["diag_log",["extDB2: VAC toujours activé"]] call TON_fnc_logIt;
 	};
 
-	if(getNumber(configFile >> "CfgServerSettings" >> "extDB" >> "MISC") isEqualTo 1) then 
+	if(getNumber(configFile >> "CfgServerSettings" >> "extDB2" >> "MISC") isEqualTo 1) then 
 	{
 		MISC_ID = uiNamespace getVariable "MISC_ID";
 		MISC_ID = compileFinal (if(typeName MISC_ID == "STRING") then {MISC_ID} else {str(MISC_ID)});
@@ -90,7 +90,7 @@ if(isNil {uiNamespace getVariable "life_sql_id"}) then
 	};
 };
 
-if(!life_server_extDB_notLoaded isEqualTo "") exitWith {};
+if(!life_server_extDB2_notLoaded isEqualTo "") exitWith {};
 
 ["CALL resetLifeVehicles",1] spawn DB_fnc_asyncCall;
 ["CALL deleteDeadVehicles",1] spawn DB_fnc_asyncCall;
