@@ -4453,7 +4453,7 @@ class Mission
 					side="WEST";
 					vehicle="B_RangeMaster_F";
 					skill=0.60000002;
-					init="this allowDamage false;   this enableSimulation false; this setObjectTexture [ 0, ""textures\kfc_uniform.paa"" ]; removeVest this; this addAction[""KFC Store"",life_fnc_virt_menu,""kfc"",0,false,false,""""];  this setVariable[""realname"",""Tyrese""]; this setFace ""AfricanHead_01""; this addHeadgear ""H_Cap_blk"";";
+					init="this allowDamage false;   this enableSimulation false; this setObjectTexture [ 0, ""images\pub\kfc_uniform.paa"" ]; removeVest this; this addAction[""KFC Store"",life_fnc_virt_menu,""kfc"",0,false,false,""""];  this setVariable[""realname"",""Tyrese""]; this setFace ""AfricanHead_01""; this addHeadgear ""H_Cap_blk"";";
 				};
 				class Item13
 				{
