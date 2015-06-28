@@ -11,21 +11,6 @@ class CfgPatches
 	};
 };
 
-class CfgServerSettings
-{
-	class extDB2
-	{
-		Database = "ALTISLIFERPG";
-		RCON = false;
-		RCON_Selection = "RCON";
-		VAC = false;
-		MISC = false;
-		LOG = false;
-		LOG_Settings[] = {{"HACKER","hacker"},{"LOG2","debug"}};
-		MySQL_Query = false;
-	};
-};
-
 class CfgFunctions
 {
 	class BIS_Overwrite

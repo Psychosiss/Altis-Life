@@ -14,7 +14,7 @@ _query = switch _side do
 
 waitUntil{sleep (random 0.3); !DB_Async_Active};
 _tickTime = diag_tickTime;
-_queryResult = [_query,2,true] call DB_fnc_asyncCall;
+_queryResult = [_query,2] call DB_fnc_asyncCall;
 
 diag_log "------------- Requête Client Query -------------";
 //diag_log format["%1 || %2 || %3 || %4 || %5 || %6 || %7 || %8 || %9 || %10 || %11",_queryResult select 0,_queryResult select 1,_queryResult select 2,_queryResult select 3,_queryResult select 4,_queryResult select 5,_queryResult select 6,_queryResult select 7,_queryResult select 8,_queryResult select 9,_queryResult select 10];
@@ -32,8 +32,6 @@ if(count _queryResult isEqualTo 0) exitWith
 {
 	[[],"SOCK_fnc_insertPlayerInfo",_ownerID,false,true] spawn life_fnc_MP;
 };
-
-_queryResult = _queryResult select 0;
 
 private "_tmp";
 _tmp = _queryResult select 2;

@@ -26,10 +26,10 @@ waitUntil {(!isNil {clientGangLeader})};
 0 cutFadeOut 99999999;
 
 waitUntil{!isNil "life_server_isReady"};
-waitUntil{(life_server_isReady OR !isNil "life_server_extDB2_notLoaded")};
-if(!isNil "life_server_extDB2_notLoaded" && {life_server_extDB2_notLoaded != ""}) exitWith 
+waitUntil{(life_server_isReady OR !isNil "life_server_extDB_notLoaded")};
+if(!isNil "life_server_extDB_notLoaded") exitWith 
 {
-	999999 cutText ["Un probleme lié à extDB2 a été rencontré, Merci de le signaler.","BLACK FADED"];
+	999999 cutText ["Un probleme lié à extDB a été rencontré, Merci de le signaler.","BLACK FADED"];
 	999999 cutFadeOut 99999999;
 };
 
@@ -146,7 +146,7 @@ waitUntil {!isNil "aniChatEvents_initated"};
 
 life_paycheck = compileFinal (if(typeName life_paycheck == "STRING") then {life_paycheck} else {str(life_paycheck)});
 life_taxes = compileFinal (if(typeName life_taxes == "STRING") then {life_taxes} else {str(life_taxes)});
-player enableFatigue ((call life_enableFatigue));
+player enableFatigue (call life_enableFatigue);
 [[getPlayerUID player,player getVariable["realname",name player]],"life_fnc_wantedProfUpdate",false,false] spawn life_fnc_MP;
 
 life_init = true;

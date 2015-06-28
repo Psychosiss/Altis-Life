@@ -12,7 +12,7 @@ _query = format["SELECT playerid, name FROM players WHERE playerid='%1'",_uid];
 
 waitUntil{sleep (random 0.3); !DB_Async_Active};
 _tickTime = diag_tickTime;
-_queryResult = [_query,2,true] call DB_fnc_asyncCall;
+_queryResult = [_query,2] call DB_fnc_asyncCall;
 
 diag_log "------------- Insertion d'une requète Query -------------";
 diag_log format["QUERY: %1",_query];
