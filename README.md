@@ -21,6 +21,7 @@ The codes on these files are completely free to access, if you quote the two mai
 Read this : http://www.bistudio.com/community/licenses/arma-public-license-share-alike
 
 You need to download extDB2 for using this files : https://github.com/Torndeco/extDB2/releases/
+!!!!! NOW USING EXTDB !!!!!  https://github.com/Torndeco/extDB/releases/ 28/06/15 at 23:50 Paris GMT
 
 Features :
 

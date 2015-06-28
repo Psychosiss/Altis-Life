@@ -8,7 +8,7 @@ _extDB = false;
 DB_Async_Active = false;
 DB_Async_ExtraLock = false;
 life_server_isReady = false;
-life_server_extDB2_notLoaded = "";
+life_server_extDB_notLoaded = "";
 serv_sv_use = [];
 publicVariable "life_server_isReady";
 
