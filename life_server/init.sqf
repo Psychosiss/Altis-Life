@@ -24,7 +24,7 @@ if(isNil {uiNamespace getVariable "life_sql_id"}) then
 	if ((parseNumber _result) < 14) exitWith {diag_log "extDB: Vous devez avoir la version 14 ou + d'extDB.";};
 	_result = "extDB" callExtension "9:DATABASE:ALTISLIFERPG";
 	if(_result != "[1]") exitWith {diag_log "extDB: Erreur de connection à la base de données.";};
-	_result = "extDB" callExtension format["9:ADD:DB_RAW_V2:%1",(call life_sql_id)];
+	_result = "extDB" callExtension format["9:ADD:DB_RAW_V3:%1",(call life_sql_id)];
 	if(_result != "[1]") exitWith {diag_log "extDB: Erreur de connection à la base de données.";};
 	"extDB" callExtension "9:LOCK";
 	_extDB = true;
