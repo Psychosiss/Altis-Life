@@ -4579,7 +4579,7 @@ class Mission
 					vehicle="b_survivor_F";
 					skill=0.60000002;
 					text="h1_3_1_1_1_1_1";
-					init="this setObjectTexture [0,""images\police_combatu_sgt.jpg""]; this enableSimulation false; this allowDamage false; this addAction[""<t color='#ADFF2F'>ATM</t>"",life_fnc_atmMenu]; this addAction[""Vehicle Garage"",life_fnc_vehicleGarage,""car""]; this addAction[""Store vehicle in Garage"",life_fnc_storeVehicleGarage,"""",0,false,false,"""",'!life_garage_store'];";
+					init="this setObjectTexture [0,""images\cop\uniform.paa""]; this enableSimulation false; this allowDamage false; this addAction[""<t color='#ADFF2F'>ATM</t>"",life_fnc_atmMenu]; this addAction[""Vehicle Garage"",life_fnc_vehicleGarage,""car""]; this addAction[""Store vehicle in Garage"",life_fnc_storeVehicleGarage,"""",0,false,false,"""",'!life_garage_store'];";
 				};
 				class Item2
 				{
@@ -4591,7 +4591,7 @@ class Mission
 					vehicle="b_survivor_F";
 					skill=0.60000002;
 					text="h1";
-					init="this setObjectTexture [0,""images\police_combatu_sgt.jpg""]; this enableSimulation false; this allowDamage false; this addAction[""<t color='#FF0000'>Initiate Prison Break</t>"",life_fnc_prisonBreak,1,0,false,false,"""",' playerSide == civilian '];";
+					init="this setObjectTexture [0,""images\cop\uniform.paa""]; this enableSimulation false; this allowDamage false; this addAction[""<t color='#FF0000'>Initiate Prison Break</t>"",life_fnc_prisonBreak,1,0,false,false,"""",' playerSide == civilian '];";
 				};
 			};
 		};
@@ -50852,7 +50852,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_Billboard_F";
 			skill=0.60000002;
-			init="this setPos [(getpos this select 0),(getpos this select 1),3.20]; C1 setVectorUp[0,0,5]; this allowDamage false; this setObjectTexture [0, ""textures\billboards\kfc.paa""]";
+			init="this setPos [(getpos this select 0),(getpos this select 1),3.20]; C1 setVectorUp[0,0,5]; this allowDamage false; this setObjectTexture [0, ""images\pub\kfc.paa""]";
 		};
 		class Item4413
 		{
@@ -50863,7 +50863,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_Billboard_F";
 			skill=0.60000002;
-			init="this setPos [(getpos this select 0),(getpos this select 1),3.20]; C1 setVectorUp[0,0,5]; this allowDamage false; this setObjectTexture [0, ""textures\billboards\kfc.paa""]";
+			init="this setPos [(getpos this select 0),(getpos this select 1),3.20]; C1 setVectorUp[0,0,5]; this allowDamage false; this setObjectTexture [0, ""images\pub\kfc.paa""]";
 		};
 		class Item4414
 		{
@@ -50874,7 +50874,7 @@ class Mission
 			side="EMPTY";
 			vehicle="SignAd_Sponsor_ION_F";
 			skill=0.60000002;
-			init="this enableSimulation false; this allowDamage false;this SetObjectTexture [0,""textures\billboards\restrictedarea.paa""]; this setVectorUp [ 0, 0, 5 ];";
+			init="this enableSimulation false; this allowDamage false;this SetObjectTexture [0,""images\restrictedarea.paa""]; this setVectorUp [ 0, 0, 5 ];";
 		};
 		class Item4415
 		{
@@ -50885,7 +50885,7 @@ class Mission
 			side="EMPTY";
 			vehicle="SignAd_Sponsor_ION_F";
 			skill=0.60000002;
-			init="this enableSimulation false; this allowDamage false;this SetObjectTexture [0,""textures\billboards\restrictedarea.paa""]; this setVectorUp [ 0, 0, 5 ];";
+			init="this enableSimulation false; this allowDamage false;this SetObjectTexture [0,""images\restrictedarea.paa""]; this setVectorUp [ 0, 0, 5 ];";
 		};
 		class Item4416
 		{

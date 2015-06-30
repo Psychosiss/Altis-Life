@@ -2,9 +2,6 @@
 
 "BIS_fnc_MP_packet" addPublicVariableEventHandler {_this call life_fnc_MPexec};
 
-private "_extDB";
-_extDB = false;
-
 DB_Async_Active = false;
 DB_Async_ExtraLock = false;
 life_server_isReady = false;
@@ -17,7 +14,6 @@ if(isNil {uiNamespace getVariable "life_sql_id"}) then
 	life_sql_id = round(random(9999));
 	__CONST__(life_sql_id,life_sql_id);
 	uiNamespace setVariable ["life_sql_id",life_sql_id];
-	
 	_result = "extDB" callExtension "9:VERSION";
 	["diag_log",[format["extDB: Version: %1",_result]]] call TON_fnc_logIt;
 	if(_result == "") exitWith {diag_log "L'extension extDB du serveur n'a pas été trouvé, merci de le reporter à un developpeur.";};
@@ -27,7 +23,6 @@ if(isNil {uiNamespace getVariable "life_sql_id"}) then
 	_result = "extDB" callExtension format["9:ADD:DB_RAW_V3:%1",(call life_sql_id)];
 	if(_result != "[1]") exitWith {diag_log "extDB: Erreur de connection à la base de données.";};
 	"extDB" callExtension "9:LOCK";
-	_extDB = true;
 	["diag_log",["extDB: Connecté à la base de données."]] call TON_fnc_logIt;
 } else {
 	life_sql_id = uiNamespace getVariable "life_sql_id";
@@ -35,12 +30,7 @@ if(isNil {uiNamespace getVariable "life_sql_id"}) then
 	["diag_log",["extDB: Toujours connecté à la base de données"]] call TON_fnc_logIt;
 };
 
-if (!_extDB) exitWith 
-{
-	life_server_extDB_notLoaded = true;
-	publicVariable "life_server_extDB_notLoaded";
-	["diag_log",["extDB: Erreur, regardez les logs d'extDB pour plus d'informations."]] call TON_fnc_logIt;
-};
+if(!life_server_extDB_notLoaded isEqualTo "") exitWith {};
 
 ["CALL resetLifeVehicles",1] spawn DB_fnc_asyncCall;
 ["CALL deleteDeadVehicles",1] spawn DB_fnc_asyncCall;

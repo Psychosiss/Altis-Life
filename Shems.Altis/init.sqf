@@ -1,1 +1,0 @@
-life_cleanupThread = [] spawn life_fnc_cleanUpManager;

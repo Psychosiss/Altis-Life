@@ -14,20 +14,19 @@ enableRadio false;
 enableSentences false;
 0 fadeRadio 0;
 
-waitUntil {!isNull player && player == player}; 
-waitUntil {local player};
+waitUntil {!isNull player && player == player};
 
 [] call compile PreprocessFileLineNumbers "core\clientValidator.sqf";
 [] call compile PreprocessFileLineNumbers "core\configuration.sqf";
 
-waitUntil {(!isNil {clientGangLeader})};
+//waitUntil {(!isNil {clientGangLeader})};
 
 0 cutText ["Attente du serveur ...","BLACK FADED"];
 0 cutFadeOut 99999999;
 
 waitUntil{!isNil "life_server_isReady"};
 waitUntil{(life_server_isReady OR !isNil "life_server_extDB_notLoaded")};
-if(!isNil "life_server_extDB_notLoaded") exitWith 
+if(!isNil "life_server_extDB_notLoaded" && {life_server_extDB_notLoaded != ""}) exitWith 
 {
 	999999 cutText ["Un probleme lié à extDB a été rencontré, Merci de le signaler.","BLACK FADED"];
 	999999 cutFadeOut 99999999;

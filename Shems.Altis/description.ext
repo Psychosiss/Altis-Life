@@ -380,8 +380,6 @@ class CfgFunctions
 			class repaintColor;
 			class enableActions;
 			class log;
-			class unitByUID;
-			class cleanUpManager;
 			class listPlayers;
 			class purge;
 			class hasDisplay;
