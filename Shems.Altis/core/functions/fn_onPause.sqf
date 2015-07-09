@@ -1,8 +1,6 @@
 with missionNamespace do 
 {
-
 	if (!isMultiplayer) exitWith {};
-
 	disableSerialization;
 	["Mis en pause."] call life_fnc_log;
 	private ["_display","_ctrlRespawn","_ctrlManual","_ctrlAbort","_waitTime","_combatTime","_timeLeft"];

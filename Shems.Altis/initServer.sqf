@@ -18,5 +18,9 @@ if(!(_this select 0)) exitWith {};
 	[[17014,12808,16],921267]	//--- Pyrgos office building opposite garage
 ];
 
+{
+	inGameUISetEventHandler [_x,""];
+} forEach ["PrevAction","Action","NextAction"];
+
 [8,true,12] call life_fnc_timeManager;
 //true call life_fnc_simulationManager;

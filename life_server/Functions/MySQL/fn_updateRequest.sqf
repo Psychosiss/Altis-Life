@@ -1,4 +1,4 @@
-private["_uid","_side","_money","_atmmoney","_licenses","_gear","_civ_position","_cop_position","_med_position","_karma","_name","_query","_thread"];
+private["_uid","_side","_money","_atmmoney","_licenses","_gear","_karma","_name","_query","_thread"];
 _uid = [_this,0,"",[""]] call BIS_fnc_param;
 _name = [_this,1,"",[""]] call BIS_fnc_param;
 _side = [_this,2,sideUnknown,[civilian]] call BIS_fnc_param;
@@ -6,10 +6,7 @@ _money = [_this,3,0,[0]] call BIS_fnc_param;
 _atmmoney = [_this,4,5000,[0]] call BIS_fnc_param;
 _licenses = [_this,5,[],[[]]] call BIS_fnc_param;
 _gear = [_this,6,[],[[]]] call BIS_fnc_param;
-_civ_position = [_this,7,""] call BIS_fnc_param;
-_cop_position = [_this,8,""] call BIS_fnc_param;
-_med_position = [_this,9,""] call BIS_fnc_param;
-_karma = _this select 10;
+_karma = _this select 7;
 
 if((_uid == "") OR (_name == "")) exitWith {};
 
@@ -35,8 +32,7 @@ switch _side do
 		money='%2',
 		atmmoney='%3',
 		cop_gear='%4',
-		cop_licenses='%5',
-		cop_position='%7'
+		cop_licenses='%5'
 		WHERE playerid='%6'
 		",_name,_money,_atmmoney,_gear,_licenses,_uid];
 	};
@@ -50,8 +46,7 @@ switch _side do
 		civ_licenses='%4',
 		civ_gear='%6',
 		arrested='%7',
-		civ_position='%8',
-		karma='%9'
+		karma='%8'
 		WHERE playerid='%5'
 		",_name,_money,_atmmoney,_licenses,_uid,_gear,[_this select 7] call DB_fnc_bool,_karma];
 	};
@@ -63,8 +58,7 @@ switch _side do
 		money='%2',
 		atmmoney='%3',
 		med_licenses='%4',
-		med_gear='%6',
-		med_position='%7'
+		med_gear='%6'
 		WHERE playerid='%5'
 		",_name,_money,_atmmoney,_licenses,_uid];
 	};

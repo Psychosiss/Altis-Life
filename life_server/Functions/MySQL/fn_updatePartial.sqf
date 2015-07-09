@@ -61,12 +61,7 @@ switch _mode do
 		};
 	};
 
-	case 4: 
-	{
-		_value = [_this,2,false,[true]] call BIS_fnc_param;
-		_value = [_value] call DB_fnc_bool;
-		_query = format["UPDATE players SET alive='%1' WHERE playerid='%2'",_value,_uid];
-	};
+	case 4: {};
 
 	case 5: 
 	{

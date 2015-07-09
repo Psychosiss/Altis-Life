@@ -52,15 +52,11 @@ switch playerSide do
 		life_cop_level = parseNumber(_this select 7);
 		life_med_level = 0;
 		life_blacklisted = _this select 9;
-		cop_position = _this select 10;
-		life_is_alive = _this select 11;
 	};
 
 	case civilian: 
 	{
 		life_is_arrested = _this select 7;
-		civ_position = _this select 9;
-		life_is_alive = _this select 10;
 		life_cop_level = 0;
 		life_med_level = 0;
 		life_houses = _this select 12;
@@ -82,8 +78,6 @@ switch playerSide do
 	{
 		life_med_level = parseNumber(_this select 7);
 		life_cop_level = 0;
-		med_position = _this select 9;
-		life_is_alive = _this select 10;
 	};
 };
 

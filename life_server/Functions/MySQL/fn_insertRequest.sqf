@@ -45,7 +45,7 @@ _query = format["INSERT INTO players (playerid, name, money, atmmoney, aliases, 
 ];
 */
 
-_query = format["INSERT INTO players (playerid, name, cop_money, cop_atmmoney, civ_money, civ_atmmoney, med_money, med_atmmoney, aliases, cop_licenses, civ_licenses, med_licenses, cop_gear, civ_gear, med_gear, cop_position, civ_position, med_position) VALUES('%1', '%2', '%3', '%4', '%5', '%6', '%7', '%8', '%9','""[]""','""[]""','""[]""','""[]""','""[]""','""[]""','""[]""','""[]""','""[]""')",
+_query = format["INSERT INTO players (playerid, name, cop_money, cop_atmmoney, civ_money, civ_atmmoney, med_money, med_atmmoney, aliases, cop_licenses, civ_licenses, med_licenses, cop_gear, civ_gear, med_gear) VALUES('%1', '%2', '%3', '%4', '%5', '%6', '%7', '%8', '%9','""[]""','""[]""','""[]""','""[]""','""[]""','""[]""')",
 	_uid,
 	_name,
 	_money,

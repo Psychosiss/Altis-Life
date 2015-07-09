@@ -1,13 +1,4 @@
-private["_packet","_array","_flag","_civ_position","_med_position","_cop_position"];
-
-_civ_position = getPos player;
-diag_log format ["%1",_civ_position];
-
-_med_position = getPos player;
-diag_log format ["%1",_med_position];
-
-_cop_position = getPos player;
-diag_log format ["%1",_cop_position];
+private["_packet","_array","_flag"];
 
 _packet = [getPlayerUID player,(profileName),playerSide,life_money,life_atmmoney,life_karma];
 _array = [];
@@ -26,20 +17,13 @@ _packet pushBack life_is_alive;
 
 switch playerSide do 
 {
-	case west: 
-	{
-		_packet pushBack _cop_position;
-	};
+	case west: {};
 	case civilian:
 	{
 		_packet pushBack life_is_arrested;
-		_packet pushBack _civ_position;
 	};
 
-	case independent: 
-	{
-		_packet pushBack _med_position;
-	};
+	case independent: {};
 };
 
 [_packet,"DB_fnc_updateRequest",false,false] spawn life_fnc_MP;
